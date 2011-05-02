@@ -1,51 +1,41 @@
-# OmniAuth::Identity
+# OmniAuth Identity
 
-`OmniAuth::Identity` brings a traditional e-mail/login based sign in
-flow to OmniAuth without sacrificing the simplicity and pattern
-employed by OmniAuth's external authenticating brethren. It allows
-users to create "identities" that consist of a user's basic info,
-a login key, and a password.
-
-## Installation
-
-To install omniauth as a suite of gems:
-
-    gem install omniauth
-
-To install just the login/password flow in the "identity" gem:
-
-    gem install oa-identity
+The OmniAuth Identity gem provides a way for applications to utilize a
+traditional login/password based authentication system without the need
+to give up the simple authentication flow provided by OmniAuth. Identity
+is designed on purpose to be as featureless as possible: it provides the
+basic construct for user management and then gets out of the way.
 
 ## Usage
 
-You can use `OmniAuth::Identity` just like any other provider: that's
-the whole point!
+You use `oa-identity` just like you would any other OmniAuth provider:
+as a Rack middleware. The basic setup would look something like this:
 
     use OmniAuth::Builder do
-      provider :identity, :key => :email, :attributes => [:name, :email, :location]
+      provider :identity
     end
 
-Now your users will be able to create or sign into an identity by 
-visiting `/auth/identity`. Once they have done so, your application
-will receive a callback at `/auth/identity/callback` just like it
-would with any other OmniAuth strategy.
+Next, you need to create a model that will be able to persist the
+information provided by the user. By default, this model should be a
+class called `Identity` and should respond to the following API:
 
-## ORMs
+    Identity.create(
+      :name => 'x', 
+      :password => 'y', 
+      :confirm_password => 'y'
+    )
 
-`OmniAuth::Identity` supports multiple ORMs:
+    identity = Identity.authenticate('key', 'password')
+      # => Identity instance if correct
+      # => false if incorrect
 
-* ActiveRecord
-* MongoMapper
+    identity.user_info # => {'name' => '...', 'nickname' => '...'}
+    identity.uid       # => must be unique to the application
 
-By default, it will try to detect which if any of the ORMs your app
-is using in the order specified above. You can also explicitly set
-the ORM by making this call before you instantiate the middleware:
+To make things easier, you can inherit your model from the ones provided
+for popular ORMs which will automatically provide the default setup
+necessary. For example:
 
-    require 'omniauth/identity/orm/ormname'
-
-Where `ormname` is the same as the **gem name** of the ORM you would
-like to use.
-
-To implement a custom ORM, it's quite simple. You simply need to define
-the `OmniAuth::Identity` class such that it adheres to the interface set 
-forth in `OmniAuth::Identity::Interface`.    
+    class Identity < OmniAuth::Identity::Model::ActiveRecord
+      login_key :nickname
+    end
