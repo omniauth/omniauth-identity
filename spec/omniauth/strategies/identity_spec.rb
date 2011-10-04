@@ -11,7 +11,7 @@ describe OmniAuth::Strategies::Identity do
   # customize rack app for testing, if block is given, reverts to default
   # rack app after testing is done
   def set_app!(identity_options = {})
-    identity_options.reverse_merge!({:model => MockIdentity})
+    identity_options = {:model => MockIdentity}.merge(identity_options)
     old_app = self.app
     self.app = Rack::Builder.app do
       use Rack::Session::Cookie
@@ -37,7 +37,7 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#callback_phase' do
-    let(:user){ mock(:uid => 'user1', :user_info => {'name' => 'Rockefeller'})}
+    let(:user){ mock(:uid => 'user1', :info => {'name' => 'Rockefeller'})}
 
     context 'with valid credentials' do
       before do
@@ -53,8 +53,8 @@ describe OmniAuth::Strategies::Identity do
         auth_hash['uid'].should == 'user1'
       end
 
-      it 'should populate the user_info hash' do
-        auth_hash['user_info'].should == {'name' => 'Rockefeller'}
+      it 'should populate the info hash' do
+        auth_hash['info'].should == {'name' => 'Rockefeller'}
       end
     end
 
@@ -88,7 +88,7 @@ describe OmniAuth::Strategies::Identity do
       } }
 
       before do
-        m = mock(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :user_info => {:name => 'DUUUUDE!'}, :persisted? => true)
+        m = mock(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
         MockIdentity.should_receive(:create).with(properties).and_return(m)
       end
 

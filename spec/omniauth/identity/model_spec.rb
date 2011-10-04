@@ -91,32 +91,26 @@ describe OmniAuth::Identity::Model do
       end
     end
 
-    describe '#user_info' do
+    describe '#info' do
       it 'should include attributes that are set' do
         subject.stub!(:name).and_return('Bob Bobson')
         subject.stub!(:nickname).and_return('bob')
 
-        subject.user_info.should == {
+        subject.info.should == {
           'name' => 'Bob Bobson',
           'nickname' => 'bob'
         }
       end
 
-      it 'should automatically set name off of first and last name' do
-        subject.stub!(:first_name).and_return('Bob')
-        subject.stub!(:last_name).and_return('Bobson')
-        subject.user_info['name'].should == 'Bob Bobson'
-      end
-
       it 'should automatically set name off of nickname' do
         subject.stub!(:nickname).and_return('bob')
-        subject.user_info['name'] == 'bob'
+        subject.info['name'] == 'bob'
       end
 
       it 'should not overwrite a provided name' do
         subject.stub!(:name).and_return('Awesome Dude')
         subject.stub!(:first_name).and_return('Frank')
-        subject.user_info['name'].should == 'Awesome Dude'
+        subject.info['name'].should == 'Awesome Dude'
       end
     end
   end

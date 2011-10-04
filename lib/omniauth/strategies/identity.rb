@@ -5,14 +5,9 @@ module OmniAuth
     # use for external OmniAuth providers.
     class Identity
       include OmniAuth::Strategy
- 
-      # @option options [Symbol] :name The name you want to use for this strategy.
-      # @option options [Symbol] :model The class you wish to use as the identity model.
-      # @option options [Array] :fields ([:name, :email]) Required information at identity registration.
-      def initialize(app, options = {})
-        options[:fields] ||= [:name, :email]
-        super(app, options[:name] || :identity, options.dup)
-      end
+
+      option :fields, [:name, :email]
+      option :on_failed_registration, nil
 
       def request_phase
         OmniAuth::Form.build(
@@ -68,14 +63,9 @@ module OmniAuth
         end
       end
 
-      def auth_hash 
-        {
-          'provider' => name.to_s,
-          'uid' => identity.uid,
-          'user_info' => identity.user_info
-        }
-      end
-      
+      uid{ identity.uid }
+      info{ identity.info }
+
       def registration_path
         options[:registration_path] || "#{path_prefix}/#{name}/register"
       end

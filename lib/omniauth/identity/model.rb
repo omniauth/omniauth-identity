@@ -62,15 +62,11 @@ module OmniAuth
       # `name` is not, it will be automatically calculated.
       #
       # @return [Hash] A string-keyed hash of user information.
-      def user_info
+      def info
         info = SCHEMA_ATTRIBUTES.inject({}) do |hash,attribute|
           hash[attribute] = send(attribute) if respond_to?(attribute)
           hash
         end
-        
-        info['name'] ||= [info['first_name'], info['last_name']].join(' ').strip if info['first_name'] || info['last_name']
-        info['name'] ||= info['nickname']
-
         info
       end
 
