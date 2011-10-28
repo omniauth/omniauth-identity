@@ -29,6 +29,16 @@ Adapters are provided for `ActiveRecord` and `MongoMapper` and are
 autoloaded on request (but not loaded by default so no dependencies are
 injected).
 
+You can also use `Mongoid`, but you need to include it in your class:
+
+    class Identity
+      include Mongoid::Document
+      include OmniAuth::Identity::Models::Mongoid
+
+      # Add whatever you like!
+      
+    end
+
 Once you've got an Identity persistence model and the strategy up and
 running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.
