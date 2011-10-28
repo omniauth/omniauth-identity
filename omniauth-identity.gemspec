@@ -9,8 +9,10 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rack-test', '~> 0.5'
   gem.add_development_dependency 'rake', '~> 0.8'
   gem.add_development_dependency 'rspec', '~> 2.5'
-  gem.add_development_dependency 'bcrypt-ruby', '~> 2.1.4'
-  gem.add_development_dependency 'activerecord', '~> 3.0'
+  gem.add_development_dependency 'bcrypt-ruby', '~> 3.0'
+  gem.add_development_dependency 'activerecord', '~> 3.1'
+  gem.add_development_dependency 'mongoid', '~> 2.3'
+  gem.add_development_dependency 'bson_ext', '~> 1.4'
 
   gem.name = 'omniauth-identity'
   gem.version = OmniAuth::Identity::VERSION
