@@ -9,7 +9,6 @@ module OmniAuth
 
           base.class_eval do
 
-            include ::Mongoid::Document
             include ::OmniAuth::Identity::Model
             include ::OmniAuth::Identity::SecurePassword
 
@@ -27,7 +26,7 @@ module OmniAuth
           end
 
         end
-        
+
       end
     end
   end
