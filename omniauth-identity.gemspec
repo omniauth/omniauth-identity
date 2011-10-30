@@ -11,7 +11,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.5'
   gem.add_development_dependency 'bcrypt-ruby', '~> 3.0'
   gem.add_development_dependency 'activerecord', '~> 3.1'
-  gem.add_development_dependency 'mongoid', '~> 2.3'
+  gem.add_development_dependency 'mongoid', '~> 2.2.3'
+  gem.add_development_dependency 'mongo_mapper'
   gem.add_development_dependency 'bson_ext', '~> 1.4'
 
   gem.name = 'omniauth-identity'

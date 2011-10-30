@@ -18,25 +18,43 @@ look something like this:
 
 Next, you need to create a model (called `Identity by default`) that will be
 able to persist the information provided by the user. Luckily for you, there
-are pre-built models for popular ORMs that make this dead simple. You just
-need to subclass the relevant class:
+are pre-built models for popular ORMs that make this dead simple.
+
+### ActiveRecord
+
+Just subclass `OmniAuth::Identity::Models::ActiveRecord` and provide fields
+in the database for all of the fields you are using.
 
     class Identity < OmniAuth::Identity::Models::ActiveRecord
       # Add whatever you like!
     end
 
-Adapters are provided for `ActiveRecord` and `MongoMapper` and are
-autoloaded on request (but not loaded by default so no dependencies are
-injected).
+### Mongoid
 
-You can also use `Mongoid`, but you need to include it in your class:
+Include the `OmniAuth::Identity::Models::Mongoid` mixin and specify
+fields that you will need.
 
     class Identity
       include Mongoid::Document
       include OmniAuth::Identity::Models::Mongoid
 
-      # Add whatever you like!
-      
+      field :email, type: String
+      field :name, type: String
+      field :password_digest, type: String
+    end
+
+### MongoMapper
+
+Include the `OmniAuth::Identity::Models::MongoMapper` mixin and specify
+fields that you will need.
+
+    class Identity
+      include MongoMapper::Document
+      include OmniAuth::Identity::Models::MongoMapper
+
+      key :email, String
+      key :name, String
+      key :password_digest, String
     end
 
 Once you've got an Identity persistence model and the strategy up and
