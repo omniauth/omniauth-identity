@@ -9,15 +9,19 @@ basic construct for user management and then gets out of the way.
 ## Usage
 
 You use `oa-identity` just like you would any other OmniAuth provider: as a
-Rack middleware. The basic setup for a email/password authentication would
-look something like this:
+Rack middleware. In rails, this would be created by an initializer, such as
+`config/initializers/omniauth.rb`.  The basic setup for a email/password 
+authentication would look something like this:
 
     use OmniAuth::Builder do
-      provider :identity, :fields => [:email]
+      provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
+        :model => Identity,                      # optional: specifies the name of the "Users" model. Defaults to "Identity"
+        :fields => [:email, :custom1, :custom2]  # optional: list of custom fields that are in the model's table
     end
 
-Next, you need to create a model (called `Identity by default`) that will be
-able to persist the information provided by the user. Luckily for you, there
+Next, you need to create a model (called `Identity by default`, but specified 
+by using the `:model` argument above) that will be able to persist the 
+information provided by the user. Luckily for you, there 
 are pre-built models for popular ORMs that make this dead simple.
 
 ### ActiveRecord
@@ -26,7 +30,10 @@ Just subclass `OmniAuth::Identity::Models::ActiveRecord` and provide fields
 in the database for all of the fields you are using.
 
     class Identity < OmniAuth::Identity::Models::ActiveRecord
-      # Add whatever you like!
+      auth_key :email    # optional: specifies the field within the model that will be used during the login process
+                         # defaults to email, but may be username, uid, login, etc.
+                         
+      # Anything else you want!
     end
 
 ### Mongoid
