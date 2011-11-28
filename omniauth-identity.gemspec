@@ -24,7 +24,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://github.com/omniauth/omniauth-identity'
   gem.authors = ['Andrew Roberts', 'Michael Bleigh']
   gem.license     = 'MIT'
-  gem.files         = Dir["lib/**/*", "LICENSE", "README.markdown", "CHANGELOG.md"]
+  gem.files         = Dir["lib/**/*", "LICENSE", "README.md", "CHANGELOG.md"]
   gem.test_files    = Dir["spec/**/*"]
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6') if gem.respond_to? :required_rubygems_version=
