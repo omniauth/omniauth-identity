@@ -26,18 +26,21 @@ This can be a bit hard to understand the first time. Luckily, Ryan Bates made
 a [Railscast](http://railscasts.com/episodes/304-omniauth-identity) about it!
 
 You use `omniauth-identity` just like you would any other OmniAuth provider: as a
-Rack middleware. The basic setup for a email/password authentication would
-look something like this:
+Rack middleware. In rails, this would be created by an initializer, such as
+`config/initializers/omniauth.rb`. The basic setup for a email/password authentication would look something like this:
 
 ```ruby
 use OmniAuth::Builder do
-  provider :identity, :fields => [:email]
+  provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
+    :model => Identity,                      # optional: specifies the name of the "Identity" model. Defaults to "Identity"
+    :fields => [:email, :custom1, :custom2]  # optional: list of custom fields that are in the model's table
 end
 ```
 
-Next, you need to create a model (called `Identity by default`) that will be
-able to persist the information provided by the user. Luckily for you, there
-are pre-built models for popular ORMs that make this dead simple.
+Next, you need to create a model (called `Identity` by default, or specified
+with `:model` argument above) that will be able to persist the information 
+provided by the user. Luckily for you, there are pre-built models for popular
+ORMs that make this dead simple.
 
 **Note:** OmniAuth Identity is different from many other user authentication
 systems in that it is *not* built to store authentication information in your primary
@@ -52,7 +55,10 @@ in the database for all of the fields you are using.
 
 ```ruby
 class Identity < OmniAuth::Identity::Models::ActiveRecord
-  # Add whatever you like!
+  auth_key :email    # optional: specifies the field within the model that will be used during the login process
+                     # defaults to email, but may be username, uid, login, etc.
+                     
+  # Anything else you want!
 end
 ```
 
@@ -96,7 +102,6 @@ class Identity
   property :password_digest, Text
 
   attr_accessor :password_confirmation
-
 end
 ```
 
@@ -112,15 +117,15 @@ class Identity
   property :email
   property :password_digest
 
-  def self.where search_hash
-    CouchPotato.database.view Identity.by_email(:key => search_hash)
+  def self.where(search_hash)
+    CouchPotato.database.view(Identity.by_email(:key => search_hash))
   end
 
   view :by_email, :key => :email
 end
 ```
 
-Once you've got an Identity persistence model and the strategy up and
+Once you've got an `Identity` persistence model and the strategy up and
 running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.
 Once they have authenticated with their identity, OmniAuth will call
@@ -152,7 +157,7 @@ end
 ## Customizing Registration Failure
 
 To use your own custom registration form, create a form that POSTs to
-'/auth/identity/register' with 'password', 'password_confirmation', and your
+`/auth/identity/register` with `password`, `password_confirmation`, and your
 other fields.
 
 ```erb
@@ -168,7 +173,7 @@ other fields.
 Beware not to nest your form parameters within a namespace. This strategy
 looks for the form parameters at the top level of the post params. If you are
 using [simple\_form](https://github.com/plataformatec/simple_form), then you
-can avoid the params nesting by specifying <tt>:input_html</tt>.
+can avoid the params nesting by specifying `:input_html`.
 
 ```erb
 <%= simple_form_for @identity, :url => '/auth/identity/register' do |f| %>
@@ -183,7 +188,7 @@ can avoid the params nesting by specifying <tt>:input_html</tt>.
 
 Next you'll need to let OmniAuth know what action to call when a registration
 fails. In your OmniAuth configuration, specify any valid rack endpoint in the
-<tt>:on_failed_registration</tt> option.
+`:on_failed_registration` option.
 
 ```ruby
 use OmniAuth::Builder do
@@ -206,7 +211,11 @@ within a particular subdomain.  To do so, add :locate_conditions to your config.
 The default value is:
 
 ```ruby
-:locate_conditions => lambda { |req| { model.auth_key => req['auth_key']} }
+use OmniAuth::Builder do
+  provider :identity,
+    :locate_conditions => lambda { |req| { model.auth_key => req['auth_key']} }
+    # ...
+end
 ```
 
 locate_conditions takes a Proc object, and must return a hash.  The resulting hash is used
@@ -224,5 +233,6 @@ MIT License. See LICENSE for details.
 
 ## Copyright
 
-Copyright (c) 2020- Andrew Roberts, and Jellybooks Ltd.
+Copyright (c) 2021 OmniAuth-Identity Maintainers
+Copyright (c) 2020 Peter Boling, Andrew Roberts, and Jellybooks Ltd.
 Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
