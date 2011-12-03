@@ -8,7 +8,7 @@ basic construct for user management and then gets out of the way.
 
 ## Usage
 
-You use `oa-identity` just like you would any other OmniAuth provider: as a
+You use `omniauth-identity` just like you would any other OmniAuth provider: as a
 Rack middleware. The basic setup for a email/password authentication would
 look something like this:
 
