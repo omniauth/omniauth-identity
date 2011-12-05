@@ -8,6 +8,9 @@ basic construct for user management and then gets out of the way.
 
 ## Usage
 
+This can be a bit hard to understand the first time. Luckily, Ryan Bates made
+a [Railscast](http://railscasts.com/episodes/304-omniauth-identity) about it!
+
 You use `omniauth-identity` just like you would any other OmniAuth provider: as a
 Rack middleware. The basic setup for a email/password authentication would
 look something like this:
