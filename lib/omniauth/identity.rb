@@ -12,6 +12,7 @@ module OmniAuth
       autoload :ActiveRecord,   'omniauth/identity/models/active_record'
       autoload :MongoMapper,    'omniauth/identity/models/mongo_mapper'
       autoload :Mongoid,        'omniauth/identity/models/mongoid'
+      autoload :DataMapper,     'omniauth/identity/models/data_mapper'
     end
   end
 end

@@ -60,6 +60,23 @@ fields that you will need.
       key :password_digest, String
     end
 
+### DataMapper
+
+Include the `OmniAuth::Identity::Models::DataMapper` mixin and specify
+fields that you will need.
+
+    class Identity
+      include DataMapper::Resource
+      include OmniAuth::Identity::Models::DataMapper
+
+      property :id,              Serial
+      property :email,           String
+      property :password_digest, Text
+
+      attr_accessor :password_confirmation
+
+    end
+
 Once you've got an Identity persistence model and the strategy up and
 running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.

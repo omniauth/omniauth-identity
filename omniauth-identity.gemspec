@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'activerecord', '~> 3.1'
   gem.add_development_dependency 'mongoid'
   gem.add_development_dependency 'mongo_mapper'
+  gem.add_development_dependency 'datamapper'
   gem.add_development_dependency 'bson_ext'
 
   gem.name = 'omniauth-identity'
