@@ -103,8 +103,8 @@ other fields.
     <%= form_tag '/auth/identity/register' do |f| %>
       <h1>Create an Account</h1>
       <%= text_field_tag :email %>
-      <%= password_field_tag, :password %>
-      <%= password_field_tag, :password_confirmation %>
+      <%= password_field_tag :password %>
+      <%= password_field_tag :password_confirmation %>
       <%= submit_tag %>
     <% end %>
 
