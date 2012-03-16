@@ -30,9 +30,22 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#request_phase' do
-    it 'should display a form' do
-      get '/auth/identity'
-      last_response.body.should be_include("<form")
+    context "registration is enabled" do
+      it 'should display a form with a link' do
+        get '/auth/identity'
+        last_response.body.should be_include("<form")
+        last_response.body.should be_include("<a")
+      end
+    end
+
+    context "registration is disabled" do
+      it 'should display a form without a link if registration is disabled' do
+        set_app!(:enable_registration => false)
+        get '/auth/identity'
+
+        last_response.body.should be_include("<form")
+        last_response.body.should_not be_include("<a")
+      end
     end
   end
 
@@ -72,16 +85,34 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#registration_form' do
-    it 'should trigger from /auth/identity/register by default' do
-      get '/auth/identity/register'
-      last_response.body.should be_include("Register Identity")
+    context 'registration is enabled' do
+      it 'should trigger from /auth/identity/register by default' do
+        get '/auth/identity/register'
+        last_response.body.should be_include("Register Identity")
+      end
+    end
+
+    context 'registration is disabled' do
+      it 'should call app' do
+        set_app!(:enable_registration => false)
+        get '/auth/identity/register'
+        last_response.body.should == "HELLO!"
+      end
     end
   end
 
   describe '#registration_phase' do
+    context 'registration is disabled' do
+      it 'should call app' do
+        set_app!(:enable_registration => false)
+        post '/auth/identity/register'
+        last_response.body.should == "HELLO!"
+      end
+    end
+
     context 'with successful creation' do
       let(:properties){ {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'face',
         :password_confirmation => 'face'
@@ -100,7 +131,7 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with invalid identity' do
       let(:properties) { {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'NOT',
         :password_confirmation => 'MATCHING'

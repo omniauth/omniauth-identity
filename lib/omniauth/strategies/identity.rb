@@ -1,6 +1,6 @@
 module OmniAuth
   module Strategies
-    # The identity strategy allows you to provide simple internal 
+    # The identity strategy allows you to provide simple internal
     # user authentication using the same process flow that you
     # use for external OmniAuth providers.
     class Identity
@@ -8,6 +8,7 @@ module OmniAuth
 
       option :fields, [:name, :email]
       option :on_failed_registration, nil
+      option :enable_registration, true
 
       def request_phase
         OmniAuth::Form.build(
@@ -16,8 +17,8 @@ module OmniAuth
         ) do |f|
           f.text_field 'Login', 'auth_key'
           f.password_field 'Password', 'password'
-          f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
-        end.to_response 
+          f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>" if options[:enable_registration]
+        end.to_response
       end
 
       def callback_phase
@@ -26,7 +27,7 @@ module OmniAuth
       end
 
       def other_phase
-        if on_registration_path?
+        if options[:enable_registration] && on_registration_path?
           if request.get?
             registration_form
           elsif request.post?

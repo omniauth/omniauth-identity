@@ -112,6 +112,16 @@ use OmniAuth::Builder do
 end
 ```
 
+## Disabling registration
+
+To disable the registration feature and disallow unauthorized users to register using the strategy, just set `enable_registration` option to `false` (`true` by default) :
+
+```ruby
+use OmniAuth::Builder do
+  provider :identity, :enable_registration => false
+end
+```
+
 ## Customizing Registration Failure
 
 To use your own custom registration form, create a form that POSTs to
