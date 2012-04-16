@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-class MockIdentity; end
+class MockIdentity
+  def self.auth_key; :email end
+end
 
 describe OmniAuth::Strategies::Identity do
   attr_accessor :app
@@ -42,7 +44,7 @@ describe OmniAuth::Strategies::Identity do
     context 'with valid credentials' do
       before do
         MockIdentity.should_receive('authenticate').with('john','awesome').and_return(user)
-        post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
+        post '/auth/identity/callback', MockIdentity.auth_key => 'john', :password => 'awesome'
       end
 
       it 'should populate the auth hash' do
@@ -62,7 +64,7 @@ describe OmniAuth::Strategies::Identity do
       before do
         OmniAuth.config.on_failure = lambda{|env| [401, {}, [env['omniauth.error.type'].inspect]]}
         MockIdentity.should_receive(:authenticate).with('wrong','login').and_return(false)
-        post '/auth/identity/callback', :auth_key => 'wrong', :password => 'login'
+        post '/auth/identity/callback', MockIdentity.auth_key => 'wrong', :password => 'login'
       end
 
       it 'should fail with :invalid_credentials' do

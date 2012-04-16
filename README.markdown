@@ -112,6 +112,9 @@ use OmniAuth::Builder do
 end
 ```
 
+MyCustomClass should have an class method called #auth_key that returns
+the default ('email') or custom auth_key to use.
+
 ## Customizing Registration Failure
 
 To use your own custom registration form, create a form that POSTs to
