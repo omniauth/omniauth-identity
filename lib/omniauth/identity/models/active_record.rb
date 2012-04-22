@@ -9,14 +9,26 @@ module OmniAuth
 
         self.abstract_class = true
         has_secure_password
-       
+
+        # http://techblog.floorplanner.com/post/20528527222/case-insensitive-validates-uniqueness-of-slowness
         def self.auth_key=(key)
-          super
-          validates_uniqueness_of key, :case_sensitive => false
+          method = super
+          unless key == false
+            index method, :type => :exact
+            before_validation :downcase_auth_key
+            validates method, :uniqueness => true
+          end
+          method
         end
 
         def self.locate(key)
-          where(auth_key => key).first
+          where(auth_key => key.downcase).first
+        end
+
+        def downcase_auth_key
+          if self.auth_key.present?
+            self.auth_key = self.auth_key.downcase
+          end
         end
       end
     end
