@@ -14,7 +14,7 @@ module OmniAuth
           :title => (options[:title] || "Identity Verification"),
           :url => callback_path
         ) do |f|
-          f.text_field 'Login', 'auth_key'
+          f.text_field 'Login', model.auth_key
           f.password_field 'Password', 'password'
           f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
         end.to_response 
@@ -75,7 +75,7 @@ module OmniAuth
       end
 
       def identity
-        @identity ||= model.authenticate(request['auth_key'], request['password'])
+        @identity ||= model.authenticate(request[model.auth_key], request['password'])
       end
 
       def model

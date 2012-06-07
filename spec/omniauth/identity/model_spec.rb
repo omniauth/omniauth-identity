@@ -1,12 +1,16 @@
 require 'spec_helper'
 
-class ExampleModel
+class ClassMethodsExampleModel
+  include OmniAuth::Identity::Model
+end
+
+class InstanceMethodsExampleModel
   include OmniAuth::Identity::Model
 end
 
 describe OmniAuth::Identity::Model do
   context 'Class Methods' do
-    subject{ ExampleModel }
+    subject{ ClassMethodsExampleModel }
 
     describe '.locate' do
       it('should be abstract'){ lambda{ subject.locate('abc') }.should raise_error(NotImplementedError) }
@@ -24,10 +28,24 @@ describe OmniAuth::Identity::Model do
         subject.authenticate('blah','foo').should be_false
       end
     end
+
+    describe '.auth_key' do
+      it 'should default to email if called with false' do
+        subject.auth_key(false).should == 'email'
+      end
+
+      it 'should default to email if called with empty string' do
+        subject.auth_key('').should == 'email'
+      end
+
+      it 'should save the custom auth_key' do
+        subject.auth_key('method_x').should == 'method_x'
+      end
+    end
   end
 
   context 'Instance Methods' do
-    subject{ ExampleModel.new }
+    subject{ InstanceMethodsExampleModel.new }
 
     describe '#authenticate' do
       it('should be abstract'){ lambda{ subject.authenticate('abc') }.should raise_error(NotImplementedError) }
