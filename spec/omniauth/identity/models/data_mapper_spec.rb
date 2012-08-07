@@ -15,8 +15,8 @@ describe(OmniAuth::Identity::Models::DataMapper, :db => true) do
     @resource = DataMapperTestIdentity.new
   end
 
-  it 'should locate using the auth key using a all query' do
-    DataMapperTestIdentity.should_receive(:all).with('ham_sandwich' => 'open faced').and_return(['wakka'])
-    DataMapperTestIdentity.locate('open faced').should == 'wakka'
+  it 'should delegate locate to the all query method' do
+    DataMapperTestIdentity.should_receive(:all).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    DataMapperTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
   end
 end
