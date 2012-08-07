@@ -160,3 +160,23 @@ For more information on rack endpoints, check out [this
 introduction](http://library.edgecase.com/Rails/2011/01/04/rails-routing-and-rack-endpoints.html)
 and
 [ActionController::Metal](http://rubydoc.info/docs/rails/ActionController/Metal)
+
+## Customizing Locate Conditions
+
+You can customize the way that matching records are found when authenticating.
+For example, for a site with multiple domains, you may wish to scope the search
+within a particular subdomain.  To do so, add :locate_conditions to your config.
+The default value is:
+
+```ruby
+:locate_conditions => lambda { |req| { model.auth_key => req['auth_key']} }
+```
+
+locate_conditions takes a Proc object, and must return a hash.  The resulting hash is used
+as a parameter in the locate method for your ORM.  The proc is evaluated in the
+callback context, and has access to the Identity model (using `model`) and receives the request
+object as a parameter.  Note  that model.auth_key defaults to 'email', but is also configurable.
+
+Note: Be careful when customizing locate_conditions.  The best way to modify the conditions is
+to copy the default value, and then add to the hash.  Removing the default condition will almost
+always break things!

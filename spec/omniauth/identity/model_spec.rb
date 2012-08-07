@@ -15,8 +15,14 @@ describe OmniAuth::Identity::Model do
     describe '.authenticate' do
       it 'should call locate and then authenticate' do
         mocked_instance = mock('ExampleModel', :authenticate => 'abbadoo')
-        subject.should_receive(:locate).with('example').and_return(mocked_instance)
-        subject.authenticate('example','pass').should == 'abbadoo'
+        subject.should_receive(:locate).with('email' => 'example').and_return(mocked_instance)
+        subject.authenticate({'email' => 'example'},'pass').should == 'abbadoo'
+      end
+
+      it 'should call locate with additional scopes when provided' do
+        mocked_instance = mock('ExampleModel', :authenticate => 'abbadoo')
+        subject.should_receive(:locate).with('email' => 'example', 'user_type' => 'admin').and_return(mocked_instance)
+        subject.authenticate({'email' => 'example', 'user_type' => 'admin'}, 'pass').should == 'abbadoo'
       end
 
       it 'should recover gracefully if locate is nil' do
