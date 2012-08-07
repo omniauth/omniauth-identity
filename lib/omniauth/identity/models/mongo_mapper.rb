@@ -16,8 +16,8 @@ module OmniAuth
               validates_uniqueness_of key, :case_sensitive => false
             end
 
-            def self.locate(key)
-              where(auth_key => key).first
+            def self.locate(search_hash)
+              where(search_hash).first
             end
           end
         end

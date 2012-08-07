@@ -7,8 +7,9 @@ describe(OmniAuth::Identity::Models::MongoMapper, :db => true) do
     auth_key :ham_sandwich
   end
 
-  it 'should locate using the auth key using a where query' do
-    MongoMapperTestIdentity.should_receive(:where).with('ham_sandwich' => 'open faced').and_return(['wakka'])
-    MongoMapperTestIdentity.locate('open faced').should == 'wakka'
+
+  it 'should delegate locate to the where query method' do
+    MongoMapperTestIdentity.should_receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    MongoMapperTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
   end
 end
