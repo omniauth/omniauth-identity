@@ -21,8 +21,8 @@ module OmniAuth
               validates_uniqueness_of :key
             end
 
-            def self.locate(key)
-              all(auth_key => key).first
+            def self.locate(search_hash)
+              all(search_hash).first
             end
           end
         end

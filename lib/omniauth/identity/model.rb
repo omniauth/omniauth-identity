@@ -23,14 +23,14 @@ module OmniAuth
         # Authenticate a user with the given key and password.
         #
         # @param [String] key The unique login key provided for a given identity.
-        # @param [String] password The presumed password for the identity. 
+        # @param [String] password The presumed password for the identity.
         # @return [Model] An instance of the identity model class.
-        def authenticate(key, password)
-          instance = locate(key)
+        def authenticate(conditions, password)
+          instance = locate(conditions)
           return false unless instance
           instance.authenticate(password)
         end
-        
+
         # Used to set or retrieve the method that will be used to get
         # and set the user-supplied authentication key.
         # @return [String] The method name.

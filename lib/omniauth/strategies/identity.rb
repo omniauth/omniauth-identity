@@ -8,6 +8,7 @@ module OmniAuth
 
       option :fields, [:name, :email]
       option :on_failed_registration, nil
+      option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
 
       def request_phase
         OmniAuth::Form.build(
@@ -75,7 +76,13 @@ module OmniAuth
       end
 
       def identity
-        @identity ||= model.authenticate(request['auth_key'], request['password'])
+        if options.locate_conditions.is_a? Proc
+          conditions = instance_exec(request, &options.locate_conditions)
+          conditions.to_hash
+        else
+          conditions = options.locate_conditions.to_hash
+        end
+        @identity ||= model.authenticate(conditions, request['password'] )
       end
 
       def model

@@ -41,7 +41,8 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with valid credentials' do
       before do
-        MockIdentity.should_receive('authenticate').with('john','awesome').and_return(user)
+        MockIdentity.stub('auth_key').and_return('email')
+        MockIdentity.should_receive('authenticate').with({'email' => 'john'},'awesome').and_return(user)
         post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
 
@@ -60,13 +61,24 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with invalid credentials' do
       before do
+        MockIdentity.stub('auth_key').and_return('email')
         OmniAuth.config.on_failure = lambda{|env| [401, {}, [env['omniauth.error.type'].inspect]]}
-        MockIdentity.should_receive(:authenticate).with('wrong','login').and_return(false)
+        MockIdentity.should_receive(:authenticate).with({'email' => 'wrong'},'login').and_return(false)
         post '/auth/identity/callback', :auth_key => 'wrong', :password => 'login'
       end
 
       it 'should fail with :invalid_credentials' do
         last_response.body.should == ':invalid_credentials'
+      end
+    end
+
+    context 'with auth scopes' do
+
+      it 'should evaluate and pass through conditions proc' do
+        MockIdentity.stub('auth_key').and_return('email')
+        set_app!( :locate_conditions => lambda{|req| {model.auth_key => req['auth_key'], 'user_type' => 'admin'} } )
+        MockIdentity.should_receive('authenticate').with( {'email' => 'john', 'user_type' => 'admin'}, 'awesome' ).and_return(user)
+        post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
     end
   end
@@ -81,13 +93,14 @@ describe OmniAuth::Strategies::Identity do
   describe '#registration_phase' do
     context 'with successful creation' do
       let(:properties){ {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'face',
         :password_confirmation => 'face'
       } }
 
       before do
+        MockIdentity.stub('auth_key').and_return('email')
         m = mock(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
         MockIdentity.should_receive(:create).with(properties).and_return(m)
       end
