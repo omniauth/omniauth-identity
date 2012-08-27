@@ -49,7 +49,8 @@ module OmniAuth
       end
 
       def registration_phase
-        attributes = (options[:fields] + [:password, :password_confirmation]).inject({}){|h,k| h[k] = request[k.to_s]; h}
+        params = request[model.to_s.downcase.to_sym] || request
+        attributes = (options[:fields] + [:password, :password_confirmation]).inject({}){|h,k| h[k] = params[k.to_s]; h}
         @identity = model.create(attributes)
         if @identity.persisted?
           env['PATH_INFO'] = callback_path
