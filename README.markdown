@@ -80,12 +80,13 @@ Include the `OmniAuth::Identity::Models::DataMapper` mixin and specify
 fields that you will need.
 
 ```ruby
+# require 'dm-validations' or 'data_mapper' to get the whole package 
 class Identity
   include DataMapper::Resource
   include OmniAuth::Identity::Models::DataMapper
 
   property :id,              Serial
-  property :email,           String
+  property :email,           String, :required => true, :unique => true, :format => :email_address
   property :password_digest, Text
 
   attr_accessor :password_confirmation
