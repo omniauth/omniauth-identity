@@ -93,6 +93,26 @@ class Identity
 end
 ```
 
+### CouchPotato
+
+Include the `OmniAuth::Identity::Models::CouchPotatoModule` mixin and specify fields that you will need.
+
+```ruby
+class Identity
+  include CouchPotato::Persistence
+  include OmniAuth::Identity::Models::CouchPotatoModule
+
+  property :email
+  property :password_digest
+
+  def self.where search_hash
+    CouchPotato.database.view Identity.by_email(:key => search_hash)
+  end
+
+  view :by_email, :key => :email
+end
+```
+
 Once you've got an Identity persistence model and the strategy up and
 running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.
