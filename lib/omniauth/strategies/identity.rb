@@ -7,19 +7,25 @@ module OmniAuth
       include OmniAuth::Strategy
 
       option :fields, [:name, :email]
+      option :on_login, nil
+      option :on_registration, nil
       option :on_failed_registration, nil
       option :enable_registration, true
       option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
 
       def request_phase
-        OmniAuth::Form.build(
-          :title => (options[:title] || "Identity Verification"),
-          :url => callback_path
-        ) do |f|
-          f.text_field 'Login', 'auth_key'
-          f.password_field 'Password', 'password'
-          f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>" if options[:enable_registration]
-        end.to_response
+        if options[:on_login]
+          options[:on_login].call(self.env)
+        else
+          OmniAuth::Form.build(
+            :title => (options[:title] || "Identity Verification"),
+            :url => callback_path
+          ) do |f|
+            f.text_field 'Login', 'auth_key'
+            f.password_field 'Password', 'password'
+            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>" if options[:enable_registration]
+          end.to_response
+        end
       end
 
       def callback_phase
@@ -30,7 +36,11 @@ module OmniAuth
       def other_phase
         if options[:enable_registration] && on_registration_path?
           if request.get?
-            registration_form
+            if options[:on_registration]
+              options[:on_registration].call(self.env)
+            else
+              registration_form
+            end
           elsif request.post?
             registration_phase
           end
