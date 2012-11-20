@@ -36,11 +36,7 @@ module OmniAuth
       def other_phase
         if options[:enable_registration] && on_registration_path?
           if request.get?
-            if options[:on_registration]
-              options[:on_registration].call(self.env)
-            else
-              registration_form
-            end
+            registration_form
           elsif request.post?
             registration_phase
           end
@@ -50,13 +46,17 @@ module OmniAuth
       end
 
       def registration_form
-        OmniAuth::Form.build(:title => 'Register Identity') do |f|
-          options[:fields].each do |field|
-            f.text_field field.to_s.capitalize, field.to_s
-          end
-          f.password_field 'Password', 'password'
-          f.password_field 'Confirm Password', 'password_confirmation'
-        end.to_response
+        if options[:on_registration]
+          options[:on_registration].call(self.env)
+        else
+          OmniAuth::Form.build(:title => 'Register Identity') do |f|
+            options[:fields].each do |field|
+              f.text_field field.to_s.capitalize, field.to_s
+            end
+            f.password_field 'Password', 'password'
+            f.password_field 'Confirm Password', 'password_confirmation'
+          end.to_response
+        end
       end
 
       def registration_phase
