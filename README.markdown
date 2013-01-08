@@ -26,7 +26,7 @@ able to persist the information provided by the user. Luckily for you, there
 are pre-built models for popular ORMs that make this dead simple.
 
 **Note:** OmniAuth Identity is different from many other user authentication
-systems in that it is *not* intended to be associated with your primary
+systems in that it is *not* built to store authentication information in your primary
 `User` model. Instead, the `Identity` model should be **associated** with your
 `User` model giving you maximum flexibility to include other authentication
 strategies such as Facebook, Twitter, etc.
