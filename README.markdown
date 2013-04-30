@@ -113,6 +113,21 @@ class Identity
 end
 ```
 
+### Sequel
+
+Include the `OmniAuth::Identity::Models::Sequel` mixin and and provide 
+fields in the database for all of the fields you are using.
+
+```ruby
+class Identity
+	include OmniAuth::Identity::Models::Sequel
+
+  attr_accessor :password_confirmation
+
+  # Add whatever you like!
+end
+```
+
 Once you've got an Identity persistence model and the strategy up and
 running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.

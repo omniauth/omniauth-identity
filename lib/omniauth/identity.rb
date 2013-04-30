@@ -14,6 +14,7 @@ module OmniAuth
       autoload :Mongoid,           'omniauth/identity/models/mongoid'
       autoload :DataMapper,        'omniauth/identity/models/data_mapper'
       autoload :CouchPotatoModule, 'omniauth/identity/models/couch_potato'
+      autoload :Sequel,            'omniauth/identity/models/sequel'
     end
   end
 end

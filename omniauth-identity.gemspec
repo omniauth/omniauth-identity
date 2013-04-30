@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'datamapper'
   gem.add_development_dependency 'bson_ext'
   gem.add_development_dependency 'couch_potato'
+  gem.add_development_dependency 'sequel'
 
   gem.name = 'omniauth-identity'
   gem.version = OmniAuth::Identity::VERSION
