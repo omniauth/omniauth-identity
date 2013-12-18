@@ -1,0 +1,6 @@
+test:
+  sessions:
+    default:
+      database: omniauth_identity_test
+      hosts:
+        - localhost:27017

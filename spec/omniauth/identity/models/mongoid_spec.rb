@@ -7,6 +7,8 @@ describe(OmniAuth::Identity::Models::Mongoid, :db => true) do
     auth_key :ham_sandwich
   end
 
+  Mongoid.load! File.expand_path('../../../../support/mongoid.yml', __FILE__), 'test'
+
   it 'should delegate locate to the where query method' do
     MongoidTestIdentity.should_receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
     MongoidTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
