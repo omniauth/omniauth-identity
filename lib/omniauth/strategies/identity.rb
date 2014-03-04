@@ -38,6 +38,8 @@ module OmniAuth
             registration_form
           elsif request.post?
             registration_phase
+          else
+            call_app!
           end
         else
           call_app!

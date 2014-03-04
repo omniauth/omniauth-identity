@@ -88,6 +88,10 @@ describe OmniAuth::Strategies::Identity do
       get '/auth/identity/register'
       last_response.body.should be_include("Register Identity")
     end
+    it 'should support methods other than GET and POST' do
+      head '/auth/identity/register'
+      last_response.status.should eql(404)
+    end
   end
 
   describe '#registration_phase' do
