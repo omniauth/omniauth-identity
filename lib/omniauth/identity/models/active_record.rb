@@ -16,6 +16,9 @@ module OmniAuth
         end
 
         def self.locate(search_hash)
+          if self.column_names.include? 'provider'
+            search_hash[:provider] = 'identity'
+          end
           where(search_hash).first
         end
       end
