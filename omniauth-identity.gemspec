@@ -24,6 +24,7 @@ Gem::Specification.new do |gem|
   gem.email = ['michael@intridea.com']
   gem.homepage = 'http://github.com/intridea/omniauth-identity'
   gem.authors = ['Michael Bleigh']
+  gem.license     = 'MIT'
   gem.executables = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f)}
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
