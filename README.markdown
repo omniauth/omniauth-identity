@@ -200,3 +200,11 @@ object as a parameter.  Note  that model.auth_key defaults to 'email', but is al
 Note: Be careful when customizing locate_conditions.  The best way to modify the conditions is
 to copy the default value, and then add to the hash.  Removing the default condition will almost
 always break things!
+
+## License
+
+MIT License. See LICENSE for details.
+
+## Copyright
+
+Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
