@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     omniauth-identity (1.1.1)
-      bcrypt-ruby (~> 3.0)
+      bcrypt (~> 3.1)
       omniauth (~> 1.0)
 
 GEM
@@ -21,6 +21,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     arel (3.0.2)
+    bcrypt (3.1.10)
     bcrypt-ruby (3.0.1)
     bson (1.9.0)
     bson_ext (1.9.0)
@@ -90,9 +91,9 @@ GEM
     guard-rspec (3.0.2)
       guard (>= 1.8)
       rspec (~> 2.13)
-    hashie (2.0.5)
+    hashie (3.4.2)
     i18n (0.6.1)
-    json (1.8.0)
+    json (1.8.3)
     json_pure (1.8.0)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
@@ -116,9 +117,9 @@ GEM
       tzinfo (~> 0.3.22)
     moped (1.5.0)
     multi_json (1.7.7)
-    omniauth (1.1.4)
-      hashie (>= 1.2, < 3)
-      rack
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
     origin (1.1.0)
     plucky (0.5.2)
       mongo (~> 1.5)
@@ -177,3 +178,6 @@ DEPENDENCIES
   rb-fsevent
   rspec (~> 2.7)
   simplecov (~> 0.4)
+
+BUNDLED WITH
+   1.10.6
