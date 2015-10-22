@@ -44,11 +44,15 @@ module OmniAuth
         end
       end
 
-      def registration_form
+      def registration_form(validation_message = nil)
         if options[:on_registration]
           options[:on_registration].call(self.env)
         else
           OmniAuth::Form.build(:title => 'Register Identity') do |f|
+            if validation_message
+              f.html "<p style='color:red'>#{validation_message}</p>"
+            end
+
             options[:fields].each do |field|
               f.text_field field.to_s.capitalize, field.to_s
             end
@@ -69,7 +73,8 @@ module OmniAuth
             self.env['omniauth.identity'] = @identity
             options[:on_failed_registration].call(self.env)
           else
-            registration_form
+            validation_message = "One or more fields were invalid"
+            registration_form(validation_message)
           end
         end
       end

@@ -113,7 +113,7 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with invalid identity' do
       let(:properties) { {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'NOT',
         :password_confirmation => 'MATCHING'
@@ -127,6 +127,7 @@ describe OmniAuth::Strategies::Identity do
         it 'should show registration form' do
           post '/auth/identity/register', properties
           last_response.body.should be_include("Register Identity")
+          last_response.body.should be_include("One or more fields were invalid")
         end
       end
 
