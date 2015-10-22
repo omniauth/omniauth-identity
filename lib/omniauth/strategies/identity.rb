@@ -16,14 +16,18 @@ module OmniAuth
         if options[:on_login]
           options[:on_login].call(self.env)
         else
-          OmniAuth::Form.build(
-            :title => (options[:title] || "Identity Verification"),
-            :url => callback_path
-          ) do |f|
-            f.text_field 'Login', 'auth_key'
-            f.password_field 'Password', 'password'
-            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
-          end.to_response
+          build_omniauth_login_form.to_response
+        end
+      end
+
+      def build_omniauth_login_form
+        OmniAuth::Form.build(
+          :title => (options[:title] || "Identity Verification"),
+          :url => callback_path
+        ) do |f|
+          f.text_field 'Login', 'auth_key'
+          f.password_field 'Password', 'password'
+          f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
         end
       end
 
@@ -48,13 +52,17 @@ module OmniAuth
         if options[:on_registration]
           options[:on_registration].call(self.env)
         else
-          OmniAuth::Form.build(:title => 'Register Identity') do |f|
-            options[:fields].each do |field|
-              f.text_field field.to_s.capitalize, field.to_s
-            end
-            f.password_field 'Password', 'password'
-            f.password_field 'Confirm Password', 'password_confirmation'
-          end.to_response
+          build_omniauth_registration_form.to_response
+        end
+      end
+
+      def build_omniauth_registration_form
+        OmniAuth::Form.build(:title => 'Register Identity') do |f|
+          options[:fields].each do |field|
+            f.text_field field.to_s.capitalize, field.to_s
+          end
+          f.password_field 'Password', 'password'
+          f.password_field 'Confirm Password', 'password_confirmation'
         end
       end
 
@@ -65,12 +73,16 @@ module OmniAuth
           env['PATH_INFO'] = callback_path
           callback_phase
         else
-          if options[:on_failed_registration]
-            self.env['omniauth.identity'] = @identity
-            options[:on_failed_registration].call(self.env)
-          else
-            registration_form
-          end
+          show_custom_options_or_default
+        end
+      end
+
+      def show_custom_options_or_default
+        if options[:on_failed_registration]
+          self.env['omniauth.identity'] = @identity
+          options[:on_failed_registration].call(self.env)
+        else
+          registration_form
         end
       end
 
