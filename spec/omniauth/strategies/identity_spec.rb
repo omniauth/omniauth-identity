@@ -113,7 +113,7 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with invalid identity' do
       let(:properties) { {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'NOT',
         :password_confirmation => 'MATCHING'
@@ -135,6 +135,13 @@ describe OmniAuth::Strategies::Identity do
           set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
             post '/auth/identity/register', properties
             identity_hash.should_not be_nil
+          end
+        end
+
+        it 'should use custom endpoint response' do
+          set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
+            post '/auth/identity/register', properties
+            last_response.body.should be_include("HELLO!")
           end
         end
       end
