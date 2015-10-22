@@ -20,7 +20,7 @@ module OmniAuth
             :title => (options[:title] || "Identity Verification"),
             :url => callback_path
           ) do |f|
-            f.text_field 'Login', 'auth_key'
+            f.text_field 'Login Email', 'auth_key'
             f.password_field 'Password', 'password'
             f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
           end.to_response
