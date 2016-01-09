@@ -36,7 +36,7 @@ module OmniAuth
         # @return [String] The method name.
         def auth_key(method = false)
           @auth_key = method.to_s unless method == false
-          @auth_key = nil if @auth_key == ''
+          @auth_key = nil if !defined?(@auth_key) || @auth_key == ''
 
           @auth_key || 'email'
         end
