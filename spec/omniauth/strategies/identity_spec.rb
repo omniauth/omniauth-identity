@@ -109,11 +109,32 @@ describe OmniAuth::Strategies::Identity do
         post '/auth/identity/register', properties
         auth_hash['uid'].should == 'abc'
       end
+
+      context 'custom validation stage' do
+
+        context 'validation method returns true' do
+          it 'should register the user normally' do
+            set_app!(:on_validation => lambda{|env| true})
+
+            post '/auth/identity/register', properties
+            identity_hash.should_not be_nil
+          end
+        end
+
+        context 'validation method returns false' do
+          it 'should not register the user' do
+            set_app!(:on_validation => lambda{|env| false})
+
+            post '/auth/identity/register', properties
+            identity_hash.should be_nil
+          end
+        end
+      end
     end
 
     context 'with invalid identity' do
       let(:properties) { {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'NOT',
         :password_confirmation => 'MATCHING'
