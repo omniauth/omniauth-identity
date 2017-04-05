@@ -37,7 +37,7 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#callback_phase' do
-    let(:user){ mock(:uid => 'user1', :info => {'name' => 'Rockefeller'})}
+    let(:user){ double(:uid => 'user1', :info => {'name' => 'Rockefeller'})}
 
     context 'with valid credentials' do
       before do
@@ -101,7 +101,7 @@ describe OmniAuth::Strategies::Identity do
 
       before do
         MockIdentity.stub('auth_key').and_return('email')
-        m = mock(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
+        m = double(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
         MockIdentity.should_receive(:create).with(properties).and_return(m)
       end
 
@@ -120,7 +120,7 @@ describe OmniAuth::Strategies::Identity do
       } }
 
       before do
-        MockIdentity.should_receive(:create).with(properties).and_return(mock(:persisted? => false))
+        MockIdentity.should_receive(:create).with(properties).and_return(double(:persisted? => false))
       end
 
       context 'default' do
