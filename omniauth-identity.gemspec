@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'activemodel-serializers-xml'
   gem.add_development_dependency 'active_model_serializers'
   gem.add_development_dependency 'mongoid', '~> 6.1.0'
+  gem.add_development_dependency 'nobrainer'
 #  gem.add_development_dependency 'mongo_mapper', '~> 0.14.0'
   gem.add_development_dependency 'datamapper'
   gem.add_development_dependency 'bson_ext'
