@@ -92,7 +92,7 @@ GEM
       rspec (~> 2.13)
     hashie (2.0.5)
     i18n (0.6.1)
-    json (1.8.0)
+    json (1.8.2)
     json_pure (1.8.0)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
