@@ -12,7 +12,7 @@ describe OmniAuth::Strategies::Identity do
     identity_options = {:model => MockIdentity}.merge(identity_options)
     old_app = self.app
     self.app = Rack::Builder.app do
-      use Rack::Session::Cookie
+      use Rack::Session::Cookie, secret: '1234567890qwertyuiop'
       use OmniAuth::Strategies::Identity, identity_options
       run lambda{|env| [404, {'env' => env}, ["HELLO!"]]}
     end
