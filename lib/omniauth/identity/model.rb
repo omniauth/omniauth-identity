@@ -75,7 +75,7 @@ module OmniAuth
       #
       # @return [String] An identifier string unique to this identity.
       def uid
-        if respond_to?('id')
+        if respond_to?(:id)
           return nil if self.id.nil?
           self.id.to_s
         else
@@ -90,7 +90,7 @@ module OmniAuth
       # @return [String] An identifying string that will be entered by
       #   users upon sign in.
       def auth_key
-        if respond_to?(self.class.auth_key)
+        if respond_to?(self.class.auth_key.to_sym)
           send(self.class.auth_key)
         else
           raise NotImplementedError
@@ -104,8 +104,9 @@ module OmniAuth
       # @param [String] value The value to which the auth key should be
       #   set.
       def auth_key=(value)
-        if respond_to?(self.class.auth_key + '=')
-          send(self.class.auth_key + '=', value)
+        auth_key_setter = (self.class.auth_key + '=').to_sym
+        if respond_to?(auth_key_setter)
+          send(auth_key_setter, value)
         else
           raise NotImplementedError
         end

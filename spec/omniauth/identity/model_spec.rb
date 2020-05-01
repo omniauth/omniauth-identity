@@ -13,19 +13,19 @@ describe OmniAuth::Identity::Model do
     describe '.authenticate' do
       it 'should call locate and then authenticate' do
         mocked_instance = double('ExampleModel', :authenticate => 'abbadoo')
-        expect(subject).to receive(:locate).with('email' => 'example').and_return(mocked_instance)
+        allow(subject).to receive(:locate).with('email' => 'example').and_return(mocked_instance)
         expect(subject.authenticate({'email' => 'example'},'pass')).to eq('abbadoo')
       end
 
       it 'should call locate with additional scopes when provided' do
         mocked_instance = double('ExampleModel', :authenticate => 'abbadoo')
-        expect(subject).to receive(:locate).with('email' => 'example', 'user_type' => 'admin').and_return(mocked_instance)
+        allow(subject).to receive(:locate).with('email' => 'example', 'user_type' => 'admin').and_return(mocked_instance)
         expect(subject.authenticate({'email' => 'example', 'user_type' => 'admin'}, 'pass')).to eq('abbadoo')
       end
 
       it 'should recover gracefully if locate is nil' do
         allow(subject).to receive(:locate).and_return(nil)
-        expect(subject.authenticate('blah','foo')).to be_false
+        expect(subject.authenticate('blah','foo')).to be false
       end
     end
   end
@@ -39,7 +39,7 @@ describe OmniAuth::Identity::Model do
 
     describe '#uid' do
       it 'should default to #id' do
-        expect(subject).to receive(:respond_to?).with('id').and_return(true)
+        allow(subject).to receive(:respond_to?).with(:id).and_return(true)
         allow(subject).to receive(:id).and_return 'wakka-do'
         expect(subject.uid).to eq('wakka-do')
       end
@@ -50,14 +50,14 @@ describe OmniAuth::Identity::Model do
       end
 
       it 'should raise NotImplementedError if #id is not defined' do
-        expect(subject).to receive(:respond_to?).with('id').and_return(false)
+        allow(subject).to receive(:respond_to?).with(:id).and_return(false)
         expect{ subject.uid }.to raise_error(NotImplementedError)
       end
     end
 
     describe '#auth_key' do
       it 'should default to #email' do
-        expect(subject).to receive(:respond_to?).with('email').and_return(true)
+        allow(subject).to receive(:respond_to?).with(:email).and_return(true)
         allow(subject).to receive(:email).and_return('bob@bob.com')
         expect(subject.auth_key).to eq('bob@bob.com')
       end
@@ -76,7 +76,7 @@ describe OmniAuth::Identity::Model do
 
     describe '#auth_key=' do
       it 'should default to setting email' do
-        expect(subject).to receive(:respond_to?).with('email=').and_return(true)
+        allow(subject).to receive(:respond_to?).with(:email=).and_return(true)
         expect(subject).to receive(:email=).with 'abc'
         
         subject.auth_key = 'abc'
@@ -84,8 +84,8 @@ describe OmniAuth::Identity::Model do
 
       it 'should use a custom .auth_key if one is provided' do
         subject.class.auth_key 'login'
-        expect(subject).to receive(:respond_to?).with('login=').and_return(true)
-        expect(subject).to receive('login=').with('abc')
+        allow(subject).to receive(:respond_to?).with(:login=).and_return(true)
+        expect(subject).to receive(:login=).with('abc')
 
         subject.auth_key = 'abc'
       end
