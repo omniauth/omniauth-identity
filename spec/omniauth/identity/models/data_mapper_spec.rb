@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe(OmniAuth::Identity::Models::DataMapper, :db => true) do
   class DataMapperTestIdentity
     include DataMapper::Resource

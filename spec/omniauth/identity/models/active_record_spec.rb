@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe(OmniAuth::Identity::Models::ActiveRecord, :db => true) do
   class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 

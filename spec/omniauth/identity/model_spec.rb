@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 class ExampleModel
   include OmniAuth::Identity::Model
 end
