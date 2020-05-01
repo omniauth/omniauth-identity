@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 class MockIdentity; end
 
 describe OmniAuth::Strategies::Identity do

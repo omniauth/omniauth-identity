@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
   class CouchPotatoTestIdentity
     include CouchPotato::Persistence

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 class HasTheMethod
   def self.has_secure_password; end
 end
