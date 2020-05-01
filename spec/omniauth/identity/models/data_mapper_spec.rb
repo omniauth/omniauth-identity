@@ -1,4 +1,4 @@
-describe(OmniAuth::Identity::Models::DataMapper, :db => true) do
+describe(OmniAuth::Identity::Models::DataMapper, :db => true, type: :model) do
   class DataMapperTestIdentity
     include DataMapper::Resource
     include OmniAuth::Identity::Models::DataMapper
