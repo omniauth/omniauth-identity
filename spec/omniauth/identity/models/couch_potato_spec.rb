@@ -1,12 +1,16 @@
-describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true, type: :model) do
+describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
   class CouchPotatoTestIdentity
     include CouchPotato::Persistence
     include OmniAuth::Identity::Models::CouchPotatoModule
     auth_key :ham_sandwich
   end
 
-  it 'should delegate locate to the where query method' do
-    expect(CouchPotatoTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    expect(CouchPotatoTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+  describe 'model', type: :model do
+    subject { CouchPotatoTestIdentity }
+
+    it 'should delegate locate to the where query method' do
+      allow(subject).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+      expect(subject.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+    end
   end
 end
