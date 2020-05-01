@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'mongoid'
   gem.add_development_dependency 'datamapper'
   gem.add_development_dependency 'bson_ext'
+  gem.add_development_dependency 'byebug'
   gem.add_development_dependency 'couch_potato'
 
   gem.name = 'omniauth-identity'

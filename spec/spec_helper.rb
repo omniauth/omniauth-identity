@@ -7,6 +7,7 @@ SimpleCov.start
 
 require 'rack/test'
 require 'omniauth/identity'
+require 'byebug'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
