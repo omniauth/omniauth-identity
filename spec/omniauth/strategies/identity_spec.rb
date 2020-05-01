@@ -41,19 +41,19 @@ describe OmniAuth::Strategies::Identity do
         set_app!(:enable_registration => false)
         get '/auth/identity'
 
-        last_response.body.should be_include("<form")
-        last_response.body.should_not be_include("<a")
+        expect(last_response.body).to be_include("<form")
+        expect(last_response.body).not_to be_include("<a")
       end
     end
   end
 
   describe '#callback_phase' do
-    let(:user){ mock(:uid => 'user1', :info => {'name' => 'Rockefeller'})}
+    let(:user){ double(:uid => 'user1', :info => {'name' => 'Rockefeller'})}
 
     context 'with valid credentials' do
       before do
-        MockIdentity.stub('auth_key').and_return('email')
-        MockIdentity.should_receive('authenticate').with({'email' => 'john'},'awesome').and_return(user)
+        allow(MockIdentity).to receive('auth_key').and_return('email')
+        expect(MockIdentity).to receive('authenticate').with({'email' => 'john'},'awesome').and_return(user)
         post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
 
@@ -62,33 +62,33 @@ describe OmniAuth::Strategies::Identity do
       end
 
       it 'should populate the uid' do
-        auth_hash['uid'].should == 'user1'
+        expect(auth_hash['uid']).to eq('user1')
       end
 
       it 'should populate the info hash' do
-        auth_hash['info'].should == {'name' => 'Rockefeller'}
+        expect(auth_hash['info']).to eq({'name' => 'Rockefeller'})
       end
     end
 
     context 'with invalid credentials' do
       before do
-        MockIdentity.stub('auth_key').and_return('email')
+        allow(MockIdentity).to receive('auth_key').and_return('email')
         OmniAuth.config.on_failure = lambda{|env| [401, {}, [env['omniauth.error.type'].inspect]]}
-        MockIdentity.should_receive(:authenticate).with({'email' => 'wrong'},'login').and_return(false)
+        expect(MockIdentity).to receive(:authenticate).with({'email' => 'wrong'},'login').and_return(false)
         post '/auth/identity/callback', :auth_key => 'wrong', :password => 'login'
       end
 
       it 'should fail with :invalid_credentials' do
-        last_response.body.should == ':invalid_credentials'
+        expect(last_response.body).to eq(':invalid_credentials')
       end
     end
 
     context 'with auth scopes' do
 
       it 'should evaluate and pass through conditions proc' do
-        MockIdentity.stub('auth_key').and_return('email')
+        allow(MockIdentity).to receive('auth_key').and_return('email')
         set_app!( :locate_conditions => lambda{|req| {model.auth_key => req['auth_key'], 'user_type' => 'admin'} } )
-        MockIdentity.should_receive('authenticate').with( {'email' => 'john', 'user_type' => 'admin'}, 'awesome' ).and_return(user)
+        expect(MockIdentity).to receive('authenticate').with( {'email' => 'john', 'user_type' => 'admin'}, 'awesome' ).and_return(user)
         post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
     end
@@ -98,7 +98,7 @@ describe OmniAuth::Strategies::Identity do
     context 'registration is enabled' do
       it 'should trigger from /auth/identity/register by default' do
         get '/auth/identity/register'
-        last_response.body.should be_include("Register Identity")
+      expect(last_response.body).to be_include("Register Identity")
       end
     end
 
@@ -129,14 +129,14 @@ describe OmniAuth::Strategies::Identity do
       } }
 
       before do
-        MockIdentity.stub('auth_key').and_return('email')
-        m = mock(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
-        MockIdentity.should_receive(:create).with(properties).and_return(m)
+        allow(MockIdentity).to receive('auth_key').and_return('email')
+        m = double(:uid => 'abc', :name => 'Awesome Dude', :email => 'awesome@example.com', :info => {:name => 'DUUUUDE!'}, :persisted? => true)
+        expect(MockIdentity).to receive(:create).with(properties).and_return(m)
       end
 
       it 'should set the auth hash' do
         post '/auth/identity/register', properties
-        auth_hash['uid'].should == 'abc'
+        expect(auth_hash['uid']).to eq('abc')
       end
     end
 
@@ -149,13 +149,13 @@ describe OmniAuth::Strategies::Identity do
       } }
 
       before do
-        MockIdentity.should_receive(:create).with(properties).and_return(mock(:persisted? => false))
+        expect(MockIdentity).to receive(:create).with(properties).and_return(double(:persisted? => false))
       end
 
       context 'default' do
         it 'should show registration form' do
           post '/auth/identity/register', properties
-          last_response.body.should be_include("Register Identity")
+          expect(last_response.body).to be_include("Register Identity")
         end
       end
 
@@ -163,7 +163,7 @@ describe OmniAuth::Strategies::Identity do
         it 'should set the identity hash' do
           set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
             post '/auth/identity/register', properties
-            identity_hash.should_not be_nil
+            expect(identity_hash).not_to be_nil
           end
         end
       end

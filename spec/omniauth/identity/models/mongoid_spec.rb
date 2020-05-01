@@ -6,8 +6,8 @@ describe(OmniAuth::Identity::Models::Mongoid, :db => true, type: :model) do
   end
 
   it 'should delegate locate to the where query method' do
-    MongoidTestIdentity.should_receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    MongoidTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
+    expect(MongoidTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    expect(MongoidTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
   end
 
   # it 'should not use STI rules for its collection name' do
