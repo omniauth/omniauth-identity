@@ -6,7 +6,7 @@ describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true, type: :mode
   end
 
   it 'should delegate locate to the where query method' do
-    CouchPotatoTestIdentity.should_receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    CouchPotatoTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
+    expect(CouchPotatoTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    expect(CouchPotatoTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
   end
 end

@@ -14,7 +14,7 @@ describe(OmniAuth::Identity::Models::DataMapper, :db => true, type: :model) do
   end
 
   it 'should delegate locate to the all query method' do
-    DataMapperTestIdentity.should_receive(:all).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    DataMapperTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches').should == 'wakka'
+    expect(DataMapperTestIdentity).to receive(:all).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    expect(DataMapperTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
   end
 end
