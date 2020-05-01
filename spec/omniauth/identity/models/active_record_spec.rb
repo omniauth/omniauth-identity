@@ -1,12 +1,16 @@
-describe(OmniAuth::Identity::Models::ActiveRecord, :db => true, type: :model) do
+describe(OmniAuth::Identity::Models::ActiveRecord, :db => true) do
   class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 
-  it 'should delegate locate to the where query method' do
-    expect(TestIdentity).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    expect(TestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
-  end
+  describe "model", type: :model do
+    subject { TestIdentity }
 
-  it 'should not use STI rules for its table name' do
-    expect(TestIdentity.table_name).to eq('test_identities')
+    it 'should delegate locate to the where query method' do
+      allow(subject).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+      expect(subject.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+    end
+
+    it 'should not use STI rules for its table name' do
+      expect(subject.table_name).to eq('test_identities')
+    end
   end
 end

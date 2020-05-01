@@ -1,16 +1,23 @@
-describe(OmniAuth::Identity::Models::Mongoid, :db => true, type: :model) do
+describe(OmniAuth::Identity::Models::Mongoid, :db => true) do
   class MongoidTestIdentity
     include Mongoid::Document
     include OmniAuth::Identity::Models::Mongoid
     auth_key :ham_sandwich
+    store_in database: 'db1', collection: 'mongoid_test_identities', client: 'secondary'
   end
 
-  it 'should delegate locate to the where query method' do
-    expect(MongoidTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
-    expect(MongoidTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
-  end
+  describe "model", type: :model do
+    subject { MongoidTestIdentity }
 
-  # it 'should not use STI rules for its collection name' do
-  #   MongoidTestIdentity.collection.name.should == 'mongoid_test_identities'
-  # end
+    it { is_expected.to be_mongoid_document }
+
+    it 'does not munge collection name' do
+      is_expected.to be_stored_in(database: 'db1', collection: 'mongoid_test_identities', client: 'secondary')
+    end
+
+    it 'should delegate locate to the where query method' do
+      allow(subject).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+      expect(subject.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+    end
+  end
 end
