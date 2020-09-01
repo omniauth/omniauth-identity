@@ -60,19 +60,12 @@ end
 
 ### MongoMapper
 
-Include the `OmniAuth::Identity::Models::MongoMapper` mixin and specify
-fields that you will need.
+Unfortunately MongoMapper is **not supported** in `omniauth-identity` from >= v2.0 as a result of it 
+not being maintained for several years.
 
-```ruby
-class Identity
-  include MongoMapper::Document
-  include OmniAuth::Identity::Models::MongoMapper
-
-  key :email, String
-  key :name, String
-  key :password_digest, String
-end
-```
+It wasn't possible to include Mongoid *and* MongoMapper due to incompatible gem version 
+requirements. Therefore precedence was given to Mongoid as it is significantly more 
+popular and actively maintained. 
 
 ### DataMapper
 
@@ -207,4 +200,5 @@ MIT License. See LICENSE for details.
 
 ## Copyright
 
+Copyright (c) 2020- Andrew Roberts, and Jellybooks Ltd.
 Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
