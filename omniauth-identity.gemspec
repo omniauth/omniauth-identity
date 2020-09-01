@@ -21,9 +21,8 @@ Gem::Specification.new do |gem|
   gem.version = OmniAuth::Identity::VERSION
   gem.description = %q{Internal authentication handlers for OmniAuth.}
   gem.summary = gem.description
-  gem.email = ['michael@intridea.com']
-  gem.homepage = 'http://github.com/intridea/omniauth-identity'
-  gem.authors = ['Michael Bleigh']
+  gem.homepage = 'http://github.com/omniauth/omniauth-identity'
+  gem.authors = ['Andrew Roberts', 'Michael Bleigh']
   gem.license     = 'MIT'
   gem.executables = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f)}
   gem.files = `git ls-files`.split("\n")
