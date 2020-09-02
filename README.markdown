@@ -6,6 +6,20 @@ to give up the simple authentication flow provided by OmniAuth. Identity
 is designed on purpose to be as featureless as possible: it provides the
 basic construct for user management and then gets out of the way.
 
+## Installation
+
+To acquire the latest release from RubyGems add the following to your `Gemfile`:
+
+```ruby
+gem 'omniauth-identity'
+```
+
+If the git repository has new commits not yet in an official release, simply specify the repo instead:
+
+```ruby
+gem 'omniauth-identity', git: 'https://github.com/intridea/omniauth-identity.git'
+```
+
 ## Usage
 
 This can be a bit hard to understand the first time. Luckily, Ryan Bates made
