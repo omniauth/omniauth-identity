@@ -1,6 +1,19 @@
-/coverage
-/pkg
-/doc
-Gemfile.lock
+/.tool-versions
 /.ruby-version
 /.ruby-gemset
+
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+*.gem
+
+# rspec failure tracking
+.rspec_status
+.byebug_history
