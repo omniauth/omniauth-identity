@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Add option `:enable_login` to bypass OmniAuth disabling of GET method (default `true`)
 - README updates, including a rename to README.md
 
 ### Removed
