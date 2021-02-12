@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add option `:enable_login` to bypass OmniAuth disabling of GET method (default `true`)
+  - NOTE: This restores compatibility between this gem and the current, core, omniauth gem!
 - README updates, including a rename to README.md
 
 ### Removed
