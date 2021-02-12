@@ -10,6 +10,7 @@ module OmniAuth
       option :on_login, nil
       option :on_registration, nil
       option :on_failed_registration, nil
+      option :enable_registration, true
       option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
 
       def request_phase
@@ -22,7 +23,7 @@ module OmniAuth
           ) do |f|
             f.text_field 'Login', 'auth_key'
             f.password_field 'Password', 'password'
-            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
+            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>" if options[:enable_registration]
           end.to_response
         end
       end
@@ -33,7 +34,7 @@ module OmniAuth
       end
 
       def other_phase
-        if on_registration_path?
+        if options[:enable_registration] && on_registration_path?
           if request.get?
             registration_form
           elsif request.post?

@@ -28,9 +28,22 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#request_phase' do
-    it 'should display a form' do
-      get '/auth/identity'
-      expect(last_response.body).to be_include("<form")
+    context "registration is enabled" do
+      it 'should display a form with a link' do
+        get '/auth/identity'
+        expect(last_response.body).to be_include("<form")
+        expect(last_response.body).to be_include("<a")
+      end
+    end
+
+    context "registration is disabled" do
+      it 'should display a form without a link if registration is disabled' do
+        set_app!(:enable_registration => false)
+        get '/auth/identity'
+
+        expect(last_response.body).to be_include("<form")
+        expect(last_response.body).not_to be_include("<a")
+      end
     end
   end
 
@@ -82,13 +95,31 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#registration_form' do
-    it 'should trigger from /auth/identity/register by default' do
-      get '/auth/identity/register'
+    context 'registration is enabled' do
+      it 'should trigger from /auth/identity/register by default' do
+        get '/auth/identity/register'
       expect(last_response.body).to be_include("Register Identity")
+      end
+    end
+
+    context 'registration is disabled' do
+      it 'should call app' do
+        set_app!(:enable_registration => false)
+        get '/auth/identity/register'
+        expect(last_response.body).to be_include("HELLO!")
+      end
     end
   end
 
   describe '#registration_phase' do
+    context 'registration is disabled' do
+      it 'should call app' do
+        set_app!(:enable_registration => false)
+        post '/auth/identity/register'
+        last_response.body.should == "HELLO!"
+      end
+    end
+
     context 'with successful creation' do
       let(:properties){ {
         :name => 'Awesome Dude',
@@ -111,7 +142,7 @@ describe OmniAuth::Strategies::Identity do
 
     context 'with invalid identity' do
       let(:properties) { {
-        :name => 'Awesome Dude', 
+        :name => 'Awesome Dude',
         :email => 'awesome@example.com',
         :password => 'NOT',
         :password_confirmation => 'MATCHING'

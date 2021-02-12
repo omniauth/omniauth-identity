@@ -4,10 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development, :test do
-  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-bundler'
+  gem 'couch_potato', github: 'langalex/couch_potato'
   gem 'growl'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec'
   gem 'rb-fsevent'
 end
