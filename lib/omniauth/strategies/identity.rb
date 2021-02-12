@@ -14,6 +14,7 @@ module OmniAuth
       option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
 
       def request_phase
+        byebug
         if options[:on_login]
           options[:on_login].call(self.env)
         else

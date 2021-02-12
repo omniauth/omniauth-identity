@@ -28,21 +28,25 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#request_phase' do
-    context "registration is enabled" do
-      it 'should display a form with a link' do
+    context "when registration is enabled" do
+      it 'displays a form with a link to register' do
+        set_app!(:enable_registration => true)
         get '/auth/identity'
+
         expect(last_response.body).to be_include("<form")
         expect(last_response.body).to be_include("<a")
+        expect(last_response.body).to be_include("Create an Identity")
       end
     end
 
-    context "registration is disabled" do
-      it 'should display a form without a link if registration is disabled' do
+    context "when registration is disabled" do
+      it 'displays a form without a link to register' do
         set_app!(:enable_registration => false)
         get '/auth/identity'
 
         expect(last_response.body).to be_include("<form")
         expect(last_response.body).not_to be_include("<a")
+        expect(last_response.body).not_to be_include("Create an Identity")
       end
     end
   end
@@ -147,9 +151,10 @@ describe OmniAuth::Strategies::Identity do
         :password => 'NOT',
         :password_confirmation => 'MATCHING'
       } }
+      let(:invalid_identity) { double(:persisted? => false) }
 
       before do
-        expect(MockIdentity).to receive(:create).with(properties).and_return(double(:persisted? => false))
+        expect(MockIdentity).to receive(:create).with(properties).and_return(invalid_identity)
       end
 
       context 'default' do
@@ -163,7 +168,7 @@ describe OmniAuth::Strategies::Identity do
         it 'should set the identity hash' do
           set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
             post '/auth/identity/register', properties
-            expect(identity_hash).not_to be_nil
+            expect(identity_hash).to eq(invalid_identity)
           end
         end
       end
