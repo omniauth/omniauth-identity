@@ -7,6 +7,7 @@ module OmniAuth
       include OmniAuth::Strategy
 
       option :fields, [:name, :email]
+      option :enable_login, true # See #other_phase documentation
       option :on_login, nil
       option :on_registration, nil
       option :on_failed_registration, nil
@@ -14,7 +15,6 @@ module OmniAuth
       option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
 
       def request_phase
-        byebug
         if options[:on_login]
           options[:on_login].call(self.env)
         else
@@ -41,6 +41,13 @@ module OmniAuth
           elsif request.post?
             registration_phase
           end
+        elsif options[:enable_login] && on_request_path?
+          # OmniAuth, by default, disables "GET" requests for security reasons.
+          # This effectively disables omniauth-identity tool's login form feature.
+          # Because it is disabled by default, and because enabling it would desecuritize all the other
+          #   OmniAuth strategies that may be implemented, we do not ask users to modify that setting.
+          # Instead we hook in here in the "other_phase", with a config setting of our own: `enable_login`
+          request_phase
         else
           call_app!
         end

@@ -28,25 +28,65 @@ describe OmniAuth::Strategies::Identity do
   end
 
   describe '#request_phase' do
-    context "when registration is enabled" do
-      it 'displays a form with a link to register' do
-        set_app!(:enable_registration => true)
+    context 'with default settings' do
+      it 'displays a form' do
+        set_app!
         get '/auth/identity'
 
+        expect(last_response.body).not_to eq("HELLO!")
         expect(last_response.body).to be_include("<form")
-        expect(last_response.body).to be_include("<a")
-        expect(last_response.body).to be_include("Create an Identity")
       end
     end
 
-    context "when registration is disabled" do
-      it 'displays a form without a link to register' do
-        set_app!(:enable_registration => false)
-        get '/auth/identity'
+    context "when login is enabled" do
+      context "when registration is enabled" do
+        it 'displays a form with a link to register' do
+          set_app!(:enable_registration => true, :enable_login => true)
+          get '/auth/identity'
 
-        expect(last_response.body).to be_include("<form")
-        expect(last_response.body).not_to be_include("<a")
-        expect(last_response.body).not_to be_include("Create an Identity")
+          expect(last_response.body).not_to eq("HELLO!")
+          expect(last_response.body).to be_include("<form")
+          expect(last_response.body).to be_include("<a")
+          expect(last_response.body).to be_include("Create an Identity")
+        end
+      end
+
+      context "when registration is disabled" do
+        it 'displays a form without a link to register' do
+          set_app!(:enable_registration => false, :enable_login => true)
+          get '/auth/identity'
+
+          expect(last_response.body).not_to eq("HELLO!")
+          expect(last_response.body).to be_include("<form")
+          expect(last_response.body).not_to be_include("<a")
+          expect(last_response.body).not_to be_include("Create an Identity")
+        end
+      end
+    end
+
+    context "when login is disabled" do
+      context "when registration is enabled" do
+        it 'bypasses registration form' do
+          set_app!(:enable_registration => true, :enable_login => false)
+          get '/auth/identity'
+
+          expect(last_response.body).to eq("HELLO!")
+          expect(last_response.body).not_to be_include("<form")
+          expect(last_response.body).not_to be_include("<a")
+          expect(last_response.body).not_to be_include("Create an Identity")
+        end
+      end
+
+      context "when registration is disabled" do
+        it 'displays a form without a link to register' do
+          set_app!(:enable_registration => false, :enable_login => false)
+          get '/auth/identity'
+
+          expect(last_response.body).to eq("HELLO!")
+          expect(last_response.body).not_to be_include("<form")
+          expect(last_response.body).not_to be_include("<a")
+          expect(last_response.body).not_to be_include("Create an Identity")
+        end
       end
     end
   end
@@ -61,15 +101,15 @@ describe OmniAuth::Strategies::Identity do
         post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
 
-      it 'should populate the auth hash' do
+      it 'populates the auth hash' do
         expect(auth_hash).to be_kind_of(Hash)
       end
 
-      it 'should populate the uid' do
+      it 'populates the uid' do
         expect(auth_hash['uid']).to eq('user1')
       end
 
-      it 'should populate the info hash' do
+      it 'populates the info hash' do
         expect(auth_hash['info']).to eq({'name' => 'Rockefeller'})
       end
     end
@@ -82,14 +122,14 @@ describe OmniAuth::Strategies::Identity do
         post '/auth/identity/callback', :auth_key => 'wrong', :password => 'login'
       end
 
-      it 'should fail with :invalid_credentials' do
+      it 'fails with :invalid_credentials' do
         expect(last_response.body).to eq(':invalid_credentials')
       end
     end
 
     context 'with auth scopes' do
 
-      it 'should evaluate and pass through conditions proc' do
+      it 'evaluates and pass through conditions proc' do
         allow(MockIdentity).to receive('auth_key').and_return('email')
         set_app!( :locate_conditions => lambda{|req| {model.auth_key => req['auth_key'], 'user_type' => 'admin'} } )
         expect(MockIdentity).to receive('authenticate').with( {'email' => 'john', 'user_type' => 'admin'}, 'awesome' ).and_return(user)
@@ -100,14 +140,14 @@ describe OmniAuth::Strategies::Identity do
 
   describe '#registration_form' do
     context 'registration is enabled' do
-      it 'should trigger from /auth/identity/register by default' do
+      it 'triggers from /auth/identity/register by default' do
         get '/auth/identity/register'
       expect(last_response.body).to be_include("Register Identity")
       end
     end
 
     context 'registration is disabled' do
-      it 'should call app' do
+      it 'calls app' do
         set_app!(:enable_registration => false)
         get '/auth/identity/register'
         expect(last_response.body).to be_include("HELLO!")
@@ -117,10 +157,10 @@ describe OmniAuth::Strategies::Identity do
 
   describe '#registration_phase' do
     context 'registration is disabled' do
-      it 'should call app' do
+      it 'calls app' do
         set_app!(:enable_registration => false)
         post '/auth/identity/register'
-        last_response.body.should == "HELLO!"
+        expect(last_response.body).to eq("HELLO!")
       end
     end
 
@@ -138,7 +178,7 @@ describe OmniAuth::Strategies::Identity do
         expect(MockIdentity).to receive(:create).with(properties).and_return(m)
       end
 
-      it 'should set the auth hash' do
+      it 'sets the auth hash' do
         post '/auth/identity/register', properties
         expect(auth_hash['uid']).to eq('abc')
       end
@@ -158,14 +198,14 @@ describe OmniAuth::Strategies::Identity do
       end
 
       context 'default' do
-        it 'should show registration form' do
+        it 'shows registration form' do
           post '/auth/identity/register', properties
           expect(last_response.body).to be_include("Register Identity")
         end
       end
 
       context 'custom on_failed_registration endpoint' do
-        it 'should set the identity hash' do
+        it 'sets the identity hash' do
           set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
             post '/auth/identity/register', properties
             expect(identity_hash).to eq(invalid_identity)

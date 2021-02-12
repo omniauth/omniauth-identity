@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
+gem 'omniauth', path: '/Users/pboling/Documents/src/other/omniauth'
+
 group :development, :test do
   gem 'couch_potato', github: 'langalex/couch_potato'
   gem 'growl'
