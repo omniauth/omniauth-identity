@@ -89,21 +89,10 @@ popular and actively maintained.
 
 ### DataMapper
 
-Include the `OmniAuth::Identity::Models::DataMapper` mixin and specify
-fields that you will need.
+DataMapper hasn't had a [release since 2011](https://rubygems.org/gems/datamapper/versions/1.2.0), and should be replaced with the successor Ruby Object Mapper project.
 
-```ruby
-class Identity
-  include DataMapper::Resource
-  include OmniAuth::Identity::Models::DataMapper
-
-  property :id,              Serial
-  property :email,           String
-  property :password_digest, Text
-
-  attr_accessor :password_confirmation
-end
-```
+If you'd like to work on this, please submit a PR!
+https://rom-rb.org
 
 ### CouchPotato
 
