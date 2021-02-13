@@ -32,13 +32,13 @@ Rack middleware. In rails, this would be created by an initializer, such as
 ```ruby
 use OmniAuth::Builder do
   provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
-    :model => Identity,                      # optional: specifies the name of the "Identity" model. Defaults to "Identity"
-    :fields => [:email, :custom1, :custom2]  # optional: list of custom fields that are in the model's table
+           model: Identity,                      # optional: specifies the name of the "Identity" model. Defaults to "Identity"
+           fields: %i[email custom1 custom2]  # optional: list of custom fields that are in the model's table
 end
 ```
 
 Next, you need to create a model (called `Identity` by default, or specified
-with `:model` argument above) that will be able to persist the information 
+with `:model` argument above) that will be able to persist the information
 provided by the user. Luckily for you, there are pre-built models for popular
 ORMs that make this dead simple.
 
@@ -57,7 +57,7 @@ in the database for all of the fields you are using.
 class Identity < OmniAuth::Identity::Models::ActiveRecord
   auth_key :email    # optional: specifies the field within the model that will be used during the login process
                      # defaults to email, but may be username, uid, login, etc.
-                     
+
   # Anything else you want!
 end
 ```
@@ -80,12 +80,12 @@ end
 
 ### MongoMapper
 
-Unfortunately MongoMapper is **not supported** in `omniauth-identity` from >= v2.0 as a result of it 
+Unfortunately MongoMapper is **not supported** in `omniauth-identity` from >= v2.0 as a result of it
 not being maintained for several years.
 
-It wasn't possible to include Mongoid *and* MongoMapper due to incompatible gem version 
-requirements. Therefore precedence was given to Mongoid as it is significantly more 
-popular and actively maintained. 
+It wasn't possible to include Mongoid *and* MongoMapper due to incompatible gem version
+requirements. Therefore precedence was given to Mongoid as it is significantly more
+popular and actively maintained.
 
 ### DataMapper
 
@@ -118,10 +118,10 @@ class Identity
   property :password_digest
 
   def self.where(search_hash)
-    CouchPotato.database.view(Identity.by_email(:key => search_hash))
+    CouchPotato.database.view(Identity.by_email(key: search_hash))
   end
 
-  view :by_email, :key => :email
+  view :by_email, key: :email
 end
 ```
 
@@ -140,7 +140,7 @@ different class.
 
 ```ruby
 use OmniAuth::Builder do
-  provider :identity, :fields => [:email], :model => MyCustomClass
+  provider :identity, fields: [:email], model: MyCustomClass
 end
 ```
 
@@ -186,8 +186,8 @@ fails. In your OmniAuth configuration, specify any valid rack endpoint in the
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-    :fields => [:email],
-    :on_failed_registration => UsersController.action(:new)
+           fields: [:email],
+           on_failed_registration: UsersController.action(:new)
 end
 ```
 
@@ -206,7 +206,7 @@ The default value is:
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-    :locate_conditions => lambda { |req| { model.auth_key => req['auth_key']} }
+           locate_conditions: ->(req) { { model.auth_key => req['auth_key'] } }
     # ...
 end
 ```

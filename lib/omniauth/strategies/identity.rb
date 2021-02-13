@@ -6,31 +6,34 @@ module OmniAuth
     class Identity
       include OmniAuth::Strategy
 
-      option :fields, [:name, :email]
+      option :fields, %i[name email]
       option :enable_login, true # See #other_phase documentation
       option :on_login, nil
       option :on_registration, nil
       option :on_failed_registration, nil
       option :enable_registration, true
-      option :locate_conditions, lambda{|req| {model.auth_key => req['auth_key']} }
+      option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
 
       def request_phase
         if options[:on_login]
-          options[:on_login].call(self.env)
+          options[:on_login].call(env)
         else
           OmniAuth::Form.build(
-            :title => (options[:title] || "Identity Verification"),
-            :url => callback_path
+            title: (options[:title] || 'Identity Verification'),
+            url: callback_path
           ) do |f|
             f.text_field 'Login', 'auth_key'
             f.password_field 'Password', 'password'
-            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>" if options[:enable_registration]
+            if options[:enable_registration]
+              f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
+            end
           end.to_response
         end
       end
 
       def callback_phase
         return fail!(:invalid_credentials) unless identity
+
         super
       end
 
@@ -57,9 +60,9 @@ module OmniAuth
 
       def registration_form
         if options[:on_registration]
-          options[:on_registration].call(self.env)
+          options[:on_registration].call(env)
         else
-          OmniAuth::Form.build(:title => 'Register Identity') do |f|
+          OmniAuth::Form.build(title: 'Register Identity') do |f|
             options[:fields].each do |field|
               f.text_field field.to_s.capitalize, field.to_s
             end
@@ -70,26 +73,26 @@ module OmniAuth
       end
 
       def registration_phase
-        attributes = (options[:fields] + [:password, :password_confirmation]).inject({}){|h,k| h[k] = request[k.to_s]; h}
+        attributes = (options[:fields] + %i[password password_confirmation]).each_with_object({}) do |k, h|
+          h[k] = request[k.to_s]
+        end
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
-          attributes.reverse_merge!(:provider => 'identity')
+          attributes.reverse_merge!(provider: 'identity')
         end
         @identity = model.create(attributes)
         if @identity.persisted?
           env['PATH_INFO'] = callback_path
           callback_phase
+        elsif options[:on_failed_registration]
+          env['omniauth.identity'] = @identity
+          options[:on_failed_registration].call(env)
         else
-          if options[:on_failed_registration]
-            self.env['omniauth.identity'] = @identity
-            options[:on_failed_registration].call(self.env)
-          else
-            registration_form
-          end
+          registration_form
         end
       end
 
-      uid{ identity.uid }
-      info{ identity.info }
+      uid { identity.uid }
+      info { identity.info }
 
       def registration_path
         options[:registration_path] || "#{path_prefix}/#{name}/register"
@@ -106,7 +109,7 @@ module OmniAuth
         else
           conditions = options[:locate_conditions].to_hash
         end
-        @identity ||= model.authenticate(conditions, request['password'] )
+        @identity ||= model.authenticate(conditions, request['password'])
       end
 
       def model

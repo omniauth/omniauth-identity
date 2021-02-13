@@ -1,0 +1,25 @@
+require:
+  - 'rubocop-md'
+  - 'rubocop-minitest'
+  - 'rubocop-packaging'
+  - 'rubocop-performance'
+  - 'rubocop-rake'
+  - 'rubocop-rspec'
+
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true # Display the name of the failing cops
+  Exclude:
+    - 'gemfiles/vendor/**/*'
+    - 'vendor/**/*'
+
+Metrics/BlockLength:
+  IgnoredMethods:
+    - context
+    - describe
+    - it
+    - shared_context
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
