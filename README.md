@@ -38,8 +38,8 @@ Rack middleware. In rails, this would be created by an initializer, such as
 ```ruby
 use OmniAuth::Builder do
   provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
-           model: Identity,                      # optional: specifies the name of the "Identity" model. Defaults to "Identity"
-           fields: %i[email custom1 custom2]  # optional: list of custom fields that are in the model's table
+           model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
+           fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
 end
 ```
 
@@ -217,12 +217,12 @@ use OmniAuth::Builder do
 end
 ```
 
-locate_conditions takes a Proc object, and must return a hash.  The resulting hash is used
-as a parameter in the locate method for your ORM.  The proc is evaluated in the
-callback context, and has access to the Identity model (using `model`) and receives the request
-object as a parameter.  Note  that model.auth_key defaults to 'email', but is also configurable.
+`locate_conditions` takes a `Proc` object, and must return a `Hash` object, which will be used
+as the argument to the locate method for your ORM.  The proc is evaluated in the
+callback context, and has access to your `Identity` model (using `model`) and receives the request
+object as a parameter.  Note  that `model.auth_key` defaults to `email`, but is also configurable.
 
-Note: Be careful when customizing locate_conditions.  The best way to modify the conditions is
+Note: Be careful when customizing `locate_conditions`.  The best way to modify the conditions is
 to copy the default value, and then add to the hash.  Removing the default condition will almost
 always break things!
 
