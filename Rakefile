@@ -21,4 +21,4 @@ rescue LoadError
   end
 end
 
-task :default => [:test, :rubocop]
+task :default => [:test]
