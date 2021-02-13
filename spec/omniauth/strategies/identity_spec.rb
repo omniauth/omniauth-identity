@@ -9,7 +9,6 @@ RSpec.describe OmniAuth::Strategies::Identity do
   # customize rack app for testing, if block is given, reverts to default
   # rack app after testing is done
   def set_app!(identity_options = {})
-    identity_options = {:model => MockIdentity}.merge(identity_options)
     old_app = self.app
     self.app = Rack::Builder.app do
       use Rack::Session::Cookie, secret: '1234567890qwertyuiop'
@@ -24,13 +23,13 @@ RSpec.describe OmniAuth::Strategies::Identity do
   end
 
   before(:all) do
-    set_app!
+    set_app!(:model => MockIdentity)
   end
 
   describe '#request_phase' do
     context 'with default settings' do
       it 'displays a form' do
-        set_app!
+        set_app!(:model => MockIdentity)
         get '/auth/identity'
 
         expect(last_response.body).not_to eq("HELLO!")
@@ -41,7 +40,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
     context "when login is enabled" do
       context "when registration is enabled" do
         it 'displays a form with a link to register' do
-          set_app!(:enable_registration => true, :enable_login => true)
+          set_app!(:model => MockIdentity, :enable_registration => true, :enable_login => true)
           get '/auth/identity'
 
           expect(last_response.body).not_to eq("HELLO!")
@@ -53,7 +52,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
 
       context "when registration is disabled" do
         it 'displays a form without a link to register' do
-          set_app!(:enable_registration => false, :enable_login => true)
+          set_app!(:model => MockIdentity, :enable_registration => false, :enable_login => true)
           get '/auth/identity'
 
           expect(last_response.body).not_to eq("HELLO!")
@@ -67,7 +66,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
     context "when login is disabled" do
       context "when registration is enabled" do
         it 'bypasses registration form' do
-          set_app!(:enable_registration => true, :enable_login => false)
+          set_app!(:model => MockIdentity, :enable_registration => true, :enable_login => false)
           get '/auth/identity'
 
           expect(last_response.body).to eq("HELLO!")
@@ -79,7 +78,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
 
       context "when registration is disabled" do
         it 'displays a form without a link to register' do
-          set_app!(:enable_registration => false, :enable_login => false)
+          set_app!(:model => MockIdentity, :enable_registration => false, :enable_login => false)
           get '/auth/identity'
 
           expect(last_response.body).to eq("HELLO!")
@@ -131,7 +130,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
 
       it 'evaluates and pass through conditions proc' do
         allow(MockIdentity).to receive('auth_key').and_return('email')
-        set_app!( :locate_conditions => lambda{|req| {model.auth_key => req['auth_key'], 'user_type' => 'admin'} } )
+        set_app!(:model => MockIdentity, :locate_conditions => lambda{|req| {model.auth_key => req['auth_key'], 'user_type' => 'admin'} } )
         expect(MockIdentity).to receive('authenticate').with( {'email' => 'john', 'user_type' => 'admin'}, 'awesome' ).and_return(user)
         post '/auth/identity/callback', :auth_key => 'john', :password => 'awesome'
       end
@@ -148,21 +147,21 @@ RSpec.describe OmniAuth::Strategies::Identity do
 
     context 'registration is disabled' do
       it 'calls app' do
-        set_app!(:enable_registration => false)
+        set_app!(:model => MockIdentity, :enable_registration => false)
         get '/auth/identity/register'
         expect(last_response.body).to be_include("HELLO!")
       end
     end
     it 'should support methods other than GET and POST' do
       head '/auth/identity/register'
-      last_response.status.should eql(404)
+      expect(last_response.status).to eq(404)
     end
   end
 
   describe '#registration_phase' do
     context 'registration is disabled' do
       it 'calls app' do
-        set_app!(:enable_registration => false)
+        set_app!(:model => MockIdentity, :enable_registration => false)
         post '/auth/identity/register'
         expect(last_response.body).to eq("HELLO!")
       end
@@ -210,9 +209,10 @@ RSpec.describe OmniAuth::Strategies::Identity do
 
       context 'custom on_failed_registration endpoint' do
         it 'sets the identity hash' do
-          set_app!(:on_failed_registration => lambda{|env| [404, {'env' => env}, ["HELLO!"]]}) do
+          set_app!(:model => MockIdentity, :on_failed_registration => lambda{|env| [404, {'env' => env}, ["FAIL'DOH!"]]}) do
             post '/auth/identity/register', properties
             expect(identity_hash).to eq(invalid_identity)
+            expect(last_response.body).to be_include("FAIL'DOH!")
           end
         end
       end
