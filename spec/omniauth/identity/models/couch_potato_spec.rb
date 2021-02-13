@@ -1,4 +1,4 @@
-describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
+RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
   class CouchPotatoTestIdentity
     include CouchPotato::Persistence
     include OmniAuth::Identity::Models::CouchPotatoModule

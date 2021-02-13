@@ -5,7 +5,7 @@ end
 class DoesNotHaveTheMethod
 end
 
-describe OmniAuth::Identity::SecurePassword do
+RSpec.describe OmniAuth::Identity::SecurePassword do
   it 'should extend with the class methods if it does not have the method' do
     expect(DoesNotHaveTheMethod).to receive(:extend).with(OmniAuth::Identity::SecurePassword::ClassMethods)
     DoesNotHaveTheMethod.send(:include, OmniAuth::Identity::SecurePassword)

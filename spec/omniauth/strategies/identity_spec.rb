@@ -1,6 +1,6 @@
 class MockIdentity; end
 
-describe OmniAuth::Strategies::Identity do
+RSpec.describe OmniAuth::Strategies::Identity do
   attr_accessor :app
 
   let(:auth_hash){ last_response.headers['env']['omniauth.auth'] }

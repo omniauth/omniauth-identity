@@ -2,7 +2,7 @@ class ExampleModel
   include OmniAuth::Identity::Model
 end
 
-describe OmniAuth::Identity::Model do
+RSpec.describe OmniAuth::Identity::Model do
   context 'Class Methods' do
     subject{ ExampleModel }
 

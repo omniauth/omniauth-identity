@@ -1,4 +1,4 @@
-describe(OmniAuth::Identity::Models::ActiveRecord, :db => true) do
+RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :db => true) do
   class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 
   describe "model", type: :model do
