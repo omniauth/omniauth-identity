@@ -6,16 +6,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.0] - 2021-02-13
 
 ### Added
 - Add option `:enable_login` to bypass OmniAuth disabling of GET method (default `true`)
   - NOTE: This restores compatibility between this gem and the current, core, omniauth gem!
 - README updates, including a rename to README.md
+- CODE_OF_CONDUCT.md using v2
+- Rubocop
+- Github Actions for Continuous Integration
+- Minimum Ruby version = 2.4
+- Automatically adds "provider" => "identity" when "provider" column is detected
+- Documentation in README.md
 
 ### Removed
-- Removed support for DataMapper, which died long ago.
-- Cleanup (removal) of unwanted git artifacts
+- Support for Rubies < 2.4
+- Support for DataMapper, which died long ago.
+- Unwanted git artifacts
 
 ## [2.0] - 2020-09-01
 
