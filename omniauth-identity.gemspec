@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   # NOTE: Released version of couch_potato depends on activemodel ~> 4.0, so pull latest from github in Gemfile.
   # gem.add_development_dependency 'couch_potato', '~> 1.7'
 
+  gem.required_ruby_version = '>= 2.4'
   gem.name = 'omniauth-identity'
   gem.version = OmniAuth::Identity::VERSION
   gem.description = %q{Internal authentication handlers for OmniAuth.}
