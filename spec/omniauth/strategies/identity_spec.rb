@@ -153,6 +153,10 @@ RSpec.describe OmniAuth::Strategies::Identity do
         expect(last_response.body).to be_include("HELLO!")
       end
     end
+    it 'should support methods other than GET and POST' do
+      head '/auth/identity/register'
+      last_response.status.should eql(404)
+    end
   end
 
   describe '#registration_phase' do

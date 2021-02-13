@@ -40,6 +40,8 @@ module OmniAuth
             registration_form
           elsif request.post?
             registration_phase
+          else
+            call_app!
           end
         elsif options[:enable_login] && on_request_path?
           # OmniAuth, by default, disables "GET" requests for security reasons.
