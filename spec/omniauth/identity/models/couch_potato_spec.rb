@@ -1,4 +1,4 @@
-RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
+RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, db: true) do
   class CouchPotatoTestIdentity
     include CouchPotato::Persistence
     include OmniAuth::Identity::Models::CouchPotatoModule
@@ -8,8 +8,9 @@ RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :db => true) do
   describe 'model', type: :model do
     subject { CouchPotatoTestIdentity }
 
-    it 'should delegate locate to the where query method' do
-      allow(subject).to receive(:where).with('ham_sandwich' => 'open faced', 'category' => 'sandwiches').and_return(['wakka'])
+    it 'delegates locate to the where query method' do
+      allow(subject).to receive(:where).with('ham_sandwich' => 'open faced',
+                                             'category' => 'sandwiches').and_return(['wakka'])
       expect(subject.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
     end
   end

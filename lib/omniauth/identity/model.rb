@@ -28,6 +28,7 @@ module OmniAuth
         def authenticate(conditions, password)
           instance = locate(conditions)
           return false unless instance
+
           instance.authenticate(password)
         end
 
@@ -52,22 +53,20 @@ module OmniAuth
         raise NotImplementedError
       end
 
-      SCHEMA_ATTRIBUTES = %w(name email nickname first_name last_name location description image phone)
+      SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone]
       # A hash of as much of the standard OmniAuth schema as is stored
       # in this particular model. By default, this will call instance
       # methods for each of the attributes it needs in turn, ignoring
       # any for which `#respond_to?` is `false`.
       #
-      # If `first_name`, `nickname`, and/or `last_name` is provided but 
+      # If `first_name`, `nickname`, and/or `last_name` is provided but
       # `name` is not, it will be automatically calculated.
       #
       # @return [Hash] A string-keyed hash of user information.
       def info
-        info = SCHEMA_ATTRIBUTES.inject({}) do |hash,attribute|
+        SCHEMA_ATTRIBUTES.each_with_object({}) do |attribute, hash|
           hash[attribute] = send(attribute) if respond_to?(attribute)
-          hash
         end
-        info
       end
 
       # An identifying string that must be globally unique to the
@@ -76,16 +75,17 @@ module OmniAuth
       # @return [String] An identifier string unique to this identity.
       def uid
         if respond_to?(:id)
-          return nil if self.id.nil?
-          self.id.to_s
+          return nil if id.nil?
+
+          id.to_s
         else
-          raise NotImplementedError 
+          raise NotImplementedError
         end
       end
 
       # Used to retrieve the user-supplied authentication key (e.g. a
       # username or email). Determined using the class method of the same name,
-      # defaults to `:email`. 
+      # defaults to `:email`.
       #
       # @return [String] An identifying string that will be entered by
       #   users upon sign in.

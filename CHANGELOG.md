@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0] - 2020-09-01
 
-### Added 
+### Added
 - CHANGELOG to maintain a history of changes.
 - Include mongoid-rspec gem.
 

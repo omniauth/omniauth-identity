@@ -9,9 +9,7 @@ module OmniAuth
     # a has_secure_password method.
     module SecurePassword
       def self.included(base)
-        unless base.respond_to?(:has_secure_password)
-          base.extend ClassMethods
-        end
+        base.extend ClassMethods unless base.respond_to?(:has_secure_password)
       end
 
       module ClassMethods
@@ -40,7 +38,7 @@ module OmniAuth
         #   User.find_by_name("david").try(:authenticate, "notright")      # => nil
         #   User.find_by_name("david").try(:authenticate, "mUc3m00RsqyRe") # => user
         def has_secure_password
-          attr_reader   :password
+          attr_reader :password
 
           validates_confirmation_of :password
           validates_presence_of     :password_digest
