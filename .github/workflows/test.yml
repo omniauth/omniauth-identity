@@ -21,19 +21,19 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
-          - 3.0.0
+#          - ruby-head
+#          - 3.0.0
           - 2.7
           - 2.6
           - 2.5
-          - 2.4
-          - ruby-head
-        include:
-          - ruby: jruby-9.2.13.0
-            env:
-              JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
-          - ruby: jruby-head
-            env:
-              JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
+#          - 2.4
+#        include:
+#          - ruby: jruby-9.2.13.0
+#            env:
+#              JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
+#          - ruby: jruby-head
+#            env:
+#              JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
     runs-on: ubuntu-20.04
     continue-on-error: ${{ matrix.allow_failure || endsWith(matrix.ruby, 'head') }}
     steps:
