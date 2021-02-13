@@ -6,6 +6,12 @@ to give up the simple authentication flow provided by OmniAuth. Identity
 is designed on purpose to be as featureless as possible: it provides the
 basic construct for user management and then gets out of the way.
 
+## Compatibility
+
+This gem is compatible with, as of Feb 2021:
+• latest released version of omniauth, v2.0.2
+• Ruby 2.4, 2.5, 2.6, 2.7
+
 ## Installation
 
 To acquire the latest release from RubyGems add the following to your `Gemfile`:
