@@ -6,12 +6,12 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'bcrypt'
 
   gem.add_development_dependency 'simplecov', '~> 0.21'
-  gem.add_development_dependency 'rack-test', '~> 1.1'
-  gem.add_development_dependency 'rake', '~> 13'
+  gem.add_development_dependency 'rack-test', '~> 1'
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec', '~> 3'
-  gem.add_development_dependency 'activerecord', '~> 6.0'
-  gem.add_development_dependency 'mongoid', '~> 7.2'
-  gem.add_development_dependency 'byebug', '~> 11.1'
+  gem.add_development_dependency 'activerecord', '~> 5'
+  gem.add_development_dependency 'mongoid', '~> 6'
+  gem.add_development_dependency 'byebug', '~> 11'
   # NOTE: Released version of couch_potato depends on activemodel ~> 4.0, so pull latest from github in Gemfile.
   # gem.add_development_dependency 'couch_potato', '~> 1.7'
 

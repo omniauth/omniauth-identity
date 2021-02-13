@@ -26,16 +26,8 @@ jobs:
           - 2.6
           - 2.5
           - 2.4
-          - 2.3
-          - 2.2
-          - 2.1
           - ruby-head
         include:
-          - ruby: jruby-9.1.17.0
-            bundler: 1
-            os: ubuntu-18.04
-            env:
-              JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
           - ruby: jruby-9.2.13.0
             env:
               JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
