@@ -6,8 +6,6 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in rspec-pending_for.gemspec
 gemspec
 
-gem 'omniauth', path: '/Users/pboling/Documents/src/other/omniauth'
-
 ruby_version = Gem::Version.new(RUBY_VERSION)
 if ruby_version < Gem::Version.new('1.9.3')
   gem 'rake', '< 11.0.0' # rake 11 requires Ruby 1.9.3 or later
