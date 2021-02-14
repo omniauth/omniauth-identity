@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OmniAuth
   module Strategies
     # The identity strategy allows you to provide simple internal

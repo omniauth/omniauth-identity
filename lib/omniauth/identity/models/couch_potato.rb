@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'couch_potato'
 
 module OmniAuth

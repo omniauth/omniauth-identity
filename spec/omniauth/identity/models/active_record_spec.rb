@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, db: true) do
   describe 'model', type: :model do
     subject(:model_klass) do

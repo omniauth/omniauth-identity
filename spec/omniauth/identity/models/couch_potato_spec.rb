@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, db: true) do
   class CouchPotatoTestIdentity
     include CouchPotato::Persistence

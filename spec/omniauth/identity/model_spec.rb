@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExampleModel
   include OmniAuth::Identity::Model
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe OmniAuth::Strategies::Identity do
   attr_accessor :app
 

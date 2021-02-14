@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OmniAuth
   module Identity
     # This module provides an includable interface for implementing the
@@ -53,7 +55,7 @@ module OmniAuth
         raise NotImplementedError
       end
 
-      SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone]
+      SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
       # A hash of as much of the standard OmniAuth schema as is stored
       # in this particular model. By default, this will call instance
       # methods for each of the attributes it needs in turn, ignoring
@@ -104,7 +106,7 @@ module OmniAuth
       # @param [String] value The value to which the auth key should be
       #   set.
       def auth_key=(value)
-        auth_key_setter = (self.class.auth_key + '=').to_sym
+        auth_key_setter = "#{self.class.auth_key}=".to_sym
         if respond_to?(auth_key_setter)
           send(auth_key_setter, value)
         else
