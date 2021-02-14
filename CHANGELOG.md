@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.3] - 2021-02-14
+
 ### Added
 
 - Add option `:on_validation`, which can be used to add a Captcha
