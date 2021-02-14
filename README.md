@@ -251,6 +251,6 @@ MIT License. See LICENSE for details.
 
 ## Copyright
 
-Copyright (c) 2021 OmniAuth-Identity Maintainers
-Copyright (c) 2020 Peter Boling, Andrew Roberts, and Jellybooks Ltd.
-Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
+* Copyright (c) 2021 OmniAuth-Identity Maintainers
+* Copyright (c) 2020 Peter Boling, Andrew Roberts, and Jellybooks Ltd.
+* Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
