@@ -5,7 +5,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, db: true) do
     subject(:model_klass) do
       AnonymousActiveRecord.generate(
         parent_klass: 'OmniAuth::Identity::Models::ActiveRecord',
-        columns: %w[name provider],
+        columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
         connection_params: { adapter: 'sqlite3', encoding: 'utf8', database: ':memory:' }
       ) do
         def flower
