@@ -16,7 +16,7 @@ basic construct for user management and then gets out of the way.
 
 This gem is compatible with, as of Feb 2021:
 • latest released version of omniauth, v2.0.2
-• Ruby 2.4, 2.5, 2.6, 2.7
+• Ruby 2.4, 2.5, 2.6, 2.7, 3.0, head
 
 ## Installation
 
