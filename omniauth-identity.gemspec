@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'bcrypt'
   gem.add_runtime_dependency 'omniauth'
 
-  gem.add_development_dependency 'anonymous_active_record', '>= 1.0.7'
+  gem.add_development_dependency 'anonymous_active_record', '~> 1.0', '>= 1.0.8'
   gem.add_development_dependency 'mongoid', '~> 7'
   gem.add_development_dependency 'nobrainer'
   gem.add_development_dependency 'rack-test', '~> 1'
