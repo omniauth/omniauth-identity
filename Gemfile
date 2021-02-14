@@ -18,7 +18,7 @@ end
 
 group :development, :test do
   if ruby_version < Gem::Version.new('2.5.0')
-    gem 'activerecord', '~> 5' # rails 5 works with Ruby 2.4
+    gem 'activerecord', '~> 6' # rails 5 works with Ruby 2.4
   else
     gem 'activerecord', '~> 6' # rails 6 requires Ruby 2.5 or later
   end
