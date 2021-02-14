@@ -85,6 +85,22 @@ class Identity < OmniAuth::Identity::Models::ActiveRecord
 end
 ```
 
+### Sequel
+
+[Sequel](http://sequel.jeremyevans.net/) is an alternative to ActiveRecord.
+
+Just include `OmniAuth::Identity::Models::Sequel` mixin, and specify
+whatever else you will need.
+
+```ruby
+class SequelTestIdentity < Sequel::Model
+  include OmniAuth::Identity::Models::Sequel
+  auth_key :email
+  # whatever else you want!
+end
+```
+
+
 ### Mongoid
 
 Include the `OmniAuth::Identity::Models::Mongoid` mixin and specify
@@ -103,7 +119,8 @@ end
 
 ### CouchPotato
 
-Include the `OmniAuth::Identity::Models::CouchPotatoModule` mixin and specify fields that you will need.
+Include the `OmniAuth::Identity::Models::CouchPotatoModule` mixin and specify
+fields that you will need.
 
 ```ruby
 class Identity
@@ -125,7 +142,8 @@ end
 
 [NoBrainer](http://nobrainer.io/) is an ORM for [RethinkDB](https://rethinkdb.com/).
 
-Include the `OmniAuth::Identity::Models::NoBrainer` mixin and specify fields that you will need.
+Include the `OmniAuth::Identity::Models::NoBrainer` mixin and specify
+fields that you will need.
 
 ```ruby
 class Identity

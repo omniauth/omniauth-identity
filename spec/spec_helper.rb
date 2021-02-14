@@ -6,6 +6,7 @@ require 'simplecov' if ruby_version >= Gem::Version.new('2.7') && RUBY_ENGINE ==
 require 'rack/test'
 require 'mongoid-rspec'
 require 'sqlite3'
+require 'sequel'
 require 'anonymous_active_record'
 require 'byebug' if RUBY_ENGINE == 'ruby'
 
