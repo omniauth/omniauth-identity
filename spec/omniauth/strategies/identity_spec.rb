@@ -8,7 +8,8 @@ RSpec.describe OmniAuth::Strategies::Identity do
   let(:identity_options) { {} }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
-      columns: %w[name provider],
+      parent_klass: 'OmniAuth::Identity::Models::ActiveRecord',
+      columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
       connection_params: { adapter: 'sqlite3', encoding: 'utf8', database: ':memory:' }
     ) do
       def balloon
@@ -203,16 +204,10 @@ RSpec.describe OmniAuth::Strategies::Identity do
         }
       end
 
-      before do
-        allow(anon_ar).to receive('auth_key').and_return('email')
-        m = double(uid: 'abc', name: 'Awesome Dude', email: 'awesome@example.com',
-                   info: { name: 'DUUUUDE!' }, persisted?: true)
-        expect(anon_ar).to receive(:create).with(properties).and_return(m)
-      end
-
       it 'sets the auth hash' do
         post '/auth/identity/register', properties
-        expect(auth_hash['uid']).to eq('abc')
+        expect(auth_hash['uid']).to match(/\d+/)
+        expect(auth_hash['provider']).to eq('identity')
       end
     end
 
@@ -226,10 +221,10 @@ RSpec.describe OmniAuth::Strategies::Identity do
           provider: 'identity'
         }
       end
-      let(:invalid_identity) { double(persisted?: false) }
+      let(:invalid_identity) { double(persisted?: false, save: false) }
 
       before do
-        expect(anon_ar).to receive(:create).with(properties).and_return(invalid_identity)
+        expect(anon_ar).to receive(:new).with(properties).and_return(invalid_identity)
       end
 
       context 'default' do

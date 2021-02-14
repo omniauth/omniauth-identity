@@ -9,11 +9,16 @@ module OmniAuth
       include OmniAuth::Strategy
 
       option :fields, %i[name email]
-      option :enable_login, true # See #other_phase documentation
-      option :on_login, nil
-      option :on_registration, nil
-      option :on_failed_registration, nil
-      option :enable_registration, true
+
+      # Primary Feature Switches:
+      option :enable_registration, true   # See #other_phase and #request_phase
+      option :enable_login, true          # See #other_phase
+
+      # Customization Options:
+      option :on_login, nil               # See #request_phase
+      option :on_validation, nil          # See #registration_phase
+      option :on_registration, nil        # See #registration_phase
+      option :on_failed_registration, nil # See #registration_phase
       option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
 
       def request_phase
@@ -82,8 +87,19 @@ module OmniAuth
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
         end
-        @identity = model.create(attributes)
-        if @identity.persisted?
+        @identity = model.new(attributes)
+
+        # on_validation may run a Captcha or other validation mechanism
+        # Must return true when validation passes, false otherwise
+        if options[:on_validation] && !options[:on_validation].call(env: env)
+          if options[:on_failed_registration]
+            env['omniauth.identity'] = @identity
+            options[:on_failed_registration].call(env)
+          else
+            validation_message = 'Validation failed'
+            registration_form(validation_message)
+          end
+        elsif @identity.save && @identity.persisted?
           env['PATH_INFO'] = callback_path
           callback_phase
         elsif options[:on_failed_registration]

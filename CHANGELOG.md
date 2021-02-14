@@ -10,8 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add option `:on_validation`, which can be used to add a Captcha
+  - See [example here](https://github.com/omniauth/omniauth-identity/pull/86#issue-63225122)
 - Add support for nobrainer, an ORM for RethinkDB
 - Validation error message on invalid registration form submission
+
+### Removed
+
+- ruby-head build... simply too slow
 
 ## [3.0.2] - 2021-02-14
 

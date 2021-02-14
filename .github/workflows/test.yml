@@ -21,7 +21,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
-          - ruby-head
           - 3.0.0
           - 2.7
           - 2.6
