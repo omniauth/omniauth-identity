@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
-RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, db: true) do
-  class CouchPotatoTestIdentity
-    include CouchPotato::Persistence
-    include OmniAuth::Identity::Models::CouchPotatoModule
-    auth_key :ham_sandwich
-  end
+require 'couch_potato'
 
+class CouchPotatoTestIdentity
+  include CouchPotato::Persistence
+  include OmniAuth::Identity::Models::CouchPotatoModule
+  auth_key :ham_sandwich
+end
+
+RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, db: true) do
   describe 'model', type: :model do
     subject { CouchPotatoTestIdentity }
 

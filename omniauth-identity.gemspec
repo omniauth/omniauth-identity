@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'anonymous_active_record', '>= 1.0.7'
   gem.add_development_dependency 'mongoid', '~> 7'
+  gem.add_development_dependency 'nobrainer'
   gem.add_development_dependency 'rack-test', '~> 1'
   gem.add_development_dependency 'rake', '~> 13'
   gem.add_development_dependency 'rspec', '~> 3'
