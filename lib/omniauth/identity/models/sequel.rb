@@ -19,7 +19,7 @@ module OmniAuth
 
             has_secure_password
 
-            alias persisted? valid?
+            alias_method :persisted?, :valid?
 
             def self.auth_key=(key)
               super

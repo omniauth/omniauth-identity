@@ -89,7 +89,7 @@ end
 
 [Sequel](http://sequel.jeremyevans.net/) is an alternative to ActiveRecord.
 
-Just include `OmniAuth::Identity::Models::Sequel` mixin, and specify 
+Just include `OmniAuth::Identity::Models::Sequel` mixin, and specify
 whatever else you will need.
 
 ```ruby

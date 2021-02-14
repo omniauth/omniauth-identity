@@ -17,8 +17,7 @@ end
 RSpec.describe(OmniAuth::Identity::Models::Sequel, db: true) do
   it 'delegates locate to the where query method' do
     allow(SequelTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced',
-                                                         'category' => 'sandwiches').and_return(['wakka'])
+                                                      'category' => 'sandwiches').and_return(['wakka'])
     expect(SequelTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
   end
 end
-
