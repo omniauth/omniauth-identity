@@ -56,6 +56,13 @@ with `:model` argument above) that will be able to persist the information
 provided by the user. Luckily for you, there are pre-built models for popular
 ORMs that make this dead simple.
 
+Once you've got an `Identity` persistence model and the strategy up and
+running, you can point users to `/auth/identity` and it will request
+that they log in or give them the opportunity to sign up for an account.
+Once they have authenticated with their identity, OmniAuth will call
+through to `/auth/identity/callback` with the same kinds of information
+it would had the user authenticated through an external provider.
+
 **Note:** OmniAuth Identity is different from many other user authentication
 systems in that it is *not* built to store authentication information in your primary
 `User` model. Instead, the `Identity` model should be **associated** with your
@@ -92,33 +99,6 @@ class Identity
 end
 ```
 
-### MongoMapper
-
-Unfortunately MongoMapper is **not supported** in `omniauth-identity` from >= v2.0 as a result of it
-not being maintained for several years.
-
-It wasn't possible to include Mongoid *and* MongoMapper due to incompatible gem version
-requirements. Therefore precedence was given to Mongoid as it is significantly more
-popular and actively maintained.
-
-### DataMapper
-
-Include the `OmniAuth::Identity::Models::DataMapper` mixin and specify
-fields that you will need.
-
-```ruby
-class Identity
-  include DataMapper::Resource
-  include OmniAuth::Identity::Models::DataMapper
-
-  property :id,              Serial
-  property :email,           String
-  property :password_digest, Text
-
-  attr_accessor :password_confirmation
-end
-```
-
 ### CouchPotato
 
 Include the `OmniAuth::Identity::Models::CouchPotatoModule` mixin and specify fields that you will need.
@@ -139,13 +119,24 @@ class Identity
 end
 ```
 
-Once you've got an `Identity` persistence model and the strategy up and
-running, you can point users to `/auth/identity` and it will request
-that they log in or give them the opportunity to sign up for an account.
-Once they have authenticated with their identity, OmniAuth will call
-through to `/auth/identity/callback` with the same kinds of information
-it would had the user authenticated through an external provider.
-Simple!
+### NoBrainer
+
+[NoBrainer](http://nobrainer.io/) is an ORM for [RethinkDB](https://rethinkdb.com/).
+
+Include the `OmniAuth::Identity::Models::NoBrainer` mixin and specify fields that you will need.
+
+```ruby
+class Identity
+  include NoBrainer::Document
+  include OmniAuth::Identity::Models::NoBrainer
+
+  auth_key :email
+end
+```
+
+### Ruby Object Mapper
+
+Would love to add a mixin for the [Ruby Object Mapper (ROM)](https://rom-rb.org/) if anyone wants to work on it!
 
 ## Custom Auth Model
 
