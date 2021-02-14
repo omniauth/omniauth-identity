@@ -25,16 +25,7 @@ module OmniAuth
         if options[:on_login]
           options[:on_login].call(env)
         else
-          OmniAuth::Form.build(
-            title: (options[:title] || 'Identity Verification'),
-            url: callback_path
-          ) do |f|
-            f.text_field 'Login', 'auth_key'
-            f.password_field 'Password', 'password'
-            if options[:enable_registration]
-              f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
-            end
-          end.to_response
+          build_omniauth_login_form.to_response
         end
       end
 
@@ -69,14 +60,7 @@ module OmniAuth
         if options[:on_registration]
           options[:on_registration].call(env)
         else
-          OmniAuth::Form.build(title: 'Register Identity') do |f|
-            f.html "<p style='color:red'>#{validation_message}</p>" if validation_message
-            options[:fields].each do |field|
-              f.text_field field.to_s.capitalize, field.to_s
-            end
-            f.password_field 'Password', 'password'
-            f.password_field 'Confirm Password', 'password_confirmation'
-          end.to_response
+          build_omniauth_registration_form(validation_message).to_response
         end
       end
 
@@ -102,12 +86,8 @@ module OmniAuth
         elsif @identity.save && @identity.persisted?
           env['PATH_INFO'] = callback_path
           callback_phase
-        elsif options[:on_failed_registration]
-          env['omniauth.identity'] = @identity
-          options[:on_failed_registration].call(env)
         else
-          validation_message = 'One or more fields were invalid'
-          registration_form(validation_message)
+          show_custom_options_or_default
         end
       end
 
@@ -134,6 +114,42 @@ module OmniAuth
 
       def model
         options[:model] || ::Identity
+      end
+
+      private
+
+      def build_omniauth_login_form
+        OmniAuth::Form.build(
+          title: (options[:title] || 'Identity Verification'),
+          url: callback_path
+        ) do |f|
+          f.text_field 'Login', 'auth_key'
+          f.password_field 'Password', 'password'
+          if options[:enable_registration]
+            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
+          end
+        end
+      end
+
+      def build_omniauth_registration_form(validation_message)
+        OmniAuth::Form.build(title: 'Register Identity') do |f|
+          f.html "<p style='color:red'>#{validation_message}</p>" if validation_message
+          options[:fields].each do |field|
+            f.text_field field.to_s.capitalize, field.to_s
+          end
+          f.password_field 'Password', 'password'
+          f.password_field 'Confirm Password', 'password_confirmation'
+        end
+      end
+
+      def show_custom_options_or_default
+        if options[:on_failed_registration]
+          env['omniauth.identity'] = @identity
+          options[:on_failed_registration].call(env)
+        else
+          validation_message = 'One or more fields were invalid'
+          registration_form(validation_message)
+        end
       end
     end
   end
