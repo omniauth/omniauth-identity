@@ -1,6 +1,7 @@
 # OmniAuth Identity
 
 [![Version](https://img.shields.io/gem/v/omniauth-identity.svg)](https://rubygems.org/gems/omniauth-identity)
+[![Depfu](https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg)](https://depfu.com/github/omniauth/omniauth-identity?project_id=22381)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fomniauth%2Fomniauth-identity%2Fbadge&style=flat)](https://actions-badge.atrox.dev/omniauth/omniauth-identity/goto)
 [![Maintainability](https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/maintainability)](https://codeclimate.com/github/omniauth/omniauth-identity/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage)](https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage)
