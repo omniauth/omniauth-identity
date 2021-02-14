@@ -24,6 +24,13 @@ group :development, :test do
   end
 
   if ruby_version >= Gem::Version.new('2.4')
+    # No need to run byebug / pry on earlier versions
+    gem 'byebug', platform: :mri
+    gem 'pry', platform: :mri
+    gem 'pry-byebug', platform: :mri
+  end
+
+  if ruby_version >= Gem::Version.new('2.7')
     # No need to run rubocop or simplecov on earlier versions
     gem 'rubocop', '~> 1.9', platform: :mri
     gem 'rubocop-md', platform: :mri
@@ -32,12 +39,8 @@ group :development, :test do
     gem 'rubocop-performance', platform: :mri
     gem 'rubocop-rake', platform: :mri
     gem 'rubocop-rspec', platform: :mri
-    gem 'simplecov', '~> 0.21', platform: :mri
 
-    # No need to run byebug / pry on earlier versions
-    gem 'byebug', platform: :mri
-    gem 'pry', platform: :mri
-    gem 'pry-byebug', platform: :mri
+    gem 'simplecov', '~> 0.21', platform: :mri
   end
 
   gem 'couch_potato', github: 'langalex/couch_potato'
