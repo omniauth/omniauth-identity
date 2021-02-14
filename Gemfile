@@ -17,15 +17,34 @@ group :documentation do
 end
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  if ruby_version < Gem::Version.new('2.5.0')
+    gem 'activerecord', '~> 5' # rails 5 works with Ruby 2.4
+  else
+    gem 'activerecord', '~> 6' # rails 6 requires Ruby 2.5 or later
+  end
+
+  if ruby_version >= Gem::Version.new('2.4')
+    # No need to run rubocop or simplecov on earlier versions
+    gem 'rubocop', '~> 1.9', :platform => :mri
+    gem 'rubocop-md', :platform => :mri
+    gem 'rubocop-minitest', :platform => :mri
+    gem 'rubocop-packaging', :platform => :mri
+    gem 'rubocop-rake', :platform => :mri
+    gem 'rubocop-rspec', :platform => :mri
+    gem 'simplecov', :platform => :mri
+
+    # No need to run byebug / pry on earlier versions
+    gem 'byebug', :platform => :mri
+    gem 'pry', :platform => :mri
+    gem 'pry-byebug', :platform => :mri
+  end
+
   gem 'couch_potato', github: 'langalex/couch_potato'
   gem 'growl'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec'
-  gem 'pry', platform: :mri
-  gem 'pry-byebug', platform: :mri
   gem 'rb-fsevent'
 end
 
