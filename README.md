@@ -5,6 +5,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage)](https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Helpers](https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg)](https://www.codetriage.com/omniauth/omniauth-identity)
+[![Downloads Rank](https://img.shields.io/gem/rd/omniauth-identity.svg)](https://rubygems.org/gems/omniauth-identity)
 
 The OmniAuth Identity gem provides a way for applications to utilize a
 traditional login/password based authentication system without the need
@@ -14,9 +15,10 @@ basic construct for user management and then gets out of the way.
 
 ## Compatibility
 
-This gem is compatible with, as of Feb 2021:
-• latest released version of omniauth, v2.0.2
-• Ruby 2.4, 2.5, 2.6, 2.7, 3.0, head
+This gem is compatible with, as of Feb 2021, version 3:
+
+* Latest released version of omniauth, v2.0.2 
+* Ruby 2.4, 2.5, 2.6, 2.7, 3.0, ruby-head
 
 ## Installation
 
