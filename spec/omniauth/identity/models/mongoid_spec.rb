@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-RSpec.describe(OmniAuth::Identity::Models::Mongoid, db: true) do
-  class MongoidTestIdentity
-    include Mongoid::Document
-    include OmniAuth::Identity::Models::Mongoid
-    auth_key :ham_sandwich
-    store_in database: 'db1', collection: 'mongoid_test_identities', client: 'secondary'
-  end
+require 'mongoid'
 
+class MongoidTestIdentity
+  include Mongoid::Document
+  include OmniAuth::Identity::Models::Mongoid
+  auth_key :ham_sandwich
+  store_in database: 'db1', collection: 'mongoid_test_identities', client: 'secondary'
+end
+
+RSpec.describe(OmniAuth::Identity::Models::Mongoid, db: true) do
   describe 'model', type: :model do
     subject { MongoidTestIdentity }
 
