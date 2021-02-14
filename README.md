@@ -1,5 +1,11 @@
 # OmniAuth Identity
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fomniauth%2Fomniauth-identity%2Fbadge&style=flat)](https://actions-badge.atrox.dev/omniauth/omniauth-identity/goto)
+[![Maintainability](https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/maintainability)](https://codeclimate.com/github/omniauth/omniauth-identity/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage)](https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Open Source Helpers](https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg)](https://www.codetriage.com/omniauth/omniauth-identity)
+
 The OmniAuth Identity gem provides a way for applications to utilize a
 traditional login/password based authentication system without the need
 to give up the simple authentication flow provided by OmniAuth. Identity
