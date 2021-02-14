@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0] - 2021-02-13
 
+## Fixed
+
+- Github Actions CI Build
+
+## [3.0] - 2021-02-13
+
 ### Added
+
+- Compatibility with Ruby 3
 - Add option `:enable_login` to bypass OmniAuth disabling of GET method (default `true`)
   - NOTE: This restores compatibility between this gem and the current, core, omniauth gem!
 - README updates, including a rename to README.md
