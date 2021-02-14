@@ -236,6 +236,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
         it 'shows registration form' do
           post '/auth/identity/register', properties
           expect(last_response.body).to be_include('Register Identity')
+          expect(last_response.body).to be_include('One or more fields were invalid')
         end
       end
 
@@ -250,6 +251,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
           post '/auth/identity/register', properties
           expect(identity_hash).to eq(invalid_identity)
           expect(last_response.body).to be_include("FAIL'DOH!")
+          expect(last_response.body).not_to be_include('One or more fields were invalid')
         end
       end
     end
