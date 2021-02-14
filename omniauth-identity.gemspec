@@ -8,13 +8,12 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'bcrypt'
   gem.add_runtime_dependency 'omniauth'
 
-  gem.add_development_dependency 'activerecord', '~> 6'
   gem.add_development_dependency 'anonymous_active_record', '>= 1.0.7'
   gem.add_development_dependency 'mongoid', '~> 7'
   gem.add_development_dependency 'rack-test', '~> 1'
   gem.add_development_dependency 'rake', '~> 13'
   gem.add_development_dependency 'rspec', '~> 3'
-  gem.add_development_dependency 'sqlite3'
+  gem.add_development_dependency 'sqlite3', '~> 1.4'
   # NOTE: Released version of couch_potato depends on activemodel ~> 4.0, so pull latest from github in Gemfile.
   # gem.add_development_dependency 'couch_potato', '~> 1.7'
 
