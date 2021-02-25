@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 2.4'
   gem.name = 'omniauth-identity'
   gem.version = OmniAuth::Identity::VERSION
-  gem.description = 'Internal authentication handlers for OmniAuth.'
+  gem.description = 'Traditional username/password based authentication system for OmniAuth'
   gem.summary = gem.description
   gem.homepage = 'http://github.com/omniauth/omniauth-identity'
   gem.authors = ['Peter Boling', 'Andrew Roberts', 'Michael Bleigh']
