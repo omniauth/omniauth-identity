@@ -10,7 +10,7 @@
 [![Downloads Rank](https://img.shields.io/gem/rd/omniauth-identity.svg)](https://rubygems.org/gems/omniauth-identity)
 
 The OmniAuth Identity gem provides a way for applications to utilize a
-traditional login/password based authentication system without the need
+traditional username/password based authentication system without the need
 to give up the simple authentication flow provided by OmniAuth. Identity
 is designed on purpose to be as featureless as possible: it provides the
 basic construct for user management and then gets out of the way.
