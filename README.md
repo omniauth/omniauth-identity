@@ -245,6 +245,26 @@ Note: Be careful when customizing `locate_conditions`.  The best way to modify t
 to copy the default value, and then add to the hash.  Removing the default condition will almost
 always break things!
 
+## Customizing Other Things
+
+From the code - here are the options we have for you, a couple of which are documented above, and the rest are documented... in the specs we hope!?
+```
+      option :fields, %i[name email]
+
+      # Primary Feature Switches:
+      option :enable_registration, true   # See #other_phase and #request_phase
+      option :enable_login, true          # See #other_phase
+
+      # Customization Options:
+      option :on_login, nil               # See #request_phase
+      option :on_validation, nil          # See #registration_phase
+      option :on_registration, nil        # See #registration_phase
+      option :on_failed_registration, nil # See #registration_phase
+      option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
+```
+
+Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭 
+
 ## License
 
 MIT License. See LICENSE for details.
