@@ -6,6 +6,7 @@ module OmniAuth
     # user authentication using the same process flow that you
     # use for external OmniAuth providers.
     class Identity
+      DEFAULT_REGISTRATION_FIELDS = %i[password password_confirmation].freeze
       include OmniAuth::Strategy
       option :fields, %i[name email]
 
@@ -64,7 +65,7 @@ module OmniAuth
       end
 
       def registration_phase
-        attributes = (options[:fields] + %i[password password_confirmation]).each_with_object({}) do |k, h|
+        attributes = (options[:fields] + DEFAULT_REGISTRATION_FIELDS).each_with_object({}) do |k, h|
           h[k] = request[k.to_s]
         end
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
@@ -80,10 +81,7 @@ module OmniAuth
             registration_failure('Validation failed')
           end
         else
-          warn "[DEPRECATION] Please define '#{model.class}#save'. Behavior based on '#{model.class}.create' will be removed in omniauth-identity v4.0. See lib/omniauth/identity/model.rb"
-          @identity = model.create(attributes)
-          env['omniauth.identity'] = @identity
-          registration_result
+          deprecated_registration(attributes)
         end
       end
 
@@ -173,6 +171,17 @@ module OmniAuth
         else
           registration_failure('One or more fields were invalid')
         end
+      end
+
+      def deprecated_registration(attributes)
+        warn <<~CREATEDEP
+          [DEPRECATION] Please define '#{model.class}#save'.
+                        Behavior based on '#{model.class}.create' will be removed in omniauth-identity v4.0.
+                        See lib/omniauth/identity/model.rb
+        CREATEDEP
+        @identity = model.create(attributes)
+        env['omniauth.identity'] = @identity
+        registration_result
       end
     end
   end
