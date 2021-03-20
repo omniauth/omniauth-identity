@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.5] - 2021-03-19
+
+### Fixed
+
+- Fix breaking changes introduced by [#86's](https://github.com/omniauth/omniauth-identity/pull/86) introduction of `:on_validation`
+
+### Added
+
+- Define `#save`, `#persisted?` and `::create` on `Omniauth::Identity::Model`
+- Add `@since` YARD tags to interface methods
+- Refactor `Omniauth::Strategies::Identity.registration_phase` to support `Omniauth::Identity::Model`-inheriting classes that do not define `#save`.
+  - This support will be dropped in v4.0.
+
 ## [3.0.4] - 2021-02-14
 
 ### Added

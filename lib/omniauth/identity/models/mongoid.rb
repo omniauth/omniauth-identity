@@ -5,6 +5,7 @@ require 'mongoid'
 module OmniAuth
   module Identity
     module Models
+      # NOTE: Mongoid is based on ActiveModel.
       module Mongoid
         def self.included(base)
           base.class_eval do

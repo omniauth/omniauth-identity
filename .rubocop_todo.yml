@@ -40,12 +40,12 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
-  Max: 27
+  Max: 28
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ClassLength:
-  Max: 117
+  Max: 140
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.

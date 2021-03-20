@@ -6,6 +6,9 @@ module OmniAuth
   module Identity
     module Models
       # http://sequel.jeremyevans.net/ an SQL ORM
+      # NOTE: Sequel is *not* based on ActiveModel, but supports the API we need, except for `persisted`:
+      # * create
+      # * save, but save is deprecated in favor of `save_changes`
       module Sequel
         def self.included(base)
           base.class_eval do
@@ -28,6 +31,14 @@ module OmniAuth
 
             def self.locate(search_hash)
               where(search_hash).first
+            end
+
+            def persisted?
+              exists?
+            end
+
+            def save
+              save_changes
             end
           end
         end
