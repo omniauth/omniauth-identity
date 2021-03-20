@@ -6,6 +6,7 @@ module OmniAuth
   module Identity
     module Models
       # http://nobrainer.io/ an ORM for RethinkDB
+      # NOTE: NoBrainer is based on ActiveModel.
       module NoBrainer
         def self.included(base)
           base.class_eval do

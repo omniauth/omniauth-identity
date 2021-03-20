@@ -6,6 +6,7 @@ module OmniAuth
   module Identity
     module Models
       # can not be named CouchPotato since there is a class with that name
+      # NOTE: CouchPotato is based on ActiveModel.
       module CouchPotatoModule
         def self.included(base)
           base.class_eval do

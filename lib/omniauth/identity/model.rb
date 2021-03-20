@@ -8,20 +8,13 @@ module OmniAuth
     # abstract must be implemented in the including class for things to
     # work properly.
     module Model
+      SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
+
       def self.included(base)
         base.extend ClassMethods
       end
 
       module ClassMethods
-        # Locate an identity given its unique login key.
-        #
-        # @abstract
-        # @param [String] key The unique login key.
-        # @return [Model] An instance of the identity model class.
-        def locate(key)
-          raise NotImplementedError
-        end
-
         # Authenticate a user with the given key and password.
         #
         # @param [String] key The unique login key provided for a given identity.
@@ -43,6 +36,67 @@ module OmniAuth
 
           @auth_key || 'email'
         end
+
+        ### Singleton API for classes utilizing the OmniAuth::Identity::Model
+        #
+        # * create(*args)
+        # * locate(key)
+
+        # Persists a new Identity object to the ORM.
+        # Defaults to calling super.  Override as needed per ORM.
+        #
+        # @abstract
+        # @param [Hash] args Attributes of the new instance.
+        # @return [Model] An instance of the identity model class.
+        def create(*args)
+          raise NotImplementedError unless defined?(super)
+
+          super
+        end
+
+        # Locate an identity given its unique login key.
+        #
+        # @abstract
+        # @param [String] key The unique login key.
+        # @return [Model] An instance of the identity model class.
+        def locate(key)
+          raise NotImplementedError
+        end
+        #
+        ### END Singleton API for classes utilizing the OmniAuth::Identity::Model
+      end
+
+      ### Instance API for classes utilizing the OmniAuth::Identity::Model
+      #
+      # * save
+      # * persisted?
+      # * authenticate(password)
+      # * uid
+      # * auth_key - Normally defined by the macro `auth_key`
+      # * auth_key=(value) - Normally defined by the macro `auth_key`
+      #
+
+      # Persists a new Identity object to the ORM.
+      # Default raises an error.  Override as needed per ORM.
+      #
+      # @since 3.0.5
+      # @abstract
+      # @return [Model] An instance of the identity model class.
+      def save
+        raise NotImplementedError unless defined?(super)
+
+        super
+      end
+
+      # Checks if the Identity object is persisted in the ORM.
+      # Defaults to calling super.  Override as needed per ORM.
+      #
+      # @abstract
+      # @return [true or false] true if object exists, false if not.
+      def persisted?
+        raise NotImplementedError unless defined?(super)
+
+        super
       end
 
       # Returns self if the provided password is correct, false
@@ -53,22 +107,6 @@ module OmniAuth
       # @return [self or false] Self if authenticated, false if not.
       def authenticate(password)
         raise NotImplementedError
-      end
-
-      SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
-      # A hash of as much of the standard OmniAuth schema as is stored
-      # in this particular model. By default, this will call instance
-      # methods for each of the attributes it needs in turn, ignoring
-      # any for which `#respond_to?` is `false`.
-      #
-      # If `first_name`, `nickname`, and/or `last_name` is provided but
-      # `name` is not, it will be automatically calculated.
-      #
-      # @return [Hash] A string-keyed hash of user information.
-      def info
-        SCHEMA_ATTRIBUTES.each_with_object({}) do |attribute, hash|
-          hash[attribute] = send(attribute) if respond_to?(attribute)
-        end
       end
 
       # An identifying string that must be globally unique to the
@@ -111,6 +149,23 @@ module OmniAuth
           send(auth_key_setter, value)
         else
           raise NotImplementedError
+        end
+      end
+      #
+      ### END Instance API for classes utilizing the OmniAuth::Identity::Model
+
+      # A hash of as much of the standard OmniAuth schema as is stored
+      # in this particular model. By default, this will call instance
+      # methods for each of the attributes it needs in turn, ignoring
+      # any for which `#respond_to?` is `false`.
+      #
+      # If `first_name`, `nickname`, and/or `last_name` is provided but
+      # `name` is not, it will be automatically calculated.
+      #
+      # @return [Hash] A string-keyed hash of user information.
+      def info
+        SCHEMA_ATTRIBUTES.each_with_object({}) do |attribute, hash|
+          hash[attribute] = send(attribute) if respond_to?(attribute)
         end
       end
     end

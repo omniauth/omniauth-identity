@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fix breaking changes introduced by [#86's](https://github.com/omniauth/omniauth-identity/pull/86) introduction of `:on_validation`
+
 ## [3.0.4] - 2021-02-14
 
 ### Added
