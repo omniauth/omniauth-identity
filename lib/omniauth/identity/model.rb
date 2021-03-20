@@ -59,6 +59,7 @@ module OmniAuth
         # @abstract
         # @param [Hash] args Attributes of the new instance.
         # @return [Model] An instance of the identity model class.
+        # @since 3.0.5
         def create(*args)
           raise NotImplementedError unless defined?(super)
 
@@ -78,9 +79,9 @@ module OmniAuth
       # Persists a new Identity object to the ORM.
       # Default raises an error.  Override as needed per ORM.
       #
-      # @since 3.0.5
       # @abstract
       # @return [Model] An instance of the identity model class.
+      # @since 3.0.5
       def save
         raise NotImplementedError unless defined?(super)
 
@@ -92,6 +93,7 @@ module OmniAuth
       #
       # @abstract
       # @return [true or false] true if object exists, false if not.
+      # @since 3.0.5
       def persisted?
         raise NotImplementedError unless defined?(super)
 
