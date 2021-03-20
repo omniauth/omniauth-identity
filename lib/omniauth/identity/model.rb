@@ -4,9 +4,22 @@ module OmniAuth
   module Identity
     # This module provides an includable interface for implementing the
     # necessary API for OmniAuth Identity to properly locate identities
-    # and provide all necessary information. All methods marked as
-    # abstract must be implemented in the including class for things to
-    # work properly.
+    # and provide all necessary information.
+    #
+    # All methods marked as abstract must be implemented in the
+    # including class for things to work properly.
+    #
+    ### Singleton API
+    #
+    # * locate(key)
+    # * create(*args) - Deprecated in v3.0.5; Will be removed in v4.0
+    #
+    ### Instance API
+    #
+    # * save
+    # * persisted?
+    # * authenticate(password)
+    #
     module Model
       SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
 
@@ -15,6 +28,8 @@ module OmniAuth
       end
 
       module ClassMethods
+        extend Gem::Deprecate
+
         # Authenticate a user with the given key and password.
         #
         # @param [String] key The unique login key provided for a given identity.
@@ -37,14 +52,10 @@ module OmniAuth
           @auth_key || 'email'
         end
 
-        ### Singleton API for classes utilizing the OmniAuth::Identity::Model
-        #
-        # * create(*args)
-        # * locate(key)
-
         # Persists a new Identity object to the ORM.
         # Defaults to calling super.  Override as needed per ORM.
         #
+        # @deprecated v4.0 will begin using {#new} with {#save} instead.
         # @abstract
         # @param [Hash] args Attributes of the new instance.
         # @return [Model] An instance of the identity model class.
@@ -62,19 +73,7 @@ module OmniAuth
         def locate(key)
           raise NotImplementedError
         end
-        #
-        ### END Singleton API for classes utilizing the OmniAuth::Identity::Model
       end
-
-      ### Instance API for classes utilizing the OmniAuth::Identity::Model
-      #
-      # * save
-      # * persisted?
-      # * authenticate(password)
-      # * uid
-      # * auth_key - Normally defined by the macro `auth_key`
-      # * auth_key=(value) - Normally defined by the macro `auth_key`
-      #
 
       # Persists a new Identity object to the ORM.
       # Default raises an error.  Override as needed per ORM.
@@ -151,8 +150,6 @@ module OmniAuth
           raise NotImplementedError
         end
       end
-      #
-      ### END Instance API for classes utilizing the OmniAuth::Identity::Model
 
       # A hash of as much of the standard OmniAuth schema as is stored
       # in this particular model. By default, this will call instance

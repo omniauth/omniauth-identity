@@ -7,7 +7,6 @@ module OmniAuth
     # use for external OmniAuth providers.
     class Identity
       include OmniAuth::Strategy
-
       option :fields, %i[name email]
 
       # Primary Feature Switches:
@@ -71,23 +70,20 @@ module OmniAuth
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
         end
-        @identity = model.new(attributes)
-
-        # on_validation may run a Captcha or other validation mechanism
-        # Must return true when validation passes, false otherwise
-        if options[:on_validation] && !options[:on_validation].call(env: env)
-          if options[:on_failed_registration]
-            env['omniauth.identity'] = @identity
-            options[:on_failed_registration].call(env)
+        if saving_instead_of_creating?
+          @identity = model.new(attributes)
+          env['omniauth.identity'] = @identity
+          if !validating? || valid?
+            @identity.save
+            registration_result
           else
-            validation_message = 'Validation failed'
-            registration_form(validation_message)
+            registration_failure('Validation failed')
           end
-        elsif @identity.save && @identity.persisted?
-          env['PATH_INFO'] = callback_path
-          callback_phase
         else
-          show_custom_options_or_default
+          warn "[DEPRECATION] Please define '#{model.class}#save'. Behavior based on '#{model.class}.create' will be removed in omniauth-identity v4.0. See lib/omniauth/identity/model.rb"
+          @identity = model.create(attributes)
+          env['omniauth.identity'] = @identity
+          registration_result
         end
       end
 
@@ -142,13 +138,40 @@ module OmniAuth
         end
       end
 
-      def show_custom_options_or_default
+      def saving_instead_of_creating?
+        model.respond_to?(:save) && model.respond_to?(:persisted?)
+      end
+
+      # Validates the model before it is persisted
+      #
+      # @return [truthy or falsey] :on_validation option is truthy or falsey
+      def validating?
+        options[:on_validation]
+      end
+
+      # Validates the model before it is persisted
+      #
+      # @return [true or false] result of :on_validation call
+      def valid?
+        # on_validation may run a Captcha or other validation mechanism
+        # Must return true when validation passes, false otherwise
+        !!options[:on_validation].call(env: env)
+      end
+
+      def registration_failure(message)
         if options[:on_failed_registration]
-          env['omniauth.identity'] = @identity
           options[:on_failed_registration].call(env)
         else
-          validation_message = 'One or more fields were invalid'
-          registration_form(validation_message)
+          registration_form(message)
+        end
+      end
+
+      def registration_result
+        if @identity.persisted?
+          env['PATH_INFO'] = callback_path
+          callback_phase
+        else
+          registration_failure('One or more fields were invalid')
         end
       end
     end
