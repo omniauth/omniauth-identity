@@ -20,6 +20,11 @@ module OmniAuth
       option :on_registration, nil        # See #registration_phase
       option :on_failed_registration, nil # See #registration_phase
       option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
+      option :create_identity_link_text, 'Create an Identity'
+      option :registration_failure_message, 'One or more fields were invalid'
+      option :validation_failure_message, 'Validation failed'
+      option :title, 'Identity Verification' # Title for Login Form
+      option :registration_form_title, 'Register Identity' # Title for Registration Form
 
       def request_phase
         if options[:on_login]
@@ -71,14 +76,14 @@ module OmniAuth
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
         end
+        @identity = model.new(attributes)
         if saving_instead_of_creating?
-          @identity = model.new(attributes)
           env['omniauth.identity'] = @identity
           if !validating? || valid?
             @identity.save
             registration_result
           else
-            registration_failure('Validation failed')
+            registration_failure(options[:validation_failure_message])
           end
         else
           deprecated_registration(attributes)
@@ -114,19 +119,19 @@ module OmniAuth
 
       def build_omniauth_login_form
         OmniAuth::Form.build(
-          title: (options[:title] || 'Identity Verification'),
+          title: options[:title],
           url: callback_path
         ) do |f|
           f.text_field 'Login', 'auth_key'
           f.password_field 'Password', 'password'
           if options[:enable_registration]
-            f.html "<p align='center'><a href='#{registration_path}'>Create an Identity</a></p>"
+            f.html "<p align='center'><a href='#{registration_path}'>#{options[:create_identity_link_text]}</a></p>"
           end
         end
       end
 
       def build_omniauth_registration_form(validation_message)
-        OmniAuth::Form.build(title: 'Register Identity') do |f|
+        OmniAuth::Form.build(title: options[:registration_form_title]) do |f|
           f.html "<p style='color:red'>#{validation_message}</p>" if validation_message
           options[:fields].each do |field|
             f.text_field field.to_s.capitalize, field.to_s
@@ -137,14 +142,14 @@ module OmniAuth
       end
 
       def saving_instead_of_creating?
-        model.respond_to?(:save) && model.respond_to?(:persisted?)
+        @identity.respond_to?(:save) && @identity.respond_to?(:persisted?)
       end
 
       # Validates the model before it is persisted
       #
       # @return [truthy or falsey] :on_validation option is truthy or falsey
       def validating?
-        options[:on_validation]
+        !!options[:on_validation]
       end
 
       # Validates the model before it is persisted
@@ -169,7 +174,7 @@ module OmniAuth
           env['PATH_INFO'] = callback_path
           callback_phase
         else
-          registration_failure('One or more fields were invalid')
+          registration_failure(options[:registration_failure_message])
         end
       end
 
