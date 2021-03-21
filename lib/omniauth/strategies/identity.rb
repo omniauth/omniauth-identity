@@ -71,8 +71,8 @@ module OmniAuth
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
         end
+        @identity = model.new(attributes)
         if saving_instead_of_creating?
-          @identity = model.new(attributes)
           env['omniauth.identity'] = @identity
           if !validating? || valid?
             @identity.save
@@ -137,7 +137,7 @@ module OmniAuth
       end
 
       def saving_instead_of_creating?
-        model.respond_to?(:save) && model.respond_to?(:persisted?)
+        @identity.respond_to?(:save) && @identity.respond_to?(:persisted?)
       end
 
       # Validates the model before it is persisted
