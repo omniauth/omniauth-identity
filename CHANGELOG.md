@@ -8,6 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.6] - 2021-03-20
+
+### Fixed
+
+- Fix breaking changes introduced by [#108](https://github.com/omniauth/omniauth-identity/pull/108) which prevented `:on_validation` from firing
+
+### Added
+
+- New (or finally documented) options:
+  - `:create_identity_link_text` defaults to `'Create an Identity'`
+  - `:registration_failure_message` defaults to `'One or more fields were invalid'`
+  - `:validation_failure_message` defaults to `'Validation failed'`
+  - `:title` defaults to `'Identity Verification'`
+  - `:registration_form_title` defaults to `'Register Identity'`
+
 ## [3.0.5] - 2021-03-19
 
 ### Fixed
