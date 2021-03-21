@@ -226,10 +226,12 @@ RSpec.describe OmniAuth::Strategies::Identity do
             post '/auth/identity/register', properties
             expect(env_hash).to eq(nil)
           end
+
           it 'renders registration form' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
           end
+
           it 'displays validation failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:validation_failure_message])
@@ -242,19 +244,23 @@ RSpec.describe OmniAuth::Strategies::Identity do
               true
             }
           end
+
           it 'sets the auth hash' do
             post '/auth/identity/register', properties
             expect(auth_hash['uid']).to match(/\d+/)
             expect(auth_hash['provider']).to eq('identity')
           end
+
           it 'does not render registration form' do
             post '/auth/identity/register', properties
             expect(last_response.body).not_to be_include(described_class.default_options[:registration_form_title])
           end
+
           it 'does not display validation failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).not_to be_include(described_class.default_options[:validation_failure_message])
           end
+
           it 'does not display registration failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).not_to be_include(described_class.default_options[:registration_failure_message])
@@ -317,10 +323,12 @@ RSpec.describe OmniAuth::Strategies::Identity do
             post '/auth/identity/register', properties
             expect(env_hash).to eq(nil)
           end
+
           it 'renders registration form' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
           end
+
           it 'displays validation failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:validation_failure_message])
@@ -333,18 +341,22 @@ RSpec.describe OmniAuth::Strategies::Identity do
               true
             }
           end
+
           it 'does not set the env hash' do
             post '/auth/identity/register', properties
             expect(env_hash).to eq(nil)
           end
+
           it 'renders registration form' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
           end
+
           it 'does not display validation failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).not_to be_include(described_class.default_options[:validation_failure_message])
           end
+
           it 'display registration failure message' do
             post '/auth/identity/register', properties
             expect(last_response.body).to be_include(described_class.default_options[:registration_failure_message])
