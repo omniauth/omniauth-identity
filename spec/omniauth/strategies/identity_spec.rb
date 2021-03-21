@@ -3,8 +3,9 @@
 RSpec.describe OmniAuth::Strategies::Identity do
   attr_accessor :app
 
-  let(:auth_hash) { last_response.headers['env']['omniauth.auth'] }
-  let(:identity_hash) { last_response.headers['env']['omniauth.identity'] }
+  let(:env_hash) { last_response.headers['env'] }
+  let(:auth_hash) { env_hash['omniauth.auth'] }
+  let(:identity_hash) { env_hash['omniauth.identity'] }
   let(:identity_options) { {} }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
@@ -193,7 +194,7 @@ RSpec.describe OmniAuth::Strategies::Identity do
       end
     end
 
-    context 'with successful creation' do
+    context 'with good identity' do
       let(:properties) do
         {
           name: 'Awesome Dude',
@@ -209,9 +210,60 @@ RSpec.describe OmniAuth::Strategies::Identity do
         expect(auth_hash['uid']).to match(/\d+/)
         expect(auth_hash['provider']).to eq('identity')
       end
+
+      context 'with on_validation proc' do
+        let(:identity_options) do
+          { model: anon_ar, on_validation: on_validation_proc }
+        end
+        let(:on_validation_proc) do
+          lambda { |_env|
+            false
+          }
+        end
+
+        context 'when validation fails' do
+          it 'does not set the env hash' do
+            post '/auth/identity/register', properties
+            expect(env_hash).to eq(nil)
+          end
+          it 'renders registration form' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
+          end
+          it 'displays validation failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:validation_failure_message])
+          end
+        end
+
+        context 'when validation succeeds' do
+          let(:on_validation_proc) do
+            lambda { |_env|
+              true
+            }
+          end
+          it 'sets the auth hash' do
+            post '/auth/identity/register', properties
+            expect(auth_hash['uid']).to match(/\d+/)
+            expect(auth_hash['provider']).to eq('identity')
+          end
+          it 'does not render registration form' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).not_to be_include(described_class.default_options[:registration_form_title])
+          end
+          it 'does not display validation failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).not_to be_include(described_class.default_options[:validation_failure_message])
+          end
+          it 'does not display registration failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).not_to be_include(described_class.default_options[:registration_failure_message])
+          end
+        end
+      end
     end
 
-    context 'with invalid identity' do
+    context 'with bad identity' do
       let(:properties) do
         {
           name: 'Awesome Dude',
@@ -247,6 +299,56 @@ RSpec.describe OmniAuth::Strategies::Identity do
           expect(identity_hash).to eq(invalid_identity)
           expect(last_response.body).to be_include("FAIL'DOH!")
           expect(last_response.body).not_to be_include('One or more fields were invalid')
+        end
+      end
+
+      context 'with on_validation proc' do
+        let(:identity_options) do
+          { model: anon_ar, on_validation: on_validation_proc }
+        end
+        let(:on_validation_proc) do
+          lambda { |_env|
+            false
+          }
+        end
+
+        context 'when validation fails' do
+          it 'does not set the env hash' do
+            post '/auth/identity/register', properties
+            expect(env_hash).to eq(nil)
+          end
+          it 'renders registration form' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
+          end
+          it 'displays validation failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:validation_failure_message])
+          end
+        end
+
+        context 'when validation succeeds' do
+          let(:on_validation_proc) do
+            lambda { |_env|
+              true
+            }
+          end
+          it 'does not set the env hash' do
+            post '/auth/identity/register', properties
+            expect(env_hash).to eq(nil)
+          end
+          it 'renders registration form' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:registration_form_title])
+          end
+          it 'does not display validation failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).not_to be_include(described_class.default_options[:validation_failure_message])
+          end
+          it 'display registration failure message' do
+            post '/auth/identity/register', properties
+            expect(last_response.body).to be_include(described_class.default_options[:registration_failure_message])
+          end
         end
       end
     end
