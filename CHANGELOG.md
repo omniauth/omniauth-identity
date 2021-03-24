@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.8] - 2021-03-24
+
+### Fixed
+
+- \[Model\] Fixes 2 issues raised in a comment on PR [#108](https://github.com/omniauth/omniauth-identity/pull/108#issuecomment-804456604)
+  - When `options[:on_validation]` is set `new`/`save`/`persisted?` logic is used.
+  - When `options[:on_validation]` is not set `create`/`persisted?` logic is used.
+
 ## [3.0.7] - 2021-03-23
 
 ### Fixed
