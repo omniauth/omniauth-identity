@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upgraded to a newer `OmniAuth::Identity::SecurePassword` ripped from [Rails 6-1-stable](https://github.com/rails/rails/blob/6-1-stable/activemodel/lib/active_model/secure_password.rb)
   - Aeons ago the original was ripped from Rails 3.1, and frozen in time.
-    While writing specs, it was discovered to be incompatible with this gems' Sequel adapter.
+    While writing specs, it was discovered to be incompatible with this gem's Sequel adapter.
   - Specs validate that the new version does work.
     In any case, the ripped version is only used when the `has_secure_password` macro is not yet defined in the class.
 
