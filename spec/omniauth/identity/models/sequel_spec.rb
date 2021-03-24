@@ -3,10 +3,11 @@
 require 'sqlite3'
 require 'sequel'
 
+DB = Sequel.sqlite
+
 RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
   before(:all) do
     # Connect to an in-memory sqlite3 database.
-    DB = Sequel.sqlite
     DB.create_table :sequel_test_identities do
       primary_key :id
       String :email, null: false

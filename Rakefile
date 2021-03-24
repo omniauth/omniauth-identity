@@ -23,9 +23,6 @@ rescue LoadError
   task :test do
     warn 'RSpec is disabled'
   end
-  task :spec do
-    warn 'RSpec is disabled'
-  end
 end
 
 begin
@@ -39,4 +36,3 @@ end
 
 # These tests do not require any services to be running, so this is what we run via Github Actions
 task default: %i[test]
-
