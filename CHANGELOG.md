@@ -8,6 +8,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.7] - 2021-03-23
+
+### Fixed
+
+- \[ActiveRecord\] Fixed [#110](https://github.com/omniauth/omniauth-identity/issues/110) which prevented `OmniAuth::Identity::Models::ActiveRecord`-based records from saving.
+- \[CouchPotato\] Fixed `OmniAuth::Identity::Models::CouchPotato`'s `#save`.
+- \[Sequel\] Fixed `OmniAuth::Identity::Models::Sequel`'s `#save`.
+- \[Model\] Only define `::create`, `#save`, and `#persisted?` when not already defined.
+- \[Model\] Restore original `info` functionality which set `name` based on `first_name`, `last_name`, or `nickname`
+
+### Changed
+
+- Upgraded to a newer `OmniAuth::Identity::SecurePassword` ripped from [Rails 6-1-stable](https://github.com/rails/rails/blob/6-1-stable/activemodel/lib/active_model/secure_password.rb)
+  - Aeons ago the original was ripped from Rails 3.1, and frozen in time.
+    While writing specs, it was discovered to be incompatible with this gems' Sequel adapter.
+  - Specs validate that the new version does work.
+    In any case, the ripped version is only used when the `has_secure_password` macro is not yet defined in the class.
+
+### Added
+
+- New specs to cover real use cases and implementations of each ORM model adapter that ships with the gem:
+  - ActiveRecord (Polyglot - Many Relational Databases)
+  - Sequel (Polyglot - Many Relational Databases)
+  - CouchPotato (CouchDB)
+  - Mongoid (MongoDB)
+  - NoBrainer (RethinkDB)
+
 ## [3.0.6] - 2021-03-20
 
 ### Fixed

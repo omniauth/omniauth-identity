@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'sqlite3'
+require 'active_record'
+require 'anonymous_active_record'
+
 RSpec.describe OmniAuth::Strategies::Identity do
   attr_accessor :app
 

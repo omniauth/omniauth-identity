@@ -93,8 +93,8 @@ Just include `OmniAuth::Identity::Models::Sequel` mixin, and specify
 whatever else you will need.
 
 ```ruby
-class SequelTestIdentity < Sequel::Model
-  include OmniAuth::Identity::Models::Sequel
+class SequelTestIdentity < Sequel::Model(:identities)
+  include ::OmniAuth::Identity::Models::Sequel
   auth_key :email
   # whatever else you want!
 end
@@ -108,8 +108,8 @@ fields that you will need.
 
 ```ruby
 class Identity
-  include Mongoid::Document
-  include OmniAuth::Identity::Models::Mongoid
+  include ::Mongoid::Document
+  include ::OmniAuth::Identity::Models::Mongoid
 
   field :email, type: String
   field :name, type: String
@@ -124,8 +124,9 @@ fields that you will need.
 
 ```ruby
 class Identity
-  include CouchPotato::Persistence
-  include OmniAuth::Identity::Models::CouchPotatoModule
+  # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
+  include ::CouchPotato::Persistence
+  include ::OmniAuth::Identity::Models::CouchPotatoModule
 
   property :email
   property :password_digest
@@ -147,8 +148,8 @@ fields that you will need.
 
 ```ruby
 class Identity
-  include NoBrainer::Document
-  include OmniAuth::Identity::Models::NoBrainer
+  include ::NoBrainer::Document
+  include ::OmniAuth::Identity::Models::NoBrainer
 
   auth_key :email
 end
@@ -264,6 +265,35 @@ option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
 ```
 
 Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am ‘Added some feature’`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Make sure to add tests for it. This is important so I don’t break it in a future version unintentionally.
+   - NOTE: In order to run *all* the tests you will need to have the following databases installed and configured.
+     1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
+      ```bash
+      brew install rethinkdb
+      rethinkdb
+      ```
+      2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
+      ```bash
+      brew tap mongodb/brew
+      brew install mongodb-community@4.4
+     
+      ```
+   To skip the RethinkDB-based, NoBrainer (ORM), tests run:
+   ```bash
+   bundle exec rspec spec --tag '~nobrainer'
+   ```
+   Or if you have RethinkDB setup, then run all:
+   ```bash
+   bundle exec rspec spec
+   ```
+6. Create new Pull Request
 
 ## License
 

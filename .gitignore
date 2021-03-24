@@ -11,6 +11,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+/rethinkdb_data
 
 *.gem
 
