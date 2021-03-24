@@ -18,6 +18,7 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
   before do
     sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
       include ::OmniAuth::Identity::Models::Sequel
+      auth_key :email
     end
     stub_const('SequelTestIdentity', sequel_test_identity)
   end

@@ -14,6 +14,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, sqlite3: true) do
         columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
         connection_params: { adapter: 'sqlite3', encoding: 'utf8', database: ':memory:' }
       ) do
+        auth_key :email
         def flower
           '🌸'
         end
