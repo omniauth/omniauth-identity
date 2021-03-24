@@ -1,6 +1,10 @@
 require 'mongoid'
 require 'mongoid-rspec'
 
+RSpec.configure do |config|
+  config.include ::Mongoid::Matchers, mongodb: true
+end
+
 Mongoid.load!(File.join(__dir__, 'mongoid.yml'))
 
 class MongoidTestIdentity
@@ -9,8 +13,4 @@ class MongoidTestIdentity
   store_in database: 'db1', collection: 'mongoid_test_identities'
   field :email, type: String
   field :password_digest, type: String
-end
-
-RSpec.configure do |config|
-  config.include ::Mongoid::Matchers, db: :mongodb
 end

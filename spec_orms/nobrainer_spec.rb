@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# NOTE: mongoid and no_brainer can't be loaded at the same time.
+# NOTE: mongoid and nobrainer can't be loaded at the same time.
 #       If you try it, one or both of them will not work.
 require 'nobrainer'
 
-RSpec.describe(OmniAuth::Identity::Models::NoBrainer, db: :rethinkdb) do
+RSpec.describe(OmniAuth::Identity::Models::NoBrainer, rethinkdb: true) do
   before(:all) do
     NoBrainer.configure do |config|
       config.app_name = 'DeezBrains'

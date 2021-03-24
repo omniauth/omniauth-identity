@@ -14,7 +14,7 @@ module OmniAuth
       autoload :ActiveRecord,      'omniauth/identity/models/active_record'
       autoload :Mongoid,           'omniauth/identity/models/mongoid'
       autoload :CouchPotatoModule, 'omniauth/identity/models/couch_potato'
-      autoload :NoBrainer,         'omniauth/identity/models/no_brainer'
+      autoload :NoBrainer,         'omniauth/identity/models/nobrainer'
       autoload :Sequel,            'omniauth/identity/models/sequel'
     end
   end

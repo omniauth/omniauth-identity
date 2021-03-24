@@ -4,7 +4,7 @@ require 'sqlite3'
 require 'active_record'
 require 'anonymous_active_record'
 
-RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, db: :sqlite3) do
+RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, sqlite3: true) do
   describe 'model', type: :model do
     subject(:model_klass) do
       AnonymousActiveRecord.generate(

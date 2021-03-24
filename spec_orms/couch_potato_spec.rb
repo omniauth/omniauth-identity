@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 require 'couch_potato'
-require 'bcrypt'
 
-RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, db: :couchdb) do
+RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, couchdb: true) do
   before(:all) do
     CouchPotato::Config.database_name = "http://admin:butterknuckles@127.0.0.1:5984/test"
   end

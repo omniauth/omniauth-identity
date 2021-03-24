@@ -273,7 +273,7 @@ Please contribute some documentation if you have the gumption!  The maintainer's
 3. Commit your changes (`git commit -am ‘Added some feature’`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Make sure to add tests for it. This is important so I don’t break it in a future version unintentionally.
-   - NOTE: In order to run *all* the tests you will need to have the following databases installed and configured.
+   - NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
      1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
       ```bash
       brew install rethinkdb
@@ -283,15 +283,29 @@ Please contribute some documentation if you have the gumption!  The maintainer's
       ```bash
       brew tap mongodb/brew
       brew install mongodb-community@4.4
-     
+      mongod --config /usr/local/etc/mongod.conf
       ```
-   To skip the RethinkDB-based, NoBrainer (ORM), tests run:
+      3. [CouchDB](https://couchdb.apache.org) (download the .app)
+   To run all tests on all databases:
    ```bash
-   bundle exec rspec spec --tag '~nobrainer'
+   bundle exec rake
    ```
-   Or if you have RethinkDB setup, then run all:
+   To run a specific DB:
    ```bash
-   bundle exec rspec spec
+   # CouchDB / CouchPotato
+   bundle exec rspec spec spec_orms --tag 'couchdb'
+   
+   # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
+   bundle exec rspec spec spec_orms --tag 'sqlite3'
+
+   # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
+   #        and the two libraries are fundamentally incompatible.
+  
+   # MongoDB / Mongoid
+   bundle exec rspec spec_orms/mongoid_spec.rb
+   
+   # RethinkDB / NoBrainer
+   bundle exec rspec spec_orms/nobrainer_spec.rb
    ```
 6. Create new Pull Request
 

@@ -11,8 +11,8 @@ begin
   couch_potato.pattern = "spec_orms/couch_potato_spec.rb"
   mongoid = RSpec::Core::RakeTask.new(:spec_orm_mongoid)
   mongoid.pattern = "spec_orms/mongoid_spec.rb"
-  no_brainer = RSpec::Core::RakeTask.new(:spec_orm_no_brainer)
-  no_brainer.pattern = "spec_orms/no_brainer_spec.rb"
+  nobrainer = RSpec::Core::RakeTask.new(:spec_orm_nobrainer)
+  nobrainer.pattern = "spec_orms/nobrainer_spec.rb"
   sequel = RSpec::Core::RakeTask.new(:spec_orm_sequel)
   sequel.pattern = "spec_orms/sequel_spec.rb"
 rescue LoadError
@@ -36,6 +36,6 @@ task default: [
   :spec_orm_active_record,
   :spec_orm_couch_potato,
   :spec_orm_mongoid,
-  :spec_orm_no_brainer,
+  :spec_orm_nobrainer,
   :spec_orm_sequel
 ]

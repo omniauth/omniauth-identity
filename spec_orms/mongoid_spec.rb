@@ -4,7 +4,7 @@
 #       If you try it, one or both of them will not work.
 require_relative 'support/rspec_config/mongoid'
 
-RSpec.describe(OmniAuth::Identity::Models::Mongoid, db: :mongodb) do
+RSpec.describe(OmniAuth::Identity::Models::Mongoid, mongodb: true) do
   describe 'model', type: :model do
     subject(:model_klass) { MongoidTestIdentity }
 

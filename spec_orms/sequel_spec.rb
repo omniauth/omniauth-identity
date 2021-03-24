@@ -3,7 +3,7 @@
 require 'sqlite3'
 require 'sequel'
 
-RSpec.describe(OmniAuth::Identity::Models::Sequel, db: :sqlite3) do
+RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
   before(:all) do
     # Connect to an in-memory sqlite3 database.
     DB = Sequel.sqlite
