@@ -48,7 +48,7 @@ jobs:
         if: matrix.ruby == '2.7' && github.event_name != 'pull_request'
         continue-on-error: ${{ matrix.allow_failures != 'false' }}
       - name: Run tests
-        run: bundle exec rake test
+        run: bundle exec rake
       - name: CodeClimate Post-build Notification
         run: cc-test-reporter after-build
         if: matrix.ruby == '2.7' && github.event_name != 'pull_request' && always()

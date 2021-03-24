@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe OmniAuth::Strategies::Identity do
+require 'sqlite3'
+require 'active_record'
+require 'anonymous_active_record'
+
+RSpec.describe OmniAuth::Strategies::Identity, sqlite3: true do
   attr_accessor :app
 
   let(:env_hash) { last_response.headers['env'] }

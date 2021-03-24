@@ -17,11 +17,18 @@ group :documentation do
 end
 
 group :development, :test do
+  # ORMs
   if ruby_version < Gem::Version.new('2.5.0')
-    gem 'activerecord', '~> 5' # rails 5 works with Ruby 2.4
+    gem 'activerecord', '~> 5', require: false # rails 5 works with Ruby 2.4
   else
-    gem 'activerecord', '~> 6' # rails 6 requires Ruby 2.5 or later
+    gem 'activerecord', '~> 6', require: false # rails 6 requires Ruby 2.5 or later
   end
+  gem 'anonymous_active_record', '~> 1', require: false
+  gem 'couch_potato', github: 'langalex/couch_potato', require: false
+  gem 'mongoid', '~> 7', require: false
+  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
+  gem 'nobrainer', '~> 0', require: false
+  gem 'sequel', '~> 5', require: false
 
   if ruby_version >= Gem::Version.new('2.4')
     # No need to run byebug / pry on earlier versions
@@ -44,12 +51,10 @@ group :development, :test do
     gem 'simplecov', '~> 0.21', platform: :mri
   end
 
-  gem 'couch_potato', github: 'langalex/couch_potato'
   gem 'growl'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
-  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec'
   gem 'rb-fsevent'
 end
 

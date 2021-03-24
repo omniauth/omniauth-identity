@@ -32,3 +32,11 @@ Sequel/SaveChanges:
 
 Lint/UselessMethodDefinition:
   Enabled: false
+
+RSpec/FilePath:
+  Include:
+    - spec
+    - spec_orms
+
+RSpec/BeforeAfterAll:
+  Enabled: false

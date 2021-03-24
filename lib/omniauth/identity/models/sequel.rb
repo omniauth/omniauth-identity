@@ -6,9 +6,9 @@ module OmniAuth
   module Identity
     module Models
       # http://sequel.jeremyevans.net/ an SQL ORM
-      # NOTE: Sequel is *not* based on ActiveModel, but supports the API we need, except for `persisted`:
+      # NOTE: Sequel is *not* based on ActiveModel, but supports the API we need, except for `persisted?`:
       # * create
-      # * save, but save is deprecated in favor of `save_changes`
+      # * save
       module Sequel
         def self.included(base)
           base.class_eval do
@@ -17,7 +17,7 @@ module OmniAuth
             # plugin :validation_helpers
             plugin :validation_class_methods
 
-            include OmniAuth::Identity::Model
+            include ::OmniAuth::Identity::Model
             include ::OmniAuth::Identity::SecurePassword
 
             has_secure_password
@@ -38,7 +38,7 @@ module OmniAuth
             end
 
             def save
-              save_changes
+              super
             end
           end
         end

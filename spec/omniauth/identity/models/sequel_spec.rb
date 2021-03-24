@@ -1,23 +1,38 @@
 # frozen_string_literal: true
 
+require 'sqlite3'
 require 'sequel'
-# Connect to an in-memory sqlite3 database.
+
 DB = Sequel.sqlite
-DB.create_table :sequel_test_identities do
-  primary_key :id
-  String :ham_sandwich, null: false
-  String :password_digest, null: false
-end
 
-class SequelTestIdentity < Sequel::Model
-  include OmniAuth::Identity::Models::Sequel
-  auth_key :ham_sandwich
-end
+RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
+  before(:all) do
+    # Connect to an in-memory sqlite3 database.
+    DB.create_table :sequel_test_identities do
+      primary_key :id
+      String :email, null: false
+      String :password_digest, null: false
+    end
+  end
 
-RSpec.describe(OmniAuth::Identity::Models::Sequel, db: true) do
-  it 'delegates locate to the where query method' do
-    allow(SequelTestIdentity).to receive(:where).with('ham_sandwich' => 'open faced',
-                                                      'category' => 'sandwiches').and_return(['wakka'])
-    expect(SequelTestIdentity.locate('ham_sandwich' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+  before do
+    sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
+      include ::OmniAuth::Identity::Models::Sequel
+    end
+    stub_const('SequelTestIdentity', sequel_test_identity)
+  end
+
+  describe 'model', type: :model do
+    subject(:model_klass) { SequelTestIdentity }
+
+    include_context 'persistable model'
+
+    describe '::locate' do
+      it 'delegates to the where query method' do
+        allow(model_klass).to receive(:where).with('email' => 'open faced',
+                                                   'category' => 'sandwiches').and_return(['wakka'])
+        expect(model_klass.locate('email' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+      end
+    end
   end
 end

@@ -7,6 +7,7 @@ module OmniAuth
     module Models
       # can not be named CouchPotato since there is a class with that name
       # NOTE: CouchPotato is based on ActiveModel.
+      # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
       module CouchPotatoModule
         def self.included(base)
           base.class_eval do
@@ -22,6 +23,10 @@ module OmniAuth
 
             def self.locate(search_hash)
               where(search_hash).first
+            end
+
+            def save
+              CouchPotato.database.save(self)
             end
           end
         end

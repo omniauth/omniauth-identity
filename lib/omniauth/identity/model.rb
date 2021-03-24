@@ -25,11 +25,13 @@ module OmniAuth
 
       def self.included(base)
         base.extend ClassMethods
+        base.extend ClassCreateApi unless base.respond_to?(:create)
+        im = base.instance_methods
+        base.include InstanceSaveApi unless im.include?(:save)
+        base.include InstancePersistedApi unless im.include?(:persisted?)
       end
 
       module ClassMethods
-        extend Gem::Deprecate
-
         # Authenticate a user with the given key and password.
         #
         # @param [String] key The unique login key provided for a given identity.
@@ -52,52 +54,55 @@ module OmniAuth
           @auth_key || 'email'
         end
 
+        # Locate an identity given its unique login key.
+        #
+        # @abstract
+        # @param [String] key The unique login key.
+        # @return [Model] An instance of the identity model class.
+        def locate(_key)
+          raise NotImplementedError
+        end
+      end
+
+      module ClassCreateApi
         # Persists a new Identity object to the ORM.
-        # Defaults to calling super.  Override as needed per ORM.
+        # Only included if the class doesn't define create, as a reminder to define create.
+        # Override as needed per ORM.
         #
         # @deprecated v4.0 will begin using {#new} with {#save} instead.
         # @abstract
         # @param [Hash] args Attributes of the new instance.
         # @return [Model] An instance of the identity model class.
         # @since 3.0.5
-        def create(*args)
-          raise NotImplementedError unless defined?(super)
-
-          super
-        end
-
-        # Locate an identity given its unique login key.
-        #
-        # @abstract
-        # @param [String] key The unique login key.
-        # @return [Model] An instance of the identity model class.
-        def locate(key)
+        def create(*_args)
           raise NotImplementedError
         end
       end
 
-      # Persists a new Identity object to the ORM.
-      # Default raises an error.  Override as needed per ORM.
-      #
-      # @abstract
-      # @return [Model] An instance of the identity model class.
-      # @since 3.0.5
-      def save
-        raise NotImplementedError unless defined?(super)
-
-        super
+      module InstanceSaveApi
+        # Persists a new Identity object to the ORM.
+        # Default raises an error.  Override as needed per ORM.
+        # This base version's arguments are modeled after ActiveModel
+        #   since it is a pattern many ORMs follow
+        #
+        # @abstract
+        # @return [Model] An instance of the identity model class.
+        # @since 3.0.5
+        def save(**_options, &_block)
+          raise NotImplementedError
+        end
       end
 
-      # Checks if the Identity object is persisted in the ORM.
-      # Defaults to calling super.  Override as needed per ORM.
-      #
-      # @abstract
-      # @return [true or false] true if object exists, false if not.
-      # @since 3.0.5
-      def persisted?
-        raise NotImplementedError unless defined?(super)
-
-        super
+      module InstancePersistedApi
+        # Checks if the Identity object is persisted in the ORM.
+        # Default raises an error.  Override as needed per ORM.
+        #
+        # @abstract
+        # @return [true or false] true if object exists, false if not.
+        # @since 3.0.5
+        def persisted?
+          raise NotImplementedError
+        end
       end
 
       # Returns self if the provided password is correct, false
@@ -106,7 +111,7 @@ module OmniAuth
       # @abstract
       # @param [String] password The password to check.
       # @return [self or false] Self if authenticated, false if not.
-      def authenticate(password)
+      def authenticate(_password)
         raise NotImplementedError
       end
 
@@ -163,9 +168,13 @@ module OmniAuth
       #
       # @return [Hash] A string-keyed hash of user information.
       def info
-        SCHEMA_ATTRIBUTES.each_with_object({}) do |attribute, hash|
+        info = {}
+        SCHEMA_ATTRIBUTES.each_with_object(info) do |attribute, hash|
           hash[attribute] = send(attribute) if respond_to?(attribute)
         end
+        info['name'] ||= [info['first_name'], info['last_name']].join(' ').strip if info['first_name'] || info['last_name']
+        info['name'] ||= info['nickname']
+        info
       end
     end
   end
