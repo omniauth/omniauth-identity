@@ -171,7 +171,7 @@ end
 ```
 
 NOTE: In the above example, `MyCustomClass` must have a class method called `auth_key` that returns
- the default (`email`) or custom `auth_key` to use.
+the default (`email`) or custom `auth_key` to use.
 
 ## Customizing Registration Failure
 
@@ -273,40 +273,41 @@ Please contribute some documentation if you have the gumption!  The maintainer's
 3. Commit your changes (`git commit -am ‘Added some feature’`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Make sure to add tests for it. This is important so I don’t break it in a future version unintentionally.
-   - NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
-     1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
-      ```bash
-      brew install rethinkdb
-      rethinkdb
-      ```
-      2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-      ```bash
-      brew tap mongodb/brew
-      brew install mongodb-community@4.4
-      mongod --config /usr/local/etc/mongod.conf
-      ```
-      3. [CouchDB](https://couchdb.apache.org) (download the .app)
-   To run all tests on all databases:
-   ```bash
-   bundle exec rake
-   ```
-   To run a specific DB:
-   ```bash
-   # CouchDB / CouchPotato
-   bundle exec rspec spec spec_orms --tag 'couchdb'
+    - NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
+        1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
+       ```bash
+       brew install rethinkdb
+       rethinkdb
+       ```
+        2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
+       ```bash
+       brew tap mongodb/brew
+       brew install mongodb-community@4.4
+       mongod --config /usr/local/etc/mongod.conf
+       ```
+        3. [CouchDB](https://couchdb.apache.org) (download the .app)
 
-   # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
-   bundle exec rspec spec spec_orms --tag 'sqlite3'
+      To run all tests on all databases:
+        ```bash
+        bundle exec rake
+        ```
+      To run a specific DB:
+        ```bash
+        # CouchDB / CouchPotato
+        bundle exec rspec spec spec_orms --tag 'couchdb'
 
-   # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
-   #        and the two libraries are fundamentally incompatible.
+        # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
+        bundle exec rspec spec spec_orms --tag 'sqlite3'
 
-   # MongoDB / Mongoid
-   bundle exec rspec spec_orms/mongoid_spec.rb
+        # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
+        #        and the two libraries are fundamentally incompatible.
 
-   # RethinkDB / NoBrainer
-   bundle exec rspec spec_orms/nobrainer_spec.rb
-   ```
+        # MongoDB / Mongoid
+        bundle exec rspec spec_orms/mongoid_spec.rb
+
+        # RethinkDB / NoBrainer
+        bundle exec rspec spec_orms/nobrainer_spec.rb
+        ```
 6. Create new Pull Request
 
 ## License
