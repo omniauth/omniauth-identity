@@ -1,4 +1,6 @@
-RSpec.shared_context 'model with class methods' do
+# frozen_string_literal: true
+
+RSpec.shared_examples 'model with class methods' do
   describe 'class definition' do
     it 'does not raise an error' do
       block_is_expected.not_to raise_error
@@ -15,7 +17,7 @@ RSpec.shared_context 'model with class methods' do
     it 'calls locate with additional scopes when provided' do
       mocked_instance = double('ExampleModel', authenticate: 'abbadoo')
       allow(model_klass).to receive(:locate).with('email' => 'example',
-                                              'user_type' => 'admin').and_return(mocked_instance)
+                                                  'user_type' => 'admin').and_return(mocked_instance)
       expect(model_klass.authenticate({ 'email' => 'example', 'user_type' => 'admin' }, 'pass')).to eq('abbadoo')
     end
 

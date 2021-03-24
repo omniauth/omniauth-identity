@@ -54,7 +54,6 @@ module OmniAuth
           @auth_key || 'email'
         end
 
-
         # Locate an identity given its unique login key.
         #
         # @abstract

@@ -13,12 +13,14 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
       String :password_digest, null: false
     end
   end
+
   before do
     sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
       include ::OmniAuth::Identity::Models::Sequel
     end
-    stub_const("SequelTestIdentity", sequel_test_identity)
+    stub_const('SequelTestIdentity', sequel_test_identity)
   end
+
   describe 'model', type: :model do
     subject(:model_klass) { SequelTestIdentity }
 
@@ -26,9 +28,9 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, sqlite3: true) do
 
     describe '::locate' do
       it 'delegates to the where query method' do
-      allow(model_klass).to receive(:where).with('email' => 'open faced',
-                                                        'category' => 'sandwiches').and_return(['wakka'])
-      expect(model_klass.locate('email' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
+        allow(model_klass).to receive(:where).with('email' => 'open faced',
+                                                   'category' => 'sandwiches').and_return(['wakka'])
+        expect(model_klass.locate('email' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
       end
     end
   end

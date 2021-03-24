@@ -24,11 +24,11 @@ group :development, :test do
     gem 'activerecord', '~> 6', require: false # rails 6 requires Ruby 2.5 or later
   end
   gem 'anonymous_active_record', '~> 1', require: false
+  gem 'couch_potato', github: 'langalex/couch_potato', require: false
   gem 'mongoid', '~> 7', require: false
+  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
   gem 'nobrainer', '~> 0', require: false
   gem 'sequel', '~> 5', require: false
-  gem 'couch_potato', github: 'langalex/couch_potato', require: false
-  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
 
   if ruby_version >= Gem::Version.new('2.4')
     # No need to run byebug / pry on earlier versions

@@ -1,4 +1,6 @@
-RSpec.shared_context 'instance with instance methods' do
+# frozen_string_literal: true
+
+RSpec.shared_examples 'instance with instance methods' do
   describe '#initialize' do
     it 'does not raise an error' do
       block_is_expected.not_to raise_error
@@ -61,9 +63,9 @@ RSpec.shared_context 'instance with instance methods' do
       allow(instance).to receive(:nickname).and_return('bob')
 
       expect(instance.info).to include({
-                                   'name' => 'Bob Bobson',
-                                   'nickname' => 'bob'
-                                 })
+                                         'name' => 'Bob Bobson',
+                                         'nickname' => 'bob'
+                                       })
     end
 
     it 'uses firstname and lastname, over nickname, to set missing name' do

@@ -18,7 +18,7 @@ require 'byebug' if RUBY_ENGINE == 'ruby'
 require 'omniauth/identity'
 
 spec_root_matcher = %r{#{__dir__}/(.+)\.rb\Z}
-Dir.glob(Pathname.new(__dir__).join("support/**/", "*.rb")).each { |f| require f.match(spec_root_matcher)[1] }
+Dir.glob(Pathname.new(__dir__).join('support/**/', '*.rb')).each { |f| require f.match(spec_root_matcher)[1] }
 
 DEFAULT_PASSWORD = 'hang-a-left-at-the-diner'
 DEFAULT_EMAIL = 'mojo@example.com'

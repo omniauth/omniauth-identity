@@ -9,11 +9,12 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, rethinkdb: true) do
     NoBrainer.configure do |config|
       config.app_name = 'DeezBrains'
       config.rethinkdb_urls = ['rethinkdb://127.0.0.1:28015/DeezBrains_test']
-      config.table_options = { :shards => 1, :replicas => 1,
-                               :write_acks => :majority }
+      config.table_options = { shards: 1, replicas: 1,
+                               write_acks: :majority }
     end
     NoBrainer.sync_schema
   end
+
   before do
     nobrainer_test_identity = Class.new do
       include ::NoBrainer::Document
@@ -21,7 +22,7 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, rethinkdb: true) do
       field :email
       field :password_digest
     end
-    stub_const("NoBrainerTestIdentity", nobrainer_test_identity)
+    stub_const('NoBrainerTestIdentity', nobrainer_test_identity)
     NoBrainer.purge!
   end
 
@@ -33,7 +34,7 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, rethinkdb: true) do
     describe '::locate' do
       it 'delegates locate to the where query method' do
         allow(model_klass).to receive(:where).with('email' => 'open faced',
-                                                             'category' => 'sandwiches').and_return(['wakka'])
+                                                   'category' => 'sandwiches').and_return(['wakka'])
         expect(model_klass.locate('email' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
       end
     end

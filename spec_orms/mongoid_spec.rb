@@ -19,7 +19,7 @@ RSpec.describe(OmniAuth::Identity::Models::Mongoid, mongodb: true) do
     describe '::locate' do
       it 'delegates to the where query method' do
         allow(model_klass).to receive(:where).with('email' => 'open faced',
-                                               'category' => 'sandwiches').and_return(['wakka'])
+                                                   'category' => 'sandwiches').and_return(['wakka'])
         expect(model_klass.locate('email' => 'open faced', 'category' => 'sandwiches')).to eq('wakka')
       end
     end

@@ -294,16 +294,16 @@ Please contribute some documentation if you have the gumption!  The maintainer's
    ```bash
    # CouchDB / CouchPotato
    bundle exec rspec spec spec_orms --tag 'couchdb'
-   
+
    # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
    bundle exec rspec spec spec_orms --tag 'sqlite3'
 
    # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
    #        and the two libraries are fundamentally incompatible.
-  
+
    # MongoDB / Mongoid
    bundle exec rspec spec_orms/mongoid_spec.rb
-   
+
    # RethinkDB / NoBrainer
    bundle exec rspec spec_orms/nobrainer_spec.rb
    ```
