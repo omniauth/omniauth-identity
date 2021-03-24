@@ -76,17 +76,19 @@ module OmniAuth
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
         end
-        @identity = model.new(attributes)
-        if saving_instead_of_creating?
+        if validating?
+          @identity = model.new(attributes)
           env['omniauth.identity'] = @identity
-          if !validating? || valid?
+          if valid?
             @identity.save
             registration_result
           else
             registration_failure(options[:validation_failure_message])
           end
         else
-          deprecated_registration(attributes)
+          @identity = model.create(attributes)
+          env['omniauth.identity'] = @identity
+          registration_result
         end
       end
 
@@ -141,10 +143,6 @@ module OmniAuth
         end
       end
 
-      def saving_instead_of_creating?
-        @identity.respond_to?(:save) && @identity.respond_to?(:persisted?)
-      end
-
       # Validates the model before it is persisted
       #
       # @return [truthy or falsey] :on_validation option is truthy or falsey
@@ -176,17 +174,6 @@ module OmniAuth
         else
           registration_failure(options[:registration_failure_message])
         end
-      end
-
-      def deprecated_registration(attributes)
-        warn <<~CREATEDEP
-          [DEPRECATION] Please define '#{model.class}#save'.
-                        Behavior based on '#{model.class}.create' will be removed in omniauth-identity v4.0.
-                        See lib/omniauth/identity/model.rb
-        CREATEDEP
-        @identity = model.create(attributes)
-        env['omniauth.identity'] = @identity
-        registration_result
       end
     end
   end
