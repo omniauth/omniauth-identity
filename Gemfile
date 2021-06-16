@@ -25,6 +25,10 @@ group :development, :test do
   end
   gem 'anonymous_active_record', '~> 1', require: false
   gem 'couch_potato', github: 'langalex/couch_potato', require: false
+  # NOTE: json is not a direct dependency, but is added here, because CI was failing to use the Ruby built-in:
+  # Error:
+  #   json-2.5.1 is built in to Ruby, and can't be cached because your Gemfile doesn't have any sources that contain it.
+  gem 'json'
   gem 'mongoid', '~> 7', require: false
   gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
   gem 'nobrainer', '~> 0', require: false
