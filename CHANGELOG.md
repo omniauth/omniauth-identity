@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.9] - 2021-06-16
+
+### Fixed
+
+- \[Sequel\] Fixes loading the Sequel adapter, issue reported as [#112](https://github.com/omniauth/omniauth-identity/issues/112)
+
+### Added
+
+- 📝 Document the Database adapters and drivers the gem currently works with
+
 ## [3.0.8] - 2021-03-24
 
 ### Fixed
