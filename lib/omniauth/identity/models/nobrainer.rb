@@ -5,7 +5,8 @@ require 'nobrainer'
 module OmniAuth
   module Identity
     module Models
-      # http://nobrainer.io/ an ORM for RethinkDB
+      # NoBrainer is an ORM adapter for RethinkDB:
+      #   http://nobrainer.io/
       # NOTE: NoBrainer is based on ActiveModel.
       module NoBrainer
         def self.included(base)

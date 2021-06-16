@@ -21,6 +21,15 @@ This gem is compatible with, as of Feb 2021, version 3:
 
 * Latest released version of omniauth, v2.0.2
 * Ruby 2.4, 2.5, 2.6, 2.7, 3.0, ruby-head
+* At least 5 different database ORM adapters, which connect to 15 different database clients!
+
+| Databases | Adapter Libraries |
+|--------- | -------- |
+| MySQL, PostgreSQL, SQLite3 | [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html) |
+| CouchDB | [CouchPotato](https://github.com/langalex/couch_potato) |
+| MongoDB | [Mongoid](https://github.com/mongodb/mongoid) |
+| RethinkDB | [NoBrainer](http://nobrainer.io/) |
+| ADO, Amalgalite, IBM_DB, JDBC, MySQL, Mysql2, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite3, and TinyTDS | [Sequel](http://sequel.jeremyevans.net) |
 
 ## Installation
 

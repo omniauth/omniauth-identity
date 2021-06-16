@@ -5,7 +5,9 @@ require 'sequel'
 module OmniAuth
   module Identity
     module Models
-      # http://sequel.jeremyevans.net/ an SQL ORM
+      # Sequel is an ORM adapter for the following databases:
+      #   ADO, Amalgalite, IBM_DB, JDBC, MySQL, Mysql2, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite3, and TinyTDS
+      # The homepage is: http://sequel.jeremyevans.net/
       # NOTE: Sequel is *not* based on ActiveModel, but supports the API we need, except for `persisted?`:
       # * create
       # * save

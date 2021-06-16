@@ -5,9 +5,11 @@ require 'couch_potato'
 module OmniAuth
   module Identity
     module Models
-      # can not be named CouchPotato since there is a class with that name
+      # CouchPotato is an ORM adapter for CouchDB:
+      #   https://github.com/langalex/couch_potato
       # NOTE: CouchPotato is based on ActiveModel.
       # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
+      # NOTE: Includes "Module" in the name for invalid legacy reasons. Rename only with a major version bump.
       module CouchPotatoModule
         def self.included(base)
           base.class_eval do

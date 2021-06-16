@@ -5,6 +5,8 @@ require 'mongoid'
 module OmniAuth
   module Identity
     module Models
+      # Mongoid is an ORM adapter for MongoDB:
+      #   https://github.com/mongodb/mongoid
       # NOTE: Mongoid is based on ActiveModel.
       module Mongoid
         def self.included(base)

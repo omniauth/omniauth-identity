@@ -5,6 +5,9 @@ require 'active_record'
 module OmniAuth
   module Identity
     module Models
+      # ActiveRecord is an ORM for MySQL, PostgreSQL, and SQLite3:
+      #   https://guides.rubyonrails.org/active_record_basics.html
+      # NOTE: ActiveRecord is based on ActiveModel.
       class ActiveRecord < ::ActiveRecord::Base
         include ::OmniAuth::Identity::Model
         include ::OmniAuth::Identity::SecurePassword
