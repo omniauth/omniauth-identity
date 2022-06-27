@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'bcrypt'
   gem.add_runtime_dependency 'omniauth'
 
-  gem.add_development_dependency 'rack-test', '~> 1'
+  gem.add_development_dependency 'rack-test', '~> 2'
   gem.add_development_dependency 'rake', '~> 13'
   gem.add_development_dependency 'rspec', '~> 3'
   gem.add_development_dependency 'rspec-block_is_expected', '~> 1.0'
