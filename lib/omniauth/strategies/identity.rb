@@ -71,7 +71,7 @@ module OmniAuth
 
       def registration_phase
         attributes = (options[:fields] + DEFAULT_REGISTRATION_FIELDS).each_with_object({}) do |k, h|
-          h[k] = request[k.to_s]
+          h[k] = request.params[k.to_s]
         end
         if model.respond_to?(:column_names) && model.column_names.include?('provider')
           attributes.reverse_merge!(provider: 'identity')
@@ -110,7 +110,7 @@ module OmniAuth
         else
           conditions = options[:locate_conditions].to_hash
         end
-        @identity ||= model.authenticate(conditions, request['password'])
+        @identity ||= model.authenticate(conditions, request.params['password'])
       end
 
       def model
