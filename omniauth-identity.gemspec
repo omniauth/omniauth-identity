@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake', '~> 13'
   gem.add_development_dependency 'rspec', '~> 3'
   gem.add_development_dependency 'rspec-block_is_expected', '~> 1.0'
-  gem.add_development_dependency 'sqlite3', '~> 1.4'
+  gem.add_development_dependency 'sqlite3', '~> 2.0'
   # NOTE: Released version of couch_potato depends on activemodel ~> 4.0, so pull latest from github in Gemfile.
   # gem.add_development_dependency 'couch_potato', '~> 1.7'
 
