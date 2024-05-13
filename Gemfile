@@ -25,7 +25,7 @@ group :development, :test do
   end
   gem 'anonymous_active_record', '~> 1', require: false
   gem 'couch_potato', github: 'langalex/couch_potato', require: false
-  gem 'mongoid', '~> 7', require: false
+  gem 'mongoid', '~> 9', require: false
   gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
   gem 'nobrainer', '~> 0', require: false
   gem 'sequel', '~> 5', require: false
