@@ -96,7 +96,7 @@ module OmniAuth
       info { identity.info }
 
       def registration_path
-        options[:registration_path] || "#{path_prefix}/#{name}/register"
+        options[:registration_path] || "#{script_name}#{path_prefix}/#{name}/register"
       end
 
       def on_registration_path?
@@ -169,7 +169,7 @@ module OmniAuth
 
       def registration_result
         if @identity.persisted?
-          env['PATH_INFO'] = callback_path
+          env['PATH_INFO'] = "#{path_prefix}/#{name}/callback"
           callback_phase
         else
           registration_failure(options[:registration_failure_message])
