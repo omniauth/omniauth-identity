@@ -19,7 +19,7 @@ module OmniAuth
       option :on_validation, nil          # See #registration_phase
       option :on_registration, nil        # See #registration_phase
       option :on_failed_registration, nil # See #registration_phase
-      option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
+      option :locate_conditions, ->(req) { { model.auth_key => req.params['auth_key'] } }
       option :create_identity_link_text, 'Create an Identity'
       option :registration_failure_message, 'One or more fields were invalid'
       option :validation_failure_message, 'Validation failed'
@@ -110,7 +110,7 @@ module OmniAuth
         else
           conditions = options[:locate_conditions].to_hash
         end
-        @identity ||= model.authenticate(conditions, request['password'])
+        @identity ||= model.authenticate(conditions, request.params['password'])
       end
 
       def model
