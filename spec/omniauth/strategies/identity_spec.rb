@@ -11,6 +11,7 @@ RSpec.describe OmniAuth::Strategies::Identity, sqlite3: true do
   let(:auth_hash) { env_hash['omniauth.auth'] }
   let(:identity_hash) { env_hash['omniauth.identity'] }
   let(:identity_options) { {} }
+  let(:app_options) { {} }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
       parent_klass: 'OmniAuth::Identity::Models::ActiveRecord',
@@ -24,25 +25,58 @@ RSpec.describe OmniAuth::Strategies::Identity, sqlite3: true do
     end
   end
 
-  # customize rack app for testing, if block is given, reverts to default
-  # rack app after testing is done
-  def set_app!(identity_options = {})
-    old_app = app
+  # the rack testing framework will call this method (to get app) as needed to run tests
+  def app
+    opts = identity_options.reverse_merge({ model: anon_ar })
+    script_name = app_options[:script_name]
     self.app = Rack::Builder.app do
       use Rack::Session::Cookie, secret: '1234567890qwertyuiop'
-      use OmniAuth::Strategies::Identity, identity_options
+      if script_name
+        map script_name do
+          use OmniAuth::Strategies::Identity, opts
+        end
+      else
+        use OmniAuth::Strategies::Identity, opts
+      end
       run ->(env) { [404, { 'env' => env }, ['HELLO!']] }
     end
-    if block_given?
-      yield
-      self.app = old_app
-    end
-    app
   end
 
-  before do
-    opts = identity_options.reverse_merge({ model: anon_ar })
-    set_app!(opts)
+  describe 'path handling' do
+    script_names = [nil, '/my_path']
+    path_prefixes = ['/auth', '/my_auth', '']
+    provider_names = ['identity', 'my_id']
+    script_names.product(path_prefixes, provider_names).each do |script_name, path_prefix, provider_name|
+      ext_base_path = "#{script_name}#{path_prefix}/#{provider_name}"
+      ext_callback_path = "#{ext_base_path}/callback"
+      ext_register_path = "#{ext_base_path}/register"
+
+      context "with base path '#{ext_base_path}'" do
+        let(:app_options) { { script_name: script_name } }
+        let(:identity_options) {
+          { enable_registration: true, enable_login: true, path_prefix: path_prefix, name: provider_name }
+        }
+        it "calls app" do
+          get "#{script_name}/hello/world"
+          expect(last_response.body).to eq('HELLO!')
+        end
+        it '#request_phase displays form' do
+          get ext_base_path
+          expect(last_response.body).not_to eq('HELLO!')
+          expect(last_response.body).to include('<form')
+          expect(last_response.body).to include("action='#{ext_callback_path}'")
+          expect(last_response.body).to include("href='#{ext_register_path}'")
+        end
+        it '#callback_phase is handled' do
+          get ext_callback_path
+          expect(last_response.body).not_to eq('HELLO!')
+        end
+        it '#registration_phase is handled' do
+          get ext_register_path
+          expect(last_response.body).not_to eq('HELLO!')
+        end
+      end
+    end
   end
 
   describe '#request_phase' do
