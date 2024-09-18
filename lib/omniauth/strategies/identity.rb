@@ -104,12 +104,9 @@ module OmniAuth
       end
 
       def identity
-        if options[:locate_conditions].is_a? Proc
-          conditions = instance_exec(request, &options[:locate_conditions])
-          conditions.to_hash
-        else
-          conditions = options[:locate_conditions].to_hash
-        end
+        conditions = options[:locate_conditions]
+        conditions = conditions.is_a?(Proc) ? instance_exec(request, &conditions).to_hash : conditions.to_hash
+
         @identity ||= model.authenticate(conditions, request['password'])
       end
 
