@@ -96,7 +96,7 @@ module OmniAuth
       info { identity.info }
 
       def registration_path
-        options[:registration_path] || "#{path_prefix}/#{name}/register"
+        options[:registration_path] || "#{script_name}#{path_prefix}/#{name}/register"
       end
 
       def on_registration_path?
@@ -104,12 +104,9 @@ module OmniAuth
       end
 
       def identity
-        if options[:locate_conditions].is_a? Proc
-          conditions = instance_exec(request, &options[:locate_conditions])
-          conditions.to_hash
-        else
-          conditions = options[:locate_conditions].to_hash
-        end
+        conditions = options[:locate_conditions]
+        conditions = conditions.is_a?(Proc) ? instance_exec(request, &conditions).to_hash : conditions.to_hash
+
         @identity ||= model.authenticate(conditions, request.params['password'])
       end
 
@@ -169,7 +166,7 @@ module OmniAuth
 
       def registration_result
         if @identity.persisted?
-          env['PATH_INFO'] = callback_path
+          env['PATH_INFO'] = "#{path_prefix}/#{name}/callback"
           callback_phase
         else
           registration_failure(options[:registration_failure_message])
