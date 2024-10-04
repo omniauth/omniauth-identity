@@ -241,7 +241,7 @@ The default value is:
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-           locate_conditions: ->(req) { { model.auth_key => req['auth_key'] } }
+           locate_conditions: ->(req) { { model.auth_key => req.params['auth_key'] } }
     # ...
 end
 ```
@@ -270,7 +270,7 @@ option :on_login, nil               # See #request_phase
 option :on_validation, nil          # See #registration_phase
 option :on_registration, nil        # See #registration_phase
 option :on_failed_registration, nil # See #registration_phase
-option :locate_conditions, ->(req) { { model.auth_key => req['auth_key'] } }
+option :locate_conditions, ->(req) { { model.auth_key => req.params['auth_key'] } }
 ```
 
 Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭

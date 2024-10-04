@@ -187,7 +187,7 @@ RSpec.describe OmniAuth::Strategies::Identity, sqlite3: true do
     context 'with auth scopes' do
       let(:identity_options) do
         { model: anon_ar, locate_conditions: lambda { |req|
-                                               { model.auth_key => req['auth_key'], 'user_type' => 'admin' }
+                                               { model.auth_key => req.params['auth_key'], 'user_type' => 'admin' }
                                              } }
       end
 
