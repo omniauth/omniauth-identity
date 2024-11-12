@@ -8,6 +8,10 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'bcrypt'
   gem.add_runtime_dependency 'omniauth'
 
+  # See CONTRIBUTING.md
+  gem.cert_chain = [ENV.fetch("GEM_CERT_PATH", "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem")]
+  gem.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
+
   gem.add_development_dependency 'rack-test', '~> 1'
   gem.add_development_dependency 'rake', '~> 13'
   gem.add_development_dependency 'rspec', '~> 3'
