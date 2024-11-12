@@ -13,6 +13,7 @@ module OmniAuth
         include ::OmniAuth::Identity::SecurePassword
 
         self.abstract_class = true
+        # validations: true (default) incurs a dependency on ActiveModel, but ActiveRecord is ActiveModel based.
         has_secure_password
 
         def self.auth_key=(key)

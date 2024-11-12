@@ -29,7 +29,15 @@ module OmniAuth
         # This mechanism requires you to have a +XXX_digest+ attribute.
         # Where +XXX+ is the attribute name of your desired password.
         #
-        # The following validations are added automatically:
+        # For Supported ActiveModel-based ORMs:
+        #
+        #  * ActiveRecord
+        #  * CouchPotato
+        #  * Mongoid
+        #  * NoBrainer
+        #
+        # the following validations are added automatically:
+        #
         # * Password must be present on creation
         # * Password length should be less than or equal to 72 bytes
         # * Confirmation of password (using a +XXX_confirmation+ attribute)
@@ -39,8 +47,14 @@ module OmniAuth
         # it). When this attribute has a +nil+ value, the validation will not be
         # triggered.
         #
-        # For further customizability, it is possible to suppress the default
-        # validations by passing <tt>validations: false</tt> as an argument.
+        # For Supported non-ActiveModel-based ORMs:
+        #
+        #  * Sequel
+        #
+        # validations are disabled by default.
+        #
+        # It is possible to disable the default validations in any ORM
+        # by passing <tt>validations: false</tt> as an argument.
         #
         # Add bcrypt (~> 3.1.7) to Gemfile to use #has_secure_password:
         #
