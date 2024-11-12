@@ -1,0 +1,109 @@
+name: Ruby - Coverage
+
+env:
+  K_SOUP_COV_MIN_BRANCH: 80
+  K_SOUP_COV_MIN_LINE: 69
+  K_SOUP_COV_MIN_HARD: true
+  K_SOUP_COV_DO: true
+  K_SOUP_COV_COMMAND_NAME: "RSpec Coverage"
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - '!*' # Do not execute on tags
+  pull_request:
+    branches:
+      - '*'
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Specs with Coverage - Ruby ${{ matrix.ruby }} ${{ matrix.name_extra || '' }}
+    if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
+    env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        experimental: [false]
+        rubygems:
+          - latest
+        bundler:
+          - latest
+        gemfile:
+          - coverage
+        ruby:
+          - '3.1'
+
+    steps:
+      - uses: amancevice/setup-code-climate@v2
+        name: CodeClimate Install
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby & RubyGems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "${{ matrix.ruby }}"
+          rubygems: "${{ matrix.rubygems }}"
+          bundler: "${{ matrix.bundler }}"
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: CodeClimate Pre-build Notification
+        run: cc-test-reporter before-build
+        if: ${{ github.event_name != 'pull_request' }}
+        continue-on-error: ${{ matrix.experimental != 'false' }}
+
+      - name: Run RSpec tests
+        run: bundle exec rake test
+
+      - name: CodeClimate Post-build Notification
+        run: cc-test-reporter after-build
+        if: ${{ github.event_name != 'pull_request' }}
+        continue-on-error: ${{ matrix.experimental != 'false' }}
+
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          filename: ./coverage/coverage.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '69 80'
+        continue-on-error: ${{ matrix.experimental != 'false' }}
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          recreate: true
+          path: code-coverage-results.md
+        continue-on-error: ${{ matrix.experimental != 'false' }}
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: ${{ matrix.experimental != 'false' }}
