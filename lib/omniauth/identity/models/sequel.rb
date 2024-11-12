@@ -30,8 +30,13 @@ module OmniAuth
               validates_uniqueness_of :key, case_sensitive: false
             end
 
-            def self.locate(search_hash)
-              where(search_hash).first
+            # @param arguments [any] -
+            #   Filtering is probably the most common dataset modifying action done in Sequel.
+            #   Both the where and filter methods filter the dataset by modifying the dataset’s WHERE clause.
+            #   Both accept a wide variety of input formats, which are passed as arguments below.
+            #   See: https://sequel.jeremyevans.net/rdoc/files/doc/querying_rdoc.html#label-Filters
+            def self.locate(arguments)
+              where(arguments).first
             end
 
             def persisted?
