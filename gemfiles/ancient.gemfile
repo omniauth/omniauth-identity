@@ -1,0 +1,1 @@
+gem "activerecord", "~> 5", require: false # rails 5 works with Ruby 2.4

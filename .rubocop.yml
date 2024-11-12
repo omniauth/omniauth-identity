@@ -1,31 +1,9 @@
-inherit_from: .rubocop_todo.yml
+inherit_gem:
+  rubocop-lts: config/rubygem_rspec.yml
 
 require:
-  - 'rubocop-md'
   - 'rubocop-minitest'
-  - 'rubocop-packaging'
-  - 'rubocop-performance'
-  - 'rubocop-rake'
-  - 'rubocop-rspec'
   - 'rubocop-sequel'
-
-AllCops:
-  NewCops: enable
-  DisplayCopNames: true # Display the name of the failing cops
-  Exclude:
-    - 'gemfiles/vendor/**/*'
-    - 'vendor/**/*'
-
-Metrics/BlockLength:
-  IgnoredMethods:
-    - context
-    - describe
-    - it
-    - shared_context
-    - shared_examples
-    - shared_examples_for
-    - namespace
-    - draw
 
 Sequel/SaveChanges:
   Enabled: false
@@ -33,7 +11,7 @@ Sequel/SaveChanges:
 Lint/UselessMethodDefinition:
   Enabled: false
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Include:
     - spec
     - spec_orms
