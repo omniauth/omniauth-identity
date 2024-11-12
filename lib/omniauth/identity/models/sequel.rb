@@ -22,7 +22,8 @@ module OmniAuth
             include ::OmniAuth::Identity::Model
             include ::OmniAuth::Identity::SecurePassword
 
-            has_secure_password
+            # validations: true incurs a dependency on ActiveModel, so we turn it off here.
+            has_secure_password validations: false
 
             def self.auth_key=(key)
               super
