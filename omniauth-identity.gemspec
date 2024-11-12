@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("lib", __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "omniauth-identity/version"
+# Get the GEMFILE_VERSION without *require* "my_gem/version", for code coverage accuracy
+# See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-825171399
+load "lib/omniauth/identity/version.rb"
+gem_version = OmniAuth::Identity::Version::VERSION
+OmniAuth::Identity::Version.send(:remove_const, :VERSION)
 
 Gem::Specification.new do |spec|
   # See CONTRIBUTING.md
@@ -10,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 
   spec.name = "omniauth-identity"
-  spec.version = OmniAuth::Identity::VERSION
+  spec.version = gem_version
   spec.authors = ["Peter Boling", "Andrew Roberts", "Michael Bleigh"]
 
   spec.summary = spec.description
@@ -32,8 +34,9 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency("bcrypt")
-  spec.add_runtime_dependency("omniauth")
+  spec.add_dependency("bcrypt", "~> 3.1")
+  spec.add_dependency("omniauth", ">= 1")
+  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.4")
 
   ### Testing
   spec.add_development_dependency("rack-test", "~> 1")

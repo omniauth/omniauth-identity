@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+# TODO[v4]: Remove this deprecation with v4 release.
+unless defined?(OmniAuth::Identity::Version::VERSION)
+  # external gems
+  require "version_gem"
+
+  # this library's version
+  require "omniauth/identity/version"
+
+  # Ensure version is configured before loading the rest of the library
+  OmniAuth::Identity::Version.class_eval do
+    extend VersionGem::Basic
+  end
+
+  warn "[DEPRECATION][omniauth-identity v3.1] Change `require 'omniauth/identity'` to `require 'omniauth-identity'`. Support for `require 'omniauth/identity'` will be removed in v4."
+end
+
 require "omniauth"
 
 module OmniAuth

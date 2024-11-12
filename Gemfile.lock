@@ -18,9 +18,10 @@ GIT
 PATH
   remote: .
   specs:
-    omniauth-identity (3.0.9)
-      bcrypt
-      omniauth
+    omniauth-identity (3.1.0)
+      bcrypt (~> 3.1)
+      omniauth (>= 1)
+      version_gem (~> 1.1, >= 1.1.4)
 
 GEM
   remote: https://rubygems.org/
