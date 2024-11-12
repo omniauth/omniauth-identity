@@ -19,12 +19,12 @@ module OmniAuth
       option :on_validation, nil          # See #registration_phase
       option :on_registration, nil        # See #registration_phase
       option :on_failed_registration, nil # See #registration_phase
-      option :locate_conditions, ->(req) { { model.auth_key => req.params['auth_key'] } }
-      option :create_identity_link_text, 'Create an Identity'
-      option :registration_failure_message, 'One or more fields were invalid'
-      option :validation_failure_message, 'Validation failed'
-      option :title, 'Identity Verification' # Title for Login Form
-      option :registration_form_title, 'Register Identity' # Title for Registration Form
+      option :locate_conditions, ->(req) { {model.auth_key => req.params["auth_key"]} }
+      option :create_identity_link_text, "Create an Identity"
+      option :registration_failure_message, "One or more fields were invalid"
+      option :validation_failure_message, "Validation failed"
+      option :title, "Identity Verification" # Title for Login Form
+      option :registration_form_title, "Register Identity" # Title for Registration Form
 
       def request_phase
         if options[:on_login]
@@ -73,12 +73,12 @@ module OmniAuth
         attributes = (options[:fields] + DEFAULT_REGISTRATION_FIELDS).each_with_object({}) do |k, h|
           h[k] = request.params[k.to_s]
         end
-        if model.respond_to?(:column_names) && model.column_names.include?('provider')
-          attributes.reverse_merge!(provider: 'identity')
+        if model.respond_to?(:column_names) && model.column_names.include?("provider")
+          attributes.reverse_merge!(provider: "identity")
         end
         if validating?
           @identity = model.new(attributes)
-          env['omniauth.identity'] = @identity
+          env["omniauth.identity"] = @identity
           if valid?
             @identity.save
             registration_result
@@ -87,7 +87,7 @@ module OmniAuth
           end
         else
           @identity = model.create(attributes)
-          env['omniauth.identity'] = @identity
+          env["omniauth.identity"] = @identity
           registration_result
         end
       end
@@ -107,7 +107,7 @@ module OmniAuth
         conditions = options[:locate_conditions]
         conditions = conditions.is_a?(Proc) ? instance_exec(request, &conditions).to_hash : conditions.to_hash
 
-        @identity ||= model.authenticate(conditions, request.params['password'])
+        @identity ||= model.authenticate(conditions, request.params["password"])
       end
 
       def model
@@ -119,24 +119,24 @@ module OmniAuth
       def build_omniauth_login_form
         OmniAuth::Form.build(
           title: options[:title],
-          url: callback_path
+          url: callback_path,
         ) do |f|
-          f.text_field 'Login', 'auth_key'
-          f.password_field 'Password', 'password'
+          f.text_field("Login", "auth_key")
+          f.password_field("Password", "password")
           if options[:enable_registration]
-            f.html "<p align='center'><a href='#{registration_path}'>#{options[:create_identity_link_text]}</a></p>"
+            f.html("<p align='center'><a href='#{registration_path}'>#{options[:create_identity_link_text]}</a></p>")
           end
         end
       end
 
       def build_omniauth_registration_form(validation_message)
         OmniAuth::Form.build(title: options[:registration_form_title]) do |f|
-          f.html "<p style='color:red'>#{validation_message}</p>" if validation_message
+          f.html("<p style='color:red'>#{validation_message}</p>") if validation_message
           options[:fields].each do |field|
-            f.text_field field.to_s.capitalize, field.to_s
+            f.text_field(field.to_s.capitalize, field.to_s)
           end
-          f.password_field 'Password', 'password'
-          f.password_field 'Confirm Password', 'password_confirmation'
+          f.password_field("Password", "password")
+          f.password_field("Confirm Password", "password_confirmation")
         end
       end
 
@@ -166,7 +166,7 @@ module OmniAuth
 
       def registration_result
         if @identity.persisted?
-          env['PATH_INFO'] = "#{path_prefix}/#{name}/callback"
+          env["PATH_INFO"] = "#{path_prefix}/#{name}/callback"
           callback_phase
         else
           registration_failure(options[:registration_failure_message])

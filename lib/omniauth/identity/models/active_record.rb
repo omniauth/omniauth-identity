@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'active_record'
+require "active_record"
 
 module OmniAuth
   module Identity
@@ -18,11 +18,11 @@ module OmniAuth
 
         def self.auth_key=(key)
           super
-          validates_uniqueness_of key, case_sensitive: false
+          validates_uniqueness_of(key, case_sensitive: false)
         end
 
         def self.locate(search_hash)
-          search_hash = search_hash.reverse_merge!('provider' => 'identity') if column_names.include?('provider')
+          search_hash = search_hash.reverse_merge!("provider" => "identity") if column_names.include?("provider")
           where(search_hash).first
         end
       end

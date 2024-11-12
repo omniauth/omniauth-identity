@@ -24,11 +24,11 @@ module OmniAuth
       SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
 
       def self.included(base)
-        base.extend ClassMethods
-        base.extend ClassCreateApi unless base.respond_to?(:create)
+        base.extend(ClassMethods)
+        base.extend(ClassCreateApi) unless base.respond_to?(:create)
         im = base.instance_methods
-        base.include InstanceSaveApi unless im.include?(:save)
-        base.include InstancePersistedApi unless im.include?(:persisted?)
+        base.include(InstanceSaveApi) unless im.include?(:save)
+        base.include(InstancePersistedApi) unless im.include?(:persisted?)
       end
 
       module ClassMethods
@@ -49,9 +49,9 @@ module OmniAuth
         # @return [String] The method name.
         def auth_key(method = false)
           @auth_key = method.to_s unless method == false
-          @auth_key = nil if !defined?(@auth_key) || @auth_key == ''
+          @auth_key = nil if !defined?(@auth_key) || @auth_key == ""
 
-          @auth_key || 'email'
+          @auth_key || "email"
         end
 
         # Locate an identity given its unique login key.
@@ -121,7 +121,7 @@ module OmniAuth
       # @return [String] An identifier string unique to this identity.
       def uid
         if respond_to?(:id)
-          return nil if id.nil?
+          return if id.nil?
 
           id.to_s
         else
@@ -172,8 +172,8 @@ module OmniAuth
         SCHEMA_ATTRIBUTES.each_with_object(info) do |attribute, hash|
           hash[attribute] = send(attribute) if respond_to?(attribute)
         end
-        info['name'] ||= [info['first_name'], info['last_name']].join(' ').strip if info['first_name'] || info['last_name']
-        info['name'] ||= info['nickname']
+        info["name"] ||= [info["first_name"], info["last_name"]].join(" ").strip if info["first_name"] || info["last_name"]
+        info["name"] ||= info["nickname"]
         info
       end
     end

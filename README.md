@@ -36,13 +36,13 @@ This gem is compatible with, as of Feb 2021, version 3:
 To acquire the latest release from RubyGems add the following to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-identity'
+gem "omniauth-identity"
 ```
 
 If the git repository has new commits not yet in an official release, simply specify the repo instead:
 
 ```ruby
-gem 'omniauth-identity', git: 'https://github.com/intridea/omniauth-identity.git'
+gem "omniauth-identity", git: "https://github.com/intridea/omniauth-identity.git"
 ```
 
 ## Usage
@@ -57,8 +57,8 @@ Rack middleware. In rails, this would be created by an initializer, such as
 ```ruby
 use OmniAuth::Builder do
   provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
-           model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
-           fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
+    model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
+    fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
 end
 ```
 
@@ -221,8 +221,8 @@ fails. In your OmniAuth configuration, specify any valid rack endpoint in the
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-           fields: [:email],
-           on_failed_registration: UsersController.action(:new)
+    fields: [:email],
+    on_failed_registration: UsersController.action(:new)
 end
 ```
 
@@ -241,7 +241,7 @@ The default value is:
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-           locate_conditions: ->(req) { { model.auth_key => req.params['auth_key'] } }
+    locate_conditions: ->(req) { {model.auth_key => req.params["auth_key"]} }
     # ...
 end
 ```
@@ -270,7 +270,7 @@ option :on_login, nil               # See #request_phase
 option :on_validation, nil          # See #registration_phase
 option :on_registration, nil        # See #registration_phase
 option :on_failed_registration, nil # See #registration_phase
-option :locate_conditions, ->(req) { { model.auth_key => req.params['auth_key'] } }
+option :locate_conditions, ->(req) { {model.auth_key => req.params["auth_key"]} }
 ```
 
 Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭

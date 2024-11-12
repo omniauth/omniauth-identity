@@ -19,6 +19,8 @@ gem "redcarpet", platform: :mri
 ### Linting
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
 gem "rubocop-minitest"
+gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
+gem "rubocop-rspec", "~> 3.2"
 gem "rubocop-sequel"
 
 ### ORMs

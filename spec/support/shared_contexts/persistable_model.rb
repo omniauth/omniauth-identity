@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-RSpec.shared_context 'persistable model' do
-  include_context 'model with class methods'
+RSpec.shared_context "persistable model" do
+  include_context "model with class methods"
 
-  describe 'instance methods' do
+  describe "instance methods" do
     subject(:instance) { model_klass.new }
 
-    include_context 'instance with instance methods'
+    include_context "instance with instance methods"
 
-    describe '#save' do
+    describe "#save" do
       subject(:save) do
         instance.email = DEFAULT_EMAIL
         instance.password = DEFAULT_PASSWORD
@@ -16,7 +16,7 @@ RSpec.shared_context 'persistable model' do
         instance.save
       end
 
-      it 'does not raise an error' do
+      it "does not raise an error" do
         save
       end
     end

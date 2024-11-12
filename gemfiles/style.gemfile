@@ -12,6 +12,8 @@ gem "activerecord", ">= 6", require: false # rails 6 requires Ruby 2.5 or later
 # Linting
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
 gem "rubocop-minitest"
+gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
+gem "rubocop-rspec", "~> 3.2"
 gem "rubocop-sequel"
 
 gemspec path: "../"

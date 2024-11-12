@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'sequel'
+require "sequel"
 
 module OmniAuth
   module Identity
@@ -17,17 +17,17 @@ module OmniAuth
             # NOTE: Using the deprecated :validations_class_methods because it defines
             #       validates_confirmation_of, while current :validation_helpers does not.
             # plugin :validation_helpers
-            plugin :validation_class_methods
+            plugin(:validation_class_methods)
 
-            include ::OmniAuth::Identity::Model
-            include ::OmniAuth::Identity::SecurePassword
+            include(::OmniAuth::Identity::Model)
+            include(::OmniAuth::Identity::SecurePassword)
 
             # validations: true incurs a dependency on ActiveModel, so we turn it off here.
-            has_secure_password validations: false
+            has_secure_password(validations: false)
 
             def self.auth_key=(key)
               super
-              validates_uniqueness_of :key, case_sensitive: false
+              validates_uniqueness_of(:key, case_sensitive: false)
             end
 
             # @param arguments [any] -

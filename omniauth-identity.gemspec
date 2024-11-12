@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'omniauth-identity/version'
+require "omniauth-identity/version"
 
 Gem::Specification.new do |spec|
   # See CONTRIBUTING.md
@@ -32,14 +32,14 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'bcrypt'
-  spec.add_runtime_dependency 'omniauth'
+  spec.add_runtime_dependency("bcrypt")
+  spec.add_runtime_dependency("omniauth")
 
   ### Testing
   spec.add_development_dependency("rack-test", "~> 1")
   spec.add_development_dependency("rake", "~> 13")
   spec.add_development_dependency("rspec", "~> 3")
-  spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")
+  spec.add_development_dependency("rspec-block_is_expected", "~> 1.0", ">= 1.0.6")
 
   ### ORMs
   spec.add_development_dependency("sqlite3", "~> 1.4")
