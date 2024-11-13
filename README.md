@@ -42,7 +42,7 @@ gem "omniauth-identity"
 If the git repository has new commits not yet in an official release, simply specify the repo instead:
 
 ```ruby
-gem "omniauth-identity", git: "https://github.com/intridea/omniauth-identity.git"
+gem "omniauth-identity", git: "https://github.com/omniauth/omniauth-identity.git"
 ```
 
 ## Usage
