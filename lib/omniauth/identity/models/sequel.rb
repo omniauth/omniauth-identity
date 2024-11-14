@@ -31,6 +31,7 @@ module OmniAuth
 
             def self.auth_key=(key)
               super
+              # Sequel version of validates_uniqueness_of! Does not incur ActiveRecord dependency!
               validates_uniqueness_of(:key, case_sensitive: false)
             end
 

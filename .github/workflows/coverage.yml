@@ -2,7 +2,7 @@ name: Ruby - Coverage
 
 env:
   K_SOUP_COV_MIN_BRANCH: 80
-  K_SOUP_COV_MIN_LINE: 69
+  K_SOUP_COV_MIN_LINE: 91
   K_SOUP_COV_MIN_HARD: true
   K_SOUP_COV_DO: true
   K_SOUP_COV_COMMAND_NAME: "RSpec Coverage"

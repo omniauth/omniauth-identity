@@ -17,7 +17,7 @@ module OmniAuth
             include(::OmniAuth::Identity::SecurePassword)
 
             # validations: true (default) incurs a dependency on ActiveModel, but CouchPotato is ActiveModel based.
-            has_secure_password(validations: false)
+            has_secure_password
 
             def self.auth_key=(key)
               super
@@ -29,7 +29,7 @@ module OmniAuth
             end
 
             def save
-              CouchPotato.database.save(self)
+              CouchPotato.database.save_document(self)
             end
           end
         end

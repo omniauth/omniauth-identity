@@ -35,9 +35,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gemfile: "Appraisal.root"
-        rubygems: '3.4.22'
-        bundler: '2.4.22'
         include:
           # Ruby 2.6
           - ruby: "2.6"
