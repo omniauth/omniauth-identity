@@ -35,54 +35,84 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        gemfile:
-          - "Appraisal.root"
-        rubygems:
-          - latest
-        bundler:
-          - latest
         include:
           # ruby-head
           - ruby: "head"
             appraisal: "ar-8-0"
             taskname: "spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "head"
             appraisal: "couch-1.17"
             taskname: "spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "head"
             appraisal: "mongoid-9.0"
             taskname: "spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "head"
             appraisal: "sequel-5.86"
             taskname: "spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
           # truffleruby-head
           - ruby: "truffleruby-head"
             appraisal: "ar-8-0"
             taskname: "spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "truffleruby-head"
             appraisal: "couch-1.17"
             taskname: "spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "truffleruby-head"
             appraisal: "mongoid-9.0"
             taskname: "spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "truffleruby-head"
             appraisal: "sequel-5.86"
             taskname: "spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
           # jruby-head
           - ruby: "jruby-head"
             appraisal: "ar-8-0"
             taskname: "spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "jruby-head"
             appraisal: "couch-1.17"
             taskname: "spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "jruby-head"
             appraisal: "mongoid-9.0"
             taskname: "spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
           - ruby: "jruby-head"
             appraisal: "sequel-5.86"
             taskname: "spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
     steps:
       ### COUCHDB
