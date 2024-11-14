@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 gem "mongoid", "~> 9.0", ">= 9.0.3"
+gem "mongoid-rspec", "~> 4.2"
 gem "mutex_m", "~> 0.2"
 gem "stringio", "~> 3.1", ">= 3.1.2"
 

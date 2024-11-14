@@ -126,6 +126,7 @@ end
 #   - Ruby 2.5
 appraise "mongoid-7.3" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
+  gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
 end
@@ -137,6 +138,7 @@ end
 #   - Ruby 2.7
 appraise "mongoid-7.4" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
+  gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
 end
@@ -151,6 +153,7 @@ end
 #   - Ruby 3.3
 appraise "mongoid-8.1" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
+  gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
 end
@@ -167,6 +170,7 @@ end
 #   - jruby-head
 appraise "mongoid-9.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
+  gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.1", ">= 3.1.2"
 end
