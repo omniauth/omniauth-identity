@@ -329,7 +329,7 @@ DEPENDENCIES
   rubocop-rspec (~> 3.2)
   rubocop-sequel
   sequel (~> 5.86)
-  sqlite3 (~> 1.4)
+  sqlite3 (>= 1)
   standard (>= 1.35.1)
   test-unit (>= 3.0)
   yard (~> 0.9.34)
