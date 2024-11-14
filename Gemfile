@@ -1,63 +1,54 @@
 # frozen_string_literal: true
 
-# This Gemfile copies liberally from https://github.com/rspec/rspec-core/blob/main/Gemfile
-source 'https://rubygems.org'
+#### IMPORTANT #######################################################
+# Gemfile is for local development ONLY; Gemfile is NOT loaded in CI #
+####################################################### IMPORTANT ####
 
-# Specify your gem's dependencies in rspec-pending_for.gemspec
+source "https://rubygems.org"
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+
 gemspec
 
-ruby_version = Gem::Version.new(RUBY_VERSION)
+### Std Lib Extracted Gems
+gem "mutex_m", "~> 0.2"
+gem "stringio", "~> 3.1", ">= 3.1.2"
 
-gem 'yard', '~> 0.9.24', require: false
+### Documentation
+gem "yard", "~> 0.9.34", require: false
+gem "yard-junk", "~> 0.0.10"
+gem "github-markup"
+gem "redcarpet"
 
-### deps for rdoc.info
-group :documentation do
-  gem 'github-markup', platform: :mri
-  gem 'redcarpet', platform: :mri
-end
+### Linting
+gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
+gem "rubocop-minitest"
+gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
+gem "rubocop-rspec", "~> 3.2"
+gem "rubocop-sequel"
+gem "standard", ">= 1.35.1", "!= 1.41.1"
 
-group :development, :test do
-  # ORMs
-  if ruby_version < Gem::Version.new('2.5.0')
-    gem 'activerecord', '~> 5', require: false # rails 5 works with Ruby 2.4
-  else
-    gem 'activerecord', '~> 6', require: false # rails 6 requires Ruby 2.5 or later
-  end
-  gem 'anonymous_active_record', '~> 1', require: false
-  gem 'couch_potato', github: 'langalex/couch_potato', require: false
-  gem 'mongoid', '~> 7', require: false
-  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', require: false
-  gem 'nobrainer', '~> 0', require: false
-  gem 'sequel', '~> 5', require: false
+### ORMs
+gem "couch_potato", "~> 1.17", require: false
+gem "mongoid", ">= 7", require: false
+gem "mongoid-rspec", "~> 4.2", require: false
+gem "nobrainer", "~> 0.44", require: false
+gem "sequel", "~> 5.86", require: false
 
-  if ruby_version >= Gem::Version.new('2.4')
-    # No need to run byebug / pry on earlier versions
-    gem 'byebug', platform: :mri
-    gem 'pry', platform: :mri
-    gem 'pry-byebug', platform: :mri
-  end
+### Local dev tools
+gem "growl"
+gem "guard"
+gem "guard-bundler"
+gem "guard-rspec"
+gem "rb-fsevent"
 
-  if ruby_version >= Gem::Version.new('2.7')
-    # No need to run rubocop or simplecov on earlier versions
-    gem 'rubocop', '~> 1.9', platform: :mri
-    gem 'rubocop-md', platform: :mri
-    gem 'rubocop-minitest', platform: :mri
-    gem 'rubocop-packaging', platform: :mri
-    gem 'rubocop-performance', platform: :mri
-    gem 'rubocop-rake', platform: :mri
-    gem 'rubocop-rspec', platform: :mri
-    gem 'rubocop-sequel', platform: :mri
+### Coverage
+gem "kettle-soup-cover", "~> 1.0", ">= 1.0.4"
 
-    gem 'simplecov', '~> 0.21', platform: :mri
-  end
+### Testing
+gem "test-unit", ">= 3.0"
 
-  gem 'growl'
-  gem 'guard'
-  gem 'guard-bundler'
-  gem 'guard-rspec'
-  gem 'rb-fsevent'
-end
-
-group :test do
-  gem 'test-unit', '>= 3.0'
+platform :mri do
+  ### Debugging (MRI Only)
+  gem "byebug", ">= 11"
 end

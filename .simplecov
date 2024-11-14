@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
+require "kettle/soup/cover/config"
+
 SimpleCov.start do
-  add_filter '/.github/'
-  add_filter '/coverage/'
-  add_filter '/rethinkdb_data/'
-  add_filter '/spec/'
-  add_filter '/spec_orms/'
-  add_filter '/vendor/bundle/'
+  add_filter "/rethinkdb_data/"
+  add_filter "lib/omniauth/identity/models/nobrainer.rb"
 end

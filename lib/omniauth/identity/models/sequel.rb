@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'sequel'
+require "sequel"
 
 module OmniAuth
   module Identity
@@ -17,20 +17,33 @@ module OmniAuth
             # NOTE: Using the deprecated :validations_class_methods because it defines
             #       validates_confirmation_of, while current :validation_helpers does not.
             # plugin :validation_helpers
-            plugin :validation_class_methods
+            plugin(:validation_class_methods)
 
-            include ::OmniAuth::Identity::Model
-            include ::OmniAuth::Identity::SecurePassword
+            include(::OmniAuth::Identity::Model)
+            include(::OmniAuth::Identity::SecurePassword)
 
-            has_secure_password
+            # `validations: true` (default) would normally incur a dependency on ActiveModel.
+            # Starting in v3.1 we check if ActiveModel is defined before we actually set validations.
+            # If ActiveModel isn't defined, it may be unexpected that validations are not being set,
+            #   so this will result in a warning deprecation until release of v4,
+            #   at which point the default (for Sequel ORM only) will change to `validations: false`
+            has_secure_password(validations: OmniAuth::Identity::Version.major < 4)
 
-            def self.auth_key=(key)
-              super
-              validates_uniqueness_of :key, case_sensitive: false
-            end
+            class << self
+              def auth_key=(key)
+                super
+                # Sequel version of validates_uniqueness_of! Does not incur ActiveRecord dependency!
+                validates_uniqueness_of(:key, case_sensitive: false)
+              end
 
-            def self.locate(search_hash)
-              where(search_hash).first
+              # @param arguments [any] -
+              #   Filtering is probably the most common dataset modifying action done in Sequel.
+              #   Both the where and filter methods filter the dataset by modifying the dataset’s WHERE clause.
+              #   Both accept a wide variety of input formats, which are passed as arguments below.
+              #   See: https://sequel.jeremyevans.net/rdoc/files/doc/querying_rdoc.html#label-Filters
+              def locate(arguments)
+                where(arguments).first
+              end
             end
 
             def persisted?

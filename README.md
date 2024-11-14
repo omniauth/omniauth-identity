@@ -17,10 +17,10 @@ basic construct for user management and then gets out of the way.
 
 ## Compatibility
 
-This gem is compatible with, as of Feb 2021, version 3:
+This gem is compatible with, as of Nov 2024, version 3:
 
-* Latest released version of omniauth, v2.0.2
-* Ruby 2.4, 2.5, 2.6, 2.7, 3.0, ruby-head
+* Latest released version of omniauth, v2+
+* Ruby 2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, ruby-head, truffleruby-head, jruby-head
 * At least 5 different database ORM adapters, which connect to 15 different database clients!
 
 | Databases | Adapter Libraries |
@@ -36,13 +36,13 @@ This gem is compatible with, as of Feb 2021, version 3:
 To acquire the latest release from RubyGems add the following to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-identity'
+gem "omniauth-identity"
 ```
 
 If the git repository has new commits not yet in an official release, simply specify the repo instead:
 
 ```ruby
-gem 'omniauth-identity', git: 'https://github.com/intridea/omniauth-identity.git'
+gem "omniauth-identity", git: "https://github.com/omniauth/omniauth-identity.git"
 ```
 
 ## Usage
@@ -57,8 +57,8 @@ Rack middleware. In rails, this would be created by an initializer, such as
 ```ruby
 use OmniAuth::Builder do
   provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
-           model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
-           fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
+    model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
+    fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
 end
 ```
 
@@ -221,8 +221,8 @@ fails. In your OmniAuth configuration, specify any valid rack endpoint in the
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-           fields: [:email],
-           on_failed_registration: UsersController.action(:new)
+    fields: [:email],
+    on_failed_registration: UsersController.action(:new)
 end
 ```
 
@@ -241,7 +241,7 @@ The default value is:
 ```ruby
 use OmniAuth::Builder do
   provider :identity,
-           locate_conditions: ->(req) { { model.auth_key => req.params['auth_key'] } }
+    locate_conditions: ->(req) { {model.auth_key => req.params["auth_key"]} }
     # ...
 end
 ```
@@ -270,7 +270,7 @@ option :on_login, nil               # See #request_phase
 option :on_validation, nil          # See #registration_phase
 option :on_registration, nil        # See #registration_phase
 option :on_failed_registration, nil # See #registration_phase
-option :locate_conditions, ->(req) { { model.auth_key => req.params['auth_key'] } }
+option :locate_conditions, ->(req) { {model.auth_key => req.params["auth_key"]} }
 ```
 
 Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭
@@ -282,42 +282,77 @@ Please contribute some documentation if you have the gumption!  The maintainer's
 3. Commit your changes (`git commit -am ‘Added some feature’`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Make sure to add tests for it. This is important so I don’t break it in a future version unintentionally.
-    - NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
-        1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
-       ```bash
-       brew install rethinkdb
-       rethinkdb
-       ```
-        2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-       ```bash
-       brew tap mongodb/brew
-       brew install mongodb-community@4.4
-       mongod --config /usr/local/etc/mongod.conf
-       ```
-        3. [CouchDB](https://couchdb.apache.org) (download the .app)
 
-      To run all tests on all databases:
-        ```bash
-        bundle exec rake
-        ```
-      To run a specific DB:
-        ```bash
-        # CouchDB / CouchPotato
-        bundle exec rspec spec spec_orms --tag 'couchdb'
+NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
 
-        # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
-        bundle exec rspec spec spec_orms --tag 'sqlite3'
+1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
+   ```bash
+   brew install rethinkdb
+   rethinkdb
+   ```
+2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
+   ```bash
+   brew tap mongodb/brew
+   brew install mongodb-community@4.4
+   mongod --config /usr/local/etc/mongod.conf
+   ```
+3. [CouchDB](https://couchdb.apache.org) - download the .app, or:
+   ```bash
+   brew install couchdb
+   ```
+   CouchDB 3.x requires a set admin password set before startup.
+   Add one to your `$HOMEBREW_PREFIX/etc/local.ini` before starting CouchDB e.g.:
+   ```ini
+   [admins]
+   admin = yourabsolutesecret
+   ```
+   Also add whatever password you set to your `.env.local`:
+   ```dotenv
+   export COUCHDB_PASSWORD=yourabsolutesecret
+   ```
+   Then start the CouchDB service
+   ```bash
+   brew services start couchdb
+   ```
 
-        # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
-        #        and the two libraries are fundamentally incompatible.
+Now you can run any of the tests!
 
-        # MongoDB / Mongoid
-        bundle exec rspec spec_orms/mongoid_spec.rb
+To run all tests on all databases (except RethinkDB):
+```bash
+bundle exec rake spec:orm:all
+```
 
-        # RethinkDB / NoBrainer
-        bundle exec rspec spec_orms/nobrainer_spec.rb
-        ```
-6. Create new Pull Request
+To run all tests that do not require any additional services, like MongoDB, CouchDB, or RethinkDB:
+```bash
+bundle exec rake test
+```
+
+To run a specific DB:
+```bash
+# CouchDB / CouchPotato
+bundle exec rspec spec spec_orms --tag 'couchdb'
+
+# ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
+bundle exec rspec spec spec_orms --tag 'sqlite3'
+
+# NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
+#        and the two libraries are fundamentally incompatible.
+
+# MongoDB / Mongoid
+bundle exec rspec spec_orms/mongoid_spec.rb
+
+# RethinkDB / NoBrainer (Ignored by CI! see spec file for reasons)
+bundle exec rspec spec_ignored/nobrainer_spec.rb
+```
+
+### Finally
+
+Run all the default tasks, which includes running the gradually autocorrecting linter, `rubocop-gradual`.
+```bash
+bundle exec rake
+```
+
+📌 Create new Pull Request with your changes 📌
 
 ## License
 

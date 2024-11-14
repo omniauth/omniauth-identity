@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bcrypt'
+require "bcrypt"
 
 module OmniAuth
   module Identity
@@ -11,13 +11,13 @@ module OmniAuth
     # a has_secure_password method.
     module SecurePassword
       def self.included(base)
-        base.extend ClassMethods unless base.respond_to?(:has_secure_password)
+        base.extend(ClassMethods) unless base.respond_to?(:has_secure_password)
       end
 
       # BCrypt hash function can handle maximum 72 bytes, and if we pass
       # password of length more than 72 bytes it ignores extra characters.
       # Hence need to put a restriction on password length.
-      MAX_PASSWORD_LENGTH_ALLOWED = 72
+      MAX_PASSWORD_LENGTH_ALLOWED = BCrypt::Engine::MAX_SECRET_BYTESIZE
 
       class << self
         attr_accessor :min_cost # :nodoc:
@@ -29,7 +29,15 @@ module OmniAuth
         # This mechanism requires you to have a +XXX_digest+ attribute.
         # Where +XXX+ is the attribute name of your desired password.
         #
-        # The following validations are added automatically:
+        # For Supported ActiveModel-based ORMs:
+        #
+        #  * ActiveRecord
+        #  * CouchPotato
+        #  * Mongoid
+        #  * NoBrainer
+        #
+        # the following validations are added automatically:
+        #
         # * Password must be present on creation
         # * Password length should be less than or equal to 72 bytes
         # * Confirmation of password (using a +XXX_confirmation+ attribute)
@@ -39,8 +47,14 @@ module OmniAuth
         # it). When this attribute has a +nil+ value, the validation will not be
         # triggered.
         #
-        # For further customizability, it is possible to suppress the default
-        # validations by passing <tt>validations: false</tt> as an argument.
+        # For Supported non-ActiveModel-based ORMs:
+        #
+        #  * Sequel
+        #
+        # validations are disabled by default.
+        #
+        # It is possible to disable the default validations in any ORM
+        # by passing <tt>validations: false</tt> as an argument.
         #
         # Add bcrypt (~> 3.1.7) to Gemfile to use #has_secure_password:
         #
@@ -73,47 +87,60 @@ module OmniAuth
           # This is to avoid ActiveModel (and by extension the entire framework)
           # being dependent on a binary library.
           begin
-            require 'bcrypt'
+            require "bcrypt"
           rescue LoadError
-            warn "You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install"
+            warn("You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install")
             raise
           end
 
-          include InstanceMethodsOnActivation.new(attribute)
+          include(InstanceMethodsOnActivation.new(attribute))
 
           if validations
-            include ActiveModel::Validations
+            if !defined?(ActiveModel)
+              warn("[DEPRECATION][omniauth-identity v3.1][w/ Sequel ORM] has_secure_password(validations: true) is default, but incurs dependency on ActiveModel. v4 will default to `has_secure_password(validations: false)`.")
+              begin
+                require "active_model"
+              rescue LoadError
+                warn("You don't have active_model installed in your application. Please add it to your Gemfile and run bundle install")
+                raise
+              end
+            end
+            include(ActiveModel::Validations)
 
             # This ensures the model has a password by checking whether the password_digest
             # is present, so that this works with both new and existing records. However,
             # when there is an error, the message is added to the password attribute instead
             # so that the error message will make sense to the end-user.
             validate do |record|
-              record.errors.add(attribute, :blank) unless record.public_send("#{attribute}_digest").present?
+              record.errors.add(attribute, :blank) unless record.public_send(:"#{attribute}_digest").present?
             end
 
-            validates_length_of attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED
-            validates_confirmation_of attribute, allow_blank: true
+            validates_length_of(attribute, maximum: MAX_PASSWORD_LENGTH_ALLOWED)
+            validates_confirmation_of(attribute, allow_blank: true)
           end
         end
       end
 
       class InstanceMethodsOnActivation < Module
         def initialize(attribute)
-          attr_reader attribute
+          attr_reader(attribute)
 
-          define_method("#{attribute}=") do |unencrypted_password|
+          define_method(:"#{attribute}=") do |unencrypted_password|
             if unencrypted_password.nil?
-              public_send("#{attribute}_digest=", nil)
+              public_send(:"#{attribute}_digest=", nil)
             elsif !unencrypted_password.empty?
-              instance_variable_set("@#{attribute}", unencrypted_password)
-              cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-              public_send("#{attribute}_digest=", BCrypt::Password.create(unencrypted_password, cost: cost))
+              instance_variable_set(:"@#{attribute}", unencrypted_password)
+              cost = if defined?(ActiveModel::SecurePassword)
+                ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+              else
+                BCrypt::Engine.cost
+              end
+              public_send(:"#{attribute}_digest=", BCrypt::Password.create(unencrypted_password, cost: cost))
             end
           end
 
-          define_method("#{attribute}_confirmation=") do |unencrypted_password|
-            instance_variable_set("@#{attribute}_confirmation", unencrypted_password)
+          define_method(:"#{attribute}_confirmation=") do |unencrypted_password|
+            instance_variable_set(:"@#{attribute}_confirmation", unencrypted_password)
           end
 
           # Returns +self+ if the password is correct, otherwise +false+.
@@ -126,12 +153,12 @@ module OmniAuth
           #   user.save
           #   user.authenticate_password('notright')      # => false
           #   user.authenticate_password('mUc3m00RsqyRe') # => user
-          define_method("authenticate_#{attribute}") do |unencrypted_password|
-            attribute_digest = public_send("#{attribute}_digest")
+          define_method(:"authenticate_#{attribute}") do |unencrypted_password|
+            attribute_digest = public_send(:"#{attribute}_digest")
             BCrypt::Password.new(attribute_digest).is_password?(unencrypted_password) && self
           end
 
-          alias_method :authenticate, :authenticate_password if attribute == :password
+          alias_method(:authenticate, :authenticate_password) if attribute == :password
         end
       end
     end

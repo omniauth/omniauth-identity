@@ -1,10 +1,8 @@
-/.tool-versions
 /.ruby-version
 /.ruby-gemset
 
 /.bundle/
 /.yardoc
-/Gemfile.lock
 /_yardoc/
 /coverage/
 /doc/
@@ -14,7 +12,13 @@
 /rethinkdb_data
 
 *.gem
+/.idea/
+
+*.gemfile.lock
 
 # rspec failure tracking
 .rspec_status
 .byebug_history
+
+# direnv - brew install direnv
+.env.local

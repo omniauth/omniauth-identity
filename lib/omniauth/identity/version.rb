@@ -2,6 +2,8 @@
 
 module OmniAuth
   module Identity
-    VERSION = '3.0.9'
+    module Version
+      VERSION = "3.1.0"
+    end
   end
 end

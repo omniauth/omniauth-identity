@@ -1,0 +1,20 @@
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+
+source "https://rubygems.org"
+
+# Root Gemfile is only for local development only. It is not loaded on CI.
+# On CI we only need the gemspecs' dependencies (including development dependencies).
+# Exceptions, if any, will be found here in gemfiles/*.gemfile
+
+# Database
+gem "activerecord", ">= 6", require: false # rails 6 requires Ruby 2.5 or later
+
+# Linting
+gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
+gem "rubocop-minitest"
+gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
+gem "rubocop-rspec", "~> 3.2"
+gem "rubocop-sequel"
+gem "standard", ">= 1.35.1", "!= 1.41.1"
+
+gemspec path: "../"

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'mongoid'
+require "mongoid"
 
 module OmniAuth
   module Identity
@@ -11,14 +11,15 @@ module OmniAuth
       module Mongoid
         def self.included(base)
           base.class_eval do
-            include ::OmniAuth::Identity::Model
-            include ::OmniAuth::Identity::SecurePassword
+            include(::OmniAuth::Identity::Model)
+            include(::OmniAuth::Identity::SecurePassword)
 
+            # validations: true (default) incurs a dependency on ActiveModel, but Mongoid is ActiveModel based.
             has_secure_password
 
             def self.auth_key=(key)
               super
-              validates_uniqueness_of key, case_sensitive: false
+              validates_uniqueness_of(key, case_sensitive: false)
             end
 
             def self.locate(search_hash)
