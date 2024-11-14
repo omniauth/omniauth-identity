@@ -10,7 +10,7 @@ source "https://rubygems.org"
 # NOTE: couch_potato is not yet compatible with Rails 8.0
 gem "activerecord", "~> 7.2.2", require: false
 gem "couch_potato", "~> 1.17", require: false
-gem "mongoid", "~> 7.0", require: false
+gem "mongoid", "~> 9.0", ">= 9.0.3", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
 gem "sequel", "~> 5.86", require: false
 
