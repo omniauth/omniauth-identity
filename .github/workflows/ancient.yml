@@ -38,9 +38,6 @@ jobs:
         include:
           # Ruby 2.4
           - ruby: "2.4"
-            appraisal: "ar-4-2"
-            taskname: "spec:orm:active_record"
-          - ruby: "2.4"
             appraisal: "ar-5-0"
             taskname: "spec:orm:active_record"
           - ruby: "2.4"

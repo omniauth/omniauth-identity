@@ -39,6 +39,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.4")
 
   ### Testing
+  spec.add_development_dependency("activerecord", ">= 5")
+  spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")
   spec.add_development_dependency("appraisal", "~> 2.5")
   spec.add_development_dependency("rack-test", "~> 1")
   spec.add_development_dependency("rake", "~> 13")

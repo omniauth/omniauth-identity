@@ -302,8 +302,8 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  activerecord (>= 6)
-  anonymous_active_record (~> 1)
+  activerecord (>= 5)
+  anonymous_active_record (~> 1.0, >= 1.0.9)
   appraisal (~> 2.5)
   byebug (>= 11)
   couch_potato (~> 1.17)

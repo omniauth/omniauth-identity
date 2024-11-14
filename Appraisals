@@ -1,12 +1,5 @@
 # frozen_string_literal: true
 
-# Compat: Ruby >= 1.9.3
-# Test Matrix:
-#   - Ruby 2.4
-appraise "ar-4-2" do
-  gem "activerecord", "~> 4.2.11.3"
-end
-
 # Compat: Ruby >= 2.2.2
 # Test Matrix:
 #   - Ruby 2.4

@@ -25,7 +25,6 @@ gem "rubocop-sequel"
 gem "standard", ">= 1.35.1"
 
 ### ORMs
-gem "activerecord", ">= 6", require: false # rails 6 requires Ruby 2.5 or later
 gem "couch_potato", "~> 1.17", require: false
 gem "mongoid", "~> 7", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
@@ -43,7 +42,6 @@ gem "rb-fsevent"
 gem "kettle-soup-cover", "~> 1.0", ">= 1.0.2"
 
 ### Testing
-gem "anonymous_active_record", "~> 1", require: false
 gem "test-unit", ">= 3.0"
 
 platform :mri do
