@@ -7,13 +7,14 @@ source "https://rubygems.org"
 # Exceptions, if any, will be found here in gemfiles/*.gemfile
 
 ### ORMs
-gem "activerecord", "~> 8.0", require: false
+# NOTE: couch_potato is not yet compatible with Rails 8.0
+gem "activerecord", "~> 7.2.2", require: false
 gem "couch_potato", "~> 1.17", require: false
 gem "mongoid", "~> 7.0", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
 gem "sequel", "~> 5.86", require: false
 
 # Coverage
-gem "kettle-soup-cover", "~> 1.0", ">= 1.0.2"
+gem "kettle-soup-cover", "~> 1.0", ">= 1.0.4"
 
 gemspec path: "../"

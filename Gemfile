@@ -39,7 +39,7 @@ gem "guard-rspec"
 gem "rb-fsevent"
 
 ### Coverage
-gem "kettle-soup-cover", "~> 1.0", ">= 1.0.2"
+gem "kettle-soup-cover", "~> 1.0", ">= 1.0.4"
 
 ### Testing
 gem "test-unit", ">= 3.0"

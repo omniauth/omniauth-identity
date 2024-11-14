@@ -312,7 +312,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-rspec
-  kettle-soup-cover (~> 1.0, >= 1.0.2)
+  kettle-soup-cover (~> 1.0, >= 1.0.4)
   mongoid (~> 7)
   mongoid-rspec (~> 4.2)
   nobrainer (~> 0.44)
