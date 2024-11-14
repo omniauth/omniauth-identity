@@ -48,11 +48,12 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, :rethinkdb) do
 
     describe "::locate" do
       it "delegates locate to the where query method" do
-        allow(model_klass).to(receive(:where).with(
+        args = {
           "email" => "open faced",
           "category" => "sandwiches",
-        ).and_return(["wakka"]))
-        expect(model_klass.locate("email" => "open faced", "category" => "sandwiches")).to(eq("wakka"))
+        }
+        allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
+        expect(model_klass.locate(args)).to(eq("wakka"))
       end
     end
   end

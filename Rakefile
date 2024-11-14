@@ -4,10 +4,13 @@ require "bundler/gem_tasks"
 
 begin
   require "rspec/core/rake_task"
-  # Define a default test task which will run only ORM-agnostic specs
-  # This ignores the ORM-specific tests because they are in spec_orms/
-  #   which doesn't match the default RSpec test task pattern.
-  RSpec::Core::RakeTask.new(:test)
+  # Define a default test task which will run only specs which work on sqlite3 because,
+  #   when running sqlite3-based tests you don't need any additional services running.
+  %w(active_record sequel).each do |orm|
+    RSpec::Core::RakeTask.new("test") do |task|
+      task.pattern = "{spec/**/*,spec_orms/active_record,spec_orms/sequel}_spec.rb"
+    end
+  end
 
   ### Combo Test Tasks for Continuous Integration
   # Define a task for each ORM which will run all ORM-agnostic specs + the specs for a specific ORM.
@@ -39,12 +42,6 @@ begin
   nobrainer = RSpec::Core::RakeTask.new(:spec_orm_nobrainer)
   nobrainer.pattern = "spec_ignored/nobrainer_spec.rb"
 
-  # When running sqlite3-based tests you don't need any additional services running.
-  task("test:sqlite3": %i[
-    test
-    spec_orm_active_record
-    spec_orm_sequel
-  ])
   # When running all tests you must have CouchDB, and MongoDB running.  See README.md
   task(spec: %i[
     test
