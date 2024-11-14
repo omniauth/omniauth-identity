@@ -17,10 +17,10 @@ basic construct for user management and then gets out of the way.
 
 ## Compatibility
 
-This gem is compatible with, as of Feb 2021, version 3:
+This gem is compatible with, as of Nov 2024, version 3:
 
-* Latest released version of omniauth, v2.0.2
-* Ruby 2.4, 2.5, 2.6, 2.7, 3.0, ruby-head
+* Latest released version of omniauth, v2+
+* Ruby 2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, ruby-head, truffleruby-head, jruby-head
 * At least 5 different database ORM adapters, which connect to 15 different database clients!
 
 | Databases | Adapter Libraries |
@@ -296,9 +296,9 @@ Please contribute some documentation if you have the gumption!  The maintainer's
        ```
         3. [CouchDB](https://couchdb.apache.org) (download the .app)
 
-      To run all tests on all databases:
+      To run all tests on all databases (except RethinkDB):
         ```bash
-        bundle exec rake
+        bundle exec rake spec
         ```
       To run a specific DB:
         ```bash
@@ -314,8 +314,8 @@ Please contribute some documentation if you have the gumption!  The maintainer's
         # MongoDB / Mongoid
         bundle exec rspec spec_orms/mongoid_spec.rb
 
-        # RethinkDB / NoBrainer
-        bundle exec rspec spec_orms/nobrainer_spec.rb
+        # RethinkDB / NoBrainer (Ignored by CI! see spec file for more)
+        bundle exec rspec spec_ignored/nobrainer_spec.rb
         ```
 6. Create new Pull Request
 

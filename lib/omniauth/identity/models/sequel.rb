@@ -22,8 +22,12 @@ module OmniAuth
             include(::OmniAuth::Identity::Model)
             include(::OmniAuth::Identity::SecurePassword)
 
-            # validations: true incurs a dependency on ActiveModel, so we turn it off here.
-            has_secure_password(validations: false)
+            # `validations: true` (default) would normally incur a dependency on ActiveModel.
+            # Starting in v3.1 we check if ActiveModel is defined before we actually set validations.
+            # If ActiveModel isn't defined, it may be unexpected that validations are not being set,
+            #   so this will result in a warning deprecation until release of v4,
+            #   at which point the default (for Sequel ORM only) will change to `validations: false`
+            has_secure_password(validations: OmniAuth::Identity::Version.major < 4)
 
             def self.auth_key=(key)
               super

@@ -4,7 +4,7 @@ require "couch_potato"
 
 RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :couchdb) do
   before(:all) do
-    CouchPotato::Config.database_name = "http://admin:butterknuckles@127.0.0.1:5984/test"
+    CouchPotato::Config.database_name = "http://admin:password@127.0.0.1:5984/test"
   end
 
   before do

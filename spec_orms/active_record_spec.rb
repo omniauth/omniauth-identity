@@ -25,7 +25,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
 
     describe "::table_name" do
       it "does not use STI rules for its table name" do
-        expect(TestIdentity.table_name).to eq("test_identities")
+        expect(TestIdentity.table_name).to(eq("test_identities"))
       end
     end
 
@@ -36,8 +36,8 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
           category: "sandwiches",
           provider: "identity",
         }
-        allow(model_klass).to receive(:where).with(args).and_return(["wakka"])
-        expect(model_klass.locate(args)).to eq("wakka")
+        allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
+        expect(model_klass.locate(args)).to(eq("wakka"))
       end
     end
   end

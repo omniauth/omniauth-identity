@@ -8,7 +8,7 @@ DB = Sequel.sqlite
 RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   before(:all) do
     # Connect to an in-memory sqlite3 database.
-    DB.create_table :sequel_test_identities do
+    DB.create_table(:sequel_test_identities) do
       primary_key :id
       String :email, null: false
       String :password_digest, null: false
@@ -31,8 +31,8 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
     describe "::locate" do
       it "delegates to the where query method" do
         args = {email: "open faced", category: "sandwiches"}
-        allow(model_klass).to receive(:where).with(args).and_return(["wakka"])
-        expect(model_klass.locate(args)).to eq("wakka")
+        allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
+        expect(model_klass.locate(args)).to(eq("wakka"))
       end
     end
   end

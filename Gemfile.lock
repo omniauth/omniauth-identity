@@ -1,20 +1,3 @@
-GIT
-  remote: https://github.com/langalex/couch_potato
-  revision: 1ca5bfa39ff6d88f12f97c9ec2cae9d8cb5c2fe1
-  specs:
-    couch_potato (1.7.1)
-      activemodel (>= 5.0, < 7.0)
-      couchrest (~> 2.0.1)
-      json (~> 2.3)
-
-GIT
-  remote: https://github.com/mongoid/mongoid-rspec
-  revision: d9d6639d9b65a7498d761d666570cc3e38901b22
-  specs:
-    mongoid-rspec (4.2.0)
-      mongoid (>= 3.0, < 10.0)
-      mongoid-compatibility (>= 0.5.1)
-
 PATH
   remote: .
   specs:
@@ -26,22 +9,25 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (6.1.7.10)
-      activesupport (= 6.1.7.10)
-    activerecord (6.1.7.10)
-      activemodel (= 6.1.7.10)
-      activesupport (= 6.1.7.10)
-    activesupport (6.1.7.10)
+    activemodel (7.0.8.6)
+      activesupport (= 7.0.8.6)
+    activerecord (7.0.8.6)
+      activemodel (= 7.0.8.6)
+      activesupport (= 7.0.8.6)
+    activesupport (7.0.8.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     anonymous_active_record (1.0.9)
       activerecord (>= 5)
       activesupport (>= 5)
       version_gem (~> 1.1, >= 1.1.4)
     ansi (1.5.0)
+    appraisal (2.5.0)
+      bundler
+      rake
+      thor (>= 0.14.0)
     ast (2.4.2)
     backports (3.25.0)
     base64 (0.2.0)
@@ -51,6 +37,10 @@ GEM
     byebug (11.1.3)
     coderay (1.1.3)
     concurrent-ruby (1.3.4)
+    couch_potato (1.17.0)
+      activemodel (>= 5.0, < 8.0)
+      couchrest (~> 2.0.0)
+      json (~> 2.3)
     couchrest (2.0.1)
       httpclient (~> 2.8)
       mime-types (>= 1.15)
@@ -126,6 +116,9 @@ GEM
     mongoid-compatibility (1.0.0)
       activesupport
       mongoid (>= 2.0)
+    mongoid-rspec (4.2.0)
+      mongoid (>= 3.0, < 10.0)
+      mongoid-compatibility (>= 0.5.1)
     multi_json (1.15.0)
     nenv (0.3.0)
     nobrainer (0.44.1)
@@ -291,7 +284,6 @@ GEM
       ostruct
       rainbow
       yard
-    zeitwerk (2.7.1)
 
 PLATFORMS
   aarch64-linux
@@ -312,8 +304,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord (>= 6)
   anonymous_active_record (~> 1)
+  appraisal (~> 2.5)
   byebug (>= 11)
-  couch_potato!
+  couch_potato (~> 1.17)
   github-markup
   growl
   guard
@@ -321,8 +314,8 @@ DEPENDENCIES
   guard-rspec
   kettle-soup-cover (~> 1.0, >= 1.0.2)
   mongoid (~> 7)
-  mongoid-rspec!
-  nobrainer (~> 0)
+  mongoid-rspec (~> 4.2)
+  nobrainer (~> 0.44)
   omniauth-identity!
   rack-test (~> 1)
   rake (~> 13)
@@ -335,8 +328,9 @@ DEPENDENCIES
   rubocop-packaging (~> 0.5, >= 0.5.2)
   rubocop-rspec (~> 3.2)
   rubocop-sequel
-  sequel (~> 5)
+  sequel (~> 5.86)
   sqlite3 (~> 1.4)
+  standard (>= 1.35.1)
   test-unit (>= 3.0)
   yard (~> 0.9.34)
   yard-junk (~> 0.0.10)

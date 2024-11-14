@@ -6,8 +6,12 @@ source "https://rubygems.org"
 # On CI we only need the gemspecs' dependencies (including development dependencies).
 # Exceptions, if any, will be found here in gemfiles/*.gemfile
 
-# Database
-gem "activerecord", ">= 6", require: false # rails 6 requires Ruby 2.5 or later
+### ORMs
+gem "activerecord", "~> 8.0", require: false
+gem "couch_potato", "~> 1.17", require: false
+gem "mongoid", "~> 7.0", require: false
+gem "mongoid-rspec", "~> 4.2", require: false
+gem "sequel", "~> 5.86", require: false
 
 # Coverage
 gem "kettle-soup-cover", "~> 1.0", ">= 1.0.2"

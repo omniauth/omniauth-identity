@@ -13,8 +13,8 @@ gemspec
 ### Documentation
 gem "yard", "~> 0.9.34", require: false
 gem "yard-junk", "~> 0.0.10"
-gem "github-markup", platform: :mri
-gem "redcarpet", platform: :mri
+gem "github-markup"
+gem "redcarpet"
 
 ### Linting
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
@@ -22,15 +22,15 @@ gem "rubocop-minitest"
 gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
 gem "rubocop-rspec", "~> 3.2"
 gem "rubocop-sequel"
+gem "standard", ">= 1.35.1"
 
 ### ORMs
 gem "activerecord", ">= 6", require: false # rails 6 requires Ruby 2.5 or later
-gem "anonymous_active_record", "~> 1", require: false
-gem "couch_potato", github: "langalex/couch_potato", require: false
+gem "couch_potato", "~> 1.17", require: false
 gem "mongoid", "~> 7", require: false
-gem "mongoid-rspec", github: "mongoid/mongoid-rspec", require: false
-gem "nobrainer", "~> 0", require: false
-gem "sequel", "~> 5", require: false
+gem "mongoid-rspec", "~> 4.2", require: false
+gem "nobrainer", "~> 0.44", require: false
+gem "sequel", "~> 5.86", require: false
 
 ### Local dev tools
 gem "growl"
@@ -43,6 +43,7 @@ gem "rb-fsevent"
 gem "kettle-soup-cover", "~> 1.0", ">= 1.0.2"
 
 ### Testing
+gem "anonymous_active_record", "~> 1", require: false
 gem "test-unit", ">= 3.0"
 
 platform :mri do

@@ -1,5 +1,5 @@
 {
-  "README.md:2325237811": [
+  "README.md:3252916395": [
     [143, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "lib/omniauth/identity/model.rb:3893215304": [
@@ -29,26 +29,17 @@
     [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
-  "lib/omniauth/identity/models/sequel.rb:840895507": [
-    [15, 9, 1395, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4006650972],
-    [28, 13, 126, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2564660912],
-    [38, 13, 79, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 851742457]
+  "lib/omniauth/identity/models/sequel.rb:2998546304": [
+    [15, 9, 1815, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496918361],
+    [32, 13, 126, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2564660912],
+    [42, 13, 79, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 851742457]
   ],
-  "lib/omniauth/identity/secure_password.rb:372076116": [
+  "lib/omniauth/identity/secure_password.rb:2767570368": [
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
     [3, 1, 40, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/model*_spec.rb`.", 1316823397]
-  ],
-  "spec/omniauth/identity/models/active_record_spec.rb:1806207275": [
-    [9, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
-    [33, 7, 319, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
-    [39, 9, 70, "RSpec/SubjectStub: Do not stub methods of the object under test.", 2532937321]
-  ],
-  "spec/omniauth/identity/models/sequel_spec.rb:2663789046": [
-    [8, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
-    [34, 9, 70, "RSpec/SubjectStub: Do not stub methods of the object under test.", 2532937321]
   ],
   "spec/omniauth/identity/secure_password_spec.rb:2012576649": [
     [4, 3, 34, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2989290855],
@@ -157,7 +148,16 @@
     [3, 22, 19, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3037799226],
     [19, 7, 54, "RSpec/NoExpectationExample: No expectation found in this example.", 3311828801]
   ],
-  "spec_orms/couch_potato_spec.rb:1682970380": [
+  "spec_ignored/nobrainer_spec.rb:1725804559": [
+    [19, 1, 65, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/no_brainer*_spec.rb`.", 1527957824],
+    [51, 9, 149, "RSpec/SubjectStub: Do not stub methods of the object under test.", 3043135007]
+  ],
+  "spec_orms/active_record_spec.rb:1988670090": [
+    [9, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
+    [33, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
+    [39, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  ],
+  "spec_orms/couch_potato_spec.rb:2493573521": [
     [5, 1, 71, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/couch_potato_module*_spec.rb`.", 3681175308],
     [28, 9, 149, "RSpec/SubjectStub: Do not stub methods of the object under test.", 3043135007]
   ],
@@ -166,8 +166,8 @@
     [14, 14, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441],
     [21, 9, 149, "RSpec/SubjectStub: Do not stub methods of the object under test.", 3043135007]
   ],
-  "spec_orms/nobrainer_spec.rb:879699322": [
-    [7, 1, 65, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/no_brainer*_spec.rb`.", 1527957824],
-    [39, 9, 149, "RSpec/SubjectStub: Do not stub methods of the object under test.", 3043135007]
+  "spec_orms/sequel_spec.rb:3336240631": [
+    [8, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [34, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }

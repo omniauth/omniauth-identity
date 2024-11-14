@@ -17,7 +17,7 @@ module OmniAuth
       # BCrypt hash function can handle maximum 72 bytes, and if we pass
       # password of length more than 72 bytes it ignores extra characters.
       # Hence need to put a restriction on password length.
-      MAX_PASSWORD_LENGTH_ALLOWED = 72
+      MAX_PASSWORD_LENGTH_ALLOWED = BCrypt::Engine::MAX_SECRET_BYTESIZE
 
       class << self
         attr_accessor :min_cost # :nodoc:
@@ -96,6 +96,15 @@ module OmniAuth
           include(InstanceMethodsOnActivation.new(attribute))
 
           if validations
+            if !defined?(ActiveModel)
+              warn("[DEPRECATION][omniauth-identity v3.1][w/ Sequel ORM] has_secure_password(validations: true) is default, but incurs dependency on ActiveModel. v4 will default to `has_secure_password(validations: false)`.")
+              begin
+                require "active_model"
+              rescue LoadError
+                warn("You don't have active_model installed in your application. Please add it to your Gemfile and run bundle install")
+                raise
+              end
+            end
             include(ActiveModel::Validations)
 
             # This ensures the model has a password by checking whether the password_digest
@@ -106,7 +115,7 @@ module OmniAuth
               record.errors.add(attribute, :blank) unless record.public_send(:"#{attribute}_digest").present?
             end
 
-            validates_length_of(attribute, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED)
+            validates_length_of(attribute, maximum: MAX_PASSWORD_LENGTH_ALLOWED)
             validates_confirmation_of(attribute, allow_blank: true)
           end
         end
@@ -121,7 +130,11 @@ module OmniAuth
               public_send(:"#{attribute}_digest=", nil)
             elsif !unencrypted_password.empty?
               instance_variable_set(:"@#{attribute}", unencrypted_password)
-              cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+              cost = if defined?(ActiveModel::SecurePassword)
+                ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+              else
+                BCrypt::Engine.cost
+              end
               public_send(:"#{attribute}_digest=", BCrypt::Password.create(unencrypted_password, cost: cost))
             end
           end
