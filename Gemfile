@@ -10,6 +10,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gemspec
 
+### Std Lib Extracted Gems
+gem "mutex_m", "~> 0.2"
+gem "stringio", "~> 3.1", ">= 3.1.2"
+
 ### Documentation
 gem "yard", "~> 0.9.34", require: false
 gem "yard-junk", "~> 0.0.10"
@@ -26,7 +30,7 @@ gem "standard", ">= 1.35.1"
 
 ### ORMs
 gem "couch_potato", "~> 1.17", require: false
-gem "mongoid", "~> 7", require: false
+gem "mongoid", ">= 7", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
 gem "nobrainer", "~> 0.44", require: false
 gem "sequel", "~> 5.86", require: false

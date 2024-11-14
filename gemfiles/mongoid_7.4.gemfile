@@ -3,5 +3,7 @@
 source "https://rubygems.org"
 
 gem "mongoid", "~> 7.4", ">= 7.4.3"
+gem "mutex_m", "~> 0.2"
+gem "stringio", "~> 3.0"
 
 gemspec path: "../"

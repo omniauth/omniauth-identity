@@ -6,6 +6,7 @@
 appraise "ar-5-0" do
   gem "activerecord", "~> 5.0.7.2"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end
 
 # Compat: Ruby >= 2.2.2
@@ -15,6 +16,7 @@ end
 appraise "ar-5-1" do
   gem "activerecord", "~> 5.1.7"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end
 
 # Compat: Ruby >= 2.2.2
@@ -26,6 +28,7 @@ end
 appraise "ar-5-2" do
   gem "activerecord", "~> 5.2.8.1"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end
 
 # Compat: Ruby >= 2.5
@@ -36,6 +39,7 @@ end
 appraise "ar-6-0" do
   gem "activerecord", "~> 6.0.6.1"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.5
@@ -47,6 +51,7 @@ end
 appraise "ar-6-1" do
   gem "activerecord", "~> 6.1.7.10"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.7
@@ -57,6 +62,7 @@ end
 appraise "ar-7-0" do
   gem "activerecord", "~> 7.0.8.6"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.7
@@ -68,6 +74,7 @@ end
 appraise "ar-7-1" do
   gem "activerecord", "~> 7.1.5"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 3.1
@@ -78,6 +85,7 @@ end
 appraise "ar-7-2" do
   gem "activerecord", "~> 7.2.2"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 3.2
@@ -90,6 +98,7 @@ end
 appraise "ar-8-0" do
   gem "activerecord", "~> 8.0.0"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -108,6 +117,7 @@ end
 appraise "couch-1.17" do
   gem "couch_potato", "~> 1.17"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end
 
 # Compat: Ruby >= 2.3
@@ -117,6 +127,7 @@ end
 appraise "mongoid-7.3" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end
 
 # Compat: Ruby >= 2.5
@@ -127,6 +138,7 @@ end
 appraise "mongoid-7.4" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.6
@@ -140,6 +152,7 @@ end
 appraise "mongoid-8.1" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
 end
 
 # Compat: Ruby >= 2.7
@@ -155,6 +168,7 @@ end
 appraise "mongoid-9.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.1", ">= 3.1.2"
 end
 
 # 1. While the Ruby driver, nobrainer, is maintained,
@@ -182,6 +196,7 @@ end
 # appraise "nobrainer-0.44" do
 #   gem "nobrainer", "~> 0.44", ">= 0.44.1"
 #   gem "mutex_m", "~> 0.1"
+#   gem "stringio", ">= 0.0.2"
 # end
 
 # Compat: Ruby >= 1.9.2
@@ -200,4 +215,5 @@ end
 appraise "sequel-5.86" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
 end

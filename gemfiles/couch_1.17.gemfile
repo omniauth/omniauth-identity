@@ -3,5 +3,7 @@
 source "https://rubygems.org"
 
 gem "couch_potato", "~> 1.17"
+gem "mutex_m", "~> 0.1"
+gem "stringio", ">= 0.0.2"
 
 gemspec path: "../"

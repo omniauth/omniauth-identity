@@ -3,5 +3,7 @@
 source "https://rubygems.org"
 
 gem "activerecord", "~> 7.0.8.6"
+gem "mutex_m", "~> 0.2"
+gem "stringio", "~> 3.0"
 
 gemspec path: "../"
