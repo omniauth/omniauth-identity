@@ -52,11 +52,9 @@ jobs:
       ### COUCHDB
       - name: Start CouchDB
         uses: iamssen/couchdb-github-action@master
-        if: "endsWith(matrix.taskname, 'couch_potato')"
         with:
           couchdb-version: "3.4.1"
       - name: Smoke CouchDB
-        if: "endsWith(matrix.taskname, 'couch_potato')"
         run: |
           curl -f http://127.0.0.1:5984/
           curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"name": "admin", "password": "password"}' http://127.0.0.1:5984/_session
@@ -64,7 +62,6 @@ jobs:
       ### MONGODB
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.11.0
-        if: "endsWith(matrix.taskname, 'mongoid')"
         with:
           mongodb-version: "8.0"
 
