@@ -29,19 +29,21 @@ module OmniAuth
             #   at which point the default (for Sequel ORM only) will change to `validations: false`
             has_secure_password(validations: OmniAuth::Identity::Version.major < 4)
 
-            def self.auth_key=(key)
-              super
-              # Sequel version of validates_uniqueness_of! Does not incur ActiveRecord dependency!
-              validates_uniqueness_of(:key, case_sensitive: false)
-            end
+            class << self
+              def auth_key=(key)
+                super
+                # Sequel version of validates_uniqueness_of! Does not incur ActiveRecord dependency!
+                validates_uniqueness_of(:key, case_sensitive: false)
+              end
 
-            # @param arguments [any] -
-            #   Filtering is probably the most common dataset modifying action done in Sequel.
-            #   Both the where and filter methods filter the dataset by modifying the dataset’s WHERE clause.
-            #   Both accept a wide variety of input formats, which are passed as arguments below.
-            #   See: https://sequel.jeremyevans.net/rdoc/files/doc/querying_rdoc.html#label-Filters
-            def self.locate(arguments)
-              where(arguments).first
+              # @param arguments [any] -
+              #   Filtering is probably the most common dataset modifying action done in Sequel.
+              #   Both the where and filter methods filter the dataset by modifying the dataset’s WHERE clause.
+              #   Both accept a wide variety of input formats, which are passed as arguments below.
+              #   See: https://sequel.jeremyevans.net/rdoc/files/doc/querying_rdoc.html#label-Filters
+              def locate(arguments)
+                where(arguments).first
+              end
             end
 
             def persisted?

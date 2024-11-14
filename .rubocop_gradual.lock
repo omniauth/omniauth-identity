@@ -1,5 +1,5 @@
 {
-  "README.md:3252916395": [
+  "README.md:3623317309": [
     [143, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "lib/omniauth/identity/model.rb:3893215304": [
@@ -14,8 +14,8 @@
     [19, 9, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2104861380],
     [24, 9, 189, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3443171851]
   ],
-  "lib/omniauth/identity/models/couch_potato.rb:4139265970": [
-    [14, 9, 674, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2599559599],
+  "lib/omniauth/identity/models/couch_potato.rb:2051092700": [
+    [14, 9, 663, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2599559599],
     [22, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [27, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
@@ -29,10 +29,8 @@
     [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
-  "lib/omniauth/identity/models/sequel.rb:2998546304": [
-    [15, 9, 1815, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496918361],
-    [32, 13, 126, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2564660912],
-    [42, 13, 79, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 851742457]
+  "lib/omniauth/identity/models/sequel.rb:3343978269": [
+    [15, 9, 1972, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496918361]
   ],
   "lib/omniauth/identity/secure_password.rb:2767570368": [
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
@@ -144,9 +142,8 @@
     [20, 5, 368, "RSpec/ExampleLength: Example has too many lines. [7/5]", 2117829356],
     [21, 25, 47, "RSpec/VerifiedDoubles: Prefer using verifying doubles over normal doubles.", 1295072297]
   ],
-  "spec/support/shared_contexts/persistable_model.rb:1560791438": [
-    [3, 22, 19, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3037799226],
-    [19, 7, 54, "RSpec/NoExpectationExample: No expectation found in this example.", 3311828801]
+  "spec/support/shared_contexts/persistable_model.rb:4102269984": [
+    [3, 22, 19, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3037799226]
   ],
   "spec_ignored/nobrainer_spec.rb:3191134947": [
     [19, 1, 65, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/no_brainer*_spec.rb`.", 1527957824],
@@ -158,10 +155,10 @@
     [33, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
     [39, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/couch_potato_spec.rb:1795075645": [
+  "spec_orms/couch_potato_spec.rb:1215064168": [
     [5, 1, 71, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/couch_potato_module*_spec.rb`.", 3681175308],
-    [27, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
-    [32, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+    [29, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
+    [34, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
   "spec_orms/mongoid_spec.rb:1857267992": [
     [7, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],

@@ -20,7 +20,7 @@ RSpec.shared_context "persistable model" do
       end
 
       it "is valid" do
-        expect(is_valid).to eq(true)
+        expect(is_valid).to be(true)
       end
     end
 
