@@ -89,30 +89,33 @@ jobs:
             bundler: latest
 
           # jruby-head
-          - ruby: "jruby-head"
-            appraisal: "ar-8-0"
-            taskname: "spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "jruby-head"
-            appraisal: "couch-1.17"
-            taskname: "spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "jruby-head"
-            appraisal: "mongoid-9.0"
-            taskname: "spec:orm:mongoid"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "jruby-head"
-            appraisal: "sequel-5.86"
-            taskname: "spec:orm:sequel"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
+          # JRuby is disabled because sqlite3 gem won't install:
+          #   RuntimeError: The compiler failed to generate an executable file.
+          #   You have to install development tools first.
+#          - ruby: "jruby-head"
+#            appraisal: "ar-8-0"
+#            taskname: "spec:orm:active_record"
+#            gemfile: "Appraisal.root"
+#            rubygems: latest
+#            bundler: latest
+#          - ruby: "jruby-head"
+#            appraisal: "couch-1.17"
+#            taskname: "spec:orm:couch_potato"
+#            gemfile: "Appraisal.root"
+#            rubygems: latest
+#            bundler: latest
+#          - ruby: "jruby-head"
+#            appraisal: "mongoid-9.0"
+#            taskname: "spec:orm:mongoid"
+#            gemfile: "Appraisal.root"
+#            rubygems: latest
+#            bundler: latest
+#          - ruby: "jruby-head"
+#            appraisal: "sequel-5.86"
+#            taskname: "spec:orm:sequel"
+#            gemfile: "Appraisal.root"
+#            rubygems: latest
+#            bundler: latest
 
     steps:
       ### COUCHDB
