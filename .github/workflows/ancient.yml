@@ -1,4 +1,4 @@
-name: Ancient (EOL, Ruby 2.4, 2.5) Matrix
+name: Ancient Compat (EOL, Ruby 2.5) Matrix
 
 on:
   push:
