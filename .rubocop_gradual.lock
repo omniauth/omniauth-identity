@@ -1,6 +1,6 @@
 {
-  "README.md:3623317309": [
-    [143, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
+  "README.md:409247914": [
+    [232, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "lib/omniauth/identity/model.rb:3893215304": [
     [26, 7, 310, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2741399784],
