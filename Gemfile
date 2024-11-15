@@ -27,6 +27,7 @@ gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
 gem "rubocop-rspec", "~> 3.2"
 gem "rubocop-sequel"
 gem "standard", ">= 1.35.1", "!= 1.41.1"
+gem "reek"
 
 ### ORMs
 gem "couch_potato", "~> 1.17", require: false
