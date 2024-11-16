@@ -380,7 +380,7 @@ Also, see [CONTRIBUTING.md][🤝contributing].
 
 [![Coverage Graph][🔑codecov-g]][🖇codecov]
 
-[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=selEoMrZzA
+[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=cc6UdZCpAL
 
 ## 🌈 Contributors
 
