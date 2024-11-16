@@ -26,7 +26,7 @@ gem "rubocop-minitest"
 gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
 gem "rubocop-rspec", "~> 3.2"
 gem "rubocop-sequel"
-gem "standard", ">= 1.35.1", "!= 1.41.1"
+gem "standard", ">= 1.35.1", "!= 1.41.1", "!= 1.42.0"
 gem "reek"
 
 ### ORMs
