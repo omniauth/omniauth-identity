@@ -108,8 +108,8 @@ basic construct for user management and then gets out of the way.
 
 To acquire the latest release from RubyGems, and add this gem to your `Gemfile`, run:
 
-```ruby
-bundle add(omniauth - identity)
+```shell
+bundle add omniauth-identity
 ```
 
 If the git repository has new commits not yet in an official release, simply specify the repo instead:
