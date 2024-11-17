@@ -1,4 +1,4 @@
-name: Ruby - Coverage
+name: Test Coverage
 
 env:
   K_SOUP_COV_MIN_BRANCH: 80

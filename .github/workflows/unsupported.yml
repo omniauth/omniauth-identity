@@ -1,4 +1,4 @@
-name: Unsupported (EOL, Ruby 2.6, 2.7) Matrix
+name: Unsupported Compat (EOL, Ruby 2.6, 2.7) Matrix
 
 env:
   K_SOUP_COV_DO: false

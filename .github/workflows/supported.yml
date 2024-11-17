@@ -1,4 +1,4 @@
-name: Supported Ruby Matrix
+name: Supported Compat Matrix
 
 env:
   K_SOUP_COV_DO: false

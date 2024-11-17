@@ -1,4 +1,4 @@
-name: Ruby Heads Matrix
+name: Heads Compat Matrix
 
 env:
   K_SOUP_COV_DO: false
