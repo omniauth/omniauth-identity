@@ -16,7 +16,7 @@
 [![CI Coverage Build][🚎2-cov-wfi]][🚎2-cov-wf]
 [![CI Style Build][🚎5-st-wfi]][🚎5-st-wf]
 
-[comment]: <> ( 👽️ INFO LINKS )
+<!--- ( 👽️ INFO LINKS ) -->
 
 [👽dl-rank]: https://rubygems.org/gems/omniauth-identity
 [👽dl-ranki]: https://img.shields.io/gem/rd/omniauth-identity.svg
@@ -25,7 +25,7 @@
 [👽version]: https://rubygems.org/gems/omniauth-identity
 [👽versioni]: https://img.shields.io/gem/v/omniauth-identity.svg
 
-[comment]: <> ( 🔑 KEYED LINKS )
+<!--- ( 🔑 KEYED LINKS ) -->
 
 [🔑cc-mnt]: https://codeclimate.com/github/omniauth/omniauth-identity/maintainability
 [🔑cc-mnti♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/maintainability
@@ -36,7 +36,7 @@
 [🔑depfu]: https://depfu.com/github/omniauth/omniauth-identity
 [🔑depfui♻️]: https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg
 
-[comment]: <> ( 🚎 BUILD LINKS )
+<!--- ( 🚎 BUILD LINKS ) -->
 
 [🚎1-an-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml
 [🚎1-an-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml/badge.svg
@@ -78,13 +78,13 @@ to give up the simple authentication flow provided by OmniAuth. Identity
 is designed on purpose to be as featureless as possible: it provides the
 basic construct for user management and then gets out of the way.
 
-| Primary Namespace | `OmniAuth::Identity`                                                                                                                                                                                                                                                                                                                                     |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| documentation     | [on Github.com][homepage], [on RubyDoc.info][documentation]                                                                                                                                                                                                                                                                                              |
-| expert support    | [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github)                                                                                                                                                    |
+| Primary Namespace | `OmniAuth::Identity`                                                                                                                                                                                                                                                                                                                                    |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| documentation     | [on Github.com][homepage], [Latest release on RubyDoc.info][documentation], [HEAD on RubyDoc.info][documentation-head]                                                                                                                                                                                                                           |
+| expert support    | [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github)                                                                                                                                                   |
 | `...` 💖          | [![Follow Me on LinkedIn][🖇linkedin-img]][🖇linkedin] [![Find Me on WellFound:][✌️wellfound-img]][✌️wellfound] [![Find Me on CrunchBase][💲crunchbase-img]][💲crunchbase] [![My LinkTree][🌳linktree-img]][🌳linktree] [![Follow Me on Ruby.Social][🐘ruby-mast-img]][🐘ruby-mast] [![Tweet @ Peter][🐦tweet-img]][🐦tweet] [💻][coderme] [🌏][aboutme] |
 
-<!-- 7️⃣ spread 💖 -->
+<!--- 7️⃣ spread 💖 -->
 [🐦tweet-img]: https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow%20%40galtzo
 [🐦tweet]: http://twitter.com/galtzo
 [🚎blog]: http://www.railsbling.com/tags/omniauth-identity/
@@ -100,7 +100,7 @@ basic construct for user management and then gets out of the way.
 [🌳linktree]: https://linktr.ee/galtzo
 [🌳linktree-img]: https://img.shields.io/badge/galtzo-purple?style=plastic&logo=linktree
 
-<!-- Maintainer Contact Links -->
+<!--- Maintainer Contact Links -->
 [aboutme]: https://about.me/peter.boling
 [coderme]: https://coderwall.com/Peter%20Boling
 
@@ -433,7 +433,7 @@ spec.add_dependency("omniauth-identity", "~> 3.1")
 
 See [CHANGELOG.md][📌changelog] for list of releases.
 
-[comment]: <> ( 📌 VERSIONING LINKS )
+<!--- ( 📌 VERSIONING LINKS ) -->
 
 [📌pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
 [📌semver]: http://semver.org/
@@ -463,6 +463,7 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
 [peterboling]: http://www.peterboling.com
 [bundle-group-pattern]: https://gist.github.com/pboling/4564780
 [documentation]: http://rubydoc.info/gems/omniauth-identity
+[documentation-head]: https://rubydoc.info/github/omniauth/omniauth-identity/main
 [homepage]: https://github.com/omniauth/omniauth-identity
 
 ## 🤑 One more thing
