@@ -1,5 +1,5 @@
 {
-  "README.md:409247914": [
+  "README.md:510125163": [
     [232, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "lib/omniauth/identity/model.rb:3893215304": [

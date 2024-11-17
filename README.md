@@ -364,85 +364,6 @@ option :locate_conditions, ->(req) { {model.auth_key => req.params["auth_key"]} 
 
 Please contribute some documentation if you have the gumption!  The maintainer's time is limited, and sometimes the authors of PRs with new options don't update the _this_ readme. 😭
 
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am ‘Added some feature’`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Make sure to add tests for it. This is important so I don’t break it in a future version unintentionally.
-
-NOTE: In order to run *all* the tests you will need to have the following databases installed, configured, and running.
-
-1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
-   ```bash
-   brew install rethinkdb
-   rethinkdb
-   ```
-2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-   ```bash
-   brew tap mongodb/brew
-   brew install mongodb-community@4.4
-   mongod --config /usr/local/etc/mongod.conf
-   ```
-3. [CouchDB](https://couchdb.apache.org) - download the .app, or:
-   ```bash
-   brew install couchdb
-   ```
-   CouchDB 3.x requires a set admin password set before startup.
-   Add one to your `$HOMEBREW_PREFIX/etc/local.ini` before starting CouchDB e.g.:
-   ```ini
-   [admins]
-   admin = yourabsolutesecret
-   ```
-   Also add whatever password you set to your `.env.local`:
-   ```dotenv
-   export COUCHDB_PASSWORD=yourabsolutesecret
-   ```
-   Then start the CouchDB service
-   ```bash
-   brew services start couchdb
-   ```
-
-Now you can run any of the tests!
-
-To run all tests on all databases (except RethinkDB):
-```bash
-bundle exec rake spec:orm:all
-```
-
-To run all tests that do not require any additional services, like MongoDB, CouchDB, or RethinkDB:
-```bash
-bundle exec rake test
-```
-
-To run a specific DB:
-```bash
-# CouchDB / CouchPotato
-bundle exec rspec spec spec_orms --tag 'couchdb'
-
-# ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
-bundle exec rspec spec spec_orms --tag 'sqlite3'
-
-# NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
-#        and the two libraries are fundamentally incompatible.
-
-# MongoDB / Mongoid
-bundle exec rspec spec_orms/mongoid_spec.rb
-
-# RethinkDB / NoBrainer (Ignored by CI! see spec file for reasons)
-bundle exec rspec spec_ignored/nobrainer_spec.rb
-```
-
-### Finally
-
-Run all the default tasks, which includes running the gradually autocorrecting linter, `rubocop-gradual`.
-```bash
-bundle exec rake
-```
-
-📌 Create new Pull Request with your changes 📌
-
 ## 🤝 Contributing
 
 If you need some ideas of where to help, you could work on adding more code coverage,
@@ -459,7 +380,7 @@ Also, see [CONTRIBUTING.md][🤝contributing].
 
 [![Coverage Graph][🔑codecov-g]][🖇codecov]
 
-[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=selEoMrZzA
+[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=cc6UdZCpAL
 
 ## 🌈 Contributors
 

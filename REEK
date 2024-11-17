@@ -1,0 +1,68 @@
+spec/omniauth/identity/secure_password_spec.rb -- 2 warnings:
+  [8]:IrresponsibleModule: DoesNotHaveTheMethod has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [3]:IrresponsibleModule: HasTheMethod has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+spec/omniauth/strategies/identity_spec.rb -- 2 warnings:
+  [36, 39]:DuplicateMethodCall: app calls 'use OmniAuth::Strategies::Identity, opts' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [29]:TooManyStatements: app has approx 9 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+spec_orms/active_record_spec.rb -- 1 warning:
+  [7]:IrresponsibleModule: TestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+spec_orms/support/rspec_config/mongoid.rb -- 1 warning:
+  [12]:IrresponsibleModule: MongoidTestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+lib/omniauth/identity/model.rb -- 18 warnings:
+  [50]:BooleanParameter: OmniAuth::Identity::Model::ClassMethods#auth_key has boolean parameter 'method' [https://github.com/troessner/reek/blob/v6.3.0/docs/Boolean-Parameter.md]
+  [139, 140]:DuplicateMethodCall: OmniAuth::Identity::Model#auth_key calls 'self.class' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [139, 140]:DuplicateMethodCall: OmniAuth::Identity::Model#auth_key calls 'self.class.auth_key' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [175, 175]:DuplicateMethodCall: OmniAuth::Identity::Model#info calls 'info["first_name"]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [175, 175]:DuplicateMethodCall: OmniAuth::Identity::Model#info calls 'info["last_name"]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [175, 176]:DuplicateMethodCall: OmniAuth::Identity::Model#info calls 'info["name"]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [175, 175, 175, 175, 175, 176, 176]:FeatureEnvy: OmniAuth::Identity::Model#info refers to 'info' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v6.3.0/docs/Feature-Envy.md]
+  [67]:IrresponsibleModule: OmniAuth::Identity::Model::ClassCreateApi has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [34]:IrresponsibleModule: OmniAuth::Identity::Model::ClassMethods has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [96]:IrresponsibleModule: OmniAuth::Identity::Model::InstancePersistedApi has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [82]:IrresponsibleModule: OmniAuth::Identity::Model::InstanceSaveApi has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [139]:ManualDispatch: OmniAuth::Identity::Model#auth_key manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [154]:ManualDispatch: OmniAuth::Identity::Model#auth_key= manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [173]:ManualDispatch: OmniAuth::Identity::Model#info manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [28]:ManualDispatch: OmniAuth::Identity::Model#self.included manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [123]:ManualDispatch: OmniAuth::Identity::Model#uid manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [124]:NilCheck: OmniAuth::Identity::Model#uid performs a nil-check [https://github.com/troessner/reek/blob/v6.3.0/docs/Nil-Check.md]
+  [170]:TooManyStatements: OmniAuth::Identity::Model#info has approx 6 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity/models/couch_potato.rb -- 1 warning:
+  [14]:TooManyStatements: OmniAuth::Identity::Models::CouchPotatoModule#self.included has approx 7 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity/models/mongoid.rb -- 1 warning:
+  [12]:TooManyStatements: OmniAuth::Identity::Models::Mongoid#self.included has approx 6 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity/models/nobrainer.rb -- 1 warning:
+  [12]:TooManyStatements: OmniAuth::Identity::Models::NoBrainer#self.included has approx 6 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity/models/sequel.rb -- 1 warning:
+  [15]:TooManyStatements: OmniAuth::Identity::Models::Sequel#self.included has approx 9 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity/secure_password.rb -- 9 warnings:
+  [23]:Attribute: OmniAuth::Identity::SecurePassword#min_cost is a writable attribute [https://github.com/troessner/reek/blob/v6.3.0/docs/Attribute.md]
+  [85]:BooleanParameter: OmniAuth::Identity::SecurePassword::ClassMethods#has_secure_password has boolean parameter 'validations' [https://github.com/troessner/reek/blob/v6.3.0/docs/Boolean-Parameter.md]
+  [98]:ControlParameter: OmniAuth::Identity::SecurePassword::ClassMethods#has_secure_password is controlled by argument 'validations' [https://github.com/troessner/reek/blob/v6.3.0/docs/Control-Parameter.md]
+  [134, 136]:DuplicateMethodCall: OmniAuth::Identity::SecurePassword::InstanceMethodsOnActivation#initialize calls 'BCrypt::Engine.cost' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [27]:IrresponsibleModule: OmniAuth::Identity::SecurePassword::ClassMethods has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [124]:IrresponsibleModule: OmniAuth::Identity::SecurePassword::InstanceMethodsOnActivation has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [14]:ManualDispatch: OmniAuth::Identity::SecurePassword#self.included manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [129]:NilCheck: OmniAuth::Identity::SecurePassword::InstanceMethodsOnActivation#initialize performs a nil-check [https://github.com/troessner/reek/blob/v6.3.0/docs/Nil-Check.md]
+  [85]:TooManyStatements: OmniAuth::Identity::SecurePassword::ClassMethods#has_secure_password has approx 13 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+lib/omniauth/identity.rb -- 3 warnings:
+  [26]:IrresponsibleModule: OmniAuth::Identity has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [29]:IrresponsibleModule: OmniAuth::Identity::Models has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+  [22]:IrresponsibleModule: OmniAuth::Strategies has no descriptive comment [https://github.com/troessner/reek/blob/v6.3.0/docs/Irresponsible-Module.md]
+lib/omniauth/strategies/identity.rb -- 15 warnings:
+  [136, 136]:DuplicateMethodCall: OmniAuth::Strategies::Identity#build_omniauth_registration_form calls 'field.to_s' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [160, 161]:DuplicateMethodCall: OmniAuth::Strategies::Identity#registration_failure calls 'options[:on_failed_registration]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [65, 66]:DuplicateMethodCall: OmniAuth::Strategies::Identity#registration_form calls 'options[:on_registration]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [81, 90]:DuplicateMethodCall: OmniAuth::Strategies::Identity#registration_phase calls 'env["omniauth.identity"] = @identity' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [30, 31]:DuplicateMethodCall: OmniAuth::Strategies::Identity#request_phase calls 'options[:on_login]' 2 times [https://github.com/troessner/reek/blob/v6.3.0/docs/Duplicate-Method-Call.md]
+  [134, 136, 138, 139]:FeatureEnvy: OmniAuth::Strategies::Identity#build_omniauth_registration_form refers to 'f' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v6.3.0/docs/Feature-Envy.md]
+  [8]:InstanceVariableAssumption: OmniAuth::Strategies::Identity assumes too much for instance variable '@identity' [https://github.com/troessner/reek/blob/v6.3.0/docs/Instance-Variable-Assumption.md]
+  [76]:ManualDispatch: OmniAuth::Strategies::Identity#registration_phase manually dispatches method call [https://github.com/troessner/reek/blob/v6.3.0/docs/Manual-Dispatch.md]
+  [135]:NestedIterators: OmniAuth::Strategies::Identity#build_omniauth_registration_form contains iterators nested 2 deep [https://github.com/troessner/reek/blob/v6.3.0/docs/Nested-Iterators.md]
+  [132]:TooManyStatements: OmniAuth::Strategies::Identity#build_omniauth_registration_form has approx 6 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+  [72]:TooManyStatements: OmniAuth::Strategies::Identity#registration_phase has approx 11 statements [https://github.com/troessner/reek/blob/v6.3.0/docs/Too-Many-Statements.md]
+  [123]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#build_omniauth_login_form has the variable name 'f' [https://github.com/troessner/reek/blob/v6.3.0/docs/Uncommunicative-Variable-Name.md]
+  [133]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#build_omniauth_registration_form has the variable name 'f' [https://github.com/troessner/reek/blob/v6.3.0/docs/Uncommunicative-Variable-Name.md]
+  [73]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#registration_phase has the variable name 'h' [https://github.com/troessner/reek/blob/v6.3.0/docs/Uncommunicative-Variable-Name.md]
+  [73]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#registration_phase has the variable name 'k' [https://github.com/troessner/reek/blob/v6.3.0/docs/Uncommunicative-Variable-Name.md]
+55 total warnings

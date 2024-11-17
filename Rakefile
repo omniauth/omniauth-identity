@@ -57,6 +57,19 @@ rescue LoadError
 end
 
 begin
+  require "reek/rake/task"
+  Reek::Rake::Task.new do |t|
+    t.fail_on_error = true
+    t.verbose = false
+    t.source_files = "{spec,spec_ignored,spec_orms,lib}/**/*.rb"
+  end
+rescue LoadError
+  task(:reek) do
+    warn("reek is disabled")
+  end
+end
+
+begin
   require "rubocop/lts"
   Rubocop::Lts.install_tasks
 rescue LoadError
