@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - [PR #128][128] Instructions for contributing by @pboling
 ### Changed
 - Deprecate `require 'omniauth/identity'` by @pboling
-  - in favor of `require omniauth-identity` (matching the gem name)
+  - in favor of `require 'omniauth-identity'` (matching the gem name)
 ### Fixed
 - [PR #120][120] Fix: handling of SCRIPT_NAME for registration_path by @btalbot
 - [PR #122][122] Compatibility with rack v3.1+: use `req.params[]` instead of `req[]` by @emon
