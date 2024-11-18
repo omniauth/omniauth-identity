@@ -7,13 +7,14 @@ gem_version = OmniAuth::Identity::Version::VERSION
 OmniAuth::Identity::Version.send(:remove_const, :VERSION)
 
 Gem::Specification.new do |spec|
-  # See CONTRIBUTING.md
-  spec.cert_chain = [ENV.fetch("GEM_CERT_PATH", "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem")]
-  spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
-
   spec.name = "omniauth-identity"
   spec.version = gem_version
   spec.authors = ["Peter Boling", "Andrew Roberts", "Michael Bleigh"]
+  spec.email = ["peter.boling@gmail.com"]
+
+  # See CONTRIBUTING.md
+  spec.cert_chain = [ENV.fetch("GEM_CERT_PATH", "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem")]
+  spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 
   spec.summary = spec.description
   spec.description = "Traditional username/password based authentication system for OmniAuth"
@@ -22,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.4"
 
-  spec.metadata["homepage_uri"] = "https://railsbling.com/tags/omniauth-identity/"
+  spec.metadata["homepage_uri"] = "https://railsbling.com/tags/#{spec.name}/"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
