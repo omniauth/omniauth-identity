@@ -70,6 +70,26 @@ rescue LoadError
 end
 
 begin
+  require "yard-junk/rake"
+
+  YardJunk::Rake.define_task
+rescue LoadError
+  task("yard:junk") do
+    warn("yard:junk is disabled")
+  end
+end
+
+begin
+  require "yard"
+
+  YARD::Rake::YardocTask.new(:yard)
+rescue LoadError
+  task(:yard) do
+    warn("yard is disabled")
+  end
+end
+
+begin
   require "rubocop/lts"
   Rubocop::Lts.install_tasks
 rescue LoadError
@@ -79,4 +99,4 @@ rescue LoadError
 end
 
 # These tests do not require any services to be running, so this is what we run as default
-task default: %i[test:sqlite3 rubocop_gradual:autocorrect]
+task default: %i[spec:orm:all rubocop_gradual:autocorrect yard yard:junk]
