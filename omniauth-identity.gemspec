@@ -38,7 +38,8 @@ Gem::Specification.new do |spec|
     # Files (alphabetical)
     "CHANGELOG.md",
     "CODE_OF_CONDUCT.md",
-    "LICENSE",
+    "CONTRIBUTING.md",
+    "LICENSE.txt",
     "README.md",
     "SECURITY.md",
   ]
