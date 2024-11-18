@@ -1,14 +1,13 @@
 {
-  "README.md:517414065": [
+  "README.md:1323834265": [
     [232, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
-  "lib/omniauth/identity/model.rb:3893215304": [
-    [26, 7, 310, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2741399784],
-    [51, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [52, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [52, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [52, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [54, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
+  "lib/omniauth/identity/model.rb:1162570792": [
+    [53, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [54, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [54, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [54, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [56, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
   ],
   "lib/omniauth/identity/models/active_record.rb:1552301885": [
     [19, 9, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2104861380],
