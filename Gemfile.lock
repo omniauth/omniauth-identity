@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-identity (3.1.0)
+    omniauth-identity (3.1.1)
       bcrypt (~> 3.1)
       omniauth (>= 1)
       version_gem (~> 1.1, >= 1.1.4)

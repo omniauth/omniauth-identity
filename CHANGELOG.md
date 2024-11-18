@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Removed
 
+## [3.1.1] - 2024-11-18 ([tag][3.1.1t])
+- COVERAGE:  92.00% -- 345/375 lines in 15 files
+- BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files
+- 44.44% documented
+### Added
+- [PR 130][130] Add SECURITY.md policy by @pboling
+- [PR 130][130] Add Maintainer contact email by @pboling
+### Changed
+- [PR 130][130] Require MFA to publish to RubyGems.org by @pboling
+
+[130]: https://github.com/omniauth/omniauth-identity/pull/130
+
 ## [3.1.0] - 2024-11-18 ([tag][3.1.0t])
 - COVERAGE:  91.98% -- 344/374 lines in 15 files
 - BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files
@@ -150,7 +162,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - Gemfile.lock file
 - MongoMapper support; unable to satisfy dependencies of both MongoMapper and Mongoid now that MongoMapper is no longer actively maintained.
 
-[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.0...HEAD
+[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.1...HEAD
+[3.1.1]: https://github.com/omniauth/omniauth-identity/compare/v3.1.0...v3.1.1
+[3.1.1t]: https://github.com/omniauth/omniauth-identity/tags/v3.1.1
 [3.1.0]: https://github.com/omniauth/omniauth-identity/compare/v3.0.9...v3.1.0
 [3.1.0t]: https://github.com/omniauth/omniauth-identity/tags/v3.1.0
 [3.0.9]: https://github.com/omniauth/omniauth-identity/compare/v3.0.8...v3.0.9
