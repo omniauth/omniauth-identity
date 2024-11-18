@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Removed
 
+## [3.1.0] - 2024-11-18
+### Added
+### Changed
+### Fixed
+### Removed
+
 ## [3.0.9] - 2021-06-16
 ### Fixed
 - \[Sequel\] Fixes loading the Sequel adapter, issue reported as [#112](https://github.com/omniauth/omniauth-identity/issues/112)
