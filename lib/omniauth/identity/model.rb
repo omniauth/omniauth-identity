@@ -2,7 +2,7 @@
 
 module OmniAuth
   module Identity
-    # This module provides an includable interface for implementing the
+    # This module provides an include-able interface for implementing the
     # necessary API for OmniAuth Identity to properly locate identities
     # and provide all necessary information.
     #
@@ -23,20 +23,22 @@ module OmniAuth
     module Model
       SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
 
-      def self.included(base)
-        base.extend(ClassMethods)
-        base.extend(ClassCreateApi) unless base.respond_to?(:create)
-        im = base.instance_methods
-        base.include(InstanceSaveApi) unless im.include?(:save)
-        base.include(InstancePersistedApi) unless im.include?(:persisted?)
+      class << self
+        def included(base)
+          base.extend(ClassMethods)
+          base.extend(ClassCreateApi) unless base.respond_to?(:create)
+          i_methods = base.instance_methods
+          base.include(InstanceSaveApi) unless i_methods.include?(:save)
+          base.include(InstancePersistedApi) unless i_methods.include?(:persisted?)
+        end
       end
 
       module ClassMethods
         # Authenticate a user with the given key and password.
         #
-        # @param [String] key The unique login key provided for a given identity.
+        # @param [String] conditions The unique login key provided for a given identity.
         # @param [String] password The presumed password for the identity.
-        # @return [Model] An instance of the identity model class.
+        # @return [Model, false] An instance of the identity model class.
         def authenticate(conditions, password)
           instance = locate(conditions)
           return false unless instance
@@ -57,7 +59,7 @@ module OmniAuth
         # Locate an identity given its unique login key.
         #
         # @abstract
-        # @param [String] key The unique login key.
+        # @param [String] _key The unique login key.
         # @return [Model] An instance of the identity model class.
         def locate(_key)
           raise NotImplementedError
@@ -71,7 +73,7 @@ module OmniAuth
         #
         # @deprecated v4.0 will begin using {#new} with {#save} instead.
         # @abstract
-        # @param [Hash] args Attributes of the new instance.
+        # @param [Hash] _args Attributes of the new instance.
         # @return [Model] An instance of the identity model class.
         # @since 3.0.5
         def create(*_args)
@@ -109,7 +111,7 @@ module OmniAuth
       # otherwise.
       #
       # @abstract
-      # @param [String] password The password to check.
+      # @param [String] _password The password to check.
       # @return [self or false] Self if authenticated, false if not.
       def authenticate(_password)
         raise NotImplementedError
