@@ -32,7 +32,7 @@
 [🔑cc-cov]: https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage
 [🔑cc-covi♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage
 [🔑codecov]: https://codecov.io/gh/omniauth/omniauth-identity
-[🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/graph/badge.svg?token=cc6UdZCpAL
+[🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL
 [🔑depfu]: https://depfu.com/github/omniauth/omniauth-identity
 [🔑depfui♻️]: https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg
 
