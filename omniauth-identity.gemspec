@@ -40,6 +40,7 @@ Gem::Specification.new do |spec|
     "CODE_OF_CONDUCT.md",
     "LICENSE",
     "README.md",
+    "SECURITY.md",
   ]
   spec.bindir = "exe"
   spec.require_paths = ["lib"]
