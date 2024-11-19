@@ -37,7 +37,7 @@ To refresh the `reek` list:
 bundle exec reek > REEK
 ```
 
-## Appraisal & Combustion
+## Appraisal
 
 ### Generate a new set of Appraisal gemfiles:
 
