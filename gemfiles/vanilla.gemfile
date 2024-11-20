@@ -3,7 +3,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 source "https://rubygems.org"
 
 # Root Gemfile is only for local development only. It is not loaded on CI.
-# On CI we only need the gemspecs' dependencies (including development dependencies).
-# Exceptions, if any, will be found here in gemfiles/*.gemfile
+# On CI, we only need the gemspec dependencies (including development dependencies).
+# Exceptions, if any, will be found in gemfiles/*.gemfile
 
 gemspec path: "../"
