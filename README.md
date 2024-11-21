@@ -85,6 +85,7 @@ basic construct for user management and then gets out of the way.
 | `...` 💖          | [![Follow Me on LinkedIn][🖇linkedin-img]][🖇linkedin] [![Find Me on WellFound:][✌️wellfound-img]][✌️wellfound] [![Find Me on CrunchBase][💲crunchbase-img]][💲crunchbase] [![My LinkTree][🌳linktree-img]][🌳linktree] [![Follow Me on Ruby.Social][🐘ruby-mast-img]][🐘ruby-mast] [![Tweet @ Peter][🐦tweet-img]][🐦tweet] [💻][coderme] [🌏][aboutme] |
 
 <!--- 7️⃣ spread 💖 -->
+
 [🐦tweet-img]: https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow%20%40galtzo
 [🐦tweet]: http://twitter.com/galtzo
 [🚎blog]: http://www.railsbling.com/tags/omniauth-identity/
@@ -101,6 +102,7 @@ basic construct for user management and then gets out of the way.
 [🌳linktree-img]: https://img.shields.io/badge/galtzo-purple?style=plastic&logo=linktree
 
 <!--- Maintainer Contact Links -->
+
 [aboutme]: https://about.me/peter.boling
 [coderme]: https://coderwall.com/Peter%20Boling
 
