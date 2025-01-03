@@ -19,6 +19,7 @@ gem "yard", "~> 0.9.34", require: false
 gem "yard-junk", "~> 0.0.10"
 gem "github-markup"
 gem "redcarpet"
+gem "rdoc", "~> 6.10"
 
 ### Linting
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"

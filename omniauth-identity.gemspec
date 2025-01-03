@@ -62,7 +62,4 @@ Gem::Specification.new do |spec|
 
   ### ORMs
   spec.add_development_dependency("sqlite3", ">= 1")
-
-  ### Documentation
-  spec.add_development_dependency("rdoc", ">= 5.1")
 end

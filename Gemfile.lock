@@ -382,7 +382,7 @@ DEPENDENCIES
   rack-test (~> 1)
   rake (~> 13)
   rb-fsevent
-  rdoc (>= 5.1)
+  rdoc (~> 6.10)
   redcarpet
   reek
   rspec (~> 3)
