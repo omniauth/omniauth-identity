@@ -47,6 +47,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency("bcrypt", "~> 3.1")
+  spec.add_dependency("mutex_m", "~> 0.3", ">= 0.3.0")
   spec.add_dependency("omniauth", ">= 1")
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.4")
 
@@ -61,4 +62,7 @@ Gem::Specification.new do |spec|
 
   ### ORMs
   spec.add_development_dependency("sqlite3", ">= 1")
+
+  ### Documentation
+  spec.add_development_dependency("rdoc", ">= 5.1")
 end
