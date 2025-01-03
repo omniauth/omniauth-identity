@@ -16,8 +16,8 @@ Gem::Specification.new do |spec|
   spec.cert_chain = [ENV.fetch("GEM_CERT_PATH", "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem")]
   spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 
-  spec.summary = spec.description
-  spec.description = "Traditional username/password based authentication system for OmniAuth"
+  spec.summary = "Traditional username/password based authentication system for OmniAuth"
+  spec.description = spec.summary
   spec.homepage = "https://github.com/omniauth/#{spec.name}"
 
   spec.license = "MIT"
