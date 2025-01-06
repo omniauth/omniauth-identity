@@ -157,7 +157,7 @@ jobs:
 
       ### MONGODB
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.11.0
+        uses: supercharge/mongodb-github-action@1.12.0
         if: "endsWith(matrix.taskname, 'mongoid')"
         with:
           mongodb-version: "8.0"
