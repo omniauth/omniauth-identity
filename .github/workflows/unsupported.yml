@@ -175,9 +175,9 @@ jobs:
       # This will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
       # We need to do this first to get appraisal installed.
       # NOTE: This does not use the root Gemfile at all.
-      - name: Bundle for Appraisal ${{ matrix.appraisal }} (Rails v${{ matrix.rails}})
+      - name: Bundle for Appraisal ${{ matrix.appraisal }}
         run: bundle
-      - name: Install Appraisal ${{ matrix.appraisal }} (Rails v${{ matrix.rails}}) dependencies
+      - name: Install Appraisal ${{ matrix.appraisal }} dependencies
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.appraisal }} tests via ${{ matrix.taskname }} (Rails v${{ matrix.rails}})
+      - name: Run ${{ matrix.appraisal }} tests via ${{ matrix.taskname }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec rake ${{ matrix.taskname }}
