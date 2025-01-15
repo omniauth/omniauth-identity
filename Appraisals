@@ -127,6 +127,8 @@ appraise "couch-1.17" do
   gem "couch_potato", "~> 1.17"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
+  # TODO: Bump when old dropping old Ruby from this gem.
+  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 end
 
 # Compat: Ruby >= 2.3
@@ -182,6 +184,8 @@ appraise "mongoid-9.0" do
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.1", ">= 3.1.2"
+  # TODO: Bump when old dropping old Ruby from this gem.
+  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 end
 
 # 1. While the Ruby driver, nobrainer, is maintained,
