@@ -358,15 +358,11 @@ spec.add_dependency("omniauth-identity", "~> 3.1")
 
 See [CHANGELOG.md][📌changelog] for list of releases.
 
-<!--- ( 📌 VERSIONING LINKS ) -->
-
 ## 📄 License
 
 The gem is available as open source under the terms of
 the [MIT License][📄license] [![License: MIT][📄license-img]][📄license-ref].
 See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright-notice-explainer].
-
-<!--- ( 📄 LEGAL LINKS ) -->
 
 ### © Copyright
 
