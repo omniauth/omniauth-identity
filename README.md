@@ -16,44 +16,7 @@
 [![CI Coverage Build][🚎2-cov-wfi]][🚎2-cov-wf]
 [![CI Style Build][🚎5-st-wfi]][🚎5-st-wf]
 
-<!--- ( 👽️ INFO LINKS ) -->
-
-[👽dl-rank]: https://rubygems.org/gems/omniauth-identity
-[👽dl-ranki]: https://img.shields.io/gem/rd/omniauth-identity.svg
-[👽oss-help]: https://www.codetriage.com/omniauth/omniauth-identity
-[👽oss-helpi]: https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg
-[👽version]: https://rubygems.org/gems/omniauth-identity
-[👽versioni]: https://img.shields.io/gem/v/omniauth-identity.svg
-
-<!--- ( 🔑 KEYED LINKS ) -->
-
-[🔑cc-mnt]: https://codeclimate.com/github/omniauth/omniauth-identity/maintainability
-[🔑cc-mnti♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/maintainability
-[🔑cc-cov]: https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage
-[🔑cc-covi♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage
-[🔑codecov]: https://codecov.io/gh/omniauth/omniauth-identity
-[🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL
-[🔑depfu]: https://depfu.com/github/omniauth/omniauth-identity
-[🔑depfui♻️]: https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg
-
-<!--- ( 🚎 BUILD LINKS ) -->
-
-[🚎1-an-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml
-[🚎1-an-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml/badge.svg
-[🚎2-cov-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml
-[🚎2-cov-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml/badge.svg
-[🚎3-hd-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml
-[🚎3-hd-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml/badge.svg
-[🚎4-lg-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml
-[🚎4-lg-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml/badge.svg
-[🚎5-st-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml
-[🚎5-st-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml/badge.svg
-[🚎6-s-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml
-[🚎6-s-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml/badge.svg
-[🚎7-us-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml
-[🚎7-us-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml/badge.svg
-
------
+---
 
 [![Liberapay Patrons][⛳liberapay-img]][⛳liberapay]
 [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor]
@@ -61,50 +24,20 @@
 [![Donate to my FLOSS or refugee efforts at ko-fi.com][🖇kofi-img]][🖇kofi]
 [![Donate to my FLOSS or refugee efforts using Patreon][🖇patreon-img]][🖇patreon]
 
-[⛳liberapay-img]: https://img.shields.io/liberapay/patrons/pboling.svg?logo=liberapay
-[⛳liberapay]: https://liberapay.com/pboling/donate
-[🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
-[🖇sponsor]: https://github.com/sponsors/pboling
-[🖇polar-img]: https://polar.sh/embed/seeks-funding-shield.svg?org=pboling
-[🖇polar]: https://polar.sh/pboling
-[🖇kofi-img]: https://img.shields.io/badge/buy%20me%20coffee-donate-yellow.svg
-[🖇kofi]: https://ko-fi.com/O5O86SNP4
-[🖇patreon-img]: https://img.shields.io/badge/patreon-donate-yellow.svg
-[🖇patreon]: https://patreon.com/galtzo
-
 The OmniAuth Identity gem provides a way for applications to utilize a
 traditional username/password based authentication system without the need
 to give up the simple authentication flow provided by OmniAuth. Identity
 is designed on purpose to be as featureless as possible: it provides the
 basic construct for user management and then gets out of the way.
 
-| Primary Namespace | `OmniAuth::Identity`                                                                                                                                                                                                                                                                                                                                    |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| documentation     | [on Github.com][homepage], [Latest release on RubyDoc.info][documentation], [HEAD on RubyDoc.info][documentation-head]                                                                                                                                                                                                                           |
-| expert support    | [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github)                                                                                                                                                   |
-| `...` 💖          | [![Follow Me on LinkedIn][🖇linkedin-img]][🖇linkedin] [![Find Me on WellFound:][✌️wellfound-img]][✌️wellfound] [![Find Me on CrunchBase][💲crunchbase-img]][💲crunchbase] [![My LinkTree][🌳linktree-img]][🌳linktree] [![Follow Me on Ruby.Social][🐘ruby-mast-img]][🐘ruby-mast] [![Tweet @ Peter][🐦tweet-img]][🐦tweet] [💻][coderme] [🌏][aboutme] |
 
-<!--- 7️⃣ spread 💖 -->
-
-[🐦tweet-img]: https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow%20%40galtzo
-[🐦tweet]: http://twitter.com/galtzo
-[🚎blog]: http://www.railsbling.com/tags/omniauth-identity/
-[🚎blog-img]: https://img.shields.io/badge/blog-railsbling-brightgreen.svg?style=flat
-[🖇linkedin]: http://www.linkedin.com/in/peterboling
-[🖇linkedin-img]: https://img.shields.io/badge/PeterBoling-blue?style=plastic&logo=linkedin
-[✌️wellfound]: https://angel.co/u/peter-boling
-[✌️wellfound-img]: https://img.shields.io/badge/peter--boling-orange?style=plastic&logo=wellfound
-[💲crunchbase]: https://www.crunchbase.com/person/peter-boling
-[💲crunchbase-img]: https://img.shields.io/badge/peter--boling-purple?style=plastic&logo=crunchbase
-[🐘ruby-mast]: https://ruby.social/@galtzo
-[🐘ruby-mast-img]: https://img.shields.io/mastodon/follow/109447111526622197?domain=https%3A%2F%2Fruby.social&style=plastic&logo=mastodon&label=Ruby%20%40galtzo
-[🌳linktree]: https://linktr.ee/galtzo
-[🌳linktree-img]: https://img.shields.io/badge/galtzo-purple?style=plastic&logo=linktree
-
-<!--- Maintainer Contact Links -->
-
-[aboutme]: https://about.me/peter.boling
-[coderme]: https://coderwall.com/Peter%20Boling
+| Primary Namespace  | `OmniAuth::Identity`                                                                                                                                                                                                                                                                                                                                                |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| compatibility      | [![Ruby 2.5 Compat][💎ruby-2.5i]][🚎1-an-wf] [![Ruby 2.6 Compat][💎ruby-2.6i]][🚎1-an-wf] [![Ruby 2.7 Compat][💎ruby-2.7i]][🚎7-us-wf] [![Ruby 3.0 Compat][💎ruby-3.0i]][🚎4-lg-wf] [![Ruby 3.1 Compat][💎ruby-3.1i]][🚎6-s-wf] [![Ruby 3.2 Compat][💎ruby-3.2i]][🚎6-s-wf] [![Ruby 3.3 Compat][💎ruby-3.3i]][🚎6-s-wf] [![Ruby 3.4 Compat][💎ruby-3.4i]][🚎6-s-wf] |
+| documentation      | [![Documentation on Github.com][📜docs-gh-img]][homepage] `or` [![Current release on RubyDoc.info][📜docs-cr-rd-img]][documentation] `or` [![HEAD on RubyDoc.info][📜docs-head-rd-img]][documentation-head]                                                                                                                                                         |
+| expert 1:1 support | [![Get help from me on Upwork][👨🏼‍🏫expsup-upwork-img]][👨🏼‍🏫expsup-upwork] `or` [![Get help from me on Codementor][👨🏼‍🏫expsup-codementor-img]][👨🏼‍🏫expsup-codementor]                                                                                                                                                                                                                |
+| enterprise support | [![Get help from me on Tidelift][🏙️entsup-tidelift-img]][🏙️entsup-tidelift] (for _this and all your other_ FLOSS dependencies; btw, TideLift is now part of [Sonar](https://blog.tidelift.com/tidelift-joins-sonar)!)                                                                                                                                                           |
+| `...` 💖           | [![Follow Me on LinkedIn][💖🖇linkedin-img]][💖🖇linkedin] [![Find Me on WellFound:][💖✌️wellfound-img]][💖✌️wellfound] [![Find Me on CrunchBase][💖💲crunchbase-img]][💖💲crunchbase] [![My LinkTree][💖🌳linktree-img]][💖🌳linktree] [![Follow Me on Ruby.Social][💖🐘ruby-mast-img]][💖🐘ruby-mast] [![My technical writing][💖💁🏼‍♂️devto-img]][💖💁🏼‍♂️devto] [🌏][💖💁🏼‍♂️aboutme]  |
 
 ## Installation
 
@@ -129,13 +62,14 @@ This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of N
 * Probably also compatible with Ruby 2.4 and jruby-head
 * At least 5 different database ORM adapters, which connect to 15 different database clients!
 
+
 | Databases                                                                                                 | Adapter Libraries                                                        |
-|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| MySQL, PostgreSQL, SQLite3                                                                                | [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html) |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| MySQL, MariaDB, PostgreSQL, SQLite                                                                        | [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html) |
 | CouchDB                                                                                                   | [CouchPotato](https://github.com/langalex/couch_potato)                  |
 | MongoDB                                                                                                   | [Mongoid](https://github.com/mongodb/mongoid)                            |
 | RethinkDB                                                                                                 | [NoBrainer](http://nobrainer.io/)                                        |
-| ADO, Amalgalite, IBM_DB, JDBC, MySQL, Mysql2, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite3, and TinyTDS | [Sequel](http://sequel.jeremyevans.net)                                  |
+| ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS | [Sequel](http://sequel.jeremyevans.net)                                  |
 
 ## Usage
 
@@ -144,11 +78,11 @@ a [Railscast](http://railscasts.com/episodes/304-omniauth-identity) about it!
 
 You use `omniauth-identity` just like you would any other OmniAuth provider: as a
 Rack middleware. In rails, this would be created by an initializer, such as
-`config/initializers/omniauth.rb`. The basic setup for a email/password authentication would look something like this:
+`config/initializers/omniauth.rb`. The basic setup for an email/password authentication would look something like this:
 
 ```ruby
 use OmniAuth::Builder do
-  provider :identity,                        #mandatory: tells OA that the Identity strategy is being used
+  provider :identity,                 # required: tells OA that the Identity strategy is being used
     model: Identity,                  # optional: specifies the name of the "Identity" model. Defaults to "Identity"
     fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model's table
 end
@@ -164,7 +98,7 @@ running, you can point users to `/auth/identity` and it will request
 that they log in or give them the opportunity to sign up for an account.
 Once they have authenticated with their identity, OmniAuth will call
 through to `/auth/identity/callback` with the same kinds of information
-it would had the user authenticated through an external provider.
+it would have had the user authenticated through an external provider.
 
 **Note:** OmniAuth Identity is different from many other user authentication
 systems in that it is *not* built to store authentication information in your primary
@@ -175,7 +109,7 @@ strategies such as Facebook, Twitter, etc.
 ### ActiveRecord
 
 Just subclass `OmniAuth::Identity::Models::ActiveRecord` and provide fields
-in the database for all of the fields you are using.
+in the database for all the fields you are using.
 
 ```ruby
 class Identity < OmniAuth::Identity::Models::ActiveRecord
@@ -349,6 +283,7 @@ always break things!
 ## Customizing Other Things
 
 From the code - here are the options we have for you, a couple of which are documented above, and the rest are documented... in the specs we hope!?
+
 ```
 option :fields, %i[name email]
 
@@ -374,25 +309,15 @@ or use the gem and think about how it could be better.
 
 Also, see [CONTRIBUTING.md][🤝contributing].
 
-[🤝issues]: https://github.com/omniauth/omniauth-identity/issues
-[🤝pulls]: https://github.com/omniauth/omniauth-identity/pulls
-[🤝contributing]: CONTRIBUTING.md
-
 ### Code Coverage
 
 [![Coverage Graph][🔑codecov-g]][🔑codecov]
-
-[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=cc6UdZCpAL
 
 ## 🌈 Contributors
 
 [![Contributors][🖐contributors-img]][🖐contributors]
 
 Made with [contributors-img][🖐contrib-rocks].
-
-[🖐contrib-rocks]: https://contrib.rocks
-[🖐contributors]: https://github.com/omniauth/omniauth-identity/graphs/contributors
-[🖐contributors-img]: https://contrib.rocks/image?repo=omniauth/omniauth-identity
 
 ## Star History
 
@@ -408,8 +333,6 @@ Made with [contributors-img][🖐contrib-rocks].
 
 Everyone interacting in this project's codebases, issue trackers,
 chat rooms and mailing lists is expected to follow the [code of conduct][🪇conduct].
-
-[🪇conduct]: CODE_OF_CONDUCT.md
 
 ## 📌 Versioning
 
@@ -437,11 +360,6 @@ See [CHANGELOG.md][📌changelog] for list of releases.
 
 <!--- ( 📌 VERSIONING LINKS ) -->
 
-[📌pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
-[📌semver]: http://semver.org/
-[📌major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
-[📌changelog]: CHANGELOG.md
-
 ## 📄 License
 
 The gem is available as open source under the terms of
@@ -450,23 +368,11 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
 
 <!--- ( 📄 LEGAL LINKS ) -->
 
-[📄copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
-[📄license]: LICENSE.txt
-[📄license-ref]: https://opensource.org/licenses/MIT
-[📄license-img]: https://img.shields.io/badge/License-MIT-green.svg
-
 ### © Copyright
 
 * Copyright (c) 2021, 2024 [Peter H. Boling][peterboling], and OmniAuth-Identity Maintainers
 * Copyright (c) 2020 [Peter H. Boling][peterboling], Andrew Roberts, and Jellybooks Ltd.
 * Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
-
-[railsbling]: http://www.railsbling.com
-[peterboling]: http://www.peterboling.com
-[bundle-group-pattern]: https://gist.github.com/pboling/4564780
-[documentation]: http://rubydoc.info/gems/omniauth-identity
-[documentation-head]: https://rubydoc.info/github/omniauth/omniauth-identity/main
-[homepage]: https://github.com/omniauth/omniauth-identity
 
 ## 🤑 One more thing
 
@@ -479,5 +385,99 @@ or one of the others at the head of this README.
 
 [![Buy me a latte][🖇buyme-img]][🖇buyme]
 
+[🚎blog]: http://www.railsbling.com/tags/
+[🚎blog-img]: https://img.shields.io/badge/blog-railsbling-brightgreen.svg?style=flat
+[💖🖇linkedin]: http://www.linkedin.com/in/peterboling
+[💖🖇linkedin-img]: https://img.shields.io/badge/PeterBoling-blue?style=plastic&logo=linkedin
+[💖✌️wellfound]: https://angel.co/u/peter-boling
+[💖✌️wellfound-img]: https://img.shields.io/badge/peter--boling-orange?style=plastic&logo=wellfound
+[💖💲crunchbase]: https://www.crunchbase.com/person/peter-boling
+[💖💲crunchbase-img]: https://img.shields.io/badge/peter--boling-purple?style=plastic&logo=crunchbase
+[💖🐘ruby-mast]: https://ruby.social/@galtzo
+[💖🐘ruby-mast-img]: https://img.shields.io/mastodon/follow/109447111526622197?domain=https%3A%2F%2Fruby.social&style=plastic&logo=mastodon&label=Ruby%20%40galtzo
+[💖🌳linktree]: https://linktr.ee/galtzo
+[💖🌳linktree-img]: https://img.shields.io/badge/galtzo-purple?style=plastic&logo=linktree
+[💖💁🏼‍♂️devto]: https://dev.to/galtzo
+[💖💁🏼‍♂️devto-img]: https://img.shields.io/badge/dev.to-0A0A0A?style=plastic&logo=devdotto&logoColor=white
+[💖💁🏼‍♂️aboutme]: https://about.me/peter.boling
+[👨🏼‍🏫expsup-upwork]: https://www.upwork.com/freelancers/~014942e9b056abdf86?mp_source=share
+[👨🏼‍🏫expsup-upwork-img]: https://img.shields.io/badge/UpWork-6FDA44?style=for-the-badge&logo=Upwork&logoColor=white
+[👨🏼‍🏫expsup-codementor]: https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github
+[👨🏼‍🏫expsup-codementor-img]: https://img.shields.io/badge/CodeMentor-Get%20Help-1abc9c?style=for-the-badge&logo=CodeMentor&logoColor=white
+[🏙️entsup-tidelift]: https://tidelift.com/
+[🏙️entsup-tidelift-img]: https://img.shields.io/badge/TideLift-Enterprise%20Support-1abc9c?style=for-the-badge&logo=TideLift&logoColor=white
+[💁🏼‍♂️peterboling]: http://www.peterboling.com
+[💁🏼‍♂️railsbling]: http://www.railsbling.com
+[📜docs-gh-img]: https://img.shields.io/badge/Github-6FDA44?style=for-the-badge&logo=Github&logoColor=white
+[📜docs-cr-rd-img]: https://img.shields.io/badge/RubyDoc-Current%20Release-6FDA44?style=for-the-badge&logo=RubyDoc&logoColor=white
+[📜docs-head-rd-img]: https://img.shields.io/badge/RubyDoc-HEAD-6FDA44?style=for-the-badge&logo=RubyDoc&logoColor=white
+[👽dl-rank]: https://rubygems.org/gems/omniauth-identity
+[👽dl-ranki]: https://img.shields.io/gem/rd/omniauth-identity.svg
+[👽oss-help]: https://www.codetriage.com/omniauth/omniauth-identity
+[👽oss-helpi]: https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg
+[👽version]: https://rubygems.org/gems/omniauth-identity
+[👽versioni]: https://img.shields.io/gem/v/omniauth-identity.svg
+[🔑cc-mnt]: https://codeclimate.com/github/omniauth/omniauth-identity/maintainability
+[🔑cc-mnti♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/maintainability
+[🔑cc-cov]: https://codeclimate.com/github/omniauth/omniauth-identity/test_coverage
+[🔑cc-covi♻️]: https://api.codeclimate.com/v1/badges/621d6211cb2e0959ce00/test_coverage
+[🔑codecov]: https://codecov.io/gh/omniauth/omniauth-identity
+[🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL
+[🔑depfu]: https://depfu.com/github/omniauth/omniauth-identity
+[🔑depfui♻️]: https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg
+[🚎1-an-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml
+[🚎1-an-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml/badge.svg
+[🚎2-cov-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml
+[🚎2-cov-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml/badge.svg
+[🚎3-hd-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml
+[🚎3-hd-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml/badge.svg
+[🚎4-lg-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml
+[🚎4-lg-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml/badge.svg
+[🚎5-st-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml
+[🚎5-st-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml/badge.svg
+[🚎6-s-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml
+[🚎6-s-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml/badge.svg
+[🚎7-us-wf]: https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml
+[🚎7-us-wfi]: https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml/badge.svg
+[⛳liberapay-img]: https://img.shields.io/liberapay/patrons/pboling.svg?logo=liberapay
+[⛳liberapay]: https://liberapay.com/pboling/donate
+[🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
+[🖇sponsor]: https://github.com/sponsors/pboling
+[🖇polar-img]: https://polar.sh/embed/seeks-funding-shield.svg?org=pboling
+[🖇polar]: https://polar.sh/pboling
+[🖇kofi-img]: https://img.shields.io/badge/buy%20me%20coffee-donate-yellow.svg
+[🖇kofi]: https://ko-fi.com/O5O86SNP4
+[🖇patreon-img]: https://img.shields.io/badge/patreon-donate-yellow.svg
+[🖇patreon]: https://patreon.com/galtzo
+[💎ruby-2.5i]: https://img.shields.io/badge/Ruby-2.5-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.6i]: https://img.shields.io/badge/Ruby-2.6-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.7i]: https://img.shields.io/badge/Ruby-2.7-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.0i]: https://img.shields.io/badge/Ruby-3.0-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.1i]: https://img.shields.io/badge/Ruby-3.1-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.2i]: https://img.shields.io/badge/Ruby-3.2-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.3i]: https://img.shields.io/badge/Ruby-3.3-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.4i]: https://img.shields.io/badge/Ruby-3.4-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[🤝issues]: https://github.com/omniauth/omniauth-identity/issues
+[🤝pulls]: https://github.com/omniauth/omniauth-identity/pulls
+[🤝contributing]: CONTRIBUTING.md
+[🔑codecov-g]: https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=cc6UdZCpAL
+[🖐contrib-rocks]: https://contrib.rocks
+[🖐contributors]: https://github.com/omniauth/omniauth-identity/graphs/contributors
+[🖐contributors-img]: https://contrib.rocks/image?repo=omniauth/omniauth-identity
+[🪇conduct]: CODE_OF_CONDUCT.md
+[📌pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
+[📌semver]: http://semver.org/
+[📌major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
+[📌changelog]: CHANGELOG.md
+[📄copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
+[📄license]: LICENSE.txt
+[📄license-ref]: https://opensource.org/licenses/MIT
+[📄license-img]: https://img.shields.io/badge/License-MIT-green.svg
+[railsbling]: http://www.railsbling.com
+[peterboling]: http://www.peterboling.com
+[bundle-group-pattern]: https://gist.github.com/pboling/4564780
+[documentation]: http://rubydoc.info/gems/omniauth-identity
+[documentation-head]: https://rubydoc.info/github/omniauth/omniauth-identity/main
+[homepage]: https://github.com/omniauth/omniauth-identity
 [🖇buyme-img]: https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff
 [🖇buyme]: https://www.buymeacoffee.com/pboling
