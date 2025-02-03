@@ -58,10 +58,9 @@ gem "omniauth-identity", git: "https://github.com/omniauth/omniauth-identity.git
 This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of Nov 2024, version 3.1.
 
 * Latest released version of omniauth, v2+
-* Tested in CI against Ruby 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, ruby-head, truffleruby-head
+* Tested in CI against Ruby 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, 3.4, ruby-head, truffleruby-head
 * Probably also compatible with Ruby 2.4 and jruby-head
 * At least 5 different database ORM adapters, which connect to 15 different database clients!
-
 
 | Databases                                                                                                 | Adapter Libraries                                                        |
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |

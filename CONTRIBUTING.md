@@ -86,7 +86,7 @@ To run all tests on all databases (except RethinkDB):
 bundle exec rake spec:orm:all
 ```
 
-To run all tests that do not require any additional services, like MongoDB, CouchDB, or RethinkDB:
+To run all tests that do not require any additional services, i.e. excluding MongoDB, CouchDB, & RethinkDB:
 ```bash
 bundle exec rake test
 ```
