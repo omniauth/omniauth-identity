@@ -127,7 +127,7 @@ GEM
     httpclient (2.8.3)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    json (2.10.1)
+    json (2.10.2)
     kettle-soup-cover (1.0.4)
       simplecov (~> 0.22)
       simplecov-cobertura (~> 2.1)
