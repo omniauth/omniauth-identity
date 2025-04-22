@@ -349,7 +349,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    version_gem (1.1.6)
+    version_gem (1.1.7)
     yard (0.9.37)
     yard-junk (0.0.10)
       backports (>= 3.18)
