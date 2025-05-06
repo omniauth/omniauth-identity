@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   # Linux distros may package ruby gems differently,
   #   and securely certify them independently via alternate package management systems.
-  # Ref: https://gitlab.com/pboling/rspec-stubbed_env/-/issues/3
+  # Ref: https://gitlab.com/oauth-xx/version_gem/-/issues/3
   # Hence, only enable signing if `SKIP_GEM_SIGNING` is not set in ENV.
   # See CONTRIBUTING.md
   user_cert = "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem"
