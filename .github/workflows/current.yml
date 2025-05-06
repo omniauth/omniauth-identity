@@ -39,37 +39,37 @@ jobs:
           # Ruby 3.4
           - ruby: "3.4"
             appraisal: "ar-7-2"
-            taskname: "spec:orm:active_record"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
             appraisal: "ar-8-0"
-            taskname: "spec:orm:active_record"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
             appraisal: "couch-1.17"
-            taskname: "spec:orm:couch_potato"
+            exec_cmd: "spec:orm:couch_potato"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
             appraisal: "mongoid-8.1"
-            taskname: "spec:orm:mongoid"
+            exec_cmd: "spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
             appraisal: "mongoid-9.0"
-            taskname: "spec:orm:mongoid"
+            exec_cmd: "spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
             appraisal: "sequel-5.86"
-            taskname: "spec:orm:sequel"
+            exec_cmd: "spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
@@ -79,7 +79,7 @@ jobs:
           #   (according to runtime: targets Ruby 3.2 compatibility)
           - ruby: "truffleruby"
             appraisal: "ar-8-0"
-            taskname: "spec:orm:active_record"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
