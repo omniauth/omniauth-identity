@@ -37,24 +37,24 @@ jobs:
         include:
           # Ruby 3.1
           - ruby: "ruby-3.1"
-            appraisal: "ruby-3-1"
-            exec_cmd: "rake spec"
+            appraisal: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
 
           # Ruby 3.2
           - ruby: "ruby-3.2"
-            appraisal: "ruby-3-2"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
 
           # Ruby 3.3
           - ruby: "ruby-3.3"
-            appraisal: "ruby-3-3"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest

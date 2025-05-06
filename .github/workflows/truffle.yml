@@ -38,24 +38,24 @@ jobs:
           # NOTE: truffleruby does not support upgrading rubygems.
           # truffleruby-22.3 (targets Ruby 3.0 compatibility)
           - ruby: "truffleruby-22.3"
-            appraisal: "ruby-3-0"
-            exec_cmd: "rake spec"
+            appraisal: "ar-7-1"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
 
           # truffleruby-23.0 (targets Ruby 3.1 compatibility)
           - ruby: "truffleruby-23.0"
-            appraisal: "ruby-3-1"
-            exec_cmd: "rake spec"
+            appraisal: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
 
           # truffleruby-23.1 (targets Ruby 3.2 compatibility)
           - ruby: "truffleruby-23.1"
-            appraisal: "ruby-3-2"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default

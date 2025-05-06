@@ -75,19 +75,17 @@ jobs:
             bundler: latest
 
           # truffleruby-24.1
-          #   (according to documentation: targets Ruby 3.3 compatibility)
-          #   (according to runtime: targets Ruby 3.2 compatibility)
           - ruby: "truffleruby"
             appraisal: "ar-8-0"
             exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
+            rubygems: default
+            bundler: default
 
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby"
-            appraisal: "current"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default

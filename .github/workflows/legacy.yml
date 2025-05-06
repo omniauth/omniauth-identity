@@ -38,8 +38,8 @@ jobs:
         include:
           # Ruby 3.0
           - ruby: "ruby-3.0"
-            appraisal: "ruby-3-0"
-            exec_cmd: "rake spec"
+            appraisal: "ar-7-1"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'
             bundler: '2.5.23'

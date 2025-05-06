@@ -39,24 +39,24 @@ jobs:
           # NOTE: Heads use default rubygems / bundler; their defaults are custom, unreleased, and from the future!
           # ruby-head
           - ruby: "ruby-head"
-            appraisal: "head"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
 
           # truffleruby-head
           - ruby: "truffleruby-head"
-            appraisal: "head"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal: "head"
-            exec_cmd: "rake spec"
+            appraisal: "ar-8-0"
+            exec_cmd: "spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
