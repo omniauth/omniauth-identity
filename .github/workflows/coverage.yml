@@ -29,24 +29,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
-    name: Specs with Coverage - Ruby ${{ matrix.ruby }} ${{ matrix.name_extra || '' }}
+  coverage:
+    name: Code Coverage on ${{ matrix.ruby }}@current
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
-      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
+    env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
+      BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
       fail-fast: false
       matrix:
-        experimental: [false]
-        rubygems:
-          - latest
-        bundler:
-          - latest
-        gemfile:
-          - coverage
-        ruby:
-          - '3.4'
+        include:
+          # Coverage
+          - ruby: "ruby"
+            appraisal: "coverage"
+            exec_cmd: "rake spec:orm:all"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
     steps:
       ### COUCHDB
@@ -80,15 +80,22 @@ jobs:
           ruby-version: "${{ matrix.ruby }}"
           rubygems: "${{ matrix.rubygems }}"
           bundler: "${{ matrix.bundler }}"
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: false
 
       - name: CodeClimate Pre-build Notification
         run: cc-test-reporter before-build
         if: ${{ github.event_name != 'pull_request' }}
         continue-on-error: ${{ matrix.experimental != 'false' }}
 
-      - name: Run RSpec tests
-        run: bundle exec rake spec:orm:all
+      # Raw `bundle` will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
+      # We need to do this first to get appraisal installed.
+      # NOTE: This does not use the main Gemfile at all.
+      - name: Install Root Appraisal
+        run: bundle
+      - name: Appraisal for ${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+      - name: Tests for ${{ matrix.ruby }}@current via ${{ matrix.exec_cmd }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
 
       - name: CodeClimate Post-build Notification
         run: cc-test-reporter after-build

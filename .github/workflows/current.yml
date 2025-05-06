@@ -1,4 +1,5 @@
-name: Heads
+# Targets the evergreen latest release of ruby, truffleruby, and jruby
+name: Current
 
 env:
   K_SOUP_COV_DO: false
@@ -26,36 +27,66 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
-      fail-fast: true
       matrix:
         include:
-          # NOTE: Heads use default rubygems / bundler; their defaults are custom, unreleased, and from the future!
-          # ruby-head
-          - ruby: "ruby-head"
-            appraisal: "head"
-            exec_cmd: "rake spec"
+          # Ruby 3.4
+          - ruby: "3.4"
+            appraisal: "ar-7-2"
+            taskname: "spec:orm:active_record"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-          # truffleruby-head
-          - ruby: "truffleruby-head"
-            appraisal: "head"
-            exec_cmd: "rake spec"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.4"
+            appraisal: "ar-8-0"
+            taskname: "spec:orm:active_record"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.4"
+            appraisal: "couch-1.17"
+            taskname: "spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.4"
+            appraisal: "mongoid-8.1"
+            taskname: "spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.4"
+            appraisal: "mongoid-9.0"
+            taskname: "spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.4"
+            appraisal: "sequel-5.86"
+            taskname: "spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
-          # jruby-head
-          - ruby: "jruby-head"
-            appraisal: "head"
+          # truffleruby-24.1
+          #   (according to documentation: targets Ruby 3.3 compatibility)
+          #   (according to runtime: targets Ruby 3.2 compatibility)
+          - ruby: "truffleruby"
+            appraisal: "ar-8-0"
+            taskname: "spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+
+          # jruby-9.4 (targets Ruby 3.1 compatibility)
+          - ruby: "jruby"
+            appraisal: "current"
             exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
             rubygems: default

@@ -1,4 +1,7 @@
-name: Style
+name: Truffle
+
+env:
+  K_SOUP_COV_DO: false
 
 on:
   push:
@@ -22,24 +25,40 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  rubocop:
-    name: Style on ${{ matrix.ruby }}@current
+  test:
+    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
-      fail-fast: false
       matrix:
         include:
-          # Style
-          - ruby: "ruby"
-            appraisal: "style"
-            exec_cmd: "rake rubocop_gradual:check"
+          # NOTE: truffleruby does not support upgrading rubygems.
+          # truffleruby-22.3 (targets Ruby 3.0 compatibility)
+          - ruby: "truffleruby-22.3"
+            appraisal: "ruby-3-0"
+            exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
+            rubygems: default
+            bundler: default
+
+          # truffleruby-23.0 (targets Ruby 3.1 compatibility)
+          - ruby: "truffleruby-23.0"
+            appraisal: "ruby-3-1"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # truffleruby-23.1 (targets Ruby 3.2 compatibility)
+          - ruby: "truffleruby-23.1"
+            appraisal: "ruby-3-2"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
 
     steps:
       - name: Checkout
@@ -60,5 +79,5 @@ jobs:
         run: bundle
       - name: Appraisal for ${{ matrix.appraisal }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.appraisal }} checks via ${{ matrix.exec_cmd }}
+      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
