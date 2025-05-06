@@ -12,9 +12,21 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter Boling", "Andrew Roberts", "Michael Bleigh"]
   spec.email = ["peter.boling@gmail.com"]
 
+  # Linux distros may package ruby gems differently,
+  #   and securely certify them independently via alternate package management systems.
+  # Ref: https://gitlab.com/pboling/rspec-stubbed_env/-/issues/3
+  # Hence, only enable signing if `SKIP_GEM_SIGNING` is not set in ENV.
   # See CONTRIBUTING.md
-  spec.cert_chain = [ENV.fetch("GEM_CERT_PATH", "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem")]
-  spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
+  user_cert = "certs/#{ENV.fetch("GEM_CERT_USER", ENV["USER"])}.pem"
+  cert_file_path = File.join(__dir__, user_cert)
+  cert_chain = cert_file_path.split(",")
+  cert_chain.select! { |fp| File.exist?(fp) }
+  if cert_file_path && cert_chain.any?
+    spec.cert_chain = cert_chain
+    if $PROGRAM_NAME.end_with?("gem") && ARGV[0] == "build" && !ENV.include?("SKIP_GEM_SIGNING")
+      spec.signing_key = File.join(Gem.user_home, ".ssh", "gem-private_key.pem")
+    end
+  end
 
   spec.summary = "Traditional username/password based authentication system for OmniAuth"
   spec.description = spec.summary
