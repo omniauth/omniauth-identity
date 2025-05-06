@@ -14,21 +14,14 @@ gemspec
 gem "mutex_m", "~> 0.2"
 gem "stringio", "~> 3.1", ">= 3.1.2"
 
+### Security Audit
+eval_gemfile "gemfiles/modular/audit.gemfile"
+
 ### Documentation
-gem "yard", "~> 0.9.34", require: false
-gem "yard-junk", "~> 0.0.10"
-gem "github-markup"
-gem "redcarpet"
-gem "rdoc", "~> 6.10"
+eval_gemfile "gemfiles/modular/documentation.gemfile"
 
 ### Linting
-gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
-gem "rubocop-minitest"
-gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
-gem "rubocop-rspec", "~> 3.2"
-gem "rubocop-sequel"
-gem "standard", ">= 1.35.1", "!= 1.41.1", "!= 1.42.0"
-gem "reek"
+eval_gemfile "gemfiles/modular/style.gemfile"
 
 ### ORMs
 gem "couch_potato", "~> 1.17", require: false
@@ -44,10 +37,11 @@ gem "guard-bundler"
 gem "guard-rspec"
 gem "rb-fsevent"
 
-### Coverage
-gem "kettle-soup-cover", "~> 1.0", ">= 1.0.4"
+# Code Coverage
+eval_gemfile "gemfiles/modular/coverage.gemfile"
 
 ### Testing
+gem "appraisal", github: "pboling/appraisal", branch: "galtzo"
 gem "test-unit", ">= 3.0"
 
 platform :mri do

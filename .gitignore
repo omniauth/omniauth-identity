@@ -14,7 +14,9 @@
 *.gem
 /.idea/
 
-*.gemfile.lock
+# gemfile locks for CI
+/gemfiles/*.lock
+Appraisal.*.gemfile.lock
 
 # rspec failure tracking
 .rspec_status

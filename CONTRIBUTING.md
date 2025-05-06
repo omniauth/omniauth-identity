@@ -37,13 +37,21 @@ To refresh the `reek` list:
 bundle exec reek > REEK
 ```
 
-## Appraisal
+## Appraisals
 
-### Generate a new set of Appraisal gemfiles:
+From time to time the appraisal gemfiles in `gemfiles/` will need to be updated.
+They are created and updated with the commands:
 
-```bash
-BUNDLE_GEMFILE=Appraisal.root.gemfile appraisal update
+NOTE: We run on a [fork][🚎appraisal-fork] of Appraisal.
+
+Please upvote the PR for `eval_gemfile` [support][🚎appraisal-eval-gemfile-pr]
+
+```shell
+BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
+BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 ```
+
+When adding an appraisal to CI check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
 ## Run Tests
 
@@ -119,7 +127,7 @@ bundle exec rake
 
 Or just run the linter.
 ```bash
-bundle exec rubocop_gradual:autocorrect
+bundle exec rake rubocop_gradual:autocorrect
 ```
 
 ## Release

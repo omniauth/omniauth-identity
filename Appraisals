@@ -234,3 +234,27 @@ appraise "sequel-5.86" do
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
 end
+
+# Only run security audit on latest Ruby version
+appraise "audit" do
+  gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/audit.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Only run coverage on latest Ruby version
+appraise "coverage" do
+  gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/coverage.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Only run linter on latest Ruby version (but, in support of oldest supported Ruby version)
+appraise "style" do
+  gem "mutex_m", "~> 0.2"
+  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/style.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
