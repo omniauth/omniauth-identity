@@ -55,7 +55,7 @@ jobs:
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal: "ar-7-2"
+            appraisal: "ar-7-1"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
