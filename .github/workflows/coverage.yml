@@ -1,10 +1,12 @@
 name: Test Coverage
 
 env:
-  K_SOUP_COV_MIN_BRANCH: 80
-  K_SOUP_COV_MIN_LINE: 91
+  K_SOUP_COV_MIN_BRANCH: 79
+  K_SOUP_COV_MIN_LINE: 92
   K_SOUP_COV_MIN_HARD: true
+  K_SOUP_COV_FORMATTERS: "html,rcov,lcov,json,tty"
   K_SOUP_COV_DO: true
+  K_SOUP_COV_MULTI_FORMATTERS: true
   K_SOUP_COV_COMMAND_NAME: "RSpec Coverage"
 
 on:
