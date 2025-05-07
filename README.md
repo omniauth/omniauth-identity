@@ -89,11 +89,17 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
 
 ## 🔧 Compatibility
 
-This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of Nov 2024, version 3.1.
+This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of May 2025, version 3.1.
 
 * Latest released version of omniauth, v2+
-* Tested in CI against Ruby 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, 3.4, ruby-head, truffleruby-head
-* Probably also compatible with Ruby 2.4 and jruby-head
+* Tested in CI against:
+  * Ruby 2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, 3.4, ruby-head
+  * JRuby 9.2, 9.3, 9.4, 10.0, jruby-head
+  * ActiveRecord 5.2, 6.0, 6.1, 7.0, 7.1, 7.2, 8.0
+  * sqlite3 1.2, 1.3, 1.4, 1.5, 1.6, 1.7
+  * couch_potato 1.17
+  * mongoid 7.3, 7.4, 8.1, 9.0
+  * sequel 5.92+
 * At least 5 different database ORM adapters, which connect to 15 different database clients!
 
 | Databases                                                                                                 | Adapter Libraries                                                        |
