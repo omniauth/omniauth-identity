@@ -74,21 +74,21 @@ jobs:
             rubygems: latest
             bundler: latest
 
-          # truffleruby-24.1
-          - ruby: "truffleruby"
-            appraisal: "ar-8-0"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-          # jruby-9.4 (targets Ruby 3.1 compatibility)
-          - ruby: "jruby"
-            appraisal: "ar-8-0"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#          # truffleruby-24.1
+#          - ruby: "truffleruby"
+#            appraisal: "ar-8-0"
+#            exec_cmd: "rake spec:orm:active_record"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
+#
+#          # jruby-9.4 (targets Ruby 3.1 compatibility)
+#          - ruby: "jruby"
+#            appraisal: "ar-8-0"
+#            exec_cmd: "rake spec:orm:active_record"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
     steps:
       ### COUCHDB

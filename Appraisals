@@ -3,27 +3,6 @@
 # Compat: Ruby >= 2.2.2
 # Test Matrix:
 #   - Ruby 2.4
-appraise "ar-5-0" do
-  gem "activerecord", "~> 5.0.7.2"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-  gem "sqlite3", "~> 1.3"
-end
-
-# Compat: Ruby >= 2.2.2
-# Test Matrix:
-#   - Ruby 2.4
-#   - Ruby 2.5
-appraise "ar-5-1" do
-  gem "activerecord", "~> 5.1.7"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-  gem "sqlite3", "~> 1.3"
-end
-
-# Compat: Ruby >= 2.2.2
-# Test Matrix:
-#   - Ruby 2.4
 #   - Ruby 2.5
 #   - Ruby 2.6
 #   - Ruby 2.7
@@ -54,7 +33,7 @@ end
 #   - Ruby 3.0
 appraise "ar-6-1" do
   gem "activerecord", "~> 6.1.7.10"
-  gem "mutex_m", "~> 0.2"
+  gem "mutex_m", "~> 0.1"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4"
 end
