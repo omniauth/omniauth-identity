@@ -73,13 +73,13 @@ appraise "ar-7-1" do
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.5"
   platforms :jruby do
-    # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem 'jdbc-sqlite3',                         # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-mysql',                           # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-postgres',                        # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbc-adapter", "~> 71.0"            # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcsqlite3-adapter", "~> 71.0"     # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcmysql-adapter", "~> 71.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
   end
 end
 
