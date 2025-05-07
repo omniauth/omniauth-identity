@@ -6,6 +6,7 @@ gem "appraisal", branch: "galtzo", git: "https://github.com/pboling/appraisal"
 gem "mongoid", "~> 7.3", ">= 7.3.5"
 gem "mongoid-rspec", "~> 4.1"
 gem "mutex_m", "~> 0.1"
+gem "sqlite3", ">= 1"
 gem "stringio", ">= 0.0.2"
 
 gemspec path: "../"

@@ -5,6 +5,7 @@ source "https://rubygems.org"
 gem "appraisal", branch: "galtzo", git: "https://github.com/pboling/appraisal"
 gem "couch_potato", "~> 1.17"
 gem "mutex_m", "~> 0.1"
+gem "sqlite3", ">= 1"
 gem "stringio", ">= 0.0.2"
 gem "ostruct", "~> 0.1"
 

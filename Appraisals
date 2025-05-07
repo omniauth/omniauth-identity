@@ -137,6 +137,7 @@ end
 appraise "couch-1.17" do
   gem "couch_potato", "~> 1.17"
   gem "mutex_m", "~> 0.1"
+  gem "sqlite3", ">= 1"
   gem "stringio", ">= 0.0.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -150,6 +151,7 @@ appraise "mongoid-7.3" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.1"
+  gem "sqlite3", ">= 1"
   gem "stringio", ">= 0.0.2"
 end
 
@@ -162,6 +164,7 @@ appraise "mongoid-7.4" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.2"
+  gem "sqlite3", ">= 1"
   gem "stringio", "~> 3.0"
 end
 
@@ -177,6 +180,7 @@ appraise "mongoid-8.1" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
+  gem "sqlite3", ">= 1"
   gem "stringio", "~> 3.0"
 end
 
@@ -194,6 +198,7 @@ appraise "mongoid-9.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
+  gem "sqlite3", ">= 1"
   gem "stringio", "~> 3.1", ">= 3.1.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
