@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
-# Get the GEMFILE_VERSION without *require* "my_gem/version", for code coverage accuracy
-# See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-825171399
-load "lib/omniauth/identity/version.rb"
-gem_version = OmniAuth::Identity::Version::VERSION
-OmniAuth::Identity::Version.send(:remove_const, :VERSION)
+gem_version =
+  if RUBY_VERSION >= "3.1"
+    # Loading version into an anonymous module allows version.rb to get code coverage from SimpleCov!
+    # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
+    Module.new.tap { |mod| Kernel.load("lib/omniauth/identity/version.rb", mod) }::OmniAuth::Identity::Version::VERSION
+  else
+    # TODO: Remove this hack once support for Ruby 3.0 and below is removed
+    Kernel.load("lib/omniauth/identity/version.rb")
+    g_ver = OmniAuth::Identity::Version::VERSION
+    OmniAuth::Identity::Version.send(:remove_const, :VERSION)
+    g_ver
+  end
 
 Gem::Specification.new do |spec|
   spec.name = "omniauth-identity"
@@ -44,9 +51,13 @@ Gem::Specification.new do |spec|
   spec.metadata["funding_uri"] = "https://liberapay.com/pboling"
   spec.metadata["rubygems_mfa_required"] = "true"
 
+  # Specify which files should be added to the gem when it is released.
   spec.files = Dir[
     # Splats (alphabetical)
-    "lib/**/*",
+    "lib/**/*.rb",
+  ]
+  # Automatically included with gem package, no need to list again in files.
+  spec.extra_rdoc_files = Dir[
     # Files (alphabetical)
     "CHANGELOG.md",
     "CODE_OF_CONDUCT.md",
@@ -54,6 +65,15 @@ Gem::Specification.new do |spec|
     "LICENSE.txt",
     "README.md",
     "SECURITY.md",
+  ]
+  spec.rdoc_options += [
+    "--title",
+    "#{spec.name} - #{spec.summary}",
+    "--main",
+    "README.md",
+    "--line-numbers",
+    "--inline-source",
+    "--quiet",
   ]
   spec.bindir = "exe"
   spec.require_paths = ["lib"]
