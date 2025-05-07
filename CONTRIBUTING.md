@@ -49,6 +49,7 @@ Please upvote the PR for `eval_gemfile` [support][🚎appraisal-eval-gemfile-pr]
 ```shell
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
+bundle exec rake rubocop_gradual:autocorrect
 ```
 
 When adding an appraisal to CI check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
