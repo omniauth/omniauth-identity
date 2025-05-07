@@ -71,7 +71,7 @@ appraise "ar-7-1" do
   gem "activerecord", "~> 7.1.5"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.5"
+  gem "sqlite3", "~> 1.5", platforms: [:ruby]
   platforms :jruby do
     # gem 'jdbc-sqlite3',                         # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
     # gem 'jdbc-mysql',                           # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'

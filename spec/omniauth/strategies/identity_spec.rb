@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "sqlite3"
 require "active_record"
 require "anonymous_active_record"
 
@@ -12,11 +11,12 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
   let(:identity_hash) { env_hash["omniauth.identity"] }
   let(:identity_options) { {} }
   let(:app_options) { {} }
+  let(:is_java) { RUBY_PLATFORM == "java" }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
       parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
       columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-      connection_params: {adapter: "sqlite3", encoding: "utf8", database: ":memory:"},
+      connection_params: {adapter: is_java ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
     ) do
       auth_key :email
       def balloon
