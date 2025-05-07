@@ -424,9 +424,23 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
 
 ### © Copyright
 
-* Copyright (c) 2021, 2024 [Peter H. Boling][peterboling], and OmniAuth-Identity Maintainers
-* Copyright (c) 2020 [Peter H. Boling][peterboling], Andrew Roberts, and Jellybooks Ltd.
-* Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
+<ul>
+    <li>
+        Copyright (c) 2021, 2024 - 2025 Peter H. Boling, of
+        <a href="https://railsbling.com">
+            RailsBling.com
+            <picture>
+                <img alt="Rails Bling" height="20" src="https://railsbling.com/images/logos/RailsBling-TrainLogo.svg" />
+            </picture>
+        </a>, and OmniAuth::Identity Contributors
+    </li>
+    <li>
+        Copyright (c) 2020 Peter H. Boling, Andrew Roberts, and Jellybooks Ltd.
+    </li>
+    <li>
+        Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
+    </li>
+</ul>
 
 ## 🤑 One more thing
 
