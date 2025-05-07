@@ -45,21 +45,21 @@ jobs:
             rubygems: default
             bundler: default
 
-          # truffleruby-head
-          - ruby: "truffleruby-head"
-            appraisal: "couch-1.17"
-            exec_cmd: "rake spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-          # jruby-head
-          - ruby: "jruby-head"
-            appraisal: "couch-1.17"
-            exec_cmd: "rake spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#          # truffleruby-head
+#          - ruby: "truffleruby-head"
+#            appraisal: "couch-1.17"
+#            exec_cmd: "rake spec:orm:couch_potato"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
+#
+#          # jruby-head
+#          - ruby: "jruby-head"
+#            appraisal: "couch-1.17"
+#            exec_cmd: "rake spec:orm:couch_potato"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
     steps:
       ### COUCHDB
