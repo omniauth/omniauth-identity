@@ -44,8 +44,8 @@ appraise "ar-6-1" do
     # gem 'jdbc-postgres',                        # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
     gem "activerecord-jdbc-adapter", "~> 61.0"            # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
     gem "activerecord-jdbcsqlite3-adapter", "~> 61.0"     # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcmysql-adapter", "~> 61.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcpostgresql-adapter", "~> 61.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcmysql-adapter", "~> 61.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcpostgresql-adapter", "~> 61.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
   end
 end
 
@@ -91,8 +91,8 @@ appraise "ar-7-2" do
     # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
   end
 end
 
@@ -116,8 +116,8 @@ appraise "ar-8-0" do
     # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
   end
 end
 
