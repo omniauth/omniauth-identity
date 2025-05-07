@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Removed
 
+## [3.1.2] - 2024-11-18 ([tag][3.1.1t])
+- COVERAGE:  92.00% -- 345/375 lines in 15 files
+- BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files
+### Added
+- 20-year cert
+### Changed
+- CoC 2.1
+
 ## [3.1.1] - 2024-11-18 ([tag][3.1.1t])
 - COVERAGE:  92.00% -- 345/375 lines in 15 files
 - BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files

@@ -29,6 +29,7 @@ gem "mongoid", ">= 7", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
 gem "nobrainer", "~> 0.44", require: false
 gem "sequel", "~> 5.86", require: false
+gem "sqlite3", ">= 1", require: false
 
 ### Local dev tools
 gem "growl"

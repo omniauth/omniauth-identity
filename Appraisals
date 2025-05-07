@@ -27,6 +27,8 @@ end
 
 # Compat: Ruby >= 2.5
 # Test Matrix:
+#   - JRuby 9.2
+#   - JRuby 9.3
 #   - Ruby 2.5
 #   - Ruby 2.6
 #   - Ruby 2.7
@@ -36,6 +38,15 @@ appraise "ar-6-1" do
   gem "mutex_m", "~> 0.1"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4"
+  platforms :jruby do
+    # gem 'jdbc-sqlite3',                         # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-mysql',                           # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-postgres',                        # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbc-adapter", "~> 61.0"            # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcsqlite3-adapter", "~> 61.0"     # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcmysql-adapter", "~> 61.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcpostgresql-adapter", "~> 61.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+  end
 end
 
 # Compat: Ruby >= 2.7
@@ -65,6 +76,7 @@ end
 
 # Compat: Ruby >= 3.1
 # Test Matrix:
+#   - JRuby 9.4
 #   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
@@ -73,12 +85,23 @@ appraise "ar-7-2" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.6"
+  platforms :jruby do
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+  end
 end
 
 # Compat: Ruby >= 3.2
 # Test Matrix:
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - Ruby 3.4
+#   - JRuby 10.0
 #   - ruby-head
 #   - truffleruby-head
 #   - jruby-head
@@ -86,7 +109,16 @@ appraise "ar-8-0" do
   gem "activerecord", "~> 8.0.0"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
-  gem "sqlite3", ">= 1.7"
+  gem "sqlite3", ">= 1.7", platforms: [:ruby]
+  platforms :jruby do
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+  end
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)

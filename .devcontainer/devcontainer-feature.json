@@ -1,0 +1,7 @@
+{
+  "name": "apt-install-feature",
+  "description": "More packages are needed",
+  "install": {
+    "script": "install.sh"
+  }
+}

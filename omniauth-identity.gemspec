@@ -91,7 +91,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rake", "~> 13")
   spec.add_development_dependency("rspec", "~> 3")
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0", ">= 1.0.6")
-
-  ### ORMs
-  spec.add_development_dependency("sqlite3", ">= 1")
 end
