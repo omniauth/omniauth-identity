@@ -244,6 +244,7 @@ appraise "sequel-5.86" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
+  gem "sqlite3", ">= 1"
 end
 
 # Only run security audit on latest Ruby version
@@ -264,6 +265,7 @@ appraise "coverage" do
   gem "mutex_m", "~> 0.2"
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
   gem "stringio", "~> 3.0"
+  gem "sqlite3", ">= 1.7"
   eval_gemfile "modular/coverage.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
