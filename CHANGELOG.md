@@ -17,8 +17,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 - 20 year signing cert expires 2045-04-29 by @pboling
 - Added CITATION.cff by @pboling
-- Improved documentation
-- Greatly improved spec suite and CI config
+- devcontainer for easier maintenance by @pboling
+- Improved documentation by @pboling
+- Greatly improved spec suite and CI config by @pboling
   - Testing against JRuby 9.2, 9.3, 9.4, 10.0, and head
   - Testing against many more combinations of Databases, ORMs, Rails, and Ruby versions
 ### Changed
