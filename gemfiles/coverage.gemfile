@@ -2,7 +2,13 @@
 
 source "https://rubygems.org"
 
+gem "activerecord", "~> 8.0.0"
+gem "couch_potato", "~> 1.17"
+gem "sequel", "~> 5.86", ">= 5.86.0"
+gem "mongoid", "~> 9.0", ">= 9.0.3"
+gem "mongoid-rspec", "~> 4.2"
 gem "mutex_m", "~> 0.2"
+gem "ostruct", "~> 0.1"
 gem "stringio", "~> 3.0"
 
 gemspec :path => "../"

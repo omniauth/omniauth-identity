@@ -245,7 +245,13 @@ end
 
 # Only run coverage on latest Ruby version
 appraise "coverage" do
+  gem "activerecord", "~> 8.0.0"
+  gem "couch_potato", "~> 1.17"
+  gem "sequel", "~> 5.86", ">= 5.86.0"
+  gem "mongoid", "~> 9.0", ">= 9.0.3"
+  gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
+  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
   gem "stringio", "~> 3.0"
   eval_gemfile "modular/coverage.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
