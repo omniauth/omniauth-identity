@@ -479,7 +479,7 @@ or one of the others at the head of this README.
 [📜src-gh]: https://github.com/omniauth/omniauth-identity
 [📜docs-cr-rd-img]: https://img.shields.io/badge/RubyDoc-Current_Release-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
 [📜docs-head-rd-img]: https://img.shields.io/badge/RubyDoc-HEAD-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
-[📜wiki]: https://gitlab.com/omniauth/omniauth-identity/-/wikis/home
+[📜wiki]: https://github.com/omniauth/omniauth-identity/wiki
 [📜wiki-img]: https://img.shields.io/badge/wiki-examples-943CD2.svg?style=for-the-badge&logo=Wiki&logoColor=white
 [👽dl-rank]: https://rubygems.org/gems/omniauth-identity
 [👽dl-ranki]: https://img.shields.io/gem/rd/omniauth-identity.svg
@@ -584,4 +584,4 @@ or one of the others at the head of this README.
 [🚎yard-current]: http://rubydoc.info/gems/omniauth-identity
 [🚎yard-head]: https://rubydoc.info/github/omniauth/omniauth-identity/main
 [💎stone_checksums]: https://github.com/pboling/stone_checksums
-[💎SHA_checksums]: https://gitlab.com/omniauth/omniauth-identity/-/tree/main/checksums
+[💎SHA_checksums]: https://github.com/omniauth/omniauth-identity/tree/main/checksums
