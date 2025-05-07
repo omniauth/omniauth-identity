@@ -41,6 +41,9 @@
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
+  "omniauth-identity.gemspec:2356021538": [
+    [4, 6, 12, "Gemspec/RubyVersionGlobalsUsage: Do not use `RUBY_VERSION` in gemspec file.", 31296028]
+  ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
     [3, 1, 40, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/model*_spec.rb`.", 1316823397]
   ],
