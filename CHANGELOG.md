@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
+- More documentation by @pboling
 ### Changed
 ### Fixed
 - Set `SKIP_GEM_SIGNING` in env to allow `gem build` without cryptographic signing requirement by @pboling
