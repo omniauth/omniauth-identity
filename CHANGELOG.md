@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 ### Changed
 ### Fixed
+- Set `SKIP_GEM_SIGNING` in env to allow `gem build` without cryptographic signing requirement by @pboling
+  - Useful for linux distros whose package managers sign packages independently
 ### Removed
 
 ## [3.1.2] - 2025-05-07 ([tag][3.1.2t])
