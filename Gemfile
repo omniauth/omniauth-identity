@@ -49,3 +49,8 @@ platform :mri do
   ### Debugging (MRI Only)
   gem "byebug", ">= 11"
 end
+
+# TODO: Remove this once fixed in upstream bson (> 5.0.2)
+# Fix that is only needed on systems with GCC v15+
+# See: https://github.com/mongodb/bson-ruby/pull/355
+gem "bson", github: "pboling/bson-ruby", branch: "master"
