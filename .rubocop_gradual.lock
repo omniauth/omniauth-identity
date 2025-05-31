@@ -2,8 +2,8 @@
   "README.md:4226111870": [
     [207, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
-  "Rakefile:746406378": [
-    [93, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:85 and Rakefile:93.", 2701974006]
+  "Rakefile:2617189060": [
+    [94, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:85 and Rakefile:94.", 2701974006]
   ],
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
@@ -41,7 +41,7 @@
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
-  "omniauth-identity.gemspec:2056491973": [
+  "omniauth-identity.gemspec:1531711988": [
     [4, 6, 12, "Gemspec/RubyVersionGlobalsUsage: Do not use `RUBY_VERSION` in gemspec file.", 31296028]
   ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
