@@ -90,6 +90,7 @@ begin
     spec_orm_sequel
   ])
 rescue LoadError
+  desc("spec task stub")
   task(:spec) do
     warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
@@ -100,7 +101,8 @@ begin
   require "rubocop/lts"
 
   Rubocop::Lts.install_tasks
-  defaults << "rubocop_gradual"
+  # Make autocorrect the default rubocop task
+  defaults << "rubocop_gradual:autocorrect"
 rescue LoadError
   desc("(stub) rubocop_gradual is unavailable")
   task(:rubocop_gradual) do
@@ -114,8 +116,13 @@ begin
 
   YARD::Rake::YardocTask.new(:yard) do |t|
     t.files = [
-      # Splats (alphabetical)
+      # Source Splats (alphabetical)
       "lib/**/*.rb",
+      "-", # source and extra docs are separated by "-"
+      # Extra Files (alphabetical)
+      "*.cff",
+      "*.md",
+      "*.txt",
     ]
   end
   defaults << "yard"
@@ -133,7 +140,7 @@ begin
   Reek::Rake::Task.new do |t|
     t.fail_on_error = true
     t.verbose = false
-    t.source_files = "{spec,spec_ignored,spec_orms,lib}/**/*.rb"
+    t.source_files = "{lib,spec,spec_ignored,spec_orms}/**/*.rb"
   end
   defaults << "reek" unless is_gitlab
 rescue LoadError
