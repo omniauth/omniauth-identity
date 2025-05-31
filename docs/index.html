@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1 id="omniauthidentity"><code>OmniAuth::Identity</code></h1>
+
+<p><a href="https://rubygems.org/gems/omniauth-identity"><img src="https://img.shields.io/gem/v/omniauth-identity.svg" alt="Version"></a><br>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a><br>
+<a href="https://rubygems.org/gems/omniauth-identity"><img src="https://img.shields.io/gem/rd/omniauth-identity.svg" alt="Downloads Rank"></a><br>
+<a href="https://www.codetriage.com/omniauth/omniauth-identity"><img src="https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg" alt="Open Source Helpers"></a><br>
+<a href="https://depfu.com/github/omniauth/omniauth-identity?project_id=22381"><img src="https://badges.depfu.com/badges/6c9b45362951b872127f9e46d39bed76/count.svg" alt="Depfu"></a><br>
+<a href="https://codecov.io/gh/omniauth/omniauth-identity"><img src="https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL" alt="CodeCov Test Coverage"></a><br>
+<a href="https://coveralls.io/github/omniauth/omniauth-identity?branch=main"><img src="https://coveralls.io/repos/github/omniauth/omniauth-identity/badge.svg?branch=main" alt="Coveralls Test Coverage"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml/badge.svg" alt="CI Heads"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/current.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/current.yml/badge.svg" alt="CI Current"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/jruby.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/jruby.yml/badge.svg" alt="CI JRuby"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml/badge.svg" alt="CI Supported"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml/badge.svg" alt="CI Legacy"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml/badge.svg" alt="CI Unsupported"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml/badge.svg" alt="CI Ancient"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/coverage.yml/badge.svg" alt="CI Test Coverage"></a><br>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/style.yml/badge.svg" alt="CI Style"></a></p>
+
+<hr>
+
+<p><a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay" alt="Liberapay Patrons"></a><br>
+<a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a><br>
+<a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-yellow.svg?style=flat" alt="Buy me a coffee"></a><br>
+<a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-yellow.svg" alt="Donate on Polar"></a><br>
+<a href="https://ko-fi.com/O5O86SNP4"><img src="https://img.shields.io/badge/a_more_different_coffee-%E2%9C%93-yellow.svg" alt="Donate to my FLOSS or refugee efforts at ko-fi.com"></a><br>
+<a href="https://patreon.com/galtzo"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Donate to my FLOSS or refugee efforts using Patreon"></a></p>
+
+<p>The <code>omniauth-identity</code> gem provides a way for applications to utilize a<br>
+traditional username/password based authentication system without the need<br>
+to give up the simple authentication flow provided by OmniAuth. Identity<br>
+is designed on purpose to be as featureless as possible: it provides the<br>
+basic construct for user management and then gets out of the way.</p>
+
+<h2 id="-info-you-can-shake-a-stick-at">💡 Info you can shake a stick at</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tokens to Remember</th>
+      <th>
+<a href="https://rubygems.org/gems/omniauth-identity"><img src="https://img.shields.io/badge/name-omniauth--identity-brightgreen.svg?style=flat&amp;logo=rubygems&amp;logoColor=red" alt="Gem name"></a> <a href="https://github.com/omniauth/omniauth-identity"><img src="https://img.shields.io/badge/namespace-OmniAuth%3A%3AIdentity-brightgreen.svg?style=flat&amp;logo=ruby&amp;logoColor=white" alt="Gem namespace"></a>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Works with JRuby</td>
+      <td>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/jruby.yml"><img src="https://img.shields.io/badge/JRuby-9.2-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.2 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/jruby.yml"><img src="https://img.shields.io/badge/JRuby-9.3-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.3 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/jruby.yml"><img src="https://img.shields.io/badge/JRuby-9.4-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.4 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/current.yml"><img src="https://img.shields.io/badge/JRuby-current-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=green" alt="JRuby 10.0 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml"><img src="https://img.shields.io/badge/JRuby-HEAD-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=blue" alt="JRuby HEAD Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Works with MRI Ruby 3</td>
+      <td>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/legacy.yml"><img src="https://img.shields.io/badge/Ruby-3.0-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.0 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.1-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.1 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.2-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.2 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.3-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.3 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/current.yml"><img src="https://img.shields.io/badge/Ruby-current-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=green" alt="Ruby 3.4 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/heads.yml"><img src="https://img.shields.io/badge/Ruby-HEAD-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=blue" alt="Ruby HEAD Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Works with MRI Ruby 2</td>
+      <td>
+<a href="https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml"><img src="https://img.shields.io/badge/Ruby-2.4-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.4 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/ancient.yml"><img src="https://img.shields.io/badge/Ruby-2.5-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.5 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml"><img src="https://img.shields.io/badge/Ruby-2.6-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.6 Compat"></a> <a href="https://github.com/omniauth/omniauth-identity/actions/workflows/unsupported.yml"><img src="https://img.shields.io/badge/Ruby-2.7-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.7 Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Source</td>
+      <td>
+<a href="https://github.com/omniauth/omniauth-identity"><img src="https://img.shields.io/badge/GitHub-238636?style=for-the-badge&amp;logo=Github&amp;logoColor=green" alt="Source on Github.com"></a> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://img.shields.io/badge/KLOC-0.376-FFDD67.svg?style=for-the-badge&amp;logo=YouTube&amp;logoColor=blue" alt="The best SHA: dQw4w9WgXcQ!"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>
+<a href="http://rubydoc.info/gems/omniauth-identity"><img src="https://img.shields.io/badge/RubyDoc-Current_Release-943CD2?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="Current release on RubyDoc.info"></a> <a href="https://rubydoc.info/github/omniauth/omniauth-identity/main"><img src="https://img.shields.io/badge/RubyDoc-HEAD-943CD2?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="HEAD on RubyDoc.info"></a> <a href="http://www.railsbling.com/tags/omniauth-identity"><img src="https://img.shields.io/badge/blog-railsbling-0093D0.svg?style=for-the-badge&amp;logo=rubyonrails&amp;logoColor=orange" alt="BDFL Blog"></a> <a href="https://github.com/omniauth/omniauth-identity/wiki"><img src="https://img.shields.io/badge/wiki-examples-943CD2.svg?style=for-the-badge&amp;logo=Wiki&amp;logoColor=white" alt="Wiki"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Compliance</td>
+      <td>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a> <a href="https://www.ilo.org/declaration/lang--en/index.htm"><img src="https://img.shields.io/badge/ILO_Fundamental_Principles-%E2%9C%93-brightgreen.svg?style=flat" alt="📄ilo-declaration-img"></a> <a href="file.SECURITY.html" title="&lt;img src=&quot;https://img.shields.io/badge/security-policy-brightgreen.svg?style=flat&quot; alt=&quot;Security Policy&quot;&gt;"><img src="https://img.shields.io/badge/security-policy-brightgreen.svg?style=flat" alt="Security Policy"></a> <a href="https://github.com/rubocop-lts/rubocop-lts"><img src="https://img.shields.io/badge/code_style-rubocop--lts-brightgreen.svg?plastic&amp;logo=ruby&amp;logoColor=white" alt="Enforced Code Style"></a> <a href="https://github.com/omniauth/omniauth-identity/security/code-scanning"><img src="https://github.com/omniauth/omniauth-identity/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL"></a> <a href="file.CODE_OF_CONDUCT.html" title="&lt;img src=&quot;https://img.shields.io/badge/Contributor_Covenant-2.1-4baaaa.svg&quot; alt=&quot;Contributor Covenant 2.1&quot;&gt;"><img src="https://img.shields.io/badge/Contributor_Covenant-2.1-4baaaa.svg" alt="Contributor Covenant 2.1"></a> <a href="https://semver.org/spec/v2.0.0.html"><img src="https://img.shields.io/badge/semver-2.0.0-FFDD67.svg?style=flat" alt="SemVer 2.0.0"></a> <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat" alt="Keep-A-Changelog 1.0.0"></a> <a href="https://gitmoji.dev"><img src="https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square" alt="Gitmoji Commits"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Expert 1:1 Support</td>
+      <td>
+<a href="https://www.upwork.com/freelancers/~014942e9b056abdf86?mp_source=share"><img src="https://img.shields.io/badge/UpWork-13544E?style=for-the-badge&amp;logo=Upwork&amp;logoColor=white" alt="Get help from me on Upwork"></a> <code>or</code> <a href="https://www.codementor.io/peterboling?utm_source=github&amp;utm_medium=button&amp;utm_term=peterboling&amp;utm_campaign=github"><img src="https://img.shields.io/badge/CodeMentor-Get_Help-1abc9c?style=for-the-badge&amp;logo=CodeMentor&amp;logoColor=white" alt="Get help from me on Codementor"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Enterprise Support</td>
+      <td>
+<a href="https://tidelift.com/subscription"><img src="https://img.shields.io/badge/Tidelift_and_Sonar-Enterprise_Support-FD3456?style=for-the-badge&amp;logo=sonar&amp;logoColor=white" alt="Get help from me on Tidelift"></a><br>💡Subscribe for support guarantees covering <em>all</em> FLOSS dependencies!<br>💡Tidelift is part of <a href="https://blog.tidelift.com/tidelift-joins-sonar">Sonar</a>!<br>💡Tidelift pays maintainers to maintain the software you depend on!<br>📊<code>@</code>Pointy Haired Boss: An <a href="https://tidelift.com/subscription">enterprise support</a> subscription is “<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">never gonna let you down</a>”, and <em>supports</em> open source maintainers!</td>
+    </tr>
+    <tr>
+      <td>Comrade BDFL 🎖️</td>
+      <td>
+<a href="http://www.linkedin.com/in/peterboling"><img src="https://img.shields.io/badge/PeterBoling-LinkedIn-0B66C2?style=flat&amp;logo=newjapanprowrestling" alt="Follow Me on LinkedIn"></a> <a href="https://ruby.social/@galtzo"><img src="https://img.shields.io/mastodon/follow/109447111526622197?domain=https%3A%2F%2Fruby.social&amp;style=flat&amp;logo=mastodon&amp;label=Ruby%20%40galtzo" alt="Follow Me on Ruby.Social"></a> <a href="https://bsky.app/profile/galtzo.com"><img src="https://img.shields.io/badge/@galtzo.com-0285FF?style=flat&amp;logo=bluesky&amp;logoColor=white" alt="Follow Me on Bluesky"></a> <a href="http://www.railsbling.com/contact"><img src="https://img.shields.io/badge/Contact-BDFL-0093D0.svg?style=flat&amp;logo=rubyonrails&amp;logoColor=red" alt="Contact BDFL"></a> <a href="https://dev.to/galtzo"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=flat&amp;logo=devdotto&amp;logoColor=white" alt="My technical writing"></a>
+</td>
+    </tr>
+    <tr>
+      <td>
+<code>...</code> 💖</td>
+      <td>
+<a href="https://angel.co/u/peter-boling"><img src="https://img.shields.io/badge/peter--boling-orange?style=flat&amp;logo=wellfound" alt="Find Me on WellFound:"></a> <a href="https://www.crunchbase.com/person/peter-boling"><img src="https://img.shields.io/badge/peter--boling-purple?style=flat&amp;logo=crunchbase" alt="Find Me on CrunchBase"></a> <a href="https://linktr.ee/galtzo"><img src="https://img.shields.io/badge/galtzo-purple?style=flat&amp;logo=linktree" alt="My LinkTree"></a> <a href="https://about.me/peter.boling"><img src="https://img.shields.io/badge/about.me-0A0A0A?style=flat&amp;logo=aboutme&amp;logoColor=white" alt="More About Me"></a> <a href="https://codeberg.org/pboling">🧊</a> <a href="https://github.org/pboling">🐙</a>  <a href="https://sr.ht/~galtzo/">🛖</a> <a href="https://gitlab.com/pboling">🧪</a>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-installation">✨ Installation</h2>
+
+<p>Install the gem and add to the application’s Gemfile by executing:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle add omniauth-identity
+</code></pre>
+
+<p>If bundler is not being used to manage dependencies, install the gem by executing:</p>
+
+<pre class="code ruby"><code class="ruby">$ gem install omniauth-identity
+</code></pre>
+
+<h3 id="-secure-installation">🔒 Secure Installation</h3>
+
+<p><code>omniauth-identity</code> is cryptographically signed, and has verifiable <a href="https://github.com/omniauth/omniauth-identity/tree/main/checksums">SHA-256 and SHA-512</a> checksums by<br>
+<a href="https://github.com/pboling/stone_checksums">stone_checksums</a>. Be sure the gem you install hasn’t been tampered with<br>
+by following the instructions below.</p>
+
+<p>Add my public key (if you haven’t already, expires 2045-04-29) as a trusted certificate:</p>
+
+<pre class="code language-shell"><code class="language-shell">gem cert --add &lt;(curl -Ls https://raw.github.com/omniauth/omniauth-identity/main/certs/pboling.pem)
+</code></pre>
+
+<p>You only need to do that once.  Then proceed to install with:</p>
+
+<pre class="code language-shell"><code class="language-shell">gem install omniauth-identity -P MediumSecurity
+</code></pre>
+
+<p>The <code>MediumSecurity</code> trust profile will verify signed gems, but allow the installation of unsigned dependencies.</p>
+
+<p>This is necessary because not all of <code>omniauth-identity</code>’s dependencies are signed, so we cannot use <code>HighSecurity</code>.</p>
+
+<p>If you want to up your security game full-time:</p>
+
+<pre class="code language-shell"><code class="language-shell">bundle config set --global trust-policy MediumSecurity
+</code></pre>
+
+<p>NOTE: Be prepared to track down certs for signed gems and add them the same way you added mine.</p>
+
+<h2 id="-compatibility">🔧 Compatibility</h2>
+
+<p>This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of May 2025, version 3.1.</p>
+
+<ul>
+  <li>Latest released version of omniauth, v2+</li>
+  <li>Tested in CI against:
+    <ul>
+      <li>Ruby 2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2, 3.3, 3.4, ruby-head</li>
+      <li>JRuby 9.2, 9.3, 9.4, 10.0, jruby-head</li>
+      <li>ActiveRecord 5.2, 6.0, 6.1, 7.0, 7.1, 7.2, 8.0</li>
+      <li>sqlite3 1.2, 1.3, 1.4, 1.5, 1.6, 1.7</li>
+      <li>couch_potato 1.17</li>
+      <li>mongoid 7.3, 7.4, 8.1, 9.0</li>
+      <li>sequel 5.92+</li>
+    </ul>
+  </li>
+  <li>At least 5 different database ORM adapters, which connect to 15 different database clients!</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Databases</th>
+      <th>Adapter Libraries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MySQL, MariaDB, PostgreSQL, SQLite</td>
+      <td><a href="https://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></td>
+    </tr>
+    <tr>
+      <td>CouchDB</td>
+      <td><a href="https://github.com/langalex/couch_potato">CouchPotato</a></td>
+    </tr>
+    <tr>
+      <td>MongoDB</td>
+      <td><a href="https://github.com/mongodb/mongoid">Mongoid</a></td>
+    </tr>
+    <tr>
+      <td>RethinkDB</td>
+      <td><a href="http://nobrainer.io/">NoBrainer</a></td>
+    </tr>
+    <tr>
+      <td>ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS</td>
+      <td><a href="http://sequel.jeremyevans.net">Sequel</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-basic-usage">🔧 Basic Usage</h2>
+
+<p>This can be a bit hard to understand the first time. Luckily, Ryan Bates made<br>
+a <a href="http://railscasts.com/episodes/304-omniauth-identity">Railscast</a> about it!</p>
+
+<p>You use <code>omniauth-identity</code> just like you would any other OmniAuth provider: as a<br>
+Rack middleware. In rails, this would be created by an initializer, such as<br>
+<code>config/initializers/omniauth.rb</code>. The basic setup for an email/password authentication would look something like this:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">use OmniAuth::Builder do
+  provider :identity,                 # required: tells OA that the Identity strategy is being used
+    model: Identity,                  # optional: specifies the name of the &quot;Identity&quot; model. Defaults to &quot;Identity&quot;
+    fields: %i[email custom1 custom2] # optional: list of custom fields that are in the model&#39;s table
+end
+</code></pre>
+
+<p>Next, you need to create a model (called <code>Identity</code> by default, or specified<br>
+with <code>:model</code> argument above) that will be able to persist the information<br>
+provided by the user. Luckily for you, there are pre-built models for popular<br>
+ORMs that make this dead simple.</p>
+
+<p>Once you’ve got an <code>Identity</code> persistence model and the strategy up and<br>
+running, you can point users to <code>/auth/identity</code> and it will request<br>
+that they log in or give them the opportunity to sign up for an account.<br>
+Once they have authenticated with their identity, OmniAuth will call<br>
+through to <code>/auth/identity/callback</code> with the same kinds of information<br>
+it would have had the user authenticated through an external provider.</p>
+
+<p><strong>Note:</strong> OmniAuth Identity is different from many other user authentication<br>
+systems in that it is <em>not</em> built to store authentication information in your primary<br>
+<code>User</code> model. Instead, the <code>Identity</code> model should be <strong>associated</strong> with your<br>
+<code>User</code> model giving you maximum flexibility to include other authentication<br>
+strategies such as Facebook, Twitter, etc.</p>
+
+<h3 id="activerecord">ActiveRecord</h3>
+
+<p>Just subclass <code>OmniAuth::Identity::Models::ActiveRecord</code> and provide fields<br>
+in the database for all the fields you are using.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class Identity &lt; OmniAuth::Identity::Models::ActiveRecord
+  auth_key :email    # optional: specifies the field within the model that will be used during the login process
+                     # defaults to email, but may be username, uid, login, etc.
+
+  # Anything else you want!
+end
+</code></pre>
+
+<h3 id="sequel">Sequel</h3>
+
+<p><a href="http://sequel.jeremyevans.net/">Sequel</a> is an alternative to ActiveRecord.</p>
+
+<p>Just include <code>OmniAuth::Identity::Models::Sequel</code> mixin, and specify<br>
+whatever else you will need.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class SequelTestIdentity &lt; Sequel::Model(:identities)
+  include ::OmniAuth::Identity::Models::Sequel
+  auth_key :email
+  # whatever else you want!
+end
+</code></pre>
+
+<h3 id="mongoid">Mongoid</h3>
+
+<p>Include the <code>OmniAuth::Identity::Models::Mongoid</code> mixin and specify<br>
+fields that you will need.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class Identity
+  include ::Mongoid::Document
+  include ::OmniAuth::Identity::Models::Mongoid
+
+  field :email, type: String
+  field :name, type: String
+  field :password_digest, type: String
+end
+</code></pre>
+
+<h3 id="couchpotato">CouchPotato</h3>
+
+<p>Include the <code>OmniAuth::Identity::Models::CouchPotatoModule</code> mixin and specify<br>
+fields that you will need.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class Identity
+  # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
+  include ::CouchPotato::Persistence
+  include ::OmniAuth::Identity::Models::CouchPotatoModule
+
+  property :email
+  property :password_digest
+
+  def self.where(search_hash)
+    CouchPotato.database.view(Identity.by_email(key: search_hash))
+  end
+
+  view :by_email, key: :email
+end
+</code></pre>
+
+<h3 id="nobrainer">NoBrainer</h3>
+
+<p><a href="http://nobrainer.io/">NoBrainer</a> is an ORM for <a href="https://rethinkdb.com/">RethinkDB</a>.</p>
+
+<p>Include the <code>OmniAuth::Identity::Models::NoBrainer</code> mixin and specify<br>
+fields that you will need.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class Identity
+  include ::NoBrainer::Document
+  include ::OmniAuth::Identity::Models::NoBrainer
+
+  auth_key :email
+end
+</code></pre>
+
+<h3 id="ruby-object-mapper">Ruby Object Mapper</h3>
+
+<p>Would love to add a mixin for the <a href="https://rom-rb.org/">Ruby Object Mapper (ROM)</a> if anyone wants to work on it!</p>
+
+<h2 id="custom-auth-model">Custom Auth Model</h2>
+
+<p>To use a class other than the default, specify the <tt>:model</tt> option to a<br>
+different class.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">use OmniAuth::Builder do
+  provider :identity, fields: [:email], model: MyCustomClass
+end
+</code></pre>
+
+<p>NOTE: In the above example, <code>MyCustomClass</code> must have a class method called <code>auth_key</code> that returns<br>
+the default (<code>email</code>) or custom <code>auth_key</code> to use.</p>
+
+<h3 id="customizing-registration-failure">Customizing Registration Failure</h3>
+
+<p>To use your own custom registration form, create a form that POSTs to<br>
+<code>/auth/identity/register</code> with <code>password</code>, <code>password_confirmation</code>, and your<br>
+other fields.</p>
+
+<pre class="code language-erb"><code class="language-erb">&lt;%= form_tag &#39;/auth/identity/register&#39; do |f| %&gt;
+  &lt;h1&gt;Create an Account&lt;/h1&gt;
+  &lt;%= text_field_tag :email %&gt;
+  &lt;%= password_field_tag :password %&gt;
+  &lt;%= password_field_tag :password_confirmation %&gt;
+  &lt;%= submit_tag %&gt;
+&lt;% end %&gt;
+</code></pre>
+
+<p>Beware not to nest your form parameters within a namespace. This strategy<br>
+looks for the form parameters at the top level of the post params. If you are<br>
+using <a href="https://github.com/plataformatec/simple_form">simple_form</a>, then you<br>
+can avoid the params nesting by specifying <code>:input_html</code>.</p>
+
+<pre class="code language-erb"><code class="language-erb">&lt;%= simple_form_for @identity, :url =&gt; &#39;/auth/identity/register&#39; do |f| %&gt;
+  &lt;h1&gt;Create an Account&lt;/h1&gt;
+  &lt;%# specify :input_html to avoid params nesting %&gt;
+  &lt;%= f.input :email, :input_html =&gt; {:name =&gt; &#39;email&#39;} %&gt;
+  &lt;%= f.input :password, :as =&gt; &#39;password&#39;, :input_html =&gt; {:name =&gt; &#39;password&#39;} %&gt;
+  &lt;%= f.input :password_confirmation, :label =&gt; &quot;Confirm Password&quot;, :as =&gt; &#39;password&#39;, :input_html =&gt; {:name =&gt; &#39;password_confirmation&#39;} %&gt;
+  &lt;button type=&#39;submit&#39;&gt;Sign Up&lt;/button&gt;
+&lt;% end %&gt;
+</code></pre>
+
+<p>Next you’ll need to let OmniAuth know what action to call when a registration<br>
+fails. In your OmniAuth configuration, specify any valid rack endpoint in the<br>
+<code>:on_failed_registration</code> option.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">use OmniAuth::Builder do
+  provider :identity,
+    fields: [:email],
+    on_failed_registration: UsersController.action(:new)
+end
+</code></pre>
+
+<p>For more information on rack endpoints, check out <a href="http://library.edgecase.com/Rails/2011/01/04/rails-routing-and-rack-endpoints.html">this<br>
+introduction</a><br>
+and<br>
+<a href="http://rubydoc.info/docs/rails/ActionController/Metal">ActionController::Metal</a></p>
+
+<h3 id="customizing-locate-conditions">Customizing Locate Conditions</h3>
+
+<p>You can customize the way that matching records are found when authenticating.<br>
+For example, for a site with multiple domains, you may wish to scope the search<br>
+within a particular subdomain.  To do so, add :locate_conditions to your config.<br>
+The default value is:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">use OmniAuth::Builder do
+  provider :identity,
+    locate_conditions: -&gt;(req) { {model.auth_key =&gt; req.params[&quot;auth_key&quot;]} }
+    # ...
+end
+</code></pre>
+
+<p><code>locate_conditions</code> takes a <code>Proc</code> object, and must return a <code>Hash</code> object, which will be used<br>
+as the argument to the locate method for your ORM.  The proc is evaluated in the<br>
+callback context, and has access to your <code>Identity</code> model (using <code>model</code>) and receives the request<br>
+object as a parameter.  Note  that <code>model.auth_key</code> defaults to <code>email</code>, but is also configurable.</p>
+
+<p>Note: Be careful when customizing <code>locate_conditions</code>.  The best way to modify the conditions is<br>
+to copy the default value, and then add to the hash.  Removing the default condition will almost<br>
+always break things!</p>
+
+<h3 id="customizing-other-things">Customizing Other Things</h3>
+
+<p>From the code - here are the options we have for you, a couple of which are documented above, and the rest are documented… in the specs we hope!?</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:fields</span><span class='comma'>,</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='tstring_end'>]</span></span>
+
+      <span class='comment'># Primary Feature Switches:
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_registration</span><span class='comma'>,</span> <span class='kw'>true</span>   <span class='comment'># See #other_phase and #request_phase
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_login</span><span class='comma'>,</span> <span class='kw'>true</span>          <span class='comment'># See #other_phase
+</span>
+      <span class='comment'># Customization Options:
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_login</span><span class='comma'>,</span> <span class='kw'>nil</span>               <span class='comment'># See #request_phase
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_validation</span><span class='comma'>,</span> <span class='kw'>nil</span>          <span class='comment'># See #registration_phase
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_registration</span><span class='comma'>,</span> <span class='kw'>nil</span>        <span class='comment'># See #registration_phase
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_failed_registration</span><span class='comma'>,</span> <span class='kw'>nil</span> <span class='comment'># See #registration_phase
+</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:locate_conditions</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='rparen'>)</span> <span class='tlambeg'>{</span> <span class='lbrace'>{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>auth_key</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
+</code></pre>
+
+<p>Please contribute some documentation if you have the gumption!  The maintainer’s time is limited, and sometimes the authors of PRs with new options don’t update the <em>this</em> readme. 😭</p>
+
+<h2 id="-security">🔐 Security</h2>
+
+<p>See <a href="file.SECURITY.html" title="SECURITY.md">SECURITY.md</a>.</p>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<p>If you need some ideas of where to help, you could work on adding more code coverage,<br>
+or if it is already 💯 (see <a href="#code-coverage">below</a>) then check <a href="https://github.com/omniauth/omniauth-identity/issues">issues</a>, or <a href="https://github.com/omniauth/omniauth-identity/pulls">PRs</a>,<br>
+or use the gem and think about how it could be better.</p>
+
+<p>We <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat" alt="Keep A Changelog"></a> so if you make changes, remember to update it.</p>
+
+<p>See <a href="file.CONTRIBUTING.html" title="CONTRIBUTING.md">CONTRIBUTING.md</a> for more detailed instructions.</p>
+
+<h3 id="code-coverage">Code Coverage</h3>
+
+<p><a href="https://codecov.io/gh/omniauth/omniauth-identity"><img src="https://codecov.io/gh/omniauth/omniauth-identity/graphs/tree.svg?token=cc6UdZCpAL" alt="Coverage Graph"></a></p>
+
+<h3 id="-code-of-conduct">🪇 Code of Conduct</h3>
+
+<p>Everyone interacting in this project’s codebases, issue trackers,<br>
+chat rooms and mailing lists is expected to follow the <a href="file.CODE_OF_CONDUCT.html" title="&lt;img src=&quot;https://img.shields.io/badge/Contributor_Covenant-2.1-4baaaa.svg&quot; alt=&quot;Contributor Covenant 2.1&quot;&gt;"><img src="https://img.shields.io/badge/Contributor_Covenant-2.1-4baaaa.svg" alt="Contributor Covenant 2.1"></a>.</p>
+
+<h2 id="-contributors">🌈 Contributors</h2>
+
+<p><a href="https://github.com/omniauth/omniauth-identity/graphs/contributors"><img src="https://contrib.rocks/image?repo=omniauth/omniauth-identity" alt="Contributors"></a></p>
+
+<p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
+
+<h2 id="️-star-history">⭐️ Star History</h2>
+
+<p><a href="https://star-history.com/#omniauth/omniauth-identity&amp;Date"></a></p>
+<picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&amp;type=Date&amp;theme=dark"></source>
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&amp;type=Date"></source>
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&amp;type=Date">
+ </picture>
+<p>&lt;/a&gt;</p>
+
+<h2 id="-versioning">📌 Versioning</h2>
+
+<p>This Library adheres to <a href="https://semver.org/spec/v2.0.0.html"><img src="https://img.shields.io/badge/semver-2.0.0-FFDD67.svg?style=flat" alt="Semantic Versioning 2.0.0"></a>.<br>
+Violations of this scheme should be reported as bugs.<br>
+Specifically, if a minor or patch version is released that breaks backward compatibility,<br>
+a new version should be immediately released that restores compatibility.<br>
+Breaking changes to the public API will only be introduced with new major versions.</p>
+
+<h3 id="-is-platform-support-part-of-the-public-api">📌 Is “Platform Support” part of the public API?</h3>
+
+<p>Yes.  But I’m obligated to include notes…</p>
+
+<p>SemVer should, but doesn’t explicitly, say that dropping support for specific Platforms<br>
+is a <em>breaking change</em> to an API.<br>
+It is obvious to many, but not all, and since the spec is silent, the bike shedding is endless.</p>
+
+<blockquote>
+  <p>dropping support for a platform is both obviously and objectively a breaking change</p>
+</blockquote>
+
+<ul>
+  <li>Jordan Harband (@ljharb, maintainer of SemVer) <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">in SemVer issue 716</a>
+</li>
+</ul>
+
+<p>To get a better understanding of how SemVer is intended to work over a project’s lifetime,<br>
+read this article from the creator of SemVer:</p>
+
+<ul>
+  <li><a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">“Major Version Numbers are Not Sacred”</a></li>
+</ul>
+
+<p>As a result of this policy, and the interpretive lens used by the maintainer,<br>
+you can (and should) specify a dependency on these libraries using<br>
+the <a href="http://guides.rubygems.org/patterns/#pessimistic-version-constraint">Pessimistic Version Constraint</a> with two digits of precision.</p>
+
+<p>For example:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">spec.add_dependency(&quot;omniauth-identity&quot;, &quot;~&gt; 3.1&quot;)
+</code></pre>
+
+<p>See <a href="file.CHANGELOG.html" title="CHANGELOG.md">CHANGELOG.md</a> for list of releases.</p>
+
+<h2 id="-license">📄 License</h2>
+
+<p>The gem is available as open source under the terms of<br>
+the <a href="file.LICENSE.html" title="MIT License">MIT License</a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>.<br>
+See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the official <a href="https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year">Copyright Notice</a>.</p>
+
+<h3 id="-copyright">© Copyright</h3>
+
+<ul>
+    <li>
+        Copyright (c) 2021, 2024 - 2025 Peter H. Boling, of
+        <a href="https://railsbling.com">
+            RailsBling.com
+            <picture>
+                <img alt="Rails Bling" height="20" src="https://railsbling.com/images/logos/RailsBling-TrainLogo.svg">
+            </picture>
+        </a>, and OmniAuth::Identity Contributors
+    </li>
+    <li>
+        Copyright (c) 2020 Peter H. Boling, Andrew Roberts, and Jellybooks Ltd.
+    </li>
+    <li>
+        Copyright (c) 2010-2015 Michael Bleigh, and Intridea, Inc.
+    </li>
+</ul>
+
+<h2 id="-one-more-thing">🤑 One more thing</h2>
+
+<p>You made it to the bottom of the page,<br>
+so perhaps you’ll indulge me for another 20 seconds.<br>
+I maintain many dozens of gems, including this one,<br>
+because I want Ruby to be a great place for people to solve problems, big and small.<br>
+Please consider supporting my efforts via the giant yellow link below,<br>
+or one of the others at the head of this README.</p>
+
+<p><a href="https://www.buymeacoffee.com/pboling"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&amp;emoji=&amp;slug=pboling&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;coffee_colour=ffffff" alt="Buy me a latte"></a></p>
+
+</div></div>
+
+      <div id="footer">
+  Generated on Sat May 31 08:37:21 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.4.4).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: OmniAuth::Identity::Model::ClassMethods
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "OmniAuth::Identity::Model::ClassMethods";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: OmniAuth::Identity::Model::ClassMethods
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/omniauth/identity/model.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#auth_key-instance_method" title="#auth_key (instance method)">#<strong>auth_key</strong>(method = false)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Used to set or retrieve the method that will be used to get and set the user-supplied authentication key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authenticate-instance_method" title="#authenticate (instance method)">#<strong>authenticate</strong>(conditions, password)  &#x21d2; Model, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Authenticate a user with the given key and password.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locate-instance_method" title="#locate (instance method)">#<strong>locate</strong>(_key)  &#x21d2; Model </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Locate an identity given its unique login key.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="auth_key-instance_method">
+  
+    #<strong>auth_key</strong>(method = false)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Used to set or retrieve the method that will be used to get<br />
+and set the user-supplied authentication key.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The method name.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_auth_key'>auth_key</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='ivar'>@auth_key</span> <span class='op'>=</span> <span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>unless</span> <span class='id identifier rubyid_method'>method</span> <span class='op'>==</span> <span class='kw'>false</span>
+  <span class='ivar'>@auth_key</span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='op'>!</span><span class='kw'>defined?</span><span class='lparen'>(</span><span class='ivar'>@auth_key</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='ivar'>@auth_key</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='ivar'>@auth_key</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="authenticate-instance_method">
+  
+    #<strong>authenticate</strong>(conditions, password)  &#x21d2; <tt><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Authenticate a user with the given key and password.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>conditions</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The unique login key provided for a given identity.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The presumed password for the identity.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></tt>, <tt>false</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>An instance of the identity model class.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_instance'>instance</span> <span class='op'>=</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_instance'>instance</span>
+
+  <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="locate-instance_method">
+  
+    #<strong>locate</strong>(_key)  &#x21d2; <tt><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+</div>
+</div>
+<p>Locate an identity given its unique login key.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>_key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The unique login key.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>An instance of the identity model class.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>NotImplementedError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid__key'>_key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat May 31 08:37:21 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.4.4).
+</div>
+
+    </div>
+  </body>
+</html>
