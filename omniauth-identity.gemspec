@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
 gem_version =
-  if RUBY_VERSION >= "3.1"
-    # Loading version into an anonymous module allows version.rb to get code coverage from SimpleCov!
+  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1")
+    # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
     Module.new.tap { |mod| Kernel.load("lib/omniauth/identity/version.rb", mod) }::OmniAuth::Identity::Version::VERSION
   else
-    # TODO: Remove this hack once support for Ruby 3.0 and below is removed
-    Kernel.load("lib/omniauth/identity/version.rb")
-    g_ver = OmniAuth::Identity::Version::VERSION
-    OmniAuth::Identity::Version.send(:remove_const, :VERSION)
-    g_ver
+    require_relative "lib/oauth2/version"
+    OAuth2::Version::VERSION
   end
 
 Gem::Specification.new do |spec|
   spec.name = "omniauth-identity"
   spec.version = gem_version
   spec.authors = ["Peter Boling", "Andrew Roberts", "Michael Bleigh"]
-  spec.email = ["peter.boling@gmail.com"]
+  spec.email = ["floss@galtzo.com"]
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
@@ -43,13 +40,13 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.4"
 
-  spec.metadata["homepage_uri"] = "https://railsbling.com/tags/#{spec.name}/"
+  spec.metadata["homepage_uri"] = "https://#{spec.name}.galtzo.com/"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
   spec.metadata["documentation_uri"] = "https://www.rubydoc.info/gems/#{spec.name}/#{spec.version}"
   spec.metadata["wiki_uri"] = "#{spec.homepage}/wiki"
-  spec.metadata["funding_uri"] = "https://liberapay.com/pboling"
+  spec.metadata["funding_uri"] = "https://github.com/sponsors/pboling"
   spec.metadata["news_uri"] = "https://www.railsbling.com/tags/#{spec.name}"
   spec.metadata["rubygems_mfa_required"] = "true"
 
@@ -82,22 +79,23 @@ Gem::Specification.new do |spec|
     "--inline-source",
     "--quiet",
   ]
-  spec.bindir = "exe"
   spec.require_paths = ["lib"]
+  spec.bindir = "exe"
+  spec.executables = []
 
-  spec.add_dependency("bcrypt", "~> 3.1")
-  spec.add_dependency("mutex_m", "~> 0.1")
-  spec.add_dependency("omniauth", ">= 1")
-  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.8")
+  spec.add_dependency("bcrypt", "~> 3.1")                 # ruby >= 0
+  spec.add_dependency("mutex_m", "~> 0.1")                # ruby >= 0
+  spec.add_dependency("omniauth", ">= 1")                 # ruby >= 0
+  spec.add_dependency("version_gem", ">= 1.1.8", "< 3")   # ruby >= 2.2
 
   ### Testing
-  spec.add_development_dependency("activerecord", ">= 5")
-  spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")
-  spec.add_development_dependency("rack-test", "~> 1")
-  spec.add_development_dependency("rake", "~> 13")
-  spec.add_development_dependency("rspec", "~> 3")
-  spec.add_development_dependency("rspec-block_is_expected", "~> 1.0", ">= 1.0.6")
+  spec.add_development_dependency("activerecord", ">= 5")                           # ruby >= 2.2.2
+  spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4
+  spec.add_development_dependency("rack-test", "~> 1")                              # ruby >= 2.0
+  spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2
+  spec.add_development_dependency("rspec", "~> 3.13")                               # ruby >= 0
+  spec.add_development_dependency("rspec-block_is_expected", "~> 1.0", ">= 1.0.6")  # ruby >= 1.8.7
 
   ### Releasing
-  spec.add_development_dependency("stone_checksums", "~> 1.0")          # ruby >= 2.2
+  spec.add_development_dependency("stone_checksums", "~> 1.0")                      # ruby >= 2.2
 end
