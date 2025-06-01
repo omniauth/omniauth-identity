@@ -14,9 +14,10 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
   - Useful for linux distros whose package managers sign packages independently
 ### Removed
 
-## [3.1.2] - 2025-05-07 ([tag][3.1.2t])
-- COVERAGE:  92.02% -- 346/376 lines in 15 files
-- BRANCH COVERAGE:  79.49% -- 62/78 branches in 15 files
+## [3.1.2] - 2025-05-07
+- TAG: [v3.1.2][3.1.2t]
+- COVERAGE: 92.02% -- 346/376 lines in 15 files
+- BRANCH COVERAGE: 79.49% -- 62/78 branches in 15 files
 ### Added
 - 20 year signing cert expires 2045-04-29 by @pboling
 - Added CITATION.cff by @pboling
@@ -28,9 +29,10 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Changed
 - Upgraded Code of Conduct based on Contributor Covenant v2.1 by @pboling
 
-## [3.1.1] - 2024-11-18 ([tag][3.1.1t])
-- COVERAGE:  92.00% -- 345/375 lines in 15 files
-- BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files
+## [3.1.1] - 2024-11-18
+- TAG: [v3.1.1][3.1.1t]
+- COVERAGE: 92.00% -- 345/375 lines in 15 files
+- BRANCH COVERAGE: 80.26% -- 61/76 branches in 15 files
 - 44.44% documented
 ### Added
 - [PR 130][130] Add SECURITY.md policy by @pboling
@@ -40,9 +42,10 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 [130]: https://github.com/omniauth/omniauth-identity/pull/130
 
-## [3.1.0] - 2024-11-18 ([tag][3.1.0t])
-- COVERAGE:  91.98% -- 344/374 lines in 15 files
-- BRANCH COVERAGE:  80.26% -- 61/76 branches in 15 files
+## [3.1.0] - 2024-11-18
+- TAG: [v3.1.0][3.1.0t]
+- COVERAGE: 91.98% -- 344/374 lines in 15 files
+- BRANCH COVERAGE: 80.26% -- 61/76 branches in 15 files
 - 44.44% documented
 ### Added
 - [PR #123][123] Improve readability in #identity method of OmniAuth::Strategies::Identity by @Xeragus
@@ -66,26 +69,28 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 [122]: https://github.com/omniauth/omniauth-identity/pull/122
 [120]: https://github.com/omniauth/omniauth-identity/pull/120
 
-## [3.0.9] - 2021-06-16 ([tag][3.0.9t])
+## [3.0.9] - 2021-06-16
+- TAG: [v3.0.9][3.0.9t]
 ### Fixed
 - \[Sequel\] Fixes loading the Sequel adapter, issue reported as [#112](https://github.com/omniauth/omniauth-identity/issues/112)
 ### Added
 - 📝 Document the Database adapters and drivers the gem currently works with
 
-## [3.0.8] - 2021-03-24 ([tag][3.0.8t])
+## [3.0.8] - 2021-03-24
+- TAG: [v3.0.8][3.0.8t]
 ### Fixed
 - \[Model\] Fixes 2 issues raised in a comment on PR [#108](https://github.com/omniauth/omniauth-identity/pull/108#issuecomment-804456604)
   - When `options[:on_validation]` is set `new`/`save`/`persisted?` logic is used.
   - When `options[:on_validation]` is not set `create`/`persisted?` logic is used.
 
-## [3.0.7] - 2021-03-23 ([tag][3.0.7t])
+## [3.0.7] - 2021-03-23
+- TAG: [v3.0.7][3.0.7t]
 ### Fixed
 - \[ActiveRecord\] Fixed [#110](https://github.com/omniauth/omniauth-identity/issues/110) which prevented `OmniAuth::Identity::Models::ActiveRecord`-based records from saving.
 - \[CouchPotato\] Fixed `OmniAuth::Identity::Models::CouchPotato`'s `#save`.
 - \[Sequel\] Fixed `OmniAuth::Identity::Models::Sequel`'s `#save`.
 - \[Model\] Only define `::create`, `#save`, and `#persisted?` when not already defined.
 - \[Model\] Restore original `info` functionality which set `name` based on `first_name`, `last_name`, or `nickname`
-
 ### Changed
 - Upgraded to a newer `OmniAuth::Identity::SecurePassword` ripped from [Rails 6-1-stable](https://github.com/rails/rails/blob/6-1-stable/activemodel/lib/active_model/secure_password.rb)
   - Aeons ago the original was ripped from Rails 3.1, and frozen in time.
@@ -100,7 +105,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
   - Mongoid (MongoDB)
   - NoBrainer (RethinkDB)
 
-## [3.0.6] - 2021-03-20 ([tag][3.0.6t])
+## [3.0.6] - 2021-03-20
+- TAG: [v3.0.6][3.0.6t]
 ### Fixed
 - Fix breaking changes introduced by [#108](https://github.com/omniauth/omniauth-identity/pull/108) which prevented `:on_validation` from firing
 ### Added
@@ -111,7 +117,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
   - `:title` defaults to `'Identity Verification'`
   - `:registration_form_title` defaults to `'Register Identity'`
 
-## [3.0.5] - 2021-03-19 ([tag][3.0.5t])
+## [3.0.5] - 2021-03-19
+- TAG: [v3.0.5][3.0.5t]
 ### Fixed
 - Fix breaking changes introduced by [#86's](https://github.com/omniauth/omniauth-identity/pull/86) introduction of `:on_validation`
 ### Added
@@ -120,11 +127,13 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - Refactor `Omniauth::Strategies::Identity.registration_phase` to support `Omniauth::Identity::Model`-inheriting classes that do not define `#save`.
   - This support will be dropped in v4.0.
 
-## [3.0.4] - 2021-02-14 ([tag][3.0.4t])
+## [3.0.4] - 2021-02-14
+- TAG: [v3.0.4][3.0.4t]
 ### Added
 - Add support for [sequel ORM](http://sequel.jeremyevans.net/)
 
-## [3.0.3] - 2021-02-14 ([tag][3.0.3t])
+## [3.0.3] - 2021-02-14
+- TAG: [v3.0.3][3.0.3t]
 ### Added
 - Add option `:on_validation`, which can be used to add a Captcha
   - See [example here](https://github.com/omniauth/omniauth-identity/pull/86#issue-63225122)
@@ -133,7 +142,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Removed
 - ruby-head build... simply too slow
 
-## [3.0.2] - 2021-02-14 ([tag][3.0.2t])
+## [3.0.2] - 2021-02-14
+- TAG: [v3.0.2][3.0.2t]
 ### Fixed
 - Github Actions CI Build for Ruby 2.4, 3.0 and ruby-head
 - Updated copyright
@@ -141,11 +151,13 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - Added Code Climate "Quality"
 - Updated Readme
 
-## [3.0.1] - 2021-02-14 ([tag][3.0.1t])
+## [3.0.1] - 2021-02-14
+- TAG: [v3.0.1][3.0.1t]
 ### Fixed
 - Github Actions CI Build for various Rubies
 
-## [3.0.0] - 2021-02-13 ([tag][3.0.0t])
+## [3.0.0] - 2021-02-13
+- TAG: [v3.0.0][3.0.0t]
 ### Added
 - Compatibility with Ruby 3
 - Add option `:enable_login` to bypass OmniAuth disabling of GET method (default `true`)
@@ -162,7 +174,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - Support for DataMapper, which died long ago.
 - Unwanted git artifacts
 
-## [2.0.0] - 2020-09-01 ([tag][2.0.0t])
+## [2.0.0] - 2020-09-01
+- TAG: [v2.0.0][2.0.0t]
 ### Added
 - CHANGELOG to maintain a history of changes.
 - Include mongoid-rspec gem.
