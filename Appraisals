@@ -9,7 +9,7 @@
 appraise "ar_head" do
   gem "mutex_m", ">= 0.2"
   gem "stringio", ">= 3.0"
-  eval_gemfile("modular/ar_heads.gemfile")
+  eval_gemfile "modular/ar_heads.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -17,7 +17,7 @@ end
 appraise "jruby_head" do
   gem "mutex_m", ">= 0.2"
   gem "stringio", ">= 3.0"
-  eval_gemfile("modular/jruby_heads.gemfile")
+  eval_gemfile "modular/jruby_heads.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
