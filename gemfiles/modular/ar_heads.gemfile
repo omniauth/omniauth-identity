@@ -1,0 +1,2 @@
+gem "activerecord", github: "rails/activerecord", branch: "main"
+gem "sqlite3", github: "sqlite3/sqlite3", branch: "master"

@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+# Test against HEAD of runtime dependencies so we can proactively file bugs
+
+# Ruby >= 2.2
+gem "omniauth", github: "omniauth/omniauth", branch: "master"
+
+# Ruby >= 2.2
+gem "version_gem", github: "oauth-xx/version_gem", branch: "main"
+
+# Ruby >= 2.5 (dependency of omniauth)
+gem "logger", github: "ruby/logger", branch: "master"

@@ -1,4 +1,5 @@
-name: Heads
+# Targets the evergreen latest release of ruby, truffleruby, and jruby
+name: Current (Adapters)
 
 permissions:
   contents: read
@@ -26,47 +27,35 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
-      fail-fast: true
       matrix:
         include:
-          # NOTE: Heads use default rubygems / bundler; their defaults are custom, unreleased, and from the future!
-          # ruby-head
-          - ruby: "ruby-head"
-            appraisal: "ar-8-0"
-            exec_cmd: "rake spec:orm:active_record"
+          - ruby: "3.4"
+            appraisal: "mongoid-8.1-r3"
+            exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: latest
+            bundler: latest
 
-          - ruby: "ruby-head"
-            appraisal: "ar-head"
-            exec_cmd: "rake spec:orm:active_record"
+          - ruby: "3.4"
+            appraisal: "mongoid-9.0-r3"
+            exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: latest
+            bundler: latest
 
-#          # truffleruby-head
-#          - ruby: "truffleruby-head"
-#            appraisal: "couch-1.17"
-#            exec_cmd: "rake spec:orm:couch_potato"
-#            gemfile: "Appraisal.root"
-#            rubygems: default
-#            bundler: default
-
-          # jruby-head
-          - ruby: "jruby-head"
-            appraisal: "jruby-head"
-            exec_cmd: "rake spec:orm:active_record"
+          - ruby: "3.4"
+            appraisal: "couch-1.17-r3"
+            exec_cmd: "rake spec:orm:couch_potato"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: latest
+            bundler: latest
 
     steps:
       ### COUCHDB
@@ -75,6 +64,13 @@ jobs:
         if: "endsWith(matrix.exec_cmd, 'couch_potato')"
         with:
           couchdb-version: "3.4.1"
+
+      ### MONGODB
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.12.0
+        if: "endsWith(matrix.exec_cmd, 'mongoid')"
+        with:
+          mongodb-version: "8.0"
 
       ### SMOKE-TEST
       - name: Smoke CouchDB

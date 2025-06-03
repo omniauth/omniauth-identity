@@ -50,12 +50,6 @@ jobs:
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
-            appraisal: "mongoid-9.0-r3"
-            exec_cmd: "rake spec:orm:mongoid"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "3.4"
             appraisal: "sequel-5.86-r3"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
