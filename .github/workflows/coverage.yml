@@ -3,6 +3,7 @@ name: Test Coverage
 permissions:
   contents: read
   pull-requests: write
+  id-token: write
 
 env:
   K_SOUP_COV_MIN_BRANCH: 79
@@ -104,6 +105,15 @@ jobs:
           token: ${{secrets.QLTY_COVERAGE_TOKEN}}
           files: coverage/.resultset.json
         continue-on-error: ${{ matrix.experimental != 'false' }}
+
+      # Build will fail here if coverage upload fails
+      #   which will hopefully be noticed for the lack of code coverage comments
+      - name: Upload coverage to CodeCov
+        uses: codecov/codecov-action@v5
+        with:
+          use_oidc: true
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
 
       # Then PR comments
       - name: Code Coverage Summary Report
