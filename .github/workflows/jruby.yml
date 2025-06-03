@@ -1,5 +1,8 @@
 name: JRuby
 
+permissions:
+  contents: read
+
 env:
   K_SOUP_COV_DO: false
 
@@ -14,9 +17,6 @@ on:
       - '*'
   # Allow manually triggering the workflow.
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
@@ -35,25 +35,9 @@ jobs:
     strategy:
       matrix:
         include:
-          # jruby-9.2 (targets Ruby 2.5 compatibility)
-          - ruby: "jruby-9.2"
-            appraisal: "ar-6-1"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-          # jruby-9.3 (targets Ruby 2.6 compatibility)
-          - ruby: "jruby-9.3"
-            appraisal: "ar-6-1"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby-9.4"
-            appraisal: "ar-7-1"
+            appraisal: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default

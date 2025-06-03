@@ -6,8 +6,8 @@ gem_version =
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
     Module.new.tap { |mod| Kernel.load("lib/omniauth/identity/version.rb", mod) }::OmniAuth::Identity::Version::VERSION
   else
-    require_relative "lib/oauth2/version"
-    OAuth2::Version::VERSION
+    require_relative "lib/omniauth/identity/version"
+    OmniAuth::Identity::Version::VERSION
   end
 
 Gem::Specification.new do |spec|

@@ -1,5 +1,8 @@
 name: Heads
 
+permissions:
+  contents: read
+
 env:
   K_SOUP_COV_DO: false
 
@@ -14,9 +17,6 @@ on:
       - '*'
   # Allow manually triggering the workflow.
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
@@ -55,7 +55,7 @@ jobs:
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal: "ar-7-1"
+            appraisal: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default

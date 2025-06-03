@@ -2,10 +2,11 @@
 
 source "https://rubygems.org"
 
-gem "appraisal", branch: "galtzo", git: "https://github.com/pboling/appraisal"
 gem "activerecord", "~> 8.0.0"
 gem "mutex_m", "~> 0.2"
 gem "stringio", "~> 3.0"
-gem "sqlite3", ">= 1.7", platforms: [:ruby]
+gem "sqlite3", ">= 1.7", :platforms => [:ruby]
 
-gemspec path: "../"
+gemspec :path => "../"
+
+eval_gemfile("modular/omniauth_v2_1.gemfile")

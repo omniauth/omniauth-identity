@@ -2,11 +2,12 @@
 
 source "https://rubygems.org"
 
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.0"
+gem "couch_potato", "~> 1.17"
+gem "mutex_m", "~> 0.1"
+gem "sqlite3", ">= 1"
+gem "stringio", ">= 0.0.2"
+gem "ostruct", "~> 0.1"
 
 gemspec :path => "../"
-
-eval_gemfile("modular/style.gemfile")
 
 eval_gemfile("modular/omniauth_v2_1.gemfile")
