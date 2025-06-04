@@ -9,6 +9,8 @@ ENV["MONGOID_ENV"] = "test" # Used by Mongoid
 
 # External library dependencies
 require "version_gem/ruby"
+require "omniauth"
+require "omniauth/version"
 
 # RSpec Configs
 require "config/byebug"

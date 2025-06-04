@@ -1,5 +1,5 @@
 require "logger"
 require "omniauth"
 
-logger = Logger.new(STDOUT)
+logger = Logger.new($stdout)
 OmniAuth.config.logger = logger

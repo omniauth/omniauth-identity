@@ -8,7 +8,7 @@ gem "mutex_m", "~> 0.2"
 gem "sqlite3", ">= 1"
 gem "stringio", "~> 3.0"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/omniauth_v1_9.gemfile")
 

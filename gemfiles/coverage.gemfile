@@ -12,7 +12,7 @@ gem "ostruct", "~> 0.1"
 gem "stringio", "~> 3.0"
 gem "sqlite3", ">= 1.7"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/coverage.gemfile")
 

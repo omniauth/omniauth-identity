@@ -142,7 +142,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
           it "still has registration form" do
             get "/auth/identity"
 
-            expect(last_response.body).to_not eq("HELLO!")
+            expect(last_response.body).not_to eq("HELLO!")
             expect(last_response.body).to include("<form")
             expect(last_response.body).to include("<a")
             # We still get a registration form for some reason in old active record
