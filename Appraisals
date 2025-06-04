@@ -33,7 +33,7 @@ appraise "ar-5-2" do
   gem "activerecord", "~> 5.2.8.1"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
-  gem "sqlite3", "~> 1.3"
+  gem "sqlite3", "~> 1.3", platforms: [:ruby]
   eval_gemfile "modular/omniauth_v1_0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -47,7 +47,7 @@ appraise "ar-6-0" do
   gem "activerecord", "~> 6.0.6.1"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 1.4", platforms: [:ruby]
   eval_gemfile "modular/omniauth_v1_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -105,7 +105,17 @@ appraise "ar-7-0-r2" do
   gem "activerecord", "~> 7.0.8.6"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 1.4", platforms: [:ruby]
+  platforms :jruby do
+    # gem 'jdbc-sqlite3',                         # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-mysql',                           # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-postgres',                        # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbc-adapter", "~> 70.0"            # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcsqlite3-adapter", "~> 70.0"     # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcmysql-adapter", "~> 61.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcpostgresql-adapter", "~> 61.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+  end
+
   eval_gemfile "modular/omniauth_v1_3.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -118,7 +128,17 @@ appraise "ar-7-0-r3" do
   gem "activerecord", "~> 7.0.8.6"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 1.4", platforms: [:ruby]
+  platforms :jruby do
+    # gem 'jdbc-sqlite3',                         # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-mysql',                           # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem 'jdbc-postgres',                        # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbc-adapter", "~> 70.0"            # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    gem "activerecord-jdbcsqlite3-adapter", "~> 70.0"     # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcmysql-adapter", "~> 61.0"       # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+    # gem "activerecord-jdbcpostgresql-adapter", "~> 61.0"  # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
+  end
+
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -249,7 +269,7 @@ end
 appraise "couch-1.17-r3" do
   gem "couch_potato", "~> 1.17"
   gem "mutex_m", "~> 0.1"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", ">= 0.0.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -265,7 +285,7 @@ appraise "mongoid-7.3" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.1"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", ">= 0.0.2"
   eval_gemfile "modular/omniauth_v1_7.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
@@ -281,7 +301,7 @@ appraise "mongoid-7.4" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
   eval_gemfile "modular/omniauth_v1_9.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
@@ -300,7 +320,7 @@ appraise "mongoid-8.1-r2" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
@@ -319,7 +339,7 @@ appraise "mongoid-8.1-r3" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
@@ -333,7 +353,7 @@ appraise "mongoid-9.0-r2-omni1.9" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.1", ">= 3.1.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -349,7 +369,7 @@ appraise "mongoid-9.0-r2-omni2.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.1", ">= 3.1.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -365,7 +385,7 @@ appraise "mongoid-9.0-r2-omni2.1" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.1", ">= 3.1.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -387,7 +407,7 @@ appraise "mongoid-9.0-r3" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   gem "mutex_m", "~> 0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.1", ">= 3.1.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
@@ -434,7 +454,7 @@ appraise "sequel-5.86-r2" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   eval_gemfile "modular/omniauth_v2_0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -452,7 +472,7 @@ appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mutex_m", "~> 0.1"
   gem "stringio", ">= 0.0.2"
-  gem "sqlite3", ">= 1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -476,7 +496,7 @@ appraise "coverage" do
   gem "mutex_m", "~> 0.2"
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
   gem "stringio", "~> 3.0"
-  gem "sqlite3", ">= 1.7"
+  gem "sqlite3", ">= 1.7", platforms: [:ruby]
   eval_gemfile "modular/coverage.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
