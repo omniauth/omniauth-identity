@@ -129,7 +129,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
       context "when registration is enabled" do
         let(:identity_options) { {model: anon_ar, enable_registration: true, enable_login: false} }
 
-        if defined?(ActiveRecord) && (ActiveRecord.gem_version >= Gem::Version.new("7.0.0"))
+        if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
           it "bypasses registration form" do
             get "/auth/identity"
 
@@ -157,7 +157,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
         it "bypasses registration form" do
           get "/auth/identity"
 
-          if defined?(ActiveRecord) && (ActiveRecord.gem_version >= Gem::Version.new("7.0.0"))
+          if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
             expect(last_response.body).to eq("HELLO!")
             expect(last_response.body).not_to include("<form")
             expect(last_response.body).not_to include("<a")
