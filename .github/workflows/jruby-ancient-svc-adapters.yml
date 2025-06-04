@@ -1,4 +1,4 @@
-name: MRI 2.4, 2.5 (Adapters)
+name: JRuby 9.2, 9.3 Svc Adapters
 
 permissions:
   contents: read
@@ -33,35 +33,31 @@ jobs:
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
-      fail-fast: false
       matrix:
         include:
-          #          - ruby: "2.4"
-          #            appraisal: "couch-1.17"
-          #            exec_cmd: "rake spec:orm:couch_potato"
-          #            gemfile: "Appraisal.root"
-          #            rubygems: "3.3.27"
-          #            bundler: "2.3.27"
-          #          - ruby: "2.4"
-          #            appraisal: "mongoid-7.3"
-          #            exec_cmd: "rake spec:orm:mongoid"
-          #            gemfile: "Appraisal.root"
-          #            rubygems: "3.3.27"
-          #            bundler: "2.3.27"
-
-          # Ruby 2.5
-          - ruby: "2.5"
-            appraisal: "couch-1.17-r2"
-            exec_cmd: "rake spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: "3.3.27"
-            bundler: "2.3.27"
-          - ruby: "2.5"
+          # jruby-9.2 (targets Ruby 2.5 compatibility)
+          - ruby: "jruby-9.2"
             appraisal: "mongoid-7.4"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
-            rubygems: "3.3.27"
-            bundler: "2.3.27"
+            rubygems: default
+            bundler: default
+
+          # jruby-9.3 (targets Ruby 2.6 compatibility)
+          - ruby: "jruby-9.3"
+            appraisal: "mongoid-8.1-r2"
+            exec_cmd: "rake spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # jruby-9.3 (targets Ruby 2.6 compatibility)
+          - ruby: "jruby-9.3"
+            appraisal: "couch-1.17-r2"
+            exec_cmd: "rake spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
 
     steps:
       ### COUCHDB

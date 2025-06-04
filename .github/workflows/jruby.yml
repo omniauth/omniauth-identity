@@ -45,6 +45,13 @@ jobs:
 
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby-9.4"
+            appraisal: "ar-7-2-r3"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          - ruby: "jruby-9.4"
             appraisal: "sequel-5.86-r3"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"

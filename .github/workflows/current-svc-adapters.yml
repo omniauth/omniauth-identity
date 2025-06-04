@@ -1,5 +1,5 @@
 # Targets the evergreen latest release of ruby, truffleruby, and jruby
-name: Current (Adapters)
+name: Current Svc Adapters
 
 permissions:
   contents: read
