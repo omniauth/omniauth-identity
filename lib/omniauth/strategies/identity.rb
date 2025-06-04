@@ -52,9 +52,9 @@ module OmniAuth
         elsif options[:enable_login] && on_request_path?
           # OmniAuth, by default, disables "GET" requests for security reasons.
           # This effectively disables omniauth-identity tool's login form feature.
-          # Because it is disabled by default, and because enabling it would desecuritize all the other
-          #   OmniAuth strategies that may be implemented, we do not ask users to modify that setting.
-          # Instead we hook in here in the "other_phase", with a config setting of our own: `enable_login`
+          # Because it is disabled by default, and because enabling it globally would affect the security of all
+          #   other OmniAuth strategies that are present, we do not ask users to modify that setting.
+          # Instead, we use this hook in the "other_phase", with a config setting of our own: `enable_login`
           request_phase
         else
           call_app!

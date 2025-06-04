@@ -447,6 +447,7 @@ DEPENDENCIES
   kettle-soup-cover (~> 1.0, >= 1.0.6)
   kramdown (~> 2.5, >= 2.5.1)
   kramdown-parser-gfm (~> 1.1)
+  logger (>= 1.5.3)
   mongoid (>= 7)
   mongoid-rspec (~> 4.2)
   mutex_m (~> 0.2)

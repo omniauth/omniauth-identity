@@ -40,8 +40,8 @@ jobs:
         include:
           # Ruby 3.4
           - ruby: "ruby"
-            appraisal: "current-runtime-heads"
-            exec_cmd: "rake test"
+            appraisal: "ar-head"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
@@ -50,17 +50,18 @@ jobs:
           #   (according to documentation: targets Ruby 3.3 compatibility)
           #   (according to runtime: targets Ruby 3.2 compatibility)
           - ruby: "truffleruby"
-            appraisal: "current-runtime-heads"
-            exec_cmd: "rake test"
+            appraisal: "ar-head"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
           - ruby: "jruby"
-            appraisal: "current-runtime-heads"
-            exec_cmd: "rake test"
+            appraisal: "ar-head"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
+            experimental: true
             rubygems: default
             bundler: default
 

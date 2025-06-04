@@ -12,6 +12,7 @@ require "version_gem/ruby"
 
 # RSpec Configs
 require "config/byebug"
+require "config/omniauth"
 require "config/rspec/rack_test"
 require "config/rspec/rspec_block_is_expected"
 require "config/rspec/rspec_core"

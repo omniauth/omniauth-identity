@@ -45,13 +45,6 @@ jobs:
             rubygems: default
             bundler: default
 
-          - ruby: "ruby-head"
-            appraisal: "ar-head"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
 #          # truffleruby-head
 #          - ruby: "truffleruby-head"
 #            appraisal: "couch-1.17"
@@ -62,7 +55,7 @@ jobs:
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal: "jruby-head"
+            appraisal: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
