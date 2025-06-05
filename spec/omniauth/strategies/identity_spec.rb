@@ -16,7 +16,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
     AnonymousActiveRecord.generate(
       parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
       columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-      connection_params: {adapter: is_java ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
+      connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
     ) do
       auth_key :email
       def balloon

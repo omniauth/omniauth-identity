@@ -11,7 +11,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
       AnonymousActiveRecord.generate(
         parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
         columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-        connection_params: {adapter: is_java ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
+        connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
       ) do
         auth_key :email
         def flower
@@ -20,7 +20,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
       end
     end
 
-    let(:is_java) { RUBY_PLATFORM == "java" }
+    let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
 
     include_context "persistable model"
 
