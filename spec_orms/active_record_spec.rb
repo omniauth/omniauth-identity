@@ -20,7 +20,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
       end
     end
 
-    let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
+    let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && defined?(ArJdbc::Version) && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
 
     include_context "persistable model"
 
