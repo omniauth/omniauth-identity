@@ -10,9 +10,9 @@ gem "mongoid-rspec", "~> 4.2"
 gem "mutex_m", "~> 0.2"
 gem "ostruct", "~> 0.1"
 gem "stringio", "~> 3.0"
-gem "sqlite3", ">= 1.7", :platforms => [:ruby]
+gem "sqlite3", ">= 1.7", platforms: [:ruby]
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/coverage.gemfile")
 

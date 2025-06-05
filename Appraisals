@@ -198,7 +198,13 @@ appraise "ar-7-2" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.6", platforms: [:ruby]
+
   # NOTE: JRuby is still working on compatibility with Rails 7.2
+  platforms :jruby do
+    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+  end
+
   # platforms :jruby do
   # # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
   # # gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
@@ -226,6 +232,13 @@ appraise "ar-8-0" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", ">= 1.7", platforms: [:ruby]
+
+  # NOTE: JRuby is still working on compatibility with Rails 8.0
+  platforms :jruby do
+    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+  end
+
   # NOTE: JRuby is not yet compatible with Rails 8 (or vice versa)
   # platforms :jruby do
   # # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"

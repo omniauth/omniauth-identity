@@ -26,7 +26,7 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal_name }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -39,7 +39,7 @@ jobs:
           # NOTE: Heads use default rubygems / bundler; their defaults are custom, unreleased, and from the future!
           # ruby-head
           - ruby: "ruby-head"
-            appraisal: "ar-8-0"
+            appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
@@ -47,7 +47,7 @@ jobs:
 
 #          # truffleruby-head
 #          - ruby: "truffleruby-head"
-#            appraisal: "couch-1.17"
+#            appraisal_name: "couch-1.17"
 #            exec_cmd: "rake spec:orm:couch_potato"
 #            gemfile: "Appraisal.root"
 #            rubygems: default
@@ -55,7 +55,7 @@ jobs:
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal: "ar-7-1-r3"
+            appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
@@ -92,7 +92,7 @@ jobs:
       # NOTE: This does not use the main Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
+      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}

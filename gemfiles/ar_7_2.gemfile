@@ -5,8 +5,13 @@ source "https://rubygems.org"
 gem "activerecord", "~> 7.2.2"
 gem "mutex_m", "~> 0.2"
 gem "stringio", "~> 3.0"
-gem "sqlite3", "~> 1.6", :platforms => [:ruby]
+gem "sqlite3", "~> 1.6", platforms: [:ruby]
 
-gemspec :path => "../"
+platforms :jruby do
+  gem "activerecord-jdbc-adapter", branch: "stable-dev", git: "https://github.com/JesseChavez/activerecord-jdbc-adapter"
+  gem "activerecord-jdbcsqlite3-adapter", branch: "stable-dev", git: "https://github.com/JesseChavez/activerecord-jdbc-adapter"
+end
+
+gemspec path: "../"
 
 eval_gemfile("modular/omniauth_v2_1.gemfile")

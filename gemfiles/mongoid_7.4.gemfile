@@ -5,14 +5,14 @@ source "https://rubygems.org"
 gem "mongoid", "~> 7.4", ">= 7.4.3"
 gem "mongoid-rspec", "~> 4.1"
 gem "mutex_m", "~> 0.2"
-gem "sqlite3", ">= 1", :platforms => [:ruby]
+gem "sqlite3", ">= 1", platforms: [:ruby]
 gem "stringio", "~> 3.0"
 
 platforms :jruby do
-  gem "jdbc-sqlite3", :branch => "master", :git => "https://github.com/jruby/activerecord-jdbc-adapter"
+  gem "jdbc-sqlite3", branch: "master", git: "https://github.com/jruby/activerecord-jdbc-adapter"
 end
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/omniauth_v1_9.gemfile")
 

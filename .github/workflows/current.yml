@@ -27,7 +27,7 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -38,19 +38,19 @@ jobs:
         include:
           # Ruby 3.4
           - ruby: "3.4"
-            appraisal: "ar-7-2"
+            appraisal_name: "ar-7-2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
-            appraisal: "ar-8-0"
+            appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.4"
-            appraisal: "sequel-5.86-r3"
+            appraisal_name: "sequel-5.86-r3"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -58,7 +58,7 @@ jobs:
 
 #          # truffleruby-24.1
 #          - ruby: "truffleruby"
-#            appraisal: "ar-8-0"
+#            appraisal_name: "ar-8-0"
 #            exec_cmd: "rake spec:orm:active_record"
 #            gemfile: "Appraisal.root"
 #            rubygems: default
@@ -66,7 +66,14 @@ jobs:
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
           - ruby: "jruby"
-            appraisal: "ar-7-1-r3"
+            appraisal_name: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          - ruby: "jruby"
+            appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
@@ -89,7 +96,7 @@ jobs:
       # NOTE: This does not use the main Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
+      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}
