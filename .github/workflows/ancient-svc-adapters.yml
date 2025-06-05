@@ -36,7 +36,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # Ruby 2.5
+          # Ruby 2.4
           - ruby: "2.4"
             appraisal_name: "couch-1.17-r2"
             exec_cmd: "rake spec:orm:couch_potato"

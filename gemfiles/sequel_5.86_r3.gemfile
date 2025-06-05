@@ -5,9 +5,10 @@ source "https://rubygems.org"
 gem "sequel", "~> 5.86", ">= 5.86.0"
 gem "mutex_m", "~> 0.1"
 gem "stringio", ">= 0.0.2"
-gem "sqlite3", ">= 1", platforms: [:ruby]
 
 gemspec path: "../"
+
+eval_gemfile("modular/sqlite3_v2_6.gemfile")
 
 eval_gemfile("modular/jdbc-sqlite3-v3.46.gemfile")
 

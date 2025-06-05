@@ -1,6 +1,6 @@
 {
-  "README.md:4226111870": [
-    [207, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
+  "README.md:808790870": [
+    [201, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "Rakefile:2617189060": [
     [94, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:85 and Rakefile:94.", 2701974006]
@@ -53,7 +53,7 @@
     [13, 37, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `DoesNotHaveTheMethod` as a spy using `allow` or `instance_spy`.", 1384559950],
     [18, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `HasTheMethod` as a spy using `allow` or `instance_spy`.", 1384559950]
   ],
-  "spec/omniauth/strategies/identity_spec.rb:243082602": [
+  "spec/omniauth/strategies/identity_spec.rb:2925449780": [
     [6, 1, 55, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/strategies/identity*_spec.rb`.", 3369296900],
     [67, 9, 33, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 3707445541],
     [92, 7, 20, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 244223142],
@@ -132,7 +132,7 @@
     [50, 7, 297, "RSpec/ExampleLength: Example has too many lines. [6/5]", 2247016642],
     [55, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/active_record_spec.rb:1640303815": [
+  "spec_orms/active_record_spec.rb:3028028185": [
     [8, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
     [34, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
     [40, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
