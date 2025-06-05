@@ -9,4 +9,6 @@ gem "sqlite3", ">= 1.7", platforms: [:ruby]
 
 gemspec path: "../"
 
+eval_gemfile("modular/activerecord-jdbc-adapter_v80.gemfile")
+
 eval_gemfile("modular/omniauth_v2_1.gemfile")

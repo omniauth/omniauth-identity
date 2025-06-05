@@ -1,0 +1,9 @@
+platforms :jruby do
+  gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  gem "activerecord-jdbc-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  gem "activerecord-jdbcsqlite3-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+end

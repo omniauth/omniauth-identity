@@ -8,10 +8,8 @@ gem "sqlite3", ">= 1", platforms: [:ruby]
 gem "stringio", ">= 0.0.2"
 gem "ostruct", "~> 0.1"
 
-platforms :jruby do
-  gem "jdbc-sqlite3", branch: "master", git: "https://github.com/jruby/activerecord-jdbc-adapter"
-end
-
 gemspec path: "../"
+
+eval_gemfile("modular/jdbc-sqlite3-v3.46.gemfile")
 
 eval_gemfile("modular/omniauth_v2_1.gemfile")

@@ -15,15 +15,6 @@ appraise "ar-head" do
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
-# Used for current releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
-appraise "current" do
-  gem "mutex_m", ">= 0.2"
-  gem "stringio", ">= 3.0"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
-end
-
 # Compat: Ruby >= 2.2.2
 # Test Matrix:
 #   - Ruby 2.4
@@ -65,15 +56,7 @@ appraise "ar-6-1-r2" do
   gem "mutex_m", "~> 0.1"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 61.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 61.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v61.gemfile"
   eval_gemfile "modular/omniauth_v1_2.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -86,15 +69,7 @@ appraise "ar-6-1-r3" do
   gem "mutex_m", "~> 0.1"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 61.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 61.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v61.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -107,16 +82,7 @@ appraise "ar-7-0-r2" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 70.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 70.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
-
+  eval_gemfile "modular/activerecord-jdbc-adapter_v70.gemfile"
   eval_gemfile "modular/omniauth_v1_3.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -130,16 +96,7 @@ appraise "ar-7-0-r3" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 70.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 70.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
-
+  eval_gemfile "modular/activerecord-jdbc-adapter_v70.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -152,15 +109,7 @@ appraise "ar-7-1-r2" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.5", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v71.gemfile"
   eval_gemfile "modular/omniauth_v1_4.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -176,15 +125,7 @@ appraise "ar-7-1-r3" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.5", platforms: [:ruby]
-  platforms :jruby do
-    gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbc-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    gem "activerecord-jdbcsqlite3-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-    # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '61-stable'
-  end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v71.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -202,28 +143,7 @@ appraise "ar-7-2" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", "~> 1.6", platforms: [:ruby]
-
-  # NOTE: JRuby is still working on compatibility with Rails 7.2
-  platforms :jruby do
-    # Targets Ruby 7.1 still
-    # gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # Targets Ruby ~> 7.2.2
-    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-  end
-
-  # platforms :jruby do
-  # # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v72.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -240,21 +160,7 @@ appraise "ar-8-0" do
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", ">= 1.7", platforms: [:ruby]
-
-  # NOTE: JRuby is still working on compatibility with Rails 7.2
-  #       There is no way to install for Rails 8
-  # platforms :jruby do
-  #   gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-  #   # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-  #   gem "jdbc-sqlite3", "~> 3.46", ">= 3.46.1.1"
-  # # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # # gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  # end
+  eval_gemfile "modular/activerecord-jdbc-adapter_v80.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -273,9 +179,7 @@ appraise "couch-1.17-r2" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_6.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -301,10 +205,7 @@ appraise "couch-1.17-r3" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -319,10 +220,7 @@ appraise "mongoid-7.3-b4.12" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", ">= 0.0.2"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_7.gemfile"
   eval_gemfile "modular/bson_v4.12.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -339,10 +237,7 @@ appraise "mongoid-7.3-b4.15" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", ">= 0.0.2"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_7.gemfile"
   eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -359,10 +254,7 @@ appraise "mongoid-7.4-b4.15" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_9.gemfile"
   eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -380,10 +272,7 @@ appraise "mongoid-7.4-b5" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_9.gemfile"
   eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -401,10 +290,7 @@ appraise "mongoid-8.1-r2" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -425,10 +311,7 @@ appraise "mongoid-8.1-r3" do
   gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", "~> 3.0"
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -446,10 +329,7 @@ appraise "mongoid-9.0-r2-omni1.9" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_9.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -467,10 +347,7 @@ appraise "mongoid-9.0-r2-omni2.0" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -488,10 +365,7 @@ appraise "mongoid-9.0-r2-omni2.1" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -516,10 +390,7 @@ appraise "mongoid-9.0-r3" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -565,10 +436,7 @@ appraise "sequel-5.86-r2" do
   gem "stringio", ">= 0.0.2"
   gem "sqlite3", ">= 1", platforms: [:ruby]
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -591,10 +459,7 @@ appraise "sequel-5.86-r3" do
   gem "stringio", ">= 0.0.2"
   gem "sqlite3", ">= 1", platforms: [:ruby]
 
-  platforms :jruby do
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-  end
-
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end

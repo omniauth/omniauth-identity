@@ -7,12 +7,8 @@ gem "mutex_m", "~> 0.1"
 gem "stringio", "~> 3.0"
 gem "sqlite3", "~> 1.4", platforms: [:ruby]
 
-platforms :jruby do
-  gem "jdbc-sqlite3"
-  gem "activerecord-jdbc-adapter", "~> 61.0"
-  gem "activerecord-jdbcsqlite3-adapter", "~> 61.0"
-end
-
 gemspec path: "../"
+
+eval_gemfile("modular/activerecord-jdbc-adapter_v61.gemfile")
 
 eval_gemfile("modular/omniauth_v2_1.gemfile")
