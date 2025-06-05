@@ -11,7 +11,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
   let(:identity_hash) { env_hash["omniauth.identity"] }
   let(:identity_options) { {} }
   let(:app_options) { {} }
-  let(:is_java) { RUBY_PLATFORM == "java" }
+  let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
       parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
