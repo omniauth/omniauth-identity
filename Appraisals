@@ -204,12 +204,14 @@ appraise "ar-7-2" do
 
   # NOTE: JRuby is still working on compatibility with Rails 7.2
   platforms :jruby do
-    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    # gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    # Targets Ruby 7.1 still
+    # gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # Targets Ruby ~> 7.2.2
+    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
   end
 
   # platforms :jruby do
