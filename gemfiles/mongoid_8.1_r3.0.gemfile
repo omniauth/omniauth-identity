@@ -15,4 +15,4 @@ eval_gemfile("modular/jdbc-sqlite3-v3.46.gemfile")
 
 eval_gemfile("modular/omniauth_v2_1.gemfile")
 
-eval_gemfile("modular/bson_v5.gemfile")
+eval_gemfile("modular/bson_v4.15.gemfile")

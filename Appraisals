@@ -318,7 +318,7 @@ appraise "mongoid-8.1-r2" do
   eval_gemfile "modular/sqlite3_v1_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -339,7 +339,7 @@ appraise "mongoid-8.1-r3.0" do
   eval_gemfile "modular/sqlite3_v2_0.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -352,7 +352,7 @@ appraise "mongoid-8.1-r3" do
   eval_gemfile "modular/sqlite3_v2_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -370,7 +370,7 @@ appraise "mongoid-9.0-r2-omni1.9" do
   eval_gemfile "modular/sqlite3_v1_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_9.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -388,7 +388,7 @@ appraise "mongoid-9.0-r2-omni2.0" do
   eval_gemfile "modular/sqlite3_v1_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_0.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -406,7 +406,7 @@ appraise "mongoid-9.0-r2-omni2.1" do
   eval_gemfile "modular/sqlite3_v1_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -424,7 +424,7 @@ appraise "mongoid-9.0-r3.0" do
   eval_gemfile "modular/sqlite3_v2_0.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
