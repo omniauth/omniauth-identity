@@ -45,8 +45,8 @@ jobs:
 
           # jruby-9.3 (targets Ruby 2.6 compatibility)
           - ruby: "jruby-9.3"
-            appraisal_name: "sequel-5.86-r2"
-            exec_cmd: "rake spec:orm:sequel"
+            appraisal_name: "ar-6-1-r2"
+            exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
