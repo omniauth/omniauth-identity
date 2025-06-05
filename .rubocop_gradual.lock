@@ -31,7 +31,7 @@
   ],
   "lib/omniauth/identity/models/nobrainer.rb:3355783297": [
     [12, 9, 568, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4204154330],
-    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
+    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `clases << self` to define a class method.", 3604044426],
     [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
   "lib/omniauth/identity/models/sequel.rb:3343978269": [
