@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "bson"
+require "bson/active_support"
 require "mongoid"
 require "mongoid-rspec"
 
