@@ -4,10 +4,10 @@ require "sqlite3"
 require "sequel"
 
 DB = if RUBY_ENGINE == "jruby"
-       Sequel.connect("jdbc:sqlite::memory:")
-     else
-       Sequel.sqlite
-     end
+  Sequel.connect("jdbc:sqlite::memory:")
+else
+  Sequel.sqlite
+end
 
 RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   before(:all) do

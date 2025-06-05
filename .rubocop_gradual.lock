@@ -31,7 +31,7 @@
   ],
   "lib/omniauth/identity/models/nobrainer.rb:3355783297": [
     [12, 9, 568, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4204154330],
-    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `clases << self` to define a class method.", 3604044426],
+    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
   "lib/omniauth/identity/models/sequel.rb:3343978269": [
@@ -178,8 +178,8 @@
     [20, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
     [25, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/sequel_spec.rb:3336240631": [
-    [8, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
-    [34, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  "spec_orms/sequel_spec.rb:1099118529": [
+    [12, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [38, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }

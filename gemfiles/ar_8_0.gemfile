@@ -10,6 +10,7 @@ gem "sqlite3", ">= 1.7", platforms: [:ruby]
 platforms :jruby do
   gem "activerecord-jdbc-adapter", branch: "stable-dev", git: "https://github.com/JesseChavez/activerecord-jdbc-adapter"
   gem "activerecord-jdbcsqlite3-adapter", branch: "stable-dev", git: "https://github.com/JesseChavez/activerecord-jdbc-adapter"
+  gem "jdbc-sqlite3", branch: "stable-dev", git: "https://github.com/JesseChavez/activerecord-jdbc-adapter"
 end
 
 gemspec path: "../"
