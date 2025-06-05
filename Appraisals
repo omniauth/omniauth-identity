@@ -3,6 +3,7 @@
 # HOW TO UPDATE APPRAISALS:
 #   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
 #   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
+#   bundle exec rake rubocop_gradual:autocorrect
 
 # Used for HEAD (nightly) releases of ruby, truffleruby, and jruby.
 # Split into discrete appraisals if one of them needs a dependency locked discretely.
@@ -311,8 +312,7 @@ end
 # Compat: Ruby >= 2.3
 # Test Matrix:
 #   - Ruby 2.4
-#   - Ruby 2.5
-appraise "mongoid-7.3" do
+appraise "mongoid-7.3-b4.12" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.1"
@@ -324,7 +324,27 @@ appraise "mongoid-7.3" do
   end
 
   eval_gemfile "modular/omniauth_v1_7.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.12.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 2.3
+# Test Matrix:
+#   - Ruby 2.5
+#   - JRuby 9.2
+appraise "mongoid-7.3-b4.15" do
+  gem "mongoid", "~> 7.3", ">= 7.3.5"
+  gem "mongoid-rspec", "~> 4.1"
+  gem "mutex_m", "~> 0.1"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
+  gem "stringio", ">= 0.0.2"
+
+  platforms :jruby do
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+  end
+
+  eval_gemfile "modular/omniauth_v1_7.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -332,9 +352,7 @@ end
 # Test Matrix:
 #   - Ruby 2.5
 #   - JRuby 9.2
-#   - Ruby 2.6
-#   - Ruby 2.7
-appraise "mongoid-7.4" do
+appraise "mongoid-7.4-b4.15" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
   gem "mutex_m", "~> 0.2"
@@ -346,7 +364,28 @@ appraise "mongoid-7.4" do
   end
 
   eval_gemfile "modular/omniauth_v1_9.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 2.5
+# Test Matrix:
+#   - Ruby 2.6
+#   - JRuby 9.3
+#   - Ruby 2.7
+appraise "mongoid-7.4-b5" do
+  gem "mongoid", "~> 7.4", ">= 7.4.3"
+  gem "mongoid-rspec", "~> 4.1"
+  gem "mutex_m", "~> 0.2"
+  gem "sqlite3", ">= 1", platforms: [:ruby]
+  gem "stringio", "~> 3.0"
+
+  platforms :jruby do
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+  end
+
+  eval_gemfile "modular/omniauth_v1_9.gemfile"
+  eval_gemfile "modular/bson_v4.15.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 

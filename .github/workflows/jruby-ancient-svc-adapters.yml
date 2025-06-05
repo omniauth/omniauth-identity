@@ -37,7 +37,7 @@ jobs:
         include:
           # jruby-9.2 (targets Ruby 2.5 compatibility)
           - ruby: "jruby-9.2"
-            appraisal_name: "mongoid-7.4"
+            appraisal_name: "mongoid-7.4-b4.15"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: default

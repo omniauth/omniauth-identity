@@ -36,18 +36,20 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          #          - ruby: "2.4"
-          #            appraisal_name: "couch-1.17"
-          #            exec_cmd: "rake spec:orm:couch_potato"
-          #            gemfile: "Appraisal.root"
-          #            rubygems: "3.3.27"
-          #            bundler: "2.3.27"
-          #          - ruby: "2.4"
-          #            appraisal_name: "mongoid-7.3"
-          #            exec_cmd: "rake spec:orm:mongoid"
-          #            gemfile: "Appraisal.root"
-          #            rubygems: "3.3.27"
-          #            bundler: "2.3.27"
+          # Ruby 2.5
+          - ruby: "2.4"
+            appraisal_name: "couch-1.17-r2"
+            exec_cmd: "rake spec:orm:couch_potato"
+            gemfile: "Appraisal.root"
+            rubygems: "3.3.27"
+            bundler: "2.3.27"
+
+          - ruby: "2.4"
+            appraisal_name: "mongoid-7.3-b4.12"
+            exec_cmd: "rake spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: "3.3.27"
+            bundler: "2.3.27"
 
           # Ruby 2.5
           - ruby: "2.5"
@@ -56,8 +58,9 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
             bundler: "2.3.27"
+
           - ruby: "2.5"
-            appraisal_name: "mongoid-7.4"
+            appraisal_name: "mongoid-7.4-b4.15"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"

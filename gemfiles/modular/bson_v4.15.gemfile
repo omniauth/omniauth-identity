@@ -1,0 +1,4 @@
+# Ruby >= 2.5
+# Released April 21, 2022
+# Last version compatible with Ruby 2.5
+gem "bson", "~> 4.15"
