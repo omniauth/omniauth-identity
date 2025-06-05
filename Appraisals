@@ -201,9 +201,12 @@ appraise "ar-7-2" do
 
   # NOTE: JRuby is still working on compatibility with Rails 7.2
   platforms :jruby do
-    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    # gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
   end
 
   # platforms :jruby do
@@ -236,9 +239,12 @@ appraise "ar-8-0" do
 
   # NOTE: JRuby is still working on compatibility with Rails 8.0
   platforms :jruby do
-    gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    # gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+    # gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
   end
 
   # NOTE: JRuby is not yet compatible with Rails 8 (or vice versa)
