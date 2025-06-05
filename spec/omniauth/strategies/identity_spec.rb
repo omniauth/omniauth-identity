@@ -44,8 +44,8 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
 
   describe "path handling" do
     script_names = [nil]
-    # The script name root of the path only works in Rails >= v7
-    script_names << "/my_path" if defined?(ActiveRecord) && ActiveRecord.respond_to?(:gem_version) && (ActiveRecord.gem_version >= Gem::Version.new("7.0.0"))
+    # The script name root of the path only works in omniauth >= v2
+    script_names << "/my_path" if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
     path_prefixes = ["/auth", "/my_auth", ""]
     provider_names = ["identity", "my_id"]
     script_names.product(path_prefixes, provider_names).each do |script_name, path_prefix, provider_name|
