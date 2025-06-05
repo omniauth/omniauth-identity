@@ -37,6 +37,14 @@ jobs:
         include:
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby-9.4"
+            appraisal_name: "mongoid-8.1-r3"
+            exec_cmd: "rake spec:orm:mongoid"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # jruby-9.4 (targets Ruby 3.1 compatibility)
+          - ruby: "jruby-9.4"
             appraisal_name: "mongoid-9.0-r3"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"

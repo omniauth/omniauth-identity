@@ -169,6 +169,7 @@ end
 #   - Ruby 3.0
 #   - Ruby 3.1
 #   - Ruby 3.2
+#   - JRuby 10.0
 appraise "ar-7-1-r3" do
   gem "activerecord", "~> 7.1.5"
   gem "mutex_m", "~> 0.2"
@@ -193,6 +194,8 @@ end
 #   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - JRuby 10.0
+#   - jruby-head
 appraise "ar-7-2" do
   gem "activerecord", "~> 7.2.2"
   gem "mutex_m", "~> 0.2"
@@ -227,28 +230,20 @@ end
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-#   - JRuby 10.0
 #   - ruby-head
 #   - truffleruby-head
-#   - jruby-head
 appraise "ar-8-0" do
   gem "activerecord", "~> 8.0.0"
   gem "mutex_m", "~> 0.2"
   gem "stringio", "~> 3.0"
   gem "sqlite3", ">= 1.7", platforms: [:ruby]
 
-  # NOTE: JRuby is still working on compatibility with Rails 8.0
-  platforms :jruby do
-    gem "activerecord-jdbc-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-    # gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-    # gem "jdbc-sqlite3", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
-  end
-
-  # NOTE: JRuby is not yet compatible with Rails 8 (or vice versa)
+  # NOTE: JRuby is still working on compatibility with Rails 7.2
+  #       There is no way to install for Rails 8
   # platforms :jruby do
+  #   gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+  #   # gem "activerecord-jdbcsqlite3-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+  #   gem "jdbc-sqlite3", "~> 3.46", ">= 3.46.1.1"
   # # gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
   # # gem "jdbc-mysql", github: "jruby/activerecord-jdbc-adapter", branch: "master"
   # # gem "jdbc-postgres", github: "jruby/activerecord-jdbc-adapter", branch: "master"
@@ -284,10 +279,14 @@ end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
 # Test Matrix:
+#   - JRuby 9.3
 #   - Ruby 3.0
 #   - Ruby 3.1
+#   - JRuby 9.4
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - Ruby 3.4
+#   - JRuby 10.0
 #   - ruby-head
 #   - truffleruby-head
 #   - jruby-head
@@ -330,6 +329,7 @@ end
 # Compat: Ruby >= 2.5
 # Test Matrix:
 #   - Ruby 2.5
+#   - JRuby 9.2
 #   - Ruby 2.6
 #   - Ruby 2.7
 appraise "mongoid-7.4" do
@@ -351,11 +351,8 @@ end
 # Compat: Ruby >= 2.6
 # Test Matrix:
 #   - Ruby 2.6
+#   - JRuby 9.3
 #   - Ruby 2.7
-#   - Ruby 3.0
-#   - Ruby 3.1
-#   - Ruby 3.2
-#   - Ruby 3.3
 appraise "mongoid-8.1-r2" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
@@ -374,12 +371,12 @@ end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
-#   - Ruby 2.6
-#   - Ruby 2.7
 #   - Ruby 3.0
 #   - Ruby 3.1
+#   - JRuby 9.4
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - Ruby 3.4
 appraise "mongoid-8.1-r3" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
@@ -465,6 +462,7 @@ end
 #   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - Ruby 3.4
 #   - ruby-head
 #   - truffleruby-head
 #   - jruby-head
@@ -540,6 +538,9 @@ end
 #   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
+#   - Ruby 3.4
+#   - JRuby 9.4
+#   - JRuby 10.0
 #   - ruby-head
 #   - truffleruby-head
 #   - jruby-head
