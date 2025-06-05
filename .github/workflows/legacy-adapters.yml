@@ -38,7 +38,7 @@ jobs:
         include:
           # Ruby 3.0
           - ruby: "ruby-3.0"
-            appraisal_name: "mongoid-8.1-r3"
+            appraisal_name: "mongoid-8.1-r3.0"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'

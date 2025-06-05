@@ -179,17 +179,32 @@ end
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
 # Test Matrix:
 #   - Ruby 2.4
+appraise "couch-1.17-r2.4" do
+  gem "couch_potato", "~> 1.17"
+  gem "mutex_m", "~> 0.1"
+  gem "stringio", ">= 0.0.2"
+  # TODO: Bump when old dropping old Ruby from this gem.
+  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+
+  eval_gemfile "modular/sqlite3_v1_5.gemfile"
+  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
+  eval_gemfile "modular/omniauth_v1_6.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 2.2.2 (due to AR >= 5)
+# Test Matrix:
 #   - Ruby 2.5
 #   - Ruby 2.6
 #   - Ruby 2.7
 appraise "couch-1.17-r2" do
   gem "couch_potato", "~> 1.17"
   gem "mutex_m", "~> 0.1"
-  gem "sqlite3", ">= 1", platforms: [:ruby]
   gem "stringio", ">= 0.0.2"
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
+  eval_gemfile "modular/sqlite3_v1_6.gemfile"
   eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
   eval_gemfile "modular/omniauth_v1_6.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
