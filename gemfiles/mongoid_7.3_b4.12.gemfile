@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "mongoid", "~> 7.3", ">= 7.3.5"
 gem "mongoid-rspec", "~> 4.1"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/bson/r2.4/v4.12.gemfile")
 

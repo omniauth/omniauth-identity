@@ -205,7 +205,7 @@ appraise "couch-1.17-r3" do
   gem "couch_potato", "~> 1.17"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
-  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
   eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -320,7 +320,7 @@ appraise "mongoid-8.1-r3" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.0.gemfile"
 
-  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
   eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -405,7 +405,7 @@ appraise "mongoid-9.0-r3" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.0.gemfile"
 
-  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
   eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -472,7 +472,7 @@ end
 #   - Ruby 3.0
 appraise "sequel-5.86-r3.0" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
   eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -492,7 +492,7 @@ end
 #   - jruby-head
 appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
   eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"

@@ -6,11 +6,11 @@ gem "mongoid", "~> 9.0", ">= 9.0.3"
 gem "mongoid-rspec", "~> 4.2"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/bson/r3/v5.0.gemfile")
 
-eval_gemfile("modular/activerecord/r3/v7.2.gemfile")
+eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
 
 eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
 

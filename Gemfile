@@ -53,4 +53,4 @@ end
 # TODO: Remove this once fixed in upstream bson (> 5.0.2)
 # Fix that is only needed on systems with GCC v15+
 # See: https://github.com/mongodb/bson-ruby/pull/355
-eval_gemfile "gemfiles/modular/v5.0.gemfile"
+eval_gemfile "gemfiles/modular/bson/r3/v5.0.gemfile"
