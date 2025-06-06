@@ -9,7 +9,7 @@ gemspec path: "../"
 
 eval_gemfile("modular/bson/r2/v4.15.gemfile")
 
-eval_gemfile("modular/activerecord/r2/v5.2.gemfile")
+eval_gemfile("modular/activerecord/r2/v6.1.gemfile")
 
 eval_gemfile("modular/omniauth/r2/v2.0.gemfile")
 

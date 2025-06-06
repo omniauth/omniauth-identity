@@ -232,7 +232,7 @@ appraise "mongoid-7.3-b4.15" do
   gem "mongoid-rspec", "~> 4.1"
   eval_gemfile "modular/bson/r2/v4.15.gemfile"
 
-  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -247,7 +247,7 @@ appraise "mongoid-7.4-b4.15" do
   gem "mongoid-rspec", "~> 4.1"
   eval_gemfile "modular/bson/r2/v4.15.gemfile"
 
-  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -263,7 +263,7 @@ appraise "mongoid-7.4-b5" do
   gem "mongoid-rspec", "~> 4.1"
   eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
@@ -279,7 +279,7 @@ appraise "mongoid-8.1-r2" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
