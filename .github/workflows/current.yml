@@ -72,18 +72,19 @@ jobs:
             rubygems: default
             bundler: default
 
-# No valid target for JRuby's v72 yet
-#          - ruby: "jruby"
-#            appraisal_name: "ar-7-2"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            rubygems: default
-#            bundler: default
+          - ruby: "jruby"
+            appraisal_name: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            experimental: true
+            rubygems: default
+            bundler: default
 
           - ruby: "jruby"
             appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
+            experimental: true
             rubygems: default
             bundler: default
 

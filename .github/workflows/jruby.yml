@@ -44,14 +44,15 @@ jobs:
             bundler: default
 
           # jruby-9.4 (targets Ruby 3.1 compatibility)
-          # TODO: Enable once fixed:
+          # TODO: Mark non-experimental once fixed:
           # https://github.com/jruby/activerecord-jdbc-adapter/issues/1175
-#          - ruby: "jruby-9.4"
-#            appraisal_name: "ar-7-2"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            rubygems: default
-#            bundler: default
+          - ruby: "jruby-9.4"
+            appraisal_name: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            experimental: true
+            rubygems: default
+            bundler: default
 
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby-9.4"

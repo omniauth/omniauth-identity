@@ -160,6 +160,19 @@ end
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
 # Test Matrix:
 #   - Ruby 2.5
+appraise "couch-1.17-r2.5" do
+  gem "couch_potato", "~> 1.17"
+  # TODO: Bump when old dropping old Ruby from this gem.
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
+
+  eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
+  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 2.2.2 (due to AR >= 5)
+# Test Matrix:
 #   - Ruby 2.6
 #   - JRuby 9.3
 #   - Ruby 2.7
@@ -168,7 +181,7 @@ appraise "couch-1.17-r2" do
   # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
-  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
