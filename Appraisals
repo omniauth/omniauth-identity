@@ -420,7 +420,7 @@ appraise "sequel-5.86-r2.4" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
-  eval_gemfile "modular/x_std_libs/v2.4/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
