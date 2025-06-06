@@ -1,7 +1,16 @@
 # frozen_string_literal: true
 
-require "bson"
-require "bson/active_support"
+begin
+  require "bson"
+  require "bson/active_support"
+rescue LoadError => error
+  if RUBY_ENGINE == "jruby"
+    warn("Failed to load bson for mongoid")
+    warn("#{error.class}: #{error.message}")
+  else
+    raise error
+  end
+end
 require "mongoid"
 require "mongoid-rspec"
 
