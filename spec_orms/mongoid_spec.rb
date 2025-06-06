@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+# Bugfixes
+# JRuby needed an explicit "require 'logger'" for Rails < 7.1
+# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
+# Placing above omniauth because it is a dependency of omniauth,
+#   which is undeclared in older versions.
+require "logger"
+
 # NOTE: mongoid and no_brainer can't be loaded at the same time.
 #       If you try it, one or both of them will not work.
 require_relative "support/rspec_config/mongoid"

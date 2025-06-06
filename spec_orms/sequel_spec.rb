@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+# Bugfixes
+# JRuby needed an explicit "require 'logger'" for Rails < 7.1
+# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
+# Placing above omniauth because it is a dependency of omniauth,
+#   which is undeclared in older versions.
+require "logger"
+
 # :nocov:
 DB = if RUBY_ENGINE == "jruby"
   require "jdbc/sqlite3"
