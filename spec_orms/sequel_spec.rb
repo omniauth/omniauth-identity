@@ -18,7 +18,7 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
       String :email, null: false
       String :password_digest, null: false
     end
-    y  el on JRend
+  end
 
   before do
     sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
