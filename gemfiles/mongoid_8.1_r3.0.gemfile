@@ -4,15 +4,15 @@ source "https://rubygems.org"
 
 gem "mongoid", "~> 8.1", ">= 8.1.7"
 gem "mongoid-rspec", "~> 4.2"
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.0"
 
-gemspec path: "../"
+gemspec :path => "../"
 
-eval_gemfile("modular/sqlite3_v2_0.gemfile")
+eval_gemfile("modular/bson/r3/v5.0.gemfile")
 
-eval_gemfile("modular/jdbc-sqlite3-v3.46.gemfile")
+eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
 
-eval_gemfile("modular/omniauth_v2_1.gemfile")
+eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
 
-eval_gemfile("modular/bson_v4.15.gemfile")
+eval_gemfile("modular/stringio/r2/v3.0.gemfile")
+
+eval_gemfile("modular/omniauth/r3/v2.1.gemfile")

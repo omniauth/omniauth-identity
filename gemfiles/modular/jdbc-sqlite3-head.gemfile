@@ -1,3 +1,0 @@
-platforms :jruby do
-  gem "jdbc-sqlite3", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-end

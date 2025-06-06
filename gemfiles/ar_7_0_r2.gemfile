@@ -2,13 +2,12 @@
 
 source "https://rubygems.org"
 
-gem "activerecord", "~> 7.0.8.6"
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.0"
-gem "sqlite3", "~> 1.4", platforms: [:ruby]
+gemspec :path => "../"
 
-gemspec path: "../"
+eval_gemfile("modular/activerecord/r2/v7.0.gemfile")
 
-eval_gemfile("modular/activerecord-jdbc-adapter_v70.gemfile")
+eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
 
-eval_gemfile("modular/omniauth_v1_3.gemfile")
+eval_gemfile("modular/stringio/r2/v3.0.gemfile")
+
+eval_gemfile("modular/omniauth/r2/v1.4.gemfile")

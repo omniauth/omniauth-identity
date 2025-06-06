@@ -3,14 +3,14 @@
 source "https://rubygems.org"
 
 gem "couch_potato", "~> 1.17"
-gem "mutex_m", "~> 0.1"
-gem "stringio", ">= 0.0.2"
-gem "ostruct", "~> 0.1"
+gem "ostruct", "~> 0.6", ">= 0.6.1"
 
-gemspec path: "../"
+gemspec :path => "../"
 
-eval_gemfile("modular/sqlite3_v1_6.gemfile")
+eval_gemfile("modular/activerecord/r2/v5.2.gemfile")
 
-eval_gemfile("modular/jdbc-sqlite3-v3.46.gemfile")
+eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
 
-eval_gemfile("modular/omniauth_v1_6.gemfile")
+eval_gemfile("modular/stringio/r2/v3.0.gemfile")
+
+eval_gemfile("modular/omniauth/r2/v1.7.gemfile")

@@ -1,4 +1,0 @@
-# Ruby >= 1.8.7
-# Released June 14, 2022
-# Last version compatible with Ruby 2.5
-gem "sqlite3", "~> 1.4.4", platforms: [:ruby]

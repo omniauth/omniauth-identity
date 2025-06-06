@@ -1,0 +1,5 @@
+# Fix that is only needed on systems with GCC v15+
+# See: https://github.com/mongodb/bson-ruby/pull/355
+# Ruby >= 2.6
+# Unreleased!
+gem "bson", github: "mongodb/bson-ruby", branch: "master"

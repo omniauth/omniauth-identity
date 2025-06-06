@@ -2,11 +2,12 @@
 
 source "https://rubygems.org"
 
-gem "mutex_m", ">= 0.2"
-gem "stringio", ">= 3.0"
+gemspec :path => "../"
 
-gemspec path: "../"
+eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
 
-eval_gemfile("modular/ar_heads.gemfile")
+eval_gemfile("modular/stringio/r2/v3.0.gemfile")
+
+eval_gemfile("modular/activerecord/vHEAD.gemfile")
 
 eval_gemfile("modular/runtime_heads.gemfile")

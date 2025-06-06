@@ -8,9 +8,9 @@
 # Used for HEAD (nightly) releases of ruby, truffleruby, and jruby.
 # Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "ar-head" do
-  gem "mutex_m", ">= 0.2"
-  gem "stringio", ">= 3.0"
-  eval_gemfile "modular/ar_heads.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/activerecord/vHEAD.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
@@ -19,11 +19,10 @@ end
 # Test Matrix:
 #   - Ruby 2.4
 appraise "ar-5-2-r2.4" do
-  gem "activerecord", "~> 5.2.8.1"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-  eval_gemfile "modular/sqlite3_v1_3.gemfile"
-  eval_gemfile "modular/omniauth_v1_0.gemfile"
+  eval_gemfile "modular/mutex_m/r2.4/v0.1.gemfile"
+  eval_gemfile "modular/stringio/r2.4/v0.0.2.gemfile"
+  eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -33,11 +32,10 @@ end
 #   - Ruby 2.6
 #   - Ruby 2.7
 appraise "ar-5-2-r2" do
-  gem "activerecord", "~> 5.2.8.1"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-  gem "sqlite3", "~> 1.3", platforms: [:ruby]
-  eval_gemfile "modular/omniauth_v1_0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -47,11 +45,10 @@ end
 #   - Ruby 2.6
 #   - Ruby 2.7
 appraise "ar-6-0" do
-  gem "activerecord", "~> 6.0.6.1"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  eval_gemfile "modular/omniauth_v1_1.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.2.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -63,12 +60,10 @@ end
 #   - Ruby 2.6
 #   - Ruby 2.7
 appraise "ar-6-1-r2" do
-  gem "activerecord", "~> 6.1.7.10"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v61.gemfile"
-  eval_gemfile "modular/omniauth_v1_2.gemfile"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.3.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -76,12 +71,10 @@ end
 # Test Matrix:
 #   - Ruby 3.0
 appraise "ar-6-1-r3" do
-  gem "activerecord", "~> 6.1.7.10"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v61.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v6.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -89,12 +82,10 @@ end
 # Test Matrix:
 #   - Ruby 2.7
 appraise "ar-7-0-r2" do
-  gem "activerecord", "~> 7.0.8.6"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v70.gemfile"
-  eval_gemfile "modular/omniauth_v1_3.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.4.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -103,12 +94,10 @@ end
 #   - Ruby 3.0
 #   - Ruby 3.1
 appraise "ar-7-0-r3" do
-  gem "activerecord", "~> 7.0.8.6"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.4", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v70.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -116,12 +105,10 @@ end
 # Test Matrix:
 #   - Ruby 2.7
 appraise "ar-7-1-r2" do
-  gem "activerecord", "~> 7.1.5"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.5", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v71.gemfile"
-  eval_gemfile "modular/omniauth_v1_4.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -132,30 +119,26 @@ end
 #   - Ruby 3.2
 #   - JRuby 10.0
 appraise "ar-7-1-r3" do
-  gem "activerecord", "~> 7.1.5"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.5", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v71.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 3.1
 # Test Matrix:
-#   - JRuby 9.4
 #   - Ruby 3.1
+#   - JRuby 9.4
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - JRuby 10.0
 #   - jruby-head
 appraise "ar-7-2" do
-  gem "activerecord", "~> 7.2.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", "~> 1.6", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v72.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -167,12 +150,10 @@ end
 #   - ruby-head
 #   - truffleruby-head
 appraise "ar-8-0" do
-  gem "activerecord", "~> 8.0.0"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", ">= 1.7", platforms: [:ruby]
-  eval_gemfile "modular/activerecord-jdbc-adapter_v80.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -181,14 +162,12 @@ end
 #   - Ruby 2.4
 appraise "couch-1.17-r2.4" do
   gem "couch_potato", "~> 1.17"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
   gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
 
-  eval_gemfile "modular/sqlite3_v1_5.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_6.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2.4/v0.1.gemfile"
+  eval_gemfile "modular/stringio/r2.4/v0.0.2.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.6.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -196,23 +175,22 @@ end
 # Test Matrix:
 #   - Ruby 2.5
 #   - Ruby 2.6
+#   - JRuby 9.3
 #   - Ruby 2.7
 appraise "couch-1.17-r2" do
   gem "couch_potato", "~> 1.17"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
   # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_6.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
 # Test Matrix:
-#   - JRuby 9.3
 #   - Ruby 3.0
 #   - Ruby 3.1
 #   - JRuby 9.4
@@ -225,14 +203,12 @@ end
 #   - jruby-head
 appraise "couch-1.17-r3" do
   gem "couch_potato", "~> 1.17"
-  gem "mutex_m", "~> 0.1"
-  gem "sqlite3", ">= 1", platforms: [:ruby]
-  gem "stringio", ">= 0.0.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -242,13 +218,12 @@ end
 appraise "mongoid-7.3-b4.12" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mongoid-rspec", "~> 4.1"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
+  eval_gemfile "modular/bson/r2.4/v4.12.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_4.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_7.gemfile"
-  eval_gemfile "modular/bson_v4.12.gemfile"
+  eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2.4/v0.1.gemfile"
+  eval_gemfile "modular/stringio/r2.4/v0.0.2.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.8.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -259,13 +234,12 @@ end
 appraise "mongoid-7.3-b4.15" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
   gem "mongoid-rspec", "~> 4.1"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
+  eval_gemfile "modular/bson/r2/v4.15.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_5.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_7.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -276,13 +250,12 @@ end
 appraise "mongoid-7.4-b4.15" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/bson/r2/v4.15.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_9.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -294,13 +267,12 @@ end
 appraise "mongoid-7.4-b5" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_9.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -312,47 +284,46 @@ end
 appraise "mongoid-8.1-r2" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_0.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
 #   - Ruby 3.0
+appraise "mongoid-8.1-r3.0" do
+  gem "mongoid", "~> 8.1", ">= 8.1.7"
+  gem "mongoid-rspec", "~> 4.2"
+  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 2.6
+# Test Matrix:
 #   - Ruby 3.1
 #   - JRuby 9.4
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-appraise "mongoid-8.1-r3.0" do
-  gem "mongoid", "~> 8.1", ">= 8.1.7"
-  gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
-
-  eval_gemfile "modular/sqlite3_v2_0.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
-end
-
 appraise "mongoid-8.1-r3" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/bson/r3/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v2_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -362,15 +333,13 @@ end
 appraise "mongoid-9.0-r2-omni1.9" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.1", ">= 3.1.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v1_9.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -380,15 +349,13 @@ end
 appraise "mongoid-9.0-r2-omni2.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.1", ">= 3.1.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_0.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -398,15 +365,13 @@ end
 appraise "mongoid-9.0-r2-omni2.1" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.1", ">= 3.1.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -416,15 +381,13 @@ end
 appraise "mongoid-9.0-r3.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.1", ">= 3.1.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  eval_gemfile "modular/bson/r3/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v2_0.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v4.15.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -440,15 +403,13 @@ end
 appraise "mongoid-9.0-r3" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.1", ">= 3.1.2"
-  # TODO: Bump when old dropping old Ruby from this gem.
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
+  eval_gemfile "modular/bson/r3/v5.0.gemfile"
 
-  eval_gemfile "modular/sqlite3_v2_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -485,12 +446,10 @@ end
 #   - Ruby 2.4
 appraise "sequel-5.86-r2.4" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-
-  eval_gemfile "modular/sqlite3_v1_5.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_0.gemfile"
+  eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2.4/v0.1.gemfile"
+  eval_gemfile "modular/stringio/r2.4/v0.0.2.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -501,12 +460,10 @@ end
 #   - Ruby 2.7
 appraise "sequel-5.86-r2" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-
-  eval_gemfile "modular/sqlite3_v1_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_0.gemfile"
+  eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -515,12 +472,10 @@ end
 #   - Ruby 3.0
 appraise "sequel-5.86-r3.0" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-
-  eval_gemfile "modular/sqlite3_v2_0.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
@@ -537,46 +492,43 @@ end
 #   - jruby-head
 appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
-  gem "mutex_m", "~> 0.1"
-  gem "stringio", ">= 0.0.2"
-
-  eval_gemfile "modular/sqlite3_v2_6.gemfile"
-  eval_gemfile "modular/jdbc-sqlite3-v3.46.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run security audit on the latest version of Ruby
 appraise "audit" do
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/audit.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run coverage on the latest version of Ruby
 appraise "coverage" do
-  gem "activerecord", "~> 8.0.0"
   gem "couch_potato", "~> 1.17"
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  gem "mutex_m", "~> 0.2"
-  gem "ostruct", "~> 0.1" # Ruby >= 0, all newer releases of ostruct require Ruby >= 2.5
-  gem "stringio", "~> 3.0"
-  gem "sqlite3", ">= 1.7", platforms: [:ruby]
+  eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   eval_gemfile "modular/coverage.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
-  eval_gemfile "modular/bson_v5.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run linter on the latest version of Ruby (but, in support of the oldest supported Ruby version)
 appraise "style" do
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
   eval_gemfile "modular/style.gemfile"
-  eval_gemfile "modular/omniauth_v2_1.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end

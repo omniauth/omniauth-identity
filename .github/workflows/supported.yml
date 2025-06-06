@@ -1,4 +1,4 @@
-name: MRI Non-EOL
+name: MRI (Supported)
 
 permissions:
   contents: read
@@ -36,7 +36,7 @@ jobs:
       matrix:
         include:
           # Ruby 3.1
-          - ruby: "ruby-3.1"
+          - ruby: "3.1"
             appraisal_name: "ar-7-2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
@@ -44,7 +44,7 @@ jobs:
             bundler: latest
 
           # Ruby 3.2
-          - ruby: "ruby-3.2"
+          - ruby: "3.2"
             appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
@@ -52,7 +52,7 @@ jobs:
             bundler: latest
 
           # Ruby 3.3
-          - ruby: "ruby-3.3"
+          - ruby: "3.3"
             appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"

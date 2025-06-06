@@ -1,0 +1,4 @@
+# Ruby >= 3.0
+# Released March 15, 2024
+# Last version in the 1.x series
+gem "sqlite3", "~> 1.7.3", platforms: [:ruby]

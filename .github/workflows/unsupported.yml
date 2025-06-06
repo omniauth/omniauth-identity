@@ -1,4 +1,4 @@
-name: MRI 2.6 & 2.7 (EOL)
+name: MRI 2.6 & 2.7 (Unsupported)
 
 permissions:
   contents: read
@@ -37,7 +37,7 @@ jobs:
       matrix:
         include:
           # Ruby 2.6
-          - ruby: "ruby-2.6"
+          - ruby: "2.6"
             appraisal_name: "ar-6-1-r2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
@@ -45,7 +45,7 @@ jobs:
             bundler: '2.4.22'
 
           # Ruby 2.7
-          - ruby: "ruby-2.7"
+          - ruby: "2.7"
             appraisal_name: "ar-7-0-r2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
@@ -53,7 +53,7 @@ jobs:
             bundler: '2.4.22'
 
           # Ruby 2.7
-          - ruby: "ruby-2.7"
+          - ruby: "2.7"
             appraisal_name: "ar-7-1-r2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"

@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+# Ruby >= 2.2; first version compatible with Ruby >= 3
+# Released February 27, 2025
+gem "omniauth", "~> 2.1.3"

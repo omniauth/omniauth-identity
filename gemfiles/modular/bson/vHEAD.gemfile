@@ -1,0 +1,2 @@
+# Ruby >= 2.6
+gem "bson", github: "mongodb/bson-ruby", branch: "master"

@@ -1,4 +1,4 @@
-name: MRI 2.4, 2.5 Svc Adapters
+name: MRI 2.4, 2.5 (Ancient) Svc Adapters
 
 permissions:
   contents: read
@@ -38,7 +38,7 @@ jobs:
         include:
           # Ruby 2.4
           - ruby: "2.4"
-            appraisal_name: "couch-1.17-r2"
+            appraisal_name: "couch-1.17-r2.4"
             exec_cmd: "rake spec:orm:couch_potato"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
