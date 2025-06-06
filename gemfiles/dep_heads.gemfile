@@ -4,10 +4,6 @@ source "https://rubygems.org"
 
 gemspec path: "../"
 
-eval_gemfile("modular/mutex_m/r2/v0.3.gemfile")
-
-eval_gemfile("modular/stringio/r2/v3.0.gemfile")
-
 eval_gemfile("modular/activerecord/vHEAD.gemfile")
 
 eval_gemfile("modular/runtime_heads.gemfile")

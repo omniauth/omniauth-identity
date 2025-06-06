@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "logger"
 begin
   require "bson"
   require "bson/active_support"

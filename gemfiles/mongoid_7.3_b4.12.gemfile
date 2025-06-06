@@ -11,8 +11,6 @@ eval_gemfile("modular/bson/r2.4/v4.12.gemfile")
 
 eval_gemfile("modular/activerecord/r2.4/v5.2.gemfile")
 
-eval_gemfile("modular/mutex_m/r2.4/v0.1.gemfile")
-
-eval_gemfile("modular/stringio/r2.4/v0.0.2.gemfile")
-
 eval_gemfile("modular/omniauth/r2/v1.8.gemfile")
+
+eval_gemfile("modular/x_std_libs/r2.4/libs.gemfile")

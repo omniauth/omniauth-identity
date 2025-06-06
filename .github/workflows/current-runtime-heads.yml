@@ -40,7 +40,7 @@ jobs:
         include:
           # Ruby 3.4
           - ruby: "ruby"
-            appraisal_name: "ar-head"
+            appraisal_name: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -50,7 +50,7 @@ jobs:
           #   (according to documentation: targets Ruby 3.3 compatibility)
           #   (according to runtime: targets Ruby 3.2 compatibility)
           - ruby: "truffleruby"
-            appraisal_name: "ar-head"
+            appraisal_name: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
@@ -58,7 +58,7 @@ jobs:
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
           - ruby: "jruby"
-            appraisal_name: "ar-head"
+            appraisal_name: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             experimental: true

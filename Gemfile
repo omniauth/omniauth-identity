@@ -11,8 +11,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 ### Std Lib Extracted Gems
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.1", ">= 3.1.2"
+eval_gemfile "gemfiles/modular/x_std_libs/r3/libs.gemfile"
 
 ### Security Audit
 eval_gemfile "gemfiles/modular/audit.gemfile"

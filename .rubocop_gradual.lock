@@ -41,7 +41,7 @@
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
-  "omniauth-identity.gemspec:155861729": [
+  "omniauth-identity.gemspec:941751779": [
     [4, 23, 12, "Gemspec/RubyVersionGlobalsUsage: Do not use `RUBY_VERSION` in gemspec file.", 31296028]
   ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
@@ -148,8 +148,8 @@
     [20, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
     [25, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/sequel_spec.rb:1099118529": [
-    [12, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
-    [38, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  "spec_orms/sequel_spec.rb:1733789877": [
+    [13, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [39, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }
