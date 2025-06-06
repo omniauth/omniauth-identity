@@ -42,6 +42,12 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
+          - ruby: "3.1"
+            appraisal_name: "sequel-5.86-r3"
+            exec_cmd: "rake spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
           # Ruby 3.2
           - ruby: "3.2"
@@ -50,11 +56,23 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
+          - ruby: "3.2"
+            appraisal_name: "sequel-5.86-r3"
+            exec_cmd: "rake spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
 
           # Ruby 3.3
           - ruby: "3.3"
             appraisal_name: "ar-8-0"
             exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.3"
+            appraisal_name: "sequel-5.86-r3"
+            exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest

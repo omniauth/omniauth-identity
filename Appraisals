@@ -456,9 +456,31 @@ end
 # Compat: Ruby >= 1.9.2
 # Test Matrix:
 #   - Ruby 2.5
+appraise "sequel-5.86-r2.5" do
+  gem "sequel", "~> 5.86", ">= 5.86.0"
+  eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 1.9.2
+# Test Matrix:
 #   - Ruby 2.6
+appraise "sequel-5.86-r2.6" do
+  gem "sequel", "~> 5.86", ">= 5.86.0"
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
+  eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"
+  eval_gemfile "modular/stringio/r2/v3.0.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+# Compat: Ruby >= 1.9.2
+# Test Matrix:
 #   - Ruby 2.7
-appraise "sequel-5.86-r2" do
+appraise "sequel-5.86-r2.7" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/mutex_m/r2/v0.3.gemfile"

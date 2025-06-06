@@ -50,8 +50,6 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
-
-          # jruby-9.3 (targets Ruby 2.6 compatibility)
           - ruby: "jruby-9.3"
             appraisal_name: "couch-1.17-r2"
             exec_cmd: "rake spec:orm:couch_potato"

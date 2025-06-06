@@ -43,15 +43,12 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'
             bundler: '2.5.23'
-
           - ruby: "3.0"
             appraisal_name: "mongoid-9.0-r3.0"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'
             bundler: '2.5.23'
-
-          # Ruby 3.0
           - ruby: "3.0"
             appraisal_name: "couch-1.17-r3"
             exec_cmd: "rake spec:orm:couch_potato"

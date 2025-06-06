@@ -43,7 +43,6 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: '3.4.22'
             bundler: '2.4.22'
-
           - ruby: "2.6"
             appraisal_name: "mongoid-7.4-b4.15"
             exec_cmd: "rake spec:orm:mongoid"
@@ -58,8 +57,6 @@ jobs:
             gemfile: "Appraisal.root"
             rubygems: '3.4.22'
             bundler: '2.4.22'
-
-          # Ruby 2.7
           - ruby: "2.7"
             appraisal_name: "mongoid-8.1-r2"
             exec_cmd: "rake spec:orm:mongoid"
