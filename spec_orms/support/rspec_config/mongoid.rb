@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "logger"
+# :nocov:
 begin
   require "bson"
   require "bson/active_support"
@@ -12,6 +13,7 @@ rescue LoadError => error
     raise error
   end
 end
+# :nocov:
 require "mongoid"
 require "mongoid-rspec"
 

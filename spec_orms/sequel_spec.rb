@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :nocov:
 DB = if RUBY_ENGINE == "jruby"
   require "jdbc/sqlite3"
   require "sequel"
@@ -9,6 +10,7 @@ else
   require "sequel"
   Sequel.sqlite
 end
+# :nocov:
 
 RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   before(:all) do

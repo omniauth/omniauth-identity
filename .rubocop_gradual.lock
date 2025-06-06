@@ -148,8 +148,8 @@
     [20, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
     [25, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/sequel_spec.rb:1733789877": [
-    [13, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
-    [39, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  "spec_orms/sequel_spec.rb:992245685": [
+    [15, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [41, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }
