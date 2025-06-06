@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-require "sqlite3"
-require "sequel"
-
 DB = if RUBY_ENGINE == "jruby"
+  require "jdbc/sqlite3"
+  require "sequel"
   Sequel.connect("jdbc:sqlite::memory:")
 else
+  require "sqlite3"
+  require "sequel"
   Sequel.sqlite
 end
 
@@ -17,7 +18,7 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
       String :email, null: false
       String :password_digest, null: false
     end
-  end
+    y  el on JRend
 
   before do
     sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
