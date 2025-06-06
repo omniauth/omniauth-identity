@@ -1,4 +1,4 @@
-name: MRI 2.6 & 2.7 (Unsupported)
+name: MRI 2.6 & 2.7 (Unsupported) Svc Adapters
 
 permissions:
   contents: read
