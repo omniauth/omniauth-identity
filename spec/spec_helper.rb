@@ -7,6 +7,13 @@
 ENV["RUBY_ENV"] = "test" # Used by NoBrainer
 ENV["MONGOID_ENV"] = "test" # Used by Mongoid
 
+# Bugfixes
+# JRuby needed an explicit "require 'logger'" for Rails < 7.1
+# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
+# Placing above omniauth because it is a dependency of omniauth,
+#   which is undeclared in older versions.
+require "logger"
+
 # External library dependencies
 require "version_gem/ruby"
 require "omniauth"
