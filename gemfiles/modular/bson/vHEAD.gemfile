@@ -1,2 +1,4 @@
 # Ruby >= 2.6
+# NOTE: Installing from git source on JRuby doesn't seem to work
+# https://github.com/mongodb/bson-ruby/discussions/351#discussioncomment-13392671
 gem "bson", github: "mongodb/bson-ruby", branch: "master"
