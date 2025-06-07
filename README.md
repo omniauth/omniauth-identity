@@ -522,10 +522,10 @@ or one of the others at the head of this README.
 [👽oss-helpi]: https://www.codetriage.com/omniauth/omniauth-identity/badges/users.svg
 [👽version]: https://rubygems.org/gems/omniauth-identity
 [👽versioni]: https://img.shields.io/gem/v/omniauth-identity.svg
-[🔑qlty-mnt]: https://qlty.sh/gh/oauth-xx/projects/omniauth-identity
-[🔑qlty-mnti♻️]: https://qlty.sh/badges/d3370c2c-8791-4202-9759-76f527f76005/maintainability.svg
-[🔑qlty-cov]: https://qlty.sh/gh/oauth-xx/projects/omniauth-identity
-[🔑qlty-covi♻️]: https://qlty.sh/badges/d3370c2c-8791-4202-9759-76f527f76005/test_coverage.svg
+[🔑qlty-mnt]: https://qlty.sh/gh/omniauth/projects/omniauth-identity
+[🔑qlty-mnti♻️]: https://qlty.sh/badges/c2eb0211-c105-4fc6-9b36-650307c67e06/maintainability.svg
+[🔑qlty-cov]: https://qlty.sh/gh/omniauth/projects/omniauth-identity
+[🔑qlty-covi♻️]: https://qlty.sh/badges/c2eb0211-c105-4fc6-9b36-650307c67e06/test_coverage.svg
 [🔑codecov]: https://codecov.io/gh/omniauth/omniauth-identity
 [🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL
 [🔑coveralls]: https://coveralls.io/github/omniauth/omniauth-identity?branch=main
