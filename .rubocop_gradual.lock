@@ -132,24 +132,24 @@
     [50, 7, 297, "RSpec/ExampleLength: Example has too many lines. [6/5]", 2247016642],
     [55, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/active_record_spec.rb:1011787072": [
-    [8, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
-    [34, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
-    [40, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  "spec_orms/active_record_spec.rb:2527236494": [
+    [15, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
+    [41, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
+    [47, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/couch_potato_spec.rb:1215064168": [
-    [5, 1, 71, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/couch_potato_module*_spec.rb`.", 3681175308],
-    [29, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
-    [34, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
-  ],
-  "spec_orms/mongoid_spec.rb:1857267992": [
-    [7, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],
-    [14, 14, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441],
-    [20, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
-    [25, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
-  ],
-  "spec_orms/sequel_spec.rb:992245685": [
-    [15, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+  "spec_orms/couch_potato_spec.rb:2607164198": [
+    [12, 1, 71, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/couch_potato_module*_spec.rb`.", 3681175308],
+    [36, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
     [41, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  ],
+  "spec_orms/mongoid_spec.rb:2505895318": [
+    [14, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],
+    [21, 14, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441],
+    [27, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
+    [32, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  ],
+  "spec_orms/sequel_spec.rb:1275922107": [
+    [22, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [48, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }
