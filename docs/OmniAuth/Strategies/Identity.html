@@ -568,9 +568,9 @@ use for external OmniAuth providers.</p>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:enable_login</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_on_request_path?'>on_request_path?</span>
     <span class='comment'># OmniAuth, by default, disables &quot;GET&quot; requests for security reasons.
 </span>    <span class='comment'># This effectively disables omniauth-identity tool&#39;s login form feature.
-</span>    <span class='comment'># Because it is disabled by default, and because enabling it would desecuritize all the other
-</span>    <span class='comment'>#   OmniAuth strategies that may be implemented, we do not ask users to modify that setting.
-</span>    <span class='comment'># Instead we hook in here in the &quot;other_phase&quot;, with a config setting of our own: `enable_login`
+</span>    <span class='comment'># Because it is disabled by default, and because enabling it globally would affect the security of all
+</span>    <span class='comment'>#   other OmniAuth strategies that are present, we do not ask users to modify that setting.
+</span>    <span class='comment'># Instead, we use this hook in the &quot;other_phase&quot;, with a config setting of our own: `enable_login`
 </span>    <span class='id identifier rubyid_request_phase'>request_phase</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_call_app!'>call_app!</span>
@@ -760,7 +760,7 @@ use for external OmniAuth providers.</p>
 </div>
 
       <div id="footer">
-  Generated on Sat May 31 08:37:21 2025 by
+  Generated on Sat Jun  7 09:03:59 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.4).
 </div>

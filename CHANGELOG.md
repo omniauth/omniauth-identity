@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog v1](https://keepachangelog.com/en/1.0.0
 and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- COVERAGE: 92.06% -- 348/378 lines in 15 files
+- BRANCH COVERAGE: 79.49% -- 62/78 branches in 15 files
+- 44.44% documented
 ### Added
 - More documentation by @pboling
+- Expanded test suite, covering many more points of the dependency matrix by @pboling
 ### Changed
 ### Fixed
 - Set `SKIP_GEM_SIGNING` in env to allow `gem build` without cryptographic signing requirement by @pboling
