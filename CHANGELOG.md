@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - More documentation by @pboling
 - Expanded test suite, covering many more points of the dependency matrix by @pboling
 - Test workflows with latest dependencies and more platform and dep HEADs
+### Changed
+- Updated Code of Conduct to Contributor Covenant v2.1
 ### Fixed
 - Set `SKIP_GEM_SIGNING` in env to allow `gem build` without cryptographic signing requirement by @pboling
   - Useful for linux distros whose package managers sign packages independently
