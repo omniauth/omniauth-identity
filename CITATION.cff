@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: OmniAuth::Identity
+title: omniauth-identity
 message: >-
   If you use this work and you want to cite it,
   then you can use the metadata from this file.
@@ -13,8 +13,8 @@ authors:
 identifiers:
   - type: url
     value: 'https://github.com/omniauth/omniauth-identity/'
-    description: OmniAuth::Identity
+    description: omniauth-identity
 repository-code: 'https://github.com/omniauth/omniauth-identity/'
 abstract: >-
-  OmniAuth::Identity
+  omniauth-identity
 license: See license file

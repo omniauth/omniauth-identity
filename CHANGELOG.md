@@ -6,17 +6,25 @@ The format is based on [Keep a Changelog v1](https://keepachangelog.com/en/1.0.0
 and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [3.1.3] - 2025-06-07
+- TAG: [v3.1.3][3.1.3t]
 - COVERAGE: 92.06% -- 348/378 lines in 15 files
 - BRANCH COVERAGE: 79.49% -- 62/78 branches in 15 files
 - 44.44% documented
 ### Added
 - More documentation by @pboling
 - Expanded test suite, covering many more points of the dependency matrix by @pboling
-### Changed
+- Test workflows with latest dependencies and more platform and dep HEADs
 ### Fixed
 - Set `SKIP_GEM_SIGNING` in env to allow `gem build` without cryptographic signing requirement by @pboling
   - Useful for linux distros whose package managers sign packages independently
-### Removed
 
 ## [3.1.2] - 2025-05-07
 - TAG: [v3.1.2][3.1.2t]
@@ -196,7 +204,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - Gemfile.lock file
 - MongoMapper support; unable to satisfy dependencies of both MongoMapper and Mongoid now that MongoMapper is no longer actively maintained.
 
-[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.2...HEAD
+[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.3...HEAD
+[3.1.3]: https://github.com/omniauth/omniauth-identity/compare/v3.1.2...v3.1.3
+[3.1.3t]: https://github.com/omniauth/omniauth-identity/tags/v3.1.3
 [3.1.2]: https://github.com/omniauth/omniauth-identity/compare/v3.1.1...v3.1.2
 [3.1.2t]: https://github.com/omniauth/omniauth-identity/tags/v3.1.2
 [3.1.1]: https://github.com/omniauth/omniauth-identity/compare/v3.1.0...v3.1.1
