@@ -41,8 +41,9 @@ begin
   require "kettle-soup-cover"
   #   this next line has a side effect of running `.simplecov`
   require "simplecov" if defined?(Kettle::Soup::Cover) && Kettle::Soup::Cover::DO_COV
-rescue LoadError
-  nil
+rescue LoadError => error
+  # check the error message and re-raise if not what is expected
+  raise error unless error.message.include?("kettle")
 end
 
 # This gem
