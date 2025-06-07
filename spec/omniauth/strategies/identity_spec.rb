@@ -11,12 +11,12 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
   let(:identity_hash) { env_hash["omniauth.identity"] }
   let(:identity_options) { {} }
   let(:app_options) { {} }
-  let(:is_java) { RUBY_PLATFORM == "java" }
+  let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && defined?(ArJdbc::Version) && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
   let(:anon_ar) do
     AnonymousActiveRecord.generate(
       parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
       columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-      connection_params: {adapter: is_java ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
+      connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
     ) do
       auth_key :email
       def balloon
@@ -43,7 +43,9 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
   end
 
   describe "path handling" do
-    script_names = [nil, "/my_path"]
+    script_names = [nil]
+    # The script name root of the path only works in omniauth >= v2
+    script_names << "/my_path" if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
     path_prefixes = ["/auth", "/my_auth", ""]
     provider_names = ["identity", "my_id"]
     script_names.product(path_prefixes, provider_names).each do |script_name, path_prefix, provider_name|
@@ -127,26 +129,43 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
       context "when registration is enabled" do
         let(:identity_options) { {model: anon_ar, enable_registration: true, enable_login: false} }
 
-        it "bypasses registration form" do
-          get "/auth/identity"
+        if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
+          it "bypasses registration form" do
+            get "/auth/identity"
 
-          expect(last_response.body).to eq("HELLO!")
-          expect(last_response.body).not_to include("<form")
-          expect(last_response.body).not_to include("<a")
-          expect(last_response.body).not_to include("Create an Identity")
+            expect(last_response.body).to eq("HELLO!")
+            expect(last_response.body).not_to include("<form")
+            expect(last_response.body).not_to include("<a")
+            expect(last_response.body).not_to include("Create an Identity")
+          end
+        else
+          it "still has registration form" do
+            get "/auth/identity"
+
+            expect(last_response.body).not_to eq("HELLO!")
+            expect(last_response.body).to include("<form")
+            expect(last_response.body).to include("<a")
+            # We still get a registration form for some reason in old active record
+            expect(last_response.body).to include("Create an Identity")
+          end
         end
       end
 
       context "when registration is disabled" do
         let(:identity_options) { {model: anon_ar, enable_registration: false, enable_login: false} }
 
-        it "displays a form without a link to register" do
+        it "bypasses registration form" do
           get "/auth/identity"
 
-          expect(last_response.body).to eq("HELLO!")
-          expect(last_response.body).not_to include("<form")
-          expect(last_response.body).not_to include("<a")
-          expect(last_response.body).not_to include("Create an Identity")
+          if Gem::Version.create(OmniAuth::VERSION) >= Gem::Version.create("2.0.0")
+            expect(last_response.body).to eq("HELLO!")
+            expect(last_response.body).not_to include("<form")
+            expect(last_response.body).not_to include("<a")
+            expect(last_response.body).not_to include("Create an Identity")
+          else
+            # We still get a login form for some reason in old active record
+            expect(last_response.body).not_to include("Create an Identity")
+          end
         end
       end
     end

@@ -1,0 +1,5 @@
+# main targets Rails 8.1
+gem "activerecord", github: "rails/rails", branch: "main"
+
+eval_gemfile("../sqlite3/vHEAD.gemfile")
+eval_gemfile("../activerecord-jdbc-adapter/vHEAD.gemfile")

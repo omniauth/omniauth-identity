@@ -2,10 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "appraisal", branch: "galtzo", git: "https://github.com/pboling/appraisal"
-gem "activerecord", "~> 7.2.2"
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.0"
-gem "sqlite3", "~> 1.6", platforms: [:ruby]
-
 gemspec path: "../"
+
+eval_gemfile("modular/activerecord/r3/v7.2.gemfile")
+
+eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
+
+eval_gemfile("modular/x_std_libs/r3/libs.gemfile")

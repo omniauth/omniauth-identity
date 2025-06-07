@@ -5,9 +5,9 @@ spec/omniauth/strategies/identity_spec.rb -- 2 warnings:
   [36, 39]:DuplicateMethodCall: app calls 'use OmniAuth::Strategies::Identity, opts' 2 times [https://github.com/troessner/reek/blob/v6.5.0/docs/Duplicate-Method-Call.md]
   [29]:TooManyStatements: app has approx 9 statements [https://github.com/troessner/reek/blob/v6.5.0/docs/Too-Many-Statements.md]
 spec_orms/active_record_spec.rb -- 1 warning:
-  [6]:IrresponsibleModule: TestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.5.0/docs/Irresponsible-Module.md]
+  [13]:IrresponsibleModule: TestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.5.0/docs/Irresponsible-Module.md]
 spec_orms/support/rspec_config/mongoid.rb -- 1 warning:
-  [12]:IrresponsibleModule: MongoidTestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.5.0/docs/Irresponsible-Module.md]
+  [26]:IrresponsibleModule: MongoidTestIdentity has no descriptive comment [https://github.com/troessner/reek/blob/v6.5.0/docs/Irresponsible-Module.md]
 lib/omniauth/identity/model.rb -- 18 warnings:
   [52]:BooleanParameter: OmniAuth::Identity::Model::ClassMethods#auth_key has boolean parameter 'method' [https://github.com/troessner/reek/blob/v6.5.0/docs/Boolean-Parameter.md]
   [141, 142]:DuplicateMethodCall: OmniAuth::Identity::Model#auth_key calls 'self.class' 2 times [https://github.com/troessner/reek/blob/v6.5.0/docs/Duplicate-Method-Call.md]
@@ -65,4 +65,6 @@ lib/omniauth/strategies/identity.rb -- 15 warnings:
   [133]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#build_omniauth_registration_form has the variable name 'f' [https://github.com/troessner/reek/blob/v6.5.0/docs/Uncommunicative-Variable-Name.md]
   [73]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#registration_phase has the variable name 'h' [https://github.com/troessner/reek/blob/v6.5.0/docs/Uncommunicative-Variable-Name.md]
   [73]:UncommunicativeVariableName: OmniAuth::Strategies::Identity#registration_phase has the variable name 'k' [https://github.com/troessner/reek/blob/v6.5.0/docs/Uncommunicative-Variable-Name.md]
-55 total warnings
+.yard_gfm_support.rb -- 1 warning:
+  [9, 9]:FeatureEnvy: KramdownGfmDocument#initialize refers to 'options' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v6.5.0/docs/Feature-Envy.md]
+56 total warnings

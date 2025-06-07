@@ -1,4 +1,10 @@
-name: MRI 2.4, 2.5 (EOL)
+name: MRI 2.4, 2.5 (Ancient)
+
+permissions:
+  contents: read
+
+env:
+  K_SOUP_COV_DO: false
 
 on:
   push:
@@ -20,7 +26,7 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
+    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal_name }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-22.04
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -30,65 +36,41 @@ jobs:
       fail-fast: false
       matrix:
         include:
-#          # Ruby 2.4
-#          - ruby: "2.4"
-#            appraisal: "ar-5-2"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            rubygems: "3.3.27"
-#            bundler: "2.3.27"
-#          - ruby: "2.4"
-#            appraisal: "couch-1.17"
-#            exec_cmd: "rake spec:orm:couch_potato"
-#            gemfile: "Appraisal.root"
-#            rubygems: "3.3.27"
-#            bundler: "2.3.27"
-#          - ruby: "2.4"
-#            appraisal: "mongoid-7.3"
-#            exec_cmd: "rake spec:orm:mongoid"
-#            gemfile: "Appraisal.root"
-#            rubygems: "3.3.27"
-#            bundler: "2.3.27"
-#          - ruby: "2.4"
-#            appraisal: "sequel-5.86"
-#            exec_cmd: "rake spec:orm:sequel"
-#            gemfile: "Appraisal.root"
-#            rubygems: "3.3.27"
-#            bundler: "2.3.27"
+          # Ruby 2.4
+          - ruby: "2.4"
+            appraisal_name: "ar-5-2-r2.4"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: "3.3.27"
+            bundler: "2.3.27"
+          - ruby: "2.4"
+            appraisal_name: "sequel-5.86-r2.4"
+            exec_cmd: "rake spec:orm:sequel"
+            gemfile: "Appraisal.root"
+            rubygems: "3.3.27"
+            bundler: "2.3.27"
 
           # Ruby 2.5
           - ruby: "2.5"
-            appraisal: "ar-5-2"
+            appraisal_name: "ar-5-2-r2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
             bundler: "2.3.27"
           - ruby: "2.5"
-            appraisal: "ar-6-0"
+            appraisal_name: "ar-6-0"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
             bundler: "2.3.27"
           - ruby: "2.5"
-            appraisal: "ar-6-1"
+            appraisal_name: "ar-6-1-r2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
             bundler: "2.3.27"
           - ruby: "2.5"
-            appraisal: "couch-1.17"
-            exec_cmd: "rake spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: "3.3.27"
-            bundler: "2.3.27"
-          - ruby: "2.5"
-            appraisal: "mongoid-7.4"
-            exec_cmd: "rake spec:orm:mongoid"
-            gemfile: "Appraisal.root"
-            rubygems: "3.3.27"
-            bundler: "2.3.27"
-          - ruby: "2.5"
-            appraisal: "sequel-5.86"
+            appraisal_name: "sequel-5.86-r2.5"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: "3.3.27"
@@ -132,7 +114,7 @@ jobs:
       # NOTE: This does not use the main Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
+      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}

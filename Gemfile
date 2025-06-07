@@ -11,8 +11,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 ### Std Lib Extracted Gems
-gem "mutex_m", "~> 0.2"
-gem "stringio", "~> 3.1", ">= 3.1.2"
+eval_gemfile "gemfiles/modular/x_std_libs/r3/libs.gemfile"
 
 ### Security Audit
 eval_gemfile "gemfiles/modular/audit.gemfile"
@@ -53,4 +52,4 @@ end
 # TODO: Remove this once fixed in upstream bson (> 5.0.2)
 # Fix that is only needed on systems with GCC v15+
 # See: https://github.com/mongodb/bson-ruby/pull/355
-gem "bson", github: "pboling/bson-ruby", branch: "master"
+eval_gemfile "gemfiles/modular/bson/vHEAD.gemfile"

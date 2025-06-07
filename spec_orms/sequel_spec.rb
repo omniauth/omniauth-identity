@@ -1,9 +1,23 @@
 # frozen_string_literal: true
 
-require "sqlite3"
-require "sequel"
+# Bugfixes
+# JRuby needed an explicit "require 'logger'" for Rails < 7.1
+# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
+# Placing above omniauth because it is a dependency of omniauth,
+#   which is undeclared in older versions.
+require "logger"
 
-DB = Sequel.sqlite
+# :nocov:
+DB = if RUBY_ENGINE == "jruby"
+  require "jdbc/sqlite3"
+  require "sequel"
+  Sequel.connect("jdbc:sqlite::memory:")
+else
+  require "sqlite3"
+  require "sequel"
+  Sequel.sqlite
+end
+# :nocov:
 
 RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   before(:all) do

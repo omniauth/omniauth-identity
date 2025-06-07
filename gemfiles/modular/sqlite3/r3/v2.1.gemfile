@@ -1,0 +1,5 @@
+# Ruby >= 3.1
+# Released October 22, 2024
+# First version with protections against sqlite's lack of fork safety
+# Oldest version compatible with Rails v8.0
+gem "sqlite3", "~> 2.1", ">= 2.1.1", platforms: [:ruby]

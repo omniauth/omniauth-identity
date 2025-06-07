@@ -1,0 +1,2 @@
+gem "activerecord", "~> 6.0.6.1"
+eval_gemfile("../../sqlite3/r2/v1.4.gemfile")

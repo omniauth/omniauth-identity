@@ -1,0 +1,4 @@
+# Ruby >= 2.3
+# Released May 28, 2021
+# Last version compatible with Ruby 2.4
+gem "bson", "~> 4.12", ">= 4.12.1"

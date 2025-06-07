@@ -1,0 +1,16 @@
+# NOTE: JRuby is still working on compatibility with Rails 7.2
+platforms :jruby do
+  # gem "jdbc-sqlite3" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem 'jdbc-mysql', # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem 'jdbc-postgres', # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  gem "activerecord-jdbc-adapter", "~> 72.0", github: "jruby/activerecord-jdbc-adapter", branch: "72-stable"
+  gem "activerecord-jdbcsqlite3-adapter", "~> 72.0", github: "jruby/activerecord-jdbc-adapter", branch: "72-stable"
+  gem "jdbc-sqlite3", "~> 3.46", ">= 3.46.1.1"
+  # gem "activerecord-jdbcmysql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+  # gem "activerecord-jdbcpostgresql-adapter", "~> 71.0" # github: "jruby/activerecord-jdbc-adapter", branch: '71-stable'
+
+  # This setup is recommended by the author:
+  # https://github.com/jruby/activerecord-jdbc-adapter/issues/1146#issuecomment-2942578259
+  # gem "activerecord-jdbc-adapter", github: "JesseChavez/activerecord-jdbc-adapter", branch: "stable-dev"
+  # gem "jdbc-sqlite3"
+end

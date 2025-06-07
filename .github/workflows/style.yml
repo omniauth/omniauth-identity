@@ -1,5 +1,8 @@
 name: Style
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
@@ -11,9 +14,6 @@ on:
       - '*'
   # Allow manually triggering the workflow.
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
@@ -35,7 +35,7 @@ jobs:
         include:
           # Style
           - ruby: "ruby"
-            appraisal: "style"
+            appraisal_name: "style"
             exec_cmd: "rake rubocop_gradual:check"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -58,7 +58,7 @@ jobs:
       # NOTE: This does not use the main Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.appraisal }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.appraisal }} checks via ${{ matrix.exec_cmd }}
-        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
+      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}

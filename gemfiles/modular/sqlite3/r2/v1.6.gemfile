@@ -1,0 +1,5 @@
+# Ruby >= 2.7 (with C-extensions)
+# Ruby >= 2.5 (pure Ruby)
+# Released November 2, 2023
+# Last version compatible with Ruby 2.7 (C-extensions)
+gem "sqlite3", "~> 1.6.9", platforms: [:ruby]

@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+# Ruby >= 2.2
+# Released April 7, 2021
+gem "omniauth", "~> 2.0.4"

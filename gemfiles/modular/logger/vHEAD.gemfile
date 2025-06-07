@@ -1,0 +1,2 @@
+# Ruby >= 2.5 (dependency of omniauth)
+gem "logger", github: "ruby/logger", branch: "master"

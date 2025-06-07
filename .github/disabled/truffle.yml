@@ -26,7 +26,7 @@
 #
 #jobs:
 #  test:
-#    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
+#    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal_name }}${{ matrix.name_extra || '' }}
 #    if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
 #    runs-on: ubuntu-22.04
 #    continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -38,7 +38,7 @@
 #          # NOTE: truffleruby does not support upgrading rubygems.
 #          # truffleruby-22.3 (targets Ruby 3.0 compatibility)
 #          - ruby: "truffleruby-22.3"
-#            appraisal: "couch-1.17"
+#            appraisal_name: "couch-1.17"
 #            exec_cmd: "rake spec:orm:couch_potato"
 #            gemfile: "Appraisal.root"
 #            rubygems: default
@@ -46,7 +46,7 @@
 #
 #          # truffleruby-23.0 (targets Ruby 3.1 compatibility)
 #          - ruby: "truffleruby-23.0"
-#            appraisal: "couch-1.17"
+#            appraisal_name: "couch-1.17"
 #            exec_cmd: "rake spec:orm:couch_potato"
 #            gemfile: "Appraisal.root"
 #            rubygems: default
@@ -54,7 +54,7 @@
 #
 #          # truffleruby-23.1 (targets Ruby 3.2 compatibility)
 #          - ruby: "truffleruby-23.1"
-#            appraisal: "couch-1.17"
+#            appraisal_name: "couch-1.17"
 #            exec_cmd: "rake spec:orm:couch_potato"
 #            gemfile: "Appraisal.root"
 #            rubygems: default
@@ -91,7 +91,7 @@
 #      # NOTE: This does not use the main Gemfile at all.
 #      - name: Install Root Appraisal
 #        run: bundle
-#      - name: Appraisal for ${{ matrix.appraisal }}
-#        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+#      - name: Appraisal for ${{ matrix.appraisal_name }}
+#        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
 #      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
-#        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
+#        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}

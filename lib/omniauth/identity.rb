@@ -8,7 +8,7 @@ unless defined?(OmniAuth::Identity::Version::VERSION)
   # this library's version
   require "omniauth/identity/version"
 
-  # Ensure version is configured before loading the rest of the library
+  # Ensure the version is configured before loading the rest of the library
   OmniAuth::Identity::Version.class_eval do
     extend VersionGem::Basic
   end
