@@ -6,7 +6,7 @@ require "version_gem"
 # this library's version
 require "omniauth/identity/version"
 
-# Ensure version is configured before loading the rest of the library
+# Configure version before loading the rest of the library
 OmniAuth::Identity::Version.class_eval do
   extend VersionGem::Basic
 end

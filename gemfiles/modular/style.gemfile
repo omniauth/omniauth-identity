@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-# We run rubocop on the latest version of Ruby,
-#   but in support of the oldest supported version of Ruby
+# Use rubocop-lts to run rubocop on the latest version of Ruby
+#   with syntax support for the oldest allowed version of Ruby
 
-gem "reek"
+gem "reek", "~> 6.5"
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
 gem "rubocop-minitest"
-gem "rubocop-packaging", "~> 0.5", ">= 0.5.2"
-gem "rubocop-rspec", "~> 3.2"
+gem "rubocop-packaging", "~> 0.6", ">= 0.6.0"
+gem "rubocop-rspec", "~> 3.6"
 gem "rubocop-sequel"
-gem "standard", ">= 1.35.1", "!= 1.41.1", "!= 1.42.0"
+gem "standard", ">= 1.50"
 
 # Std Lib extractions
-gem "benchmark", "~> 0.4" # Removed from Std Lib in Ruby 3.5
+gem "benchmark", "~> 0.4", ">= 0.4.1" # Removed from Std Lib in Ruby 3.5

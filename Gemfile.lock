@@ -435,7 +435,7 @@ DEPENDENCIES
   activerecord (>= 5)
   anonymous_active_record (~> 1.0, >= 1.0.9)
   appraisal!
-  benchmark (~> 0.4)
+  benchmark (~> 0.4, >= 0.4.1)
   bson!
   bundler-audit (~> 0.9.2)
   byebug (>= 11)
@@ -457,17 +457,17 @@ DEPENDENCIES
   rake (~> 13.0)
   rb-fsevent
   rdoc (~> 6.11)
-  reek
+  reek (~> 6.5)
   rspec (~> 3.13)
   rspec-block_is_expected (~> 1.0, >= 1.0.6)
   rubocop-lts (~> 12.1, >= 12.1.1)
   rubocop-minitest
-  rubocop-packaging (~> 0.5, >= 0.5.2)
-  rubocop-rspec (~> 3.2)
+  rubocop-packaging (~> 0.6, >= 0.6.0)
+  rubocop-rspec (~> 3.6)
   rubocop-sequel
   sequel (~> 5.86)
   sqlite3 (>= 1)
-  standard (>= 1.35.1, != 1.42.0, != 1.41.1)
+  standard (>= 1.50)
   stone_checksums (~> 1.0)
   stringio (>= 3.0)
   test-unit (>= 3.0)

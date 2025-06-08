@@ -28,6 +28,6 @@ or find other sponsorship links in the [README].
 
 Available as part of the Tidelift Subscription.
 
-The maintainers of this library and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more.][tidelift-ref]
+The maintainers of this library and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers for the exact packages you use. [Learn more.][tidelift-ref]
 
 [tidelift-ref]: https://tidelift.com/subscription/pkg/rubygems-omniauth-identity?utm_source=rubygems-omniauth-identity&utm_medium=referral&utm_campaign=enterprise&utm_term=repo
