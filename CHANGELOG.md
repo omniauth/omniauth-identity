@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Security
 
-## [3.1.3] - 2025-06-07
+## [3.1.3] - 2025-06-08
 - TAG: [v3.1.3][3.1.3t]
 - COVERAGE: 92.06% -- 348/378 lines in 15 files
 - BRANCH COVERAGE: 79.49% -- 62/78 branches in 15 files
