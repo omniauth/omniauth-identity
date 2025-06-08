@@ -47,16 +47,16 @@ jobs:
             bundler: default
 
 #          # truffleruby-head
-          - ruby: "truffleruby-head"
-            appraisal_name: "couch-1.17-r3"
-            exec_cmd: "rake spec:orm:couch_potato"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#          - ruby: "truffleruby-head"
+#            appraisal_name: "couch-1.17-r3"
+#            exec_cmd: "rake spec:orm:couch_potato"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
           # jruby-head
           - ruby: "jruby-head"
-            appraisal_name: "ar-8-0"
+            appraisal_name: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default

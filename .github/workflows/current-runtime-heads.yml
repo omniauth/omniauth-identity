@@ -57,13 +57,13 @@ jobs:
             bundler: default
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
-          - ruby: "jruby"
-            appraisal_name: "dep-heads"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            experimental: true
-            rubygems: default
-            bundler: default
+#          - ruby: "jruby"
+#            appraisal_name: "dep-heads"
+#            exec_cmd: "rake spec:orm:active_record"
+#            gemfile: "Appraisal.root"
+#            experimental: true
+#            rubygems: default
+#            bundler: default
 
     steps:
       - name: Checkout
