@@ -1,6 +1,6 @@
 {
-  "README.md:3686743644": [
-    [213, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
+  "README.md:1033890261": [
+    [201, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "Rakefile:2617189060": [
     [94, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:85 and Rakefile:94.", 2701974006]

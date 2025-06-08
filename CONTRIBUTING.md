@@ -6,7 +6,7 @@ the [code of conduct][🤝conduct].
 
 To submit a patch, please fork the project, create a patch with tests, and send a pull request.
 
-Remember to [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog] if you make changes.
+Remember to [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog].
 
 ## Help out!
 
