@@ -26,7 +26,7 @@ Follow these instructions:
 
 From time to time the appraisal gemfiles in `gemfiles/` will need to be updated.
 
-NOTE: We run on a [fork][🚎appraisal-fork] of Appraisal.
+NOTE: The `eval_gemfile` feature comes from a [fork][🚎appraisal-fork] of Appraisal.
 
 Please upvote the PR for `eval_gemfile` [support][🚎appraisal-eval-gemfile-pr]
 
