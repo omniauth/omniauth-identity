@@ -81,7 +81,7 @@ jobs:
           ruby-version: "${{ matrix.ruby }}"
           rubygems: "${{ matrix.rubygems }}"
           bundler: "${{ matrix.bundler }}"
-          bundler-cache: false
+          bundler-cache: true
 
       # Raw `bundle` will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
       # We need to do this first to get appraisal installed.
