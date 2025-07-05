@@ -47,8 +47,6 @@ jobs:
             bundler: latest
 
           # truffleruby-24.1
-          #   (according to documentation: targets Ruby 3.3 compatibility)
-          #   (according to runtime: targets Ruby 3.2 compatibility)
           - ruby: "truffleruby"
             appraisal_name: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
