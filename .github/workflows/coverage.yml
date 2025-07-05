@@ -12,18 +12,18 @@ env:
   K_SOUP_COV_FORMATTERS: "html,xml,rcov,lcov,json,tty"
   K_SOUP_COV_DO: true
   K_SOUP_COV_MULTI_FORMATTERS: true
-  K_SOUP_COV_COMMAND_NAME: "RSpec Coverage"
+  K_SOUP_COV_COMMAND_NAME: "Test Coverage"
 
 on:
   push:
     branches:
-      - 'main'
+      - "main"
       - "*-stable"
     tags:
-      - '!*' # Do not execute on tags
+      - "!*" # Do not execute on tags
   pull_request:
     branches:
-      - '*'
+      - "*"
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
-    env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
+    env: # $BUNDLE_GEMFILE - set at job level, so applies to all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
       fail-fast: false
@@ -95,12 +95,14 @@ jobs:
 
       # Do SaaS coverage uploads first
       - name: Upload coverage to Coveralls
+        if: ${{ !env.ACT }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: ${{ matrix.experimental != 'false' }}
 
       - name: Upload coverage to QLTY
+        if: ${{ !env.ACT }}
         uses: qltysh/qlty-action/coverage@main
         with:
           token: ${{secrets.QLTY_COVERAGE_TOKEN}}
@@ -118,8 +120,8 @@ jobs:
 
       # Then PR comments
       - name: Code Coverage Summary Report
+        if: ${{ !env.ACT && github.event_name == 'pull_request' }}
         uses: irongut/CodeCoverageSummary@v1.3.0
-        if: ${{ github.event_name == 'pull_request' }}
         with:
           filename: ./coverage/coverage.xml
           badge: true
@@ -134,7 +136,7 @@ jobs:
 
       - name: Add Coverage PR Comment
         uses: marocchino/sticky-pull-request-comment@v2
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ !env.ACT && github.event_name == 'pull_request' }}
         with:
           recreate: true
           path: code-coverage-results.md
