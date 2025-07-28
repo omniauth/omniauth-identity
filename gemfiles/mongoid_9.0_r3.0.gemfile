@@ -8,7 +8,7 @@ gem "ostruct", "~> 0.6", ">= 0.6.1"
 
 gemspec path: "../"
 
-eval_gemfile("modular/bson/r3/v5.0.gemfile")
+eval_gemfile("modular/bson/r3/v5.1.gemfile")
 
 eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
 
