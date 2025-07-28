@@ -295,7 +295,7 @@ end
 appraise "mongoid-8.1-r3.0" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
-  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -312,7 +312,7 @@ end
 appraise "mongoid-8.1-r3" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
-  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -367,7 +367,7 @@ end
 appraise "mongoid-9.0-r3.0" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -387,7 +387,7 @@ end
 appraise "mongoid-9.0-r3" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
-  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -505,7 +505,7 @@ appraise "coverage" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
-  eval_gemfile "modular/bson/r3/v5.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/coverage.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5

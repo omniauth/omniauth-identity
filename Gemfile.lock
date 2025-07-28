@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/mongodb/bson-ruby
-  revision: a349e14423012c51c3d5134711edaa639bd5bd42
-  branch: master
-  specs:
-    bson (5.1.1)
-      base64
-      bigdecimal
-      ostruct
-
-GIT
   remote: https://github.com/pboling/yard-junk
   revision: 54ccebabbfa9a9cd44d0b991687ebbfd22c32b55
   branch: next
@@ -65,6 +55,7 @@ GEM
     bcrypt (3.1.20)
     benchmark (0.4.1)
     bigdecimal (3.2.2)
+    bson (5.1.1)
     bundler-audit (0.9.2)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
@@ -431,7 +422,6 @@ DEPENDENCIES
   anonymous_active_record (~> 1.0, >= 1.0.9)
   appraisal2 (~> 3.0)
   benchmark (~> 0.4, >= 0.4.1)
-  bson!
   bundler-audit (~> 0.9.2)
   byebug (>= 11)
   couch_potato (~> 1.17)
