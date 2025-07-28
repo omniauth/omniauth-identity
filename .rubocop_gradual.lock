@@ -1,9 +1,9 @@
 {
-  "README.md:1434089789": [
+  "README.md:766815360": [
     [201, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
-  "Rakefile:2617189060": [
-    [94, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:85 and Rakefile:94.", 2701974006]
+  "Rakefile:3407355619": [
+    [93, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:84 and Rakefile:93.", 2701974006]
   ],
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]

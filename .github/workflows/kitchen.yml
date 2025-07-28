@@ -1,0 +1,61 @@
+---
+# Targets the Rakefile's default task and the main Gemfile,
+#   which contributors and maintainers would use locally for development
+name: Kitchen Sink
+
+permissions:
+  contents: read
+
+env:
+  KITCHEN_SINK: true
+
+on:
+  push:
+    branches:
+      - 'main'
+      - '*-stable'
+    tags:
+      - '!*' # Do not execute on tags
+  pull_request:
+    branches:
+      - '*'
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Tests default rake task with main Gemfile.lock ${{ matrix.name_extra || '' }}
+    if: ${{ !contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Ruby <whichever version is current, e.g., 3.4 as of 2025-07-12>
+          - ruby: "ruby"
+            exec_cmd: "rake"
+            rubygems: latest
+            bundler: latest
+            experimental: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby & RubyGems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          rubygems: ${{ matrix.rubygems }}
+          bundler: ${{ matrix.bundler }}
+          bundler-cache: true
+
+      - name: Checks the kitchen sink via ${{ matrix.exec_cmd }}
+        run: bundle exec ${{ matrix.exec_cmd }}
