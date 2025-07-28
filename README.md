@@ -12,7 +12,7 @@
 
 # 🫵 OmniAuth::Identity
 
-[![Version][👽versioni]][👽version] [![License: MIT][📄license-img]][📄license-ref] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![Open Source Helpers][👽oss-helpi]][👽oss-help] [![Depfu][🔑depfui♻️]][🔑depfu] [![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls] [![CodeCov Test Coverage][🔑codecovi♻️]][🔑codecov] [![QLTY Test Coverage][🔑qlty-covi♻️]][🔑qlty-cov] [![QLTY Maintainability][🔑qlty-mnti♻️]][🔑qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Runtime Dependencies @ HEAD][🚎12-crh-wfi]][🚎12-crh-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![CI Supported][🚎6-s-wfi]][🚎6-s-wf] [![CI Legacy][🚎4-lg-wfi]][🚎4-lg-wf] [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf] [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf] [![CI w/ committed Gemfile.lock][🚎13-k-wfi]][🚎13-k-wf]
+[![Version][👽versioni]][👽version] [![License: MIT][📄license-img]][📄license-ref] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![Open Source Helpers][👽oss-helpi]][👽oss-help] [![Depfu][🔑depfui♻️]][🔑depfu] [![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls] [![CodeCov Test Coverage][🔑codecovi♻️]][🔑codecov] [![QLTY Test Coverage][🔑qlty-covi]][🔑qlty-cov] [![QLTY Maintainability][🔑qlty-mnti]][🔑qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Runtime Dependencies @ HEAD][🚎12-crh-wfi]][🚎12-crh-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![CI Supported][🚎6-s-wfi]][🚎6-s-wf] [![CI Legacy][🚎4-lg-wfi]][🚎4-lg-wf] [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf] [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf] [![CI w/ committed Gemfile.lock][🚎13-k-wfi]][🚎13-k-wf]
 
 ---
 
@@ -354,6 +354,8 @@ See [CONTRIBUTING.md][🤝contributing].
 
 ### Code Coverage
 
+[![Coverage Graph][🔑codecov-g♻️]][🔑codecov]
+
 [![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls]
 
 ### 🪇 Code of Conduct
@@ -529,9 +531,9 @@ P.S. If you need help️, or want to say thanks, 👇 Join the Discord.
 [👽version]: https://rubygems.org/gems/omniauth-identity
 [👽versioni]: https://img.shields.io/gem/v/omniauth-identity.svg
 [🔑qlty-mnt]: https://qlty.sh/gh/omniauth/projects/omniauth-identity
-[🔑qlty-mnti♻️]: https://qlty.sh/badges/c2eb0211-c105-4fc6-9b36-650307c67e06/maintainability.svg
-[🔑qlty-cov]: https://qlty.sh/gh/omniauth/projects/omniauth-identity
-[🔑qlty-covi♻️]: https://qlty.sh/badges/c2eb0211-c105-4fc6-9b36-650307c67e06/test_coverage.svg
+[🔑qlty-mnti]: https://qlty.sh/gh/omniauth/projects/omniauth-identity/maintainability.svg
+[🔑qlty-cov]: https://qlty.sh/gh/omniauth/projects/omniauth-identity/metrics/code?sort=coverageRating
+[🔑qlty-covi]: https://qlty.sh/gh/omniauth/projects/omniauth-identity/coverage.svg
 [🔑codecov]: https://codecov.io/gh/omniauth/omniauth-identity
 [🔑codecovi♻️]: https://codecov.io/gh/omniauth/omniauth-identity/branch/main/graph/badge.svg?token=cc6UdZCpAL
 [🔑coveralls]: https://coveralls.io/github/omniauth/omniauth-identity?branch=main
