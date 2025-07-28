@@ -11,7 +11,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 ### Std Lib Extracted Gems
-eval_gemfile "gemfiles/modular/x_std_libs/r3/libs.gemfile"
+eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
 
 ### Security Audit
 eval_gemfile "gemfiles/modular/audit.gemfile"

@@ -1,7 +1,21 @@
 ---
-# Targets the Rakefile's default task and the main Gemfile,
-#   which contributors and maintainers would use locally for development
-name: Kitchen Sink
+# Lock/Unlock Deps Pattern
+#
+# Two often conflicting goals resolved!
+#
+#  - deps_unlocked.yml
+#    - All runtime & dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
+#    - Uses an Appraisal2 "deps_unlocked" gemfile, and the current MRI Ruby release
+#    - Know when new dependency releases will break local dev with unlocked dependencies
+#    - Broken workflow indicates that new releases of dependencies may not work
+#
+#  - deps_locked.yml
+#    - All runtime & dev dependencies, and has a `Gemfile.lock` committed
+#    - Uses the project's main Gemfile, and the current MRI Ruby release
+#    - Matches what contributors and maintainers use locally for development
+#    - Broken workflow indicates that a new contributor will have a bad time
+#
+name: Deps Locked
 
 permissions:
   contents: read
@@ -30,7 +44,7 @@ concurrency:
 
 jobs:
   test:
-    name: Tests default rake task with main Gemfile.lock ${{ matrix.name_extra || '' }}
+    name: Default rake task w/ main Gemfile.lock ${{ matrix.name_extra || '' }}
     if: ${{ !contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]') }}
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
