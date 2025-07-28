@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
 

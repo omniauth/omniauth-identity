@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "couch_potato", "~> 1.17"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/activerecord/r2/v6.0.gemfile")
 

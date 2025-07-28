@@ -455,7 +455,7 @@ DEPENDENCIES
   rspec (~> 3.13)
   rspec-block_is_expected (~> 1.0, >= 1.0.6)
   rubocop-lts (~> 12.1, >= 12.1.1)
-  rubocop-minitest
+  rubocop-minitest (~> 0.36)
   rubocop-packaging (~> 0.6, >= 0.6.0)
   rubocop-rspec (~> 3.6)
   rubocop-sequel

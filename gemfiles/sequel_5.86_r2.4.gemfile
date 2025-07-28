@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "sequel", "~> 5.86", ">= 5.86.0"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/activerecord/r2.4/v5.2.gemfile")
 
