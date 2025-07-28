@@ -4,6 +4,7 @@
 #   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
 #   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 #   bundle exec rake rubocop_gradual:autocorrect
+# NOTE: Commands need to be run from the devcontainer if old Rails or old sqlite3 won't install for you locally.
 
 # Used for HEAD (nightly) releases of ruby, truffleruby, and jruby.
 # Split into discrete appraisals if one of them needs a dependency locked discretely.

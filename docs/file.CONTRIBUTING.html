@@ -94,6 +94,8 @@ BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 bundle exec rake rubocop_gradual:autocorrect
 </code></pre>
 
+<p>NOTE: Commands need to be run from the devcontainer if old Rails or old sqlite3 won’t install for you locally.</p>
+
 <p>When adding an appraisal to CI, check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
 
 <h2 id="the-reek-list">The Reek List</h2>
@@ -244,7 +246,7 @@ push git commits and tags, and push the <code>.gem</code> file to <a href="https
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jul 28 12:41:27 2025 by
+  Generated on Mon Jul 28 13:55:04 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

@@ -34,6 +34,8 @@ BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 bundle exec rake rubocop_gradual:autocorrect
 ```
 
+NOTE: Commands need to be run from the devcontainer if old Rails or old sqlite3 won't install for you locally.
+
 When adding an appraisal to CI, check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
 ## The Reek List
