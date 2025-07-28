@@ -26,10 +26,6 @@ Follow these instructions:
 
 From time to time the appraisal gemfiles in `gemfiles/` will need to be updated.
 
-NOTE: The `eval_gemfile` feature comes from a [fork][🚎appraisal-fork] of Appraisal.
-
-Please upvote the PR for `eval_gemfile` [support][🚎appraisal-eval-gemfile-pr]
-
 Create or update them with the commands:
 
 ```shell
@@ -183,6 +179,4 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 [💎stone_checksums]: https://github.com/pboling/stone_checksums
 [📗keep-changelog]: https://keepachangelog.com/en/1.0.0/
 [📗keep-changelog-img]: https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat
-[🚎appraisal-eval-gemfile-pr]: https://github.com/thoughtbot/appraisal/pull/248
-[🚎appraisal-fork]: https://github.com/pboling/appraisal/tree/galtzo
 [🏃‍♂️runner-tool-cache]: https://github.com/ruby/ruby-builder/releases/tag/toolcache

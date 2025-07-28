@@ -91,6 +91,7 @@ Gem::Specification.new do |spec|
   ### Testing
   spec.add_development_dependency("activerecord", ">= 5")                           # ruby >= 2.2.2
   spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4
+  spec.add_development_dependency("appraisal2", "~> 3.0")                           # ruby >= 1.8.7
   spec.add_development_dependency("rack-test", "~> 1")                              # ruby >= 2.0
   spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2
   spec.add_development_dependency("rspec", "~> 3.13")                               # ruby >= 0

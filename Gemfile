@@ -41,7 +41,6 @@ gem "rb-fsevent"
 eval_gemfile "gemfiles/modular/coverage.gemfile"
 
 ### Testing
-gem "appraisal", github: "pboling/appraisal", branch: "galtzo"
 gem "test-unit", ">= 3.0"
 
 platform :mri do
