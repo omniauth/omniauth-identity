@@ -1,5 +1,21 @@
-# Targets the evergreen latest release of ruby, truffleruby, and jruby
-name: Current
+---
+# Lock/Unlock Deps Pattern
+#
+# Two often conflicting goals resolved!
+#
+#  - deps_unlocked.yml
+#    - All runtime & dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
+#    - Uses an Appraisal2 "deps_unlocked" gemfile, and the current MRI Ruby release
+#    - Know when new dependency releases will break local dev with unlocked dependencies
+#    - Broken workflow indicates that new releases of dependencies may not work
+#
+#  - deps_locked.yml
+#    - All runtime & dev dependencies, and has a `Gemfile.lock` committed
+#    - Uses the project's main Gemfile, and the current MRI Ruby release
+#    - Matches what contributors and maintainers use locally for development
+#    - Broken workflow indicates that a new contributor will have a bad time
+#
+name: Deps Unlocked
 
 permissions:
   contents: read
@@ -28,7 +44,7 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+    name: Default rake task w/ unlocked deps ${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -37,61 +53,10 @@ jobs:
     strategy:
       matrix:
         include:
-          # Ruby 3.4
+          # Ruby <whichever version is current, e.g., 3.4 as of 2025-07-12>
           - ruby: "ruby"
-            appraisal_name: "ar-7-2"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "ruby"
-            appraisal_name: "ar-8-0"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "ruby"
-            appraisal_name: "sequel-5.86-r3"
-            exec_cmd: "rake spec:orm:sequel"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-
-#          # truffleruby-24.1
-#          - ruby: "truffleruby"
-#            appraisal_name: "ar-8-0"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            rubygems: default
-#            bundler: default
-
-          # jruby-10.0 (targets Ruby 3.4 compatibility)
-          - ruby: "jruby"
-            appraisal_name: "ar-7-1-r3"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-#          - ruby: "jruby"
-#            appraisal_name: "ar-7-2"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            experimental: true
-#            rubygems: default
-#            bundler: default
-#
-#          - ruby: "jruby"
-#            appraisal_name: "ar-8-0"
-#            exec_cmd: "rake spec:orm:active_record"
-#            gemfile: "Appraisal.root"
-#            experimental: true
-#            rubygems: default
-#            bundler: default
-
-          - ruby: "jruby"
-            appraisal_name: "sequel-5.86-r3"
-            exec_cmd: "rake spec:orm:sequel"
+            appraisal_name: "deps_unlocked"
+            exec_cmd: "rake"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest

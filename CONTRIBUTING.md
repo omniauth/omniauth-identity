@@ -38,6 +38,33 @@ NOTE: Commands need to be run from the devcontainer if old Rails or old sqlite3 
 
 When adding an appraisal to CI, check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
+### We commit, and don't commit, our "gemfile.lock" files
+
+Thanks to [Appraisal2](https://github.com/appraisal-rb/appraisal2) we have a `gemfiles/*.gemfile` suite
+in addition to the main `Gemfile` at the root of the project.
+We run a workflow against the main Gemfile, which has a `Gemfile.lock` committed, and
+we also run workflows against each of the Appraisal2 `gemfiles/*.gemfile` suite,
+which **do not** have `gemfiles/*.gemfile.lock` committed.
+
+```
+# Lock/Unlock Deps Pattern
+#
+# Two often conflicting goals resolved!
+#
+#  - deps_unlocked.yml
+#    - All runtime & dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
+#    - Uses an Appraisal2 "deps_unlocked" gemfile, and the current MRI Ruby release
+#    - Know when new dependency releases will break local dev with unlocked dependencies
+#    - Broken workflow indicates that new releases of dependencies may not work
+#
+#  - deps_locked.yml
+#    - All runtime & dev dependencies, and has a `Gemfile.lock` committed
+#    - Uses the project's main Gemfile, and the current MRI Ruby release
+#    - Matches what contributors and maintainers use locally for development
+#    - Broken workflow indicates that a new contributor will have a bad time
+#
+```
+
 ## The Reek List
 
 Take a look at the `reek` list which is the file called `REEK` and find something to improve.
