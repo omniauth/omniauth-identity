@@ -5,7 +5,7 @@
 
 gem "reek", "~> 6.5"
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
-gem "rubocop-minitest"
+gem "rubocop-minitest", "~> 0.36"
 gem "rubocop-packaging", "~> 0.6", ">= 0.6.0"
 gem "rubocop-rspec", "~> 3.6"
 gem "rubocop-sequel"

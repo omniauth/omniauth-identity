@@ -8,5 +8,3 @@ source "https://rubygems.org"
 # We do not load the standard Gemfile, as it is tailored for local development.
 
 gemspec
-
-gem "appraisal", github: "pboling/appraisal", branch: "galtzo"

@@ -10,7 +10,6 @@
 appraise "dep-heads" do
   eval_gemfile "modular/activerecord/vHEAD.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2
@@ -20,7 +19,6 @@ appraise "ar-5-2-r2.4" do
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2
@@ -32,7 +30,6 @@ appraise "ar-5-2-r2" do
   eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.1.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.5
@@ -44,7 +41,6 @@ appraise "ar-6-0" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.2.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.5
@@ -58,7 +54,6 @@ appraise "ar-6-1-r2" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.3.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.5
@@ -68,7 +63,6 @@ appraise "ar-6-1-r3" do
   eval_gemfile "modular/activerecord/r3/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -78,7 +72,6 @@ appraise "ar-7-0-r2" do
   eval_gemfile "modular/activerecord/r2/v7.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.4.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -89,7 +82,6 @@ appraise "ar-7-0-r3" do
   eval_gemfile "modular/activerecord/r3/v7.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -99,7 +91,6 @@ appraise "ar-7-1-r2" do
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.5.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -112,7 +103,6 @@ appraise "ar-7-1-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 3.1
@@ -127,7 +117,6 @@ appraise "ar-7-2" do
   eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 3.2
@@ -141,7 +130,6 @@ appraise "ar-8-0" do
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -154,7 +142,6 @@ appraise "couch-1.17-r2.4" do
   eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -168,7 +155,6 @@ appraise "couch-1.17-r2.5" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -184,7 +170,6 @@ appraise "couch-1.17-r2" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -206,7 +191,6 @@ appraise "couch-1.17-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.3
@@ -220,7 +204,6 @@ appraise "mongoid-7.3-b4.12" do
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.8.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.3
@@ -235,7 +218,6 @@ appraise "mongoid-7.3-b4.15" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.5
@@ -250,7 +232,6 @@ appraise "mongoid-7.4-b4.15" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.5
@@ -266,7 +247,6 @@ appraise "mongoid-7.4-b5" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.6
@@ -282,7 +262,6 @@ appraise "mongoid-8.1-r2" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.6
@@ -296,7 +275,6 @@ appraise "mongoid-8.1-r3.0" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.6
@@ -314,7 +292,6 @@ appraise "mongoid-8.1-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -329,7 +306,6 @@ appraise "mongoid-9.0-r2-omni1.9" do
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -344,7 +320,6 @@ appraise "mongoid-9.0-r2-omni2.0" do
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -359,7 +334,6 @@ appraise "mongoid-9.0-r2-omni2.1" do
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -374,7 +348,6 @@ appraise "mongoid-9.0-r3.0" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 2.7
@@ -395,7 +368,6 @@ appraise "mongoid-9.0-r3" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # 1. While the Ruby driver, nobrainer, is maintained,
@@ -434,7 +406,6 @@ appraise "sequel-5.86-r2.4" do
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 1.9.2
@@ -445,7 +416,6 @@ appraise "sequel-5.86-r2.5" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 1.9.2
@@ -456,7 +426,6 @@ appraise "sequel-5.86-r2.6" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 1.9.2
@@ -467,7 +436,6 @@ appraise "sequel-5.86-r2.7" do
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 1.9.2
@@ -478,7 +446,6 @@ appraise "sequel-5.86-r3.0" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Compat: Ruby >= 1.9.2
@@ -497,7 +464,6 @@ appraise "sequel-5.86-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run security audit on the latest version of Ruby
@@ -505,7 +471,6 @@ appraise "audit" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/audit.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run coverage on the latest version of Ruby
@@ -520,7 +485,6 @@ appraise "coverage" do
   eval_gemfile "modular/coverage.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
 # Only run linter on the latest version of Ruby (but, in support of the oldest supported Ruby version)
@@ -528,5 +492,4 @@ appraise "style" do
   eval_gemfile "modular/style.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
