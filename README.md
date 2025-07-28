@@ -1,13 +1,13 @@
 <p align="center">
-    <a href="https://discord.gg/3qme4XHNKN" target="_blank" rel="noopener">
-      <img width="124px" src="https://github.com/omniauth/omniauth-identity/raw/main/docs/images/logo/galtzo-floss-logos-original.svg?raw=true" alt="Galtzo.com Logo by Aboling0, CC BY-SA 4.0">
-    </a>
-    <a href="https://github.com/omniauth" target="_blank" rel="noopener">
-      <img src="https://github.com/omniauth/omniauth-identity/raw/main/docs/images/logo/omniauth-logo-182px.png?raw=true" alt="OmniAuth Logo possibly by Ted O'Meara, license unknown">
-    </a>
-    <a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">
-      <img width="124px" src="https://github.com/omniauth/omniauth-identity/raw/main/docs/images/logo/ruby-logo-198px.svg?raw=true" alt="Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5">
-    </a>
+  <a href="https://discord.gg/3qme4XHNKN" target="_blank" rel="noopener">
+    <img width="124px" src="https://github.com/galtzo-floss/shields-badge/raw/main/docs/images/logo/galtzo-floss-logos-original.svg?raw=true" alt="Galtzo.com Logo by Aboling0, CC BY-SA 4.0">
+  </a>
+  <a href="https://github.com/omniauth" target="_blank" rel="noopener">
+    <img src="https://github.com/omniauth/omniauth-identity/raw/main/docs/images/logo/omniauth-logo-182px.png?raw=true" alt="OmniAuth Logo possibly by Ted O'Meara, license unknown">
+  </a>
+  <a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">
+    <img width="124px" src="https://github.com/galtzo-floss/shields-badge/raw/main/docs/images/logo/ruby-logo-198px.svg?raw=true" alt="Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5">
+  </a>
 </p>
 
 # 🫵 OmniAuth::Identity
@@ -430,7 +430,7 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
         <a href="https://discord.gg/3qme4XHNKN">
             Galtzo.com
             <picture>
-              <img src="https://github.com/omniauth/omniauth-identity/raw/main/docs/images/logo/galtzo-floss-logos-wordless.svg?raw=true" alt="Galtzo.com Logo by Aboling0, CC BY-SA 4.0" width="24">
+              <img src="https://github.com/galtzo-floss/shields-badge/raw/main/docs/images/logo/galtzo-floss-logos-wordless.svg?raw=true" alt="Galtzo.com Logo by Aboling0, CC BY-SA 4.0" width="24">
             </picture>
         </a>, and omniauth-identity contributors
     </li>
@@ -454,7 +454,7 @@ or one of smaller ones, depending on button size preference.
 
 [![Liberapay Goal Progress][⛳liberapay-img]][⛳liberapay] [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor] [![Donate on Polar][🖇polar-img]][🖇polar] [![Donate to my FLOSS or refugee efforts at ko-fi.com][🖇kofi-img]][🖇kofi] [![Donate to my FLOSS or refugee efforts using Patreon][🖇patreon-img]][🖇patreon]
 
-P.S. Use the gem => Discord for help
+P.S. If you need help️, or want to say thanks, 👇 Join the Discord.
 
 [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
 
@@ -471,6 +471,8 @@ P.S. Use the gem => Discord for help
 [🖇buyme-small-img]: https://img.shields.io/badge/buy_me_a_coffee-✓-yellow.svg?style=flat
 [🖇buyme-img]: https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff
 [🖇buyme]: https://www.buymeacoffee.com/pboling
+[✉️discord-invite]: https://discord.gg/3qme4XHNKN
+[✉️discord-invite-img]: https://img.shields.io/discord/1373797679469170758?style=for-the-badge
 
 [✇bundle-group-pattern]: https://gist.github.com/pboling/4564780
 [⛳️gem-namespace]: https://github.com/omniauth/omniauth-identity
@@ -619,16 +621,3 @@ P.S. Use the gem => Discord for help
 [💎SHA_checksums]: https://github.com/omniauth/omniauth-identity/tree/main/checksums
 [💎rlts]: https://github.com/rubocop-lts/rubocop-lts
 [💎rlts-img]: https://img.shields.io/badge/code_style_%26_linting-rubocop--lts-34495e.svg?plastic&logo=ruby&logoColor=white
-[✉️discord-invite]: https://discord.gg/3qme4XHNKN
-[✉️discord-invite-img]: https://img.shields.io/discord/1373797679469170758?style=for-the-badge
-
-<details>
-  <summary>
-    Disabled Badges
-  </summary>
-
-Badges for failing services.
-Bug reports filed.
-Once fixed, these should look much nicer.
-
-</details>
