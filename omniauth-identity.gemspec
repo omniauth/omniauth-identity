@@ -50,7 +50,7 @@ Gem::Specification.new do |spec|
   spec.metadata["news_uri"] = "https://www.railsbling.com/tags/#{spec.name}"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  # Specify which files should be added to the gem when it is released.
+  # Specify which files are part of each release.
   spec.files = Dir[
     # Splats (alphabetical)
     "lib/**/*.rb",
