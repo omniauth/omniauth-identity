@@ -98,6 +98,32 @@ bundle exec rake rubocop_gradual:autocorrect
 
 <p>When adding an appraisal to CI, check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
 
+<h3 id="we-commit-and-dont-commit-our-gemfilelock-files">We commit, and don’t commit, our “gemfile.lock” files</h3>
+
+<p>Thanks to <a href="https://github.com/appraisal-rb/appraisal2">Appraisal2</a> we have a <code>gemfiles/*.gemfile</code> suite<br>
+in addition to the main <code>Gemfile</code> at the root of the project.<br>
+We run a workflow against the main Gemfile, which has a <code>Gemfile.lock</code> committed, and<br>
+we also run workflows against each of the Appraisal2 <code>gemfiles/*.gemfile</code> suite,<br>
+which <strong>do not</strong> have <code>gemfiles/*.gemfile.lock</code> committed.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Lock/Unlock Deps Pattern
+</span><span class='comment'>#
+</span><span class='comment'># Two often conflicting goals resolved!
+</span><span class='comment'>#
+</span><span class='comment'>#  - deps_unlocked.yml
+</span><span class='comment'>#    - All runtime &amp; dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
+</span><span class='comment'>#    - Uses an Appraisal2 &quot;deps_unlocked&quot; gemfile, and the current MRI Ruby release
+</span><span class='comment'>#    - Know when new dependency releases will break local dev with unlocked dependencies
+</span><span class='comment'>#    - Broken workflow indicates that new releases of dependencies may not work
+</span><span class='comment'>#
+</span><span class='comment'>#  - deps_locked.yml
+</span><span class='comment'>#    - All runtime &amp; dev dependencies, and has a `Gemfile.lock` committed
+</span><span class='comment'>#    - Uses the project&#39;s main Gemfile, and the current MRI Ruby release
+</span><span class='comment'>#    - Matches what contributors and maintainers use locally for development
+</span><span class='comment'>#    - Broken workflow indicates that a new contributor will have a bad time
+</span><span class='comment'>#
+</span></code></pre>
+
 <h2 id="the-reek-list">The Reek List</h2>
 
 <p>Take a look at the <code>reek</code> list which is the file called <code>REEK</code> and find something to improve.</p>
@@ -237,16 +263,15 @@ to create SHA-256 and SHA-512 checksums. This functionality is provided by the <
       <li>The script automatically commits but does not push the checksums</li>
     </ul>
   </li>
-  <li>
-    <p>Run <code>bundle exec rake release</code> which will create a git tag for the version,<br>
-push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a></p>
-  </li>
-  <li>
+  <li>Run <code>bundle exec rake release</code> which will create a git tag for the version,<br>
+push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>
+</li>
 </ol>
+
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jul 28 13:55:04 2025 by
+  Generated on Mon Jul 28 20:44:21 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

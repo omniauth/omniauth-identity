@@ -195,7 +195,7 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 12. Run `bundle exec rake release` which will create a git tag for the version,
     push git commits and tags, and push the `.gem` file to [rubygems.org][💎rubygems]
 
-13. [🚎src-main]: https://github.com/omniauth/omniauth-identity
+[🚎src-main]: https://github.com/omniauth/omniauth-identity
 [🧪build]: https://github.com/omniauth/omniauth-identity/actions
 [🤝conduct]: https://github.com/omniauth/omniauth-identity/blob/main/CODE_OF_CONDUCT.md
 [🖐contrib-rocks]: https://contrib.rocks
