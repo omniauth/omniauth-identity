@@ -28,7 +28,7 @@ From time to time the appraisal gemfiles in `gemfiles/` will need to be updated.
 
 Create or update them with the commands:
 
-```shell
+```console
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 bundle exec rake rubocop_gradual:autocorrect
@@ -71,7 +71,7 @@ Take a look at the `reek` list which is the file called `REEK` and find somethin
 
 To refresh the `reek` list:
 
-```bash
+```console
 bundle exec reek > REEK
 ```
 
@@ -80,18 +80,18 @@ bundle exec reek > REEK
 NOTE: To run *all* tests have the following databases installed, configured, and running.
 
 1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
-   ```bash
+   ```console
    brew install rethinkdb
    rethinkdb
    ```
 2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-   ```bash
+   ```console
    brew tap mongodb/brew
    brew install mongodb-community@4.4
    mongod --config /usr/local/etc/mongod.conf
    ```
 3. [CouchDB](https://couchdb.apache.org) - download the .app, or:
-   ```bash
+   ```console
    brew install couchdb
    ```
    CouchDB 3.x requires a set admin password set before startup.
@@ -105,24 +105,24 @@ NOTE: To run *all* tests have the following databases installed, configured, and
    export COUCHDB_PASSWORD=yourabsolutesecret
    ```
    Then start the CouchDB service
-   ```bash
+   ```console
    brew services start couchdb
    ```
 
 Now you can run any of the tests!
 
 To run all tests on all databases (except RethinkDB):
-```bash
+```console
 bundle exec rake spec:orm:all
 ```
 
 To run all tests that do not require any additional services, i.e. excluding MongoDB, CouchDB, & RethinkDB:
-```bash
+```console
 bundle exec rake test
 ```
 
 To run a specific DB:
-```bash
+```console
 # CouchDB / CouchPotato
 bundle exec rspec spec spec_orms --tag 'couchdb'
 
@@ -143,13 +143,13 @@ bundle exec rspec spec_ignored/nobrainer_spec.rb
 
 Run all the default tasks, which includes running the gradually autocorrecting linter, `rubocop-gradual`.
 
-```bash
+```console
 bundle exec rake
 ```
 
 Or just run the linter.
 
-```bash
+```console
 bundle exec rake rubocop_gradual:autocorrect
 ```
 
