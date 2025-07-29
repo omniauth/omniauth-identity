@@ -4,6 +4,7 @@
 #   with syntax support for the oldest allowed version of Ruby
 
 gem "reek", "~> 6.5"
+gem "rubocop", "~> 1.73", ">= 1.73.2"
 gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
 gem "rubocop-minitest", "~> 0.36"
 gem "rubocop-packaging", "~> 0.6", ">= 0.6.0"
