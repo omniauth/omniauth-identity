@@ -88,6 +88,16 @@ Gem::Specification.new do |spec|
   spec.add_dependency("omniauth", ">= 1")                 # ruby >= 0
   spec.add_dependency("version_gem", ">= 1.1.8", "< 3")   # ruby >= 2.2
 
+  # NOTE: It is preferable to list development dependencies in the gemspec due to increased
+  #       visibility and discoverability on RubyGems.org.
+  #
+  #       Thus, dev dependencies in gemspec must have
+  #
+  #       required_ruby_version ">= 2.4" (or lower)
+  #
+  #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
+  #       and preferably a modular one (see gemfiles/modular/*.gemfile).
+
   ### Testing
   spec.add_development_dependency("activerecord", ">= 5")                           # ruby >= 2.2.2
   spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4
