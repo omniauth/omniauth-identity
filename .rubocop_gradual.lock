@@ -1,5 +1,5 @@
 {
-  "README.md:409607445": [
+  "README.md:3556227804": [
     [201, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "Rakefile:3407355619": [
@@ -41,7 +41,7 @@
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
-  "omniauth-identity.gemspec:177169002": [
+  "omniauth-identity.gemspec:2534657017": [
     [4, 23, 12, "Gemspec/RubyVersionGlobalsUsage: Do not use `RUBY_VERSION` in gemspec file.", 31296028]
   ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [

@@ -1,6 +1,6 @@
 # Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/omniauth/omniauth-identity][🚎src-main].
+Bug reports and pull requests are welcome on GitHub, CodeBerg, or [GitLab][🚎src-main].
 This project should be a safe, welcoming space for collaboration, so contributors agree to adhere to
 the [code of conduct][🤝conduct].
 

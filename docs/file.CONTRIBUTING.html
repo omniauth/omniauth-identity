@@ -59,7 +59,7 @@
 
       <div id="content"><div id='filecontents'><h1 id="contributing">Contributing</h1>
 
-<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/omniauth/omniauth-identity">https://github.com/omniauth/omniauth-identity</a>.<br>
+<p>Bug reports and pull requests are welcome on GitHub, CodeBerg, or <a href="https://github.com/omniauth/omniauth-identity">GitLab</a>.<br>
 This project should be a safe, welcoming space for collaboration, so contributors agree to adhere to<br>
 the <a href="https://github.com/omniauth/omniauth-identity/blob/main/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
 
@@ -85,11 +85,10 @@ the <a href="https://github.com/omniauth/omniauth-identity/blob/main/CODE_OF_CON
 
 <h2 id="appraisals">Appraisals</h2>
 
-<p>From time to time the appraisal gemfiles in <code>gemfiles/</code> will need to be updated.</p>
+<p>From time to time the Appraisal2 gemfiles in <code>gemfiles/</code> will need to be updated.<br>
+They are created and updated with the commands:</p>
 
-<p>Create or update them with the commands:</p>
-
-<pre class="code language-shell"><code class="language-shell">BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
+<pre class="code language-console"><code class="language-console">BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
 bundle exec rake rubocop_gradual:autocorrect
 </code></pre>
@@ -130,7 +129,7 @@ which <strong>do not</strong> have <code>gemfiles/*.gemfile.lock</code> committe
 
 <p>To refresh the <code>reek</code> list:</p>
 
-<pre class="code language-bash"><code class="language-bash">bundle exec reek &gt; REEK
+<pre class="code language-console"><code class="language-console">bundle exec reek &gt; REEK
 </code></pre>
 
 <h2 id="run-tests">Run Tests</h2>
@@ -140,20 +139,20 @@ which <strong>do not</strong> have <code>gemfiles/*.gemfile.lock</code> committe
 <ol>
   <li>
 <a href="https://rethinkdb.com">RethinkDB</a>, an open source, real-time, web database, <a href="https://rethinkdb.com/docs/install/">installed</a> and <a href="https://rethinkdb.com/docs/start-a-server/">running</a>, e.g.
-    <pre class="code language-bash"><code class="language-bash">brew install rethinkdb
+    <pre class="code language-console"><code class="language-console">brew install rethinkdb
 rethinkdb
 </code></pre>
   </li>
   <li>
 <a href="https://docs.mongodb.com/manual/administration/install-community/">MongoDB</a>
-    <pre class="code language-bash"><code class="language-bash">brew tap mongodb/brew
+    <pre class="code language-console"><code class="language-console">brew tap mongodb/brew
 brew install mongodb-community@4.4
 mongod --config /usr/local/etc/mongod.conf
 </code></pre>
   </li>
   <li>
 <a href="https://couchdb.apache.org">CouchDB</a> - download the .app, or:
-    <pre class="code language-bash"><code class="language-bash">brew install couchdb
+    <pre class="code language-console"><code class="language-console">brew install couchdb
 </code></pre>
     <p>CouchDB 3.x requires a set admin password set before startup.<br>
 Add one to your <code>$HOMEBREW_PREFIX/etc/local.ini</code> before starting CouchDB e.g.:</p>
@@ -164,7 +163,7 @@ admin = yourabsolutesecret
     <pre class="code language-dotenv"><code class="language-dotenv">export COUCHDB_PASSWORD=yourabsolutesecret
 </code></pre>
     <p>Then start the CouchDB service</p>
-    <pre class="code language-bash"><code class="language-bash">brew services start couchdb
+    <pre class="code language-console"><code class="language-console">brew services start couchdb
 </code></pre>
   </li>
 </ol>
@@ -172,15 +171,15 @@ admin = yourabsolutesecret
 <p>Now you can run any of the tests!</p>
 
 <p>To run all tests on all databases (except RethinkDB):</p>
-<pre class="code language-bash"><code class="language-bash">bundle exec rake spec:orm:all
+<pre class="code language-console"><code class="language-console">bundle exec rake spec:orm:all
 </code></pre>
 
 <p>To run all tests that do not require any additional services, i.e. excluding MongoDB, CouchDB, &amp; RethinkDB:</p>
-<pre class="code language-bash"><code class="language-bash">bundle exec rake test
+<pre class="code language-console"><code class="language-console">bundle exec rake test
 </code></pre>
 
 <p>To run a specific DB:</p>
-<pre class="code language-bash"><code class="language-bash"># CouchDB / CouchPotato
+<pre class="code language-console"><code class="language-console"># CouchDB / CouchPotato
 bundle exec rspec spec spec_orms --tag &#39;couchdb&#39;
 
 # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
@@ -200,12 +199,12 @@ bundle exec rspec spec_ignored/nobrainer_spec.rb
 
 <p>Run all the default tasks, which includes running the gradually autocorrecting linter, <code>rubocop-gradual</code>.</p>
 
-<pre class="code language-bash"><code class="language-bash">bundle exec rake
+<pre class="code language-console"><code class="language-console">bundle exec rake
 </code></pre>
 
 <p>Or just run the linter.</p>
 
-<pre class="code language-bash"><code class="language-bash">bundle exec rake rubocop_gradual:autocorrect
+<pre class="code language-console"><code class="language-console">bundle exec rake rubocop_gradual:autocorrect
 </code></pre>
 
 <h2 id="contributors">Contributors</h2>
@@ -271,7 +270,7 @@ push git commits and tags, and push the <code>.gem</code> file to <a href="https
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jul 28 20:44:21 2025 by
+  Generated on Mon Jul 28 23:26:21 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>
