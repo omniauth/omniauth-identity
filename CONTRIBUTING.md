@@ -24,9 +24,8 @@ Follow these instructions:
 
 ## Appraisals
 
-From time to time the appraisal gemfiles in `gemfiles/` will need to be updated.
-
-Create or update them with the commands:
+From time to time the Appraisal2 gemfiles in `gemfiles/` will need to be updated.
+They are created and updated with the commands:
 
 ```console
 BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
