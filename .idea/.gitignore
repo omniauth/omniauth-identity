@@ -8,3 +8,13 @@
 /dataSources.local.xml
 # CodeStream ignored files
 /codestream.xml
+# Ignored default folder with query files
+/queries/
+
+# Zencoder local files
+/zencoder/chats
+/zencoder-chat-index.xml
+/zencoder-chats-dedicated.xml
+# Local project config
+*.iml
+
