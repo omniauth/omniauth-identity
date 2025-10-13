@@ -39,7 +39,7 @@ jobs:
         include:
           # Ruby 3.0
           - ruby: "3.0"
-            appraisal: "mongoid-8.1-r3.0"
+            appraisal: "mongoid-8.1-r3.1"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'
@@ -59,7 +59,7 @@ jobs:
 
           # Ruby 3.1
           - ruby: "3.1"
-            appraisal: "mongoid-8.1-r3"
+            appraisal: "mongoid-8.1-r3.1"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: latest

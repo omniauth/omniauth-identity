@@ -327,19 +327,6 @@ end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
-#   - Ruby 3.0
-appraise "mongoid-8.1-r3.0" do
-  gem "mongoid", "~> 8.1", ">= 8.1.7"
-  gem "mongoid-rspec", "~> 4.2"
-  eval_gemfile "modular/bson/r3/v5.1.gemfile"
-
-  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
-  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-end
-
-# Compat: Ruby >= 2.6
-# Test Matrix:
 #   - Ruby 3.1
 #   - JRuby 9.4
 appraise "mongoid-8.1-r3.1" do
