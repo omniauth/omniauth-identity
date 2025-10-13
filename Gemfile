@@ -1,26 +1,33 @@
 # frozen_string_literal: true
 
+source "https://gem.coop"
+
+git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
+
 #### IMPORTANT #######################################################
 # Gemfile is for local development ONLY; Gemfile is NOT loaded in CI #
 ####################################################### IMPORTANT ####
 
-source "https://rubygems.org"
-
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-
+# Include dependencies from <gem name>.gemspec
 gemspec
+
+# Debugging
+eval_gemfile "gemfiles/modular/debug.gemfile"
+
+# Code Coverage
+eval_gemfile "gemfiles/modular/coverage.gemfile"
+
+# Linting
+eval_gemfile "gemfiles/modular/style.gemfile"
+
+# Documentation
+eval_gemfile "gemfiles/modular/documentation.gemfile"
+
+# Optional
+eval_gemfile "gemfiles/modular/optional.gemfile"
 
 ### Std Lib Extracted Gems
 eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
-
-### Security Audit
-eval_gemfile "gemfiles/modular/audit.gemfile"
-
-### Documentation
-eval_gemfile "gemfiles/modular/documentation.gemfile"
-
-### Linting
-eval_gemfile "gemfiles/modular/style.gemfile"
 
 ### ORMs
 gem "couch_potato", "~> 1.17", require: false
@@ -37,13 +44,5 @@ gem "guard-bundler"
 gem "guard-rspec"
 gem "rb-fsevent"
 
-# Code Coverage
-eval_gemfile "gemfiles/modular/coverage.gemfile"
-
 ### Testing
 gem "test-unit", ">= 3.0"
-
-platform :mri do
-  ### Debugging (MRI Only)
-  gem "byebug", ">= 11"
-end

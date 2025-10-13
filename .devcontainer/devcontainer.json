@@ -17,11 +17,11 @@
 	"postCreateCommand": "bundle update --bundler",
 
 	// Configure tool-specific properties.
-    "customizations" : {
-      "jetbrains" : {
-        "backend" : "RubyMine"
-      }
-    },
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "RubyMine"
+    }
+  },
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

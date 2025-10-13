@@ -1,9 +1,6 @@
 {
-  "README.md:3556227804": [
-    [201, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
-  ],
-  "Rakefile:3407355619": [
-    [93, 3, 11, "Rake/DuplicateTask: Task `spec` is defined at both Rakefile:84 and Rakefile:93.", 2701974006]
+  "README.md:969477879": [
+    [275, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
@@ -41,115 +38,67 @@
     [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
-  "omniauth-identity.gemspec:2534657017": [
-    [4, 23, 12, "Gemspec/RubyVersionGlobalsUsage: Do not use `RUBY_VERSION` in gemspec file.", 31296028]
-  ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
     [3, 1, 40, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/model*_spec.rb`.", 1316823397]
   ],
-  "spec/omniauth/identity/secure_password_spec.rb:2012576649": [
-    [4, 3, 34, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2989290855],
-    [11, 1, 49, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/secure_password*_spec.rb`.", 2365105762],
-    [13, 37, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `DoesNotHaveTheMethod` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [18, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `HasTheMethod` as a spy using `allow` or `instance_spy`.", 1384559950]
+  "spec/omniauth/identity/secure_password_spec.rb:4120880794": [
+    [3, 1, 49, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/secure_password*_spec.rb`.", 2365105762]
   ],
-  "spec/omniauth/strategies/identity_spec.rb:2277447469": [
+  "spec/omniauth/strategies/identity_spec.rb:974965787": [
     [6, 1, 55, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/strategies/identity*_spec.rb`.", 3369296900],
-    [67, 9, 33, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 3707445541],
-    [92, 7, 20, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 244223142],
-    [101, 7, 38, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 3252945984],
-    [104, 9, 44, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 3068148439],
-    [114, 7, 39, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 763444757],
-    [117, 9, 47, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 1466396057],
-    [129, 7, 38, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 3252945984],
-    [133, 11, 31, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 1581362467],
-    [142, 11, 32, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 3337826795],
-    [154, 7, 39, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 763444757],
-    [157, 9, 31, "RSpec/MultipleExpectations: Example has too many expectations [5/1].", 1581362467],
-    [157, 9, 598, "RSpec/ExampleLength: Example has too many lines. [9/5]", 3978812386],
     [164, 13, 63, "Style/IdenticalConditionalBranches: Move `expect(last_response.body).not_to include(\"Create an Identity\")` out of the conditional.", 3058698764],
     [167, 13, 63, "Style/IdenticalConditionalBranches: Move `expect(last_response.body).not_to include(\"Create an Identity\")` out of the conditional.", 3058698764],
-    [175, 18, 53, "RSpec/VerifiedDoubles: Prefer using verifying doubles over normal doubles.", 2075994733],
-    [180, 9, 6, "RSpec/ExpectInHook: Do not use `expect` in `before` hook", 1179768986],
     [180, 9, 15, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 1348721721],
-    [180, 28, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `anon_ar` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [201, 9, 6, "RSpec/ExpectInHook: Do not use `expect` in `before` hook", 1179768986],
     [201, 9, 15, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 1348721721],
-    [201, 28, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `anon_ar` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [220, 7, 364, "RSpec/ExampleLength: Example has too many lines. [6/5]", 1374979352],
     [222, 9, 15, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 1348721721],
-    [222, 28, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `anon_ar` as a spy using `allow` or `instance_spy`.", 1384559950],
     [232, 13, 25, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3693125323],
     [239, 13, 26, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 2193731070],
     [255, 13, 26, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 2193731070],
-    [275, 7, 23, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 3771829418],
-    [281, 7, 33, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 109191139],
-    [291, 9, 31, "RSpec/NestedGroups: Maximum example group nesting exceeded [5/3].", 3824711476],
     [294, 33, 2, "RSpec/BeEq: Prefer `be` over `eq`.", 5860785],
-    [308, 9, 34, "RSpec/NestedGroups: Maximum example group nesting exceeded [5/3].", 221910324],
-    [315, 11, 23, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 3771829418],
-    [349, 32, 38, "RSpec/VerifiedDoubles: Prefer using verifying doubles over normal doubles.", 1755902936],
-    [352, 9, 6, "RSpec/ExpectInHook: Do not use `expect` in `before` hook", 1179768986],
     [352, 9, 15, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 1348721721],
-    [352, 28, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `anon_ar` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [355, 7, 17, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 480102481],
     [355, 15, 9, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3027277230],
-    [356, 9, 28, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2785076975],
-    [363, 7, 48, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 136205881],
     [363, 15, 40, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3387945126],
-    [373, 9, 27, "RSpec/MultipleExpectations: Example has too many expectations [3/1].", 2670485460],
-    [381, 7, 33, "RSpec/NestedGroups: Maximum example group nesting exceeded [4/3].", 109191139],
-    [391, 9, 31, "RSpec/NestedGroups: Maximum example group nesting exceeded [5/3].", 3824711476],
     [394, 33, 2, "RSpec/BeEq: Prefer `be` over `eq`.", 5860785],
-    [408, 9, 34, "RSpec/NestedGroups: Maximum example group nesting exceeded [5/3].", 221910324],
     [417, 33, 2, "RSpec/BeEq: Prefer `be` over `eq`.", 5860785]
   ],
-  "spec/support/shared_contexts/instance_with_instance_methods.rb:568280648": [
-    [46, 27, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `instance` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [54, 27, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `instance` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [61, 5, 300, "RSpec/ExampleLength: Example has too many lines. [6/5]", 2287723340],
-    [62, 7, 58, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [63].", 2575742549],
-    [63, 7, 55, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [62].", 4289606631],
-    [71, 5, 322, "RSpec/NoExpectationExample: No expectation found in this example.", 4020414310],
-    [72, 7, 62, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [73, 74].", 4137211194],
-    [73, 7, 56, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [72, 74].", 2966621938],
-    [74, 7, 58, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [72, 73].", 2022386549],
-    [78, 5, 180, "RSpec/NoExpectationExample: No expectation found in this example.", 1355536605],
-    [84, 7, 60, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [85].", 3631741744],
-    [85, 7, 59, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [84].", 3301215538]
-  ],
-  "spec/support/shared_contexts/model_with_class_methods.rb:1263210654": [
-    [11, 5, 325, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3056489340],
-    [12, 25, 47, "RSpec/VerifiedDoubles: Prefer using verifying doubles over normal doubles.", 1295072297],
-    [20, 5, 368, "RSpec/ExampleLength: Example has too many lines. [7/5]", 2117829356],
-    [21, 25, 47, "RSpec/VerifiedDoubles: Prefer using verifying doubles over normal doubles.", 1295072297]
+  "spec/support/shared_contexts/instance_with_instance_methods.rb:664047042": [
+    [65, 7, 58, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [66].", 2575742549],
+    [66, 7, 55, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [65].", 4289606631],
+    [74, 5, 322, "RSpec/NoExpectationExample: No expectation found in this example.", 4020414310],
+    [75, 7, 62, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [76, 77].", 4137211194],
+    [76, 7, 56, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [75, 77].", 2966621938],
+    [77, 7, 58, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [75, 76].", 2022386549],
+    [81, 5, 180, "RSpec/NoExpectationExample: No expectation found in this example.", 1355536605],
+    [87, 7, 60, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [88].", 3631741744],
+    [88, 7, 59, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [87].", 3301215538]
   ],
   "spec/support/shared_contexts/persistable_model.rb:4102269984": [
     [3, 22, 19, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3037799226]
   ],
   "spec_ignored/nobrainer_spec.rb:3191134947": [
     [19, 1, 65, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/no_brainer*_spec.rb`.", 1527957824],
-    [50, 7, 297, "RSpec/ExampleLength: Example has too many lines. [6/5]", 2247016642],
+    [20, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
+    [36, 7, 45, "Layout/EmptyLinesAfterModuleInclusion: Add an empty line after module inclusion.", 2552284222],
     [55, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
   "spec_orms/active_record_spec.rb:2527236494": [
     [15, 1, 66, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/active_record*_spec.rb`.", 3716735269],
-    [41, 7, 321, "RSpec/ExampleLength: Example has too many lines. [7/5]", 3315623106],
     [47, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
   "spec_orms/couch_potato_spec.rb:2607164198": [
     [12, 1, 71, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/couch_potato_module*_spec.rb`.", 3681175308],
-    [36, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
+    [13, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
+    [23, 7, 53, "Layout/EmptyLinesAfterModuleInclusion: Add an empty line after module inclusion.", 3371266503],
     [41, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
   "spec_orms/mongoid_spec.rb:2505895318": [
     [14, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],
-    [21, 14, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441],
-    [27, 7, 290, "RSpec/ExampleLength: Example has too many lines. [6/5]", 3358628882],
     [32, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
   "spec_orms/sequel_spec.rb:1275922107": [
     [22, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [23, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
+    [34, 7, 42, "Layout/EmptyLinesAfterModuleInclusion: Add an empty line after module inclusion.", 1846499429],
     [48, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }

@@ -1,53 +1,77 @@
 # frozen_string_literal: true
 
-require "bundler/gem_tasks"
+# kettle-dev Rakefile v1.1.32 - 2025-10-07
+# Ruby 2.3 (Safe Navigation) or higher required
+#
+# MIT License (see License.txt)
+#
+# Copyright (c) 2025 Peter H. Boling (galtzo.com)
+#
+# Expected to work in any project that uses Bundler.
+#
+# Sets up tasks for appraisal, floss_funding, rspec, minitest, rubocop, reek, yard, and stone_checksums.
+#
+# rake appraisal:update                       # Update Appraisal gemfiles and run RuboCop...
+# rake bench                                  # Run all benchmarks (alias for bench:run)
+# rake bench:list                             # List available benchmark scripts
+# rake bench:run                              # Run all benchmark scripts (skips on CI)
+# rake build:generate_checksums               # Generate both SHA256 & SHA512 checksums i...
+# rake bundle:audit:check                     # Checks the Gemfile.lock for insecure depe...
+# rake bundle:audit:update                    # Updates the bundler-audit vulnerability d...
+# rake ci:act[opt]                            # Run 'act' with a selected workflow
+# rake coverage                               # Run specs w/ coverage and open results in...
+# rake default                                # Default tasks aggregator
+# rake install                                # Build and install kettle-dev-1.0.0.gem in...
+# rake install:local                          # Build and install kettle-dev-1.0.0.gem in...
+# rake kettle:dev:install                     # Install kettle-dev GitHub automation and ...
+# rake kettle:dev:template                    # Template kettle-dev files into the curren...
+# rake reek                                   # Check for code smells
+# rake reek:update                            # Run reek and store the output into the RE...
+# rake release[remote]                        # Create tag v1.0.0 and build and push kett...
+# rake rubocop_gradual                        # Run RuboCop Gradual
+# rake rubocop_gradual:autocorrect            # Run RuboCop Gradual with autocorrect (onl...
+# rake rubocop_gradual:autocorrect_all        # Run RuboCop Gradual with autocorrect (saf...
+# rake rubocop_gradual:check                  # Run RuboCop Gradual to check the lock file
+# rake rubocop_gradual:force_update           # Run RuboCop Gradual to force update the l...
+# rake rubocop_gradual_debug                  # Run RuboCop Gradual
+# rake rubocop_gradual_debug:autocorrect      # Run RuboCop Gradual with autocorrect (onl...
+# rake rubocop_gradual_debug:autocorrect_all  # Run RuboCop Gradual with autocorrect (saf...
+# rake rubocop_gradual_debug:check            # Run RuboCop Gradual to check the lock file
+# rake rubocop_gradual_debug:force_update     # Run RuboCop Gradual to force update the l...
+# rake spec                                   # Run RSpec code examples
+# rake test                                   # Run tests
+# rake yard                                   # Generate YARD Documentation
+#
 
-defaults = []
+require "bundler/gem_tasks" if !Dir[File.join(__dir__, "*.gemspec")].empty?
 
-is_ci = ENV.fetch("CI", "false").casecmp("true") == 0
+# Define a base default task early so other files can enhance it.
+desc "Default tasks aggregator"
+task :default do
+  puts "Default task complete."
+end
 
-### DEVELOPMENT TASKS
-# Setup Kettle Soup Cover
+require "kettle/dev"
+
+### RELEASE TASKS
+# Setup stone_checksums
 begin
-  require "kettle-soup-cover"
-
-  Kettle::Soup::Cover.install_tasks
-  # NOTE: Coverage on CI is configured independent of this task.
-  #       This task is for local development, as it opens results in browser
-  defaults << "coverage" unless Kettle::Soup::Cover::IS_CI
+  require "stone_checksums"
 rescue LoadError
-  desc("(stub) coverage is unavailable")
-  task("coverage") do
-    warn("NOTE: kettle-soup-cover isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  desc("(stub) build:generate_checksums is unavailable")
+  task("build:generate_checksums") do
+    warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
 end
 
-# Setup Bundle Audit
-begin
-  require "bundler/audit/task"
-
-  Bundler::Audit::Task.new
-  defaults.push("bundle:audit:update", "bundle:audit")
-rescue LoadError
-  desc("(stub) bundle:audit is unavailable")
-  task("bundle:audit") do
-    warn("NOTE: bundler-audit isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-  desc("(stub) bundle:audit:update is unavailable")
-  task("bundle:audit:update") do
-    warn("NOTE: bundler-audit isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
+# rubocop:disable Rake/DuplicateTask
 begin
   require "rspec/core/rake_task"
 
   # Define a default test task which will run only specs which work on sqlite3 because,
   #   when running sqlite3-based tests you don't need any additional services running.
-  %w(active_record sequel).each do |orm|
-    RSpec::Core::RakeTask.new("test") do |task|
-      task.pattern = "{spec/**/*,spec_orms/active_record,spec_orms/sequel}_spec.rb"
-    end
+  RSpec::Core::RakeTask.new("test") do |task|
+    task.pattern = "{spec/**/*,spec_orms/active_record,spec_orms/sequel}_spec.rb"
   end
 
   ### Combo Test Tasks for Continuous Integration
@@ -81,8 +105,8 @@ begin
   nobrainer.pattern = "spec_ignored/nobrainer_spec.rb"
 
   # When running all tests you must have CouchDB, and MongoDB running.  See README.md
-  task(spec: %i[
-    test
+  desc("Run all ORM specs (requires CouchDB, and MongoDB running)")
+  task(spec_orms: %i[
     spec_orm_active_record
     spec_orm_couch_potato
     spec_orm_mongoid
@@ -94,72 +118,4 @@ rescue LoadError
     warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
 end
-
-# Setup RuboCop-LTS
-begin
-  require "rubocop/lts"
-
-  Rubocop::Lts.install_tasks
-  # Make autocorrect the default rubocop task
-  defaults << "rubocop_gradual:autocorrect"
-rescue LoadError
-  desc("(stub) rubocop_gradual is unavailable")
-  task(:rubocop_gradual) do
-    warn("NOTE: rubocop-lts isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-# Setup Yard
-begin
-  require "yard"
-
-  YARD::Rake::YardocTask.new(:yard) do |t|
-    t.files = [
-      # Source Splats (alphabetical)
-      "lib/**/*.rb",
-      "-", # source and extra docs are separated by "-"
-      # Extra Files (alphabetical)
-      "*.cff",
-      "*.md",
-      "*.txt",
-    ]
-  end
-  defaults << "yard"
-rescue LoadError
-  desc("(stub) yard is unavailable")
-  task(:yard) do
-    warn("NOTE: yard isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-# Setup Reek
-begin
-  require "reek/rake/task"
-
-  Reek::Rake::Task.new do |t|
-    t.fail_on_error = true
-    t.verbose = false
-    t.source_files = "{lib,spec,spec_ignored,spec_orms}/**/*.rb"
-  end
-  defaults << "reek" unless is_ci
-rescue LoadError
-  desc("(stub) reek is unavailable")
-  task(:reek) do
-    warn("NOTE: reek isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-### RELEASE TASKS
-# Setup stone_checksums
-begin
-  require "stone_checksums"
-
-  GemChecksums.install_tasks
-rescue LoadError
-  desc("(stub) build:generate_checksums is unavailable")
-  task("build:generate_checksums") do
-    warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-task default: defaults
+# rubocop:enable Rake/DuplicateTask

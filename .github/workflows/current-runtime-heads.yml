@@ -29,7 +29,7 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
@@ -40,7 +40,7 @@ jobs:
         include:
           # Ruby 3.4
           - ruby: "ruby"
-            appraisal_name: "dep-heads"
+            appraisal: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -48,7 +48,7 @@ jobs:
 
           # truffleruby-24.1
           - ruby: "truffleruby"
-            appraisal_name: "dep-heads"
+            appraisal: "dep-heads"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
@@ -56,7 +56,7 @@ jobs:
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
 #          - ruby: "jruby"
-#            appraisal_name: "dep-heads"
+#            appraisal: "dep-heads"
 #            exec_cmd: "rake spec:orm:active_record"
 #            gemfile: "Appraisal.root"
 #            experimental: true
@@ -80,7 +80,7 @@ jobs:
       # NOTE: This does not use the primary Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}

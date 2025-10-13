@@ -4,7 +4,7 @@ require "active_record"
 require "anonymous_active_record"
 
 RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
-  attr_accessor :app
+  attr_writer :app
 
   let(:env_hash) { last_response.headers["env"] }
   let(:auth_hash) { env_hash["omniauth.auth"] }

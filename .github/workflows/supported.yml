@@ -1,4 +1,4 @@
-name: MRI (Supported)
+name: MRI Non-EOL
 
 permissions:
   contents: read
@@ -10,7 +10,7 @@ on:
   push:
     branches:
       - 'main'
-      - "*-stable"
+      - '*-stable'
     tags:
       - '!*' # Do not execute on tags
   pull_request:
@@ -27,8 +27,8 @@ concurrency:
 
 jobs:
   test:
-    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal_name }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
+    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
@@ -36,29 +36,21 @@ jobs:
     strategy:
       matrix:
         include:
-          # Ruby 3.1
-          - ruby: "3.1"
-            appraisal_name: "ar-7-2"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-          - ruby: "3.1"
-            appraisal_name: "sequel-5.86-r3"
-            exec_cmd: "rake spec:orm:sequel"
-            gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
-
           # Ruby 3.2
           - ruby: "3.2"
-            appraisal_name: "ar-8-0"
+            appraisal: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.2"
-            appraisal_name: "sequel-5.86-r3"
+            appraisal: "ar-8-0"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.2"
+            appraisal: "sequel-5.86-r3"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -66,13 +58,25 @@ jobs:
 
           # Ruby 3.3
           - ruby: "3.3"
-            appraisal_name: "ar-8-0"
+            appraisal: "ar-7-1-r3"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: latest
             bundler: latest
           - ruby: "3.3"
-            appraisal_name: "sequel-5.86-r3"
+            appraisal: "ar-7-2"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.3"
+            appraisal: "ar-8-0"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+          - ruby: "3.3"
+            appraisal: "sequel-5.86-r3"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -92,10 +96,10 @@ jobs:
 
       # Raw `bundle` will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
       # We need to do this first to get appraisal installed.
-      # NOTE: This does not use the main Gemfile at all.
+      # NOTE: This does not use the primary Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.ruby }} ${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+      - name: Tests for ${{ matrix.ruby }} ${{ matrix.appraisal }} via ${{ matrix.exec_cmd }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}

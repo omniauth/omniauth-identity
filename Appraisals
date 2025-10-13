@@ -1,37 +1,36 @@
 # frozen_string_literal: true
 
-# HOW TO UPDATE APPRAISALS:
-#   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
-#   BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
-#   bundle exec rake rubocop_gradual:autocorrect
-# NOTE: Commands need to be run from the devcontainer if old Rails or old sqlite3 won't install for you locally.
+# HOW TO UPDATE APPRAISALS (will run rubocop_gradual's autocorrect afterward):
+#   bin/rake appraisals:update
 
 # Lock/Unlock Deps Pattern
 #
 # Two often conflicting goals resolved!
 #
-#  - deps_unlocked.yml
+#  - unlocked_deps.yml
 #    - All runtime & dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
-#    - Uses an Appraisal2 "deps_unlocked" gemfile, and the current MRI Ruby release
+#    - Uses an Appraisal2 "unlocked_deps" gemfile, and the current MRI Ruby release
 #    - Know when new dependency releases will break local dev with unlocked dependencies
 #    - Broken workflow indicates that new releases of dependencies may not work
 #
-#  - deps_locked.yml
+#  - locked_deps.yml
 #    - All runtime & dev dependencies, and has a `Gemfile.lock` committed
 #    - Uses the project's main Gemfile, and the current MRI Ruby release
 #    - Matches what contributors and maintainers use locally for development
 #    - Broken workflow indicates that a new contributor will have a bad time
 #
-appraise "deps_unlocked" do
-  eval_gemfile("modular/audit.gemfile")
-  eval_gemfile("modular/coverage.gemfile")
-  eval_gemfile("modular/documentation.gemfile")
-  eval_gemfile("modular/style.gemfile")
-  eval_gemfile("modular/x_std_libs.gemfile")
+appraise "unlocked_deps" do
+  gem "sequel", "~> 5.86", ">= 5.86.0"
+  eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/coverage.gemfile"
+  eval_gemfile "modular/documentation.gemfile"
+  eval_gemfile "modular/style.gemfile"
+  eval_gemfile "modular/optional.gemfile"
+  eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Used for HEAD (nightly) releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
+# Test current Rubies against head versions of runtime dependencies
 appraise "dep-heads" do
   eval_gemfile "modular/activerecord/vHEAD.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
@@ -49,31 +48,35 @@ end
 # Compat: Ruby >= 2.2.2
 # Test Matrix:
 #   - Ruby 2.5
-#   - Ruby 2.6
-#   - Ruby 2.7
 appraise "ar-5-2-r2" do
   eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.5
 # Test Matrix:
 #   - Ruby 2.5
-#   - Ruby 2.6
-#   - Ruby 2.7
 appraise "ar-6-0" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.2.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.5
 # Test Matrix:
 #   - JRuby 9.2
-#   - JRuby 9.3
 #   - Ruby 2.5
+#   - JRuby 9.3
 #   - Ruby 2.6
+appraise "ar-6-1-r2.6" do
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.3.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
+end
+
+# Compat: Ruby >= 2.7
+# Test Matrix:
 #   - Ruby 2.7
 appraise "ar-6-1-r2" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
@@ -87,7 +90,7 @@ end
 appraise "ar-6-1-r3" do
   eval_gemfile "modular/activerecord/r3/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -103,10 +106,11 @@ end
 # Test Matrix:
 #   - Ruby 3.0
 #   - Ruby 3.1
+#   - JRuby 9.4
 appraise "ar-7-0-r3" do
   eval_gemfile "modular/activerecord/r3/v7.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -122,7 +126,17 @@ end
 # Test Matrix:
 #   - Ruby 3.0
 #   - Ruby 3.1
+appraise "ar-7-1-r3.1" do
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
+end
+
+# Compat: Ruby >= 2.7
+# Test Matrix:
 #   - Ruby 3.2
+#   - TruffleRuby 23.1
+#   - Ruby 3.3
 #   - JRuby 10.0
 appraise "ar-7-1-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
@@ -132,12 +146,8 @@ end
 
 # Compat: Ruby >= 3.1
 # Test Matrix:
-#   - Ruby 3.1
-#   - JRuby 9.4
-#   - Ruby 3.2
 #   - Ruby 3.3
-#   - JRuby 10.0
-#   - jruby-head
+#   - Ruby 3.4
 appraise "ar-7-2" do
   eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -149,8 +159,6 @@ end
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-#   - ruby-head
-#   - truffleruby-head
 appraise "ar-8-0" do
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -174,22 +182,34 @@ end
 #   - Ruby 2.5
 appraise "couch-1.17-r2.5" do
   gem "couch_potato", "~> 1.17"
-  # TODO: Bump when old dropping old Ruby from this gem.
+  # TODO: Bump when dropping old Ruby from this gem.
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
 # Test Matrix:
 #   - Ruby 2.6
 #   - JRuby 9.3
-#   - Ruby 2.7
-appraise "couch-1.17-r2" do
+appraise "couch-1.17-r2.6" do
   gem "couch_potato", "~> 1.17"
-  # TODO: Bump when old dropping old Ruby from this gem.
+  # TODO: Bump when dropping old Ruby from this gem.
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
+
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
+  eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
+end
+
+# Compat: Ruby >= 2.2.2 (due to AR >= 5)
+# Test Matrix:
+#   - Ruby 2.7
+appraise "couch-1.17-r2.7" do
+  gem "couch_potato", "~> 1.17"
+  # TODO: Bump when dropping old Ruby from this gem.
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
@@ -202,13 +222,20 @@ end
 #   - Ruby 3.0
 #   - Ruby 3.1
 #   - JRuby 9.4
+appraise "couch-1.17-r3.1" do
+  gem "couch_potato", "~> 1.17"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
+
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
+end
+
+# Compat: Ruby >= 2.2.2 (due to AR >= 5)
+# Test Matrix:
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-#   - JRuby 10.0
-#   - ruby-head
-#   - truffleruby-head
-#   - jruby-head
 appraise "couch-1.17-r3" do
   gem "couch_potato", "~> 1.17"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
@@ -233,7 +260,6 @@ end
 
 # Compat: Ruby >= 2.3
 # Test Matrix:
-#   - Ruby 2.5
 #   - JRuby 9.2
 appraise "mongoid-7.3-b4.15" do
   gem "mongoid", "~> 7.3", ">= 7.3.5"
@@ -242,13 +268,14 @@ appraise "mongoid-7.3-b4.15" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.5
 # Test Matrix:
 #   - Ruby 2.5
 #   - JRuby 9.2
+#   - Ruby 2.6
 appraise "mongoid-7.4-b4.15" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
@@ -256,14 +283,12 @@ appraise "mongoid-7.4-b4.15" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
-# Compat: Ruby >= 2.5
+# Compat: Ruby >= 2.6 (because of bson v5)
 # Test Matrix:
-#   - Ruby 2.6
 #   - JRuby 9.3
-#   - Ruby 2.7
 appraise "mongoid-7.4-b5" do
   gem "mongoid", "~> 7.4", ">= 7.4.3"
   gem "mongoid-rspec", "~> 4.1"
@@ -271,13 +296,24 @@ appraise "mongoid-7.4-b5" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
-#   - Ruby 2.6
 #   - JRuby 9.3
+appraise "mongoid-8.1-r2.6" do
+  gem "mongoid", "~> 8.1", ">= 8.1.7"
+  gem "mongoid-rspec", "~> 4.2"
+  eval_gemfile "modular/bson/r2/v5.0.gemfile"
+
+  eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
+  eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
+end
+
+# Compat: Ruby >= 2.7
+# Test Matrix:
 #   - Ruby 2.7
 appraise "mongoid-8.1-r2" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
@@ -291,21 +327,20 @@ end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
-#   - Ruby 3.0
-appraise "mongoid-8.1-r3.0" do
+#   - Ruby 3.1
+#   - JRuby 9.4
+appraise "mongoid-8.1-r3.1" do
   gem "mongoid", "~> 8.1", ">= 8.1.7"
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
 end
 
 # Compat: Ruby >= 2.6
 # Test Matrix:
-#   - Ruby 3.1
-#   - JRuby 9.4
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
@@ -364,26 +399,23 @@ end
 # Compat: Ruby >= 2.7
 # Test Matrix:
 #   - Ruby 3.0
-appraise "mongoid-9.0-r3.0" do
+#   - JRuby 9.4
+appraise "mongoid-9.0-r3.1" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 end
 
 # Compat: Ruby >= 2.7
 # Test Matrix:
-#   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-#   - ruby-head
-#   - truffleruby-head
-#   - jruby-head
 appraise "mongoid-9.0-r3" do
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
@@ -440,7 +472,7 @@ appraise "sequel-5.86-r2.5" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -450,7 +482,7 @@ appraise "sequel-5.86-r2.6" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -466,24 +498,20 @@ end
 # Compat: Ruby >= 1.9.2
 # Test Matrix:
 #   - Ruby 3.0
-appraise "sequel-5.86-r3.0" do
+#   - Ruby 3.1
+appraise "sequel-5.86-r3.1" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
 # Test Matrix:
-#   - Ruby 3.1
 #   - Ruby 3.2
 #   - Ruby 3.3
 #   - Ruby 3.4
-#   - JRuby 9.4
 #   - JRuby 10.0
-#   - ruby-head
-#   - truffleruby-head
-#   - jruby-head
 appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
@@ -494,8 +522,7 @@ end
 # Only run security audit on the latest version of Ruby
 appraise "audit" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/audit.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs.gemfile"
 end
 
 # Only run coverage on the latest version of Ruby
@@ -509,12 +536,13 @@ appraise "coverage" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/coverage.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/optional.gemfile"
+  eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Only run linter on the latest version of Ruby (but, in support of the oldest supported Ruby version)
+# Only run linter on the latest version of Ruby (but, in support of oldest supported Ruby version)
 appraise "style" do
   eval_gemfile "modular/style.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/x_std_libs.gemfile"
 end
