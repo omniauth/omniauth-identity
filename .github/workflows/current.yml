@@ -74,6 +74,12 @@ jobs:
             rubygems: default
             bundler: default
 
+#          # NOTE: When running the following, we get a RuntimeException:
+#          #        java.lang.RuntimeException: Ruby Thread id=90 from /home/runner/.rubies/truffleruby-25.0.0/lib/mri/bundler/worker.rb:90 terminated with internal error:
+#          #	      at org.graalvm.ruby/org.truffleruby.core.thread.ThreadManager.printInternalError(ThreadManager.java:312)
+#          #	      at org.graalvm.ruby/org.truffleruby.core.thread.ThreadManager.threadMain(ThreadManager.java:301)
+#          #	      at org.graalvm.ruby/org.truffleruby.core.thread.ThreadManager.lambda$initialize$1(ThreadManager.java:272)
+#          #	      at org.graalvm.truffle/com.oracle.truffle.polyglot.PolyglotThreadTask$ThreadSpawnRootNode.executeImpl(PolyglotThreadTask.java:144)
 #          - ruby: "truffleruby"
 #            appraisal: "rom-r3"
 #            exec_cmd: "rake spec:orm:rom"
