@@ -45,7 +45,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
       it "finds a record by custom auth key (login) when auth_key is set to :login" do
         # Temporarily switch the auth key to :login using the public Model.auth_key API
         original = model_klass.auth_key
-        model_klass.auth_key :login
+        model_klass.auth_key(:login)
 
         begin
           # Insert test data using the login field
@@ -57,7 +57,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
           expect(located.login).to(eq("bob"))
         ensure
           # Restore original auth_key to avoid leaking state between tests
-          model_klass.auth_key original
+          model_klass.auth_key(original)
         end
       end
 
@@ -81,7 +81,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
 
       it "authenticates with custom auth_key (login) when auth_key is set to :login" do
         original = model_klass.auth_key
-        model_klass.auth_key :login
+        model_klass.auth_key(:login)
 
         begin
           # Insert test data using login field
@@ -93,7 +93,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
           expect(authenticated).to(be_a(RomTestIdentity))
           expect(authenticated.login).to(eq("bob"))
         ensure
-          model_klass.auth_key original
+          model_klass.auth_key(original)
         end
       end
 
@@ -116,7 +116,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
     describe "owner_relation_name" do
       it "loads associated owner data when owner_relation_name is configured" do
         # Set up owner_relation_name
-        model_klass.owner_relation_name :rom_test_owners
+        model_klass.owner_relation_name(:rom_test_owners)
 
         # Insert owner data
         owner_data = {name: "John Doe"}

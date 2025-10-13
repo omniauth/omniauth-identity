@@ -92,11 +92,11 @@ module OmniAuth
             else
               conditions
             end
-            return nil if key_value.nil?
+            return if key_value.nil?
 
             relation = rom_container.relations[rom_relation_name]
             identity_data = relation.where(auth_key_symbol => key_value).one
-            return nil unless identity_data
+            return unless identity_data
 
             if owner_relation_name && identity_data[:owner_id]
               owner_data = rom_container.relations[owner_relation_name].where(id: identity_data[:owner_id]).one
