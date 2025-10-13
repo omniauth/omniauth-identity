@@ -41,12 +41,14 @@ jobs:
 #         #     NameError: uninitialized constant Logger::INFO
 #         #   when running:
 #         #     Mongoid.load!(File.join(__dir__, "mongoid.yml"))
-          - ruby: "jruby-9.4"
-            appraisal: "mongoid-8.1-r3.1"
-            exec_cmd: "rake spec:orm:mongoid"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#         # NOTE: that the first statement in spec_orms/support/rspec_config/mongoid.rb is require "logger",
+#         #       which should define Logger::INFO, so this is a very strange error.
+#          - ruby: "jruby-9.4"
+#            appraisal: "mongoid-8.1-r3.1"
+#            exec_cmd: "rake spec:orm:mongoid"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
           - ruby: "jruby-9.4"
             appraisal: "mongoid-9.0-r3.1"
             exec_cmd: "rake spec:orm:mongoid"
