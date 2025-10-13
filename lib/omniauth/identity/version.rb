@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# @module OmniAuth::Identity::Version
 # Contains version information for the OmniAuth Identity gem.
 module OmniAuth
   module Identity
