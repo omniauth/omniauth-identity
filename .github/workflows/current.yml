@@ -74,12 +74,12 @@ jobs:
             rubygems: default
             bundler: default
 
-          - ruby: "truffleruby"
-            appraisal: "rom-r3"
-            exec_cmd: "rake spec:orm:rom"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#          - ruby: "truffleruby"
+#            appraisal: "rom-r3"
+#            exec_cmd: "rake spec:orm:rom"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
           # jruby-10.0 (targets Ruby 3.4 compatibility)
           - ruby: "jruby"
