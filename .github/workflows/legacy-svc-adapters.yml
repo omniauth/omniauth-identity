@@ -45,7 +45,7 @@ jobs:
             rubygems: '3.5.23'
             bundler: '2.5.23'
           - ruby: "3.0"
-            appraisal: "mongoid-9.0-r3.0"
+            appraisal: "mongoid-9.0-r3.1"
             exec_cmd: "rake spec:orm:mongoid"
             gemfile: "Appraisal.root"
             rubygems: '3.5.23'
