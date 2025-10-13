@@ -183,12 +183,11 @@ module OmniAuth
       # @!method uid
       # Returns the unique identifier for the authenticated identity.
       # @return [String]
+      uid { identity.uid }
 
       # @!method info
       # Returns the info hash for the authenticated identity.
       # @return [Hash]
-
-      uid { identity.uid }
       info { identity.info }
 
       # Returns the path for registration.
