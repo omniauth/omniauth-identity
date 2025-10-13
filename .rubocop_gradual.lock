@@ -5,12 +5,12 @@
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
   ],
-  "lib/omniauth/identity/model.rb:4059465368": [
+  "lib/omniauth/identity/model.rb:4176389330": [
+    [71, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
     [72, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [73, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [73, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [73, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [75, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
+    [72, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [72, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [74, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
   ],
   "lib/omniauth/identity/models/active_record.rb:430408575": [
     [54, 9, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2104861380],
@@ -34,7 +34,7 @@
   "lib/omniauth/identity/models/sequel.rb:101522047": [
     [44, 9, 3379, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3595458005]
   ],
-  "lib/omniauth/identity/secure_password.rb:1127154244": [
+  "lib/omniauth/identity/secure_password.rb:2725073634": [
     [31, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
     [46, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
