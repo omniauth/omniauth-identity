@@ -126,6 +126,7 @@ end
 # Test Matrix:
 #   - Ruby 3.0
 #   - Ruby 3.1
+#   - TruffleRuby 23.1
 appraise "ar-7-1-r3.1" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
@@ -135,7 +136,6 @@ end
 # Compat: Ruby >= 2.7
 # Test Matrix:
 #   - Ruby 3.2
-#   - TruffleRuby 23.1
 #   - Ruby 3.3
 #   - JRuby 10.0
 appraise "ar-7-1-r3" do
@@ -454,6 +454,32 @@ end
 #   gem "mutex_m", "~> 0.1"
 #   gem "stringio", ">= 0.0.2"
 # end
+
+# Compat: Ruby >= 3.1.0
+# Test Matrix:
+#   - Ruby 3.1
+#   - TruffleRuby 23.1
+#   - JRuby 9.4
+appraise "rom-r3.1" do
+  gem "rom-sql", "~> 3.7"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
+end
+
+# Compat: Ruby >= 3.1.0
+# Test Matrix:
+#   - Ruby 3.2
+#   - TruffleRuby 24.1
+#   - Ruby 3.3
+#   - Ruby 3.4
+#   - JRuby 10.0
+appraise "rom-r3" do
+  gem "rom-sql", "~> 3.7"
+  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+end
 
 # Compat: Ruby >= 1.9.2
 # Test Matrix:

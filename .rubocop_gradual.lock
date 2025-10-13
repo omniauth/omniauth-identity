@@ -31,6 +31,14 @@
     [57, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [69, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
+  "lib/omniauth/identity/models/rom.rb:4274893658": [
+    [23, 9, 804, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2641680277],
+    [34, 33, 14, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3392992668],
+    [34, 48, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3094507655],
+    [51, 13, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1768297560],
+    [67, 18, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2230320645],
+    [68, 54, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2230320645]
+  ],
   "lib/omniauth/identity/models/sequel.rb:101522047": [
     [44, 9, 3379, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3595458005]
   ],
@@ -94,6 +102,11 @@
   "spec_orms/mongoid_spec.rb:2505895318": [
     [14, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],
     [32, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  ],
+  "spec_orms/rom_spec.rb:2718230340": [
+    [42, 1, 57, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/rom*_spec.rb`.", 18469108],
+    [43, 3, 254, "RSpec/LeakyConstantDeclaration: Stub constant instead of declaring explicitly.", 151871654],
+    [51, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566]
   ],
   "spec_orms/sequel_spec.rb:1275922107": [
     [22, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],

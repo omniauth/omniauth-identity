@@ -81,6 +81,13 @@ jobs:
             bundler: '2.6.9'
 
           - ruby: "3.1"
+            appraisal: "rom-r3.1"
+            exec_cmd: "rake spec:orm:rom"
+            gemfile: "Appraisal.root"
+            rubygems: '3.6.9'
+            bundler: '2.6.9'
+
+          - ruby: "3.1"
             appraisal: "sequel-5.86-r3.1"
             exec_cmd: "rake spec:orm:sequel"
             gemfile: "Appraisal.root"

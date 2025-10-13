@@ -44,6 +44,13 @@ jobs:
             rubygems: default
             bundler: default
 
+          - ruby: "jruby-9.4"
+            appraisal: "rom-r3.1"
+            exec_cmd: "rake spec:orm:rom"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
     steps:
       - name: Checkout
         if: ${{ !env.ACT }}
