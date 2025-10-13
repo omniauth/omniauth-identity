@@ -5,7 +5,7 @@
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
   ],
-  "lib/omniauth/identity/model.rb:4176389330": [
+  "lib/omniauth/identity/model.rb:2544890477": [
     [71, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
     [72, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
     [72, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],

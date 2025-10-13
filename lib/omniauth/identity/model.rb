@@ -108,7 +108,7 @@ module OmniAuth
         #   since it is a pattern many ORMs follow
         #
         # @abstract
-        # @param options [Hash] Options for saving.
+        # @param _options [Hash] Options for saving.
         # @return [Model] An instance of the identity model class.
         # @since 3.0.5
         def save(**_options, &_block)
