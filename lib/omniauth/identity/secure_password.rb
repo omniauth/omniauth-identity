@@ -150,7 +150,6 @@ module OmniAuth
         end
       end
 
-      # @class InstanceMethodsOnActivation
       # A module that defines instance methods for password handling.
       # Methods are defined dynamically based on the attribute name.
       class InstanceMethodsOnActivation < Module
