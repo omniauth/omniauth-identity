@@ -1,63 +1,20 @@
 # frozen_string_literal: true
 
-# Bugfixes
-# JRuby needed an explicit "require 'logger'" for Rails < 7.1
-# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
-# Placing above omniauth because it is a dependency of omniauth,
-#   which is undeclared in older versions.
-require "logger"
-
-# :nocov:
-DB = if RUBY_ENGINE == "jruby"
-  require "jdbc/sqlite3"
-  require "sequel"
-  Sequel.connect("jdbc:sqlite::memory:")
-else
-  require "sqlite3"
-  require "sequel"
-  Sequel.sqlite
-end
-# :nocov:
-
-require "rom"
-require "rom-sql"
-
-# Define the ROM relations
-class RomTestIdentities < ROM::Relation[:sql]
-  schema(:rom_test_identities) do
-    attribute :id, ROM::SQL::Types::Serial
-    attribute :email, ROM::SQL::Types::String
-    attribute :password_digest, ROM::SQL::Types::String
-    attribute :owner_id, ROM::SQL::Types::Integer
-  end
-end
-
-class RomTestOwners < ROM::Relation[:sql]
-  schema(:rom_test_owners) do
-    attribute :id, ROM::SQL::Types::Serial
-    attribute :name, ROM::SQL::Types::String
-  end
-end
+require_relative "support/rspec_config/rom"
 
 RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
-  ROM_CONTAINER = begin
-    # Set up ROM container with Sequel adapter
-    rom_config = ROM::Configuration.new(:sql, DB)
-    rom_config.register_relation(RomTestIdentities)
-    rom_config.register_relation(RomTestOwners)
-    ROM.container(rom_config)
-  end
-
   before(:all) do
     # Create the tables
-    DB.create_table(:rom_test_identities) do
+    ROM_DB.create_table(:rom_test_identities) do
       primary_key :id
       String :email, null: false
       String :password_digest, null: false
+      # Add the login column to support tests that use a non-standard auth_key
+      String :login
       Integer :owner_id
     end
 
-    DB.create_table(:rom_test_owners) do
+    ROM_DB.create_table(:rom_test_owners) do
       primary_key :id
       String :name, null: false
     end
@@ -65,18 +22,8 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
 
   before do
     # Clear the tables before each test
-    DB[:rom_test_identities].delete
-    DB[:rom_test_owners].delete
-
-    rom_test_identity = Class.new do
-      include OmniAuth::Identity::Models::Rom
-
-      self.rom_container = ROM_CONTAINER
-      self.rom_relation_name = :rom_test_identities
-      self.auth_key_field = :email
-      self.password_field = :password_digest
-    end
-    stub_const("RomTestIdentity", rom_test_identity)
+    ROM_DB[:rom_test_identities].delete
+    ROM_DB[:rom_test_owners].delete
   end
 
   describe "model", type: :model do
@@ -95,6 +42,25 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
         expect(located.email).to(eq("test@example.com"))
       end
 
+      it "finds a record by custom auth key (login) when auth_key is set to :login" do
+        # Temporarily switch the auth key to :login using the public Model.auth_key API
+        original = model_klass.auth_key
+        model_klass.auth_key :login
+
+        begin
+          # Insert test data using the login field
+          identity_data = {login: "bob", email: "bob@example.com", password_digest: BCrypt::Password.create("secret")}
+          ROM_CONTAINER.relations[:rom_test_identities].insert(identity_data)
+
+          located = model_klass.locate("bob")
+          expect(located).to(be_a(RomTestIdentity))
+          expect(located.login).to(eq("bob"))
+        ensure
+          # Restore original auth_key to avoid leaking state between tests
+          model_klass.auth_key original
+        end
+      end
+
       it "returns nil if not found" do
         located = model_klass.locate("nonexistent@example.com")
         expect(located).to(be_nil)
@@ -111,6 +77,24 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
         authenticated = model_klass.authenticate({email: "test@example.com"}, "password")
         expect(authenticated).to(be_a(RomTestIdentity))
         expect(authenticated.email).to(eq("test@example.com"))
+      end
+
+      it "authenticates with custom auth_key (login) when auth_key is set to :login" do
+        original = model_klass.auth_key
+        model_klass.auth_key :login
+
+        begin
+          # Insert test data using login field
+          password_digest = BCrypt::Password.create("password")
+          identity_data = {login: "bob", email: "bob@example.com", password_digest: password_digest}
+          ROM_CONTAINER.relations[:rom_test_identities].insert(identity_data)
+
+          authenticated = model_klass.authenticate({login: "bob"}, "password")
+          expect(authenticated).to(be_a(RomTestIdentity))
+          expect(authenticated.login).to(eq("bob"))
+        ensure
+          model_klass.auth_key original
+        end
       end
 
       it "returns false with incorrect password" do
@@ -132,7 +116,7 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
     describe "owner_relation_name" do
       it "loads associated owner data when owner_relation_name is configured" do
         # Set up owner_relation_name
-        model_klass.owner_relation_name = :rom_test_owners
+        model_klass.owner_relation_name :rom_test_owners
 
         # Insert owner data
         owner_data = {name: "John Doe"}

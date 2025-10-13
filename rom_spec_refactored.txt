@@ -1,0 +1,27 @@
+LOADING DEBUGGER: true
+
+Randomized with seed 27610
+
+OmniAuth::Identity::Models::Rom
+  model
+    ::authenticate
+      calls locate with additional scopes when provided
+      recovers gracefully if locate is nil
+      calls locate and then authenticate
+    ::locate
+      returns nil if not found
+      finds a record by auth key
+    class definition
+      does not raise an error
+    owner_relation_name
+      loads associated owner data when owner_relation_name is configured
+    ::authenticate
+      returns false with incorrect password
+      returns false for non-existent user
+      authenticates with correct password
+
+Finished in 1.89 seconds (files took 0.98284 seconds to load)
+10 examples, 0 failures
+
+Randomized with seed 27610
+

@@ -2,6 +2,9 @@
 
 require "bcrypt"
 
+require "rom"
+require "rom-sql"
+
 module OmniAuth
   module Identity
     module Models
@@ -12,26 +15,28 @@ module OmniAuth
       #   class Identity
       #     include OmniAuth::Identity::Models::Rom
       #
-      #     # Configure the ROM container and relation
-      #     self.rom_container = -> { MyDatabase.rom } # See spec_orms/rom_spec.rb for example
-      #     self.rom_relation_name = :identities
-      #     self.owner_relation_name = :owners  # optional, for loading associated owner
-      #     self.auth_key_field = :email  # optional, defaults to :email
-      #     self.password_field = :password_digest  # optional, defaults to :password_digest
+      #     # Configure the ROM container and relation using the DSL (no `self.`):
+      #     rom_container -> { MyDatabase.rom } # accepts a proc or a container object
+      #     rom_relation_name :identities # optional, defaults to :identities
+      #     owner_relation_name :owners  # optional, for loading associated owner
+      #     # Uses OmniAuth::Identity::Model.auth_key to set the auth key (defaults to :email)
+      #     auth_key :email
+      #     # Optional: override the password digest field name (defaults to :password_digest)
+      #     password_field :password_digest
       #   end
       module Rom
         def self.included(base)
+          # Align with other adapters: rely on OmniAuth::Identity::Model for API
           base.include(::OmniAuth::Identity::Model)
           base.extend(ClassMethods)
 
           base.class_eval do
-            # OmniAuth::Identity required method
+            # OmniAuth::Identity required instance API
             # Authenticates the instance with the provided password
-            #
-            # @param password [String] The password to check
-            # @return [self, false] Self if authenticated, false if not
+            # Returns self on success, false otherwise (to match Model.authenticate contract)
             def authenticate(password)
-              password_digest = @identity_data[self.class.password_field || :password_digest]
+              digest_key = self.class.password_field
+              password_digest = @identity_data[digest_key]
               return false unless password_digest
 
               begin
@@ -44,45 +49,65 @@ module OmniAuth
         end
 
         module ClassMethods
-          # @!attribute [r] DEFAULT_RELATION_NAME
-          # Default relation name to use when rom_relation_name is not set
-          # @return [Symbol]
+          # Default ROM relation name when none is configured
           DEFAULT_RELATION_NAME = :identities
 
-          attr_accessor :rom_container, :rom_relation_name, :owner_relation_name, :auth_key_field, :password_field
-
-          # OmniAuth::Identity required method
-          def auth_key
-            @auth_key_field || :email
+          # Configuration DSL
+          # These methods act like the DSL on `OmniAuth::Identity::Model` (e.g. `auth_key`) —
+          # when called with an argument they set the configuration, and when called
+          # without an argument they return the current value (with sensible defaults).
+          def rom_container(value = false)
+            @rom_container = value unless value == false
+            container = @rom_container
+            container.respond_to?(:call) ? container.call : container
           end
 
-          # OmniAuth::Identity required method
-          # Locates a user based on the provided conditions
-          #
-          # @param conditions [Hash] The search conditions
-          # @return [Object, nil] An instance of the identity model or nil if not found
-          def locate(conditions)
-            key = conditions.is_a?(Hash) ? conditions[auth_key] || conditions[auth_key.to_s] : conditions
-            container = rom_container.respond_to?(:call) ? rom_container.call : rom_container
-            relation = container.relations[rom_relation_name || DEFAULT_RELATION_NAME]
-            identity_data = relation.where(auth_key => key).one
+          def rom_relation_name(value = false)
+            @rom_relation_name = value unless value == false
+            @rom_relation_name || DEFAULT_RELATION_NAME
+          end
 
-            if identity_data
-              # Load the associated owner if configured
-              if @owner_relation_name && identity_data[:owner_id]
-                owner_relation = container.relations[@owner_relation_name]
-                owner_data = owner_relation.where(id: identity_data[:owner_id]).one
-                new(identity_data, owner_data)
-              else
-                new(identity_data)
-              end
+          def owner_relation_name(value = false)
+            @owner_relation_name = value unless value == false
+            @owner_relation_name
+          end
+
+          def password_field(value = false)
+            @password_field = value unless value == false
+            (@password_field || :password_digest).to_sym
+          end
+
+          # Align with other adapters: use Model.auth_key (getter/setter) for the login attribute
+          # Model.auth_key returns a String; convert to Symbol for ROM queries when needed.
+          def auth_key_symbol
+            (auth_key || "email").to_sym
+          end
+
+          # Locate an identity given conditions (Hash) or a raw key value.
+          # Mirrors other adapters by accepting a conditions hash.
+          # Returns an instance or nil.
+          def locate(conditions)
+            key_value = if conditions.is_a?(Hash)
+              conditions[auth_key_symbol] || conditions[auth_key.to_s]
             else
-              nil
+              conditions
+            end
+            return nil if key_value.nil?
+
+            relation = rom_container.relations[rom_relation_name]
+            identity_data = relation.where(auth_key_symbol => key_value).one
+            return nil unless identity_data
+
+            if owner_relation_name && identity_data[:owner_id]
+              owner_data = rom_container.relations[owner_relation_name].where(id: identity_data[:owner_id]).one
+              new(identity_data, owner_data)
+            else
+              new(identity_data)
             end
           end
         end
 
-        # Instance methods for OmniAuth::Identity compatibility
+        # Instance shape matches other adapters for downstream usage
         attr_reader :uid, :email, :name, :info, :owner
 
         def initialize(identity_data, owner_data = nil)
@@ -91,7 +116,7 @@ module OmniAuth
           @uid = identity_data[:id]
           @email = identity_data[:email]
 
-          # Get name from owner if available, otherwise use email
+          # Prefer owner name if available, else fall back to email
           @name = if owner_data && owner_data[:name]
             owner_data[:name]
           else
@@ -103,16 +128,15 @@ module OmniAuth
             "name" => @name,
           }
 
-          # Expose owner for application use
           @owner = owner_data
         end
 
-        # Access to the underlying identity data hash
+        # Hash-like access to underlying ROM tuple
         def [](key)
           @identity_data[key]
         end
 
-        # Access to owner data
+        # Convenience accessor for owner id
         def owner_id
           @identity_data[:owner_id]
         end
