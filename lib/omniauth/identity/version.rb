@@ -7,7 +7,7 @@ module OmniAuth
       # @!attribute [r] VERSION
       # The current version of the omniauth-identity gem.
       # @return [String]
-      VERSION = "3.1.4"
+      VERSION = "3.1.5"
     end
   end
 end
