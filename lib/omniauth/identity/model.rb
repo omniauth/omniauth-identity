@@ -48,7 +48,6 @@ module OmniAuth
         end
       end
 
-      # @module ClassMethods
       # Class-level methods for OmniAuth Identity models.
       module ClassMethods
         # Authenticate a user with the given key and password.
