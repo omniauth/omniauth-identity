@@ -9,21 +9,45 @@ module OmniAuth
     # include SecurePassword. The only difference is that instead of
     # using ActiveSupport::Concern, it checks to see if there is already
     # a has_secure_password method.
+    #
+    # Provides secure password hashing and authentication using BCrypt.
+    #
+    # @example Basic Usage
+    #   class User
+    #     include OmniAuth::Identity::SecurePassword
+    #
+    #     has_secure_password
+    #   end
+    #
+    #   user = User.new(password: 'secret')
+    #   user.authenticate('secret') # => user
     module SecurePassword
+      # Called when this module is included in a model class.
+      #
+      # Extends the base class with ClassMethods unless it already responds to has_secure_password.
+      #
+      # @param base [Class] the model class including this module
+      # @return [void]
       def self.included(base)
         base.extend(ClassMethods) unless base.respond_to?(:has_secure_password)
       end
 
+      # @!attribute [r] MAX_PASSWORD_LENGTH_ALLOWED
       # BCrypt hash function can handle maximum 72 bytes, and if we pass
       # password of length more than 72 bytes it ignores extra characters.
       # Hence need to put a restriction on password length.
+      # @return [Integer] The maximum allowed password length in bytes.
       MAX_PASSWORD_LENGTH_ALLOWED = BCrypt::Engine::MAX_SECRET_BYTESIZE
 
       class << self
+        # @!attribute [rw] min_cost
+        # Controls whether to use minimum cost for BCrypt hashing (for testing).
+        # @return [true, false]
         attr_accessor :min_cost # :nodoc:
       end
       self.min_cost = false
 
+      # Class-level methods for secure password functionality.
       module ClassMethods
         # Adds methods to set and authenticate against a BCrypt password.
         # This mechanism requires you to have a +XXX_digest+ attribute.
@@ -82,6 +106,10 @@ module OmniAuth
         #   user.authenticate_recovery_password('42password')          # => user
         #   User.find_by(name: 'david')&.authenticate('notright')      # => false
         #   User.find_by(name: 'david')&.authenticate('mUc3m00RsqyRe') # => user
+        #
+        # @param attribute [Symbol, String] the attribute name for the password (default: :password)
+        # @param validations [true, false] whether to add validations (default: true)
+        # @return [void]
         def has_secure_password(attribute = :password, validations: true)
           # Load bcrypt gem only when has_secure_password is used.
           # This is to avoid ActiveModel (and by extension the entire framework)
@@ -121,7 +149,12 @@ module OmniAuth
         end
       end
 
+      # A module that defines instance methods for password handling.
+      # Methods are defined dynamically based on the attribute name.
       class InstanceMethodsOnActivation < Module
+        # Initializes the module with the password attribute name.
+        #
+        # @param attribute [Symbol, String] the password attribute name
         def initialize(attribute)
           attr_reader(attribute)
 

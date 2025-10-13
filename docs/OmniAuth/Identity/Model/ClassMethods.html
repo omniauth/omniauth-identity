@@ -83,7 +83,17 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Class-level methods for OmniAuth Identity models.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -194,7 +204,28 @@ and set the user-supplied authentication key.</p>
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>Symbol</tt>, <tt>false</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The method name to set, or false to retrieve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -219,15 +250,15 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-52
-53
-54
-55
-56
-57</pre>
+71
+72
+73
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key'>auth_key</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='ivar'>@auth_key</span> <span class='op'>=</span> <span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>unless</span> <span class='id identifier rubyid_method'>method</span> <span class='op'>==</span> <span class='kw'>false</span>
@@ -303,7 +334,7 @@ and set the user-supplied authentication key.</p>
       
       
         &mdash;
-        <div class='inline'><p>An instance of the identity model class.</p>
+        <div class='inline'><p>An instance of the identity model class or false if authentication fails.</p>
 </div>
       
     </li>
@@ -316,15 +347,15 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
-47</pre>
+59
+60
+61
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span> <span class='op'>=</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
@@ -350,7 +381,7 @@ and set the user-supplied authentication key.</p>
   <div class="discussion">
     <div class="note abstract">
   <strong>This method is abstract.</strong>
-  <div class='inline'>
+  <div class='inline'><p>Subclasses must implement this method.</p>
 </div>
 </div>
 <p>Locate an identity given its unique login key.</p>
@@ -416,12 +447,12 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-64
-65
-66</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid__key'>_key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -436,7 +467,7 @@ and set the user-supplied authentication key.</p>
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 12 11:50:39 2025 by
+  Generated on Mon Oct 13 11:53:19 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

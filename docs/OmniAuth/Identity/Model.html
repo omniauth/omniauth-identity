@@ -97,14 +97,14 @@ and provide all necessary information.</p>
 <p>All methods marked as abstract must be implemented in the<br />
 including class for things to work properly.</p>
 
-<p>Singleton API</p>
+<h3 id="singleton-api">Singleton API</h3>
 
 <ul>
   <li>locate(key)</li>
   <li>create(*args) - Deprecated in v3.0.5; Will be removed in v4.0</li>
 </ul>
 
-<p>Instance API</p>
+<h3 id="instance-api">Instance API</h3>
 
 <ul>
   <li>save</li>
@@ -117,6 +117,20 @@ including class for things to work properly.</p>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>Including the Model</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>User</span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'><span class='object_link'><a href="../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'>Model</span>
+  <span class='comment'># Implement required methods...
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
@@ -138,7 +152,34 @@ including class for things to work properly.</p>
     <dl class="constants">
       
         <dt id="SCHEMA_ATTRIBUTES-constant" class="">SCHEMA_ATTRIBUTES =
-          
+          <div class="docstring">
+  <div class="discussion">
+    <p>Standard OmniAuth schema attributes that may be stored in the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>List of attribute names.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
         <dd><pre class="code"><span class='qwords_beg'>%w[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='words_sep'> </span><span class='tstring_content'>nickname</span><span class='words_sep'> </span><span class='tstring_content'>first_name</span><span class='words_sep'> </span><span class='tstring_content'>last_name</span><span class='words_sep'> </span><span class='tstring_content'>location</span><span class='words_sep'> </span><span class='tstring_content'>description</span><span class='words_sep'> </span><span class='tstring_content'>image</span><span class='words_sep'> </span><span class='tstring_content'>phone</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
@@ -147,6 +188,39 @@ including class for things to work properly.</p>
 
 
 
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#SCHEMA_ATTRIBUTES-instance_method" title="#SCHEMA_ATTRIBUTES (instance method)">#<strong>SCHEMA_ATTRIBUTES</strong>  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Standard OmniAuth schema attributes that may be stored in the model.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
@@ -162,7 +236,7 @@ including class for things to work properly.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#included-class_method" title="included (class method)">.<strong>included</strong>(base)  &#x21d2; Object </a>
+      <a href="#included-class_method" title="included (class method)">.<strong>included</strong>(base)  &#x21d2; void </a>
     
 
     
@@ -176,7 +250,7 @@ including class for things to work properly.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Called when this module is included in a model class.</p>
 </div></span>
   
 </li>
@@ -240,7 +314,7 @@ including class for things to work properly.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#authenticate-instance_method" title="#authenticate (instance method)">#<strong>authenticate</strong>(_password)  &#x21d2; self or false </a>
+      <a href="#authenticate-instance_method" title="#authenticate (instance method)">#<strong>authenticate</strong>(_password)  &#x21d2; self, false </a>
     
 
     
@@ -310,6 +384,66 @@ including class for things to work properly.</p>
   
 
 
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="SCHEMA_ATTRIBUTES-instance_method">
+  
+    #<strong>SCHEMA_ATTRIBUTES</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Standard OmniAuth schema attributes that may be stored in the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>List of attribute names.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 32</span>
+
+<span class='const'><span class='object_link'><a href="#SCHEMA_ATTRIBUTES-constant" title="OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES (constant)">SCHEMA_ATTRIBUTES</a></span></span> <span class='op'>=</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='words_sep'> </span><span class='tstring_content'>nickname</span><span class='words_sep'> </span><span class='tstring_content'>first_name</span><span class='words_sep'> </span><span class='tstring_content'>last_name</span><span class='words_sep'> </span><span class='tstring_content'>location</span><span class='words_sep'> </span><span class='tstring_content'>description</span><span class='words_sep'> </span><span class='tstring_content'>image</span><span class='words_sep'> </span><span class='tstring_content'>phone</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -318,28 +452,60 @@ including class for things to work properly.</p>
       <div class="method_details first">
   <h3 class="signature first" id="included-class_method">
   
-    .<strong>included</strong>(base)  &#x21d2; <tt>Object</tt> 
+    .<strong>included</strong>(base)  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Called when this module is included in a model class.</p>
+
+<p>Extends the base class with ClassMethods and includes necessary APIs<br />
+if they are not already defined.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>base</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the model class including this module</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-27
-28
-29
-30
-31
-32
-33</pre>
+42
+43
+44
+45
+46
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Model/ClassMethods.html" title="OmniAuth::Identity::Model::ClassMethods (module)">ClassMethods</a></span></span><span class='rparen'>)</span>
@@ -404,16 +570,16 @@ users upon sign in.</p>
       <pre class="lines">
 
 
-140
-141
-142
-143
-144
-145
-146</pre>
+166
+167
+168
+169
+170
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key'>auth_key</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
@@ -474,17 +640,17 @@ set.</p>
       <pre class="lines">
 
 
-154
-155
-156
-157
-158
-159
-160
-161</pre>
+180
+181
+182
+183
+184
+185
+186
+187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key='>auth_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_auth_key_setter'>auth_key_setter</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -502,7 +668,7 @@ set.</p>
       <div class="method_details ">
   <h3 class="signature " id="authenticate-instance_method">
   
-    #<strong>authenticate</strong>(_password)  &#x21d2; <tt>self or false</tt> 
+    #<strong>authenticate</strong>(_password)  &#x21d2; <tt>self</tt>, <tt>false</tt> 
   
 
   
@@ -512,7 +678,7 @@ set.</p>
   <div class="discussion">
     <div class="note abstract">
   <strong>This method is abstract.</strong>
-  <div class='inline'>
+  <div class='inline'><p>Subclasses must implement this method.</p>
 </div>
 </div>
 <p>Returns self if the provided password is correct, false<br />
@@ -548,7 +714,7 @@ otherwise.</p>
     <li>
       
       
-        <span class='type'>(<tt>self or false</tt>)</span>
+        <span class='type'>(<tt>self</tt>, <tt>false</tt>)</span>
       
       
       
@@ -579,12 +745,12 @@ otherwise.</p>
       <pre class="lines">
 
 
-116
-117
-118</pre>
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid__password'>_password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -642,18 +808,18 @@ any for which <code>#respond_to?</code> is <code>false</code>.</p>
       <pre class="lines">
 
 
-172
-173
-174
-175
-176
-177
-178
-179
-180</pre>
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 172</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span>
   <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -712,18 +878,18 @@ application. Defaults to stringifying the <code>id</code> method.</p>
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
-129
-130
-131
-132</pre>
+150
+151
+152
+153
+154
+155
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid'>uid</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='rparen'>)</span>
@@ -744,7 +910,7 @@ application. Defaults to stringifying the <code>id</code> method.</p>
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 12 11:50:39 2025 by
+  Generated on Mon Oct 13 11:53:19 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

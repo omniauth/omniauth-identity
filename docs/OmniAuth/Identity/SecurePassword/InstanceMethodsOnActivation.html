@@ -101,7 +101,18 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>A module that defines instance methods for password handling.<br />
+Methods are defined dynamically based on the attribute name.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -135,7 +146,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>A new instance of InstanceMethodsOnActivation.</p>
+    <span class="summary_desc"><div class='inline'><p>Initializes the module with the password attribute name.</p>
 </div></span>
   
 </li>
@@ -159,13 +170,32 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Returns a new instance of InstanceMethodsOnActivation.</p>
+    <p>Initializes the module with the password attribute name.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>attribute</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the password attribute name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -173,47 +203,47 @@
       <pre class="lines">
 
 
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
 160
 161
-162</pre>
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/secure_password.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/secure_password.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_attr_reader'>attr_reader</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
@@ -264,7 +294,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 12 11:50:40 2025 by
+  Generated on Mon Oct 13 11:53:19 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

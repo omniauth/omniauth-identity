@@ -115,6 +115,35 @@ use for external OmniAuth providers.</p>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>Basic Setup</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_use'>use</span> <span class='const'><span class='object_link'><a href="../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Strategies.html" title="OmniAuth::Strategies (module)">Strategies</a></span></span><span class='op'>::</span><span class='const'>Identity</span><span class='comma'>,</span>
+    <span class='label'>fields:</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='label'>model:</span> <span class='const'>User</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>With Registration</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_use'>use</span> <span class='const'><span class='object_link'><a href="../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Strategies.html" title="OmniAuth::Strategies (module)">Strategies</a></span></span><span class='op'>::</span><span class='const'>Identity</span><span class='comma'>,</span>
+    <span class='label'>fields:</span> <span class='lbracket'>[</span><span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='label'>model:</span> <span class='const'>User</span><span class='comma'>,</span>
+    <span class='label'>enable_registration:</span> <span class='kw'>true</span></code></pre>
+    
+  </div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://github.com/omniauth/omniauth-identity" target="_parent" title="https://github.com/omniauth/omniauth-identity">https://github.com/omniauth/omniauth-identity</a></li>
+    
+  </ul>
 
 </div>
   
@@ -126,7 +155,30 @@ use for external OmniAuth providers.</p>
     <dl class="constants">
       
         <dt id="DEFAULT_REGISTRATION_FIELDS-constant" class="">DEFAULT_REGISTRATION_FIELDS =
-          
+          <div class="docstring">
+  <div class="discussion">
+    <p>Default fields required for registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
         <dd><pre class="code"><span class='qsymbols_beg'>%i[</span><span class='tstring_content'>password</span><span class='words_sep'> </span><span class='tstring_content'>password_confirmation</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
@@ -135,6 +187,377 @@ use for external OmniAuth providers.</p>
 
 
 
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_identity_link_text-instance_method" title="#create_identity_link_text (instance method)">#<strong>create_identity_link_text</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Text for the link to create a new identity.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#DEFAULT_REGISTRATION_FIELDS-instance_method" title="#DEFAULT_REGISTRATION_FIELDS (instance method)">#<strong>DEFAULT_REGISTRATION_FIELDS</strong>  &#x21d2; Array&lt;Symbol&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Default fields required for registration.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enable_login-instance_method" title="#enable_login (instance method)">#<strong>enable_login</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Whether to enable login functionality.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enable_registration-instance_method" title="#enable_registration (instance method)">#<strong>enable_registration</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Whether to enable user registration functionality.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fields-instance_method" title="#fields (instance method)">#<strong>fields</strong>  &#x21d2; Array&lt;Symbol&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The fields to collect for user registration.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locate_conditions-instance_method" title="#locate_conditions (instance method)">#<strong>locate_conditions</strong>  &#x21d2; Proc, Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Conditions for locating an identity during login.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_failed_registration-instance_method" title="#on_failed_registration (instance method)">#<strong>on_failed_registration</strong>  &#x21d2; Proc<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Custom handler for failed registration.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_login-instance_method" title="#on_login (instance method)">#<strong>on_login</strong>  &#x21d2; Proc<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Custom login handler.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_registration-instance_method" title="#on_registration (instance method)">#<strong>on_registration</strong>  &#x21d2; Proc<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Custom registration handler.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_validation-instance_method" title="#on_validation (instance method)">#<strong>on_validation</strong>  &#x21d2; Proc<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Custom validation handler for registration.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#registration_failure_message-instance_method" title="#registration_failure_message (instance method)">#<strong>registration_failure_message</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Message to display on registration failure.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#registration_form_title-instance_method" title="#registration_form_title (instance method)">#<strong>registration_form_title</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Title for the registration form.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#title-instance_method" title="#title (instance method)">#<strong>title</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Title for the login form.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validation_failure_message-instance_method" title="#validation_failure_message (instance method)">#<strong>validation_failure_message</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Message to display on validation failure.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
@@ -150,7 +573,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#callback_phase-instance_method" title="#callback_phase (instance method)">#<strong>callback_phase</strong>  &#x21d2; Object </a>
+      <a href="#callback_phase-instance_method" title="#callback_phase (instance method)">#<strong>callback_phase</strong>  &#x21d2; void </a>
     
 
     
@@ -164,7 +587,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Handles the callback phase after login.</p>
 </div></span>
   
 </li>
@@ -173,7 +596,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#identity-instance_method" title="#identity (instance method)">#<strong>identity</strong>  &#x21d2; Object </a>
+      <a href="#identity-instance_method" title="#identity (instance method)">#<strong>identity</strong>  &#x21d2; Object<sup>?</sup> </a>
     
 
     
@@ -187,7 +610,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Finds and authenticates the identity based on the request parameters.</p>
 </div></span>
   
 </li>
@@ -196,7 +619,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#model-instance_method" title="#model (instance method)">#<strong>model</strong>  &#x21d2; Object </a>
+      <a href="#info-instance_method" title="#info (instance method)">#<strong>info</strong>  &#x21d2; Hash </a>
     
 
     
@@ -210,7 +633,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Returns the info hash for the authenticated identity.</p>
 </div></span>
   
 </li>
@@ -219,7 +642,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#on_registration_path%3F-instance_method" title="#on_registration_path? (instance method)">#<strong>on_registration_path?</strong>  &#x21d2; Boolean </a>
+      <a href="#model-instance_method" title="#model (instance method)">#<strong>model</strong>  &#x21d2; Class </a>
     
 
     
@@ -233,7 +656,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Returns the model class to use for identities.</p>
 </div></span>
   
 </li>
@@ -242,7 +665,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#other_phase-instance_method" title="#other_phase (instance method)">#<strong>other_phase</strong>  &#x21d2; Object </a>
+      <a href="#on_registration_path%3F-instance_method" title="#on_registration_path? (instance method)">#<strong>on_registration_path?</strong>  &#x21d2; true, false </a>
     
 
     
@@ -256,7 +679,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Checks if the current request is for the registration path.</p>
 </div></span>
   
 </li>
@@ -265,7 +688,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#registration_form-instance_method" title="#registration_form (instance method)">#<strong>registration_form</strong>(validation_message = nil)  &#x21d2; Object </a>
+      <a href="#other_phase-instance_method" title="#other_phase (instance method)">#<strong>other_phase</strong>  &#x21d2; void </a>
     
 
     
@@ -279,7 +702,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Handles other phases like registration.</p>
 </div></span>
   
 </li>
@@ -288,7 +711,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#registration_path-instance_method" title="#registration_path (instance method)">#<strong>registration_path</strong>  &#x21d2; Object </a>
+      <a href="#registration_form-instance_method" title="#registration_form (instance method)">#<strong>registration_form</strong>(validation_message = nil)  &#x21d2; Rack::Response </a>
     
 
     
@@ -302,7 +725,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Shows the registration form or calls the custom on_registration handler.</p>
 </div></span>
   
 </li>
@@ -311,7 +734,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#registration_phase-instance_method" title="#registration_phase (instance method)">#<strong>registration_phase</strong>  &#x21d2; Object </a>
+      <a href="#registration_path-instance_method" title="#registration_path (instance method)">#<strong>registration_path</strong>  &#x21d2; String </a>
     
 
     
@@ -325,7 +748,7 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Returns the path for registration.</p>
 </div></span>
   
 </li>
@@ -334,7 +757,7 @@ use for external OmniAuth providers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#request_phase-instance_method" title="#request_phase (instance method)">#<strong>request_phase</strong>  &#x21d2; Object </a>
+      <a href="#registration_phase-instance_method" title="#registration_phase (instance method)">#<strong>registration_phase</strong>  &#x21d2; void </a>
     
 
     
@@ -348,7 +771,53 @@ use for external OmniAuth providers.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Handles the registration phase.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#request_phase-instance_method" title="#request_phase (instance method)">#<strong>request_phase</strong>  &#x21d2; Rack::Response </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handles the initial request phase.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uid-instance_method" title="#uid (instance method)">#<strong>uid</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the unique identifier for the authenticated identity.</p>
 </div></span>
   
 </li>
@@ -359,6 +828,725 @@ use for external OmniAuth providers.</p>
 
 
   
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="create_identity_link_text=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="create_identity_link_text-instance_method">
+  
+    #<strong>create_identity_link_text</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Text for the link to create a new identity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 71</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:create_identity_link_text</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Create an Identity</span><span class='tstring_end'>&quot;</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="DEFAULT_REGISTRATION_FIELDS-instance_method">
+  
+    #<strong>DEFAULT_REGISTRATION_FIELDS</strong>  &#x21d2; <tt>Array&lt;Symbol&gt;</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Default fields required for registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 25</span>
+
+<span class='const'><span class='object_link'><a href="#DEFAULT_REGISTRATION_FIELDS-constant" title="OmniAuth::Strategies::Identity::DEFAULT_REGISTRATION_FIELDS (constant)">DEFAULT_REGISTRATION_FIELDS</a></span></span> <span class='op'>=</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>password</span><span class='words_sep'> </span><span class='tstring_content'>password_confirmation</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="enable_login=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="enable_login-instance_method">
+  
+    #<strong>enable_login</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Whether to enable login functionality.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 41</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_login</span><span class='comma'>,</span> <span class='kw'>true</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="enable_registration=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="enable_registration-instance_method">
+  
+    #<strong>enable_registration</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Whether to enable user registration functionality.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 36</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_registration</span><span class='comma'>,</span> <span class='kw'>true</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="fields=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="fields-instance_method">
+  
+    #<strong>fields</strong>  &#x21d2; <tt>Array&lt;Symbol&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The fields to collect for user registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 31</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:fields</span><span class='comma'>,</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='tstring_end'>]</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="locate_conditions=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="locate_conditions-instance_method">
+  
+    #<strong>locate_conditions</strong>  &#x21d2; <tt>Proc</tt>, <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Conditions for locating an identity during login.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 66</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:locate_conditions</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='rparen'>)</span> <span class='tlambeg'>{</span> <span class='lbrace'>{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>auth_key</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="on_failed_registration=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="on_failed_registration-instance_method">
+  
+    #<strong>on_failed_registration</strong>  &#x21d2; <tt>Proc</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Custom handler for failed registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 61</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_failed_registration</span><span class='comma'>,</span> <span class='kw'>nil</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="on_login=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="on_login-instance_method">
+  
+    #<strong>on_login</strong>  &#x21d2; <tt>Proc</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Custom login handler. If provided, called instead of showing the default login form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 46</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_login</span><span class='comma'>,</span> <span class='kw'>nil</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="on_registration=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="on_registration-instance_method">
+  
+    #<strong>on_registration</strong>  &#x21d2; <tt>Proc</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Custom registration handler. If provided, called instead of showing the default registration form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 56</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_registration</span><span class='comma'>,</span> <span class='kw'>nil</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="on_validation=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="on_validation-instance_method">
+  
+    #<strong>on_validation</strong>  &#x21d2; <tt>Proc</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Custom validation handler for registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 51</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_validation</span><span class='comma'>,</span> <span class='kw'>nil</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="registration_failure_message=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="registration_failure_message-instance_method">
+  
+    #<strong>registration_failure_message</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Message to display on registration failure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 76</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:registration_failure_message</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>One or more fields were invalid</span><span class='tstring_end'>&quot;</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="registration_form_title=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="registration_form_title-instance_method">
+  
+    #<strong>registration_form_title</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Title for the registration form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 91</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:registration_form_title</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Register Identity</span><span class='tstring_end'>&quot;</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="title=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="title-instance_method">
+  
+    #<strong>title</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Title for the login form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 86</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Identity Verification</span><span class='tstring_end'>&quot;</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="validation_failure_message=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="validation_failure_message-instance_method">
+  
+    #<strong>validation_failure_message</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Message to display on validation failure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 81</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:validation_failure_message</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Validation failed</span><span class='tstring_end'>&quot;</span></span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -367,26 +1555,38 @@ use for external OmniAuth providers.</p>
       <div class="method_details first">
   <h3 class="signature first" id="callback_phase-instance_method">
   
-    #<strong>callback_phase</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>callback_phase</strong>  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Handles the callback phase after login.</p>
+
+<p>Authenticates the user and calls super if successful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-38
-39
-40
-41
-42</pre>
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_callback_phase'>callback_phase</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_fail!'>fail!</span><span class='lparen'>(</span><span class='symbol'>:invalid_credentials</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_identity'>identity</span>
@@ -401,27 +1601,54 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="identity-instance_method">
   
-    #<strong>identity</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>identity</strong>  &#x21d2; <tt>Object</tt><sup>?</sup> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Finds and authenticates the identity based on the request parameters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the authenticated identity or nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-107
-108
-109
-110
-111
-112</pre>
+211
+212
+213
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_identity'>identity</span>
   <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:locate_conditions</span><span class='rbracket'>]</span>
@@ -435,39 +1662,9 @@ use for external OmniAuth providers.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="model-instance_method">
+  <h3 class="signature " id="info-instance_method">
   
-    #<strong>model</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-114
-115
-116</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 114</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_model'>model</span>
-  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:model</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='op'>::</span><span class='const'>Identity</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="on_registration_path?-instance_method">
-  
-    #<strong>on_registration_path?</strong>  &#x21d2; <tt>Boolean</tt> 
+    #<strong>info</strong>  &#x21d2; <tt>Hash</tt> 
   
 
   
@@ -475,7 +1672,7 @@ use for external OmniAuth providers.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>Returns the info hash for the authenticated identity.</p>
 
 
   </div>
@@ -488,7 +1685,7 @@ use for external OmniAuth providers.</p>
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt>Hash</tt>)</span>
       
       
       
@@ -502,12 +1699,118 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-103
-104
-105</pre>
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 191</span>
+
+<span class='id identifier rubyid_uid'>uid</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_identity'>identity</span><span class='period'>.</span><span class='id identifier rubyid_uid'>uid</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="model-instance_method">
+  
+    #<strong>model</strong>  &#x21d2; <tt>Class</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the model class to use for identities.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the identity model class</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 221</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_model'>model</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:model</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='op'>::</span><span class='const'>Identity</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_registration_path?-instance_method">
+  
+    #<strong>on_registration_path?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Checks if the current request is for the registration path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_registration_path?'>on_registration_path?</span>
   <span class='id identifier rubyid_on_path?'>on_path?</span><span class='lparen'>(</span><span class='id identifier rubyid_registration_path'>registration_path</span><span class='rparen'>)</span>
@@ -520,41 +1823,53 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="other_phase-instance_method">
   
-    #<strong>other_phase</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>other_phase</strong>  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Handles other phases like registration.</p>
+
+<p>Routes to registration or login based on the path and options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63</pre>
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_other_phase'>other_phase</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:enable_registration</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_on_registration_path?'>on_registration_path?</span>
@@ -584,28 +1899,76 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="registration_form-instance_method">
   
-    #<strong>registration_form</strong>(validation_message = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>registration_form</strong>(validation_message = nil)  &#x21d2; <tt>Rack::Response</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Shows the registration form or calls the custom on_registration handler.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>validation_message</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>message to display if validation failed</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Rack::Response</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the response to send</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-65
-66
-67
-68
-69
-70
-71</pre>
+147
+148
+149
+150
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_form'>registration_form</span><span class='lparen'>(</span><span class='id identifier rubyid_validation_message'>validation_message</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:on_registration</span><span class='rbracket'>]</span>
@@ -622,24 +1985,51 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="registration_path-instance_method">
   
-    #<strong>registration_path</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>registration_path</strong>  &#x21d2; <tt>String</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the path for registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the registration path</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-99
-100
-101</pre>
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_path'>registration_path</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_path</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_script_name'>script_name</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path_prefix'>path_prefix</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>/register</span><span class='tstring_end'>&quot;</span></span>
@@ -652,43 +2042,55 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="registration_phase-instance_method">
   
-    #<strong>registration_phase</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>registration_phase</strong>  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Handles the registration phase.</p>
+
+<p>Creates a new identity and saves it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94</pre>
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_phase'>registration_phase</span>
   <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='const'><span class='object_link'><a href="#DEFAULT_REGISTRATION_FIELDS-constant" title="OmniAuth::Strategies::Identity::DEFAULT_REGISTRATION_FIELDS (constant)">DEFAULT_REGISTRATION_FIELDS</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_h'>h</span><span class='op'>|</span>
@@ -720,28 +2122,57 @@ use for external OmniAuth providers.</p>
       <div class="method_details ">
   <h3 class="signature " id="request_phase-instance_method">
   
-    #<strong>request_phase</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>request_phase</strong>  &#x21d2; <tt>Rack::Response</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Handles the initial request phase.</p>
+
+<p>Shows the login form or calls the custom on_login handler.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Rack::Response</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the response to send</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-30
-31
-32
-33
-34
-35
-36</pre>
+98
+99
+100
+101
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_phase'>request_phase</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:on_login</span><span class='rbracket'>]</span>
@@ -755,12 +2186,61 @@ use for external OmniAuth providers.</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="uid-instance_method">
+  
+    #<strong>uid</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the unique identifier for the authenticated identity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 183</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 12 11:50:39 2025 by
+  Generated on Mon Oct 13 11:53:19 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>
