@@ -108,15 +108,59 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>ActiveRecord is an ORM for MySQL, PostgreSQL, and SQLite3:<br />
-  https://guides.rubyonrails.org/active_record_basics.html<br />
-NOTE: ActiveRecord is based on ActiveModel.</p>
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>ActiveRecord is based on ActiveModel, so validations are enabled by default.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>This is an abstract class; inherit from it to create your user model.</p>
+</div>
+  </div>
+
+<p>ActiveRecord is an ORM for MySQL, PostgreSQL, and SQLite3:<br />
+https://guides.rubyonrails.org/active_record_basics.html</p>
+
+<p>This class provides a base for OmniAuth Identity models using ActiveRecord,<br />
+including secure password handling and authentication key management.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>Usage</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Models.html" title="OmniAuth::Identity::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'>ActiveRecord</span>
+  <span class='comment'># Add your fields here, e.g.:
+</span>  <span class='comment'># self.table_name = &#39;users&#39;
+</span>  <span class='comment'># has_many :posts
+</span><span class='kw'>end</span>
+
+<span class='comment'># Migration example:
+</span><span class='comment'># create_table :users do |t|
+</span><span class='comment'>#   t.string :email, null: false
+</span><span class='comment'>#   t.string :password_digest, null: false
+</span><span class='comment'>#   t.timestamps
+</span><span class='comment'># end
+</span>
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>email:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user@example.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>password:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>password</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+
+<span class='comment'># Authenticate a user
+</span><span class='id identifier rubyid_authenticated_user'>authenticated_user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='label'>email:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user@example.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_authenticated_user'>authenticated_user</span><span class='period'>.</span><span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>password</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; user or false</span></code></pre>
+    
+  </div>
+
 
 </div>
 
@@ -136,6 +180,16 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
 
 
 
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="../SecurePassword.html" title="OmniAuth::Identity::SecurePassword (module)">SecurePassword</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../SecurePassword.html#MAX_PASSWORD_LENGTH_ALLOWED-instance_method" title="OmniAuth::Identity::SecurePassword#MAX_PASSWORD_LENGTH_ALLOWED (method)">#MAX_PASSWORD_LENGTH_ALLOWED</a></span></p>
+
+  
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">OmniAuth::Identity::Model</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Model.html#SCHEMA_ATTRIBUTES-instance_method" title="OmniAuth::Identity::Model#SCHEMA_ATTRIBUTES (method)">#SCHEMA_ATTRIBUTES</a></span></p>
+
 
   
     <h2>
@@ -148,7 +202,7 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#auth_key=-class_method" title="auth_key= (class method)">.<strong>auth_key=</strong>(key)  &#x21d2; Object </a>
+      <a href="#auth_key=-class_method" title="auth_key= (class method)">.<strong>auth_key=</strong>(key)  &#x21d2; void </a>
     
 
     
@@ -162,7 +216,7 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Sets the authentication key for the model and adds uniqueness validation.</p>
 </div></span>
   
 </li>
@@ -171,7 +225,7 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#locate-class_method" title="locate (class method)">.<strong>locate</strong>(search_hash)  &#x21d2; Object </a>
+      <a href="#locate-class_method" title="locate (class method)">.<strong>locate</strong>(search_hash)  &#x21d2; ActiveRecord::Base<sup>?</sup> </a>
     
 
     
@@ -185,7 +239,7 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Finds a record by the given search criteria.</p>
 </div></span>
   
 </li>
@@ -226,25 +280,64 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
       <div class="method_details first">
   <h3 class="signature first" id="auth_key=-class_method">
   
-    .<strong>auth_key=</strong>(key)  &#x21d2; <tt>Object</tt> 
+    .<strong>auth_key=</strong>(key)  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Sets the authentication key for the model and adds uniqueness validation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Models.html" title="OmniAuth::Identity::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="OmniAuth::Identity::Models::ActiveRecord (class)">ActiveRecord</a></span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span> <span class='op'>=</span> <span class='symbol'>:email</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the attribute to use as the authentication key</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-19
-20
-21
-22</pre>
+54
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/active_record.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/active_record.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_auth_key='>auth_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -258,25 +351,81 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
       <div class="method_details ">
   <h3 class="signature " id="locate-class_method">
   
-    .<strong>locate</strong>(search_hash)  &#x21d2; <tt>Object</tt> 
+    .<strong>locate</strong>(search_hash)  &#x21d2; <tt>ActiveRecord::Base</tt><sup>?</sup> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Finds a record by the given search criteria.</p>
+
+<p>If the model has a ‘provider’ column, it defaults to ‘identity’.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='label'>email:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user@example.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>search_hash</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the attributes to search for</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Base</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the first matching record or nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-24
-25
-26
-27</pre>
+68
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/active_record.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/active_record.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_search_hash'>search_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_search_hash'>search_hash</span><span class='period'>.</span><span class='id identifier rubyid_reverse_merge!'>reverse_merge!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>provider</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>identity</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_column_names'>column_names</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>provider</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -292,7 +441,7 @@ NOTE: ActiveRecord is based on ActiveModel.</p>
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 12 11:50:40 2025 by
+  Generated on Mon Oct 13 11:53:19 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>
