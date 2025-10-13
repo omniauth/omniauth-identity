@@ -44,6 +44,11 @@ module OmniAuth
         end
 
         module ClassMethods
+          # @!attribute [r] DEFAULT_RELATION_NAME
+          # Default relation name to use when rom_relation_name is not set
+          # @return [Symbol]
+          DEFAULT_RELATION_NAME = :identities
+
           attr_accessor :rom_container, :rom_relation_name, :owner_relation_name, :auth_key_field, :password_field
 
           # OmniAuth::Identity required method
@@ -59,7 +64,7 @@ module OmniAuth
           def locate(conditions)
             key = conditions.is_a?(Hash) ? conditions[auth_key] || conditions[auth_key.to_s] : conditions
             container = rom_container.respond_to?(:call) ? rom_container.call : rom_container
-            relation = container.relations[rom_relation_name || :identities]
+            relation = container.relations[rom_relation_name || DEFAULT_RELATION_NAME]
             identity_data = relation.where(auth_key => key).one
 
             if identity_data
@@ -71,6 +76,8 @@ module OmniAuth
               else
                 new(identity_data)
               end
+            else
+              nil
             end
           end
         end
