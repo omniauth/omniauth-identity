@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-# Use rubocop-lts to run rubocop on the latest version of Ruby
-#   with syntax support for the oldest allowed version of Ruby
+# We run rubocop on the latest version of Ruby,
+#   but in support of the oldest supported version of Ruby
 
 gem "reek", "~> 6.5"
-gem "rubocop", "~> 1.73", ">= 1.73.2"
-gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
-gem "rubocop-minitest", "~> 0.36"
+# gem "rubocop", "~> 1.73", ">= 1.73.2" # constrained by standard
+gem "rubocop-on-rbs", "~> 1.8"                    # ruby >= 3.1.0
 gem "rubocop-packaging", "~> 0.6", ">= 0.6.0"
 gem "rubocop-rspec", "~> 3.6"
 gem "rubocop-sequel"
@@ -14,3 +13,15 @@ gem "standard", ">= 1.50"
 
 # Std Lib extractions
 gem "benchmark", "~> 0.4", ">= 0.4.1" # Removed from Std Lib in Ruby 3.5
+
+if ENV.fetch("RUBOCOP_LTS_LOCAL", "false").casecmp("true").zero?
+  home = ENV["HOME"]
+  gem "rubocop-lts", path: "#{home}/src/rubocop-lts/rubocop-lts"
+  gem "rubocop-lts-rspec", path: "#{home}/src/rubocop-lts/rubocop-lts-rspec"
+  gem "rubocop-ruby2_4", path: "#{home}/src/rubocop-lts/rubocop-ruby2_4"
+  gem "standard-rubocop-lts", path: "#{home}/src/rubocop-lts/standard-rubocop-lts"
+else
+  gem "rubocop", "~> 1.73", ">= 1.73.2"
+  gem "rubocop-lts", "~> 12.1", ">= 12.1.1"
+  gem "rubocop-ruby2_4"
+end

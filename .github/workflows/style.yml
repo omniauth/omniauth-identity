@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - 'main'
-      - "*-stable"
+      - '*-stable'
     tags:
       - '!*' # Do not execute on tags
   pull_request:
@@ -24,8 +24,8 @@ concurrency:
 
 jobs:
   rubocop:
-    name: Style on ${{ matrix.ruby }}@current
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
+    name: Style on ${{ matrix.ruby }}@current
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
@@ -36,7 +36,7 @@ jobs:
         include:
           # Style
           - ruby: "ruby"
-            appraisal_name: "style"
+            appraisal: "style"
             exec_cmd: "rake rubocop_gradual:check"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -56,10 +56,10 @@ jobs:
 
       # Raw `bundle` will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
       # We need to do this first to get appraisal installed.
-      # NOTE: This does not use the main Gemfile at all.
+      # NOTE: This does not use the primary Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+      - name: Run ${{ matrix.appraisal }} checks via ${{ matrix.exec_cmd }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}

@@ -9,7 +9,7 @@ env:
   K_SOUP_COV_MIN_BRANCH: 76
   K_SOUP_COV_MIN_LINE: 90
   K_SOUP_COV_MIN_HARD: true
-  K_SOUP_COV_FORMATTERS: "html,xml,rcov,lcov,tty"
+  K_SOUP_COV_FORMATTERS: "xml,rcov,lcov,tty"
   K_SOUP_COV_DO: true
   K_SOUP_COV_MULTI_FORMATTERS: true
   K_SOUP_COV_COMMAND_NAME: "Test Coverage"
@@ -17,13 +17,13 @@ env:
 on:
   push:
     branches:
-      - "main"
-      - "*-stable"
+      - 'main'
+      - '*-stable'
     tags:
-      - "!*" # Do not execute on tags
+      - '!*' # Do not execute on tags
   pull_request:
     branches:
-      - "*"
+      - '*'
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
@@ -35,11 +35,11 @@ concurrency:
 
 jobs:
   coverage:
-    name: Code Coverage on ${{ matrix.ruby }}@current
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
+    name: Code Coverage on ${{ matrix.ruby }}@current
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
-    env: # $BUNDLE_GEMFILE - set at job level, so applies to all steps
+    env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
     strategy:
       fail-fast: false
@@ -47,7 +47,7 @@ jobs:
         include:
           # Coverage
           - ruby: "ruby"
-            appraisal_name: "coverage"
+            appraisal: "coverage"
             exec_cmd: "rake spec:orm:all"
             gemfile: "Appraisal.root"
             rubygems: latest
@@ -88,10 +88,10 @@ jobs:
       # NOTE: This does not use the primary Gemfile at all.
       - name: Install Root Appraisal
         run: bundle
-      - name: Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal_name }}
-        run: bundle exec appraisal ${{ matrix.appraisal_name }} bundle exec ${{ matrix.exec_cmd }}
+      - name: Appraisal for ${{ matrix.appraisal }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle
+      - name: Tests for ${{ matrix.ruby }}@current via ${{ matrix.exec_cmd }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
 
       # Do SaaS coverage uploads first
       - name: Upload coverage to Coveralls
@@ -112,10 +112,11 @@ jobs:
       # Build will fail here if coverage upload fails
       #   which will hopefully be noticed for the lack of code coverage comments
       - name: Upload coverage to CodeCov
+        if: ${{ !env.ACT }}
         uses: codecov/codecov-action@v5
         with:
           use_oidc: true
-          fail_ci_if_error: true # optional (default = false)
+          fail_ci_if_error: false # optional (default = false)
           files: coverage/lcov.info,coverage/coverage.xml
           verbose: true # optional (default = false)
 

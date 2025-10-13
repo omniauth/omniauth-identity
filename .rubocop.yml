@@ -1,23 +1,13 @@
 inherit_gem:
   rubocop-lts: config/rubygem_rspec.yml
 
-require:
-  - 'rubocop-minitest'
-  - 'rubocop-sequel'
+inherit_from:
+  - .rubocop_rspec.yml
 
-Sequel/SaveChanges:
-  Enabled: false
+plugins: rubocop-on-rbs
 
-Lint/UselessMethodDefinition:
-  Enabled: false
+RBS:
+  Enabled: true
 
-RSpec/SpecFilePathFormat:
-  Include:
-    - spec
-    - spec_orms
-
-RSpec/BeforeAfterAll:
-  Enabled: false
-
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false
+Layout/IndentationConsistency:
+  Exclude: ['*.md']

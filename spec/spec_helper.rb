@@ -14,22 +14,35 @@ ENV["MONGOID_ENV"] = "test" # Used by Mongoid
 #   which is undeclared in older versions.
 require "logger"
 
+# External RSpec & related config
+require "kettle/test/rspec"
+
 # External library dependencies
 require "version_gem/ruby"
 require "omniauth"
 require "omniauth/version"
 
 # RSpec Configs
-require "config/byebug"
+require "config/debug"
 require "config/omniauth"
 require "config/rspec/rack_test"
 require "config/rspec/rspec_block_is_expected"
 require "config/rspec/rspec_core"
 require "config/rspec/version_gem"
+require "config/vcr"
 
 # RSpec Support
 spec_root_matcher = %r{#{__dir__}/(.+)\.rb\Z}
 Dir.glob(Pathname.new(__dir__).join("support/**/", "*.rb")).each { |f| require f.match(spec_root_matcher)[1] }
+
+# In Ruby <= 2.4 we get this error when loading activerecord (probably due to some dependency):
+# NoMethodError:
+#   undefined method 'delete_prefix' for "CONTENT_LENGTH":String
+# This is because delete_prefix was added in Ruby 2.5.
+# So we add it here for older Rubies.
+if VersionGem::Ruby::RUBY_VER < Gem::Version.new("2.5")
+  require "backports/2.5.0/string/delete_prefix"
+end
 
 # Test Constants
 DEFAULT_PASSWORD = "hang-a-left-at-the-diner"

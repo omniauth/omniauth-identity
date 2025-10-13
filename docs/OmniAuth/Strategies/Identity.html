@@ -379,14 +379,14 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-37
 38
 39
 40
-41</pre>
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_callback_phase'>callback_phase</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_fail!'>fail!</span><span class='lparen'>(</span><span class='symbol'>:invalid_credentials</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_identity'>identity</span>
@@ -413,15 +413,15 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-106
 107
 108
 109
 110
-111</pre>
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_identity'>identity</span>
   <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:locate_conditions</span><span class='rbracket'>]</span>
@@ -449,12 +449,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-113
 114
-115</pre>
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_model'>model</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:model</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='op'>::</span><span class='const'>Identity</span>
@@ -502,12 +502,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-102
 103
-104</pre>
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_registration_path?'>on_registration_path?</span>
   <span class='id identifier rubyid_on_path?'>on_path?</span><span class='lparen'>(</span><span class='id identifier rubyid_registration_path'>registration_path</span><span class='rparen'>)</span>
@@ -532,7 +532,6 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-43
 44
 45
 46
@@ -551,10 +550,11 @@ use for external OmniAuth providers.</p>
 59
 60
 61
-62</pre>
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_other_phase'>other_phase</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:enable_registration</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_on_registration_path?'>on_registration_path?</span>
@@ -596,16 +596,16 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-64
 65
 66
 67
 68
 69
-70</pre>
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_form'>registration_form</span><span class='lparen'>(</span><span class='id identifier rubyid_validation_message'>validation_message</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:on_registration</span><span class='rbracket'>]</span>
@@ -634,12 +634,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-98
 99
-100</pre>
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_path'>registration_path</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_path</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_script_name'>script_name</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path_prefix'>path_prefix</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>/register</span><span class='tstring_end'>&quot;</span></span>
@@ -664,7 +664,6 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-72
 73
 74
 75
@@ -685,10 +684,11 @@ use for external OmniAuth providers.</p>
 90
 91
 92
-93</pre>
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_phase'>registration_phase</span>
   <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='const'><span class='object_link'><a href="#DEFAULT_REGISTRATION_FIELDS-constant" title="OmniAuth::Strategies::Identity::DEFAULT_REGISTRATION_FIELDS (constant)">DEFAULT_REGISTRATION_FIELDS</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_h'>h</span><span class='op'>|</span>
@@ -732,16 +732,16 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-29
 30
 31
 32
 33
 34
-35</pre>
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_phase'>request_phase</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:on_login</span><span class='rbracket'>]</span>
@@ -760,9 +760,9 @@ use for external OmniAuth providers.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Jul 28 23:56:48 2025 by
+  Generated on Sun Oct 12 11:50:39 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.5).
+  0.9.37 (ruby-3.4.7).
 </div>
 
     </div>

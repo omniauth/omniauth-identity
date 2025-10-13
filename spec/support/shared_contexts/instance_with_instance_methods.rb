@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples "instance with instance methods" do
+  after do
+    instance.class.auth_key nil
+  end
+
   describe "#initialize" do
     it "does not raise an error" do
       block_is_expected.not_to raise_error
@@ -36,7 +40,6 @@ RSpec.shared_examples "instance with instance methods" do
       instance.class.auth_key "login"
       allow(instance).to receive(:login).and_return "bob"
       expect(instance.auth_key).to eq("bob")
-      instance.class.auth_key nil
     end
   end
 

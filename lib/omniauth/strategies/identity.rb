@@ -8,6 +8,7 @@ module OmniAuth
     class Identity
       DEFAULT_REGISTRATION_FIELDS = %i[password password_confirmation].freeze
       include OmniAuth::Strategy
+
       option :fields, %i[name email]
 
       # Primary Feature Switches:
