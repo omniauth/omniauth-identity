@@ -31,7 +31,7 @@ module OmniAuth
             # @param password [String] The password to check
             # @return [self, false] Self if authenticated, false if not
             def authenticate(password)
-              password_digest = @identity_data[@password_field || :password_digest]
+              password_digest = @identity_data[self.class.password_field || :password_digest]
               return false unless password_digest
 
               begin
