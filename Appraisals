@@ -21,6 +21,7 @@
 #
 appraise "unlocked_deps" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
+  gem "rom-sql", "~> 3.7"
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/coverage.gemfile"
@@ -554,6 +555,7 @@ end
 # Only run coverage on the latest version of Ruby
 appraise "coverage" do
   gem "couch_potato", "~> 1.17"
+  gem "rom-sql", "~> 3.7"
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "mongoid", "~> 9.0", ">= 9.0.3"
   gem "mongoid-rspec", "~> 4.2"
