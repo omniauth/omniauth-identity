@@ -37,13 +37,27 @@ jobs:
       matrix:
         include:
           # NOTE: truffleruby does not support upgrading rubygems.
-          # truffleruby-23.1 (targets Ruby 3.2 compatibility)
+          # truffleruby-23.1 (targets Ruby 3.1 compatibility)
           - ruby: "truffleruby-23.1"
-            appraisal: "ar-7-1-r3"
+            appraisal: "ar-7-1-r3.1"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"
             rubygems: default
             bundler: default
+
+#          # NOTE: When running the following, we get a SyntaxError in dry-types:
+#          #
+#          #    While loading ./spec_orms/rom_spec.rb a `raise SyntaxError` occurred, RSpec will now quit.
+#          #    Failure/Error: required = zeitwerk_original_require(path)
+#          #
+#          #    SyntaxError:
+#          #      /home/runner/.rubies/truffleruby-23.1.2/lib/gems/gems/dry-types-1.8.3/lib/dry/types/errors.rb:59: syntax error, unexpected '='
+#          - ruby: "truffleruby-23.1"
+#            appraisal: "rom-r3.1"
+#            exec_cmd: "rake spec:orm:rom"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
     steps:
       - name: Checkout

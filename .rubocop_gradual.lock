@@ -1,11 +1,11 @@
 {
-  "README.md:2294530640": [
-    [275, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
+  "README.md:4226975945": [
+    [277, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
   ],
-  "lib/omniauth/identity/model.rb:4176389330": [
+  "lib/omniauth/identity/model.rb:2544890477": [
     [71, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
     [72, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
     [72, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
@@ -30,6 +30,18 @@
     [39, 9, 1343, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 1011141886],
     [57, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
     [69, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
+  ],
+  "lib/omniauth/identity/models/rom.rb:1006067066": [
+    [28, 9, 866, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3432708653],
+    [39, 33, 14, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3392992668],
+    [60, 13, 14, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2710654061],
+    [61, 25, 14, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2710654061],
+    [66, 13, 18, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3343971124],
+    [67, 13, 18, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3343971124],
+    [71, 13, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2230320645],
+    [72, 13, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2230320645],
+    [76, 13, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3094507655],
+    [77, 14, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3094507655]
   ],
   "lib/omniauth/identity/models/sequel.rb:101522047": [
     [44, 9, 3379, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3595458005]
@@ -95,10 +107,13 @@
     [14, 1, 61, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/mongoid*_spec.rb`.", 2184534986],
     [32, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ],
-  "spec_orms/sequel_spec.rb:1275922107": [
-    [22, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
-    [23, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
-    [34, 7, 42, "Layout/EmptyLinesAfterModuleInclusion: Add an empty line after module inclusion.", 1846499429],
-    [48, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
+  "spec_orms/rom_spec.rb:2272636079": [
+    [5, 1, 57, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/rom*_spec.rb`.", 18469108],
+    [6, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566]
+  ],
+  "spec_orms/sequel_spec.rb:1276231279": [
+    [12, 1, 60, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/sequel*_spec.rb`.", 36626431],
+    [13, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
+    [39, 9, 71, "RSpec/SubjectStub: Do not stub methods of the object under test.", 399334056]
   ]
 }

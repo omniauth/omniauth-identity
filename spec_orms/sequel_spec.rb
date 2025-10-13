@@ -7,17 +7,7 @@
 #   which is undeclared in older versions.
 require "logger"
 
-# :nocov:
-DB = if RUBY_ENGINE == "jruby"
-  require "jdbc/sqlite3"
-  require "sequel"
-  Sequel.connect("jdbc:sqlite::memory:")
-else
-  require "sqlite3"
-  require "sequel"
-  Sequel.sqlite
-end
-# :nocov:
+require_relative "support/rspec_config/sequel"
 
 RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   before(:all) do
@@ -30,8 +20,9 @@ RSpec.describe(OmniAuth::Identity::Models::Sequel, :sqlite3) do
   end
 
   before do
-    sequel_test_identity = Class.new(Sequel::Model(:sequel_test_identities)) do
+    sequel_test_identity = Class.new(Sequel::Model(DB[:sequel_test_identities])) do
       include OmniAuth::Identity::Models::Sequel
+
       auth_key :email
     end
     stub_const("SequelTestIdentity", sequel_test_identity)

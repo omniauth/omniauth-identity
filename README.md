@@ -167,14 +167,16 @@ This gem is compatible with a wide range of Ruby versions and Ruby ORMs, as of M
   * mongoid 7.3, 7.4, 8.1, 9.0
   * bson 4.12, 4.15, 5.0, HEAD
   * sequel 5.86+
-* At least 5 different database ORM adapters, which connect to 15 different database clients!
+  * rom-sql (Ruby Object Mapper) 3.7+
+* At least 6 different database ORM adapters, which connect to 15 different database clients!
 
 | Databases                                                                                                 | Adapter Libraries                                                        |
-| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | MySQL, MariaDB, PostgreSQL, SQLite                                                                        | [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html) |
 | CouchDB                                                                                                   | [CouchPotato](https://github.com/langalex/couch_potato)                  |
 | MongoDB                                                                                                   | [Mongoid](https://github.com/mongodb/mongoid)                            |
 | RethinkDB                                                                                                 | [NoBrainer](http://nobrainer.io/)                                        |
+| ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS | [rom-sql](https://rom-rb.org/)                                           |
 | ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS | [Sequel](http://sequel.jeremyevans.net)                                  |
 
 ## 🔧 Basic Usage
@@ -298,7 +300,23 @@ end
 
 ### Ruby Object Mapper
 
-Would love to add a mixin for the [Ruby Object Mapper (ROM)](https://rom-rb.org/) if anyone wants to work on it!
+[ROM](https://rom-rb.org/) is an ORM for pretty much every database.
+
+Include the `OmniAuth::Identity::Models::Rom` mixin and specify
+the `rom_container`, everything else is optional.
+
+```ruby
+class Identity
+  include OmniAuth::Identity::Models::Rom
+
+  # Configure the ROM container and relation
+  rom_container -> { MyDatabase.rom } # See spec_orms/rom_spec.rb for example
+  rom_relation_name :identities # optional, defaults to :idneitities
+  owner_relation_name :owners  # optional, for loading associated owner
+  auth_key :email  # optional, defaults to :email
+  password_field :password_digest  # optional, defaults to :password_digest
+end
+```
 
 ### Custom Auth Model
 

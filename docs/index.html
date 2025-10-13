@@ -303,9 +303,10 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
       <li>mongoid 7.3, 7.4, 8.1, 9.0</li>
       <li>bson 4.12, 4.15, 5.0, HEAD</li>
       <li>sequel 5.86+</li>
+      <li>rom-sql (Ruby Object Mapper) 3.7+</li>
     </ul>
   </li>
-  <li>At least 5 different database ORM adapters, which connect to 15 different database clients!</li>
+  <li>At least 6 different database ORM adapters, which connect to 15 different database clients!</li>
 </ul>
 
 <table>
@@ -331,6 +332,10 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
     <tr>
       <td>RethinkDB</td>
       <td><a href="http://nobrainer.io/">NoBrainer</a></td>
+    </tr>
+    <tr>
+      <td>ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS</td>
+      <td><a href="https://rom-rb.org/">rom-sql</a></td>
     </tr>
     <tr>
       <td>ADO, Amalgalite, IBM_DB, JDBC, MySQL, MariaDB, ODBC, Oracle, PostgreSQL, SQLAnywhere, SQLite, and TinyTDS</td>
@@ -454,7 +459,22 @@ end
 
 <h3 id="ruby-object-mapper">Ruby Object Mapper</h3>
 
-<p>Would love to add a mixin for the <a href="https://rom-rb.org/">Ruby Object Mapper (ROM)</a> if anyone wants to work on it!</p>
+<p><a href="https://rom-rb.org/">ROM</a> is an ORM for pretty much every database.</p>
+
+<p>Include the <code>OmniAuth::Identity::Models::Rom</code> mixin and specify<br>
+the <code>rom_container</code>, everything else is optional.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">class Identity
+  include OmniAuth::Identity::Models::Rom
+
+  # Configure the ROM container and relation
+  rom_container -&gt; { MyDatabase.rom } # See spec_orms/rom_spec.rb for example
+  rom_relation_name :identities # optional, defaults to :idneitities
+  owner_relation_name :owners  # optional, for loading associated owner
+  auth_key :email  # optional, defaults to :email
+  password_field :password_digest  # optional, defaults to :password_digest
+end
+</code></pre>
 
 <h3 id="custom-auth-model">Custom Auth Model</h3>
 
@@ -741,7 +761,7 @@ Please consider sponsoring me or the project.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Oct 13 11:53:19 2025 by
+  Generated on Mon Oct 13 14:40:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

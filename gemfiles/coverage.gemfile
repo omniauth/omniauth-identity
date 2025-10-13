@@ -3,6 +3,7 @@
 source "https://gem.coop"
 
 gem "couch_potato", "~> 1.17"
+gem "rom-sql", "~> 3.7"
 gem "sequel", "~> 5.86", ">= 5.86.0"
 gem "mongoid", "~> 9.0", ">= 9.0.3"
 gem "mongoid-rspec", "~> 4.2"

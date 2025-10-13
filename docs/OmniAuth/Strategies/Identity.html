@@ -1640,15 +1640,15 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
+210
 211
 212
 213
 214
-215
-216</pre>
+215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 211</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_identity'>identity</span>
   <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:locate_conditions</span><span class='rbracket'>]</span>
@@ -1704,7 +1704,7 @@ use for external OmniAuth providers.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 191</span>
 
-<span class='id identifier rubyid_uid'>uid</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_identity'>identity</span><span class='period'>.</span><span class='id identifier rubyid_uid'>uid</span> <span class='rbrace'>}</span></pre>
+<span class='id identifier rubyid_info'>info</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_identity'>identity</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='rbrace'>}</span></pre>
     </td>
   </tr>
 </table>
@@ -1752,12 +1752,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
+220
 221
-222
-223</pre>
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 220</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_model'>model</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:model</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='op'>::</span><span class='const'>Identity</span>
@@ -1805,12 +1805,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
+203
 204
-205
-206</pre>
+205</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 203</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_registration_path?'>on_registration_path?</span>
   <span class='id identifier rubyid_on_path?'>on_path?</span><span class='lparen'>(</span><span class='id identifier rubyid_registration_path'>registration_path</span><span class='rparen'>)</span>
@@ -2024,12 +2024,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
+196
 197
-198
-199</pre>
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_registration_path'>registration_path</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_path</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_script_name'>script_name</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path_prefix'>path_prefix</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>/register</span><span class='tstring_end'>&quot;</span></span>
@@ -2224,12 +2224,12 @@ use for external OmniAuth providers.</p>
       <pre class="lines">
 
 
-</pre>
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/strategies/identity.rb', line 186</span>
 
-</pre>
+<span class='id identifier rubyid_uid'>uid</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_identity'>identity</span><span class='period'>.</span><span class='id identifier rubyid_uid'>uid</span> <span class='rbrace'>}</span></pre>
     </td>
   </tr>
 </table>
@@ -2240,7 +2240,7 @@ use for external OmniAuth providers.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 11:53:19 2025 by
+  Generated on Mon Oct 13 14:40:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

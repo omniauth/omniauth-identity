@@ -58,6 +58,8 @@ module OmniAuth
       autoload :CouchPotatoModule, "omniauth/identity/models/couch_potato"
       # Autoload the NoBrainer adapter.
       autoload :NoBrainer, "omniauth/identity/models/nobrainer"
+      # Autoload the ROM adapter.
+      autoload :Rom, "omniauth/identity/models/rom"
       # Autoload the Sequel adapter.
       autoload :Sequel, "omniauth/identity/models/sequel"
     end
