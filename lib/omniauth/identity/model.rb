@@ -84,7 +84,6 @@ module OmniAuth
         end
       end
 
-      # @module ClassCreateApi
       # Provides a create method for models that don't have one.
       module ClassCreateApi
         # Persists a new Identity object to the ORM.
@@ -101,7 +100,6 @@ module OmniAuth
         end
       end
 
-      # @module InstanceSaveApi
       # Provides a save method for models that don't have one.
       module InstanceSaveApi
         # Persists a new Identity object to the ORM.
@@ -118,7 +116,6 @@ module OmniAuth
         end
       end
 
-      # @module InstancePersistedApi
       # Provides a persisted? method for models that don't have one.
       module InstancePersistedApi
         # Checks if the Identity object is persisted in the ORM.

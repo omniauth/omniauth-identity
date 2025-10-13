@@ -47,7 +47,6 @@ module OmniAuth
       end
       self.min_cost = false
 
-      # @module ClassMethods
       # Class-level methods for secure password functionality.
       module ClassMethods
         # Adds methods to set and authenticate against a BCrypt password.

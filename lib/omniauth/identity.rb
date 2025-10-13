@@ -18,17 +18,14 @@ end
 
 require "omniauth"
 
-# @module OmniAuth
 # The main OmniAuth module.
 module OmniAuth
-  # @module Strategies
   # Container for OmniAuth strategy classes.
   module Strategies
     # Autoload the Identity strategy.
     autoload :Identity, "omniauth/strategies/identity"
   end
 
-  # @module Identity
   # OmniAuth Identity provides a way to authenticate users using a username and password
   # stored in your application's database. It supports multiple ORMs and provides
   # secure password hashing.
@@ -51,7 +48,6 @@ module OmniAuth
     # Autoload the SecurePassword module.
     autoload :SecurePassword, "omniauth/identity/secure_password"
 
-    # @module Models
     # Container for ORM-specific model adapters.
     module Models
       # Autoload the ActiveRecord adapter.
