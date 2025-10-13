@@ -18,19 +18,51 @@ end
 
 require "omniauth"
 
+# @module OmniAuth
+# The main OmniAuth module.
 module OmniAuth
+  # @module Strategies
+  # Container for OmniAuth strategy classes.
   module Strategies
+    # Autoload the Identity strategy.
     autoload :Identity, "omniauth/strategies/identity"
   end
 
+  # @module Identity
+  # OmniAuth Identity provides a way to authenticate users using a username and password
+  # stored in your application's database. It supports multiple ORMs and provides
+  # secure password hashing.
+  #
+  # @example Basic Setup
+  #   # In your Gemfile
+  #   gem 'omniauth-identity'
+  #
+  #   # In your OmniAuth configuration
+  #   use OmniAuth::Strategies::Identity,
+  #       fields: [:email],
+  #       model: User
+  #
+  # @see OmniAuth::Strategies::Identity
+  # @see OmniAuth::Identity::Model
+  # @see OmniAuth::Identity::SecurePassword
   module Identity
+    # Autoload the Model module.
     autoload :Model, "omniauth/identity/model"
+    # Autoload the SecurePassword module.
     autoload :SecurePassword, "omniauth/identity/secure_password"
+
+    # @module Models
+    # Container for ORM-specific model adapters.
     module Models
+      # Autoload the ActiveRecord adapter.
       autoload :ActiveRecord, "omniauth/identity/models/active_record"
+      # Autoload the Mongoid adapter.
       autoload :Mongoid, "omniauth/identity/models/mongoid"
+      # Autoload the CouchPotato adapter.
       autoload :CouchPotatoModule, "omniauth/identity/models/couch_potato"
+      # Autoload the NoBrainer adapter.
       autoload :NoBrainer, "omniauth/identity/models/nobrainer"
+      # Autoload the Sequel adapter.
       autoload :Sequel, "omniauth/identity/models/sequel"
     end
   end

@@ -1,42 +1,42 @@
 {
-  "README.md:969477879": [
+  "README.md:2294530640": [
     [275, 3, 100, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3592044714]
   ],
   "bin/bundle:247448467": [
     [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
   ],
-  "lib/omniauth/identity/model.rb:1162570792": [
-    [53, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [54, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [54, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [54, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
-    [56, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
+  "lib/omniauth/identity/model.rb:4059465368": [
+    [72, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [73, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [73, 40, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [73, 54, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525],
+    [75, 11, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4045031525]
   ],
-  "lib/omniauth/identity/models/active_record.rb:1552301885": [
-    [19, 9, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2104861380],
-    [24, 9, 189, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3443171851]
+  "lib/omniauth/identity/models/active_record.rb:430408575": [
+    [54, 9, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2104861380],
+    [68, 9, 189, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3443171851]
   ],
-  "lib/omniauth/identity/models/couch_potato.rb:2051092700": [
-    [14, 9, 663, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2599559599],
-    [22, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
-    [27, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
+  "lib/omniauth/identity/models/couch_potato.rb:3316956333": [
+    [42, 9, 1762, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 832901360],
+    [60, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
+    [72, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
-  "lib/omniauth/identity/models/mongoid.rb:1652584382": [
-    [12, 9, 566, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3754562029],
-    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
-    [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
+  "lib/omniauth/identity/models/mongoid.rb:235149629": [
+    [40, 9, 1350, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3626154135],
+    [58, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
+    [70, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
-  "lib/omniauth/identity/models/nobrainer.rb:3355783297": [
-    [12, 9, 568, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4204154330],
-    [20, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
-    [25, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
+  "lib/omniauth/identity/models/nobrainer.rb:1006812696": [
+    [39, 9, 1343, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 1011141886],
+    [57, 13, 125, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3604044426],
+    [69, 13, 83, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 902334745]
   ],
-  "lib/omniauth/identity/models/sequel.rb:3343978269": [
-    [15, 9, 1972, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496918361]
+  "lib/omniauth/identity/models/sequel.rb:101522047": [
+    [44, 9, 3379, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 3595458005]
   ],
-  "lib/omniauth/identity/secure_password.rb:2767570368": [
-    [13, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
-    [23, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
+  "lib/omniauth/identity/secure_password.rb:1127154244": [
+    [31, 7, 113, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 353293128],
+    [46, 9, 23, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 1578198260]
   ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
     [3, 1, 40, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/model*_spec.rb`.", 1316823397]
