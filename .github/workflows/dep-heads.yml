@@ -57,13 +57,15 @@ jobs:
             rubygems: default
             bundler: default
 
-          # jruby-10.0 (targets Ruby 3.4 compatibility)
-          - ruby: "jruby"
-            appraisal: "dep-heads"
-            exec_cmd: "rake spec:orm:active_record"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+#          # jruby-10.0 (targets Ruby 3.4 compatibility)
+#          # NOTE: Can't run JRuby against Rails 8 head because
+#          #   activerecord-jdbc-adapter depends on activerecord ~> 8.0.0
+#          - ruby: "jruby"
+#            appraisal: "dep-heads"
+#            exec_cmd: "rake spec:orm:active_record"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
     steps:
       - name: Checkout
