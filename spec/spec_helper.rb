@@ -18,7 +18,6 @@ require "logger"
 require "kettle/test/rspec"
 
 # External library dependencies
-require "version_gem/ruby"
 require "omniauth"
 require "omniauth/version"
 
@@ -26,9 +25,6 @@ require "omniauth/version"
 require "config/debug"
 require "config/omniauth"
 require "config/rspec/rack_test"
-require "config/rspec/rspec_block_is_expected"
-require "config/rspec/rspec_core"
-require "config/rspec/version_gem"
 require "config/vcr"
 
 # RSpec Support
