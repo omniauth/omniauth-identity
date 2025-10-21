@@ -2,13 +2,18 @@
 # frozen_string_literal: true
 
 gem_version =
-  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1") # rubocop:disable Gemspec/RubyVersionGlobalsUsage
+  if RUBY_VERSION >= "3.1" # rubocop:disable Gemspec/RubyVersionGlobalsUsage
     # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
     # See: https://github.com/panorama-ed/memo_wise/pull/397
     Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/omniauth/identity/version.rb", mod) }::OmniAuth::Identity::Version::VERSION
   else
-    require_relative "lib/omniauth/identity/version"
+    # NOTE: Use __FILE__ or __dir__ until removal of Ruby 1.x support
+    # __dir__ introduced in Ruby 1.9.1
+    # lib = File.expand_path("../lib", __FILE__)
+    lib = File.expand_path("lib", __dir__)
+    $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+    require "omniauth/identity/version"
     OmniAuth::Identity::Version::VERSION
   end
 
@@ -148,18 +153,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("gitmoji-regex", "~> 1.0", ">= 1.0.3")            # ruby >= 2.3.0
 
   # HTTP recording for deterministic specs
-  # Ruby 2.3 / 2.4 can fail with:
-  # | An error occurred while loading spec_helper.
-  # | Failure/Error: require "vcr"
-  # |
-  # | NoMethodError:
-  # |   undefined method `delete_prefix' for "CONTENT_LENGTH":String
-  # | # ./spec/config/vcr.rb:3:in `require'
-  # | # ./spec/config/vcr.rb:3:in `<top (required)>'
-  # | # ./spec/spec_helper.rb:8:in `require_relative'
-  # | # ./spec/spec_helper.rb:8:in `<top (required)>'
-  # So that's why we need backports.
-  spec.add_development_dependency("backports", "~> 3.25", ">= 3.25.1")  # ruby >= 0
   # In Ruby 3.5 (HEAD) the CGI library has been pared down, so we also need to depend on gem "cgi" for ruby@head
   # This is done in the "head" appraisal.
   # See: https://github.com/vcr/vcr/issues/1057

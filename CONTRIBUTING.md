@@ -232,7 +232,7 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 
 #### Automated process
 
-1. Update version.rb to contain the correct version-to-be-released.
+1. Update version.rb to contian the correct version-to-be-released.
 2. Run `bundle exec kettle-changelog`.
 3. Run `bundle exec kettle-release`.
 
