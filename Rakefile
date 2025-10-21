@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# kettle-dev Rakefile v1.1.32 - 2025-10-07
+# kettle-dev Rakefile v1.1.38 - 2025-10-21
 # Ruby 2.3 (Safe Navigation) or higher required
 #
 # MIT License (see License.txt)
@@ -51,6 +51,7 @@ task :default do
   puts "Default task complete."
 end
 
+# External gems that define tasks - add here!
 require "kettle/dev"
 
 ### RELEASE TASKS

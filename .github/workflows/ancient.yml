@@ -3,9 +3,6 @@ name: MRI 2.4, 2.5 (EOL)
 permissions:
   contents: read
 
-env:
-  K_SOUP_COV_DO: false
-
 on:
   push:
     branches:
