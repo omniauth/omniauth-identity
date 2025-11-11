@@ -1,0 +1,27 @@
+# frozen_string_literal: true
+
+# Web Frameworks for Integration Testing
+# All marked as require: false to allow selective loading in tests
+
+# Sinatra - Minimal web framework
+# Compatible with Ruby 2.4+ (Sinatra 3.x), Ruby 2.6+ (Sinatra 4.x)
+# We'll use version constraints in appraisals if needed
+gem "sinatra", "~> 4.0", require: false
+gem "sinatra-contrib", "~> 4.0", require: false
+
+# Roda - Fast, simple routing tree web framework
+# Compatible with Ruby 1.9+, but we'll test on Ruby 3.1+ due to ROM requirements
+gem "roda", "~> 3.85", require: false
+
+# Hanami - Full-featured web framework
+# Hanami 2.x requires Ruby 3.1+
+gem "hanami", "~> 2.2", require: false
+gem "hanami-router", "~> 2.2", require: false
+
+# Rails via Combustion - Minimal Rails app setup for testing
+# Combustion allows us to test against multiple Rails versions
+gem "combustion", "~> 1.5", require: false
+
+# Testing utilities
+gem "rack-test", "~> 2.1"
+

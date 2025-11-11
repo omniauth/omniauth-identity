@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/omniauth-identity.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PHASE_1_INFRASTRUCTURE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PHASE_2_SINATRA_SEQUEL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PHASE_3_RODA_ROM.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PHASE_4_HANAMI_ROM_SQL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PHASE_5_RAILS_ACTIVERECORD.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PRD_INTEGRATION_TESTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/dummies/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/integration/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/integration/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.envrc" beforeDir="false" afterPath="$PROJECT_DIR$/.envrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GitLink.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/active-tab-highlighter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/developer-tools.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/audit.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/audit.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/style.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/style.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omniauth-identity.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/omniauth-identity.gemspec" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;pboling&quot;,
+      &quot;fullname&quot;: &quot;Peter Boling&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@gitlab.com:omniauth/omniauth-identity.git&quot;,
+    &quot;second&quot;: &quot;e48d1869-12e2-4c93-9360-3329de046d71&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="35InLxxjYHQi47gKHAgLwAisRUG" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1762818698484",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feat/integration-test",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/pboling/src/forks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "reference.settings.grazie.pro.style.in.ai.assistant",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-RM-252.27397.109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="" />
+      <created>1762806402941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762806402941</updated>
+      <workItem from="1762806406360" duration="3332000" />
+      <workItem from="1762818640308" duration="540000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

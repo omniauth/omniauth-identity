@@ -27,6 +27,9 @@ eval_gemfile "gemfiles/modular/documentation.gemfile"
 # Optional
 eval_gemfile "gemfiles/modular/optional.gemfile"
 
+# Integration Testing
+eval_gemfile "gemfiles/modular/integration.gemfile"
+
 ### Std Lib Extracted Gems
 eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
 

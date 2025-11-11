@@ -48,3 +48,12 @@ Appraisal.*.gemfile.lock
 
 # Sentinels
 .floss_funding.*.lock
+
+# Integration test databases and dummies (Phase 1)
+spec/dummies/rails/db/*.sqlite3
+spec/dummies/rails/db/*.sqlite3-*
+spec/dummies/rails/log/
+spec/dummies/rails/tmp/
+
+# Combustion / Rails internal files
+spec/dummies/rails/internal/
