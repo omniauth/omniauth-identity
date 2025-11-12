@@ -87,10 +87,10 @@ module OmniAuth
       # Provides a create method for models that don't have one.
       module ClassCreateApi
         # Persists a new Identity object to the ORM.
-        # Only included if the class doesn't define create, as a reminder to define create.
+        # Only included if the class doesn't define `create`, as a reminder to define `create`.
         # Override as needed per ORM.
         #
-        # @deprecated v4.0 will begin using {#new} with {#save} instead.
+        # @deprecated v4.0 will begin using `{.new}` with `{#save}` instead.
         # @abstract
         # @param [Hash] _args Attributes of the new instance.
         # @return [Model] An instance of the identity model class.

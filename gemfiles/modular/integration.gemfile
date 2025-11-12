@@ -24,4 +24,3 @@ gem "combustion", "~> 1.5", require: false
 
 # Testing utilities
 gem "rack-test", "~> 2.1"
-

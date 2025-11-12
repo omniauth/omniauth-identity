@@ -4,78 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/omniauth-identity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PHASE_1_INFRASTRUCTURE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PHASE_2_SINATRA_SEQUEL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PHASE_3_RODA_ROM.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PHASE_4_HANAMI_ROM_SQL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PHASE_5_RAILS_ACTIVERECORD.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/PRD_INTEGRATION_TESTS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/dummies/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/integration/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/integration/spec_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.envrc" beforeDir="false" afterPath="$PROJECT_DIR$/.envrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GitLink.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/active-tab-highlighter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/developer-tools.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <change afterPath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rubocop_gradual.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop_gradual.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/audit.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/audit.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/style.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/style.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omniauth-identity.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/omniauth-identity.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassCreateApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassCreateApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassMethods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstancePersistedApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstancePersistedApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstanceSaveApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstanceSaveApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/ActiveRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/ActiveRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/CouchPotatoModule.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/CouchPotatoModule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Mongoid.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Mongoid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/NoBrainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/NoBrainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom/ClassMethods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Sequel.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Sequel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/ClassMethods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/InstanceMethodsOnActivation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/InstanceMethodsOnActivation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Version.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Version.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Strategies.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Strategies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Strategies/Identity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Strategies/Identity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/class_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.CHANGELOG.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CHANGELOG.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.CODE_OF_CONDUCT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CODE_OF_CONDUCT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.CONTRIBUTING.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CONTRIBUTING.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.FUNDING.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.FUNDING.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.LICENSE.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.LICENSE.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.README.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.README.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.RUBOCOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.RUBOCOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file.SECURITY.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.SECURITY.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/file_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/frames.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frames.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/method_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/method_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/top-level-namespace.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/top-level-namespace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,9 +86,10 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1762818698484",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1763016182234",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "feat/integration-test",
@@ -151,10 +123,222 @@
       <updated>1762806402941</updated>
       <workItem from="1762806406360" duration="3332000" />
       <workItem from="1762818640308" duration="540000" />
+      <workItem from="1762971358667" duration="2442000" />
+      <workItem from="1763016125420" duration="6563000" />
     </task>
+    <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
+      <option name="closed" value="true" />
+      <created>1762851062839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762851062839</updated>
+    </task>
+    <task id="LOCAL-00002" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762940892210</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762940892210</updated>
+    </task>
+    <task id="LOCAL-00003" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762940897316</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762940897316</updated>
+    </task>
+    <task id="LOCAL-00004" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942011208</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942011208</updated>
+    </task>
+    <task id="LOCAL-00005" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942016242</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942016242</updated>
+    </task>
+    <task id="LOCAL-00006" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942112498</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942112498</updated>
+    </task>
+    <task id="LOCAL-00007" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942347236</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942347236</updated>
+    </task>
+    <task id="LOCAL-00008" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942734826</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942734826</updated>
+    </task>
+    <task id="LOCAL-00009" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942923241</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942923241</updated>
+    </task>
+    <task id="LOCAL-00010" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942936066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942936066</updated>
+    </task>
+    <task id="LOCAL-00011" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942948114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942948114</updated>
+    </task>
+    <task id="LOCAL-00012" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942960206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942960206</updated>
+    </task>
+    <task id="LOCAL-00013" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942965940</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942965940</updated>
+    </task>
+    <task id="LOCAL-00014" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762943013256</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762943013256</updated>
+    </task>
+    <task id="LOCAL-00015" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945110436</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945110436</updated>
+    </task>
+    <task id="LOCAL-00016" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945129607</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945129607</updated>
+    </task>
+    <task id="LOCAL-00017" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945225501</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945225501</updated>
+    </task>
+    <task id="LOCAL-00018" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945239804</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945239804</updated>
+    </task>
+    <task id="LOCAL-00019" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945245350</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945245351</updated>
+    </task>
+    <task id="LOCAL-00020" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945255208</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945255209</updated>
+    </task>
+    <task id="LOCAL-00021" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945525647</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945525647</updated>
+    </task>
+    <task id="LOCAL-00022" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945548138</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945548138</updated>
+    </task>
+    <task id="LOCAL-00023" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945603196</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945603196</updated>
+    </task>
+    <task id="LOCAL-00024" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945732920</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945732920</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.54" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.55" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.56" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Template bootstrap by kettle-dev-setup v1.1.56" />
   </component>
 </project>

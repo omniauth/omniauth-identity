@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# kettle-dev Rakefile v1.1.38 - 2025-10-21
+# kettle-dev Rakefile v1.1.56 - 2025-11-11
 # Ruby 2.3 (Safe Navigation) or higher required
 #
 # MIT License (see License.txt)

@@ -60,8 +60,7 @@ Gem::Specification.new do |spec|
 
   # Specify which files are part of the released package.
   spec.files = Dir[
-    # Executables and tasks
-    "exe/*",
+    # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
     "lib/**/*.rb",
     "lib/**/*.rake",
     # Signatures
