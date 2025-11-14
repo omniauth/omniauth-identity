@@ -20,13 +20,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+- Greatly improved documentation
+
 ### Changed
+
+- Improved devcontainer for easier maintenance
+- `appraisal:reset` rake task for maintenance
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- GitLab pipeline for Ruby 2.7, 3.0, 3.1
 
 ### Security
 
