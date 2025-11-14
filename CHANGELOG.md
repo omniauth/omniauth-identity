@@ -21,6 +21,8 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Added
 
 - Greatly improved documentation
+- Traditional VERSION constant @ OmniAuth::Identity::VERSION
+  - Retains modern VERSION constant @ OmniAuth::Identity::Version::VERSION
 
 ### Changed
 
