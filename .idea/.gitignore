@@ -14,8 +14,8 @@
 # Local project config
 *.iml
 
-# Added: Ignore plugin migration/state artifacts (machine-specific)
-/copilot.data.migration.*.xml
+# Added: Ignore plugin state artifacts (machine-specific)
+/copilot*.xml
 /GitLink.xml
 
 # Added: Ignore task & usage statistics (contain local timestamps / paths)

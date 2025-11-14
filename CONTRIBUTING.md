@@ -89,6 +89,12 @@ They are created and updated with the commands:
 bin/rake appraisal:update
 ```
 
+If you need to reset all gemfiles/*.gemfile.lock files:
+
+```console
+bin/rake appraisal:reset
+```
+
 When adding an appraisal to CI, check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
 ## The Reek List

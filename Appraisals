@@ -477,34 +477,6 @@ appraise "mongoid-9.0-r3" do
   eval_gemfile "modular/integration.gemfile"
 end
 
-# 1. While the Ruby driver, nobrainer, is maintained,
-#   RethinkDB itself is currently a zombie project.
-# 2. There are zero examples in the wild of a GitHub Actions workflow
-#   that sets up a RethinkDB service to test client code against.
-# As long as above points remain current, no attempt will be made to get nobrainer specs running in CI,
-#   unless a RethinkDB-fan wants to take a shot at it.
-# You might be inspired by the existing other services this library is currently
-#   tested against (e.g. CouchDB, MongoDB)
-# See: https://github.com/rethinkdb/rethinkdb/issues/6981
-# Compat: Ruby >= 1.9
-# Test Matrix:
-#   - Ruby 2.4
-#   - Ruby 2.5
-#   - Ruby 2.6
-#   - Ruby 2.7
-#   - Ruby 3.0
-#   - Ruby 3.1
-#   - Ruby 3.2
-#   - Ruby 3.3
-#   - ruby-head
-#   - truffleruby-head
-#   - jruby-head
-# appraise "nobrainer-0.44" do
-#   gem "nobrainer", "~> 0.44", ">= 0.44.1"
-#   gem "mutex_m", "~> 0.1"
-#   gem "stringio", ">= 0.0.2"
-# end
-
 # Compat: Ruby >= 3.1.0
 # Test Matrix:
 #   - Ruby 3.1
