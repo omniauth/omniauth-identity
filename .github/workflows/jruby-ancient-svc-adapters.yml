@@ -80,7 +80,7 @@ jobs:
 
       ### MONGODB
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.12.0
+        uses: supercharge/mongodb-github-action@1.12.1
         if: "endsWith(matrix.exec_cmd, 'mongoid')"
         with:
           mongodb-version: "8.0"
