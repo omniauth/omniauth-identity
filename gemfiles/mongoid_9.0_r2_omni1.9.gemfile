@@ -6,7 +6,7 @@ gem "mongoid", "~> 9.0", ">= 9.0.3"
 gem "mongoid-rspec", "~> 4.2"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/bson/r2/v5.0.gemfile")
 
@@ -14,6 +14,6 @@ eval_gemfile("modular/activerecord/r2/v7.1.gemfile")
 
 eval_gemfile("modular/omniauth/r2/v1.9.gemfile")
 
-eval_gemfile("modular/x_std_libs/r2/libs.gemfile")
+eval_gemfile("modular/rack/r2/v1.6.gemfile")
 
-eval_gemfile("modular/integration.gemfile")
+eval_gemfile("modular/x_std_libs/r2/libs.gemfile")

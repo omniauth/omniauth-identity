@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+# Web Frameworks for Integration Testing
+# All marked as require: false to allow selective loading in tests
+
+# Rails via Combustion - Minimal Rails app setup for testing
+# Combustion allows us to test against multiple Rails versions
+# Rails >= 3.0, Thor >= 0.14.6, Ruby >= 0
+gem "combustion", "~> 1.5", require: false

@@ -39,18 +39,21 @@ appraise "head" do
   #  gem "cgi", ">= 0.5"
   gem "benchmark", "~> 0.4", ">= 0.4.1"
   eval_gemfile "modular/x_std_libs.gemfile"
+  eval_gemfile "modular/rack/vHEAD.gemfile"
 end
 
 # Used for current releases of ruby, truffleruby, and jruby.
 # Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "current" do
   eval_gemfile "modular/x_std_libs.gemfile"
+  eval_gemfile "modular/integration.gemfile"
 end
 
 # Test current Rubies against head versions of runtime dependencies
 appraise "dep-heads" do
   eval_gemfile "modular/activerecord/vHEAD.gemfile"
   eval_gemfile "modular/runtime_heads.gemfile"
+  eval_gemfile "modular/rack/vHEAD.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
 
@@ -60,8 +63,8 @@ end
 appraise "ar-5-2-r2.4" do
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2
@@ -70,8 +73,8 @@ end
 appraise "ar-5-2-r2" do
   eval_gemfile "modular/activerecord/r2/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.1.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.5
@@ -80,8 +83,8 @@ end
 appraise "ar-6-0" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.2.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.5
@@ -93,8 +96,8 @@ end
 appraise "ar-6-1-r2.6" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.3.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -103,8 +106,8 @@ end
 appraise "ar-6-1-r2" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.3.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.5
@@ -113,8 +116,8 @@ end
 appraise "ar-6-1-r3" do
   eval_gemfile "modular/activerecord/r3/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -123,8 +126,8 @@ end
 appraise "ar-7-0-r2" do
   eval_gemfile "modular/activerecord/r2/v7.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.4.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -135,8 +138,8 @@ end
 appraise "ar-7-0-r3" do
   eval_gemfile "modular/activerecord/r3/v7.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -145,8 +148,8 @@ end
 appraise "ar-7-1-r2" do
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.5.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -157,8 +160,8 @@ end
 appraise "ar-7-1-r3.1" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -170,7 +173,7 @@ appraise "ar-7-1-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
 end
 
 # Compat: Ruby >= 3.1
@@ -180,6 +183,7 @@ end
 appraise "ar-7-2" do
   eval_gemfile "modular/activerecord/r3/v7.2.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
@@ -192,6 +196,7 @@ end
 appraise "ar-8-0" do
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
@@ -205,8 +210,8 @@ appraise "couch-1.17-r2.4" do
 
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.6.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -219,8 +224,8 @@ appraise "couch-1.17-r2.5" do
 
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -234,8 +239,8 @@ appraise "couch-1.17-r2.6" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -248,8 +253,8 @@ appraise "couch-1.17-r2.7" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.7.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -263,8 +268,8 @@ appraise "couch-1.17-r3.1" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.2.2 (due to AR >= 5)
@@ -278,8 +283,8 @@ appraise "couch-1.17-r3" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.3
@@ -292,8 +297,8 @@ appraise "mongoid-7.3-b4.12" do
 
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.8.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.3
@@ -306,8 +311,8 @@ appraise "mongoid-7.3-b4.15" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.5
@@ -322,8 +327,8 @@ appraise "mongoid-7.4-b4.15" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.6 (because of bson v5)
@@ -336,8 +341,8 @@ appraise "mongoid-7.4-b5" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.6
@@ -350,8 +355,8 @@ appraise "mongoid-8.1-r2.6" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -364,8 +369,8 @@ appraise "mongoid-8.1-r2" do
 
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.6
@@ -379,8 +384,8 @@ appraise "mongoid-8.1-r3.1" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.6
@@ -395,8 +400,8 @@ appraise "mongoid-8.1-r3" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -409,9 +414,9 @@ appraise "mongoid-9.0-r2-omni1.9" do
 
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v1.9.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -424,9 +429,9 @@ appraise "mongoid-9.0-r2-omni2.0" do
 
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -439,9 +444,9 @@ appraise "mongoid-9.0-r2-omni2.1" do
 
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  eval_gemfile "modular/rack/r2/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -455,9 +460,9 @@ appraise "mongoid-9.0-r3.1" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 2.7
@@ -472,10 +477,38 @@ appraise "mongoid-9.0-r3" do
 
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
-  eval_gemfile "modular/integration.gemfile"
 end
+
+# 1. While the Ruby driver, nobrainer, is maintained,
+#   RethinkDB itself is currently a zombie project.
+# 2. There are zero examples in the wild of a GitHub Actions workflow
+#   that sets up a RethinkDB service to test client code against.
+# As long as above points remain current, no attempt will be made to get nobrainer specs running in CI,
+#   unless a RethinkDB-fan wants to take a shot at it.
+# You might be inspired by the existing other services this library is currently
+#   tested against (e.g. CouchDB, MongoDB)
+# See: https://github.com/rethinkdb/rethinkdb/issues/6981
+# Compat: Ruby >= 1.9
+# Test Matrix:
+#   - Ruby 2.4
+#   - Ruby 2.5
+#   - Ruby 2.6
+#   - Ruby 2.7
+#   - Ruby 3.0
+#   - Ruby 3.1
+#   - Ruby 3.2
+#   - Ruby 3.3
+#   - ruby-head
+#   - truffleruby-head
+#   - jruby-head
+# appraise "nobrainer-0.44" do
+#   gem "nobrainer", "~> 0.44", ">= 0.44.1"
+#   gem "mutex_m", "~> 0.1"
+#   gem "stringio", ">= 0.0.2"
+# end
 
 # Compat: Ruby >= 3.1.0
 # Test Matrix:
@@ -486,8 +519,8 @@ appraise "rom-r3.1" do
   gem "rom-sql", "~> 3.7"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 3.1.0
@@ -501,6 +534,7 @@ appraise "rom-r3" do
   gem "rom-sql", "~> 3.7"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
@@ -512,8 +546,8 @@ appraise "sequel-5.86-r2.4" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
+  eval_gemfile "modular/rack/r2/v1.6.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -523,8 +557,8 @@ appraise "sequel-5.86-r2.5" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  eval_gemfile "modular/rack/r2/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -534,8 +568,8 @@ appraise "sequel-5.86-r2.6" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  eval_gemfile "modular/rack/r2/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -545,8 +579,8 @@ appraise "sequel-5.86-r2.7" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
+  eval_gemfile "modular/rack/r2/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -557,8 +591,8 @@ appraise "sequel-5.86-r3.1" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  eval_gemfile "modular/integration.gemfile"
 end
 
 # Compat: Ruby >= 1.9.2
@@ -571,6 +605,7 @@ appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
@@ -594,6 +629,7 @@ appraise "coverage" do
   eval_gemfile "modular/coverage.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
   eval_gemfile "modular/optional.gemfile"
+  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end

@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+# Web Frameworks for Integration Testing
+# All marked as require: false to allow selective loading in tests
+
+# Sinatra - Minimal web framework
+# Compatible with Ruby 2.4+ (Sinatra 3.x), Ruby 2.6+ (Sinatra 4.x)
+# We'll use version constraints in appraisals if needed
+gem "sinatra", "~> 4.2", require: false
+gem "sinatra-contrib", "~> 4.2", require: false

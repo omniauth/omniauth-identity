@@ -20,6 +20,7 @@ require "kettle/test/rspec"
 # External library dependencies
 require "omniauth"
 require "omniauth/version"
+require "rack/session"
 
 # RSpec Configs
 require "config/debug"

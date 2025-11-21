@@ -22,7 +22,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Greatly improved documentation
 - Traditional VERSION constant @ OmniAuth::Identity::VERSION
-  - Retains modern VERSION constant @ OmniAuth::Identity::Version::VERSION
+    - Retains modern VERSION constant @ OmniAuth::Identity::Version::VERSION
 
 ### Changed
 
@@ -343,7 +343,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Gemfile.lock file
 - MongoMapper support; unable to satisfy dependencies of both MongoMapper and Mongoid now that MongoMapper is no longer actively maintained.
 
-[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.5...HEAD
+[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.6...HEAD
+[3.1.6]: https://github.com/omniauth/omniauth-identity/compare/v3.1.5...v3.1.6
+[3.1.6t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.1.6
 [3.1.5]: https://github.com/omniauth/omniauth-identity/compare/v3.1.4...v3.1.5
 [3.1.5t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.1.5
 [3.1.4]: https://github.com/omniauth/omniauth-identity/compare/v3.1.3...v3.1.4

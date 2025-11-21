@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+# Web Frameworks for Integration Testing
+# All marked as require: false to allow selective loading in tests
+
+# Roda - Fast, simple routing tree web framework
+# Compatible with Ruby 1.9+, but we'll test on Ruby 3.1+ due to ROM requirements
+gem "roda", "~> 3.85", require: false
