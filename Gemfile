@@ -43,11 +43,11 @@ gem "sqlite3", ">= 1", require: false
 gem "rom-sql", "~> 3.7", require: false
 
 ### Local dev tools
-gem "growl"
-gem "guard"
-gem "guard-bundler"
-gem "guard-rspec"
-gem "rb-fsevent"
+# gem "growl"
+# gem "guard"
+# gem "guard-bundler"
+# gem "guard-rspec"
+# gem "rb-fsevent"
 
 ### Testing
 gem "test-unit", ">= 3.0"
