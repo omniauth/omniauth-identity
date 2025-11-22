@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="➖ Remove dependency on guard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rubocop_gradual.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop_gradual.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/integration/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/spec_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,35 +57,35 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY": "3",
-    "RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.github.patou.gitmoji.display-icon": "emoji",
-    "com.github.patou.gitmoji.text-after-unicode": " ",
-    "com.github.patou.gitmoji.use-unicode": "true",
-    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1763789650051",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "feat/integration-test",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/pboling/src/omniauth/omniauth-identity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY&quot;: &quot;3&quot;,
+    &quot;RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
+    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
+    &quot;com.github.patou.gitmoji.use-unicode&quot;: &quot;true&quot;,
+    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1763812907671&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/integration-test&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/pboling/src/omniauth/omniauth-identity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" side_tool="true" />
@@ -95,7 +94,7 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06651786" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.027827382" />
       <window_info id="Commit" order="1" weight="0.2501488" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -105,9 +104,10 @@
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.33011582" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" />
-      <window_info active="true" anchor="bottom" x="0" y="1801" width="2880" height="1800" id="Terminal" maximized="true" order="3" visible="true" weight="0.44318807" />
+      <window_info active="true" anchor="bottom" x="0" y="1801" width="2880" height="1800" id="Terminal" maximized="true" order="3" visible="true" weight="0.24462217" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.33011582" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.33011582" />
       <window_info anchor="right" id="String Manipulation" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
@@ -242,6 +242,7 @@
       <workItem from="1763687115803" duration="6630000" />
       <workItem from="1763708540241" duration="27946000" />
       <workItem from="1763789592047" duration="21490000" />
+      <workItem from="1763812849910" duration="744000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />
@@ -640,7 +641,9 @@
     <MESSAGE value="✅ Rails integration tests" />
     <MESSAGE value=" Linting" />
     <MESSAGE value="➖ Remove dependency on guard" />
-    <option name="LAST_COMMIT_MESSAGE" value="➖ Remove dependency on guard" />
+    <MESSAGE value="✅ Remove dependency on guard" />
+    <MESSAGE value="✅ Add full-stack integration tests with capybara" />
+    <option name="LAST_COMMIT_MESSAGE" value="✅ Add full-stack integration tests with capybara" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="github-copilot-workspace">

@@ -69,22 +69,22 @@ RSpec.shared_examples "omniauth identity integration" do |framework_name|
     describe "login flow" do
       before do
         post "/auth/identity/register",
-             {
-               name: "Login Test",
-               email: "login@example.com",
-               password: "test_password_123",
-               password_confirmation: "test_password_123",
-             },
-             {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
+          {
+            name: "Login Test",
+            email: "login@example.com",
+            password: "test_password_123",
+            password_confirmation: "test_password_123",
+          },
+          {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
       end
 
       it "authenticates with valid credentials", :check_output do
         post "/auth/identity/callback",
-             {
-               auth_key: "login@example.com",
-               password: "test_password_123",
-             },
-             {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
+          {
+            auth_key: "login@example.com",
+            password: "test_password_123",
+          },
+          {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
 
         # $stderr.puts "=== REGISTRATION RESPONSE ==="
         # $stderr.puts "Status: #{last_response.status}"
@@ -100,11 +100,11 @@ RSpec.shared_examples "omniauth identity integration" do |framework_name|
 
       it "rejects invalid password", :check_output do
         post "/auth/identity/callback",
-             {
-               auth_key: "login@example.com",
-               password: "wrong_password",
-             },
-             {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
+          {
+            auth_key: "login@example.com",
+            password: "wrong_password",
+          },
+          {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
 
         follow_redirect!
         expect(last_response.status).to be >= 400
@@ -112,11 +112,11 @@ RSpec.shared_examples "omniauth identity integration" do |framework_name|
 
       it "rejects non-existent user", :check_output do
         post "/auth/identity/callback",
-             {
-               auth_key: "nonexistent@example.com",
-               password: "any_password",
-             },
-             {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
+          {
+            auth_key: "nonexistent@example.com",
+            password: "any_password",
+          },
+          {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
 
         follow_redirect!
         expect(last_response.status).to be >= 400

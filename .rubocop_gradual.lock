@@ -104,6 +104,10 @@
   "spec/support/shared_contexts/persistable_model.rb:4102269984": [
     [3, 22, 19, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 3037799226]
   ],
+  "spec/support/shared_examples/integration.rb:2073621034": [
+    [180, 20, 20, "RSpec/ExpectActual: Provide the actual value you are testing to `expect(...)`.", 2373910860],
+    [227, 20, 15, "RSpec/ExpectActual: Provide the actual value you are testing to `expect(...)`.", 2673315381]
+  ],
   "spec_ignored/nobrainer_spec.rb:3191134947": [
     [19, 1, 65, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/models/no_brainer*_spec.rb`.", 1527957824],
     [20, 3, 12, "RSpec/BeforeAfterAll: Beware of using `before(:all)` as it may cause state to leak between tests. If you are using `rspec-rails`, and `use_transactional_fixtures` is enabled, then records created in `before(:all)` are not automatically rolled back.", 86334566],
