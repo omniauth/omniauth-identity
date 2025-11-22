@@ -56,7 +56,7 @@
   "spec/omniauth/identity/secure_password_spec.rb:4120880794": [
     [3, 1, 49, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/secure_password*_spec.rb`.", 2365105762]
   ],
-  "spec/omniauth/strategies/identity_spec.rb:974965787": [
+  "spec/omniauth/strategies/identity_spec.rb:1931794378": [
     [6, 1, 55, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/strategies/identity*_spec.rb`.", 3369296900],
     [164, 13, 63, "Style/IdenticalConditionalBranches: Move `expect(last_response.body).not_to include(\"Create an Identity\")` out of the conditional.", 3058698764],
     [167, 13, 63, "Style/IdenticalConditionalBranches: Move `expect(last_response.body).not_to include(\"Create an Identity\")` out of the conditional.", 3058698764],

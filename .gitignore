@@ -55,5 +55,11 @@ spec/dummies/rails/db/*.sqlite3-*
 spec/dummies/rails/log/
 spec/dummies/rails/tmp/
 
+tmp/db/
+
+# Prevent incorrectly named sqlite database files from being tracked
+sqlite::memory:*
+*::memory::*
+
 # Combustion / Rails internal files
 spec/dummies/rails/internal/

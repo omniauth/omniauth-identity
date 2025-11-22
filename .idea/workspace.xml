@@ -4,114 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdffbe34-82d0-4c13-bcae-3de5ade01035" name="Appraisal" comment="🔧 Update appraisals">
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/combustion/r3/v1.5.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/hanami/r3/v2.2.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v2.2.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v3.2.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r3/v3.2.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rack/vHEAD.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/roda/r3/v3.85.gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfiles/modular/sinatra/r3/v4.2.gemfile" afterDir="false" />
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="✅ Some sinatra integration tests working">
+      <change afterPath="$PROJECT_DIR$/spec/support/omniauth.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.envrc" beforeDir="false" afterPath="$PROJECT_DIR$/.envrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rakefile" beforeDir="false" afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassCreateApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassCreateApi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/ClassMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstancePersistedApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstancePersistedApi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstanceSaveApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Model/InstanceSaveApi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/ActiveRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/ActiveRecord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/CouchPotatoModule.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/CouchPotatoModule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Mongoid.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Mongoid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/NoBrainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/NoBrainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Rom/ClassMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Sequel.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Models/Sequel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/ClassMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/ClassMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/InstanceMethodsOnActivation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/SecurePassword/InstanceMethodsOnActivation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Identity/Version.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Identity/Version.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Strategies.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Strategies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/OmniAuth/Strategies/Identity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/OmniAuth/Strategies/Identity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/class_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.CHANGELOG.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CHANGELOG.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.CODE_OF_CONDUCT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CODE_OF_CONDUCT.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.CONTRIBUTING.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.CONTRIBUTING.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.FUNDING.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.FUNDING.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.LICENSE.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.LICENSE.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.README.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.README.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.RUBOCOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.RUBOCOP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file.SECURITY.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file.SECURITY.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/frames.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/frames.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/method_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/method_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/top-level-namespace.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/top-level-namespace.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/current.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/current.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/head.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/head.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/runtime_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/runtime_heads.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.3/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.3/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.4/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.4/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.6/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2.6/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r2/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r3.1/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r3.1/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r3/libs.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/r3/libs.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/vHEAD.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/x_std_libs/vHEAD.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omniauth-identity.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/omniauth-identity.gemspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/omniauth/strategies/identity_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/omniauth/strategies/identity_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/dummies/sinatra_app/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/dummies/sinatra_app/app.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/integration_helpers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/integration_helpers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" afterDir="false" />
     </list>
-    <list id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,6 +51,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="35InLxxjYHQi47gKHAgLwAisRUG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -168,7 +72,7 @@
     "com.github.patou.gitmoji.display-icon": "emoji",
     "com.github.patou.gitmoji.text-after-unicode": " ",
     "com.github.patou.gitmoji.use-unicode": "true",
-    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1763687174607",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1763789650051",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "feat/integration-test",
@@ -237,7 +141,7 @@
       <module name="omniauth-identity" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -261,7 +165,7 @@
       <module name="omniauth-identity" />
       <predefined_log_file enabled="true" id="RUBY_RAKE" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -285,7 +189,7 @@
       <module name="omniauth-identity" />
       <predefined_log_file enabled="true" id="RUBY_RAKE" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -320,7 +224,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="" />
-      <changelist id="fdffbe34-82d0-4c13-bcae-3de5ade01035" name="Appraisal" comment="" />
       <created>1762806402941</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -339,7 +242,8 @@
       <workItem from="1763676342574" duration="4222000" />
       <workItem from="1763687052719" duration="60000" />
       <workItem from="1763687115803" duration="6630000" />
-      <workItem from="1763708540241" duration="1645000" />
+      <workItem from="1763708540241" duration="27946000" />
+      <workItem from="1763789592047" duration="15880000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />
@@ -613,7 +517,31 @@
       <option name="project" value="LOCAL" />
       <updated>1763080506759</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="🔧 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763710193725</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1763710193725</updated>
+    </task>
+    <task id="LOCAL-00036" summary="🔧 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763710201231</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1763710201231</updated>
+    </task>
+    <task id="LOCAL-00037" summary="✅ Some sinatra integration tests working">
+      <option name="closed" value="true" />
+      <created>1763801191845</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1763801191845</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +570,8 @@
     <MESSAGE value="️ Traditional VERSION constant" />
     <MESSAGE value="Appraisal" />
     <MESSAGE value=" Update appraisals" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Update appraisals" />
+    <MESSAGE value="✅ Some sinatra integration tests working" />
+    <option name="LAST_COMMIT_MESSAGE" value="✅ Some sinatra integration tests working" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="github-copilot-workspace">
