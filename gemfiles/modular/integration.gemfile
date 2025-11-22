@@ -10,3 +10,4 @@ eval_gemfile("sinatra/r3/v4.2.gemfile")
 
 # Testing utilities
 gem "rack-test", "~> 2.1"
+gem "capybara", "~> 3.40"
