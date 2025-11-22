@@ -66,4 +66,3 @@ if ENV.fetch("DEBUG", "false").casecmp("true").zero?
   puts "HanamiIdentity: #{HanamiIdentity}"
   puts "======================="
 end
-

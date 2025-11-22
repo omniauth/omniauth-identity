@@ -9,14 +9,13 @@ require_relative "models/identity"
 
 module Dummy
   class App < Sinatra::Base
-
     # Use Rack::Session::Cookie instead of Sinatra's built-in sessions
     use Rack::Session::Cookie, secret: ENV.fetch(
       "SINATRA_SESSION_SECRET",
       "aRM1uGVWoh6Rx14Gc4XGmzhV8FehJNqZ2VjEe386BlZjv4hicoifs7804uPfWsxI",
     )
     configure :test, :development, :production do
-      set :host_authorization, { permitted_hosts: [] }
+      set :host_authorization, {permitted_hosts: []}
 
       use OmniAuth::Builder do
         provider :identity,
@@ -57,7 +56,7 @@ module Dummy
   end
 end
 
-if ENV.fetch('DEBUG', 'false').casecmp('true').zero?
+if ENV.fetch("DEBUG", "false").casecmp("true").zero?
   puts "=== MIDDLEWARE START ==="
   Dummy::App.middleware.each do |middleware|
     puts middleware.inspect

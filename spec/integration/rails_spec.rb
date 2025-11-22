@@ -158,4 +158,3 @@ RSpec.describe "Rails Integration", :integration, integration_framework: :rails 
     end
   end
 end
-

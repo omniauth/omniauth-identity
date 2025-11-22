@@ -66,4 +66,3 @@ if ENV.fetch("DEBUG", "false").casecmp("true").zero?
   puts "Middleware: #{Dummy::RodaApp.opts[:middleware]&.inspect}"
   puts "======================="
 end
-

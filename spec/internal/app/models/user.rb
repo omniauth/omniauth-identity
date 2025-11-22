@@ -10,4 +10,3 @@ class User < OmniAuth::Identity::Models::ActiveRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 end
-

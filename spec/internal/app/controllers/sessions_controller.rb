@@ -12,4 +12,3 @@ class SessionsController < ActionController::Base
     render json: {error: params[:message] || "failure"}, status: :unauthorized
   end
 end
-

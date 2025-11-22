@@ -31,4 +31,3 @@ end
 if ActiveRecord::Base.connection.tables.empty?
   load File.expand_path("../internal/db/schema.rb", __dir__)
 end
-

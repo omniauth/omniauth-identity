@@ -10,4 +10,3 @@ ActiveRecord::Schema.define do
 
   add_index :users, :email, unique: true
 end
-

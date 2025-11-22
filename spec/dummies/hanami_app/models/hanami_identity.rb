@@ -117,4 +117,3 @@ class HanamiIdentity
     end
   end
 end
-
