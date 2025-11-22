@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="✅ Roda integration tests">
-      <change afterPath="$PROJECT_DIR$/spec/dummies/hanami_app/app.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/dummies/hanami_app/models/hanami_identity.rb" afterDir="false" />
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="✅ Hanami integration tests">
+      <change afterPath="$PROJECT_DIR$/spec/integration/rails_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/internal/app/controllers/sessions_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/internal/app/models/user.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/internal/config/database.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/internal/config/routes.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/internal/db/schema.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/combustion_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/integration_helpers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/integration_helpers.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +247,7 @@
       <workItem from="1763687052719" duration="60000" />
       <workItem from="1763687115803" duration="6630000" />
       <workItem from="1763708540241" duration="27946000" />
-      <workItem from="1763789592047" duration="19119000" />
+      <workItem from="1763789592047" duration="19951000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />
@@ -568,7 +577,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763810235308</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="✅ Hanami integration tests">
+      <option name="closed" value="true" />
+      <created>1763810602507</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1763810602507</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +618,8 @@
     <MESSAGE value=" Update appraisals" />
     <MESSAGE value="✅ Sinatra integration tests" />
     <MESSAGE value="✅ Roda integration tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="✅ Roda integration tests" />
+    <MESSAGE value="✅ Hanami integration tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="✅ Hanami integration tests" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="github-copilot-workspace">

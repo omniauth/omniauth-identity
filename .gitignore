@@ -62,4 +62,4 @@ sqlite::memory:*
 *::memory::*
 
 # Combustion / Rails internal files
-spec/dummies/rails/internal/
+spec/internal/log/

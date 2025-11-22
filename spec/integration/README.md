@@ -11,7 +11,7 @@ This directory contains integration tests that verify omniauth-identity works co
 
 1. **Sinatra + Sequel** - Minimal framework with lightweight ORM
 2. **Roda + ROM** - Modern minimal stack with Ruby Object Mapper
-3. **Hanami + ROM-SQL** - Full-featured modern framework
+3. **Hanami + ROM** - Full-featured modern framework with Ruby Object Mapper
 4. **Rails + ActiveRecord** (via Combustion) - Most common use case
 
 ## Running Tests
@@ -24,11 +24,13 @@ bundle exec rspec spec/integration
 bundle exec rspec spec/integration/sinatra_spec.rb
 bundle exec rspec spec/integration/roda_spec.rb   # Ruby 3.1+ only
 bundle exec rspec spec/integration/hanami_spec.rb # Ruby 3.1+ only
+bundle exec rspec spec/integration/rails_spec.rb
 
 # Run with specific appraisal
 bundle exec appraisal rom-r3 rspec spec/integration/roda_spec.rb
 bundle exec appraisal rom-r3 rspec spec/integration/hanami_spec.rb
-bundle exec appraisal ar-7-1-r3 rspec spec/integration/rails_spec.rb
+bundle exec appraisal ar-7-2 rspec spec/integration/rails_spec.rb
+bundle exec appraisal ar-8-0 rspec spec/integration/rails_spec.rb
 ```
 
 ## Framework-Specific Notes
@@ -66,6 +68,29 @@ The Hanami integration demonstrates:
 - `spec/dummies/hanami_app/models/hanami_identity.rb` - ROM-based identity model
 
 The tests will be skipped automatically on Ruby < 3.1.
+
+### Rails + ActiveRecord
+
+**Requirements**: Compatible with Rails 5.2+ and Ruby 2.4+
+
+The Rails integration demonstrates:
+- Most common production use case
+- ActiveRecord ORM (Rails default)
+- Combustion for minimal Rails setup
+- In-memory SQLite database for testing
+- has_secure_password integration
+
+**Files**:
+- `spec/integration/rails_spec.rb` - Integration tests
+- `spec/internal/` - Combustion Rails app structure
+  - `config/routes.rb` - Rails routes
+  - `config/database.yml` - Database configuration
+  - `db/schema.rb` - Database schema
+  - `app/models/user.rb` - ActiveRecord User model
+  - `app/controllers/sessions_controller.rb` - Auth callbacks
+- `spec/support/combustion_helper.rb` - Combustion initialization
+
+Combustion automatically adapts to the Rails version being tested, supporting Rails 5.2 through 8.0.
 
 ## Notes
 

@@ -1,0 +1,7 @@
+# Combustion test database configuration
+test:
+  adapter: sqlite3
+  database: ":memory:"
+  pool: 5
+  timeout: 5000
+

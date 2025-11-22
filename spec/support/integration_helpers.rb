@@ -4,8 +4,14 @@ require "fileutils"
 require "pathname"
 require "time"
 require "logger"
-require "sequel"
-require "sequel/extensions/migration"
+
+# Sequel is only needed for Sinatra integration, so require conditionally
+begin
+  require "sequel"
+  require "sequel/extensions/migration"
+rescue LoadError
+  # Sequel not available, that's okay for non-Sinatra tests
+end
 
 module OmniAuthIdentity
   module IntegrationLogger
@@ -209,10 +215,19 @@ module OmniAuthIdentity
       end
     end
 
+    def register_rails_hooks
+      # Rails uses Combustion with in-memory database
+      # Just need to clear data between tests
+      register_database_truncator(:rails) do |_db_path|
+        User.delete_all if defined?(User) && User.respond_to?(:delete_all)
+      end
+    end
+
     def register_default_database_hooks
       register_sinatra_hooks
       register_roda_hooks
       register_hanami_hooks
+      register_rails_hooks
     end
 
     register_default_database_hooks
