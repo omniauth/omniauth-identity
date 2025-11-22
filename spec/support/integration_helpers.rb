@@ -201,9 +201,18 @@ module OmniAuthIdentity
       end
     end
 
+    def register_hanami_hooks
+      # Hanami uses in-memory ROM, so no file-based initialization needed
+      # Just need to clear data between tests
+      register_database_truncator(:hanami) do |_db_path|
+        HanamiIdentity.delete_all if defined?(HanamiIdentity)
+      end
+    end
+
     def register_default_database_hooks
       register_sinatra_hooks
       register_roda_hooks
+      register_hanami_hooks
     end
 
     register_default_database_hooks

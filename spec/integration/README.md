@@ -22,10 +22,12 @@ bundle exec rspec spec/integration
 
 # Run specific framework
 bundle exec rspec spec/integration/sinatra_spec.rb
-bundle exec rspec spec/integration/roda_spec.rb  # Ruby 3.1+ only
+bundle exec rspec spec/integration/roda_spec.rb   # Ruby 3.1+ only
+bundle exec rspec spec/integration/hanami_spec.rb # Ruby 3.1+ only
 
 # Run with specific appraisal
 bundle exec appraisal rom-r3 rspec spec/integration/roda_spec.rb
+bundle exec appraisal rom-r3 rspec spec/integration/hanami_spec.rb
 bundle exec appraisal ar-7-1-r3 rspec spec/integration/rails_spec.rb
 ```
 
@@ -44,7 +46,24 @@ The Roda integration demonstrates:
 **Files**:
 - `spec/integration/roda_spec.rb` - Integration tests
 - `spec/dummies/roda_app/app.rb` - Roda application
-- `spec/dummies/roda_app/models/identity.rb` - ROM-based identity model
+- `spec/dummies/roda_app/models/roda_identity.rb` - ROM-based identity model
+
+The tests will be skipped automatically on Ruby < 3.1.
+
+### Hanami + ROM
+
+**Requirements**: Ruby 3.1+ (ROM 5.x / Hanami 2.x requirement)
+
+The Hanami integration demonstrates:
+- Full-featured modern Ruby framework
+- ROM as native data layer
+- Clean architecture patterns
+- In-memory SQLite database for testing
+
+**Files**:
+- `spec/integration/hanami_spec.rb` - Integration tests
+- `spec/dummies/hanami_app/app.rb` - Hanami application (Rack-based for simplicity)
+- `spec/dummies/hanami_app/models/hanami_identity.rb` - ROM-based identity model
 
 The tests will be skipped automatically on Ruby < 3.1.
 
