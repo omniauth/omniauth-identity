@@ -193,8 +193,17 @@ module OmniAuthIdentity
       end
     end
 
+    def register_roda_hooks
+      # Roda uses in-memory ROM, so no file-based initialization needed
+      # Just need to clear data between tests
+      register_database_truncator(:roda) do |_db_path|
+        RodaIdentity.delete_all if defined?(RodaIdentity)
+      end
+    end
+
     def register_default_database_hooks
       register_sinatra_hooks
+      register_roda_hooks
     end
 
     register_default_database_hooks

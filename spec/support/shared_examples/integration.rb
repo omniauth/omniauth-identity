@@ -38,7 +38,7 @@ RSpec.shared_examples "omniauth identity integration" do |framework_name|
           },
           {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
 
-        follow_redirect!
+        follow_redirect! if last_response.redirect?
         expect(last_response.status).to be >= 400
       end
 
@@ -61,7 +61,7 @@ RSpec.shared_examples "omniauth identity integration" do |framework_name|
           },
           {"HTTP_HOST" => "example.org", "rack.url_scheme" => "http"}
 
-        follow_redirect!
+        follow_redirect! if last_response.redirect?
         expect(last_response.status).to be >= 400
       end
     end
