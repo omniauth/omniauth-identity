@@ -22,8 +22,6 @@
 appraise "unlocked_deps" do
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/rails/r3/v8.1.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
-  eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/coverage.gemfile"
   eval_gemfile "modular/documentation.gemfile"
   eval_gemfile "modular/style.gemfile"
@@ -58,6 +56,7 @@ appraise "dep-heads" do
   eval_gemfile "modular/rack/vHEAD.gemfile"
   eval_gemfile "modular/rails/vHEAD.gemfile"
   eval_gemfile "modular/roda/vHEAD.gemfile"
+  eval_gemfile "modular/rom-sql/vHEAD.gemfile"
   eval_gemfile "modular/sequel/vHEAD.gemfile"
   eval_gemfile "modular/sinatra/vHEAD.gemfile"
 end
@@ -499,11 +498,11 @@ appraise "mongoid-9.0-r3" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
+  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/rails/r3/v7.1.gemfile"
-  eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
+  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 end
 
@@ -558,7 +557,6 @@ end
 appraise "rom-r3" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
 end
@@ -570,7 +568,6 @@ appraise "sequel-5.86-r2.4" do
   eval_gemfile "modular/activerecord/r2.4/v5.2.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.0.gemfile"
   eval_gemfile "modular/rack/r2/v1.6.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
   eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
 end
@@ -582,7 +579,6 @@ appraise "sequel-5.86-r2.5" do
   eval_gemfile "modular/activerecord/r2/v6.0.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/rack/r2/v3.2.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
   eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
@@ -594,7 +590,6 @@ appraise "sequel-5.86-r2.6" do
   eval_gemfile "modular/activerecord/r2/v6.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/rack/r2/v3.2.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
   eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
@@ -606,7 +601,6 @@ appraise "sequel-5.86-r2.7" do
   eval_gemfile "modular/activerecord/r2/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r2/v2.1.gemfile"
   eval_gemfile "modular/rack/r2/v3.2.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
   eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
 end
@@ -619,7 +613,6 @@ appraise "sequel-5.86-r3.1" do
   eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/rack/r3/v3.2.gemfile"
-  eval_gemfile "modular/rom-sql/r3/v3.7.gemfile"
   eval_gemfile "modular/sequel/r3/v5.86.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
 end
