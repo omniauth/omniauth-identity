@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "spec_helper"
-require "rack/test"
+require "integration_helper"
 
-# Only run on Ruby 3.1+ (ROM 5.x and Hanami 2.x requirement)
-if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1.0")
+# Only run on latest Ruby
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
   require "rom"
   require "rom-sql"
 
@@ -159,8 +158,8 @@ if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1.0")
   end
 else
   RSpec.describe "Hanami Integration", :integration, integration_framework: :hanami do
-    it "skips tests on Ruby < 3.1" do
-      skip "Hanami 2.x and ROM require Ruby 3.1+, current version: #{RUBY_VERSION}"
+    it "skips tests on Ruby < 3.4" do
+      skip "Hanami integration tests run on latest ruby only, current version: #{RUBY_VERSION}"
     end
   end
 end

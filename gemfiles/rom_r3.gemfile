@@ -2,6 +2,7 @@
 
 source "https://gem.coop"
 
+gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "rom-sql", "~> 3.7"
 
 gemspec path: "../"

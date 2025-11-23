@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "spec_helper"
-require "rack/test"
+require "integration_helper"
 
-# Only run on Ruby 3.1+ (ROM 5.x requirement)
-if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1.0")
+# Only run on latest Ruby
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
   require "roda"
   require "rom"
   require "rom-sql"
@@ -160,8 +159,8 @@ if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1.0")
   end
 else
   RSpec.describe "Roda Integration", :integration, integration_framework: :roda do
-    it "skips tests on Ruby < 3.1" do
-      skip "ROM requires Ruby 3.1+, current version: #{RUBY_VERSION}"
+    it "skips tests on Ruby < 3.4" do
+      skip "Roda integration tests run on latest ruby only, current version: #{RUBY_VERSION}"
     end
   end
 end

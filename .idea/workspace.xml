@@ -5,10 +5,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="➖ Remove dependency on guard">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/current.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/current.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.rubocop_gradual.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop_gradual.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Appraisal.root.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisal.root.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/shared_examples/integration.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/audit.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/audit.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/current.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/current.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/head.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/head.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord-jdbc-adapter/vHEAD.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord-jdbc-adapter/vHEAD.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r2/v7.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r2/v7.0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r2/v7.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r2/v7.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v7.2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v8.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/activerecord/r3/v8.0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/documentation.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/documentation.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v1.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v1.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v2.2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v2.2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v3.2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r2/v3.2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rack/r3/v3.2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rack/r3/v3.2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rack/vHEAD.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rack/vHEAD.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/style.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/style.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/rails_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/rails_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/roda_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/roda_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/spec_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,35 +127,35 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY&quot;: &quot;3&quot;,
-    &quot;RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
-    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
-    &quot;com.github.patou.gitmoji.use-unicode&quot;: &quot;true&quot;,
-    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1763812907671&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/integration-test&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/pboling/src/omniauth/omniauth-identity&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY": "3",
+    "RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.github.patou.gitmoji.display-icon": "emoji",
+    "com.github.patou.gitmoji.text-after-unicode": " ",
+    "com.github.patou.gitmoji.use-unicode": "true",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1763880886307",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feat/integration-test",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/pboling/src/omniauth/omniauth-identity/gemfiles/modular/rails/r3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" side_tool="true" />
@@ -94,8 +164,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.027827382" />
-      <window_info id="Commit" order="1" weight="0.2501488" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.13020834" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.2501488" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -104,10 +174,10 @@
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.33011582" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" />
-      <window_info active="true" anchor="bottom" x="0" y="1801" width="2880" height="1800" id="Terminal" maximized="true" order="3" visible="true" weight="0.24462217" />
+      <window_info active="true" anchor="bottom" x="0" y="1801" width="2880" height="1800" id="Terminal" maximized="true" order="3" visible="true" weight="0.40237176" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.33011582" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.33011582" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.18229455" />
       <window_info anchor="right" id="String Manipulation" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
@@ -120,11 +190,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gemfiles/modular/rails/r3" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord/r3" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord-jdbc-adapter/r3" />
       <recent name="$PROJECT_DIR$/gemfiles/modular" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular/combustion/r3" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular/integration/r3" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular/integration/r2" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular/integration/r2.4" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/sinatra" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec" />
     </key>
   </component>
   <component name="RubyModuleManagerSettings">
@@ -243,6 +316,8 @@
       <workItem from="1763708540241" duration="27946000" />
       <workItem from="1763789592047" duration="21490000" />
       <workItem from="1763812849910" duration="744000" />
+      <workItem from="1763870186034" duration="8340000" />
+      <workItem from="1763880828848" duration="3091000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />

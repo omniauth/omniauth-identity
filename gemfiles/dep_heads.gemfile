@@ -2,12 +2,20 @@
 
 source "https://gem.coop"
 
-gemspec path: "../"
+gem "bundler", "~> 2.7", ">= 2.7.2"
 
-eval_gemfile("modular/activerecord/vHEAD.gemfile")
+gemspec path: "../"
 
 eval_gemfile("modular/runtime_heads.gemfile")
 
+eval_gemfile("modular/combustion/vHEAD.gemfile")
+
+eval_gemfile("modular/hanami/vHEAD.gemfile")
+
 eval_gemfile("modular/rack/vHEAD.gemfile")
 
-eval_gemfile("modular/integration.gemfile")
+eval_gemfile("modular/rails/vHEAD.gemfile")
+
+eval_gemfile("modular/roda/vHEAD.gemfile")
+
+eval_gemfile("modular/sinatra/vHEAD.gemfile")

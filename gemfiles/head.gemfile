@@ -2,6 +2,7 @@
 
 source "https://gem.coop"
 
+gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "benchmark", "~> 0.4", ">= 0.4.1"
 
 gemspec path: "../"

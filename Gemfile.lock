@@ -572,7 +572,7 @@ GEM
       rdoc (~> 6.11)
       version_gem (~> 1.1, >= 1.1.9)
       yard (~> 0.9, >= 0.9.37)
-    yard-relative_markdown_links (0.5.0)
+    yard-relative_markdown_links (0.6.0)
       nokogiri (>= 1.14.3, < 2)
     yard-yaml (0.1.0)
       version_gem (~> 1.1, >= 1.1.9)
@@ -612,6 +612,8 @@ DEPENDENCIES
   mutex_m (~> 0.2)
   nobrainer (~> 0.44)
   omniauth-identity!
+  rack (~> 3.2, >= 3.2.4)
+  rack-session (~> 2.1, >= 2.1.1)
   rack-test (~> 2.2, ~> 2.1)
   rake (~> 13.0)
   rdoc (~> 6.11)
@@ -640,7 +642,7 @@ DEPENDENCIES
   yard (~> 0.9, >= 0.9.37)
   yard-fence (~> 0.8)
   yard-junk (~> 0.0, >= 0.0.10)!
-  yard-relative_markdown_links (~> 0.5.0)
+  yard-relative_markdown_links (~> 0.6)
   yard-yaml (~> 0.1)
 
 BUNDLED WITH

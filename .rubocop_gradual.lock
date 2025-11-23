@@ -53,12 +53,6 @@
   "spec/dummies/sinatra_app/models/identity.rb:391883596": [
     [23, 3, 60, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2223458314]
   ],
-  "spec/integration/rails_spec.rb:525390271": [
-    [9, 16, 19, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 2468688414]
-  ],
-  "spec/integration/sinatra_spec.rb:3751751858": [
-    [7, 16, 21, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 458418761]
-  ],
   "spec/omniauth/identity/model_spec.rb:3920022856": [
     [3, 1, 40, "RSpec/SpecFilePathFormat: Spec path should end with `omni_auth/identity/model*_spec.rb`.", 1316823397]
   ],

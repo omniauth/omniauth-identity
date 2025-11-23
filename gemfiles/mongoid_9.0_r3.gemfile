@@ -2,6 +2,7 @@
 
 source "https://gem.coop"
 
+gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "mongoid", "~> 9.0", ">= 9.0.3"
 gem "mongoid-rspec", "~> 4.2"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
