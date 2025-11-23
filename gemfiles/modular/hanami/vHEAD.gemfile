@@ -1,0 +1,1 @@
+gem "hanami", github: "hanami/hanami", branch: "main"

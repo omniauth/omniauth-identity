@@ -1,0 +1,2 @@
+gem "rails", "~> 7.2.3"
+eval_gemfile("../../activerecord/r3/v7.2.gemfile")
