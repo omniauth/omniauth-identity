@@ -42,8 +42,8 @@ if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
     describe "ROM-specific features" do
       it "uses ROM container and relations" do
         # Verify ROM container is properly configured
-        expect(ROM_CONTAINER).to be_a(ROM::Container)
-        expect(ROM_CONTAINER.relations[:roda_identities]).not_to be_nil
+        expect(RODA_ROM_CONTAINER).to be_a(ROM::Container)
+        expect(RODA_ROM_CONTAINER.relations[:roda_identities]).not_to be_nil
       end
 
       it "creates identities with ROM commands" do

@@ -34,16 +34,16 @@ class RodaIdentities < ROM::Relation[:sql]
 end
 
 # Set up ROM container
-ROM_CONFIG = ROM::Configuration.new(:sql, RODA_ROM_DB)
-ROM_CONFIG.register_relation(RodaIdentities)
-ROM_CONTAINER = ROM.container(ROM_CONFIG)
+RODA_ROM_CONFIG = ROM::Configuration.new(:sql, RODA_ROM_DB)
+RODA_ROM_CONFIG.register_relation(RodaIdentities)
+RODA_ROM_CONTAINER = ROM.container(RODA_ROM_CONFIG)
 
 # RodaIdentity class using ROM adapter
 class RodaIdentity
   include OmniAuth::Identity::Models::Rom
 
   # Configure ROM
-  rom_container ROM_CONTAINER
+  rom_container RODA_ROM_CONTAINER
   rom_relation_name :roda_identities
   password_field :password_digest
   auth_key :email
