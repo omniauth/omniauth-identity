@@ -4,57 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="➖ Remove dependency on guard">
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="👷 Update appraisals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_5_2_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_6_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_7_2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/ar_8_1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/ar_8_1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/audit.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/audit.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/couch_1.17_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/current.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/current.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/head.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/head.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.12.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.3_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b4.15.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_7.4_b5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r2.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni1.9.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.0.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r2_omni2.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/style.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/style.gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/rails_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/rails_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/roda_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/roda_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/combustion_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/combustion_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +130,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spec" />
+      <recent name="$PROJECT_DIR$/spec/support" />
     </key>
   </component>
   <component name="RubyModuleManagerSettings">
@@ -294,7 +251,7 @@
       <workItem from="1763812849910" duration="744000" />
       <workItem from="1763870186034" duration="8340000" />
       <workItem from="1763880828848" duration="3091000" />
-      <workItem from="1763892762957" duration="1544000" />
+      <workItem from="1763892762957" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />
@@ -656,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763811374998</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="👷 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763894494091</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1763894494091</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +660,8 @@
     <MESSAGE value="➖ Remove dependency on guard" />
     <MESSAGE value="✅ Remove dependency on guard" />
     <MESSAGE value="✅ Add full-stack integration tests with capybara" />
-    <option name="LAST_COMMIT_MESSAGE" value="✅ Add full-stack integration tests with capybara" />
+    <MESSAGE value=" Update appraisals" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update appraisals" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="github-copilot-workspace">

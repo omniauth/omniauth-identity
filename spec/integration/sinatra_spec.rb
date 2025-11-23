@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require "integration_helper"
-
 # Only run on latest Ruby
 if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
+  require "integration_helper"
   require_relative "../dummies/sinatra_app/app"
 
   RSpec.describe "Sinatra Integration", :integration, integration_framework: :sinatra do

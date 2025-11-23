@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require "integration_helper"
-
 # Only run on latest Ruby
 if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
+  require "integration_helper"
   require "rom"
   require "rom-sql"
 

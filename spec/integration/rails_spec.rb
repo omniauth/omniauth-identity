@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-require "integration_helper"
-
 # Only run on latest Ruby
 if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.4.0")
-  # Load Combustion and Rails
-  require_relative "../support/combustion_helper"
+  require "integration_helper"
+  require "combustion_helper"
 
   RSpec.describe "Rails Integration", :integration, integration_framework: :rails do
     include Rack::Test::Methods

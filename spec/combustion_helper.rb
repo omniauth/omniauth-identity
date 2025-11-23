@@ -29,5 +29,5 @@ end
 # Ensure database schema is loaded
 # Combustion should handle this automatically, but we'll be explicit
 if ActiveRecord::Base.connection.tables.empty?
-  load File.expand_path("../internal/db/schema.rb", __dir__)
+  load File.expand_path("internal/db/schema.rb", __dir__)
 end
