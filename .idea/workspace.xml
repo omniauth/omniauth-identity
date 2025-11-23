@@ -4,13 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="👷 Update appraisals">
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="👷 Update test harness">
+      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rom-sql/r3/v3.7.gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gemfiles/modular/rom-sql/vHEAD.gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gemfiles/modular/sequel/r3/v5.86.gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gemfiles/modular/sequel/vHEAD.gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/hanami_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/integration/rails_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/rails_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/integration/roda_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/roda_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/sinatra_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/combustion_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/combustion_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rubocop_gradual.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop_gradual.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/coverage.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/coverage.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/integration.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_8.1_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/integration_helpers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/integration_helpers.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +87,12 @@
     &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
     &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
     &quot;com.github.patou.gitmoji.use-unicode&quot;: &quot;true&quot;,
-    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1763893747465&quot;,
+    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1763896797200&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feat/integration-test&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/pboling/src/omniauth/omniauth-identity/gemfiles/modular/rails/r3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/pboling/src/omniauth/omniauth-identity/gemfiles/modular&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,8 +112,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13020834" />
-      <window_info active="true" id="Commit" order="1" visible="true" weight="0.20818451" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13020834" />
+      <window_info id="Commit" order="1" weight="0.20818451" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -122,11 +138,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gemfiles/modular" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/sequel" />
       <recent name="$PROJECT_DIR$/gemfiles/modular/rails/r3" />
       <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord/r3" />
       <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord-jdbc-adapter/r3" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular" />
-      <recent name="$PROJECT_DIR$/gemfiles/modular/sinatra" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spec" />
@@ -150,7 +166,7 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
         <COVERAGE_PATTERN ENABLED="true">
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
@@ -174,7 +190,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
         <COVERAGE_PATTERN ENABLED="true">
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
@@ -201,7 +217,7 @@
         <env name="RAILS_ENV" value="test" />
       </envs>
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
         <COVERAGE_PATTERN ENABLED="true">
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
@@ -251,7 +267,8 @@
       <workItem from="1763812849910" duration="744000" />
       <workItem from="1763870186034" duration="8340000" />
       <workItem from="1763880828848" duration="3091000" />
-      <workItem from="1763892762957" duration="2548000" />
+      <workItem from="1763892762957" duration="3771000" />
+      <workItem from="1763896738551" duration="115000" />
     </task>
     <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
       <option name="closed" value="true" />
@@ -621,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763894494091</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="👷 Update test harness">
+      <option name="closed" value="true" />
+      <created>1763895513147</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1763895513147</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +686,8 @@
     <MESSAGE value="✅ Remove dependency on guard" />
     <MESSAGE value="✅ Add full-stack integration tests with capybara" />
     <MESSAGE value=" Update appraisals" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Update appraisals" />
+    <MESSAGE value=" Update test harness" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update test harness" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="github-copilot-workspace">

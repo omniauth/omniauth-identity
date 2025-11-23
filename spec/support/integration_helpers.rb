@@ -5,13 +5,8 @@ require "pathname"
 require "time"
 require "logger"
 
-# Sequel is only needed for Sinatra integration, so require conditionally
-begin
-  require "sequel"
-  require "sequel/extensions/migration"
-rescue LoadError
-  # Sequel not available, that's okay for non-Sinatra tests
-end
+require "sequel"
+require "sequel/extensions/migration"
 
 module OmniAuthIdentity
   module IntegrationLogger

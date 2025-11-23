@@ -2,8 +2,6 @@
 
 source "https://gem.coop"
 
-gem "rom-sql", "~> 3.7"
-
 gemspec path: "../"
 
 eval_gemfile("modular/activerecord/r3/v7.1.gemfile")

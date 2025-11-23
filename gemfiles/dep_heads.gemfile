@@ -16,4 +16,6 @@ eval_gemfile("modular/rails/vHEAD.gemfile")
 
 eval_gemfile("modular/roda/vHEAD.gemfile")
 
+eval_gemfile("modular/sequel/vHEAD.gemfile")
+
 eval_gemfile("modular/sinatra/vHEAD.gemfile")

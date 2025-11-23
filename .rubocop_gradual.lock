@@ -79,10 +79,10 @@
     [394, 33, 2, "RSpec/BeEq: Prefer `be` over `eq`.", 5860785],
     [417, 33, 2, "RSpec/BeEq: Prefer `be` over `eq`.", 5860785]
   ],
-  "spec/support/integration_helpers.rb:2190510053": [
-    [50, 7, 6, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2771267058],
-    [122, 7, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3188878486],
-    [126, 7, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 847829822]
+  "spec/support/integration_helpers.rb:1249500677": [
+    [45, 7, 6, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2771267058],
+    [117, 7, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3188878486],
+    [121, 7, 15, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 847829822]
   ],
   "spec/support/shared_contexts/instance_with_instance_methods.rb:664047042": [
     [65, 7, 58, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [66].", 2575742549],

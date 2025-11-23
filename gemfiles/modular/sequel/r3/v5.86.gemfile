@@ -1,0 +1,1 @@
+gem "sequel", "~> 5.86", ">= 5.86.0", require: false

@@ -1,0 +1,1 @@
+gem "rom-sql", github: "rom-rb/rom-sql", branch: "main", require: false
