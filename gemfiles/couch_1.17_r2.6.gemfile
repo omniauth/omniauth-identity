@@ -2,7 +2,6 @@
 
 source "https://gem.coop"
 
-gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "couch_potato", "~> 1.17"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
 

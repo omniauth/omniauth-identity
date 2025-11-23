@@ -2,7 +2,6 @@
 
 source "https://gem.coop"
 
-gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "sequel", "~> 5.86", ">= 5.86.0"
 
 gemspec path: "../"

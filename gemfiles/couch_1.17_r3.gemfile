@@ -2,16 +2,15 @@
 
 source "https://gem.coop"
 
-gem "bundler", "~> 2.7", ">= 2.7.2"
 gem "couch_potato", "~> 1.17"
 gem "ostruct", "~> 0.6", ">= 0.6.1"
 
 gemspec path: "../"
 
-eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
-
 eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
 
-eval_gemfile("modular/rack/r3/v3.2.gemfile")
+eval_gemfile("modular/rails/r3/v7.1.gemfile")
+
+eval_gemfile("modular/integration.gemfile")
 
 eval_gemfile("modular/x_std_libs/r3/libs.gemfile")

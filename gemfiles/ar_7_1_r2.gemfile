@@ -2,8 +2,6 @@
 
 source "https://gem.coop"
 
-gem "bundler", "~> 2.7", ">= 2.7.2"
-
 gemspec path: "../"
 
 eval_gemfile("modular/activerecord/r2/v7.1.gemfile")

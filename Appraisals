@@ -300,9 +300,10 @@ appraise "couch-1.17-r3" do
   gem "couch_potato", "~> 1.17"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 
-  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  # eval_gemfile "modular/activerecord/r3/v7.1.gemfile" # favor the dependency on rails instead
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/rack/r3/v3.2.gemfile"
+  eval_gemfile "modular/rails/r3/v7.1.gemfile"
+  eval_gemfile "modular/integration.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
 end
 
@@ -417,9 +418,10 @@ appraise "mongoid-8.1-r3" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
-  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  # eval_gemfile "modular/activerecord/r3/v7.1.gemfile" # favor the dependency on rails instead
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/rack/r3/v3.2.gemfile"
+  eval_gemfile "modular/rails/r3/v7.1.gemfile"
+  eval_gemfile "modular/integration.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
 end
 
@@ -494,10 +496,11 @@ appraise "mongoid-9.0-r3" do
   gem "mongoid-rspec", "~> 4.2"
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
 
-  eval_gemfile "modular/activerecord/r3/v7.1.gemfile"
+  eval_gemfile "modular/rails/r3/v7.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
   eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  eval_gemfile "modular/integration.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 end
 
@@ -624,10 +627,9 @@ appraise "sequel-5.86-r3" do
   gem "sequel", "~> 5.86", ">= 5.86.0"
   # eval_gemfile "modular/activerecord/r3/v7.1.gemfile" # favor the dependency on rails instead
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/rails/r3/v7.1.gemfile"
-  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
   eval_gemfile "modular/integration.gemfile"
+  eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
 end
 
 # Only run security audit on the latest version of Ruby
@@ -646,7 +648,6 @@ appraise "coverage" do
   # eval_gemfile "modular/activerecord/r3/v8.0.gemfile" # favor the dependency on rails instead
   eval_gemfile "modular/bson/r3/v5.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
-  eval_gemfile "modular/rack/r3/v3.2.gemfile"
   eval_gemfile "modular/rails/r3/v8.0.gemfile" # TODO: Once mongoid support AR v8.1, update here
   eval_gemfile "modular/coverage.gemfile"
   gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
