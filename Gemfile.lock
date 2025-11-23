@@ -630,7 +630,7 @@ DEPENDENCIES
   rubocop-ruby2_4
   rubocop-sequel
   ruby-progressbar (~> 1.13)
-  sequel (~> 5.86)
+  sequel (~> 5.86, >= 5.86.0)
   sinatra (~> 4.2)
   sinatra-contrib (~> 4.2)
   sqlite3 (>= 1)
@@ -646,4 +646,4 @@ DEPENDENCIES
   yard-yaml (~> 0.1)
 
 BUNDLED WITH
-  2.7.2
+   2.7.2
