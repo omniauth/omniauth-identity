@@ -85,31 +85,23 @@ the <a href="https://gitlab.com/omniauth/omniauth-identity/-/blob/main/CODE_OF_C
 
 <h2 id="executables-vs-rake-tasks">Executables vs Rake tasks</h2>
 
-<p>Executables shipped by omniauth-identity can be used with or without generating the binstubs.<br>
-They will work when omniauth-identity is installed globally (i.e., <code>gem install omniauth-identity</code>) and do not require that omniauth-identity be in your bundle.</p>
+<p>Executables shipped by dependencies, such as kettle-dev, and stone_checksums, are available<br>
+after running <code>bin/setup</code>. These include:</p>
 
 <ul>
+  <li>gem_checksums</li>
   <li>kettle-changelog</li>
   <li>kettle-commit-msg</li>
-  <li>omniauth-identity-setup</li>
+  <li>kettle-dev-setup</li>
   <li>kettle-dvcs</li>
   <li>kettle-pre-release</li>
   <li>kettle-readme-backers</li>
   <li>kettle-release</li>
 </ul>
 
-<p>However, the rake tasks provided by omniauth-identity do require omniauth-identity to be added as a development dependency and loaded in your Rakefile.<br>
-See the full list of rake tasks in head of Rakefile</p>
+<p>There are many Rake tasks available as well. You can see them by running:</p>
 
-<p><strong>Gemfile</strong></p>
-<pre class="code language-ruby"><code class="language-ruby">group :development do
-  gem &quot;omniauth-identity&quot;, require: false
-end
-</code></pre>
-
-<p><strong>Rakefile</strong></p>
-<pre class="code language-ruby"><code class="language-ruby"># Rakefile
-require &quot;omniauth/identity&quot;
+<pre class="code language-shell"><code class="language-shell">bin/rake -T
 </code></pre>
 
 <h2 id="environment-variables-for-local-development">Environment Variables for Local Development</h2>
@@ -145,7 +137,13 @@ Tip: When running a single spec file locally, you may want <code>K_SOUP_COV_MIN_
 <ul>
   <li>SKIP_GEM_SIGNING: If set, skip gem signing during build/release</li>
   <li>GEM_CERT_USER: Username for selecting your public cert in <code>certs/&lt;USER&gt;.pem</code> (defaults to $USER)</li>
-  <li>SOURCE_DATE_EPOCH: Reproducible build timestamp. <code>kettle-release</code> will set this automatically for the session.</li>
+  <li>SOURCE_DATE_EPOCH: Reproducible build timestamp.
+    <ul>
+      <li>
+<code>kettle-release</code> will set this automatically for the session.</li>
+      <li>Not needed on bundler &gt;= 2.7.0, as reproducible builds have become the default.</li>
+    </ul>
+  </li>
 </ul>
 
 <p>Git hooks and commit message helpers (exe/kettle-commit-msg)</p>
@@ -164,6 +162,11 @@ Tip: When running a single spec file locally, you may want <code>K_SOUP_COV_MIN_
 They are created and updated with the commands:</p>
 
 <pre class="code language-console"><code class="language-console">bin/rake appraisal:update
+</code></pre>
+
+<p>If you need to reset all gemfiles/*.gemfile.lock files:</p>
+
+<pre class="code language-console"><code class="language-console">bin/rake appraisal:reset
 </code></pre>
 
 <p>When adding an appraisal to CI, check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
@@ -243,10 +246,8 @@ bundle exec rspec spec_ignored/nobrainer_spec.rb
 <h3 id="spec-organization-required">Spec organization (required)</h3>
 
 <ul>
-  <li>One spec file per class/module. For each class or module under <code>lib/</code>, keep all of its unit tests in a single spec file under <code>spec/</code> that mirrors the path and file name exactly: <code>lib/omniauth/identity/*.rb</code> -&gt; <code>spec/omniauth/identity/*_spec.rb</code>.</li>
-  <li>Never add a second spec file for the same class/module. Examples of disallowed names: <code>*_more_spec.rb</code>, <code>*_extra_spec.rb</code>, <code>*_status_spec.rb</code>, or any other suffix that still targets the same class. If you find yourself wanting a second file, merge those examples into the canonical spec file for that class/module.</li>
+  <li>One spec file per class/module. For each class or module under <code>lib/</code>, keep all of its unit tests in a single spec file under <code>spec/</code> that mirrors the path and file name exactly: <code>lib/omniauth/identity/my_class.rb</code> -&gt; <code>spec/omniauth/identity/my_class_spec.rb</code>.</li>
   <li>Exception: Integration specs that intentionally span multiple classes. Place these under <code>spec/integration/</code> (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.</li>
-  <li>Migration note: If a duplicate spec file exists, move all examples into the canonical file and delete the duplicate. Do not leave stubs or empty files behind.</li>
 </ul>
 
 <h2 id="lint-it">Lint It</h2>
@@ -269,7 +270,7 @@ bundle exec rspec spec_ignored/nobrainer_spec.rb
 
 <ul>
   <li>Prefer configuration-based exclusions when a rule should not apply to certain paths or files (e.g., via <code>.rubocop.yml</code>).</li>
-  <li>When a violation is temporary and you plan to fix it later, record it in <code>.rubocop_gradual.lock</code> using the gradual workflow:
+  <li>When a violation is temporary, and you plan to fix it later, record it in <code>.rubocop_gradual.lock</code> using the gradual workflow:
     <ul>
       <li>
 <code>bundle exec rake rubocop_gradual:autocorrect</code> (preferred)</li>
@@ -311,6 +312,7 @@ See: <a href="https://guides.rubygems.org/security/#building-gems">RubyGems Secu
   <li>Update version.rb to contain the correct version-to-be-released.</li>
   <li>Run <code>bundle exec kettle-changelog</code>.</li>
   <li>Run <code>bundle exec kettle-release</code>.</li>
+  <li>Stay awake and monitor the release process for any errors, and answer any prompts.</li>
 </ol>
 
 <h4 id="manual-process">Manual process</h4>
@@ -363,7 +365,7 @@ push git commits and tags, and push the <code>.gem</code> file to the gem host c
 </div></div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:09 2025 by
+  Generated on Sun Nov 23 15:40:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

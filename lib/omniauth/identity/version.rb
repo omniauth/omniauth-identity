@@ -9,5 +9,6 @@ module OmniAuth
       # @return [String]
       VERSION = "3.1.5"
     end
+    VERSION = Version::VERSION # Traditional version constant location
   end
 end

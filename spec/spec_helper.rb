@@ -21,6 +21,11 @@ require "kettle/test/rspec"
 require "omniauth"
 require "omniauth/version"
 
+begin
+  require "rack/session"
+rescue LoadError
+end
+
 # RSpec Configs
 require "config/debug"
 require "config/omniauth"

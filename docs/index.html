@@ -65,16 +65,34 @@
   </thead>
   <tbody>
     <tr>
-      <td>RubyGems.org was <a href="https://joel.drapper.me/p/ruby-central-security-measures/">recently compromised</a> in a <a href="https://joel.drapper.me/p/ruby-central-takeover/">hostile takeover</a> about which <a href="https://joel.drapper.me/p/ruby-central-fact-check/">many lies</a> have been told.</td>
+      <td>RubyGems (the <a href="https://github.com/rubygems/">GitHub org</a>, not the website) <a href="https://joel.drapper.me/p/ruby-central-security-measures/">suffered</a> a <a href="https://pup-e.com/blog/goodbye-rubygems/">hostile takeover</a> in September 2025.</td>
     </tr>
     <tr>
-      <td>I’m in the process of adding warnings to some important gems because I <a href="https://joel.drapper.me/p/ruby-central/">don’t condone the theft</a> of the bundler and rubygems-update projects.</td>
+      <td>Ultimately <a href="https://www.reddit.com/r/ruby/s/gOk42POCaV">4 maintainers</a> were <a href="https://bsky.app/profile/martinemde.com/post/3m3occezxxs2q">hard removed</a> and a reason has been given for only 1 of those, while 2 others resigned in protest.</td>
     </tr>
     <tr>
-      <td>Once publishing to <a href="https://gem.coop">gem.coop</a> is available I will stop publishing to RubyGems.org.</td>
+      <td>It is a <a href="https://joel.drapper.me/p/ruby-central-takeover/">complicated story</a> which is difficult to <a href="https://joel.drapper.me/p/ruby-central-fact-check/">parse quickly</a>.</td>
     </tr>
     <tr>
-      <td>Please see <a href="https://gem.coop">here</a> and <a href="https://martinemde.com/2025/10/05/announcing-gem-coop.html">here</a> for more info on what comes next.</td>
+      <td>I’m adding notes like this to gems because I <a href="https://joel.drapper.me/p/ruby-central/">don’t condone theft</a> of repositories or gems from their rightful owners.</td>
+    </tr>
+    <tr>
+      <td>If a similar theft happened with my repos/gems, I’d hope some would stand up for me.</td>
+    </tr>
+    <tr>
+      <td>Disenfranchised former-maintainers have started <a href="https://gem.coop">gem.coop</a>.</td>
+    </tr>
+    <tr>
+      <td>Once available I will publish there exclusively; unless RubyCentral makes amends with the community.</td>
+    </tr>
+    <tr>
+      <td>The <a href="https://youtu.be/_H4qbtC5qzU?si=BvuBU90R2wAqD2E6">“Technology for Humans: Joel Draper”</a> podcast episode by <a href="https://reinteractive.com/ruby-on-rails">reinteractive</a> is the most cogent summary I’m aware of.</td>
+    </tr>
+    <tr>
+      <td>See <a href="https://github.com/gem-coop/gem.coop/issues/12">here</a>, <a href="https://gem.coop">here</a> and <a href="https://martinemde.com/2025/10/05/announcing-gem-coop.html">here</a> for more info on what comes next.</td>
+    </tr>
+    <tr>
+      <td>What I’m doing: A (WIP) proposal for <a href="https://github.com/galtzo-floss/bundle-namespace">bundler/gem scopes</a>, and a (WIP) proposal for a federated <a href="https://github.com/galtzo-floss/gem-server">gem server</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -207,12 +225,61 @@ basic construct for user management and then gets out of the way.</p>
 <details>
   <summary>Find this repo on federated forges (Coming soon!)</summary>
 
-| Federated [DVCS][💎d-in-dvcs] Repository        | Status                                                                | Issues                    | PRs                      | Wiki                      | CI                       | Discussions                  |
-|-------------------------------------------------|-----------------------------------------------------------------------|---------------------------|--------------------------|---------------------------|--------------------------|------------------------------|
-| 🧪 [omniauth/omniauth-identity on GitLab][📜src-gl]   | The Truth                                                             | [💚][🤝gl-issues]         | [💚][🤝gl-pulls]         | [💚][📜gl-wiki]           | 🐭 Tiny Matrix           | ➖                            |
-| 🧊 [omniauth/omniauth-identity on CodeBerg][📜src-cb] | An Ethical Mirror ([Donate][🤝cb-donate])                             | [💚][🤝cb-issues]         | [💚][🤝cb-pulls]         | ➖                         | ⭕️ No Matrix             | ➖                            |
-| 🐙 [omniauth/omniauth-identity on GitHub][📜src-gh]   | Another Mirror                                                        | [💚][🤝gh-issues]         | [💚][🤝gh-pulls]         | [💚][📜gh-wiki]           | 💯 Full Matrix           | [💚][gh-discussions]         |
-| 🎮️ [Discord Server][✉️discord-invite]          | [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite] | [Let's][✉️discord-invite] | [talk][✉️discord-invite] | [about][✉️discord-invite] | [this][✉️discord-invite] | [library!][✉️discord-invite] |
+  <table>
+    <thead>
+      <tr>
+        <th>Federated <a href="https://railsbling.com/posts/dvcs/put_the_d_in_dvcs/">DVCS</a> Repository</th>
+        <th>Status</th>
+        <th>Issues</th>
+        <th>PRs</th>
+        <th>Wiki</th>
+        <th>CI</th>
+        <th>Discussions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🧪 <a href="https://gitlab.com/omniauth/omniauth-identity/">omniauth/omniauth-identity on GitLab</a>
+</td>
+        <td>The Truth</td>
+        <td><a href="https://gitlab.com/omniauth/omniauth-identity/-/issues">💚</a></td>
+        <td><a href="https://gitlab.com/omniauth/omniauth-identity/-/merge_requests">💚</a></td>
+        <td><a href="https://gitlab.com/omniauth/omniauth-identity/-/wikis/home">💚</a></td>
+        <td>🐭 Tiny Matrix</td>
+        <td>➖</td>
+      </tr>
+      <tr>
+        <td>🧊 <a href="https://codeberg.org/omniauth/omniauth-identity">omniauth/omniauth-identity on CodeBerg</a>
+</td>
+        <td>An Ethical Mirror (<a href="https://donate.codeberg.org/">Donate</a>)</td>
+        <td><a href="https://codeberg.org/omniauth/omniauth-identity/issues">💚</a></td>
+        <td><a href="https://codeberg.org/omniauth/omniauth-identity/pulls">💚</a></td>
+        <td>➖</td>
+        <td>⭕️ No Matrix</td>
+        <td>➖</td>
+      </tr>
+      <tr>
+        <td>🐙 <a href="https://github.com/omniauth/omniauth-identity">omniauth/omniauth-identity on GitHub</a>
+</td>
+        <td>Another Mirror</td>
+        <td><a href="https://github.com/omniauth/omniauth-identity/issues">💚</a></td>
+        <td><a href="https://github.com/omniauth/omniauth-identity/pulls">💚</a></td>
+        <td><a href="https://github.com/omniauth/omniauth-identity/wiki">💚</a></td>
+        <td>💯 Full Matrix</td>
+        <td><a href="https://github.com/omniauth/omniauth-identity/discussions">💚</a></td>
+      </tr>
+      <tr>
+        <td>🎮️ <a href="https://discord.gg/3qme4XHNKN">Discord Server</a>
+</td>
+        <td><a href="https://discord.gg/3qme4XHNKN"><img src="https://img.shields.io/discord/1373797679469170758?style=for-the-badge&amp;logo=discord" alt="Live Chat on Discord"></a></td>
+        <td><a href="https://discord.gg/3qme4XHNKN">Let’s</a></td>
+        <td><a href="https://discord.gg/3qme4XHNKN">talk</a></td>
+        <td><a href="https://discord.gg/3qme4XHNKN">about</a></td>
+        <td><a href="https://discord.gg/3qme4XHNKN">this</a></td>
+        <td><a href="https://discord.gg/3qme4XHNKN">library!</a></td>
+      </tr>
+    </tbody>
+  </table>
 
 </details>
 
@@ -224,19 +291,24 @@ basic construct for user management and then gets out of the way.</p>
 <details>
   <summary>Need enterprise-level guarantees?</summary>
 
-The maintainers of this and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use.
+  <p>The maintainers of this and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use.</p>
 
-[![Get help from me on Tidelift][🏙️entsup-tidelift-img]][🏙️entsup-tidelift]
+  <p><a href="https://tidelift.com/subscription/pkg/rubygems-omniauth-identity?utm_source=rubygems-omniauth-identity&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https://img.shields.io/badge/Tidelift_and_Sonar-Enterprise_Support-FD3456?style=for-the-badge&amp;logo=sonar&amp;logoColor=white" alt="Get help from me on Tidelift"></a></p>
 
-- 💡Subscribe for support guarantees covering _all_ your FLOSS dependencies
-- 💡Tidelift is part of [Sonar][🏙️entsup-tidelift-sonar]
-- 💡Tidelift pays maintainers to maintain the software you depend on!<br>📊`@`Pointy Haired Boss: An [enterprise support][🏙️entsup-tidelift] subscription is "[never gonna let you down][🧮kloc]", and *supports* open source maintainers
+  <ul>
+    <li>💡Subscribe for support guarantees covering <em>all</em> your FLOSS dependencies</li>
+    <li>💡Tidelift is part of <a href="https://blog.tidelift.com/tidelift-joins-sonar">Sonar</a>
+</li>
+    <li>💡Tidelift pays maintainers to maintain the software you depend on!<br>📊<code>@</code>Pointy Haired Boss: An <a href="https://tidelift.com/subscription/pkg/rubygems-omniauth-identity?utm_source=rubygems-omniauth-identity&amp;utm_medium=referral&amp;utm_campaign=readme">enterprise support</a> subscription is “<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">never gonna let you down</a>”, and <em>supports</em> open source maintainers</li>
+  </ul>
 
-Alternatively:
+  <p>Alternatively:</p>
 
-- [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
-- [![Get help from me on Upwork][👨🏼‍🏫expsup-upwork-img]][👨🏼‍🏫expsup-upwork]
-- [![Get help from me on Codementor][👨🏼‍🏫expsup-codementor-img]][👨🏼‍🏫expsup-codementor]
+  <ul>
+    <li><a href="https://discord.gg/3qme4XHNKN"><img src="https://img.shields.io/discord/1373797679469170758?style=for-the-badge&amp;logo=discord" alt="Live Chat on Discord"></a></li>
+    <li><a href="https://www.upwork.com/freelancers/~014942e9b056abdf86?mp_source=share"><img src="https://img.shields.io/badge/UpWork-13544E?style=for-the-badge&amp;logo=Upwork&amp;logoColor=white" alt="Get help from me on Upwork"></a></li>
+    <li><a href="https://www.codementor.io/peterboling?utm_source=github&amp;utm_medium=button&amp;utm_term=peterboling&amp;utm_campaign=github"><img src="https://img.shields.io/badge/CodeMentor-Get_Help-1abc9c?style=for-the-badge&amp;logo=CodeMentor&amp;logoColor=white" alt="Get help from me on Codementor"></a></li>
+  </ul>
 
 </details>
 
@@ -257,33 +329,30 @@ Alternatively:
 <details>
   <summary>For Medium or High Security Installations</summary>
 
-This gem is cryptographically signed, and has verifiable [SHA-256 and SHA-512][💎SHA_checksums] checksums by
-[stone_checksums][💎stone_checksums]. Be sure the gem you install hasn’t been tampered with
-by following the instructions below.
+  <p>This gem is cryptographically signed, and has verifiable <a href="https://gitlab.com/omniauth/omniauth-identity/-/tree/main/checksums">SHA-256 and SHA-512</a> checksums by
+<a href="https://github.com/galtzo-floss/stone_checksums">stone_checksums</a>. Be sure the gem you install hasn’t been tampered with
+by following the instructions below.</p>
 
-Add my public key (if you haven’t already, expires 2045-04-29) as a trusted certificate:
+  <p>Add my public key (if you haven’t already, expires 2045-04-29) as a trusted certificate:</p>
 
-```console
-gem cert --add &lt;(curl -Ls https://raw.github.com/galtzo-floss/certs/main/pboling.pem)
-```
+  <pre class="code language-console"><code class="language-console">gem cert --add &lt;(curl -Ls https://raw.github.com/galtzo-floss/certs/main/pboling.pem)
+</code></pre>
 
-You only need to do that once.  Then proceed to install with:
+  <p>You only need to do that once.  Then proceed to install with:</p>
 
-```console
-gem install omniauth-identity -P HighSecurity
-```
+  <pre class="code language-console"><code class="language-console">gem install omniauth-identity -P HighSecurity
+</code></pre>
 
-The `HighSecurity` trust profile will verify signed gems, and not allow the installation of unsigned dependencies.
+  <p>The <code>HighSecurity</code> trust profile will verify signed gems, and not allow the installation of unsigned dependencies.</p>
 
-If you want to up your security game full-time:
+  <p>If you want to up your security game full-time:</p>
 
-```console
-bundle config set --global trust-policy MediumSecurity
-```
+  <pre class="code language-console"><code class="language-console">bundle config set --global trust-policy MediumSecurity
+</code></pre>
 
-`MediumSecurity` instead of `HighSecurity` is necessary if not all the gems you use are signed.
+  <p><code>MediumSecurity</code> instead of <code>HighSecurity</code> is necessary if not all the gems you use are signed.</p>
 
-NOTE: Be prepared to track down certs for signed gems and add them the same way you added mine.
+  <p>NOTE: Be prepared to track down certs for signed gems and add them the same way you added mine.</p>
 
 </details>
 
@@ -552,7 +621,7 @@ end
 <p><code>locate_conditions</code> takes a <code>Proc</code> object, and must return a <code>Hash</code> object, which will be used<br>
 as the argument to the locate method for your ORM.  The proc is evaluated in the<br>
 callback context, and has access to your <code>Identity</code> model (using <code>model</code>) and receives the request<br>
-object as a parameter.  Note  that <code>model.auth_key</code> defaults to <code>email</code>, but is also configurable.</p>
+object as a parameter.  Note that <code>model.auth_key</code> defaults to <code>email</code>, but is also configurable.</p>
 
 <p>Note: Be careful when customizing <code>locate_conditions</code>.  The best way to modify the conditions is<br>
 to copy the default value, and then add to the hash.  Removing the default condition will almost<br>
@@ -562,18 +631,18 @@ always break things!</p>
 
 <p>From the code - here are the options we have for you, a couple of which are documented above, and the rest are documented… in the specs we hope!?</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:fields</span><span class='comma'>,</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='tstring_end'>]</span></span>
+<pre class="code ruby"><code class="ruby">option :fields, %i[name email]
 
-      <span class='comment'># Primary Feature Switches:
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_registration</span><span class='comma'>,</span> <span class='kw'>true</span>   <span class='comment'># See #other_phase and #request_phase
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:enable_login</span><span class='comma'>,</span> <span class='kw'>true</span>          <span class='comment'># See #other_phase
-</span>
-      <span class='comment'># Customization Options:
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_login</span><span class='comma'>,</span> <span class='kw'>nil</span>               <span class='comment'># See #request_phase
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_validation</span><span class='comma'>,</span> <span class='kw'>nil</span>          <span class='comment'># See #registration_phase
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_registration</span><span class='comma'>,</span> <span class='kw'>nil</span>        <span class='comment'># See #registration_phase
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:on_failed_registration</span><span class='comma'>,</span> <span class='kw'>nil</span> <span class='comment'># See #registration_phase
-</span><span class='id identifier rubyid_option'>option</span> <span class='symbol'>:locate_conditions</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='rparen'>)</span> <span class='tlambeg'>{</span> <span class='lbrace'>{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>auth_key</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
+      # Primary Feature Switches:
+option :enable_registration, true   # See #other_phase and #request_phase
+option :enable_login, true          # See #other_phase
+
+      # Customization Options:
+option :on_login, nil               # See #request_phase
+option :on_validation, nil          # See #registration_phase
+option :on_registration, nil        # See #registration_phase
+option :on_failed_registration, nil # See #registration_phase
+option :locate_conditions, -&gt;(req) { {model.auth_key =&gt; req.params[&quot;auth_key&quot;]} }
 </code></pre>
 
 <p>Please contribute some documentation if you have the gumption!  The maintainer’s time is limited, and sometimes the authors of PRs with new options don’t update the <em>this</em> readme. 😭</p>
@@ -611,12 +680,7 @@ and <a href="https://tidelift.com/subscription/pkg/rubygems-omniauth-identity?ut
 
 <h3 id="another-way-to-support-open-source">Another way to support open-source</h3>
 
-<blockquote>
-  <p>How wonderful it is that nobody need wait a single moment before starting to improve the world.<br><br>
-—Anne Frank</p>
-</blockquote>
-
-<p>I’m driven by a passion to foster a thriving open-source community – a space where people can tackle complex problems, no matter how small.  Revitalizing libraries that have fallen into disrepair, and building new libraries focused on solving real-world challenges, are my passions — totaling 79 hours of FLOSS coding over just the past seven days, a pretty regular week for me.  I was recently affected by layoffs, and the tech jobs market is unwelcoming. I’m reaching out here because your support would significantly aid my efforts to provide for my family, and my farm (11 🐔 chickens, 2 🐶 dogs, 3 🐰 rabbits, 8 🐈‍ cats).</p>
+<p>I’m driven by a passion to foster a thriving open-source community – a space where people can tackle complex problems, no matter how small.  Revitalizing libraries that have fallen into disrepair, and building new libraries focused on solving real-world challenges, are my passions.  I was recently affected by layoffs, and the tech jobs market is unwelcoming. I’m reaching out here because your support would significantly aid my efforts to provide for my family, and my farm (11 🐔 chickens, 2 🐶 dogs, 3 🐰 rabbits, 8 🐈‍ cats).</p>
 
 <p>If you work at a company that uses my work, please encourage them to support me as a corporate sponsor. My work on gems you use might show up in <code>bundle fund</code>.</p>
 
@@ -624,7 +688,7 @@ and <a href="https://tidelift.com/subscription/pkg/rubygems-omniauth-identity?ut
 
 <p><strong><a href="https://floss-funding.dev">Floss-Funding.dev</a>: 👉️ No network calls. 👉️ No tracking. 👉️ No oversight. 👉️ Minimal crypto hashing. 💡 Easily disabled nags</strong></p>
 
-<p><a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a> <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat" alt="Liberapay Goal Progress"></a> <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal" alt="Donate on PayPal"></a> <a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat" alt="Buy me a coffee"></a> <a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-a51611.svg?style=flat" alt="Donate on Polar"></a> <a href="https://ko-fi.com/O5O86SNP4"><img src="https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat" alt="Donate to my FLOSS or refugee efforts at ko-fi.com"></a> <a href="https://patreon.com/galtzo"><img src="https://img.shields.io/badge/patreon-donate-a51611.svg?style=flat" alt="Donate to my FLOSS or refugee efforts using Patreon"></a></p>
+<p><a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a> <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat" alt="Liberapay Goal Progress"></a> <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal" alt="Donate on PayPal"></a> <a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat" alt="Buy me a coffee"></a> <a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-a51611.svg?style=flat" alt="Donate on Polar"></a> <a href="https://ko-fi.com/O5O86SNP4"><img src="https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat" alt="Donate to my FLOSS efforts at ko-fi.com"></a> <a href="https://patreon.com/galtzo"><img src="https://img.shields.io/badge/patreon-donate-a51611.svg?style=flat" alt="Donate to my FLOSS efforts using Patreon"></a></p>
 
 <h2 id="-security">🔐 Security</h2>
 
@@ -702,16 +766,17 @@ the <a href="http://guides.rubygems.org/patterns/#pessimistic-version-constraint
 </code></pre>
 
 <details>
-<summary>📌 Is "Platform Support" part of the public API? More details inside.</summary>
+  <summary>📌 Is "Platform Support" part of the public API? More details inside.</summary>
 
-SemVer should, IMO, but doesn't explicitly, say that dropping support for specific Platforms
-is a *breaking change* to an API.
-It is obvious to many, but not all, and since the spec is silent, the bike shedding is endless.
+  <p>SemVer should, IMO, but doesn’t explicitly, say that dropping support for specific Platforms
+is a <em>breaking change</em> to an API, and for that reason the bike shedding is endless.</p>
 
-To get a better understanding of how SemVer is intended to work over a project's lifetime,
-read this article from the creator of SemVer:
+  <p>To get a better understanding of how SemVer is intended to work over a project’s lifetime,
+read this article from the creator of SemVer:</p>
 
-- ["Major Version Numbers are Not Sacred"][📌major-versions-not-sacred]
+  <ul>
+    <li><a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">“Major Version Numbers are Not Sacred”</a></li>
+  </ul>
 
 </details>
 
@@ -746,8 +811,8 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
 <h2 id="-a-request-for-help">🤑 A request for help</h2>
 
 <p>Maintainers have teeth and need to pay their dentists.<br>
-After getting laid off in an RIF in March and filled with many dozens of rejections,<br>
-I’m now spending ~60+ hours a week building open source tools.<br>
+After getting laid off in an RIF in March, and encountering difficulty finding a new one,<br>
+I began spending most of my time building open source tools.<br>
 I’m hoping to be able to pay for my kids’ health insurance this month,<br>
 so if you value the work I am doing, I need your support.<br>
 Please consider sponsoring me or the project.</p>
@@ -758,7 +823,7 @@ Please consider sponsoring me or the project.</p>
 
 <p>To say “thanks!” ☝️ Join the Discord or 👇️ send money.</p>
 
-<p><a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&amp;logo=github" alt="Sponsor me on GitHub Sponsors"></a> 💌 <a href="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat"><img src="https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&amp;logo=liberapay&amp;color=a51611" alt="Sponsor me on Liberapay"></a> 💌 <a href="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&amp;logo=paypal&amp;color=0A0A0A" alt="Donate on PayPal"></a></p>
+<p><a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&amp;logo=github" alt="Sponsor me on GitHub Sponsors"></a> 💌 <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&amp;logo=liberapay&amp;color=a51611" alt="Sponsor me on Liberapay"></a> 💌 <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&amp;logo=paypal&amp;color=0A0A0A" alt="Donate on PayPal"></a></p>
 
 <h3 id="please-give-the-project-a-star--">Please give the project a star ⭐ ♥.</h3>
 
@@ -767,7 +832,7 @@ Please consider sponsoring me or the project.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:09 2025 by
+  Generated on Sun Nov 23 15:40:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

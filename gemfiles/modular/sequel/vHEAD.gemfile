@@ -1,0 +1,1 @@
+gem "sequel", github: "jeremyevans/sequel", branch: "master", require: false

@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="👷 Update test harness">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Appraisals" beforeDir="false" afterPath="$PROJECT_DIR$/Appraisals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/dep_heads.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/modular/rom-sql/vHEAD.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/modular/rom-sql/vHEAD.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/mongoid_9.0_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/rom_r3.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.4.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.5.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.6.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r2.7.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/sequel_5.86_r3.1.gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/gemfiles/unlocked_deps.gemfile" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;pboling&quot;,
+      &quot;fullname&quot;: &quot;Peter Boling&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@gitlab.com:omniauth/omniauth-identity.git&quot;,
+    &quot;second&quot;: &quot;e48d1869-12e2-4c93-9360-3329de046d71&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="35InLxxjYHQi47gKHAgLwAisRUG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RailsGeneratorsRunner#FAILED_RELOADS_PROPERTY&quot;: &quot;3&quot;,
+    &quot;RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
+    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
+    &quot;com.github.patou.gitmoji.use-unicode&quot;: &quot;true&quot;,
+    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1763929149548&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/integration-test&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/pboling/src/omniauth/omniauth-identity/gemfiles/modular&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Bookmarks" side_tool="true" />
+      <window_info id="Merge Requests" />
+      <window_info id="Backup and Sync History" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13020834" />
+      <window_info id="Commit" order="1" weight="0.20818451" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="File Transfer" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.33011582" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info active="true" anchor="bottom" x="0" y="1801" width="2880" height="1800" id="Terminal" maximized="true" order="3" visible="true" weight="0.51213455" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.33011582" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.18229455" />
+      <window_info anchor="right" id="String Manipulation" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <window_info anchor="right" id="Endpoints" order="5" />
+    </layout>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gemfiles/modular" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/sequel" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/rails/r3" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord/r3" />
+      <recent name="$PROJECT_DIR$/gemfiles/modular/activerecord-jdbc-adapter/r3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec" />
+      <recent name="$PROJECT_DIR$/spec/support" />
+    </key>
+  </component>
+  <component name="RubyModuleManagerSettings">
+    <option name="blackListedRootsPaths">
+      <list>
+        <option value="$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Rails.omniauth-identity">
+    <configuration name="omniauth-identity" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="omniauth-identity" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: omniauth-identity" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="omniauth-identity" />
+      <predefined_log_file enabled="true" id="RUBY_RAKE" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: omniauth-identity" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="omniauth-identity" />
+      <predefined_log_file enabled="true" id="RUBY_RAKE" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-RM-252.27397.109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34773cc5-1eaf-4d8f-b495-1fbfea73305c" name="Changes" comment="" />
+      <created>1762806402941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762806402941</updated>
+      <workItem from="1762806406360" duration="3332000" />
+      <workItem from="1762818640308" duration="540000" />
+      <workItem from="1762971358667" duration="2442000" />
+      <workItem from="1763016125420" duration="6563000" />
+      <workItem from="1763081466124" duration="15266000" />
+      <workItem from="1763288176245" duration="1012000" />
+      <workItem from="1763427594987" duration="596000" />
+      <workItem from="1763509637546" duration="4417000" />
+      <workItem from="1763545797141" duration="14000" />
+      <workItem from="1763602000327" duration="21000" />
+      <workItem from="1763602040083" duration="11000" />
+      <workItem from="1763676342574" duration="4222000" />
+      <workItem from="1763687052719" duration="60000" />
+      <workItem from="1763687115803" duration="6630000" />
+      <workItem from="1763708540241" duration="27946000" />
+      <workItem from="1763789592047" duration="21490000" />
+      <workItem from="1763812849910" duration="744000" />
+      <workItem from="1763870186034" duration="8340000" />
+      <workItem from="1763880828848" duration="3091000" />
+      <workItem from="1763892762957" duration="3771000" />
+      <workItem from="1763896738551" duration="115000" />
+      <workItem from="1763929090926" duration="4751000" />
+    </task>
+    <task id="LOCAL-00001" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.54">
+      <option name="closed" value="true" />
+      <created>1762851062839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762851062839</updated>
+    </task>
+    <task id="LOCAL-00002" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762940892210</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762940892210</updated>
+    </task>
+    <task id="LOCAL-00003" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762940897316</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762940897316</updated>
+    </task>
+    <task id="LOCAL-00004" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942011208</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942011208</updated>
+    </task>
+    <task id="LOCAL-00005" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942016242</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942016242</updated>
+    </task>
+    <task id="LOCAL-00006" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.55">
+      <option name="closed" value="true" />
+      <created>1762942112498</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942112498</updated>
+    </task>
+    <task id="LOCAL-00007" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942347236</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942347236</updated>
+    </task>
+    <task id="LOCAL-00008" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942734826</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942734826</updated>
+    </task>
+    <task id="LOCAL-00009" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942923241</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942923241</updated>
+    </task>
+    <task id="LOCAL-00010" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942936066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942936066</updated>
+    </task>
+    <task id="LOCAL-00011" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942948114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942948114</updated>
+    </task>
+    <task id="LOCAL-00012" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942960206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942960206</updated>
+    </task>
+    <task id="LOCAL-00013" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762942965940</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762942965940</updated>
+    </task>
+    <task id="LOCAL-00014" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762943013256</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762943013256</updated>
+    </task>
+    <task id="LOCAL-00015" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945110436</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945110436</updated>
+    </task>
+    <task id="LOCAL-00016" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945129607</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945129607</updated>
+    </task>
+    <task id="LOCAL-00017" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945225501</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945225501</updated>
+    </task>
+    <task id="LOCAL-00018" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945239804</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945239804</updated>
+    </task>
+    <task id="LOCAL-00019" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945245350</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945245351</updated>
+    </task>
+    <task id="LOCAL-00020" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945255208</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945255209</updated>
+    </task>
+    <task id="LOCAL-00021" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945525647</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945525647</updated>
+    </task>
+    <task id="LOCAL-00022" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945548138</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945548138</updated>
+    </task>
+    <task id="LOCAL-00023" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945603196</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945603196</updated>
+    </task>
+    <task id="LOCAL-00024" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1762945732920</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1762945732920</updated>
+    </task>
+    <task id="LOCAL-00025" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1763079704103</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079704103</updated>
+    </task>
+    <task id="LOCAL-00026" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.56">
+      <option name="closed" value="true" />
+      <created>1763079719310</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079719310</updated>
+    </task>
+    <task id="LOCAL-00027" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763079804973</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079804973</updated>
+    </task>
+    <task id="LOCAL-00028" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763079892639</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079892639</updated>
+    </task>
+    <task id="LOCAL-00029" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763079970112</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079970112</updated>
+    </task>
+    <task id="LOCAL-00030" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763079995088</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1763079995088</updated>
+    </task>
+    <task id="LOCAL-00031" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763080035335</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1763080035335</updated>
+    </task>
+    <task id="LOCAL-00032" summary="🎨 Template bootstrap by kettle-dev-setup v1.1.59">
+      <option name="closed" value="true" />
+      <created>1763080087716</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1763080087716</updated>
+    </task>
+    <task id="LOCAL-00033" summary="📝 CHANGELOG.md for release">
+      <option name="closed" value="true" />
+      <created>1763080373995</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1763080373995</updated>
+    </task>
+    <task id="LOCAL-00034" summary="🏗️ Traditional VERSION constant">
+      <option name="closed" value="true" />
+      <created>1763080506759</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1763080506759</updated>
+    </task>
+    <task id="LOCAL-00035" summary="🔧 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763710193725</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1763710193725</updated>
+    </task>
+    <task id="LOCAL-00036" summary="🔧 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763710201231</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1763710201231</updated>
+    </task>
+    <task id="LOCAL-00037" summary="✅ Some sinatra integration tests working">
+      <option name="closed" value="true" />
+      <created>1763801191845</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1763801191845</updated>
+    </task>
+    <task id="LOCAL-00038" summary="✅ Sinatra integration tests">
+      <option name="closed" value="true" />
+      <created>1763807213325</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1763807213325</updated>
+    </task>
+    <task id="LOCAL-00039" summary="🔧 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763807250496</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1763807250496</updated>
+    </task>
+    <task id="LOCAL-00040" summary="✅ Sinatra integration tests">
+      <option name="closed" value="true" />
+      <created>1763807258339</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1763807258339</updated>
+    </task>
+    <task id="LOCAL-00041" summary="✅ Roda integration tests">
+      <option name="closed" value="true" />
+      <created>1763810235308</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1763810235308</updated>
+    </task>
+    <task id="LOCAL-00042" summary="✅ Hanami integration tests">
+      <option name="closed" value="true" />
+      <created>1763810602507</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1763810602507</updated>
+    </task>
+    <task id="LOCAL-00043" summary="✅ Rails integration tests">
+      <option name="closed" value="true" />
+      <created>1763811236335</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1763811236335</updated>
+    </task>
+    <task id="LOCAL-00044" summary="🚨 Linting">
+      <option name="closed" value="true" />
+      <created>1763811360160</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1763811360160</updated>
+    </task>
+    <task id="LOCAL-00045" summary="➖ Remove dependency on guard">
+      <option name="closed" value="true" />
+      <created>1763811374998</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1763811374998</updated>
+    </task>
+    <task id="LOCAL-00046" summary="👷 Update appraisals">
+      <option name="closed" value="true" />
+      <created>1763894494091</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1763894494091</updated>
+    </task>
+    <task id="LOCAL-00047" summary="👷 Update test harness">
+      <option name="closed" value="true" />
+      <created>1763895513147</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1763895513147</updated>
+    </task>
+    <task id="LOCAL-00048" summary="👷 Update test harness">
+      <option name="closed" value="true" />
+      <created>1763897107920</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1763897107920</updated>
+    </task>
+    <task id="LOCAL-00049" summary="👷 Update test harness">
+      <option name="closed" value="true" />
+      <created>1763897235662</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1763897235662</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.54" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.55" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.56" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.56" />
+    <MESSAGE value=" Template bootstrap by kettle-dev-setup v1.1.59" />
+    <MESSAGE value=" CHANGELOG.md for release" />
+    <MESSAGE value="️ Traditional VERSION constant" />
+    <MESSAGE value=" Appraisals" />
+    <MESSAGE value="️ Traditional VERSION constant" />
+    <MESSAGE value="Appraisal" />
+    <MESSAGE value=" Update appraisals" />
+    <MESSAGE value="✅ Some sinatra integration tests working" />
+    <MESSAGE value=" Update appraisals" />
+    <MESSAGE value="✅ Sinatra integration tests" />
+    <MESSAGE value="✅ Roda integration tests" />
+    <MESSAGE value="✅ Hanami integration tests" />
+    <MESSAGE value="✅ Rails integration tests" />
+    <MESSAGE value=" Linting" />
+    <MESSAGE value="➖ Remove dependency on guard" />
+    <MESSAGE value="✅ Remove dependency on guard" />
+    <MESSAGE value="✅ Add full-stack integration tests with capybara" />
+    <MESSAGE value=" Update appraisals" />
+    <MESSAGE value=" Update test harness" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update test harness" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

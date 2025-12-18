@@ -30,7 +30,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
     opts = identity_options.reverse_merge({model: anon_ar})
     script_name = app_options[:script_name]
     self.app = Rack::Builder.app do
-      use Rack::Session::Cookie, secret: "1234567890qwertyuiop"
+      use Rack::Session::Cookie, secret: "3bkbV2Ri9HtbcB2kNCOFeXacJI9Xury6b6NjaYrVhOHrbQYp2IPbfdXb7LqR2T8Z"
       if script_name
         map script_name do
           use OmniAuth::Strategies::Identity, opts

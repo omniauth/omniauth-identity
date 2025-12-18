@@ -39,6 +39,13 @@ jobs:
         include:
           # Ruby 3.4
           - ruby: "ruby"
+            appraisal: "ar-7-1"
+            exec_cmd: "rake spec:orm:active_record"
+            gemfile: "Appraisal.root"
+            rubygems: latest
+            bundler: latest
+
+          - ruby: "ruby"
             appraisal: "ar-7-2"
             exec_cmd: "rake spec:orm:active_record"
             gemfile: "Appraisal.root"

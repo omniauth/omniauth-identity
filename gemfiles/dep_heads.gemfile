@@ -4,6 +4,20 @@ source "https://gem.coop"
 
 gemspec path: "../"
 
-eval_gemfile("modular/activerecord/vHEAD.gemfile")
-
 eval_gemfile("modular/runtime_heads.gemfile")
+
+eval_gemfile("modular/combustion/vHEAD.gemfile")
+
+eval_gemfile("modular/hanami/vHEAD.gemfile")
+
+eval_gemfile("modular/rack/vHEAD.gemfile")
+
+eval_gemfile("modular/rails/vHEAD.gemfile")
+
+eval_gemfile("modular/roda/vHEAD.gemfile")
+
+eval_gemfile("modular/rom-sql/vHEAD.gemfile")
+
+eval_gemfile("modular/sequel/vHEAD.gemfile")
+
+eval_gemfile("modular/sinatra/vHEAD.gemfile")

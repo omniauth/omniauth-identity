@@ -336,6 +336,29 @@ password_field :password_digest   end
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#id-instance_method" title="#id (instance method)">#<strong>id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Provide id method for Model module compatibility.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(identity_data, owner_data = nil)  &#x21d2; Object </a>
     
 
@@ -374,6 +397,29 @@ password_field :password_digest   end
 
   
     <span class="summary_desc"><div class='inline'><p>Convenience accessor for owner id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#persisted%3F-instance_method" title="#persisted? (instance method)">#<strong>persisted?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Check if this identity is persisted (has an id) Required by OmniAuth::Identity strategy.</p>
 </div></span>
   
 </li>
@@ -725,15 +771,55 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-135
-136
-137</pre>
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='ivar'>@identity_data</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="id-instance_method">
+  
+    #<strong>id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Provide id method for Model module compatibility</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@uid</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -774,7 +860,9 @@ password_field :password_digest   end
 129
 130
 131
-132</pre>
+132
+133
+134</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 113</span>
@@ -785,9 +873,11 @@ password_field :password_digest   end
   <span class='ivar'>@uid</span> <span class='op'>=</span> <span class='id identifier rubyid_identity_data'>identity_data</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
   <span class='ivar'>@email</span> <span class='op'>=</span> <span class='id identifier rubyid_identity_data'>identity_data</span><span class='lbracket'>[</span><span class='symbol'>:email</span><span class='rbracket'>]</span>
 
-  <span class='comment'># Prefer owner name if available, else fall back to email
+  <span class='comment'># Prefer owner name if available, else identity name, else fall back to email
 </span>  <span class='ivar'>@name</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_owner_data'>owner_data</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_owner_data'>owner_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_owner_data'>owner_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_identity_data'>identity_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_identity_data'>identity_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_identity_data'>identity_data</span><span class='lbracket'>[</span><span class='symbol'>:email</span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
@@ -829,15 +919,73 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-140
-141
-142</pre>
+147
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_owner_id'>owner_id</span>
   <span class='ivar'>@identity_data</span><span class='lbracket'>[</span><span class='symbol'>:owner_id</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="persisted?-instance_method">
+  
+    #<strong>persisted?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Check if this identity is persisted (has an id)<br />
+Required by OmniAuth::Identity strategy</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true if persisted, false otherwise</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 159</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_persisted?'>persisted?</span>
+  <span class='op'>!</span><span class='ivar'>@uid</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@uid</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -869,12 +1017,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-145
-146
-147</pre>
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='ivar'>@info</span>
@@ -889,7 +1037,7 @@ password_field :password_digest   end
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Sun Nov 23 15:40:58 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>

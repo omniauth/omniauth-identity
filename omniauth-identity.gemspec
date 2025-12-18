@@ -60,8 +60,7 @@ Gem::Specification.new do |spec|
 
   # Specify which files are part of the released package.
   spec.files = Dir[
-    # Executables and tasks
-    "exe/*",
+    # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
     "lib/**/*.rb",
     "lib/**/*.rake",
     # Signatures
@@ -133,8 +132,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("activerecord", ">= 5")                           # ruby >= 2.2.2
   spec.add_development_dependency("anonymous_active_record", "~> 1.0", ">= 1.0.9")  # ruby >= 2.4
   spec.add_development_dependency("appraisal2", "~> 3.0")                           # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 1.0")                          # ruby >= 2.3
-  spec.add_development_dependency("rack-test", "~> 1")                              # ruby >= 2.0
+  spec.add_development_dependency("kettle-test", "~> 1.0", ">= 1.0.6")              # ruby >= 2.3
+  spec.add_development_dependency("rack-test", "~> 2.2")                            # ruby >= 2.0, rack >= 1.3
   spec.add_development_dependency("rspec-pending_for", "~> 0.0", ">= 0.0.17")       # ruby >= 2.3, used to skip specs on incompatible Rubies
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0

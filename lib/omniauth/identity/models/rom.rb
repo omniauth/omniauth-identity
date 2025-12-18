@@ -116,9 +116,11 @@ module OmniAuth
           @uid = identity_data[:id]
           @email = identity_data[:email]
 
-          # Prefer owner name if available, else fall back to email
+          # Prefer owner name if available, else identity name, else fall back to email
           @name = if owner_data && owner_data[:name]
             owner_data[:name]
+          elsif identity_data[:name]
+            identity_data[:name]
           else
             identity_data[:email]
           end
@@ -129,6 +131,11 @@ module OmniAuth
           }
 
           @owner = owner_data
+        end
+
+        # Provide id method for Model module compatibility
+        def id
+          @uid
         end
 
         # Hash-like access to underlying ROM tuple
@@ -144,6 +151,13 @@ module OmniAuth
         # OmniAuth info hash
         def to_hash
           @info
+        end
+
+        # Check if this identity is persisted (has an id)
+        # Required by OmniAuth::Identity strategy
+        # @return [Boolean] true if persisted, false otherwise
+        def persisted?
+          !@uid.nil? && !@uid.to_s.empty?
         end
       end
     end

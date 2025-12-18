@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+# Web Frameworks for Integration Testing
+# All marked as require: false to allow selective loading in tests
+
+# Hanami - Full-featured web framework
+# Hanami 2.x requires Ruby 3.1+
+gem "hanami", "~> 2.2", require: false
+gem "hanami-router", "~> 2.2", require: false

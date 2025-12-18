@@ -8,4 +8,6 @@ eval_gemfile("modular/activerecord/r2/v7.1.gemfile")
 
 eval_gemfile("modular/omniauth/r2/v1.5.gemfile")
 
+eval_gemfile("modular/rack/r2/v1.6.gemfile")
+
 eval_gemfile("modular/x_std_libs/r2/libs.gemfile")

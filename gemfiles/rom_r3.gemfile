@@ -2,8 +2,6 @@
 
 source "https://gem.coop"
 
-gem "rom-sql", "~> 3.7"
-
 gemspec path: "../"
 
 eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
@@ -11,3 +9,5 @@ eval_gemfile("modular/activerecord/r3/v7.1.gemfile")
 eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
 
 eval_gemfile("modular/x_std_libs/r3/libs.gemfile")
+
+eval_gemfile("modular/integration.gemfile")

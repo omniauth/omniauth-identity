@@ -68,17 +68,36 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/omniauth/omniauth-identity/compare/v3.1.5...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/omniauth/omniauth-identity/compare/v3.1.6...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
+<ul>
+  <li>Greatly improved documentation</li>
+  <li>Traditional VERSION constant @ OmniAuth::Identity::VERSION
+    <ul>
+      <li>Retains modern VERSION constant @ OmniAuth::Identity::Version::VERSION</li>
+    </ul>
+  </li>
+</ul>
+
 <h3 id="changed">Changed</h3>
+
+<ul>
+  <li>Improved devcontainer for easier maintenance</li>
+  <li>
+<code>appraisal:reset</code> rake task for maintenance</li>
+</ul>
 
 <h3 id="deprecated">Deprecated</h3>
 
 <h3 id="removed">Removed</h3>
 
 <h3 id="fixed">Fixed</h3>
+
+<ul>
+  <li>GitLab pipeline for Ruby 2.7, 3.0, 3.1</li>
+</ul>
 
 <h3 id="security">Security</h3>
 
@@ -579,7 +598,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </div></div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:09 2025 by
+  Generated on Sun Nov 23 15:40:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.7).
 </div>
