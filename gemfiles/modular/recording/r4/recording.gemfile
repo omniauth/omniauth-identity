@@ -1,0 +1,16 @@
+# HTTP recording for deterministic specs
+# It seems that somehow just having a newer version of appraisal installed breaks
+#   Ruby 2.3 and 2.4 even if their bundle specifies an older version,
+#   and as a result it can only be a dependency in the appraisals.
+#   Putting it here in recording.gemfile will satisfy the rubies that can load latest vcr.
+# | An error occurred while loading spec_helper.
+# | Failure/Error: require "vcr"
+# |
+# | NoMethodError:
+# |   undefined method `delete_prefix' for "CONTENT_LENGTH":String
+# | # ./spec/config/vcr.rb:3:in `require'
+# | # ./spec/config/vcr.rb:3:in `<top (required)>'
+# | # ./spec/spec_helper.rb:8:in `require_relative'
+# | # ./spec/spec_helper.rb:8:in `<top (required)>'
+gem "vcr", ">= 6"
+gem "webmock", ">= 3"

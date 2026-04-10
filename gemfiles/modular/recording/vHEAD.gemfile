@@ -1,0 +1,2 @@
+gem "vcr", github: "vcr/vcr", branch: "master"
+gem "webmock", github: "bblimke/webmock", branch: "master"

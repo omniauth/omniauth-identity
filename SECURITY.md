@@ -10,6 +10,10 @@
 | 1.x     | ❌         |
 | 0.x     | ❌         |
 
+| Version  | Supported |
+|----------|-----------|
+| 1.latest | ✅         |
+
 ## Security contact information
 
 To report a security vulnerability, please use the

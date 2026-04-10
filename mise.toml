@@ -1,0 +1,36 @@
+# Shared development environment for this gem.
+# Local overrides belong in .env.local (loaded via dotenvy through mise).
+[env]
+DEBUG = "false"
+FLOSS_CFG_FUND_DEBUG = "false"
+FLOSS_CFG_FUND_LOGFILE = "tmp/log/debug.log"
+FUNDING_ORG = "omniauth"
+KETTLE_DEV_DEBUG = "false"
+KETTLE_TEST_SILENT = "true"
+K_SOUP_COV_COMMAND_NAME = "Test Coverage"
+K_SOUP_COV_DO = "true"
+K_SOUP_COV_FORMATTERS = "html,xml,rcov,lcov,json,tty"
+K_SOUP_COV_MIN_BRANCH = "76"
+K_SOUP_COV_MIN_HARD = "true"
+K_SOUP_COV_MIN_LINE = "92"
+K_SOUP_COV_MULTI_FORMATTERS = "true"
+K_SOUP_COV_OPEN_BIN = ""
+MAX_ROWS = "1"
+OPENCOLLECTIVE_HANDLE = "omniauth"
+RUBOCOP_LTS_LOCAL = "false"
+TREE_SITTER_BASH_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-bash.so"
+TREE_SITTER_CSS_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-css.so"
+TREE_SITTER_JAVASCRIPT_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-javascript.so"
+TREE_SITTER_JSONC_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-jsonc.so"
+TREE_SITTER_JSON_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-json.so"
+TREE_SITTER_PYTHON_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-python.so"
+TREE_SITTER_RBS_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-rbs.so"
+TREE_SITTER_RUBY_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-ruby.so"
+TREE_SITTER_TOML_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-toml.so"
+TREE_SITTER_YAML_PATH = "/home/pboling/.local/lib/tree-sitter/libtree-sitter-yaml.so"
+_.file = { path = ".env.local", redact = true }
+_.path = ["exe", "bin"]
+_.source = ".config/mise/env.sh"
+
+[tools]
+ruby = "4.0.2"

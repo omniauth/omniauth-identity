@@ -14,18 +14,20 @@ Take a look at the `reek` list which is the file called `REEK` and find somethin
 
 Follow these instructions:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b my-new-feature`)
-3. Make some fixes.
-4. Commit changes (`git commit -am 'Added some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Make sure to add tests for it. This is important, so it doesn't break in a future release.
-7. Create new Pull Request.
+1. Join the Discord: [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
+2. Fork the repository
+3. Create your feature branch (`git checkout -b my-new-feature`)
+4. Make some fixes.
+5. Commit your changes (`git commit -am 'Added some feature'`)
+6. Push to the branch (`git push origin my-new-feature`)
+7. Make sure to add tests for it. This is important, so it doesn't break in a future release.
+8. Create new Pull Request.
+9. Announce it in the channel for this org in the [Discord][✉️discord-invite]!
 
 ## Executables vs Rake tasks
 
-Executables shipped by omniauth-identity can be used with or without generating the binstubs.
-They will work when omniauth-identity is installed globally (i.e., `gem install omniauth-identity`) and do not require that omniauth-identity be in your bundle.
+Executables shipped by dependencies, such as kettle-dev, and stone_checksums, are available
+after running `bin/setup`. These include:
 
 - kettle-changelog
 - kettle-commit-msg
@@ -51,6 +53,10 @@ end
 require "omniauth/identity"
 ```
 
+```shell
+bin/rake -T
+```
+
 ## Environment Variables for Local Development
 
 Below are the primary environment variables recognized by stone_checksums (and its integrated tools). Unless otherwise noted, set boolean values to the string "true" to enable.
@@ -61,7 +67,17 @@ General/runtime
 - CI: When set to true, adjusts default rake tasks toward CI behavior
 
 Coverage (kettle-soup-cover / SimpleCov)
-- K_SOUP_COV_DO: Enable coverage collection (default: true in .envrc)
+
+- gem_checksums
+- kettle-changelog
+- kettle-commit-msg
+- kettle-dev-setup
+- kettle-dvcs
+- kettle-pre-release
+- kettle-readme-backers
+- kettle-release
+
+- K_SOUP_COV_DO: Enable coverage collection (default: true in `mise.toml`)
 - K_SOUP_COV_FORMATTERS: Comma-separated list of formatters (html, xml, rcov, lcov, json, tty)
 - K_SOUP_COV_MIN_LINE: Minimum line coverage threshold (integer, e.g., 100)
 - K_SOUP_COV_MIN_BRANCH: Minimum branch coverage threshold (integer, e.g., 100)
@@ -75,9 +91,12 @@ GitHub API and CI helpers
 - GITHUB_TOKEN or GH_TOKEN: Token used by `ci:act` and release workflow checks to query GitHub Actions status at higher rate limits
 
 Releasing and signing
+
 - SKIP_GEM_SIGNING: If set, skip gem signing during build/release
 - GEM_CERT_USER: Username for selecting your public cert in `certs/<USER>.pem` (defaults to $USER)
-- SOURCE_DATE_EPOCH: Reproducible build timestamp. `kettle-release` will set this automatically for the session.
+- SOURCE_DATE_EPOCH: Reproducible build timestamp.
+  - `kettle-release` will set this automatically for the session.
+  - Not needed on bundler >= 2.7.0, as reproducible builds have become the default.
 
 Git hooks and commit message helpers (exe/kettle-commit-msg)
 - GIT_HOOK_BRANCH_VALIDATE: Branch name validation mode (e.g., `jira`) or `false` to disable
@@ -85,7 +104,7 @@ Git hooks and commit message helpers (exe/kettle-commit-msg)
 - GIT_HOOK_FOOTER_SENTINEL: Required when footer append is enabled — a unique first-line sentinel to prevent duplicates
 - GIT_HOOK_FOOTER_APPEND_DEBUG: Extra debug output in the footer template (true/false)
 
-For a quick starting point, this repository’s `.envrc` shows sane defaults, and `.env.local` can override them locally.
+For a quick starting point, this repository’s `mise.toml` defines the shared defaults, and `.env.local` can override them locally. Copy `.env.local.example` to `.env.local`, use `KEY=value` lines, and either activate `mise` in your shell or run commands through `mise exec -C /path/to/project -- ...`.
 
 ## Appraisals
 
@@ -94,6 +113,12 @@ They are created and updated with the commands:
 
 ```console
 bin/rake appraisal:update
+```
+
+If you need to reset all gemfiles/*.gemfile.lock files:
+
+```console
+bin/rake appraisal:reset
 ```
 
 When adding an appraisal to CI, check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
@@ -110,7 +135,7 @@ bundle exec reek > REEK
 
 ## Run Tests
 
-NOTE: To run *all* tests have the following databases installed, configured, and running.
+There are many Rake tasks available as well. You can see them by running:
 
 1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
    ```console
@@ -149,7 +174,10 @@ To run all tests on all databases (except RethinkDB):
 bundle exec rake spec:orm:all
 ```
 
-To run all tests that do not require any additional services, i.e. excluding MongoDB, CouchDB, & RethinkDB:
+Run tests via `kettle-test` (provided by `kettle-test`). It runs RSpec, writes the full log to
+`tmp/kettle-test/rspec-TIMESTAMP.log`, and prints a compact highlight block with timing, seed,
+pass/fail count, failing example list, and SimpleCov coverage percentages.
+
 ```console
 bundle exec rake test
 ```
@@ -172,12 +200,22 @@ bundle exec rspec spec_orms/mongoid_spec.rb
 bundle exec rspec spec_ignored/nobrainer_spec.rb
 ```
 
+```console
+bundle exec kettle-test
+```
+
+For targeted runs, disable the hard coverage threshold to avoid false failures:
+
+```console
+K_SOUP_COV_MIN_HARD=false bundle exec kettle-test spec/path/to/spec.rb
+```
+
 ### Spec organization (required)
 
-- One spec file per class/module. For each class or module under `lib/`, keep all of its unit tests in a single spec file under `spec/` that mirrors the path and file name exactly: `lib/omniauth/identity/*.rb` -> `spec/omniauth/identity/*_spec.rb`.
-- Never add a second spec file for the same class/module. Examples of disallowed names: `*_more_spec.rb`, `*_extra_spec.rb`, `*_status_spec.rb`, or any other suffix that still targets the same class. If you find yourself wanting a second file, merge those examples into the canonical spec file for that class/module.
-- Exception: Integration specs that intentionally span multiple classes. Place these under `spec/integration/` (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.
-- Migration note: If a duplicate spec file exists, move all examples into the canonical file and delete the duplicate. Do not leave stubs or empty files behind.
+1. Update version.rb to contain the correct version-to-be-released.
+2. Run `bundle exec kettle-changelog`.
+3. Run `bundle exec kettle-release`.
+4. Stay awake and monitor the release process for any errors, and answer any prompts.
 
 ## Lint It
 
@@ -199,8 +237,11 @@ For more detailed information about using RuboCop in this project, please see th
 
 Never add `# rubocop:disable ...` / `# rubocop:enable ...` comments to code or specs (except when following the few existing `rubocop:disable` patterns for a rule already being disabled elsewhere in the code). Instead:
 
+- One spec file per class/module. For each class or module under `lib/`, keep all of its unit tests in a single spec file under `spec/` that mirrors the path and file name exactly: `lib/omniauth/identity/my_class.rb` -> `spec/omniauth/identity/my_class_spec.rb`.
+- Exception: Integration specs that intentionally span multiple classes. Place these under `spec/integration/` (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.
+
 - Prefer configuration-based exclusions when a rule should not apply to certain paths or files (e.g., via `.rubocop.yml`).
-- When a violation is temporary and you plan to fix it later, record it in `.rubocop_gradual.lock` using the gradual workflow:
+- When a violation is temporary, and you plan to fix it later, record it in `.rubocop_gradual.lock` using the gradual workflow:
   - `bundle exec rake rubocop_gradual:autocorrect` (preferred)
   - `bundle exec rake rubocop_gradual:force_update` (only when you cannot fix the violations immediately)
 
@@ -283,3 +324,4 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 [📌major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
 [🚎appraisal2]: https://github.com/appraisal-rb/appraisal2
 [🏃‍♂️runner-tool-cache]: https://github.com/ruby/ruby-builder/releases/tag/toolcache
+[✉️discord-invite]: https://discord.gg/3qme4XHNKN

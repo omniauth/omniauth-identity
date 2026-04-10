@@ -1,0 +1,20 @@
+# frozen_string_literal: true
+
+# Local path overrides for development.
+# Loaded by the associated non-local gemfile when KETTLE_RB_DEV != "false".
+
+require "nomono/bundler" unless defined?(Nomono)
+
+local_gems = %w[kettle-dev kettle-test kettle-soup-cover turbo_tests2]
+
+# export VENDORED_GEMS=kettle-dev,kettle-test,kettle-soup-cover,turbo_tests2
+platform :mri do
+  eval_nomono_gems(
+    gems: local_gems,
+    prefix: "KETTLE_RB",
+    path_env: "KETTLE_RB_DEV",
+    vendored_gems_env: "VENDORED_GEMS",
+    vendor_gem_dir_env: "VENDOR_GEM_DIR",
+    debug_env: "KETTLE_DEV_DEBUG",
+  )
+end

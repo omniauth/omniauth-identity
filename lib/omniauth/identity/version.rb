@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
-# Contains version information for the OmniAuth Identity gem.
-module OmniAuth
+module Omniauth
   module Identity
     module Version
-      # @!attribute [r] VERSION
-      # The current version of the omniauth-identity gem.
-      # @return [String]
       VERSION = "3.1.5"
     end
+    VERSION = Version::VERSION # Traditional Constant Location
   end
 end

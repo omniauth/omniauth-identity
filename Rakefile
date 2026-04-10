@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# kettle-jem:freeze
+# To retain chunks of comments & code during omniauth-identity templating:
+# Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
+# omniauth-identity will then preserve content between those markers across template runs.
+# kettle-jem:unfreeze
+
 # kettle-dev Rakefile v1.1.38 - 2025-10-21
 # Ruby 2.3 (Safe Navigation) or higher required
 #
@@ -53,6 +59,16 @@ end
 
 # External gems that define tasks - add here!
 require "kettle/dev"
+
+### TEMPLATING TASKS
+begin
+  require "kettle/jem"
+rescue LoadError
+  desc("(stub) kettle:jem:selftest is unavailable")
+  task("kettle:jem:selftest") do
+    warn("NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+end
 
 ### RELEASE TASKS
 # Setup stone_checksums
