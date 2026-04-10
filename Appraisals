@@ -40,6 +40,7 @@ appraise "unlocked_deps" do
   #     rdoc was resolved to 7.0.3, which depends on
   #       psych
   gem "irb", "~> 1.17" # ruby >= 2.7
+
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "rom-sql", "~> 3.7"
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"

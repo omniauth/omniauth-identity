@@ -29,9 +29,10 @@ Follow these instructions:
 Executables shipped by dependencies, such as kettle-dev, and stone_checksums, are available
 after running `bin/setup`. These include:
 
+- gem_checksums
 - kettle-changelog
 - kettle-commit-msg
-- omniauth-identity-setup
+- kettle-dev-setup
 - kettle-dvcs
 - kettle-pre-release
 - kettle-readme-backers
@@ -67,15 +68,6 @@ General/runtime
 - CI: When set to true, adjusts default rake tasks toward CI behavior
 
 Coverage (kettle-soup-cover / SimpleCov)
-
-- gem_checksums
-- kettle-changelog
-- kettle-commit-msg
-- kettle-dev-setup
-- kettle-dvcs
-- kettle-pre-release
-- kettle-readme-backers
-- kettle-release
 
 - K_SOUP_COV_DO: Enable coverage collection (default: true in `mise.toml`)
 - K_SOUP_COV_FORMATTERS: Comma-separated list of formatters (html, xml, rcov, lcov, json, tty)
