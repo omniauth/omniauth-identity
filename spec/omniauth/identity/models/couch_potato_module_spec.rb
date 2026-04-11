@@ -10,7 +10,7 @@ require "logger"
 require "couch_potato"
 
 RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :couchdb) do
-  before(:all) do
+  before(:context) do
     CouchPotato::Config.database_host = "http://admin:#{ENV.fetch("COUCHDB_PASSWORD", "password")}@127.0.0.1:5984"
     CouchPotato::Config.database_name = "test"
     CouchPotato.couchrest_database.recreate!
@@ -20,7 +20,9 @@ RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :couchdb) do
     couch_potato_test_identity = Class.new do
       # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
       include CouchPotato::Persistence
+
       include OmniAuth::Identity::Models::CouchPotatoModule
+
       property :email
       property :password_digest
     end
@@ -28,9 +30,9 @@ RSpec.describe(OmniAuth::Identity::Models::CouchPotatoModule, :couchdb) do
   end
 
   describe "model", type: :model do
-    subject(:model_klass) { CouchPotatoTestIdentity }
+    let(:model_klass) { CouchPotatoTestIdentity }
 
-    include_context "persistable model"
+    include_context "with persistable model"
 
     describe "::locate" do
       it "delegates to the where query method" do

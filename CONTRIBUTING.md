@@ -177,19 +177,19 @@ bundle exec rake test
 To run a specific DB:
 ```console
 # CouchDB / CouchPotato
-bundle exec rspec spec spec_orms --tag 'couchdb'
+bundle exec rspec spec --tag 'couchdb'
 
 # ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
-bundle exec rspec spec spec_orms --tag 'sqlite3'
+bundle exec rspec spec --tag 'sqlite3'
 
 # NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
 #        and the two libraries are fundamentally incompatible.
 
 # MongoDB / Mongoid
-bundle exec rspec spec_orms/mongoid_spec.rb
+bundle exec rspec spec/omniauth/identity/models/mongoid_spec.rb
 
 # RethinkDB / NoBrainer (Ignored by CI! see spec file for reasons)
-bundle exec rspec spec_ignored/nobrainer_spec.rb
+bundle exec rspec spec/omniauth/identity/models/no_brainer_spec.rb
 ```
 
 ```console

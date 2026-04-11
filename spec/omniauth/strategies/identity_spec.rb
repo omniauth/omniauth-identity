@@ -161,11 +161,8 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
             expect(last_response.body).to eq("HELLO!")
             expect(last_response.body).not_to include("<form")
             expect(last_response.body).not_to include("<a")
-            expect(last_response.body).not_to include("Create an Identity")
-          else
-            # We still get a login form for some reason in old active record
-            expect(last_response.body).not_to include("Create an Identity")
           end
+          expect(last_response.body).not_to include("Create an Identity")
         end
       end
     end
@@ -177,7 +174,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
     context "with valid credentials" do
       before do
         allow(anon_ar).to receive("auth_key").and_return("email")
-        expect(anon_ar).to receive("authenticate").with({"email" => "john"}, "awesome").and_return(user)
+        allow(anon_ar).to receive("authenticate").with({"email" => "john"}, "awesome").and_return(user)
         post "/auth/identity/callback", auth_key: "john", password: "awesome"
       end
 
@@ -198,7 +195,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
       before do
         allow(anon_ar).to receive("auth_key").and_return("email")
         OmniAuth.config.on_failure = ->(env) { [401, {}, [env["omniauth.error.type"].inspect]] }
-        expect(anon_ar).to receive(:authenticate).with({"email" => "wrong"}, "login").and_return(false)
+        allow(anon_ar).to receive(:authenticate).with({"email" => "wrong"}, "login").and_return(false)
         post "/auth/identity/callback", auth_key: "wrong", password: "login"
       end
 
@@ -219,24 +216,28 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
 
       it "evaluates and pass through conditions proc" do
         allow(anon_ar).to receive("auth_key").and_return("email")
-        expect(anon_ar).to receive("authenticate").with(
+        allow(anon_ar).to receive("authenticate").with(
           {"email" => "john", "user_type" => "admin"},
           "awesome",
         ).and_return(user)
         post "/auth/identity/callback", auth_key: "john", password: "awesome"
+        expect(anon_ar).to have_received("authenticate").with(
+          {"email" => "john", "user_type" => "admin"},
+          "awesome",
+        )
       end
     end
   end
 
   describe "#registration_form" do
-    context "registration is enabled" do
+    context "when registration is enabled" do
       it "triggers from /auth/identity/register by default" do
         get "/auth/identity/register"
         expect(last_response.body).to include("Register Identity")
       end
     end
 
-    context "registration is disabled" do
+    context "when registration is disabled" do
       let(:identity_options) { {model: anon_ar, enable_registration: false} }
 
       it "calls app" do
@@ -252,7 +253,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
   end
 
   describe "#registration_phase" do
-    context "registration is disabled" do
+    context "when registration is disabled" do
       let(:identity_options) { {model: anon_ar, enable_registration: false} }
 
       it "calls app" do
@@ -291,7 +292,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
         context "when validation fails" do
           it "does not set the env hash" do
             post "/auth/identity/register", properties
-            expect(env_hash).to eq(nil)
+            expect(env_hash).to be_nil
           end
 
           it "renders registration form" do
@@ -349,10 +350,10 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
       let(:invalid_identity) { double(persisted?: false, save: false) }
 
       before do
-        expect(anon_ar).to receive(:new).with(properties).and_return(invalid_identity)
+        allow(anon_ar).to receive(:new).with(properties).and_return(invalid_identity)
       end
 
-      context "default" do
+      context "with default settings" do
         it "shows registration form" do
           post "/auth/identity/register", properties
           expect(last_response.body).to include("Register Identity")
@@ -360,7 +361,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
         end
       end
 
-      context "custom on_failed_registration endpoint" do
+      context "with custom on_failed_registration endpoint" do
         let(:identity_options) do
           {
             model: anon_ar,
@@ -391,7 +392,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
         context "when validation fails" do
           it "does not set the env hash" do
             post "/auth/identity/register", properties
-            expect(env_hash).to eq(nil)
+            expect(env_hash).to be_nil
           end
 
           it "renders registration form" do
@@ -414,7 +415,7 @@ RSpec.describe OmniAuth::Strategies::Identity, :sqlite3 do
 
           it "does not set the env hash" do
             post "/auth/identity/register", properties
-            expect(env_hash).to eq(nil)
+            expect(env_hash).to be_nil
           end
 
           it "renders registration form" do

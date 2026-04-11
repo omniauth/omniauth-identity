@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.shared_context "persistable model" do
+RSpec.shared_context "with persistable model" do
   include_context "model with class methods"
 
   describe "instance methods" do

@@ -66,4 +66,3 @@ module OmniAuth
   end
 end
 require_relative "identity/version"
-

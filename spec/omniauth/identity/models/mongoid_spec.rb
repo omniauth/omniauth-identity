@@ -9,11 +9,11 @@ require "logger"
 
 # NOTE: mongoid and no_brainer can't be loaded at the same time.
 #       If you try it, one or both of them will not work.
-require_relative "support/rspec_config/mongoid"
+require_relative "../../../../spec_orms/support/rspec_config/mongoid"
 
 RSpec.describe(OmniAuth::Identity::Models::Mongoid, :mongodb) do
   describe "model", type: :model do
-    subject(:model_klass) { MongoidTestIdentity }
+    let(:model_klass) { MongoidTestIdentity }
 
     it { is_expected.to(be_mongoid_document) }
 
@@ -21,7 +21,7 @@ RSpec.describe(OmniAuth::Identity::Models::Mongoid, :mongodb) do
       expect(subject).to(be_stored_in(database: "db1", collection: "mongoid_test_identities", client: "default"))
     end
 
-    include_context "persistable model"
+    include_context "with persistable model"
 
     describe "::locate" do
       it "delegates to the where query method" do

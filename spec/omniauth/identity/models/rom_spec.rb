@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "support/rspec_config/rom"
+require_relative "../../../../spec_orms/support/rspec_config/rom"
 
 RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
-  before(:all) do
-    # Create the tables
-    ROM_DB.create_table(:rom_test_identities) do
+  before do
+    # Use create_table? so this is idempotent and safe to run before each example.
+    ROM_DB.create_table?(:rom_test_identities) do
       primary_key :id
       String :email, null: false
       String :password_digest, null: false
@@ -14,20 +14,18 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
       Integer :owner_id
     end
 
-    ROM_DB.create_table(:rom_test_owners) do
+    ROM_DB.create_table?(:rom_test_owners) do
       primary_key :id
       String :name, null: false
     end
-  end
 
-  before do
     # Clear the tables before each test
     ROM_DB[:rom_test_identities].delete
     ROM_DB[:rom_test_owners].delete
   end
 
   describe "model", type: :model do
-    subject(:model_klass) { RomTestIdentity }
+    let(:model_klass) { RomTestIdentity }
 
     include_context "model with class methods"
 

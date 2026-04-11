@@ -17,7 +17,7 @@
 require "nobrainer"
 
 RSpec.describe(OmniAuth::Identity::Models::NoBrainer, :rethinkdb) do
-  before(:all) do
+  before(:context) do
     NoBrainer.configure do |config|
       config.app_name = "DeezBrains"
       config.rethinkdb_urls = ["rethinkdb://127.0.0.1:28015/DeezBrains_test"]
@@ -33,7 +33,9 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, :rethinkdb) do
   before do
     nobrainer_test_identity = Class.new do
       include NoBrainer::Document
+
       include OmniAuth::Identity::Models::NoBrainer
+
       field :email
       field :password_digest
     end
@@ -42,9 +44,9 @@ RSpec.describe(OmniAuth::Identity::Models::NoBrainer, :rethinkdb) do
   end
 
   describe "model", type: :model do
-    subject(:model_klass) { NoBrainerTestIdentity }
+    let(:model_klass) { NoBrainerTestIdentity }
 
-    include_context "persistable model"
+    include_context "with persistable model"
 
     describe "::locate" do
       it "delegates locate to the where query method" do

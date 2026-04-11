@@ -25,24 +25,26 @@ module OmniAuth
       #     password_field :password_digest
       #   end
       module Rom
-        def self.included(base)
-          # Align with other adapters: rely on OmniAuth::Identity::Model for API
-          base.include(::OmniAuth::Identity::Model)
-          base.extend(ClassMethods)
+        class << self
+          def included(base)
+            # Align with other adapters: rely on OmniAuth::Identity::Model for API
+            base.include(::OmniAuth::Identity::Model)
+            base.extend(ClassMethods)
 
-          base.class_eval do
-            # OmniAuth::Identity required instance API
-            # Authenticates the instance with the provided password
-            # Returns self on success, false otherwise (to match Model.authenticate contract)
-            def authenticate(password)
-              digest_key = self.class.password_field
-              password_digest = @identity_data[digest_key]
-              return false unless password_digest
+            base.class_eval do
+              # OmniAuth::Identity required instance API
+              # Authenticates the instance with the provided password
+              # Returns self on success, false otherwise (to match Model.authenticate contract)
+              define_method(:authenticate) do |password|
+                digest_key = self.class.password_field
+                password_digest = @identity_data[digest_key]
+                return false unless password_digest
 
-              begin
-                BCrypt::Password.new(password_digest) == password && self
-              rescue BCrypt::Errors::InvalidHash
-                false
+                begin
+                  BCrypt::Password.new(password_digest) == password && self
+                rescue BCrypt::Errors::InvalidHash
+                  false
+                end
               end
             end
           end
@@ -52,29 +54,40 @@ module OmniAuth
           # Default ROM relation name when none is configured
           DEFAULT_RELATION_NAME = :identities
 
+          ROM_CONFIG_MUTEX = Mutex.new
+          private_constant :ROM_CONFIG_MUTEX
+
           # Configuration DSL
           # These methods act like the DSL on `OmniAuth::Identity::Model` (e.g. `auth_key`) —
           # when called with an argument they set the configuration, and when called
           # without an argument they return the current value (with sensible defaults).
           def rom_container(value = false)
-            @rom_container = value unless value == false
-            container = @rom_container
-            container.respond_to?(:call) ? container.call : container
+            ROM_CONFIG_MUTEX.synchronize do
+              @rom_container = value unless value == false
+              container = @rom_container
+              container.respond_to?(:call) ? container.call : container
+            end
           end
 
           def rom_relation_name(value = false)
-            @rom_relation_name = value unless value == false
-            @rom_relation_name || DEFAULT_RELATION_NAME
+            ROM_CONFIG_MUTEX.synchronize do
+              @rom_relation_name = value unless value == false
+              @rom_relation_name || DEFAULT_RELATION_NAME
+            end
           end
 
           def owner_relation_name(value = false)
-            @owner_relation_name = value unless value == false
-            @owner_relation_name
+            ROM_CONFIG_MUTEX.synchronize do
+              @owner_relation_name = value unless value == false
+              @owner_relation_name
+            end
           end
 
           def password_field(value = false)
-            @password_field = value unless value == false
-            (@password_field || :password_digest).to_sym
+            ROM_CONFIG_MUTEX.synchronize do
+              @password_field = value unless value == false
+              (@password_field || :password_digest).to_sym
+            end
           end
 
           # Align with other adapters: use Model.auth_key (getter/setter) for the login attribute

@@ -51,23 +51,25 @@ module OmniAuth
         #   class User < OmniAuth::Identity::Models::ActiveRecord
         #     self.auth_key = :email
         #   end
-        def self.auth_key=(key)
-          super
-          validates_uniqueness_of(key, case_sensitive: false)
-        end
+        class << self
+          def auth_key=(key)
+            super
+            validates_uniqueness_of(key, case_sensitive: false)
+          end
 
-        # @!method self.locate(search_hash)
-        # Finds a record by the given search criteria.
-        #
-        # If the model has a 'provider' column, it defaults to 'identity'.
-        #
-        # @param search_hash [Hash] the attributes to search for
-        # @return [ActiveRecord::Base, nil] the first matching record or nil
-        # @example
-        #   User.locate(email: 'user@example.com')
-        def self.locate(search_hash)
-          search_hash = search_hash.reverse_merge!("provider" => "identity") if column_names.include?("provider")
-          where(search_hash).first
+          # @!method self.locate(search_hash)
+          # Finds a record by the given search criteria.
+          #
+          # If the model has a 'provider' column, it defaults to 'identity'.
+          #
+          # @param search_hash [Hash] the attributes to search for
+          # @return [ActiveRecord::Base, nil] the first matching record or nil
+          # @example
+          #   User.locate(email: 'user@example.com')
+          def locate(search_hash)
+            search_hash = search_hash.reverse_merge!("provider" => "identity") if column_names.include?("provider")
+            where(search_hash).first
+          end
         end
       end
     end

@@ -14,7 +14,7 @@ class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 
 RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
   describe "model", type: :model do
-    subject(:model_klass) do
+    let(:model_klass) do
       AnonymousActiveRecord.generate(
         parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
         columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
@@ -29,7 +29,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
 
     let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && defined?(ArJdbc::Version) && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
 
-    include_context "persistable model"
+    include_context "with persistable model"
 
     describe "::table_name" do
       it "does not use STI rules for its table name" do

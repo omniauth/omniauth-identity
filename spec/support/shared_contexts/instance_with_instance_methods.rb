@@ -62,8 +62,7 @@ RSpec.shared_examples "instance with instance methods" do
 
   describe "#info" do
     it "includes all attributes as they have been set" do
-      allow(instance).to receive(:name).and_return("Bob Bobson")
-      allow(instance).to receive(:nickname).and_return("bob")
+      allow(instance).to receive_messages(name: "Bob Bobson", nickname: "bob")
 
       expect(instance.info).to include({
         "name" => "Bob Bobson",
@@ -72,20 +71,17 @@ RSpec.shared_examples "instance with instance methods" do
     end
 
     it "uses firstname and lastname, over nickname, to set missing name" do
-      allow(instance).to receive(:first_name).and_return("shoeless")
-      allow(instance).to receive(:last_name).and_return("joe")
-      allow(instance).to receive(:nickname).and_return("george")
-      instance.info["name"] == "shoeless joe"
+      allow(instance).to receive_messages(first_name: "shoeless", last_name: "joe", nickname: "george")
+      expect(instance.info["name"]).to eq("shoeless joe")
     end
 
     it "uses nickname to set missing name when first and last are not set" do
       allow(instance).to receive(:nickname).and_return("bob")
-      instance.info["name"] == "bob"
+      expect(instance.info["name"]).to eq("bob")
     end
 
     it "does not overwrite a provided name" do
-      allow(instance).to receive(:name).and_return("Awesome Dude")
-      allow(instance).to receive(:first_name).and_return("Frank")
+      allow(instance).to receive_messages(name: "Awesome Dude", first_name: "Frank")
       expect(instance.info["name"]).to eq("Awesome Dude")
     end
   end

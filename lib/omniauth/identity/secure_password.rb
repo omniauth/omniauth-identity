@@ -22,16 +22,6 @@ module OmniAuth
     #   user = User.new(password: 'secret')
     #   user.authenticate('secret') # => user
     module SecurePassword
-      # Called when this module is included in a model class.
-      #
-      # Extends the base class with ClassMethods unless it already responds to has_secure_password.
-      #
-      # @param base [Class] the model class including this module
-      # @return [void]
-      def self.included(base)
-        base.extend(ClassMethods) unless base.respond_to?(:has_secure_password)
-      end
-
       # @!attribute [r] MAX_PASSWORD_LENGTH_ALLOWED
       # BCrypt hash function can handle maximum 72 bytes, and if we pass
       # password of length more than 72 bytes it ignores extra characters.
@@ -39,13 +29,25 @@ module OmniAuth
       # @return [Integer] The maximum allowed password length in bytes.
       MAX_PASSWORD_LENGTH_ALLOWED = BCrypt::Engine::MAX_SECRET_BYTESIZE
 
+      MIN_COST_MUTEX = Mutex.new
+      private_constant :MIN_COST_MUTEX
+
       class << self
+        def included(base)
+          base.extend(ClassMethods) unless base.respond_to?(:has_secure_password)
+        end
+
         # @!attribute [rw] min_cost
         # Controls whether to use minimum cost for BCrypt hashing (for testing).
         # @return [true, false]
-        attr_accessor :min_cost # :nodoc:
+        def min_cost # :nodoc:
+          MIN_COST_MUTEX.synchronize { @min_cost.nil? ? false : @min_cost }
+        end
+
+        def min_cost=(value) # :nodoc:
+          MIN_COST_MUTEX.synchronize { @min_cost = value }
+        end
       end
-      self.min_cost = false
 
       # Class-level methods for secure password functionality.
       module ClassMethods

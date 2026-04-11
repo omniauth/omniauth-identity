@@ -268,8 +268,10 @@ class Identity
   property :email
   property :password_digest
 
-  def self.where(search_hash)
-    CouchPotato.database.view(Identity.by_email(key: search_hash))
+  class << self
+    def where(search_hash)
+      CouchPotato.database.view(Identity.by_email(key: search_hash))
+    end
   end
 
   view :by_email, key: :email
@@ -304,7 +306,7 @@ class Identity
   include OmniAuth::Identity::Models::Rom
 
   # Configure the ROM container and relation
-  rom_container -> { MyDatabase.rom } # See spec_orms/rom_spec.rb for example
+  rom_container -> { MyDatabase.rom } # See spec/omniauth/identity/models/rom_spec.rb for example
   rom_relation_name :identities # optional, defaults to :idneitities
   owner_relation_name :owners  # optional, for loading associated owner
   auth_key :email  # optional, defaults to :email

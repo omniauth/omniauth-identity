@@ -1,10 +1,20 @@
+RSpec/BeforeAfterAll:
+  ForbiddenMethods:
+    - before(:all)
+    - after(:all)
+    - after(:context)
+  Exclude:
+    # These specs connect to external services; one-time connection setup is appropriate.
+    - 'spec/omniauth/identity/models/couch_potato_module_spec.rb'
+    - 'spec/omniauth/identity/models/no_brainer_spec.rb'
+
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/NamedSubject:
+RSpec/ExampleLength:
   Enabled: false
 
-RSpec/ExampleLength:
+RSpec/NamedSubject:
   Enabled: false
 
 RSpec/VerifiedDoubles:
@@ -43,8 +53,6 @@ RSpec/MultipleDescribes:
 RSpec/RepeatedExampleGroupDescription:
   Exclude:
     - 'spec/README.md'
-RSpec/Output:
-  Exclude:
-    - 'spec/support/**/*'
-    - 'spec/config/**/*'
-    - 'spec/fixtures/**/*'
+RSpec/SpecFilePathFormat:
+  CustomTransform:
+    OmniAuth: omniauth

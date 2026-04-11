@@ -50,6 +50,9 @@ module OmniAuth
 
       # Class-level methods for OmniAuth Identity models.
       module ClassMethods
+        AUTH_KEY_MUTEX = Mutex.new
+        private_constant :AUTH_KEY_MUTEX
+
         # Authenticate a user with the given key and password.
         #
         # @param [String] conditions The unique login key provided for a given identity.
@@ -68,10 +71,12 @@ module OmniAuth
         # @param method [String, Symbol, false] The method name to set, or false to retrieve.
         # @return [String] The method name.
         def auth_key(method = false)
-          @auth_key = method.to_s unless method == false
-          @auth_key = nil if !defined?(@auth_key) || @auth_key == ""
+          AUTH_KEY_MUTEX.synchronize do
+            @auth_key = method.to_s unless method == false
+            @auth_key = nil if !defined?(@auth_key) || @auth_key == ""
 
-          @auth_key || "email"
+            @auth_key || "email"
+          end
         end
 
         # Locate an identity given its unique login key.
