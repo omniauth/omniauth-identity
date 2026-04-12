@@ -1,8 +1,4 @@
 RSpec/BeforeAfterAll:
-  ForbiddenMethods:
-    - before(:all)
-    - after(:all)
-    - after(:context)
   Exclude:
     # These specs connect to external services; one-time connection setup is appropriate.
     - 'spec/omniauth/identity/models/couch_potato_module_spec.rb'
