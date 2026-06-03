@@ -46,7 +46,6 @@ DEFAULT_EMAIL = "mojo@example.com"
 
 # The last thing before loading this gem is to set up code coverage
 begin
-  # This does not require "simplecov", but
   require "kettle-soup-cover"
   #   this next line has a side effect of running `.simplecov`
   require "simplecov" if defined?(Kettle::Soup::Cover) && Kettle::Soup::Cover::DO_COV
@@ -57,3 +56,14 @@ end
 
 # This gem
 require "omniauth-identity"
+RSpec.configure do |config|
+  # Enable flags like --only-failures and --next-failure
+  config.example_status_persistence_file_path = ".rspec_status"
+
+  # Disable RSpec exposing methods globally on `Module` and `main`
+  config.disable_monkey_patching!
+
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end

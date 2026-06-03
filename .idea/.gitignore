@@ -6,10 +6,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# CodeStream ignored files
-/codestream.xml
-# Ignored default folder with query files
-/queries/
 
 # Zencoder local files
 /zencoder/chats
@@ -18,3 +14,31 @@
 # Local project config
 *.iml
 
+# Added: Ignore plugin state artifacts (machine-specific)
+/copilot*.xml
+/GitLink.xml
+
+# Added: Ignore task & usage statistics (contain local timestamps / paths)
+/tasks.xml
+/usage.statistics.xml
+
+# Added: Local inspection profiles (developer-specific customizations)
+/inspectionProfiles/
+
+# Added: Library & index caches (regenerated per machine)
+/libraries/
+/indexLayout.xml
+/indexes/
+
+# Added: Terminal, SSH, and other per-user runtime config
+/terminal/
+/sshConfigs/
+
+# Added: RubyMine misc SDK version drift (optional). Comment to share SDK config.
+# /misc.xml
+
+# Commit: VCS local mappings can be regenerated (optional). Comment to share settings.
+# /vcs.xml
+
+# Commit: Dictionary files (local spellcheck customizations)
+# /dictionaries/

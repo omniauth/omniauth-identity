@@ -52,3 +52,8 @@ RSpec/RepeatedExampleGroupDescription:
 RSpec/SpecFilePathFormat:
   CustomTransform:
     OmniAuth: omniauth
+RSpec/Output:
+  Exclude:
+    - 'spec/support/**/*'
+    - 'spec/config/**/*'
+    - 'spec/fixtures/**/*'

@@ -2,11 +2,8 @@
 
 # Fail on error and unset variables
 set -eu
-# Allow skipping the hook by setting KETTLE_PRECOMMIT_HOOK=false
-if [ "${KETTLE_PRECOMMIT_HOOK:-true}" = "false" ]; then
-  exit 0
-fi
 
+# Run the generated wrapper directly so hook execution does not depend on shell activation.
 # We are not using direnv exec here because mise and direnv can result in conflicting PATH settings:
 # See: https://mise.jdx.dev/direnv.html
 exec "kettle-commit-msg" "$@"

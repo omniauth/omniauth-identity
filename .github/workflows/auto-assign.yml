@@ -15,7 +15,7 @@ jobs:
       uses: pozil/auto-assign-issue@07fe6dc0e9771842b428f5739098d6140734e226 # v4
       with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: pboling
+          assignees: "pboling"
           abortIfPreviousAssignees: true
           allowSelfAssign: true
           numOfAssignee: 1

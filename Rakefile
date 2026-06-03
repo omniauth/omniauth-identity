@@ -6,17 +6,19 @@
 # omniauth-identity will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-# kettle-dev Rakefile v1.1.38 - 2025-10-21
+# omniauth-identity Rakefile v7.0.0 - 2026-06-03
 # Ruby 2.3 (Safe Navigation) or higher required
 #
-# MIT License (see License.txt)
+# See LICENSE.md for license information.
 #
-# Copyright (c) 2025 Peter H. Boling (galtzo.com)
+# Copyright (c) 2026 Peter H. Boling (galtzo.com)
 #
 # Expected to work in any project that uses Bundler.
 #
-# Sets up tasks for appraisal, floss_funding, rspec, minitest, rubocop, reek, yard, and stone_checksums.
+# Sets up tasks for appraisal2, floss_funding, kettle-jem, kettle-dev, rspec, minitest, rubocop_gradual, reek, yard, and stone_checksums.
 #
+# rake appraisal:install                      # Install Appraisal gemfiles (initial setup...
+# rake appraisal:reset                        # Delete Appraisal lockfiles (gemfiles/*.gemfile.lock)
 # rake appraisal:update                       # Update Appraisal gemfiles and run RuboCop...
 # rake bench                                  # Run all benchmarks (alias for bench:run)
 # rake bench:list                             # List available benchmark scripts
@@ -27,10 +29,11 @@
 # rake ci:act[opt]                            # Run 'act' with a selected workflow
 # rake coverage                               # Run specs w/ coverage and open results in...
 # rake default                                # Default tasks aggregator
-# rake install                                # Build and install kettle-dev-1.0.0.gem in...
-# rake install:local                          # Build and install kettle-dev-1.0.0.gem in...
-# rake kettle:dev:install                     # Install kettle-dev GitHub automation and ...
-# rake kettle:dev:template                    # Template kettle-dev files into the curren...
+# rake install                                # Build and install omniauth-identity-1.0.0.gem in...
+# rake install:local                          # Build and install omniauth-identity-1.0.0.gem in...
+# rake kettle:jem:install                     # Internal target used by `kettle-jem install`
+# rake kettle:jem:selftest                    # Self-test: template omniauth-identity against itse...
+# rake kettle:jem:template                    # Internal target used by scoped `kettle-jem template --only`
 # rake reek                                   # Check for code smells
 # rake reek:update                            # Run reek and store the output into the RE...
 # rake release[remote]                        # Create tag v1.0.0 and build and push kett...
@@ -49,7 +52,9 @@
 # rake yard                                   # Generate YARD Documentation
 #
 
+# :nocov:
 require "bundler/gem_tasks" if !Dir[File.join(__dir__, "*.gemspec")].empty?
+# :nocov:
 
 # Define a base default task early so other files can enhance it.
 desc "Default tasks aggregator"
@@ -57,16 +62,96 @@ task :default do
   puts "Default task complete."
 end
 
+# :nocov:
+### MONOREPO FAMILY TASKS
+if Dir.exist?(File.join(__dir__, "gems")) && Dir.exist?(File.join(__dir__, "workspace-scripts"))
+  def family_script_path(script_name)
+    File.join(__dir__, "workspace-scripts", script_name)
+  end
+
+  def run_family_script(script_name, *args)
+    script = family_script_path(script_name)
+    raise "Missing family script: #{script}" unless File.file?(script)
+
+    command = [script, *args].compact
+    sh(*command)
+  end
+
+  def family_gem_dirs
+    Dir.glob(File.join(__dir__, "gems", "*", "*.gemspec"))
+      .map { |path| File.dirname(path) }
+      .uniq
+      .sort_by { |path| File.basename(path) }
+  end
+
+  namespace :family do
+    desc "List released Ruby subgems"
+    task :list do
+      family_gem_dirs.each { |path| puts File.basename(path) }
+    end
+
+    desc "Run release readiness checks for the Ruby gem family"
+    task :readiness do
+      run_family_script("10_release_readiness_check.rb")
+    end
+
+    desc "Run tests for the Ruby gem family"
+    task :test do
+      run_family_script("5_test_ruby_gems.sh")
+    end
+
+    desc "Run lint for the Ruby gem family"
+    task :lint do
+      run_family_script("4_lint_ruby_gems.sh")
+    end
+
+    desc "Generate YARD docs for the Ruby gem family"
+    task :docs do
+      run_family_script("6_docs_ruby_gems.sh")
+    end
+
+    desc "Run the Ruby gem family release planner"
+    task :release do
+      run_family_script("11_release_ruby_gems.rb")
+    end
+
+    desc "Execute the Ruby gem family release"
+    task :release_execute do
+      run_family_script("11_release_ruby_gems.rb", "--execute")
+    end
+  end
+end
+# :nocov:
+
 # External gems that define tasks - add here!
-require "kettle/dev"
+begin
+  require "kettle/dev"
+  Kettle::Dev.install_tasks unless Kettle::Dev::RUNNING_AS == "rake"
+rescue LoadError
+  warn("NOTE: kettle-dev isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+end
 
 ### TEMPLATING TASKS
+# These tasks are installed for the `kettle-jem` executable. Run full templating
+# through `kettle-jem install`; use `kettle-jem template --only PATH` only for
+# scoped file updates. The executable prepares the environment and then
+# delegates here when rake orchestration is needed.
+kettle_jem_selftest_unavailable_note = nil
 begin
   require "kettle/jem"
+  if Kettle::Jem.respond_to?(:install_tasks)
+    Kettle::Jem.install_tasks
+  else
+    kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem #{Kettle::Jem::Version::VERSION} does not provide rake tasks in this environment"
+  end
 rescue LoadError
+  kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment"
+end
+
+if kettle_jem_selftest_unavailable_note
   desc("(stub) kettle:jem:selftest is unavailable")
   task("kettle:jem:selftest") do
-    warn("NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+    warn(kettle_jem_selftest_unavailable_note)
   end
 end
 
@@ -80,62 +165,3 @@ rescue LoadError
     warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
 end
-
-# rubocop:disable Rake/DuplicateTask
-begin
-  require "rspec/core/rake_task"
-
-  # Define a default test task which will run only specs which work on sqlite3 because,
-  #   when running sqlite3-based tests you don't need any additional services running.
-  RSpec::Core::RakeTask.new("test") do |task|
-    task.pattern = "{spec/**/*}_spec.rb"
-  end
-
-  ### Combo Test Tasks for Continuous Integration
-  # Define a task for each ORM which will run all ORM-agnostic specs + the specs for a specific ORM.
-  # See spec/omniauth/identity/models/no_brainer_spec.rb for details on why that spec is skipped in CI.
-  %w(active_record couch_potato mongoid rom sequel).each do |orm|
-    RSpec::Core::RakeTask.new("spec:orm:#{orm}") do |task|
-      task.pattern = "{spec/**/*}_spec.rb"
-    end
-  end
-  ### Combo Test Task for Code Coverage Workflow in Continuous Integration
-  # Requires all services (CouchDB, and MongoDB) to be running.
-  # See spec/omniauth/identity/models/no_brainer_spec.rb for details on why that spec is skipped in CI.
-  RSpec::Core::RakeTask.new("spec:orm:all") do |task|
-    task.pattern = "spec/**/*_spec.rb"
-  end
-
-  ### Combo Test Tasks for local development...
-  # Define tasks which only run the ORM-specific tests in isolation
-  active_record = RSpec::Core::RakeTask.new(:spec_orm_active_record)
-  active_record.pattern = "spec/omniauth/identity/models/active_record_spec.rb"
-  couch_potato = RSpec::Core::RakeTask.new(:spec_orm_couch_potato)
-  couch_potato.pattern = "spec/omniauth/identity/models/couch_potato_module_spec.rb"
-  mongoid = RSpec::Core::RakeTask.new(:spec_orm_mongoid)
-  mongoid.pattern = "spec/omniauth/identity/models/mongoid_spec.rb"
-  rom = RSpec::Core::RakeTask.new(:spec_orm_rom)
-  rom.pattern = "spec/omniauth/identity/models/rom_spec.rb"
-  sequel = RSpec::Core::RakeTask.new(:spec_orm_sequel)
-  sequel.pattern = "spec/omniauth/identity/models/sequel_spec.rb"
-
-  # See spec/omniauth/identity/models/no_brainer_spec.rb for details on why that spec is skipped in CI.
-  nobrainer = RSpec::Core::RakeTask.new(:spec_orm_nobrainer)
-  nobrainer.pattern = "spec/omniauth/identity/models/no_brainer_spec.rb"
-
-  # When running all tests you must have CouchDB, and MongoDB running.  See README.md
-  desc("Run all ORM specs (requires CouchDB, and MongoDB running)")
-  task(spec_orms: %i[
-    spec_orm_active_record
-    spec_orm_couch_potato
-    spec_orm_mongoid
-    spec_orm_rom
-    spec_orm_sequel
-  ])
-rescue LoadError
-  desc("spec task stub")
-  task(:spec) do
-    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-# rubocop:enable Rake/DuplicateTask

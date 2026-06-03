@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # TODO[v4]: Remove this deprecation with v4 release.
+require "version_gem"
+
 unless defined?(OmniAuth::Identity::Version::VERSION)
   # external gems
   require "version_gem"
@@ -66,3 +68,7 @@ module OmniAuth
   end
 end
 require_relative "identity/version"
+
+OmniAuth::Identity::Version.class_eval do
+  extend VersionGem::Basic
+end

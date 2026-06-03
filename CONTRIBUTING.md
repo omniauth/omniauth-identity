@@ -8,9 +8,15 @@ To submit a patch, please fork the project, create a patch with tests, and send 
 
 Remember to [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog] if you make changes.
 
+## Developer Certificate of Origin
+
+In order to protect users of this project, we require all contributors to comply with the
+[Developer Certificate of Origin](https://developercertificate.org/).
+This ensures that all contributions are properly licensed and attributed.
+
 ## Help out!
 
-Take a look at the `reek` list which is the file called `REEK` and find something to improve.
+Take a look at the open issues and pull requests, or use the gem and find something to improve.
 
 Follow these instructions:
 
@@ -38,24 +44,26 @@ after running `bin/setup`. These include:
 - kettle-readme-backers
 - kettle-release
 
-However, the rake tasks provided by omniauth-identity do require omniauth-identity to be added as a development dependency and loaded in your Rakefile.
-See the full list of rake tasks in head of Rakefile
-
-**Gemfile**
-```ruby
-group :development do
-  gem "omniauth-identity", require: false
-end
-```
-
-**Rakefile**
-```ruby
-# Rakefile
-require "omniauth/identity"
-```
+There are many Rake tasks available as well. You can see them by running:
 
 ```shell
 bin/rake -T
+```
+
+## Code quality checks
+
+Run the Reek task when you want a smell check that fails on current findings:
+
+```shell
+bin/rake reek
+```
+
+Refresh the checked-in `REEK` backlog through the rake task, not by redirecting
+the raw `reek` executable output. The rake task uses the project bundle and
+avoids stale generated binstubs shadowing the Reek gem executable:
+
+```shell
+bin/rake reek:update
 ```
 
 ## Environment Variables for Local Development
@@ -68,7 +76,6 @@ General/runtime
 - CI: When set to true, adjusts default rake tasks toward CI behavior
 
 Coverage (kettle-soup-cover / SimpleCov)
-
 - K_SOUP_COV_DO: Enable coverage collection (default: true in `mise.toml`)
 - K_SOUP_COV_FORMATTERS: Comma-separated list of formatters (html, xml, rcov, lcov, json, tty)
 - K_SOUP_COV_MIN_LINE: Minimum line coverage threshold (integer, e.g., 100)
@@ -83,7 +90,6 @@ GitHub API and CI helpers
 - GITHUB_TOKEN or GH_TOKEN: Token used by `ci:act` and release workflow checks to query GitHub Actions status at higher rate limits
 
 Releasing and signing
-
 - SKIP_GEM_SIGNING: If set, skip gem signing during build/release
 - GEM_CERT_USER: Username for selecting your public cert in `certs/<USER>.pem` (defaults to $USER)
 - SOURCE_DATE_EPOCH: Reproducible build timestamp.
@@ -96,11 +102,32 @@ Git hooks and commit message helpers (exe/kettle-commit-msg)
 - GIT_HOOK_FOOTER_SENTINEL: Required when footer append is enabled — a unique first-line sentinel to prevent duplicates
 - GIT_HOOK_FOOTER_APPEND_DEBUG: Extra debug output in the footer template (true/false)
 
+Git diff driver setup
+- Local setup writes repository `.gitattributes` entries and local Git `diff.smorg-*` command config so this checkout uses StructuredMerge semantic diffs.
+- Global setup registers `diff.smorg-*` commands once in the user Git config; use it when you work across several StructuredMerge-enabled repositories.
+- Include-file setup writes `.git/smorg/config` and includes it from local Git config, keeping command registrations out of the repository files.
+- Git hosting forges generally ignore external diff drivers, so pull request views may still show raw textual diffs even when local `git diff` uses semantic drivers.
+
+```console
+K_JEM_TEMPLATING=true bundle exec kettle-jem install
+```
+
+Troubleshooting Git diffs
+- Use `git diff --no-ext-diff` to compare against Git's built-in diff output.
+- Use `git diff --no-textconv` when a textconv projection obscures the raw file bytes you need to inspect.
+- If Git reports a missing `smorg-*` executable, rerun `bundle install` and the setup command above, then check `git config --local --get-regexp '^diff\.smorg-'`.
+- To remove managed local entries, run `K_JEM_TEMPLATING=true bundle exec kettle-jem install --undo`; remove global command registrations with `git config --global --unset-all diff.smorg-ruby.command`.
+
 For a quick starting point, this repository’s `mise.toml` defines the shared defaults, and `.env.local` can override them locally. Copy `.env.local.example` to `.env.local`, use `KEY=value` lines, and either activate `mise` in your shell or run commands through `mise exec -C /path/to/project -- ...`.
 
 ## Appraisals
 
 From time to time the [appraisal2][🚎appraisal2] gemfiles in `gemfiles/` will need to be updated.
+Generated appraisal and CI workflow floors are controlled by `ruby.test_minimum`
+in `.structuredmerge/kettle-jem.yml`; this project was templated with `ruby.test_minimum: 2.4`.
+That value describes the lowest Ruby version expected to run the test/development
+toolchain, and it may be higher than the gemspec runtime floor.
+
 They are created and updated with the commands:
 
 ```console
@@ -115,82 +142,11 @@ bin/rake appraisal:reset
 
 When adding an appraisal to CI, check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
-## The Reek List
-
-Take a look at the `reek` list which is the file called `REEK` and find something to improve.
-
-To refresh the `reek` list:
-
-```console
-bundle exec reek > REEK
-```
-
 ## Run Tests
-
-There are many Rake tasks available as well. You can see them by running:
-
-1. [RethinkDB](https://rethinkdb.com), an open source, real-time, web database, [installed](https://rethinkdb.com/docs/install/) and [running](https://rethinkdb.com/docs/start-a-server/), e.g.
-   ```console
-   brew install rethinkdb
-   rethinkdb
-   ```
-2. [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-   ```console
-   brew tap mongodb/brew
-   brew install mongodb-community@4.4
-   mongod --config /usr/local/etc/mongod.conf
-   ```
-3. [CouchDB](https://couchdb.apache.org) - download the .app, or:
-   ```console
-   brew install couchdb
-   ```
-   CouchDB 3.x requires a set admin password set before startup.
-   Add one to your `$HOMEBREW_PREFIX/etc/local.ini` before starting CouchDB e.g.:
-   ```ini
-   [admins]
-   admin = yourabsolutesecret
-   ```
-   Also add whatever password you set to your `.env.local`:
-   ```dotenv
-   export COUCHDB_PASSWORD=yourabsolutesecret
-   ```
-   Then start the CouchDB service
-   ```console
-   brew services start couchdb
-   ```
-
-Now you can run any of the tests!
-
-To run all tests on all databases (except RethinkDB):
-```console
-bundle exec rake spec:orm:all
-```
 
 Run tests via `kettle-test` (provided by `kettle-test`). It runs RSpec, writes the full log to
 `tmp/kettle-test/rspec-TIMESTAMP.log`, and prints a compact highlight block with timing, seed,
 pass/fail count, failing example list, and SimpleCov coverage percentages.
-
-```console
-bundle exec rake test
-```
-
-To run a specific DB:
-```console
-# CouchDB / CouchPotato
-bundle exec rspec spec --tag 'couchdb'
-
-# ActiveRecord and Sequel, as they both use the in-memory SQLite driver.
-bundle exec rspec spec --tag 'sqlite3'
-
-# NOTE - mongoid and nobrainer specs can't be isolated with "tag" because it still loads everything,
-#        and the two libraries are fundamentally incompatible.
-
-# MongoDB / Mongoid
-bundle exec rspec spec/omniauth/identity/models/mongoid_spec.rb
-
-# RethinkDB / NoBrainer (Ignored by CI! see spec file for reasons)
-bundle exec rspec spec/omniauth/identity/models/no_brainer_spec.rb
-```
 
 ```console
 bundle exec kettle-test
@@ -204,10 +160,8 @@ K_SOUP_COV_MIN_HARD=false bundle exec kettle-test spec/path/to/spec.rb
 
 ### Spec organization (required)
 
-1. Update version.rb to contain the correct version-to-be-released.
-2. Run `bundle exec kettle-changelog`.
-3. Run `bundle exec kettle-release`.
-4. Stay awake and monitor the release process for any errors, and answer any prompts.
+- One spec file per class/module. For each class or module under `lib/`, keep all of its unit tests in a single spec file under `spec/` that mirrors the path and file name exactly: `lib/omniauth/identity/my_class.rb` -> `spec/omniauth/identity/my_class_spec.rb`.
+- Exception: Integration specs that intentionally span multiple classes. Place these under `spec/integration/` (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.
 
 ## Lint It
 
@@ -228,9 +182,6 @@ For more detailed information about using RuboCop in this project, please see th
 ### Important: Do not add inline RuboCop disables
 
 Never add `# rubocop:disable ...` / `# rubocop:enable ...` comments to code or specs (except when following the few existing `rubocop:disable` patterns for a rule already being disabled elsewhere in the code). Instead:
-
-- One spec file per class/module. For each class or module under `lib/`, keep all of its unit tests in a single spec file under `spec/` that mirrors the path and file name exactly: `lib/omniauth/identity/my_class.rb` -> `spec/omniauth/identity/my_class_spec.rb`.
-- Exception: Integration specs that intentionally span multiple classes. Place these under `spec/integration/` (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.
 
 - Prefer configuration-based exclusions when a rule should not apply to certain paths or files (e.g., via `.rubocop.yml`).
 - When a violation is temporary, and you plan to fix it later, record it in `.rubocop_gradual.lock` using the gradual workflow:
@@ -265,42 +216,44 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 
 #### Automated process
 
-1. Update version.rb to contian the correct version-to-be-released.
+1. Update version.rb to contain the correct version-to-be-released.
 2. Run `bundle exec kettle-changelog`.
 3. Run `bundle exec kettle-release`.
+4. Stay awake and monitor the release process for any errors, and answer any prompts.
 
 #### Manual process
 
 1. Run `bin/setup && bin/rake` as a "test, coverage, & linting" sanity check
 2. Update the version number in `version.rb`, and ensure `CHANGELOG.md` reflects changes
 3. Run `bin/setup && bin/rake` again as a secondary check, and to update `Gemfile.lock`
-4. Run `git commit -am "🔖 Prepare release v<VERSION>"` to commit the changes
-5. Run `git push` to trigger the final CI pipeline before release, and merge PRs
+4. Run `bin/rake yard` to regenerate the docs site using the canonical docs task
+5. Run `git commit -am "🔖 Prepare release v<VERSION>"` to commit the changes
+6. Run `git push` to trigger the final CI pipeline before release, and merge PRs
     - NOTE: Remember to [check the build][🧪build].
-6. Run `export GIT_TRUNK_BRANCH_NAME="$(git remote show origin | grep 'HEAD branch' | cut -d ' ' -f5)" && echo $GIT_TRUNK_BRANCH_NAME`
-7. Run `git checkout $GIT_TRUNK_BRANCH_NAME`
-8. Run `git pull origin $GIT_TRUNK_BRANCH_NAME` to ensure latest trunk code
-9. Optional for older Bundler (< 2.7.0): Set `SOURCE_DATE_EPOCH` so `rake build` and `rake release` use the same timestamp and generate the same checksums
+7. Run `export GIT_TRUNK_BRANCH_NAME="$(git remote show origin | grep 'HEAD branch' | cut -d ' ' -f5)" && echo $GIT_TRUNK_BRANCH_NAME`
+8. Run `git checkout $GIT_TRUNK_BRANCH_NAME`
+9. Run `git pull origin $GIT_TRUNK_BRANCH_NAME` to ensure latest trunk code
+10. Optional for older Bundler (< 2.7.0): Set `SOURCE_DATE_EPOCH` so `rake build` and `rake release` use the same timestamp and generate the same checksums
     - If your Bundler is >= 2.7.0, you can skip this; builds are reproducible by default.
     - Run `export SOURCE_DATE_EPOCH=$EPOCHSECONDS && echo $SOURCE_DATE_EPOCH`
     - If the echo above has no output, then it didn't work.
     - Note: `zsh/datetime` module is needed, if running `zsh`.
     - In older versions of `bash` you can use `date +%s` instead, i.e. `export SOURCE_DATE_EPOCH=$(date +%s) && echo $SOURCE_DATE_EPOCH`
-10. Run `bundle exec rake build`
-11. Run `bin/gem_checksums` (more context [1][🔒️rubygems-checksums-pr], [2][🔒️rubygems-guides-pr])
+11. Run `bundle exec rake build`
+12. Run `bin/gem_checksums` (more context [1][🔒️rubygems-checksums-pr], [2][🔒️rubygems-guides-pr])
     to create SHA-256 and SHA-512 checksums. This functionality is provided by the `stone_checksums`
     [gem][💎stone_checksums].
     - The script automatically commits but does not push the checksums
-12. Sanity check the SHA256, comparing with the output from the `bin/gem_checksums` command:
+13. Sanity check the SHA256, comparing with the output from the `bin/gem_checksums` command:
     - `sha256sum pkg/<gem name>-<version>.gem`
-13. Run `bundle exec rake release` which will create a git tag for the version,
+14. Run `bundle exec rake release` which will create a git tag for the version,
     push git commits and tags, and push the `.gem` file to the gem host configured in the gemspec.
 
-[📜src-gl]: https://gitlab.com/omniauth/omniauth-identity/
+[📜src-gl]: https://gitlab.com/omniauth/omniauth-identity
 [📜src-cb]: https://codeberg.org/omniauth/omniauth-identity
 [📜src-gh]: https://github.com/omniauth/omniauth-identity
 [🧪build]: https://github.com/omniauth/omniauth-identity/actions
-[🤝conduct]: https://gitlab.com/omniauth/omniauth-identity/-/blob/main/CODE_OF_CONDUCT.md
+[🤝conduct]: https://github.com/omniauth/omniauth-identity/blob/main/CODE_OF_CONDUCT.md
 [🖐contrib-rocks]: https://contrib.rocks
 [🖐contributors]: https://github.com/omniauth/omniauth-identity/graphs/contributors
 [🚎contributors-gl]: https://gitlab.com/omniauth/omniauth-identity/-/graphs/main

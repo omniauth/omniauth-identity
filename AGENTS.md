@@ -2,10 +2,10 @@
 
 ## 🎯 Project Overview
 
-This project is a **RubyGem** managed with the [kettle-rb](https://github.com/kettle-rb) toolchain.
+This project is a **RubyGem** managed with the [StructuredMerge](https://github.com/structuredmerge/structuredmerge-ruby) toolchain.
 
 **Minimum Supported Ruby**: See the gemspec `required_ruby_version` constraint.
-**Local Development Ruby**: See `.tool-versions` for the version used in local development (typically the latest stable Ruby).
+**Local Development Ruby**: See `mise.toml` for the version used in local development (typically the latest stable Ruby).
 
 ### Modular Gemfile Architecture
 
@@ -81,7 +81,7 @@ When you do run tests, keep the full output visible so you can inspect failures 
 
 ### Toolchain Dependencies
 
-This gem is part of the **kettle-rb** ecosystem. Key development tools:
+This gem is part of the **StructuredMerge** ecosystem. Key development tools:
 
 | Tool | Purpose |
 |------|---------|
@@ -158,22 +158,30 @@ mise exec -C /path/to/project -- env K_SOUP_COV_MIN_HARD=false bundle exec kettl
 
 ### Template Management (kettle-jem)
 
-Run the kettle-jem templater to sync project files with the latest template:
+Run the full kettle-jem installer to sync project files with the latest template
+and regenerate local finishing artifacts such as binstubs:
 
 ```bash
 # Standard run (quiet, non-interactive — the default)
-mise exec -C /path/to/project -- bundle exec rake kettle:jem:install
+mise exec -C /path/to/project -- env K_JEM_TEMPLATING=true bundle exec kettle-jem install
 
 # Verbose output (see per-file detail)
-mise exec -C /path/to/project -- env KETTLE_JEM_VERBOSE=true bundle exec rake kettle:jem:install
+mise exec -C /path/to/project -- env K_JEM_TEMPLATING=true KETTLE_JEM_VERBOSE=true bundle exec kettle-jem install
 
 # Interactive mode (prompt before each change)
-mise exec -C /path/to/project -- bundle exec rake kettle:jem:install force=false
+mise exec -C /path/to/project -- env K_JEM_TEMPLATING=true bundle exec kettle-jem install --interactive
+
+# Scoped file update only; skips install finishing steps
+mise exec -C /path/to/project -- env K_JEM_TEMPLATING=true bundle exec kettle-jem template --only README.md
 ```
+
+Use the `kettle-jem` executable as the public entrypoint. The
+`kettle:jem:*` rake tasks are internal orchestration targets that the
+executable may call after it has prepared the templating environment.
 
 **Current defaults** (no flags needed):
 - **quiet=true** — only phase summary lines shown; use `--verbose` or `KETTLE_JEM_VERBOSE=true` to opt out
-- **force=true** — non-interactive; use `--interactive` or `force=false` to opt out
+- **force=true** — non-interactive; use `--interactive` to opt out
 - **allowed=true** — env file changes auto-accepted; set `allowed=false` to require review
 
 ### Building & Installing Locally
