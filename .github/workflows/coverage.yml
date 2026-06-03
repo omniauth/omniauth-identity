@@ -48,7 +48,7 @@ jobs:
           # Coverage
           - ruby: "ruby"
             appraisal: "coverage"
-            exec_cmd: "rake spec:core"
+            exec_cmd: "rake spec:orm:active_record"
             rubygems: latest
             bundler: latest
 

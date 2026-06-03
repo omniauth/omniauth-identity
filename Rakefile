@@ -173,8 +173,11 @@ begin
     Rake::Task[task_name].clear if Rake::Task.task_defined?(task_name)
   end
 
-  model_specs = FileList["spec/omniauth/identity/models/*_spec.rb"]
-  core_specs = FileList["spec/**/*_spec.rb"] - model_specs
+  core_specs = FileList[
+    "spec/omniauth/identity/model_spec.rb",
+    "spec/omniauth/identity/secure_password_spec.rb",
+    "spec/omniauth/identity/version_spec.rb",
+  ]
   orm_specs = {
     active_record: "spec/omniauth/identity/models/active_record_spec.rb",
     couch_potato: "spec/omniauth/identity/models/couch_potato_module_spec.rb",
