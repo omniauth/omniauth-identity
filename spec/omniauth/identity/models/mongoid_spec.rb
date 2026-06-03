@@ -13,7 +13,7 @@ require_relative "../../../../spec_orms/support/rspec_config/mongoid"
 
 RSpec.describe(OmniAuth::Identity::Models::Mongoid, :mongodb) do
   describe "model", type: :model do
-    let(:model_klass) { MongoidTestIdentity }
+    subject(:model_klass) { MongoidTestIdentity }
 
     it { is_expected.to(be_mongoid_document) }
 

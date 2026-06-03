@@ -14,7 +14,7 @@ class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 
 RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
   describe "model", type: :model do
-    let(:model_klass) do
+    subject(:model_klass) do
       AnonymousActiveRecord.generate(
         parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
         columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
