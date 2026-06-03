@@ -32,4 +32,45 @@ RSpec.describe OmniAuth::Identity::SecurePassword do
     klass_with.include described_class
     expect(klass_with).to respond_to(:has_secure_password)
   end
+
+  it "stores and authenticates a password digest" do
+    klass = Class.new do
+      include OmniAuth::Identity::SecurePassword
+
+      attr_accessor :password_digest
+
+      has_secure_password(validations: false)
+    end
+
+    instance = klass.new
+    instance.password = "correct horse battery staple"
+
+    expect(instance.password).to eq("correct horse battery staple")
+    expect(instance.password_digest).to be_a(String)
+    expect(instance.authenticate("wrong")).to be(false)
+    expect(instance.authenticate("correct horse battery staple")).to be(instance)
+  end
+
+  it "clears the digest when the password is nil" do
+    klass = Class.new do
+      include OmniAuth::Identity::SecurePassword
+
+      attr_accessor :password_digest
+
+      has_secure_password(validations: false)
+    end
+
+    instance = klass.new
+    instance.password = "secret"
+    instance.password = nil
+
+    expect(instance.password_digest).to be_nil
+  end
+
+  it "tracks minimum bcrypt cost configuration" do
+    described_class.min_cost = true
+    expect(described_class.min_cost).to be(true)
+  ensure
+    described_class.min_cost = false
+  end
 end
