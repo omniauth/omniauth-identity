@@ -15,6 +15,7 @@ Appraisal.*.gemfile.lock
 
 # Specs
 .rspec_status
+/:memory:*
 /coverage/
 /spec/reports/
 /results/
