@@ -68,9 +68,11 @@ RSpec.describe OmniAuth::Identity::SecurePassword do
   end
 
   it "tracks minimum bcrypt cost configuration" do
-    described_class.min_cost = true
-    expect(described_class.min_cost).to be(true)
-  ensure
-    described_class.min_cost = false
+    begin
+      described_class.min_cost = true
+      expect(described_class.min_cost).to be(true)
+    ensure
+      described_class.min_cost = false
+    end
   end
 end

@@ -13,12 +13,16 @@ require_relative "../../../../spec_orms/support/rspec_config/mongoid"
 
 RSpec.describe(OmniAuth::Identity::Models::Mongoid, :mongodb) do
   describe "model", type: :model do
-    subject(:model_klass) { MongoidTestIdentity }
+    subject(:model_definition) { -> { model_klass } }
 
-    it { is_expected.to(be_mongoid_document) }
+    let(:model_klass) { MongoidTestIdentity }
+
+    it "is a Mongoid document" do
+      expect(model_klass).to(be_mongoid_document)
+    end
 
     it "does not munge collection name" do
-      expect(subject).to(be_stored_in(database: "db1", collection: "mongoid_test_identities", client: "default"))
+      expect(model_klass).to(be_stored_in(database: "db1", collection: "mongoid_test_identities", client: "default"))
     end
 
     include_context "with persistable model"

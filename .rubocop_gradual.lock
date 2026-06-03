@@ -11,10 +11,10 @@
     [60, 1, 17, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 439084949],
     [61, 1, 16, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 772204622]
   ],
-  "Rakefile:3129391770": [
+  "Rakefile:1268173106": [
     [179, 45, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
     [187, 66, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [212, 3, 20, "Rake/DuplicateTask: Task `default` is defined at both Rakefile:61 and Rakefile:212.", 318045076]
+    [227, 3, 20, "Rake/DuplicateTask: Task `default` is defined at both Rakefile:61 and Rakefile:227.", 318045076]
   ],
   "lib/omniauth/identity/model.rb:1195696065": [
     [182, 27, 32, "Lint/SymbolConversion: Unnecessary symbol conversion; use `:\"#{self.class.auth_key}=\"` instead.", 3072009762]
@@ -25,19 +25,19 @@
   "lib/omniauth/strategies/identity.rb:2260468599": [
     [232, 29, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
   ],
-  "spec/omniauth/identity/models/active_record_spec.rb:2707226605": [
-    [21, 130, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [45, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  "spec/omniauth/identity/models/active_record_spec.rb:1234912842": [
+    [23, 130, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [47, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
-  "spec/omniauth/identity/models/couch_potato_module_spec.rb:1858981563": [
-    [41, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  "spec/omniauth/identity/models/couch_potato_module_spec.rb:4058643040": [
+    [42, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
-  "spec/omniauth/identity/models/mongoid_spec.rb:1471553923": [
-    [30, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  "spec/omniauth/identity/models/mongoid_spec.rb:1626561410": [
+    [34, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
-  "spec/omniauth/identity/models/no_brainer_spec.rb:3640455838": [
-    [27, 30, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [55, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  "spec/omniauth/identity/models/no_brainer_spec.rb:2371136555": [
+    [34, 32, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [62, 39, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
   "spec/omniauth/strategies/identity_spec.rb:654570549": [
     [19, 128, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
@@ -51,7 +51,7 @@
     [347, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
     [370, 14, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
-  "spec/spec_helper.rb:549093387": [
+  "spec/spec_helper.rb:457633016": [
     [39, 4, 52, "Style/YodaCondition: Reverse the order of the operands `VersionGem::Ruby::RUBY_VER < Gem::Version.new(\"2.5\")`.", 3054081885]
   ],
   "spec/support/shared_contexts/instance_with_instance_methods.rb:540999892": [
