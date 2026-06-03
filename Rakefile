@@ -165,3 +165,51 @@ rescue LoadError
     warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
 end
+
+begin
+  require "rspec/core/rake_task"
+
+  %w[test spec spec:core spec:orm:active_record spec:orm:couch_potato spec:orm:mongoid spec:orm:rom spec:orm:sequel spec:orm:nobrainer spec:orm:all].each do |task_name|
+    Rake::Task[task_name].clear if Rake::Task.task_defined?(task_name)
+  end
+
+  model_specs = FileList["spec/omniauth/identity/models/*_spec.rb"]
+  core_specs = FileList["spec/**/*_spec.rb"] - model_specs
+  orm_specs = {
+    active_record: "spec/omniauth/identity/models/active_record_spec.rb",
+    couch_potato: "spec/omniauth/identity/models/couch_potato_module_spec.rb",
+    mongoid: "spec/omniauth/identity/models/mongoid_spec.rb",
+    rom: "spec/omniauth/identity/models/rom_spec.rb",
+    sequel: "spec/omniauth/identity/models/sequel_spec.rb",
+    nobrainer: "spec/omniauth/identity/models/no_brainer_spec.rb",
+  }
+
+  RSpec::Core::RakeTask.new("test") do |task|
+    task.pattern = core_specs
+  end
+
+  namespace :spec do
+    RSpec::Core::RakeTask.new("core") do |task|
+      task.pattern = core_specs
+    end
+
+    namespace :orm do
+      orm_specs.each do |orm, spec_file|
+        RSpec::Core::RakeTask.new(orm) do |task|
+          task.pattern = core_specs + [spec_file]
+        end
+      end
+
+      RSpec::Core::RakeTask.new("all") do |task|
+        task.pattern = FileList["spec/**/*_spec.rb"]
+      end
+    end
+  end
+
+  task(default: :test)
+rescue LoadError
+  desc("spec task stub")
+  task(:spec) do
+    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+end

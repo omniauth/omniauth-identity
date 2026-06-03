@@ -36,7 +36,7 @@ jobs:
           # Ruby 2.6
           - ruby: "ruby-2.6"
             appraisal: "ruby-2-6"
-            exec_cmd: "kettle-test"
+            exec_cmd: "rake spec:core"
             rubygems: '3.4.22'
             bundler: '2.4.22'
 

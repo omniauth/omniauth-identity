@@ -92,6 +92,7 @@ end
 
 appraise "ruby-3-2" do
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
+  gem "json", "< 2.19"
 end
 
 appraise "ruby-3-3" do

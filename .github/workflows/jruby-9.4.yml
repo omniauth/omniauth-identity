@@ -39,7 +39,7 @@ jobs:
           # jruby-9.4 (targets Ruby 3.1 compatibility)
           - ruby: "jruby-9.4"
             appraisal: "ruby-3-1"
-            exec_cmd: "kettle-test"
+            exec_cmd: "rake spec:core"
             rubygems: "3.6.9"
             bundler: "2.6.9"
 

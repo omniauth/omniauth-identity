@@ -36,7 +36,7 @@ jobs:
           # Ruby 3.4
           - ruby: "ruby-3.4"
             appraisal: "ruby-3-4"
-            exec_cmd: "kettle-test"
+            exec_cmd: "rake spec:core"
             rubygems: latest
             bundler: latest
 
