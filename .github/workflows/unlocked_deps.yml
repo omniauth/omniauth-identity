@@ -26,13 +26,13 @@ env:
 on:
   push:
     branches:
-      - 'main'
-      - '*-stable'
+      - "main"
+      - "*-stable"
     tags:
-      - '!*' # Do not execute on tags
+      - "!*" # Do not execute on tags
   pull_request:
     branches:
-      - '*'
+      - "*"
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
@@ -61,6 +61,24 @@ jobs:
             bundler: latest
 
     steps:
+      ### COUCHDB
+      - name: Start CouchDB
+        uses: iamssen/couchdb-github-action@master
+        with:
+          couchdb-version: "3.4.1"
+
+      ### MONGODB
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.12.1
+        with:
+          mongodb-version: "8.0"
+
+      ### SMOKE-TEST
+      - name: Smoke CouchDB
+        run: |
+          curl -f http://127.0.0.1:5984/
+          curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"name": "admin", "password": "password"}' http://127.0.0.1:5984/_session
+
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:

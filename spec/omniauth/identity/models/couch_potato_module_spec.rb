@@ -6,6 +6,7 @@
 # Placing above omniauth because it is a dependency of omniauth,
 #   which is undeclared in older versions.
 require "logger"
+require "active_support"
 
 require "couch_potato"
 

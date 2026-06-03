@@ -55,13 +55,13 @@ jobs:
     steps:
       ### COUCHDB
       - name: Start CouchDB
-        uses: iamssen/couchdb-github-action@5456fb038864d42f8b82d4c29e3c1decd7fa82fd # master
+        uses: iamssen/couchdb-github-action@master
         with:
           couchdb-version: "3.4.1"
 
       ### MONGODB
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@90002f17bc44255a478ffc85b2401743d8367152 # v1.12.1
+        uses: supercharge/mongodb-github-action@1.12.1
         with:
           mongodb-version: "8.0"
 

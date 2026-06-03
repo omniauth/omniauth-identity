@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "logger"
+require "active_support"
 # :nocov:
 begin
   require "bson"

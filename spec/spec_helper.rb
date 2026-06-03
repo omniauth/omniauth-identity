@@ -60,6 +60,10 @@ RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
+  if ENV.fetch("CI", "false").casecmp("true").zero? && ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_RETHINKDB", "false").casecmp("true") != 0
+    config.filter_run_excluding(rethinkdb: true)
+  end
+
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
 

@@ -47,10 +47,15 @@ appraise "unlocked_deps" do
   eval_gemfile "modular/optional.gemfile"
   eval_gemfile "modular/style.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
+  gem "couch_potato", "~> 1.17"
+  gem "mongoid", "~> 9.0", ">= 9.0.3"
+  gem "mongoid-rspec", "~> 4.2"
   gem "sequel", "~> 5.86", ">= 5.86.0"
   gem "rom-sql", "~> 3.7"
   eval_gemfile "modular/activerecord/r3/v8.0.gemfile"
+  eval_gemfile "modular/bson/r3/v5.1.gemfile"
   eval_gemfile "modular/omniauth/r3/v2.1.gemfile"
+  gem "ostruct", "~> 0.6", ">= 0.6.1" # Ruby >= 2.5
 end
 
 appraise "head" do
@@ -84,6 +89,7 @@ end
 
 appraise "ruby-3-0" do
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
+  gem "json", "< 2.16"
 end
 
 appraise "ruby-3-1" do
@@ -92,7 +98,7 @@ end
 
 appraise "ruby-3-2" do
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  gem "json", "< 2.19"
+  gem "json", "< 2.16"
 end
 
 appraise "ruby-3-3" do

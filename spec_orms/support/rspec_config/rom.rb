@@ -10,7 +10,7 @@ ROM_DB = if RUBY_ENGINE == "jruby"
 else
   require "sqlite3"
   require "sequel"
-  Sequel.connect("sqlite::memory:rom")
+  Sequel.sqlite
 end
 # :nocov:
 

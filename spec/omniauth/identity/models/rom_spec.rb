@@ -4,24 +4,23 @@ require_relative "../../../../spec_orms/support/rspec_config/rom"
 
 RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
   before do
-    # Use create_table? so this is idempotent and safe to run before each example.
-    ROM_DB.create_table?(:rom_test_identities) do
+    ROM_DB.drop_table?(:rom_test_identities)
+    ROM_DB.drop_table?(:rom_test_owners)
+
+    ROM_DB.create_table(:rom_test_identities) do
       primary_key :id
       String :email, null: false
       String :password_digest, null: false
+      String :pwd_hash
       # Add the login column to support tests that use a non-standard auth_key
       String :login
       Integer :owner_id
     end
 
-    ROM_DB.create_table?(:rom_test_owners) do
+    ROM_DB.create_table(:rom_test_owners) do
       primary_key :id
       String :name, null: false
     end
-
-    # Clear the tables before each test
-    ROM_DB[:rom_test_identities].delete
-    ROM_DB[:rom_test_owners].delete
   end
 
   describe "model", type: :model do

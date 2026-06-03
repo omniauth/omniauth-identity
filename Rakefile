@@ -209,6 +209,21 @@ begin
     end
   end
 
+  orm_specs.each do |orm, spec_file|
+    RSpec::Core::RakeTask.new("spec_orm_#{orm}") do |task|
+      task.pattern = spec_file
+    end
+  end
+
+  desc("Run all ORM specs (requires CouchDB and MongoDB running; NoBrainer remains isolated)")
+  task(spec_orms: %i[
+    spec_orm_active_record
+    spec_orm_couch_potato
+    spec_orm_mongoid
+    spec_orm_rom
+    spec_orm_sequel
+  ])
+
   task(default: :test)
 rescue LoadError
   desc("spec task stub")
