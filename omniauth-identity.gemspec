@@ -19,7 +19,7 @@ gem_version =
     lib = File.expand_path("lib", __dir__)
     $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
     require "omniauth/identity/version"
-    Omniauth::Identity::Version::VERSION
+    OmniAuth::Identity::Version::VERSION
   end
 
 Gem::Specification.new do |spec|
