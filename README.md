@@ -770,3 +770,14 @@ Thanks for RTFM. ☺️
 [💎appraisal2]: https://github.com/appraisal-rb/appraisal2
 [💎appraisal2-img]: https://img.shields.io/badge/appraised_by-appraisal2-34495e.svg?plastic&logo=ruby&logoColor=white
 [💎d-in-dvcs]: https://railsbling.com/posts/dvcs/put_the_d_in_dvcs/
+
+<!-- kettle-jem:metadata:start -->
+| Field | Value |
+|---|---|
+| Package | omniauth-identity |
+| Description | 🫵 Traditional username/password based authentication system for OmniAuth |
+| Homepage | https://github.com/omniauth/omniauth-identity |
+| Source | https://github.com/omniauth/omniauth-identity/tree/v3.1.5 |
+| License | `MIT` |
+| Funding | https://github.com/sponsors/pboling, https://issuehunt.io/u/pboling, https://ko-fi.com/pboling, https://liberapay.com/pboling/donate, https://opencollective.com/omniauth, https://patreon.com/galtzo, https://polar.sh/pboling, https://thanks.dev/u/gh/pboling, https://tidelift.com/funding/github/rubygems/omniauth-identity, https://www.buymeacoffee.com/pboling |
+<!-- kettle-jem:metadata:end -->

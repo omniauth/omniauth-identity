@@ -6,7 +6,7 @@
 # omniauth-identity will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-# omniauth-identity Rakefile v7.0.0 - 2026-06-03
+# omniauth-identity Rakefile v7.0.0 - 2026-06-04
 # Ruby 2.3 (Safe Navigation) or higher required
 #
 # See LICENSE.md for license information.
@@ -131,6 +131,27 @@ rescue LoadError
   warn("NOTE: kettle-dev isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
 end
 
+### DUPLICATE DRIFT TASKS
+begin
+  require "kettle/drift"
+  Kettle::Drift.install_tasks
+rescue LoadError
+  desc("(stub) kettle:drift:check is unavailable")
+  task("kettle:drift:check") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:update is unavailable")
+  task("kettle:drift:update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:force_update is unavailable")
+  task("kettle:drift:force_update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift is unavailable")
+  task("kettle:drift" => "kettle:drift:update")
+end
+
 ### TEMPLATING TASKS
 # These tasks are installed for the `kettle-jem` executable. Run full templating
 # through `kettle-jem install`; use `kettle-jem template --only PATH` only for
@@ -163,71 +184,5 @@ rescue LoadError
   desc("(stub) build:generate_checksums is unavailable")
   task("build:generate_checksums") do
     warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-begin
-  require "rspec/core/rake_task"
-
-  %w[test spec spec:core spec:orm:active_record spec:orm:couch_potato spec:orm:mongoid spec:orm:rom spec:orm:sequel spec:orm:nobrainer spec:orm:all].each do |task_name|
-    Rake::Task[task_name].clear if Rake::Task.task_defined?(task_name)
-  end
-
-  core_specs = FileList[
-    "spec/omniauth/identity/model_spec.rb",
-    "spec/omniauth/identity/secure_password_spec.rb",
-    "spec/omniauth/identity/version_spec.rb",
-  ]
-  orm_specs = {
-    active_record: "spec/omniauth/identity/models/active_record_spec.rb",
-    couch_potato: "spec/omniauth/identity/models/couch_potato_module_spec.rb",
-    mongoid: "spec/omniauth/identity/models/mongoid_spec.rb",
-    rom: "spec/omniauth/identity/models/rom_spec.rb",
-    sequel: "spec/omniauth/identity/models/sequel_spec.rb",
-    nobrainer: "spec/omniauth/identity/models/no_brainer_spec.rb",
-  }
-
-  RSpec::Core::RakeTask.new("test") do |task|
-    task.pattern = core_specs
-  end
-
-  namespace :spec do
-    RSpec::Core::RakeTask.new("core") do |task|
-      task.pattern = core_specs
-    end
-
-    namespace :orm do
-      orm_specs.each do |orm, spec_file|
-        RSpec::Core::RakeTask.new(orm) do |task|
-          task.pattern = core_specs + [spec_file]
-        end
-      end
-
-      RSpec::Core::RakeTask.new("all") do |task|
-        task.pattern = FileList["spec/**/*_spec.rb"]
-      end
-    end
-  end
-
-  orm_specs.each do |orm, spec_file|
-    RSpec::Core::RakeTask.new("spec_orm_#{orm}") do |task|
-      task.pattern = spec_file
-    end
-  end
-
-  desc("Run all ORM specs (requires CouchDB and MongoDB running; NoBrainer remains isolated)")
-  task(spec_orms: %i[
-    spec_orm_active_record
-    spec_orm_couch_potato
-    spec_orm_mongoid
-    spec_orm_rom
-    spec_orm_sequel
-  ])
-
-  task(default: :test)
-rescue LoadError
-  desc("spec task stub")
-  task(:spec) do
-    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
 end
