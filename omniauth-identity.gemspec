@@ -13,12 +13,7 @@ gem_version =
     # See: https://github.com/panorama-ed/memo_wise/pull/397
     Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/omniauth/identity/version.rb", mod) }::OmniAuth::Identity::Version::VERSION
   else
-    # NOTE: Use __FILE__ or __dir__ until removal of Ruby 1.x support
-    # __dir__ introduced in Ruby 1.9.1
-    # lib = File.expand_path("../lib", __FILE__)
-    lib = File.expand_path("lib", __dir__)
-    $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-    require "omniauth/identity/version"
+    require_relative "lib/omniauth/identity/version"
     OmniAuth::Identity::Version::VERSION
   end
 
