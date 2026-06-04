@@ -20,7 +20,16 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+- Added `OmniAuth::Identity::VERSION` as the traditional public version
+  constant, in addition to `OmniAuth::Identity::Version::VERSION`.
+
 ### Changed
+
+- Refreshed generated package metadata, support documentation, CI workflows,
+  and development dependency floors from the current kettle-jem template.
+- Made identity model and secure password configuration accessors synchronized
+  so concurrent callers do not race while reading or updating authentication
+  keys, ROM adapter settings, or BCrypt minimum-cost mode.
 
 ### Deprecated
 
