@@ -1,4 +1,4 @@
-module Omniauth
+module OmniAuth
   module Identity
     module Version
       VERSION: String

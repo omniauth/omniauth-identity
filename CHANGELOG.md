@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Restored the canonical `OmniAuth::Identity::Version` namespace in generated
+  version, gemspec, README, and RBS metadata.
 - Restored ORM-specific spec rake tasks and made optional ORM spec files avoid
   loading unavailable adapter gems when the matching appraisal does not include them.
 

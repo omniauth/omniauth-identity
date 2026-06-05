@@ -72,7 +72,3 @@ require_relative "identity/version"
 OmniAuth::Identity::Version.class_eval do
   extend VersionGem::Basic
 end
-
-Omniauth::Identity::Version.class_eval do
-  extend VersionGem::Basic
-end
