@@ -1,4 +1,4 @@
-<a href="https://github.com/omniauth"><img alt="omniauth Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/omniauth/avatar-128px.png" width="14%" align="right"/></a>
+<a href="https://github.com/omniauth"><img alt="omniauth Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/omniauth/avatar-128px.svg" width="14%" align="right"/></a>
 
 # 🫵 Omniauth::Identity
 
@@ -777,7 +777,7 @@ Thanks for RTFM. ☺️
 | Package | omniauth-identity |
 | Description | 🫵 Traditional username/password based authentication system for OmniAuth |
 | Homepage | https://github.com/omniauth/omniauth-identity |
-| Source | https://github.com/omniauth/omniauth-identity/tree/v3.1.5 |
+| Source | https://github.com/omniauth/omniauth-identity/tree/v3.2.0 |
 | License | `MIT` |
 | Funding | https://github.com/sponsors/pboling, https://issuehunt.io/u/pboling, https://ko-fi.com/pboling, https://liberapay.com/pboling/donate, https://opencollective.com/omniauth, https://patreon.com/galtzo, https://polar.sh/pboling, https://thanks.dev/u/gh/pboling, https://tidelift.com/funding/github/rubygems/omniauth-identity, https://www.buymeacoffee.com/pboling |
 <!-- kettle-jem:metadata:end -->

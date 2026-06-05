@@ -9,9 +9,11 @@ module Omniauth
   end
 end
 
+# kettle-jem:freeze
 module OmniAuth
   module Identity
     Version = Omniauth::Identity::Version unless const_defined?(:Version, false)
     VERSION = Version::VERSION unless const_defined?(:VERSION, false)
   end
 end
+# kettle-jem:unfreeze

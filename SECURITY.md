@@ -4,7 +4,7 @@
 
 | Version  | Supported |
 |----------|-----------|
-| 3.1.latest | ✅         |
+| 3.2.latest | ✅         |
 
 ## Security contact information
 
