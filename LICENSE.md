@@ -7,4 +7,4 @@ Choose the option that best fits your use case:
 
 ## Copyright Notice
 
-Copyright (c) 2025-2026 |7eter l-|. l3oling
+- Copyright (c) 2025-2026 |7eter l-|. l3oling

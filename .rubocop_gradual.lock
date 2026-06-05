@@ -3,18 +3,12 @@
     [10, 5, 22, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 1905555812],
     [21, 33, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
   ],
-  "Gemfile:574792053": [
-    [54, 1, 39, "Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem `rom-sql` should appear before `sqlite3`.", 2252036889],
+  "Gemfile:131474229": [
     [57, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1209233387],
     [58, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1213001327],
     [59, 1, 19, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 284380772],
     [60, 1, 17, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 439084949],
     [61, 1, 16, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 772204622]
-  ],
-  "Rakefile:1268173106": [
-    [179, 45, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [187, 66, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [227, 3, 20, "Rake/DuplicateTask: Task `default` is defined at both Rakefile:61 and Rakefile:227.", 318045076]
   ],
   "lib/omniauth/identity/model.rb:1195696065": [
     [182, 27, 32, "Lint/SymbolConversion: Unnecessary symbol conversion; use `:\"#{self.class.auth_key}=\"` instead.", 3072009762]

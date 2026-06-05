@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # kettle-jem:freeze
-# To retain chunks of comments & code during omniauth-identity templating:
+# To retain chunks of comments & code during kettle-jem templating:
 # Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
-# omniauth-identity will then preserve content between those markers across template runs.
+# kettle-jem will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
 source "https://gem.coop"
@@ -49,9 +49,9 @@ gem "couch_potato", "~> 1.17", require: false
 gem "mongoid", ">= 7", require: false
 gem "mongoid-rspec", "~> 4.2", require: false
 gem "nobrainer", "~> 0.44", require: false
+gem "rom-sql", "~> 3.7", require: false
 gem "sequel", "~> 5.86", require: false
 gem "sqlite3", ">= 1", require: false
-gem "rom-sql", "~> 3.7", require: false
 
 ### Local dev tools
 gem "growl"
