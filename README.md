@@ -1,4 +1,4 @@
-<a href="https://github.com/omniauth"><img alt="omniauth Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/omniauth/avatar-128px.svg" width="14%" align="right"/></a>
+<a href="https://github.com/omniauth"><img alt="omniauth Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/omniauth/avatar-128px.png" width="14%" align="right"/></a>
 
 # 🫵 Omniauth::Identity
 
