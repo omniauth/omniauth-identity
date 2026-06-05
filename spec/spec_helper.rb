@@ -44,6 +44,12 @@ end
 DEFAULT_PASSWORD = "hang-a-left-at-the-diner"
 DEFAULT_EMAIL = "mojo@example.com"
 
+def omniauth_identity_service_adapter_enabled?(adapter)
+  enabled_values = %w[true 1 yes on]
+  enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_SERVICE_ADAPTERS", "false").downcase) ||
+    enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_#{adapter}", "false").downcase)
+end
+
 # The last thing before loading this gem is to set up code coverage
 begin
   require "kettle-soup-cover"
@@ -60,9 +66,9 @@ RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
-  if ENV.fetch("CI", "false").casecmp("true").zero? && ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_RETHINKDB", "false").casecmp("true") != 0
-    config.filter_run_excluding(rethinkdb: true)
-  end
+  config.filter_run_excluding(couchdb: true) unless omniauth_identity_service_adapter_enabled?("COUCHDB")
+  config.filter_run_excluding(mongodb: true) unless omniauth_identity_service_adapter_enabled?("MONGODB")
+  config.filter_run_excluding(rethinkdb: true) unless omniauth_identity_service_adapter_enabled?("RETHINKDB")
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!

@@ -6,13 +6,13 @@
 <title>
   Module: OmniAuth::Identity::Models::Rom::ClassMethods
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OmniAuth::Identity::Models::Rom::ClassMethods";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,7 +80,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/omniauth/identity/models/rom.rb</dd>
+    <dd>lib/omniauth/identity/models/rom.rb
+</dd>
   </dl>
   
 </div>
@@ -263,6 +266,7 @@
 
       
     </ul>
+    
   
 
 
@@ -297,12 +301,12 @@ Model.auth_key returns a String; convert to Symbol for ROM queries when needed.<
       <pre class="lines">
 
 
-82
-83
-84</pre>
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key_symbol'>auth_key_symbol</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_auth_key'>auth_key</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -339,28 +343,28 @@ Returns an instance or nil.</p>
       <pre class="lines">
 
 
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
 102
 103
 104
 105
 106
-107</pre>
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_key_value'>key_value</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -401,17 +405,21 @@ Returns an instance or nil.</p>
       <pre class="lines">
 
 
-70
-71
-72
-73</pre>
+79
+80
+81
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_owner_relation_name'>owner_relation_name</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='ivar'>@owner_relation_name</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
-  <span class='ivar'>@owner_relation_name</span>
+  <span class='const'>ROM_CONFIG_MUTEX</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
+    <span class='ivar'>@owner_relation_name</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='ivar'>@owner_relation_name</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -433,17 +441,21 @@ Returns an instance or nil.</p>
       <pre class="lines">
 
 
-75
-76
-77
-78</pre>
+86
+87
+88
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_password_field'>password_field</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='ivar'>@password_field</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
-  <span class='lparen'>(</span><span class='ivar'>@password_field</span> <span class='op'>||</span> <span class='symbol'>:password_digest</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='const'>ROM_CONFIG_MUTEX</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
+    <span class='ivar'>@password_field</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='lparen'>(</span><span class='ivar'>@password_field</span> <span class='op'>||</span> <span class='symbol'>:password_digest</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -478,19 +490,23 @@ without an argument they return the current value (with sensible defaults).</p>
       <pre class="lines">
 
 
-59
-60
-61
-62
-63</pre>
+64
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rom_container'>rom_container</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='ivar'>@rom_container</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
-  <span class='id identifier rubyid_container'>container</span> <span class='op'>=</span> <span class='ivar'>@rom_container</span>
-  <span class='id identifier rubyid_container'>container</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:call</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_container'>container</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='op'>:</span> <span class='id identifier rubyid_container'>container</span>
+  <span class='const'>ROM_CONFIG_MUTEX</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
+    <span class='ivar'>@rom_container</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_container'>container</span> <span class='op'>=</span> <span class='ivar'>@rom_container</span>
+    <span class='id identifier rubyid_container'>container</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:call</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_container'>container</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='op'>:</span> <span class='id identifier rubyid_container'>container</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -512,17 +528,21 @@ without an argument they return the current value (with sensible defaults).</p>
       <pre class="lines">
 
 
-65
-66
-67
-68</pre>
+72
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rom_relation_name'>rom_relation_name</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='ivar'>@rom_relation_name</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
-  <span class='ivar'>@rom_relation_name</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="#DEFAULT_RELATION_NAME-constant" title="OmniAuth::Identity::Models::Rom::ClassMethods::DEFAULT_RELATION_NAME (constant)">DEFAULT_RELATION_NAME</a></span></span>
+  <span class='const'>ROM_CONFIG_MUTEX</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
+    <span class='ivar'>@rom_relation_name</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='ivar'>@rom_relation_name</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="#DEFAULT_RELATION_NAME-constant" title="OmniAuth::Identity::Models::Rom::ClassMethods::DEFAULT_RELATION_NAME (constant)">DEFAULT_RELATION_NAME</a></span></span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -534,9 +554,9 @@ without an argument they return the current value (with sensible defaults).</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Fri Jun  5 03:16:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

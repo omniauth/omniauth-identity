@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [3.2.0] - 2026-06-05
+
+- TAG: [v3.2.0][3.2.0t]
+- COVERAGE: 94.21% -- 374/397 lines in 12 files
+- BRANCH COVERAGE: 81.82% -- 90/110 branches in 12 files
+- 81.82% documented
+
+### Added
+
 - Added `OmniAuth::Identity::VERSION` as the traditional public version
   constant, in addition to `OmniAuth::Identity::Version::VERSION`.
 
@@ -31,12 +50,10 @@ Please file a bug if you notice a violation of semantic versioning.
   so concurrent callers do not race while reading or updating authentication
   keys, ROM adapter settings, or BCrypt minimum-cost mode.
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
+- Made local `kettle-test` runs skip CouchDB, MongoDB, and RethinkDB adapter
+  specs by default unless the matching service adapter environment variable is enabled.
 - Updated ORM adapter specs to exercise concrete ActiveRecord and Mongoid model classes.
 
 ### Security
@@ -348,7 +365,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Gemfile.lock file
 - MongoMapper support; unable to satisfy dependencies of both MongoMapper and Mongoid now that MongoMapper is no longer actively maintained.
 
-[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.1.5...HEAD
+[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/omniauth/omniauth-identity/compare/v3.1.5...v3.2.0
+[3.2.0t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.2.0
 [3.1.5]: https://github.com/omniauth/omniauth-identity/compare/v3.1.4...v3.1.5
 [3.1.5t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.1.5
 [3.1.4]: https://github.com/omniauth/omniauth-identity/compare/v3.1.3...v3.1.4

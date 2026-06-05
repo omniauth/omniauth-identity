@@ -6,13 +6,13 @@
 <title>
   Module: OmniAuth::Identity::Models::Rom
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OmniAuth::Identity::Models::Rom";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,7 +80,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/omniauth/identity/models/rom.rb</dd>
+    <dd>lib/omniauth/identity/models/rom.rb
+</dd>
   </dl>
   
 </div>
@@ -302,6 +305,7 @@ password_field :password_digest   end
 
       
     </ul>
+    
   
     <h2>
       Instance Method Summary
@@ -403,6 +407,7 @@ password_field :password_digest   end
 
       
     </ul>
+    
   
 
 
@@ -436,12 +441,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-111
-112
-113</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_email'>email</span>
   <span class='ivar'>@email</span>
@@ -478,12 +483,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-111
-112
-113</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span>
   <span class='ivar'>@info</span>
@@ -520,12 +525,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-111
-112
-113</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -562,12 +567,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-111
-112
-113</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_owner'>owner</span>
   <span class='ivar'>@owner</span>
@@ -604,12 +609,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-111
-112
-113</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid'>uid</span>
   <span class='ivar'>@uid</span>
@@ -641,7 +646,6 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-28
 29
 30
 31
@@ -662,12 +666,13 @@ password_field :password_digest   end
 46
 47
 48
-49</pre>
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 29</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='comment'># Align with other adapters: rely on OmniAuth::Identity::Model for API
 </span>  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Rom/ClassMethods.html" title="OmniAuth::Identity::Models::Rom::ClassMethods (module)">ClassMethods</a></span></span><span class='rparen'>)</span>
@@ -676,7 +681,7 @@ password_field :password_digest   end
     <span class='comment'># OmniAuth::Identity required instance API
 </span>    <span class='comment'># Authenticates the instance with the provided password
 </span>    <span class='comment'># Returns self on success, false otherwise (to match Model.authenticate contract)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+</span>    <span class='id identifier rubyid_define_method'>define_method</span><span class='lparen'>(</span><span class='symbol'>:authenticate</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_password'>password</span><span class='op'>|</span>
       <span class='id identifier rubyid_digest_key'>digest_key</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_password_field'>password_field</span>
       <span class='id identifier rubyid_password_digest'>password_digest</span> <span class='op'>=</span> <span class='ivar'>@identity_data</span><span class='lbracket'>[</span><span class='id identifier rubyid_digest_key'>digest_key</span><span class='rbracket'>]</span>
       <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_password_digest'>password_digest</span>
@@ -725,12 +730,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-135
-136
-137</pre>
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='ivar'>@identity_data</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span>
@@ -755,29 +760,29 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
 126
 127
 128
 129
 130
 131
-132</pre>
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_identity_data'>identity_data</span><span class='comma'>,</span> <span class='id identifier rubyid_owner_data'>owner_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@identity_data</span> <span class='op'>=</span> <span class='id identifier rubyid_identity_data'>identity_data</span>
@@ -829,12 +834,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-140
-141
-142</pre>
+153
+154
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 153</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_owner_id'>owner_id</span>
   <span class='ivar'>@identity_data</span><span class='lbracket'>[</span><span class='symbol'>:owner_id</span><span class='rbracket'>]</span>
@@ -869,12 +874,12 @@ password_field :password_digest   end
       <pre class="lines">
 
 
-145
-146
-147</pre>
+158
+159
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/rom.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='ivar'>@info</span>
@@ -889,9 +894,9 @@ password_field :password_digest   end
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Fri Jun  5 03:16:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

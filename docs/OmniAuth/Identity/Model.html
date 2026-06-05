@@ -6,13 +6,13 @@
 <title>
   Module: OmniAuth::Identity::Model
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OmniAuth::Identity::Model";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,7 +85,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/omniauth/identity/model.rb</dd>
+    <dd>lib/omniauth/identity/model.rb
+</dd>
   </dl>
   
 </div>
@@ -183,6 +186,11 @@ including class for things to work properly.</p>
         </dt>
         <dd><pre class="code"><span class='qwords_beg'>%w[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='words_sep'> </span><span class='tstring_content'>nickname</span><span class='words_sep'> </span><span class='tstring_content'>first_name</span><span class='words_sep'> </span><span class='tstring_content'>last_name</span><span class='words_sep'> </span><span class='tstring_content'>location</span><span class='words_sep'> </span><span class='tstring_content'>description</span><span class='words_sep'> </span><span class='tstring_content'>image</span><span class='words_sep'> </span><span class='tstring_content'>phone</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
+        <dt id="FILTERED_INSPECT_ATTRIBUTES-constant" class="">FILTERED_INSPECT_ATTRIBUTES =
+          
+        </dt>
+        <dd><pre class="code"><span class='qsymbols_beg'>%i[</span><span class='tstring_content'>password</span><span class='words_sep'> </span><span class='tstring_content'>password_confirmation</span><span class='words_sep'> </span><span class='tstring_content'>password_digest</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
     </dl>
   
 
@@ -257,6 +265,7 @@ including class for things to work properly.</p>
 
       
     </ul>
+    
   
     <h2>
       Instance Method Summary
@@ -381,6 +390,7 @@ including class for things to work properly.</p>
 
       
     </ul>
+    
   
 
 
@@ -431,10 +441,10 @@ including class for things to work properly.</p>
       <pre class="lines">
 
 
-32</pre>
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 36</span>
 
 <span class='const'><span class='object_link'><a href="#SCHEMA_ATTRIBUTES-constant" title="OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES (constant)">SCHEMA_ATTRIBUTES</a></span></span> <span class='op'>=</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>email</span><span class='words_sep'> </span><span class='tstring_content'>nickname</span><span class='words_sep'> </span><span class='tstring_content'>first_name</span><span class='words_sep'> </span><span class='tstring_content'>last_name</span><span class='words_sep'> </span><span class='tstring_content'>location</span><span class='words_sep'> </span><span class='tstring_content'>description</span><span class='words_sep'> </span><span class='tstring_content'>image</span><span class='words_sep'> </span><span class='tstring_content'>phone</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre>
     </td>
@@ -496,18 +506,24 @@ if they are not already defined.</p>
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
 47
-48</pre>
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Identity.html#AUTH_SANITIZER-constant" title="OmniAuth::Identity::AUTH_SANITIZER (constant)">AUTH_SANITIZER</a></span></span><span class='op'>::</span><span class='const'>FilteredAttributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_prepend'>prepend</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Identity.html#AUTH_SANITIZER-constant" title="OmniAuth::Identity::AUTH_SANITIZER (constant)">AUTH_SANITIZER</a></span></span><span class='op'>::</span><span class='const'>FilteredAttributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_filtered_attributes'>filtered_attributes</span><span class='lparen'>(</span><span class='op'>*</span><span class='const'><span class='object_link'><a href="#FILTERED_INSPECT_ATTRIBUTES-constant" title="OmniAuth::Identity::Model::FILTERED_INSPECT_ATTRIBUTES (constant)">FILTERED_INSPECT_ATTRIBUTES</a></span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Model/ClassMethods.html" title="OmniAuth::Identity::Model::ClassMethods (module)">ClassMethods</a></span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Model/ClassCreateApi.html" title="OmniAuth::Identity::Model::ClassCreateApi (module)">ClassCreateApi</a></span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:create</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_i_methods'>i_methods</span> <span class='op'>=</span> <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_instance_methods'>instance_methods</span>
@@ -570,16 +586,16 @@ users upon sign in.</p>
       <pre class="lines">
 
 
-162
-163
-164
-165
-166
-167
-168</pre>
+180
+181
+182
+183
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 162</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key'>auth_key</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
@@ -640,20 +656,20 @@ set.</p>
       <pre class="lines">
 
 
-176
-177
-178
-179
-180
-181
-182
-183</pre>
+194
+195
+196
+197
+198
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key='>auth_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_auth_key_setter'>auth_key_setter</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='id identifier rubyid_auth_key_setter'>auth_key_setter</span> <span class='op'>=</span> <span class='symbol'>:&quot;#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auth_key'>auth_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_key_setter'>auth_key_setter</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_key_setter'>auth_key_setter</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
@@ -745,12 +761,12 @@ otherwise.</p>
       <pre class="lines">
 
 
-138
-139
-140</pre>
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid__password'>_password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -808,18 +824,18 @@ any for which <code>#respond_to?</code> is <code>false</code>.</p>
       <pre class="lines">
 
 
-194
-195
-196
-197
-198
-199
-200
-201
-202</pre>
+212
+213
+214
+215
+216
+217
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 212</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span>
   <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -878,18 +894,18 @@ application. Defaults to stringifying the <code>id</code> method.</p>
       <pre class="lines">
 
 
-146
-147
-148
-149
-150
-151
-152
-153
-154</pre>
+164
+165
+166
+167
+168
+169
+170
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uid'>uid</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='rparen'>)</span>
@@ -910,9 +926,9 @@ application. Defaults to stringifying the <code>id</code> method.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Fri Jun  5 03:16:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

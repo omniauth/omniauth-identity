@@ -2,8 +2,8 @@
 
 source "https://gem.coop"
 
-gemspec path: "../"
-
-eval_gemfile("modular/activerecord/vHEAD.gemfile")
+gemspec :path => "../"
 
 eval_gemfile("modular/runtime_heads.gemfile")
+
+eval_gemfile("modular/activerecord/vHEAD.gemfile")

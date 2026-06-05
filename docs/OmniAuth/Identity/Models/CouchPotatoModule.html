@@ -6,13 +6,13 @@
 <title>
   Module: OmniAuth::Identity::Models::CouchPotatoModule
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OmniAuth::Identity::Models::CouchPotatoModule";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,7 +80,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/omniauth/identity/models/couch_potato.rb</dd>
+    <dd>lib/omniauth/identity/models/couch_potato.rb
+</dd>
   </dl>
   
 </div>
@@ -180,6 +183,7 @@ including secure password handling and authentication key management.</p>
 
       
     </ul>
+    
   
 
 
@@ -235,7 +239,6 @@ including secure password support and authentication key validation.</p>
       <pre class="lines">
 
 
-42
 43
 44
 45
@@ -280,12 +283,15 @@ including secure password support and authentication key validation.</p>
 84
 85
 86
-87</pre>
+87
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/couch_potato.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/couch_potato.rb', line 43</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Model.html" title="OmniAuth::Identity::Model (module)">Model</a></span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SecurePassword.html" title="OmniAuth::Identity::SecurePassword (module)">SecurePassword</a></span></span><span class='rparen'>)</span>
@@ -293,30 +299,32 @@ including secure password support and authentication key validation.</p>
     <span class='comment'># validations: true (default) incurs a dependency on ActiveModel, but CouchPotato is ActiveModel based.
 </span>    <span class='id identifier rubyid_has_secure_password'>has_secure_password</span>
 
-    <span class='comment'># @!method self.auth_key=(key)
-</span>    <span class='comment'># Sets the authentication key for the model and adds uniqueness validation.
-</span>    <span class='comment'>#
-</span>    <span class='comment'># @param key [Symbol, String] the attribute to use as the authentication key
-</span>    <span class='comment'># @return [void]
-</span>    <span class='comment'># @example
-</span>    <span class='comment'>#   class User
-</span>    <span class='comment'>#     include OmniAuth::Identity::Models::CouchPotatoModule
-</span>    <span class='comment'>#     self.auth_key = :email
-</span>    <span class='comment'>#   end
-</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_auth_key='>auth_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
-      <span class='kw'>super</span>
-      <span class='id identifier rubyid_validates_uniqueness_of'>validates_uniqueness_of</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='label'>case_sensitive:</span> <span class='kw'>false</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># @!method self.auth_key=(key)
+</span>      <span class='comment'># Sets the authentication key for the model and adds uniqueness validation.
+</span>      <span class='comment'>#
+</span>      <span class='comment'># @param key [Symbol, String] the attribute to use as the authentication key
+</span>      <span class='comment'># @return [void]
+</span>      <span class='comment'># @example
+</span>      <span class='comment'>#   class User
+</span>      <span class='comment'>#     include OmniAuth::Identity::Models::CouchPotatoModule
+</span>      <span class='comment'>#     self.auth_key = :email
+</span>      <span class='comment'>#   end
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_auth_key='>auth_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+        <span class='kw'>super</span>
+        <span class='id identifier rubyid_validates_uniqueness_of'>validates_uniqueness_of</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='label'>case_sensitive:</span> <span class='kw'>false</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
 
-    <span class='comment'># @!method self.locate(search_hash)
-</span>    <span class='comment'># Finds a record by the given search criteria.
-</span>    <span class='comment'>#
-</span>    <span class='comment'># @param search_hash [Hash] the attributes to search for
-</span>    <span class='comment'># @return [Object, nil] the first matching record or nil
-</span>    <span class='comment'># @example
-</span>    <span class='comment'>#   User.locate(email: &#39;user@example.com&#39;)
-</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+      <span class='comment'># @!method self.locate(search_hash)
+</span>      <span class='comment'># Finds a record by the given search criteria.
+</span>      <span class='comment'>#
+</span>      <span class='comment'># @param search_hash [Hash] the attributes to search for
+</span>      <span class='comment'># @return [Object, nil] the first matching record or nil
+</span>      <span class='comment'># @example
+</span>      <span class='comment'>#   User.locate(email: &#39;user@example.com&#39;)
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+      <span class='kw'>end</span>
     <span class='kw'>end</span>
 
     <span class='comment'># @!method save
@@ -341,9 +349,9 @@ including secure password support and authentication key validation.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Fri Jun  5 03:16:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

@@ -6,13 +6,13 @@
 <title>
   Module: OmniAuth::Identity::Models::Sequel
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OmniAuth::Identity::Models::Sequel";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,7 +80,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/omniauth/identity/models/sequel.rb</dd>
+    <dd>lib/omniauth/identity/models/sequel.rb
+</dd>
   </dl>
   
 </div>
@@ -156,7 +159,7 @@ including secure password handling and authentication key management.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#included-class_method" title="included (class method)">.<strong>included</strong>(base)  &#x21d2; void </a>
+      <a href="#included-class_method" title="included (class method)">.<strong>included</strong>(base)  &#x21d2; Object </a>
     
 
     
@@ -170,13 +173,14 @@ including secure password handling and authentication key management.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Called when this module is included in a model class.</p>
+    <span class="summary_desc"><div class='inline'>
 </div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -188,51 +192,18 @@ including secure password handling and authentication key management.</p>
       <div class="method_details first">
   <h3 class="signature first" id="included-class_method">
   
-    .<strong>included</strong>(base)  &#x21d2; <tt>void</tt> 
+    .<strong>included</strong>(base)  &#x21d2; <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    <p class="note returns_void">This method returns an undefined value.</p><p>Called when this module is included in a model class.</p>
-
-<p>This method extends the base class with OmniAuth Identity functionality,<br />
-including secure password support and authentication key validation.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>base</span>
-      
-      
-        <span class='type'>(<tt>Class</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>the model class including this module</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-44
 45
 46
 47
@@ -307,12 +278,13 @@ including secure password support and authentication key validation.</p>
 116
 117
 118
-119</pre>
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/sequel.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/models/sequel.rb', line 45</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
     <span class='comment'># NOTE: Using the deprecated :validations_class_methods because it defines
 </span>    <span class='comment'>#       validates_confirmation_of, while current :validation_helpers does not.
@@ -327,7 +299,7 @@ including secure password support and authentication key validation.</p>
 </span>    <span class='comment'># If ActiveModel isn&#39;t defined, it may be unexpected that validations are not being set,
 </span>    <span class='comment'>#   so this will result in a warning deprecation until release of v4,
 </span>    <span class='comment'>#   at which point the default (for Sequel ORM only) will change to `validations: false`
-</span>    <span class='id identifier rubyid_has_secure_password'>has_secure_password</span><span class='lparen'>(</span><span class='label'>validations:</span> <span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Version.html" title="OmniAuth::Identity::Version (module)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_major'>major</span> <span class='op'>&lt;</span> <span class='int'>4</span><span class='rparen'>)</span>
+</span>    <span class='id identifier rubyid_has_secure_password'>has_secure_password</span><span class='lparen'>(</span><span class='label'>validations:</span> <span class='const'><span class='object_link'><a href="../../../OmniAuth.html" title="OmniAuth (module)">OmniAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html" title="OmniAuth::Identity (module)">Identity</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Identity.html#Version-constant" title="OmniAuth::Identity::Version (constant)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_major'>major</span> <span class='op'>&lt;</span> <span class='int'>4</span><span class='rparen'>)</span>
 
     <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
       <span class='comment'># @!method self.auth_key=(key)
@@ -398,9 +370,9 @@ including secure password support and authentication key validation.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 13 17:14:10 2025 by
+  Generated on Fri Jun  5 03:16:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

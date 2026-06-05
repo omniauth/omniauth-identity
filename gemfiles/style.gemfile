@@ -2,10 +2,10 @@
 
 source "https://gem.coop"
 
-gemspec path: "../"
+gemspec :path => "../"
 
 eval_gemfile("modular/style.gemfile")
 
-eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
-
 eval_gemfile("modular/x_std_libs.gemfile")
+
+eval_gemfile("modular/omniauth/r3/v2.1.gemfile")
