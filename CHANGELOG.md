@@ -22,8 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Added `OmniAuth::Identity::VERSION` as the traditional public version
   constant, in addition to `OmniAuth::Identity::Version::VERSION`.
-- Added `auth-sanitizer` integration so identity model `#inspect` output
-  filters password-related attributes by default.
 
 ### Changed
 
@@ -42,6 +40,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Updated ORM adapter specs to exercise concrete ActiveRecord and Mongoid model classes.
 
 ### Security
+
+- Added `auth-sanitizer` integration so identity model `#inspect` output
+  filters password-related attributes by default.
 
 ## [3.1.5] - 2025-10-13
 
