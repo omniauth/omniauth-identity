@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require "auth_sanitizer/loader"
+
 module OmniAuth
   module Identity
+    AUTH_SANITIZER = AuthSanitizer::Loader.load_isolated unless const_defined?(:AUTH_SANITIZER, false)
+
     # This module provides an include-able interface for implementing the
     # necessary API for OmniAuth Identity to properly locate identities
     # and provide all necessary information.
@@ -30,6 +34,7 @@ module OmniAuth
       # Standard OmniAuth schema attributes that may be stored in the model.
       # @return [Array<String>] List of attribute names.
       SCHEMA_ATTRIBUTES = %w[name email nickname first_name last_name location description image phone].freeze
+      FILTERED_INSPECT_ATTRIBUTES = %i[password password_confirmation password_digest].freeze
 
       class << self
         # Called when this module is included in a model class.
@@ -40,6 +45,9 @@ module OmniAuth
         # @param base [Class] the model class including this module
         # @return [void]
         def included(base)
+          base.include(OmniAuth::Identity::AUTH_SANITIZER::FilteredAttributes)
+          base.prepend(OmniAuth::Identity::AUTH_SANITIZER::FilteredAttributes)
+          base.filtered_attributes(*FILTERED_INSPECT_ATTRIBUTES)
           base.extend(ClassMethods)
           base.extend(ClassCreateApi) unless base.respond_to?(:create)
           i_methods = base.instance_methods
@@ -63,6 +71,11 @@ module OmniAuth
           return false unless instance
 
           instance.authenticate(password)
+        end
+
+        def inherited(subclass)
+          super if defined?(super)
+          subclass.filtered_attributes(*filtered_attribute_names) if subclass.respond_to?(:filtered_attributes)
         end
 
         # Used to set or retrieve the method that will be used to get
@@ -179,7 +192,7 @@ module OmniAuth
       # @param [String] value The value to which the auth key should be
       #   set.
       def auth_key=(value)
-        auth_key_setter = "#{self.class.auth_key}=".to_sym
+        auth_key_setter = :"#{self.class.auth_key}="
         if respond_to?(auth_key_setter)
           send(auth_key_setter, value)
         else

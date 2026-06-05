@@ -130,5 +130,19 @@ RSpec.describe(OmniAuth::Identity::Models::Rom, :sqlite3) do
         expect(located.owner).to(eq({id: owner_id, name: "John Doe"}))
       end
     end
+
+    describe "#inspect" do
+      it "filters password-related attributes from nested ROM identity data" do
+        password_digest = BCrypt::Password.create("password")
+        identity_data = {email: "test@example.com", password_digest: password_digest}
+        ROM_CONTAINER.relations[:rom_test_identities].insert(identity_data)
+
+        inspected = model_klass.locate("test@example.com").inspect
+
+        expect(inspected).to include("test@example.com")
+        expect(inspected).not_to include(password_digest)
+        expect(inspected).to match(/password_digest(?::|=>)\s*\[FILTERED\]/)
+      end
+    end
   end
 end

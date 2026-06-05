@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     omniauth-identity (3.1.5)
+      auth-sanitizer (~> 0.2, >= 0.2.0)
       bcrypt (~> 3.1)
       mutex_m (~> 0.1)
       omniauth (>= 1)
@@ -41,6 +42,8 @@ GEM
       thor (>= 0.14)
       version_gem (~> 1.0, >= 1.0.10)
     ast (2.4.3)
+    auth-sanitizer (0.2.0)
+      version_gem (~> 1.1, >= 1.1.9)
     backports (3.25.3)
     base64 (0.3.0)
     bcrypt (3.1.22)

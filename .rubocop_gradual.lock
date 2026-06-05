@@ -10,18 +10,11 @@
     [60, 1, 17, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 439084949],
     [61, 1, 16, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 772204622]
   ],
-  "lib/omniauth/identity/model.rb:1195696065": [
-    [182, 27, 32, "Lint/SymbolConversion: Unnecessary symbol conversion; use `:\"#{self.class.auth_key}=\"` instead.", 3072009762]
-  ],
   "lib/omniauth/identity/models/rom.rb:1981933124": [
     [141, 28, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
   "lib/omniauth/strategies/identity.rb:2260468599": [
     [232, 29, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
-  ],
-  "spec/omniauth/identity/models/active_record_spec.rb:1234912842": [
-    [23, 130, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [47, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
   ],
   "spec/omniauth/identity/models/couch_potato_module_spec.rb:4058643040": [
     [42, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]

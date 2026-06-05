@@ -20,7 +20,7 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
       AnonymousActiveRecord.generate(
         parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
         columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-        connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"},
+        connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"}
       ) do
         auth_key :email
         def flower
@@ -44,10 +44,22 @@ RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
         args = {
           email: "open faced",
           category: "sandwiches",
-          provider: "identity",
+          provider: "identity"
         }
         allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
         expect(model_klass.locate(args)).to(eq("wakka"))
+      end
+    end
+
+    describe "#inspect" do
+      it "filters password-related attributes from ActiveRecord inspect output" do
+        instance = model_klass.new(email: DEFAULT_EMAIL, password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD)
+        inspected = instance.inspect
+
+        expect(inspected).to include(DEFAULT_EMAIL)
+        expect(inspected).not_to include(DEFAULT_PASSWORD)
+        expect(inspected).not_to include(instance.password_digest)
+        expect(inspected).to include("password_digest: [FILTERED]")
       end
     end
   end

@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Added `OmniAuth::Identity::VERSION` as the traditional public version
   constant, in addition to `OmniAuth::Identity::Version::VERSION`.
+- Added `auth-sanitizer` integration so identity model `#inspect` output
+  filters password-related attributes by default.
 
 ### Changed
 

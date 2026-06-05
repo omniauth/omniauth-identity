@@ -29,6 +29,38 @@ RSpec.describe OmniAuth::Identity::Model do
       it("is abstract") { expect { instance.authenticate("my-password") }.to raise_error(NotImplementedError) }
     end
 
+    describe "#inspect" do
+      subject(:inspected) { inspectable_instance.inspect }
+
+      let(:inspectable_klass) do
+        Class.new do
+          include OmniAuth::Identity::Model
+
+          attr_accessor :email, :password, :password_confirmation, :password_digest, :password_hint
+        end
+      end
+      let(:inspectable_instance) do
+        inspectable_klass.new.tap do |model|
+          model.email = DEFAULT_EMAIL
+          model.password = DEFAULT_PASSWORD
+          model.password_confirmation = DEFAULT_PASSWORD
+          model.password_digest = "bcrypt-secret"
+          model.password_hint = "diner"
+        end
+      end
+
+      it "filters password-related attributes" do
+        expect(inspected).not_to include(DEFAULT_PASSWORD)
+        expect(inspected).not_to include("bcrypt-secret")
+        expect(inspected).to include("[FILTERED]")
+      end
+
+      it "does not filter non-sensitive attributes" do
+        expect(inspected).to include(DEFAULT_EMAIL)
+        expect(inspected).to include("diner")
+      end
+    end
+
     describe "#auth_key" do
       it "raises a NotImplementedError if the auth_key method is not defined" do
         expect { instance.auth_key }.to raise_error(NotImplementedError)
