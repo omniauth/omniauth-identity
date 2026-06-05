@@ -16,29 +16,12 @@
   "lib/omniauth/strategies/identity.rb:2260468599": [
     [232, 29, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
   ],
-  "spec/omniauth/identity/models/couch_potato_module_spec.rb:4058643040": [
-    [42, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  "spec/omniauth/strategies/identity_spec.rb:4035457592": [
+    [53, 9, 63, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 4024977967],
+    [54, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 2937627495],
+    [55, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 359943335]
   ],
-  "spec/omniauth/identity/models/mongoid_spec.rb:1626561410": [
-    [34, 37, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
-  ],
-  "spec/omniauth/identity/models/no_brainer_spec.rb:2371136555": [
-    [34, 32, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [62, 39, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
-  ],
-  "spec/omniauth/strategies/identity_spec.rb:654570549": [
-    [19, 128, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [52, 7, 63, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 4024977967],
-    [53, 7, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 2937627495],
-    [54, 7, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 359943335],
-    [213, 12, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [221, 20, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [226, 20, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [272, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [347, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [370, 14, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
-  ],
-  "spec/spec_helper.rb:1331183603": [
+  "spec/spec_helper.rb:3214074318": [
     [39, 4, 52, "Style/YodaCondition: Reverse the order of the operands `VersionGem::Ruby::RUBY_VER < Gem::Version.new(\"2.5\")`.", 3054081885]
   ],
   "spec/support/shared_contexts/instance_with_instance_methods.rb:540999892": [

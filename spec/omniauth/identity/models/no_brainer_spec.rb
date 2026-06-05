@@ -14,13 +14,7 @@
 #       If you try it, one or both of them will not work.
 #
 # However, if you have RethinkDB installed locally, this spec should work in isolation!
-if ENV.fetch("CI", "false").casecmp("true").zero? && ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_RETHINKDB", "false").casecmp("true") != 0
-  RSpec.describe("NoBrainer ORM", :rethinkdb) do
-    it("is isolated to local RethinkDB-enabled runs") do
-      skip("NoBrainer specs require RethinkDB; set OMNIAUTH_IDENTITY_ENABLE_RETHINKDB=true to run them in CI")
-    end
-  end
-else
+if omniauth_identity_service_adapter_enabled?("RETHINKDB") && omniauth_identity_bundled_gem?("nobrainer")
   require "nobrainer"
 
   RSpec.describe(OmniAuth::Identity::Models::NoBrainer, :rethinkdb) do
@@ -31,7 +25,7 @@ else
         config.table_options = {
           shards: 1,
           replicas: 1,
-          write_acks: :majority,
+          write_acks: :majority
         }
       end
       NoBrainer.sync_schema
@@ -59,7 +53,7 @@ else
         it "delegates locate to the where query method" do
           args = {
             "email" => "open faced",
-            "category" => "sandwiches",
+            "category" => "sandwiches"
           }
           allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
           expect(model_klass.locate(args)).to(eq("wakka"))

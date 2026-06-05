@@ -28,6 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Restored ORM-specific spec rake tasks and made optional ORM spec files avoid
+  loading unavailable adapter gems when the matching appraisal does not include them.
+
 ### Security
 
 ## [3.2.0] - 2026-06-05

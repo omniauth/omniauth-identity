@@ -1,65 +1,67 @@
 # frozen_string_literal: true
 
-# Bugfixes
-# JRuby needed an explicit "require 'logger'" for Rails < 7.1
-# See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
-# Placing above omniauth because it is a dependency of omniauth,
-#   which is undeclared in older versions.
-require "logger"
+if omniauth_identity_sqlite3_enabled? && omniauth_identity_bundled_gem?("activerecord", "anonymous_active_record")
+  # Bugfixes
+  # JRuby needed an explicit "require 'logger'" for Rails < 7.1
+  # See: https://github.com/rails/rails/issues/54260#issuecomment-2594650047
+  # Placing above omniauth because it is a dependency of omniauth,
+  #   which is undeclared in older versions.
+  require "logger"
 
-require "active_record"
-require "anonymous_active_record"
+  require "active_record"
+  require "anonymous_active_record"
 
-class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
+  class TestIdentity < OmniAuth::Identity::Models::ActiveRecord; end
 
-RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
-  describe "model", type: :model do
-    subject(:model_definition) { -> { model_klass } }
+  RSpec.describe(OmniAuth::Identity::Models::ActiveRecord, :sqlite3) do
+    describe "model", type: :model do
+      subject(:model_definition) { -> { model_klass } }
 
-    let(:model_klass) do
-      AnonymousActiveRecord.generate(
-        parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
-        columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
-        connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"}
-      ) do
-        auth_key :email
-        def flower
-          "🌸"
+      let(:model_klass) do
+        AnonymousActiveRecord.generate(
+          parent_klass: "OmniAuth::Identity::Models::ActiveRecord",
+          columns: OmniAuth::Identity::Model::SCHEMA_ATTRIBUTES | %w[provider password_digest],
+          connection_params: {adapter: distinguish_jdbc_driver ? "jdbcsqlite3" : "sqlite3", encoding: "utf8", database: ":memory:"}
+        ) do
+          auth_key :email
+          def flower
+            "🌸"
+          end
         end
       end
-    end
 
-    let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && defined?(ArJdbc::Version) && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
+      let(:distinguish_jdbc_driver) { RUBY_PLATFORM == "java" && defined?(ArJdbc::Version) && Gem::Version.create(ArJdbc::Version) >= Gem::Version.create("72.0") }
 
-    include_context "with persistable model"
+      include_context "with persistable model"
 
-    describe "::table_name" do
-      it "does not use STI rules for its table name" do
-        expect(TestIdentity.table_name).to(eq("test_identities"))
+      describe "::table_name" do
+        it "does not use STI rules for its table name" do
+          expect(TestIdentity.table_name).to(eq("test_identities"))
+        end
       end
-    end
 
-    describe "::locate" do
-      it "delegates locate to the where query method" do
-        args = {
-          email: "open faced",
-          category: "sandwiches",
-          provider: "identity"
-        }
-        allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
-        expect(model_klass.locate(args)).to(eq("wakka"))
+      describe "::locate" do
+        it "delegates locate to the where query method" do
+          args = {
+            email: "open faced",
+            category: "sandwiches",
+            provider: "identity"
+          }
+          allow(model_klass).to(receive(:where).with(args).and_return(["wakka"]))
+          expect(model_klass.locate(args)).to(eq("wakka"))
+        end
       end
-    end
 
-    describe "#inspect" do
-      it "filters password-related attributes from ActiveRecord inspect output" do
-        instance = model_klass.new(email: DEFAULT_EMAIL, password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD)
-        inspected = instance.inspect
+      describe "#inspect" do
+        it "filters password-related attributes from ActiveRecord inspect output" do
+          instance = model_klass.new(email: DEFAULT_EMAIL, password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD)
+          inspected = instance.inspect
 
-        expect(inspected).to include(DEFAULT_EMAIL)
-        expect(inspected).not_to include(DEFAULT_PASSWORD)
-        expect(inspected).not_to include(instance.password_digest)
-        expect(inspected).to include("password_digest: [FILTERED]")
+          expect(inspected).to include(DEFAULT_EMAIL)
+          expect(inspected).not_to include(DEFAULT_PASSWORD)
+          expect(inspected).not_to include(instance.password_digest)
+          expect(inspected).to include("password_digest: [FILTERED]")
+        end
       end
     end
   end

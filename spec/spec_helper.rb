@@ -44,10 +44,43 @@ end
 DEFAULT_PASSWORD = "hang-a-left-at-the-diner"
 DEFAULT_EMAIL = "mojo@example.com"
 
+def omniauth_identity_env_truthy?(key)
+  %w[true 1 yes on].include?(ENV.fetch(key, "false").downcase)
+end
+
+def omniauth_identity_bundled_gem?(*names)
+  specs = if defined?(Bundler)
+    Bundler.load.specs
+  else
+    Gem::Specification
+  end
+
+  names.any? do |name|
+    begin
+      if specs.respond_to?(:find_by_name)
+        specs.find_by_name(name)
+      else
+        specs.any? { |spec| spec.name == name }
+      end
+    rescue Gem::LoadError
+      false
+    end
+  end
+end
+
 def omniauth_identity_service_adapter_enabled?(adapter)
-  enabled_values = %w[true 1 yes on]
-  enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_SERVICE_ADAPTERS", "false").downcase) ||
-    enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_#{adapter}", "false").downcase)
+  omniauth_identity_env_truthy?("OMNIAUTH_IDENTITY_ENABLE_SERVICE_ADAPTERS") ||
+    omniauth_identity_env_truthy?("OMNIAUTH_IDENTITY_ENABLE_#{adapter}")
+end
+
+def omniauth_identity_sqlite3_enabled?
+  return true if omniauth_identity_env_truthy?("OMNIAUTH_IDENTITY_ENABLE_SQLITE3")
+
+  if RUBY_ENGINE == "jruby"
+    omniauth_identity_bundled_gem?("jdbc-sqlite3", "activerecord-jdbcsqlite3-adapter")
+  else
+    omniauth_identity_bundled_gem?("sqlite3")
+  end
 end
 
 # The last thing before loading this gem is to set up code coverage
@@ -69,6 +102,7 @@ RSpec.configure do |config|
   config.filter_run_excluding(couchdb: true) unless omniauth_identity_service_adapter_enabled?("COUCHDB")
   config.filter_run_excluding(mongodb: true) unless omniauth_identity_service_adapter_enabled?("MONGODB")
   config.filter_run_excluding(rethinkdb: true) unless omniauth_identity_service_adapter_enabled?("RETHINKDB")
+  config.filter_run_excluding(sqlite3: true) unless omniauth_identity_sqlite3_enabled?
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
