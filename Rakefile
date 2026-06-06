@@ -6,7 +6,7 @@
 # kettle-jem will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-# omniauth-identity Rakefile v7.0.0 - 2026-06-05
+# omniauth-identity Rakefile v7.0.0 - 2026-06-06
 # Ruby 2.3 (Safe Navigation) or higher required
 #
 # See LICENSE.md for license information.
