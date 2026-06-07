@@ -76,11 +76,23 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="changed">Changed</h3>
 
+<ul>
+  <li>Raised the runtime dependency floor for <code>auth-sanitizer</code> to <code>&gt;= 0.2.1</code>.</li>
+  <li>Raised generated <code>version_gem</code> and <code>appraisal2</code> dependency floors to<br>
+<code>version_gem</code> &gt;= 1.1.10 and <code>appraisal2</code> &gt;= 3.0.9.</li>
+  <li>Refreshed generated Rakefile metadata from the current kettle-jem template.</li>
+</ul>
+
 <h3 id="deprecated">Deprecated</h3>
 
 <h3 id="removed">Removed</h3>
 
 <h3 id="fixed">Fixed</h3>
+
+<ul>
+  <li>Restored ORM-specific spec rake tasks and made optional ORM spec files avoid<br>
+loading unavailable adapter gems when the matching appraisal does not include them.</li>
+</ul>
 
 <h3 id="security">Security</h3>
 
@@ -624,7 +636,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </div></div>
 
       <div id="footer">
-  Generated on Fri Jun  5 03:16:50 2026 by
+  Generated on Sat Jun  6 21:31:16 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>
