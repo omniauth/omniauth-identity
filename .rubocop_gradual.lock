@@ -1,9 +1,5 @@
 {
-  ".yard_gfm_support.rb:1155118867": [
-    [10, 5, 22, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 1905555812],
-    [21, 33, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
-  ],
-  "Gemfile:131474229": [
+  "Gemfile:3076421427": [
     [57, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1209233387],
     [58, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1213001327],
     [59, 1, 19, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 284380772],
