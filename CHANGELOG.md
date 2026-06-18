@@ -22,9 +22,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.1`, so
+- Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.2`, so
   OmniAuth Identity consumers get hash and nested-attribute inspect redaction
-  fixes plus downstream RBS duplicate-declaration fixes.
+  fixes plus downstream RBS duplicate-declaration fixes, and switched isolated
+  sanitizer loading to the released `anonymous_loader` gem.
 - Raised generated `version_gem` and `appraisal2` dependency floors to
   `version_gem` >= 1.1.10 and `appraisal2` >= 3.0.9.
 - Refreshed generated Rakefile metadata from the current kettle-jem template.

@@ -77,7 +77,10 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 <h3 id="changed">Changed</h3>
 
 <ul>
-  <li>Raised the runtime dependency floor for <code>auth-sanitizer</code> to <code>&gt;= 0.2.1</code>.</li>
+  <li>Raised the runtime dependency floor for <code>auth-sanitizer</code> to <code>&gt;= 0.2.2</code>, so<br>
+OmniAuth Identity consumers get hash and nested-attribute inspect redaction<br>
+fixes plus downstream RBS duplicate-declaration fixes, and switched isolated<br>
+sanitizer loading to the released <code>anonymous_loader</code> gem.</li>
   <li>Raised generated <code>version_gem</code> and <code>appraisal2</code> dependency floors to<br>
 <code>version_gem</code> &gt;= 1.1.10 and <code>appraisal2</code> &gt;= 3.0.9.</li>
   <li>Refreshed generated Rakefile metadata from the current kettle-jem template.</li>
@@ -636,7 +639,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jun  6 21:31:16 2026 by
+  Generated on Thu Jun 18 08:22:24 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>

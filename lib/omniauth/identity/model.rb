@@ -1,10 +1,23 @@
 # frozen_string_literal: true
 
-require "auth_sanitizer/loader"
+require "anonymous_loader"
 
 module OmniAuth
   module Identity
-    AUTH_SANITIZER = AuthSanitizer::Loader.load_isolated unless const_defined?(:AUTH_SANITIZER, false)
+    unless const_defined?(:AUTH_SANITIZER, false)
+      auth_sanitizer_requirement = Gem::Requirement.new("~> 0.2", ">= 0.2.2")
+      auth_sanitizer_loader_namespace = AnonymousLoader.load_path(
+        gem_name: "auth-sanitizer",
+        require_path: "auth_sanitizer/loader.rb",
+        version_requirement: auth_sanitizer_requirement,
+        version_file: "auth/sanitizer/version.rb"
+      )
+
+      AUTH_SANITIZER = auth_sanitizer_loader_namespace
+        .const_get(:AuthSanitizer)
+        .const_get(:Loader)
+        .load_isolated
+    end
 
     # This module provides an include-able interface for implementing the
     # necessary API for OmniAuth Identity to properly locate identities

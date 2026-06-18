@@ -277,17 +277,17 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
-91
-92
-93</pre>
+99
+100
+101
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_key'>auth_key</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='const'>AUTH_KEY_MUTEX</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
@@ -378,15 +378,15 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74</pre>
+82
+83
+84
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate'>authenticate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span> <span class='op'>=</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
@@ -414,13 +414,13 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-76
-77
-78
-79</pre>
+89
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inherited'>inherited</span><span class='lparen'>(</span><span class='id identifier rubyid_subclass'>subclass</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='kw'>super</span><span class='rparen'>)</span>
@@ -510,12 +510,12 @@ and set the user-supplied authentication key.</p>
       <pre class="lines">
 
 
-100
-101
-102</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/omniauth/identity/model.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_locate'>locate</span><span class='lparen'>(</span><span class='id identifier rubyid__key'>_key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
@@ -530,7 +530,7 @@ and set the user-supplied authentication key.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Jun  5 03:16:50 2026 by
+  Generated on Thu Jun 18 08:22:24 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>
