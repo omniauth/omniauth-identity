@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     omniauth-identity (3.2.0)
-      anonymous_loader (~> 0.1, >= 0.1.0)
+      anonymous_loader (~> 0.1, >= 0.1.1)
       auth-sanitizer (~> 0.2, >= 0.2.2)
       bcrypt (~> 3.1)
       mutex_m (~> 0.1)
@@ -36,7 +36,7 @@ GEM
       activerecord (>= 5)
       activesupport (>= 5)
       version_gem (~> 1.1, >= 1.1.4)
-    anonymous_loader (0.1.0)
+    anonymous_loader (0.1.1)
       version_gem (~> 1.1, >= 1.1.12)
     ansi (1.6.0)
     appraisal2 (3.1.0)

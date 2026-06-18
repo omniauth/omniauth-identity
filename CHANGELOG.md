@@ -22,6 +22,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.1`.
 - Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.2`, so
   OmniAuth Identity consumers get hash and nested-attribute inspect redaction
   fixes plus downstream RBS duplicate-declaration fixes, and switched isolated
