@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Retemplated generated project metadata, support documentation, CI workflows,
+  binstubs, and development dependency floors with `kettle-jem` v7.0.0.
 - Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.1`.
 - Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.2`, so
   OmniAuth Identity consumers get hash and nested-attribute inspect redaction
