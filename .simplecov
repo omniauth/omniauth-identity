@@ -6,6 +6,15 @@
 
 require "kettle/soup/cover/config"
 
+# Minimum coverage thresholds are set by kettle-soup-cover.
+# They are controlled by ENV variables loaded by `mise` from `mise.toml`
+# (with optional machine-local overrides in `.env.local`).
+# If the values for minimum coverage need to change, they should be changed both there,
+#   and in 2 places in .github/workflows/coverage.yml.
+SimpleCov.configure do
+  cover "lib/**/*.rb", "lib/**/*.rake", "exe/*.rb"
+end
+
 omniauth_identity_bundled_gem = lambda do |*names|
   specs = if defined?(Bundler)
     Bundler.load.specs
@@ -42,11 +51,6 @@ omniauth_identity_sqlite3_enabled = lambda do
   end
 end
 
-# Minimum coverage thresholds are set by kettle-soup-cover.
-# They are controlled by ENV variables loaded by `mise` from `mise.toml`
-# (with optional machine-local overrides in `.env.local`).
-# If the values for minimum coverage need to change, they should be changed both there,
-#   and in 2 places in .github/workflows/coverage.yml.
 SimpleCov.start do
   track_files "lib/**/*.rb"
   track_files "lib/**/*.rake"

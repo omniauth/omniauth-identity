@@ -162,7 +162,7 @@ GEM
       strscan (>= 3.1.2)
     httpclient (2.9.0)
       mutex_m
-    i18n (1.15.1)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     io-console (0.8.2)
@@ -175,7 +175,7 @@ GEM
     kettle-dev (2.2.13)
       kettle-test (~> 2.0, >= 2.0.4)
       version_gem (~> 1.1, >= 1.1.11)
-    kettle-soup-cover (3.0.0.rc1)
+    kettle-soup-cover (3.0.0.rc2)
       simplecov (>= 1.0.pre)
       simplecov-cobertura (>= 4.0.pre)
       simplecov-console (~> 0.9, >= 0.9.5)
@@ -601,7 +601,7 @@ DEPENDENCIES
   guard-rspec
   irb (~> 1.17)
   kettle-dev (~> 2.2, >= 2.2.13)
-  kettle-soup-cover (~> 3.0.a, >= 3.0.0.rc1)
+  kettle-soup-cover (~> 3.0.a, >= 3.0.0.rc2)
   kettle-test (~> 2.0, >= 2.0.5)
   kramdown (~> 2.5, >= 2.5.1)
   kramdown-parser-gfm (~> 1.1)
