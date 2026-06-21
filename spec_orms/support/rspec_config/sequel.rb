@@ -2,7 +2,7 @@
 
 require "logger"
 
-# :nocov:
+# simplecov:disable
 DB = if RUBY_ENGINE == "jruby"
   require "jdbc/sqlite3"
   require "sequel"
@@ -12,4 +12,4 @@ else
   require "sequel"
   Sequel.sqlite
 end
-# :nocov:
+# simplecov:enable

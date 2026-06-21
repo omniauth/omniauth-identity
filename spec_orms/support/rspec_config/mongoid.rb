@@ -2,7 +2,7 @@
 
 require "logger"
 require "active_support"
-# :nocov:
+# simplecov:disable
 begin
   require "bson"
   require "bson/active_support"
@@ -14,7 +14,7 @@ rescue LoadError => error
     raise error
   end
 end
-# :nocov:
+# simplecov:enable
 require "mongoid"
 require "mongoid-rspec"
 

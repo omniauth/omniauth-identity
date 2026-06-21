@@ -2,7 +2,7 @@
 
 require "logger"
 
-# :nocov:
+# simplecov:disable
 ROM_DB = if RUBY_ENGINE == "jruby"
   require "jdbc/sqlite3"
   require "sequel"
@@ -12,7 +12,7 @@ else
   require "sequel"
   Sequel.sqlite
 end
-# :nocov:
+# simplecov:enable
 
 require "rom"
 require "rom-sql"
