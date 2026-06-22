@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     omniauth-identity (3.2.0)
-      anonymous_loader (~> 0.1, >= 0.1.1)
+      anonymous_loader (~> 0.1, >= 0.1.2)
       auth-sanitizer (~> 0.2, >= 0.2.2)
       bcrypt (~> 3.1)
       mutex_m (~> 0.1)
@@ -36,8 +36,8 @@ GEM
       activerecord (>= 5)
       activesupport (>= 5)
       version_gem (~> 1.1, >= 1.1.4)
-    anonymous_loader (0.1.1)
-      version_gem (~> 1.1, >= 1.1.12)
+    anonymous_loader (0.1.2)
+      version_gem (~> 1.1, >= 1.1.13)
     ansi (1.6.0)
     appraisal2 (3.1.2)
       bundler (>= 1.17.3)
@@ -538,7 +538,7 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
-    version_gem (1.1.12)
+    version_gem (1.1.13)
     webrick (1.9.2)
     yaml-converter (0.2.1)
       hexapdf (>= 1.8, < 2)
