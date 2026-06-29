@@ -229,7 +229,7 @@ module OmniAuth
       def build_omniauth_login_form
         OmniAuth::Form.build(
           title: options[:title],
-          url: callback_path,
+          url: callback_path
         ) do |f|
           f.text_field("Login", "auth_key")
           f.password_field("Password", "password")

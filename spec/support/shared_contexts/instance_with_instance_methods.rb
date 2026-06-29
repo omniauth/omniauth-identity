@@ -66,7 +66,7 @@ RSpec.shared_examples "instance with instance methods" do
 
       expect(instance.info).to include({
         "name" => "Bob Bobson",
-        "nickname" => "bob",
+        "nickname" => "bob"
       })
     end
 

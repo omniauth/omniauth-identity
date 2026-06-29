@@ -138,7 +138,7 @@ module OmniAuth
 
           @info = {
             "email" => @email,
-            "name" => @name,
+            "name" => @name
           }
 
           @owner = owner_data

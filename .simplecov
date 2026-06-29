@@ -4,8 +4,6 @@
 # omniauth-identity will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-require "kettle/soup/cover/config"
-
 # Minimum coverage thresholds are set by kettle-soup-cover.
 # They are controlled by ENV variables loaded by `mise` from `mise.toml`
 # (with optional machine-local overrides in `.env.local`).
@@ -35,13 +33,7 @@ omniauth_identity_bundled_gem = lambda do |*names|
   end
 end
 
-omniauth_identity_service_adapter_enabled = lambda do |adapter|
-  enabled_values = %w[true 1 yes on]
-  enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_SERVICE_ADAPTERS", "false").downcase) ||
-    enabled_values.include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_#{adapter}", "false").downcase)
-end
-
-omniauth_identity_sqlite3_enabled = lambda do
+lambda do
   return true if %w[true 1 yes on].include?(ENV.fetch("OMNIAUTH_IDENTITY_ENABLE_SQLITE3", "false").downcase)
 
   if RUBY_ENGINE == "jruby"
@@ -49,17 +41,4 @@ omniauth_identity_sqlite3_enabled = lambda do
   else
     omniauth_identity_bundled_gem.call("sqlite3")
   end
-end
-
-SimpleCov.start do
-  track_files "lib/**/*.rb"
-  track_files "lib/**/*.rake"
-  track_files "exe/*.rb"
-
-  add_filter "lib/omniauth/identity/models/couch_potato.rb" unless omniauth_identity_service_adapter_enabled.call("COUCHDB")
-  add_filter "lib/omniauth/identity/models/mongoid.rb" unless omniauth_identity_service_adapter_enabled.call("MONGODB")
-  add_filter "lib/omniauth/identity/models/nobrainer.rb" unless omniauth_identity_service_adapter_enabled.call("RETHINKDB")
-  add_filter "lib/omniauth/identity/models/active_record.rb" unless omniauth_identity_sqlite3_enabled.call
-  add_filter "lib/omniauth/identity/models/rom.rb" unless omniauth_identity_sqlite3_enabled.call
-  add_filter "lib/omniauth/identity/models/sequel.rb" unless omniauth_identity_sqlite3_enabled.call
 end

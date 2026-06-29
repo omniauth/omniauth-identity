@@ -1,2 +1,0 @@
-# Ruby >= 2.5 (dependency of omniauth)
-gem "mutex_m", github: "ruby/mutex_m", branch: "master"

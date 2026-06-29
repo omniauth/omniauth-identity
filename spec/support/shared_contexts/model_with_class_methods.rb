@@ -11,7 +11,7 @@ RSpec.shared_examples "model with class methods" do
     it "calls locate and then authenticate" do
       mocked_instance = double("ExampleModel", authenticate: "abbadoo")
       args = {
-        email: "example",
+        email: "example"
       }
       allow(model_klass).to receive(:locate).with(args).and_return(mocked_instance)
       expect(model_klass.authenticate(args, "pass")).to eq("abbadoo")
@@ -21,7 +21,7 @@ RSpec.shared_examples "model with class methods" do
       mocked_instance = double("ExampleModel", authenticate: "abbadoo")
       args = {
         email: "example",
-        user_type: "admin",
+        user_type: "admin"
       }
       allow(model_klass).to receive(:locate).with(args).and_return(mocked_instance)
       expect(model_klass.authenticate(args, "pass")).to eq("abbadoo")
