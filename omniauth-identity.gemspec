@@ -109,8 +109,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Utilities
-  spec.add_dependency("anonymous_loader", "~> 0.1", ">= 0.1.2") # ruby >= 2.2.0
-  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.2") # ruby >= 2.2.0
+  spec.add_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3") # ruby >= 2.2.0
+  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.3") # ruby >= 2.2.0
   spec.add_dependency("bcrypt", "~> 3.1")                 # ruby >= 0
   spec.add_dependency("mutex_m", "~> 0.1")                # ruby >= 0
   spec.add_dependency("omniauth", ">= 1")                 # ruby >= 0

@@ -70,22 +70,11 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/omniauth/omniauth-identity/compare/v3.2.0...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/omniauth/omniauth-identity/compare/v3.2.1...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
 <h3 id="changed">Changed</h3>
-
-<ul>
-  <li>Raised the <code>anonymous_loader</code> runtime dependency floor to <code>&gt;= 0.1.1</code>.</li>
-  <li>Raised the runtime dependency floor for <code>auth-sanitizer</code> to <code>&gt;= 0.2.2</code>, so<br>
-OmniAuth Identity consumers get hash and nested-attribute inspect redaction<br>
-fixes plus downstream RBS duplicate-declaration fixes, and switched isolated<br>
-sanitizer loading to the released <code>anonymous_loader</code> gem.</li>
-  <li>Raised generated <code>version_gem</code> and <code>appraisal2</code> dependency floors to<br>
-<code>version_gem</code> &gt;= 1.1.10 and <code>appraisal2</code> &gt;= 3.0.9.</li>
-  <li>Refreshed generated Rakefile metadata from the current kettle-jem template.</li>
-</ul>
 
 <h3 id="deprecated">Deprecated</h3>
 
@@ -93,12 +82,51 @@ sanitizer loading to the released <code>anonymous_loader</code> gem.</li>
 
 <h3 id="fixed">Fixed</h3>
 
+<h3 id="security">Security</h3>
+
+<h2 id="321---2026-07-14">
+<a href="https://github.com/omniauth/omniauth-identity/compare/v3.2.0...v3.2.1">3.2.1</a> - 2026-07-14</h2>
+
 <ul>
-  <li>Restored ORM-specific spec rake tasks and made optional ORM spec files avoid<br>
-loading unavailable adapter gems when the matching appraisal does not include them.</li>
+  <li>TAG: <a href="https://github.com/omniauth/omniauth-identity/releases/tag/v3.2.1">v3.2.1</a>
+</li>
+  <li>COVERAGE: 31.53% – 128/406 lines in 12 files</li>
+  <li>BRANCH COVERAGE: 29.25% – 31/106 branches in 12 files</li>
+  <li>85.26% documented</li>
 </ul>
 
-<h3 id="security">Security</h3>
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>Retemplated generated project metadata, support documentation, CI workflows,<br>
+binstubs, and development dependency floors with <code>kettle-jem</code> v7.0.0.</li>
+  <li>Raised the <code>anonymous_loader</code> runtime dependency floor to <code>&gt;= 0.1.3</code>.</li>
+  <li>Raised the runtime dependency floor for <code>auth-sanitizer</code> to <code>&gt;= 0.2.3</code>, so<br>
+OmniAuth Identity consumers get hash and nested-attribute inspect redaction<br>
+fixes plus downstream RBS duplicate-declaration fixes, and switched isolated<br>
+sanitizer loading to the released <code>anonymous_loader</code> gem.</li>
+  <li>Raised generated <code>version_gem</code> and <code>appraisal2</code> dependency floors to<br>
+<code>version_gem</code> &gt;= 1.1.14 and <code>appraisal2</code> &gt;= 3.1.4.</li>
+  <li>Refreshed generated Rakefile metadata from the current kettle-jem template.</li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>
+    <p>Restored ORM-specific spec rake tasks and made optional ORM spec files avoid<br>
+loading unavailable adapter gems when the matching appraisal does not include them.</p>
+  </li>
+  <li>
+    <p>Package configured license files in gem release file lists.</p>
+  </li>
+</ul>
 
 <h2 id="320---2026-06-05">
 <a href="https://github.com/omniauth/omniauth-identity/compare/v3.1.5...v3.2.0">3.2.0</a> - 2026-06-05</h2>
@@ -111,14 +139,14 @@ loading unavailable adapter gems when the matching appraisal does not include th
   <li>81.82% documented</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>Added <code>OmniAuth::Identity::VERSION</code> as the traditional public version<br>
 constant, in addition to <code>OmniAuth::Identity::Version::VERSION</code>.</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>Refreshed generated package metadata, support documentation, CI workflows,<br>
@@ -128,7 +156,7 @@ so concurrent callers do not race while reading or updating authentication<br>
 keys, ROM adapter settings, or BCrypt minimum-cost mode.</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
   <li>Made local <code>kettle-test</code> runs skip CouchDB, MongoDB, and RethinkDB adapter<br>
@@ -154,7 +182,7 @@ filters password-related attributes by default.</li>
   <li>92.39% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>Adapter support for Hanami and ROM</li>
@@ -173,7 +201,7 @@ filters password-related attributes by default.</li>
   <li>44.44% documented</li>
 </ul>
 
-<h1 id="added-3">Added</h1>
+<h1 id="added-4">Added</h1>
 
 <ul>
   <li>More documentation</li>
@@ -187,7 +215,7 @@ filters password-related attributes by default.</li>
   <li>Test against locked and unlocked, runtime and development, dependencies</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>gemspec metadata</li>
@@ -208,7 +236,7 @@ filters password-related attributes by default.</li>
   <li>44.44% documented</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>More documentation by @pboling</li>
@@ -216,13 +244,13 @@ filters password-related attributes by default.</li>
   <li>Test workflows with latest dependencies and more platform and dep HEADs</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
   <li>Updated Code of Conduct to Contributor Covenant v2.1</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>Set <code>SKIP_GEM_SIGNING</code> in env to allow <code>gem build</code> without cryptographic signing requirement by @pboling
@@ -242,7 +270,7 @@ filters password-related attributes by default.</li>
   <li>BRANCH COVERAGE: 79.49% – 62/78 branches in 15 files</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>20 year signing cert expires 2045-04-29 by @pboling</li>
@@ -257,7 +285,7 @@ filters password-related attributes by default.</li>
   </li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
   <li>Upgraded Code of Conduct based on Contributor Covenant v2.1 by @pboling</li>
@@ -274,7 +302,7 @@ filters password-related attributes by default.</li>
   <li>44.44% documented</li>
 </ul>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>
@@ -283,7 +311,7 @@ filters password-related attributes by default.</li>
 <a href="https://github.com/omniauth/omniauth-identity/pull/130">PR 130</a> Add Maintainer contact email by @pboling</li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
   <li>
@@ -301,7 +329,7 @@ filters password-related attributes by default.</li>
   <li>44.44% documented</li>
 </ul>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>
@@ -319,7 +347,7 @@ filters password-related attributes by default.</li>
 <a href="https://github.com/omniauth/omniauth-identity/pull/128">PR #128</a> Instructions for contributing by @pboling</li>
 </ul>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
   <li>Deprecate <code>require 'omniauth/identity'</code> by @pboling
@@ -329,7 +357,7 @@ filters password-related attributes by default.</li>
   </li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>
@@ -350,14 +378,14 @@ filters password-related attributes by default.</li>
 </li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
   <li>[Sequel] Fixes loading the Sequel adapter, issue reported as <a href="https://github.com/omniauth/omniauth-identity/issues/112">#112</a>
 </li>
 </ul>
 
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
   <li>📝 Document the Database adapters and drivers the gem currently works with</li>
@@ -371,7 +399,7 @@ filters password-related attributes by default.</li>
 </li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
   <li>[Model] Fixes 2 issues raised in a comment on PR <a href="https://github.com/omniauth/omniauth-identity/pull/108#issuecomment-804456604">#108</a>
@@ -390,7 +418,7 @@ filters password-related attributes by default.</li>
 </li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
   <li>[ActiveRecord] Fixed <a href="https://github.com/omniauth/omniauth-identity/issues/110">#110</a> which prevented <code>OmniAuth::Identity::Models::ActiveRecord</code>-based records from saving.</li>
@@ -401,7 +429,7 @@ filters password-related attributes by default.</li>
 </li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
   <li>Upgraded to a newer <code>OmniAuth::Identity::SecurePassword</code> ripped from <a href="https://github.com/rails/rails/blob/6-1-stable/activemodel/lib/active_model/secure_password.rb">Rails 6-1-stable</a>
@@ -414,7 +442,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
   </li>
 </ul>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
 <ul>
   <li>New specs to cover real use cases and implementations of each ORM model adapter that ships with the gem:
@@ -436,13 +464,13 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
   <li>Fix breaking changes introduced by <a href="https://github.com/omniauth/omniauth-identity/pull/108">#108</a> which prevented <code>:on_validation</code> from firing</li>
 </ul>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
 <ul>
   <li>New (or finally documented) options:
@@ -474,14 +502,14 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
   <li>Fix breaking changes introduced by <a href="https://github.com/omniauth/omniauth-identity/pull/86">#86’s</a> introduction of <code>:on_validation</code>
 </li>
 </ul>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
   <li>Define <code>#save</code>, <code>#persisted?</code> and <code>::create</code> on <code>Omniauth::Identity::Model</code>
@@ -502,7 +530,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="added-12">Added</h3>
+<h3 id="added-13">Added</h3>
 
 <ul>
   <li>Add support for <a href="http://sequel.jeremyevans.net/">sequel ORM</a>
@@ -517,7 +545,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="added-13">Added</h3>
+<h3 id="added-14">Added</h3>
 
 <ul>
   <li>Add option <code>:on_validation</code>, which can be used to add a Captcha
@@ -544,7 +572,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
   <li>Github Actions CI Build for Ruby 2.4, 3.0 and ruby-head</li>
@@ -562,7 +590,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
   <li>Github Actions CI Build for various Rubies</li>
@@ -576,7 +604,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="added-14">Added</h3>
+<h3 id="added-15">Added</h3>
 
 <ul>
   <li>Compatibility with Ruby 3</li>
@@ -610,14 +638,14 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </li>
 </ul>
 
-<h3 id="added-15">Added</h3>
+<h3 id="added-16">Added</h3>
 
 <ul>
   <li>CHANGELOG to maintain a history of changes.</li>
   <li>Include mongoid-rspec gem.</li>
 </ul>
 
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 
 <ul>
   <li>Fix failing Specs</li>
@@ -640,7 +668,7 @@ In any case, the ripped version is only used when the <code>has_secure_password<
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jun 18 08:34:35 2026 by
+  Generated on Tue Jul 14 14:41:59 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>

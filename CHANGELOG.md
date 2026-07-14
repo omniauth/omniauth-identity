@@ -20,20 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Added support for JRuby 10.1 and TruffleRuby 34.0.
-
 ### Changed
-
-- Retemplated generated project metadata, support documentation, CI workflows,
-  binstubs, and development dependency floors with `kettle-jem` v7.0.0.
-- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.2`.
-- Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.2`, so
-  OmniAuth Identity consumers get hash and nested-attribute inspect redaction
-  fixes plus downstream RBS duplicate-declaration fixes, and switched isolated
-  sanitizer loading to the released `anonymous_loader` gem.
-- Raised generated `version_gem` and `appraisal2` dependency floors to
-  `version_gem` >= 1.1.10 and `appraisal2` >= 3.0.9.
-- Refreshed generated Rakefile metadata from the current kettle-jem template.
 
 ### Deprecated
 
@@ -41,12 +28,38 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [3.2.1] - 2026-07-14
+
+- TAG: [v3.2.1][3.2.1t]
+- COVERAGE: 31.53% -- 128/406 lines in 12 files
+- BRANCH COVERAGE: 29.25% -- 31/106 branches in 12 files
+- 85.26% documented
+
+### Added
+
+- Added support for JRuby 10.1 and TruffleRuby 34.0.
+
+### Changed
+
+- Retemplated generated project metadata, support documentation, CI workflows,
+  binstubs, and development dependency floors with `kettle-jem` v7.0.0.
+- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.3`.
+- Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.3`, so
+  OmniAuth Identity consumers get hash and nested-attribute inspect redaction
+  fixes plus downstream RBS duplicate-declaration fixes, and switched isolated
+  sanitizer loading to the released `anonymous_loader` gem.
+- Raised generated `version_gem` and `appraisal2` dependency floors to
+  `version_gem` >= 1.1.14 and `appraisal2` >= 3.1.4.
+- Refreshed generated Rakefile metadata from the current kettle-jem template.
+
+### Fixed
+
 - Restored ORM-specific spec rake tasks and made optional ORM spec files avoid
   loading unavailable adapter gems when the matching appraisal does not include them.
 
 - Package configured license files in gem release file lists.
-
-### Security
 
 ## [3.2.0] - 2026-06-05
 
@@ -383,7 +396,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Gemfile.lock file
 - MongoMapper support; unable to satisfy dependencies of both MongoMapper and Mongoid now that MongoMapper is no longer actively maintained.
 
-[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.2.0...HEAD
+[Unreleased]: https://github.com/omniauth/omniauth-identity/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/omniauth/omniauth-identity/compare/v3.2.0...v3.2.1
+[3.2.1t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.2.1
 [3.2.0]: https://github.com/omniauth/omniauth-identity/compare/v3.1.5...v3.2.0
 [3.2.0t]: https://github.com/omniauth/omniauth-identity/releases/tag/v3.2.0
 [3.1.5]: https://github.com/omniauth/omniauth-identity/compare/v3.1.4...v3.1.5
