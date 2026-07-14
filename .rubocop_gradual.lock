@@ -1,11 +1,4 @@
 {
-  "Gemfile:1806900170": [
-    [58, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1209233387],
-    [59, 1, 11, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 1213001327],
-    [60, 1, 19, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 284380772],
-    [61, 1, 17, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 439084949],
-    [62, 1, 16, "Gemspec/DevelopmentDependencies: Specify development dependencies in gemspec.", 772204622]
-  ],
   "spec/omniauth/strategies/identity_spec.rb:4035457592": [
     [53, 9, 63, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 4024977967],
     [54, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 2937627495],

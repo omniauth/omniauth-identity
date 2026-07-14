@@ -19,7 +19,7 @@ git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 gemspec
 
 # Local workspace dependency wiring for *_local.gemfile overrides
-nomono_requirements = ["~> 1.0", ">= 1.0.7"]
+nomono_requirements = ["~> 1.0", ">= 1.0.8"]
 gem "nomono", *nomono_requirements, require: false # ruby >= 2.2
 
 # Templating (env-switched: SMORG_RB_DEV=/path/to/structuredmerge/ruby/gems for local paths)
@@ -45,21 +45,3 @@ eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
 
 # See unlocked_deps appraisal for more details on irb inclusion
 gem "irb", "~> 1.17" # ruby >= 2.7
-### ORMs
-gem "couch_potato", "~> 1.17", require: false
-gem "mongoid", ">= 7", require: false
-gem "mongoid-rspec", "~> 4.2", require: false
-gem "nobrainer", "~> 0.44", require: false
-gem "rom-sql", "~> 3.7", require: false
-gem "sequel", "~> 5.86", require: false
-gem "sqlite3", ">= 1", require: false
-
-### Local dev tools
-gem "growl"
-gem "guard"
-gem "guard-bundler"
-gem "guard-rspec"
-gem "rb-fsevent"
-
-### Testing
-gem "test-unit", ">= 3.0"
