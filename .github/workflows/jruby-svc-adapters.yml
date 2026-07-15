@@ -68,7 +68,7 @@ jobs:
         uses: iamssen/couchdb-github-action@51f21cb519b7ef0cbf86d063849da780dd3ea405
         if: "endsWith(matrix.exec_cmd, 'couch_potato')"
         with:
-          couchdb-version: "3.4.1"
+          couchdb-version: "3"
 
       ### MONGODB
       - name: Start MongoDB
