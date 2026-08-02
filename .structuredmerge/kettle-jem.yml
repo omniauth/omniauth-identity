@@ -243,6 +243,25 @@ readme:
     # Example:
     # fossa: git+github.com/pboling/example
     fossa: false
+# SPDX license identifiers for this project.
+# List one or more licenses that apply to the gem. Users may use the software
+# under the terms of any one license listed here (OR semantics, not AND).
+#
+# Accepted values (initial supported set):
+#   MIT                              - MIT License (open source, permissive)
+#   AGPL-3.0-only                    - GNU Affero General Public License v3
+#   PolyForm-Noncommercial-1.0.0     - PolyForm Noncommercial License 1.0.0
+#   PolyForm-Small-Business-1.0.0    - PolyForm Small Business License 1.0.0
+#   LicenseRef-Big-Time-Public-License - Big Time Public License 2.0.2
+#
+# Defaults to spec.licenses from the gemspec when this key is absent.
+#
+# Template behaviour:
+#   - Each listed license is copied as <SPDX-basename>.md into the project.
+#   - A LICENSE.md index file is generated referencing all chosen licenses.
+#   - Any non-MIT license adds a "contact for commercial license" prompt.
+#   - When MIT (or AGPL), a PolyForm variant, AND LicenseRef-Big-Time-Public-License
+#     are all present, a use-case guide table is added to README and LICENSE.md.
 licenses:
   - MIT
 # Apache SkyWalking Eyes dependency license overrides.
@@ -439,4 +458,3 @@ files:
 #     strategy: merge
 #     preference: destination
 #     add_template_only_nodes: false
-

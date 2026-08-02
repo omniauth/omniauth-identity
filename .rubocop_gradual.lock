@@ -4,7 +4,7 @@
     [54, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 2937627495],
     [55, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 359943335]
   ],
-  "spec/spec_helper.rb:3260530828": [
-    [39, 4, 52, "Style/YodaCondition: Reverse the order of the operands `VersionGem::Ruby::RUBY_VER < Gem::Version.new(\"2.5\")`.", 3054081885]
+  "spec/spec_helper.rb:2743488484": [
+    [40, 4, 52, "Style/YodaCondition: Reverse the order of the operands `VersionGem::Ruby::RUBY_VER < Gem::Version.new(\"2.5\")`.", 3054081885]
   ]
 }
