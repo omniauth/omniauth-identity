@@ -4,23 +4,26 @@
 # Loaded by the associated non-local gemfile when STRUCTUREDMERGE_DEV or KETTLE_DEV_DEV
 # is not "false".
 
-nomono_activation_requirements = ["~> 1.0", ">= 1.0.8"]
+# Bootstrapping nomono here cannot rely on a plain `gem "nomono", ...` line.
+# Bundler records that dependency during Gemfile evaluation, but it does not
+# activate that exact version before the immediate `require "nomono/bundler"`.
+nomono_activation_requirements = ["~> 1.1", ">= 1.1.2"]
 nomono_lockfile = File.expand_path("../../Gemfile.lock", __dir__)
 if File.file?(nomono_lockfile)
+  require "bundler"
   nomono_locked_spec = Bundler::LockfileParser
     .new(Bundler.read_file(nomono_lockfile))
     .specs
     .find { |spec| spec.name == "nomono" }
   nomono_locked = nomono_locked_spec &&
     Gem::Requirement.new(nomono_activation_requirements).satisfied_by?(nomono_locked_spec.version)
-  if nomono_locked
-    nomono_activation_requirements = ["= #{nomono_locked_spec.version}"]
-  end
+  nomono_activation_requirements = ["= #{nomono_locked_spec.version}"] if nomono_locked
 end
 Kernel.send(:gem, "nomono", *nomono_activation_requirements)
 require "nomono/bundler"
 
-smorg_rb_local_gems = %w[
+
+structuredmerge_local_gems = %w[
   tree_haver
   ast-merge
   ast-merge-git
@@ -54,23 +57,16 @@ smorg_rb_local_gems = %w[
 ]
 
 kettle_dev_local_gems = %w[
-  kettle-dev kettle-test kettle-soup-cover kettle-drift
+  kettle-dev kettle-family kettle-test kettle-soup-cover kettle-drift
 ]
 declared_gems = instance_variable_get(:@dependencies).to_a.map(&:name)
-smorg_rb_local_gems_to_eval = smorg_rb_local_gems - %w[omniauth-identity] - declared_gems
-kettle_dev_local_gems_to_eval = kettle_dev_local_gems - %w[omniauth-identity] - declared_gems
+structuredmerge_local_gems_to_eval = structuredmerge_local_gems - %w[omniauth-identity] - declared_gems
+kettle_dev_local_gems_to_eval = kettle_dev_local_gems - %w[omniauth-identity] - (declared_gems - %w[kettle-dev])
 
-tslp_dev = ENV.fetch("TSLP_DEV", nil)
-
-# export VENDORED_GEMS=
 platform :mri do
-  unless tslp_dev.to_s.empty?
-    gem "tree_sitter_language_pack", path: tslp_dev
-  end
-
   if ENV.fetch("STRUCTUREDMERGE_DEV", "false").casecmp("false") != 0
     eval_nomono_gems(
-      gems: smorg_rb_local_gems_to_eval,
+      gems: structuredmerge_local_gems_to_eval,
       prefix: "STRUCTUREDMERGE",
       path_env: "STRUCTUREDMERGE_DEV",
       vendored_gems_env: "VENDORED_GEMS",
@@ -86,7 +82,8 @@ platform :mri do
       path_env: "KETTLE_DEV_DEV",
       vendored_gems_env: "VENDORED_GEMS",
       vendor_gem_dir_env: "VENDOR_GEM_DIR",
-      debug_env: "KETTLE_DEV_DEBUG"
+      debug_env: "KETTLE_DEV_DEBUG",
+      root: ["src", "my", "kettle-dev"]
     )
   end
 end

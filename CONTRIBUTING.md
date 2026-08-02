@@ -20,7 +20,7 @@ Take a look at the open issues and pull requests, or use the gem and find someth
 
 Follow these instructions:
 
-1. Join the Discord: [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
+1. Join the community: [![Ruby Users Forum][✉️ruby-forum-img]][✉️ruby-forum] [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
 2. Fork the repository
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Make some fixes.
@@ -28,7 +28,21 @@ Follow these instructions:
 6. Push to the branch (`git push origin my-new-feature`)
 7. Make sure to add tests for it. This is important, so it doesn't break in a future release.
 8. Create new Pull Request.
-9. Announce it in the channel for this org in the [Discord][✉️discord-invite]!
+9. Announce it in the project tag on [RubyForum][✉️ruby-forum] or the org channel on [Discord][✉️discord-invite]!
+
+## Ruby engine CI branches
+
+Pull requests run MRI workflows by default. JRuby and TruffleRuby workflows are
+available by branch naming convention so ordinary PRs do not spend CI time on
+alternate Ruby engines.
+
+- Use a branch named `jruby/*` to run JRuby workflows for a pull request.
+- Use a branch named `truffleruby/*` to run TruffleRuby workflows for a pull
+  request.
+- Use a branch named `engines/*` to run both JRuby and TruffleRuby workflows for
+  a pull request.
+
+Pushes to the default branch continue to run the configured engine workflows.
 
 ## Executables vs Rake tasks
 
@@ -116,7 +130,7 @@ Troubleshooting Git diffs
 - Use `git diff --no-ext-diff` to compare against Git's built-in diff output.
 - Use `git diff --no-textconv` when a textconv projection obscures the raw file bytes you need to inspect.
 - If Git reports a missing `smorg-*` executable, rerun `bundle install` and the setup command above, then check `git config --local --get-regexp '^diff\.smorg-'`.
-- To remove managed local entries, run `K_JEM_TEMPLATING=true kettle-jem install --undo`; remove global command registrations with `git config --global --unset-all diff.smorg-rb.command`.
+- To remove managed local entries, run `K_JEM_TEMPLATING=true kettle-jem install --undo`; remove global command registrations with `git config --global --unset-all diff.smorg-rb.command`, `git config --global --unset-all merge.smorg-rb.driver`, and `git config --global --unset-all merge.smorg-rb.name`.
 
 For a quick starting point, this repository’s `mise.toml` defines the shared defaults, and `.env.local` can override them locally. Copy `.env.local.example` to `.env.local`, use `KEY=value` lines, and either activate `mise` in your shell or run commands through `mise exec -C /path/to/project -- ...`.
 
@@ -273,3 +287,5 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 [🚎appraisal2]: https://github.com/appraisal-rb/appraisal2
 [🏃‍♂️runner-tool-cache]: https://github.com/ruby/ruby-builder/releases/tag/toolcache
 [✉️discord-invite]: https://discord.gg/3qme4XHNKN
+[✉️ruby-forum]: https://www.rubyforum.org/tag/omniauth-identity
+[✉️ruby-forum-img]: https://img.shields.io/discourse/topics?server=https%3A%2F%2Fwww.rubyforum.org&style=flat&logo=discourse&label=Ruby%20Users%20Forum
