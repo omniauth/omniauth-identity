@@ -18,6 +18,55 @@ RSpec.describe OmniAuth::Identity::Model do
         expect { model_klass.locate("email" => "example") }.to raise_error(NotImplementedError)
       end
     end
+
+    describe "::inherited" do
+      it "copies filtered attributes to subclasses" do
+        expect(IdentityTestClass).to receive(:filtered_attributes).with(*OmniAuth::Identity::Model::FILTERED_INSPECT_ATTRIBUTES)
+
+        Class.new(IdentityTestClass)
+      end
+    end
+
+    describe "::auth_key" do
+      it "uses a configured key and resets an empty key to the default" do
+        expect(model_klass.auth_key(:login)).to eq("login")
+        expect(model_klass.auth_key).to eq("login")
+
+        expect(model_klass.auth_key("")).to eq("email")
+      end
+    end
+
+    describe "fallback APIs" do
+      it "adds create, save, and persisted? only when they are absent" do
+        expect(model_klass).to respond_to(:create)
+        expect(model_klass.new).to respond_to(:save, :persisted?)
+        expect { model_klass.create }.to raise_error(NotImplementedError)
+        expect { model_klass.new.save }.to raise_error(NotImplementedError)
+        expect { model_klass.new.persisted? }.to raise_error(NotImplementedError)
+      end
+
+      it "does not replace existing APIs" do
+        klass = Class.new do
+          def self.create(*)
+            :created
+          end
+
+          def save(*)
+            :saved
+          end
+
+          def persisted?
+            :persisted
+          end
+
+          include OmniAuth::Identity::Model
+        end
+
+        expect(klass.create).to eq(:created)
+        expect(klass.new.save).to eq(:saved)
+        expect(klass.new.persisted?).to eq(:persisted)
+      end
+    end
   end
 
   describe "Instance Methods" do
@@ -72,5 +121,23 @@ RSpec.describe OmniAuth::Identity::Model do
         expect { instance.auth_key = "broken" }.to raise_error(NotImplementedError)
       end
     end
+
+    describe "#uid" do
+      it "returns nil when the id is nil" do
+        klass = Class.new do
+          include OmniAuth::Identity::Model
+
+          attr_accessor :id
+        end
+
+        expect(klass.new.uid).to be_nil
+      end
+    end
+  end
+
+  it "can be loaded again after its version has already been configured" do
+    identity_path = File.expand_path("../../../lib/omniauth/identity.rb", __dir__)
+
+    expect { load identity_path }.not_to raise_error
   end
 end

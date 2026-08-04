@@ -51,6 +51,38 @@ RSpec.describe OmniAuth::Identity::SecurePassword do
     expect(instance.authenticate("correct horse battery staple")).to be(instance)
   end
 
+  it "does not replace the digest for an empty password" do
+    klass = Class.new do
+      include OmniAuth::Identity::SecurePassword
+
+      attr_accessor :password_digest
+
+      has_secure_password(validations: false)
+    end
+
+    instance = klass.new
+    instance.password = "secret"
+    digest = instance.password_digest
+    instance.password = ""
+
+    expect(instance.password).to eq("secret")
+    expect(instance.password_digest).to equal(digest)
+  end
+
+  it "adds Active Model validations when requested" do
+    require "active_model"
+
+    klass = stub_const("ValidationTestClass", Class.new)
+    klass.include ActiveModel::Validations
+    klass.include described_class
+    klass.attr_accessor :password_digest
+    klass.has_secure_password
+
+    instance = klass.new
+    expect(instance).not_to be_valid
+    expect(instance.errors[:password]).to include("can't be blank")
+  end
+
   it "clears the digest when the password is nil" do
     klass = Class.new do
       include OmniAuth::Identity::SecurePassword
