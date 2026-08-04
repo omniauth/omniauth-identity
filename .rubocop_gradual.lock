@@ -1,4 +1,7 @@
 {
+  "gemfiles/modular/templating.gemfile:3018447732": [
+    [14, 3, 47, "Bundler/DuplicatedGem: Gem `tree_sitter_language_pack` requirements already given on line 10 of the Gemfile.", 3843603197]
+  ],
   "spec/omniauth/strategies/identity_spec.rb:4035457592": [
     [53, 9, 63, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 4024977967],
     [54, 9, 47, "RSpec/LeakyLocalVariable: Do not use local variables defined outside of examples inside of them.", 2937627495],
