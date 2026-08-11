@@ -503,15 +503,13 @@ Also see GitLab Contributors: [https://gitlab.com/omniauth/omniauth-identity/-/g
 
 <details markdown="1">
  <summary>⭐️ Star History</summary>
-
-<a href="https://star-history.com/omniauth/omniauth-identity&Date">
- <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&type=Date&theme=dark" />
- <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&type=Date" />
- <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=omniauth/omniauth-identity&type=Date" />
- </picture>
-</a>
-
+ <a href="https://star-history.dera.page/#omniauth/omniauth-identity&type=date&legend=top-left">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=omniauth/omniauth-identity&type=date&theme=dark&legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=omniauth/omniauth-identity&type=date&legend=top-left" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=omniauth/omniauth-identity&type=date&legend=top-left" />
+  </picture>
+ </a>
 </details>
 
 ## 📌 Versioning
