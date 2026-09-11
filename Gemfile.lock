@@ -712,4 +712,4 @@ DEPENDENCIES
   yard-yaml (~> 0.2, >= 0.2.4)
 
 BUNDLED WITH
-  4.0.17
+  4.1.0.beta1
