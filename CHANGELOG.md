@@ -31,6 +31,13 @@ Please file a bug if you notice a violation of semantic versioning.
   project's RubyForum tag as `mailing_list_uri`, and support docs link to the
   tagged RubyForum community alongside Discord.
 
+- kettle-jem-template-20260913-001 - Templating now also surfaces a review
+  entry in `dependency_conflicts.resolve` when a direct development
+  dependency doesn't support one or more of this project's declared
+  `engines:` and has no template-managed modular home (e.g. `sqlite3` on
+  `jruby`). Review each entry and pick a resolution per the project's own
+  engine support needs.
+
 ### Changed
 
 - kettle-jem-template-20260716-002 - Gemspecs now ship fewer repository-only
@@ -46,16 +53,17 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260801-001 - Generated README gem dashboard links now
   use ClickGems instead of BestGems.
 
-- [kc] kettle-jem/prepare: updated 15 project files:
+- [kc] kettle-jem/prepare: updated 18 project files:
   - configuration (1)
-  - dependencies (14)
+  - dependencies (17)
 
-- [kc] kettle-jem/template: updated 43 project files:
+- [kc] kettle-jem/template: updated 53 project files:
+  - code and tests (1)
   - configuration (1)
-  - dependencies (7)
+  - dependencies (8)
   - documentation (1)
   - other (3)
-  - workflows (31)
+  - workflows (39)
 
 ### Deprecated
 

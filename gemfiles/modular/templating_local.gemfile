@@ -66,16 +66,27 @@ structuredmerge_local_gems = %w[
 kettle_dev_local_gems = %w[
   kettle-dev kettle-family kettle-test kettle-soup-cover kettle-changelog kettle-drift
 ]
+shared_nomono_options = {
+  vendored_gems_env: "VENDORED_GEMS",
+  vendor_gem_dir_env: "VENDOR_GEM_DIR"
+}
+kettle_dev_nomono_options = shared_nomono_options.merge(
+  prefix: "KETTLE_DEV",
+  path_env: "KETTLE_DEV_DEV",
+  debug_env: "KETTLE_DEV_DEBUG",
+  root: ["src", "my", "kettle-dev"]
+)
+structuredmerge_nomono_options = shared_nomono_options.merge(
+  prefix: "STRUCTUREDMERGE",
+  path_env: "STRUCTUREDMERGE_DEV",
+  debug_env: "STRUCTUREDMERGE_DEBUG"
+)
 structuredmerge_local_gems_to_eval = structuredmerge_local_gems - %w[]
 
 if ENV.fetch("STRUCTUREDMERGE_DEV", "false").casecmp("false") != 0
   eval_nomono_gems(
     gems: structuredmerge_local_gems_to_eval,
-    prefix: "STRUCTUREDMERGE",
-    path_env: "STRUCTUREDMERGE_DEV",
-    vendored_gems_env: "VENDORED_GEMS",
-    vendor_gem_dir_env: "VENDOR_GEM_DIR",
-    debug_env: "STRUCTUREDMERGE_DEBUG"
+    **structuredmerge_nomono_options
   )
 end
 
@@ -85,12 +96,7 @@ if ENV.fetch("KETTLE_DEV_DEV", "false").casecmp("false") != 0
   kettle_dev_dependency = instance_variable_get(:@dependencies).to_a.find { |dependency| dependency.name == "kettle-dev" }
   kettle_dev_local_path = nomono_gems(
     gems: %w[kettle-dev],
-    prefix: "KETTLE_DEV",
-    path_env: "KETTLE_DEV_DEV",
-    vendored_gems_env: "VENDORED_GEMS",
-    vendor_gem_dir_env: "VENDOR_GEM_DIR",
-    debug_env: "KETTLE_DEV_DEBUG",
-    root: ["src", "my", "kettle-dev"]
+    **kettle_dev_nomono_options
   ).fetch("kettle-dev", nil)
   if kettle_dev_dependency && kettle_dev_local_path
     instance_variable_get(:@dependencies).delete(kettle_dev_dependency)
@@ -102,11 +108,6 @@ if ENV.fetch("KETTLE_DEV_DEV", "false").casecmp("false") != 0
 
   eval_nomono_gems(
     gems: kettle_dev_local_gems_to_eval,
-    prefix: "KETTLE_DEV",
-    path_env: "KETTLE_DEV_DEV",
-    vendored_gems_env: "VENDORED_GEMS",
-    vendor_gem_dir_env: "VENDOR_GEM_DIR",
-    debug_env: "KETTLE_DEV_DEBUG",
-    root: ["src", "my", "kettle-dev"]
+    **kettle_dev_nomono_options
   )
 end

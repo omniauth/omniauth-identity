@@ -31,13 +31,22 @@
       ]
     }
   ],
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        43,
+        49
+      ]
+    }
+  ],
   "gem \"couch_potato\", \"~> 1.17\"\n# TODO: Bump when dropping old Ruby from this gem.": [
     {
       "file": "Appraisals",
       "lines": [
-        252,
-        262,
-        272
+        256,
+        266,
+        276
       ]
     }
   ],
