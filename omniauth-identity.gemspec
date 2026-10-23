@@ -109,8 +109,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Utilities
-  spec.add_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3") # ruby >= 2.2.0
-  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.3") # ruby >= 2.2.0
+  spec.add_dependency("anonymous_loader", "~> 0.1", ">= 0.1.4") # ruby >= 2.2.0
+  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.4") # ruby >= 2.2.0
   spec.add_dependency("bcrypt", "~> 3.1")                 # ruby >= 0
   spec.add_dependency("mutex_m", "~> 0.1")                # ruby >= 0
   spec.add_dependency("omniauth", ">= 1")                 # ruby >= 0
@@ -130,7 +130,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.1")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.24")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
