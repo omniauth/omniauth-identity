@@ -1,4 +1,6 @@
 # Ruby >= 2.5
-# kettle-jem:freeze
+# NOTE: gemfiles merge via Prism::Merge, whose freeze token is "prism-merge"
+# (kettle-jem does not pass its own token on this path).
+# prism-merge:freeze
 gem "ostruct", "~> 0.6", ">= 0.6.1"
-# kettle-jem:unfreeze
+# prism-merge:unfreeze
