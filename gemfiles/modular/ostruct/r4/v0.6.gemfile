@@ -1,2 +1,4 @@
 # Ruby >= 2.5
-gem "ostruct", "~> 0.6"
+# kettle-jem:freeze
+gem "ostruct", "~> 0.6", ">= 0.6.1"
+# kettle-jem:unfreeze

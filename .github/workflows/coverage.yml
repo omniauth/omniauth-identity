@@ -41,6 +41,11 @@ jobs:
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/Appraisal.root.gemfile
+      # kettle-jem:freeze
+      OMNIAUTH_IDENTITY_ENABLE_SQLITE3: "true"
+      OMNIAUTH_IDENTITY_ENABLE_COUCHDB: "true"
+      OMNIAUTH_IDENTITY_ENABLE_MONGODB: "true"
+      # kettle-jem:unfreeze
     strategy:
       fail-fast: false
       matrix:
@@ -57,6 +62,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      # kettle-jem:freeze
+      - name: Start adapter test services
+        uses: ./.github/actions/start-adapter-services
+        with:
+          services: couch_potato,mongoid
+      # kettle-jem:unfreeze
 
       - name: Setup Ruby & RubyGems
         uses: appraisal-rb/setup-ruby-flash@b7ed1caf57f7986cedd2acca8624960b0820bc9a # v2.7

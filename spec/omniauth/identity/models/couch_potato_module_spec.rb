@@ -19,7 +19,9 @@ if omniauth_identity_service_adapter_enabled?("COUCHDB") && omniauth_identity_bu
     end
 
     before do
-      couch_potato_test_identity = Class.new do
+      couch_potato_test_identity = Class.new
+      stub_const("CouchPotatoTestIdentity", couch_potato_test_identity)
+      couch_potato_test_identity.class_eval do
         # NOTE: CouchPotato::Persistence must be included before OmniAuth::Identity::Models::CouchPotatoModule
         include CouchPotato::Persistence
 
@@ -28,7 +30,6 @@ if omniauth_identity_service_adapter_enabled?("COUCHDB") && omniauth_identity_bu
         property :email
         property :password_digest
       end
-      stub_const("CouchPotatoTestIdentity", couch_potato_test_identity)
     end
 
     describe "model", type: :model do

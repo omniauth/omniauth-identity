@@ -56,31 +56,17 @@ jobs:
             bundler: latest
 
     steps:
-      ### COUCHDB
-      - name: Start CouchDB
-        uses: iamssen/couchdb-github-action@51f21cb519b7ef0cbf86d063849da780dd3ea405
-        if: "endsWith(matrix.exec_cmd, 'couch_potato')"
-        with:
-          couchdb-version: "3"
-
-      ### MONGODB
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.12.1
-        if: "endsWith(matrix.exec_cmd, 'mongoid')"
-        with:
-          mongodb-version: "8.0"
-
-      ### SMOKE-TEST
-      - name: Smoke CouchDB
-        if: "endsWith(matrix.exec_cmd, 'couch_potato')"
-        run: |
-          curl -f http://127.0.0.1:5984/
-          curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"name": "admin", "password": "password"}' http://127.0.0.1:5984/_session
-
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      # kettle-jem:freeze
+      - name: Start adapter test services
+        uses: ./.github/actions/start-adapter-services
+        with:
+          services: ${{ matrix.exec_cmd }}
+      # kettle-jem:unfreeze
 
       - name: Setup Ruby & RubyGems
         uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0
