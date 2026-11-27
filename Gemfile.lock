@@ -330,7 +330,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
-    nomono (1.1.17)
+    nomono (1.1.18)
       version_gem (~> 1.1, >= 1.1.17)
     omniauth (2.3.1)
       hashie (>= 3.5.2)
@@ -690,9 +690,9 @@ DEPENDENCIES
   kramdown (~> 2.5, >= 2.5.2)
   kramdown-parser-gfm (~> 1.1)
   mutex_m (~> 0.2)
-  nomono (~> 1.1, >= 1.1.5)
+  nomono (~> 1.1, >= 1.1.18)
   omniauth-identity!
-  ostruct (~> 0.6)
+  ostruct (~> 0.6, >= 0.6.1)
   rack-test (~> 1)
   rake (~> 13.0)
   rbs (>= 3.0)
@@ -722,4 +722,4 @@ DEPENDENCIES
   yard-yaml (~> 0.2, >= 0.2.6)
 
 BUNDLED WITH
-  4.0.21
+  4.1.1
