@@ -1,4 +1,13 @@
 {
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        41,
+        47
+      ]
+    }
+  ],
   "action: remove_modular_gem\nreason: \"omniauth-identity.gemspec owns this development dependency.\"": [
     {
       "file": ".structuredmerge/kettle-jem.yml",
@@ -12,6 +21,15 @@
         151,
         156,
         161
+      ]
+    }
+  ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
       ]
     }
   ],
@@ -35,8 +53,8 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        43,
-        49
+        44,
+        50
       ]
     }
   ],
@@ -44,9 +62,9 @@
     {
       "file": "Appraisals",
       "lines": [
-        256,
-        266,
-        276
+        267,
+        277,
+        287
       ]
     }
   ],
@@ -63,6 +81,24 @@
         150,
         155,
         160
+      ]
+    }
+  ],
+  "out != \"\" { print > out }\n' \"$bundle\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        95,
+        124
+      ]
+    }
+  ],
+  "subject=\"$(openssl x509 -in \"$file\" -noout -subject 2>/dev/null || true)\"\nif [ -n \"$subject\" ] && matches \"$subject\"; then": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        103,
+        127
       ]
     }
   ]
